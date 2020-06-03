@@ -16,16 +16,10 @@
 <li>发布第一篇博客</li>
 </ol>
 <h3 id="ToDo"><a href="#ToDo" class="headerlink" title="ToDo"></a>ToDo</h3><p>现在只是把房子搭起来还没有装修啥啊，让俺接着去学一学~</p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> <p>更换 Hexo 主题</p>
-</li>
-<li><input checked="" disabled="" type="checkbox"> <p>熟悉博客的发布修改标签等功能</p>
-</li>
-<li><input disabled="" type="checkbox"> <p>建立图床</p>
-</li>
-<li><input disabled="" type="checkbox"> <p>增加其他的小插件 ~~</p>
-</li>
-</ul>
+<p>[x] 更换 Hexo 主题</p>
+<p>[x] 熟悉博客的发布修改标签等功能</p>
+<p>[ ] 建立图床</p>
+<p>[ ] 增加其他的小插件 ~~</p>
 ]]></content>
       <categories>
         <category>技术小记</category>
