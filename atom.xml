@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-02T23:03:54.543Z</updated>
+  <updated>2020-06-03T02:16:15.009Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,22 +21,18 @@
     <link href="http://yoursite.com/2020/05/31/Hello-Hexo-Blog/"/>
     <id>http://yoursite.com/2020/05/31/Hello-Hexo-Blog/</id>
     <published>2020-05-31T05:53:07.000Z</published>
-    <updated>2020-06-02T23:03:54.543Z</updated>
+    <updated>2020-06-03T02:16:15.009Z</updated>
     
-    <content type="html"><![CDATA[<p> 第一篇博客~ 开心</p><h3 id="简单记录一下搭建过程"><a href="#简单记录一下搭建过程" class="headerlink" title="简单记录一下搭建过程"></a>简单记录一下搭建过程</h3><p>博客基于<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo框架</a> + Github，域名当然是阿里云了 （6元一年他不香吗hhh）</p><p>感谢舍友 <a href="https://www.117503445.top/" target="_blank" rel="noopener">@117503445</a> 指名了博客搭建的主要方向，搭建过程中主要参考了知乎用户 @吴润 的<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">这篇文章</a>，基本很顺畅地搭建起来了，一并致谢。</p><ol><li>安装并配置Node.js</li><li>安装 Hexo 框架</li><li>关联 Github 仓库</li><li>申请域名并绑定</li><li>发布第一篇博客</li><li>乖乖去备案</li></ol><h3 id="ToDo"><a href="#ToDo" class="headerlink" title="ToDo"></a>ToDo</h3><p>现在只是把房子搭起来还没有装修啥啊，让俺接着去学一学~</p><ol><li>更换 Hexo 主题</li><li>熟悉博客的发布修改标签等功能</li><li>建立图床</li><li>增加其他的小插件 ~~</li></ol>]]></content>
+    <content type="html"><![CDATA[<p> 第一篇博客~ 开心</p><a id="more"></a><h3 id="简单记录一下搭建过程"><a href="#简单记录一下搭建过程" class="headerlink" title="简单记录一下搭建过程"></a>简单记录一下搭建过程</h3><p>博客基于<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo框架</a> + Github，域名当然是阿里云了 （6元一年他不香吗hhh）</p><p>感谢舍友 <a href="https://www.117503445.top/" target="_blank" rel="noopener">@117503445</a> 指名了博客搭建的主要方向，搭建过程中主要参考了知乎用户 @吴润 的<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">这篇文章</a>，基本很顺畅地搭建起来了，一并致谢。</p><ol><li>安装并配置Node.js</li><li>安装 Hexo 框架</li><li>关联 Github 仓库</li><li>申请域名并绑定</li><li>发布第一篇博客</li></ol><h3 id="ToDo"><a href="#ToDo" class="headerlink" title="ToDo"></a>ToDo</h3><p>现在只是把房子搭起来还没有装修啥啊，让俺接着去学一学~</p><ul><li><input checked="" disabled="" type="checkbox"> <p>更换 Hexo 主题</p></li><li><input checked="" disabled="" type="checkbox"> <p>熟悉博客的发布修改标签等功能</p></li><li><input disabled="" type="checkbox"> <p>建立图床</p></li><li><input disabled="" type="checkbox"> <p>增加其他的小插件 ~~</p></li></ul>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt; 第一篇博客~ 开心&lt;/p&gt;
-&lt;h3 id=&quot;简单记录一下搭建过程&quot;&gt;&lt;a href=&quot;#简单记录一下搭建过程&quot; class=&quot;headerlink&quot; title=&quot;简单记录一下搭建过程&quot;&gt;&lt;/a&gt;简单记录一下搭建过程&lt;/h3&gt;&lt;p&gt;博客基于&lt;a href=&quot;https:/
-      
+      &lt;p&gt; 第一篇博客~ 开心&lt;/p&gt;
     
     </summary>
     
     
-      <category term="Blog" scheme="http://yoursite.com/categories/Blog/"/>
+      <category term="技术小记" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%B0%8F%E8%AE%B0/"/>
     
     
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
