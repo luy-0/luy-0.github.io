@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本章节包括五个小节  进程 (Processes) 线程 (Threads) 调度 (Scheduling) 进程间通信 (InterProess Communicatiin,IPC) 经典的IPC问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统之进程线程">
+<meta property="og:url" content="http://yoursite.com/2020/06/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/index.html">
+<meta property="og:site_name" content="(ﾟ∀。)">
+<meta property="og:description" content="本章节包括五个小节  进程 (Processes) 线程 (Threads) 调度 (Scheduling) 进程间通信 (InterProess Communicatiin,IPC) 经典的IPC问题">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/06/02/iXhVgOqNfb48E5M.png">
+<meta property="article:published_time" content="2020-06-05T09:06:22.000Z">
+<meta property="article:modified_time" content="2020-06-05T10:04:43.279Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/06/02/iXhVgOqNfb48E5M.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/06/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>操作系统之进程线程 | (ﾟ∀。)</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="(ﾟ∀。)" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">(ﾟ∀。)</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="嘿, 这里是私人空间!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="(ﾟ∀。)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          操作系统之进程线程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-05 17:06:22 / 修改时间：18:04:43" itemprop="dateCreated datePublished" datetime="2020-06-05T17:06:22+08:00">2020-06-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本章节包括五个小节</p>
+<ol>
+<li>进程 (Processes)</li>
+<li>线程 (Threads)</li>
+<li>调度 (Scheduling)</li>
+<li>进程间通信 (InterProess Communicatiin,IPC)</li>
+<li>经典的IPC问题</li>
+</ol>
+<a id="more"></a>
+
+<h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><p>在本小节会涉及到：</p>
+<ol>
+<li>CPU是如何工作的，并由此引入进程的概念与用途</li>
+<li>进程的生命周期：<ol>
+<li>⭐进程的五种状态及之间的转换</li>
+<li>进程的创建</li>
+<li>进程的中止</li>
+<li>两个进程的切换（上下文保存）</li>
+</ol>
+</li>
+<li>⭐Process Control Blocks,PCB (进程表, 进程控制块)<ol>
+<li>为什么要用PCB？</li>
+<li>PCB 中包括什么？</li>
+</ol>
+</li>
+</ol>
+<h3 id="1-1-进程的引入及概念"><a href="#1-1-进程的引入及概念" class="headerlink" title="1.1 进程的引入及概念"></a>1.1 进程的引入及概念</h3><p>本章的内容(包括进程线程调度IPC)在于探讨如何更高效地利用CPU. 尽管市面上早已采用了多核架构, 但下述分析均为单核CPU, 如果要考虑多核的情况会事先说明。</p>
+<p>既然是单核CPU，那么在同一时间刻CPU计算资源只能用在一个地方。如果我此时一边敲代码，一边听歌，一边挂QQ，那么实际上CPU的运行状态是在这些工作之间以毫秒级别的速度来回迅速切换，在宏观上造成几个工作同时进行的假象。也即是<strong>“微观串行，宏观并行”</strong>。<br>这样的情况我们被称为<strong>多道程序</strong> ，即同时有多个程序在执行中(宏观)，但实际上只有一个进程在使用CPU(微观)<br><img src="https://i.loli.net/2020/06/02/iXhVgOqNfb48E5M.png" alt="微观串行，宏观并行"><br><strong>进程：</strong> an executing program, including the current values of the program counter, register, and variables.<br>进程是进行中的程序。编写好的代码(.c, .py)或可运行的文件(.exe, .bat) 被成为程序。当他们被运行时才被称为进程。<br>一个进程包括：</p>
+<ul>
+<li>program counter, 程序计数器;用于标志该进程当前运行至程序的何处</li>
+<li>stack, 栈; </li>
+<li>data section,数据部分</li>
+</ul>
+<p>那么显然，多道程序中每个程序都拥有自己的PC、stack…</p>
+<h3 id="1-2-进程的生命周期"><a href="#1-2-进程的生命周期" class="headerlink" title="1.2 进程的生命周期"></a>1.2 进程的生命周期</h3><h4 id="1-2-1-进程的状态与转换"><a href="#1-2-1-进程的状态与转换" class="headerlink" title="1.2.1 进程的状态与转换"></a>1.2.1 进程的状态与转换</h4><h5 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h5><p>进程是一个动态的客体，可以被创建销毁等。进程总共拥有五种生命状态(state)：</p>
+<ol>
+<li>new               创建</li>
+<li>ready             就绪</li>
+<li>running           运行</li>
+<li>waiting/blocked   阻塞/等待态</li>
+<li>terminated/exit        销毁</li>
+</ol>
+<h5 id="状态之间转换"><a href="#状态之间转换" class="headerlink" title="状态之间转换"></a>状态之间转换</h5><ul>
+<li>new -&gt; ready</li>
+<li>ready -&gt; running</li>
+<li>running -&gt; ready</li>
+<li>running -&gt; blocked</li>
+<li>running -&gt; exit</li>
+<li>blocked -&gt; ready</li>
+</ul>
+<p>待配图: 状态转换</p>
+<h4 id="1-2-2-进程的创建"><a href="#1-2-2-进程的创建" class="headerlink" title="1.2.2 进程的创建"></a>1.2.2 进程的创建</h4><h5 id="进程的创建场景"><a href="#进程的创建场景" class="headerlink" title="进程的创建场景:"></a>进程的创建场景:</h5><ol>
+<li>系统初始化</li>
+<li>系统调用</li>
+<li>用户命令</li>
+<li>批处理作业的初始化</li>
+</ol>
+<h5 id="父子进程"><a href="#父子进程" class="headerlink" title="父子进程"></a>父子进程</h5><ul>
+<li>父进程不断创建子进程,由此形成进程树</li>
+<li>子进程<strong>可以</strong>继承父的资源(也可以不继承或半继承)</li>
+<li>父子进程可以同时执行,也有可能父等待子</li>
+<li>Unix 中存在这种进程的层级关系,Win 中进程的地位平等,不存在父子关系<ul>
+<li>但是这一说法似乎不当, <a href="https://www.zhihu.com/question/31429459" target="_blank" rel="noopener">参看此处</a></li>
+</ul>
+</li>
+</ul>
+<p>[待配图] Unix进程树</p>
+<h4 id="1-2-3-进程的销毁"><a href="#1-2-3-进程的销毁" class="headerlink" title="1.2.3 进程的销毁"></a>1.2.3 进程的销毁</h4><h5 id="进程销毁的场景"><a href="#进程销毁的场景" class="headerlink" title="进程销毁的场景"></a>进程销毁的场景</h5><ol>
+<li><p>Normal exit    正常退出 (自愿)</p>
+</li>
+<li><p>Error exit        错误退出 (自愿)</p>
+</li>
+<li><p>Fatal error      致命性错误退出 (非自愿)</p>
+<p>eg: 除0, 取非法地址</p>
+</li>
+<li><p>被其他进程杀死  (非自愿)</p>
+<p>eg: 父进程, 系统, 其他优先级更高的进程</p>
+</li>
+</ol>
+<h5 id="级联终止"><a href="#级联终止" class="headerlink" title="级联终止"></a>级联终止</h5><p>​    当父进程退出时,子进程必须退出.</p>
+<h4 id="1-2-4-进程的切换"><a href="#1-2-4-进程的切换" class="headerlink" title="1.2.4 进程的切换"></a>1.2.4 进程的切换</h4><ul>
+<li>进程的切换非常频繁, 一般在毫秒级</li>
+<li>进程切换需要耗费时间, 称为Gap</li>
+</ul>
+<h5 id="进程切换的场景"><a href="#进程切换的场景" class="headerlink" title="进程切换的场景"></a>进程切换的场景</h5><ol>
+<li><p>时钟中断</p>
+<p>eg 时间轮片用尽</p>
+</li>
+<li><p>IO 中断</p>
+</li>
+<li><p>Memory Fault  内存失效</p>
+<p>eg 内存中页面失效</p>
+</li>
+<li><p>Trap 陷入</p>
+<p>发生错误时</p>
+</li>
+<li><p>Supervisor Call</p>
+<p>管理程序调用</p>
+</li>
+</ol>
+<h5 id="上下文切换"><a href="#上下文切换" class="headerlink" title="上下文切换"></a>上下文切换</h5><p>切出时, 必须保存该进程目前的环境.切入时,必须加载先前的环境</p>
+<p>使用 PCB(Processing Control Block, 进程表,进程控制块) 来储存进程的环境</p>
+<h5 id="进程调度队列"><a href="#进程调度队列" class="headerlink" title="进程调度队列"></a>进程调度队列</h5><p>这一块没听 似乎是调度队列包括以下三种</p>
+<ol>
+<li>Job queue 系统中所有进程的队列</li>
+<li>Ready queue 主存中所有进程的队列, 拿到CPU就跑的那种</li>
+<li>Device queues 等待IO设备的进程队列</li>
+</ol>
+<h5 id="PCB"><a href="#PCB" class="headerlink" title="PCB"></a><strong>PCB</strong></h5><p>包括:</p>
+<ol>
+<li>进程管理数据<ul>
+<li>寄存器</li>
+<li>PC</li>
+<li>状态字 PSW </li>
+<li>进程状态</li>
+<li>优先级</li>
+<li>调度算法参数</li>
+<li>进程ID</li>
+<li>父进程ID</li>
+<li>组进程ID</li>
+<li>信号量</li>
+<li>进程开始时间</li>
+<li>进程已用时间</li>
+<li>子进程已用时间</li>
+<li>……</li>
+</ul>
+</li>
+<li>内存管理数据<ul>
+<li>指向本进程代码段指针</li>
+<li>指向本进程数据段指针</li>
+<li>指向本进程堆栈段指针</li>
+</ul>
+</li>
+<li>文件管理数据<ul>
+<li>根目录</li>
+<li>工作目录</li>
+<li>文件描述符</li>
+<li>……</li>
+</ul>
+</li>
+</ol>
+<p>以上全部不用记🐶 下面的要记住(精简版)</p>
+<blockquote>
+<ol>
+<li>Process state                 进程状态 </li>
+<li>Program counter 程序计数器 </li>
+<li>CPU registers CPU寄存器</li>
+<li>CPU scheduling information CPU调度信息</li>
+<li>Memory-management information  内存管理信息 </li>
+<li>Accounting information 计账信息</li>
+<li>I/O status information I/O状态信息</li>
+</ol>
+</blockquote>
+<h2 id="Threads"><a href="#Threads" class="headerlink" title="Threads"></a>Threads</h2><p>在本小节会涉及到：</p>
+<ol>
+<li>了解进程切换中的缺陷（时空开销过大），并由此引入线程的概念及用途</li>
+<li>了解线程资源的私有与共享（有助于解决上一点的缺陷）, 并认识线程的优势</li>
+<li>几种线程的实现方式及区别<ol>
+<li>Kernel-level Thread   (内核级线程)</li>
+<li>User-level Thread     (用户级线程)</li>
+<li>Hybrid Thread         (混合式线程)</li>
+<li>Pop-up Thread         (弹出式线程)</li>
+</ol>
+</li>
+</ol>
+<h3 id="2-1-线程的引入及概念"><a href="#2-1-线程的引入及概念" class="headerlink" title="2.1 线程的引入及概念"></a>2.1 线程的引入及概念</h3><p>你看进程之间切换是不是要保存好多东西,时空开销过大. 线程是轻量级的进程, 它拥有的环境没有进程那么多, 所以线程间的切换更加轻便.</p>
+<ul>
+<li>进程是为了避免等待IO的时间, 线程是为了缩短进程切换中的浪费的时间</li>
+<li>线程是隶属于某一进程, 或者说<em>( traditional or heavyweight )</em>进程是仅有一个线程的进程</li>
+<li>但是线程还是有必要的环境的</li>
+<li>同一个进程的不同线程(兄弟线程)可以共享一部分资源</li>
+</ul>
+<p>待配图 进程与线程</p>
+<h3 id="2-2-进程资源的私有与共享"><a href="#2-2-进程资源的私有与共享" class="headerlink" title="2.2 进程资源的私有与共享"></a>2.2 进程资源的私有与共享</h3><p>对于同一个进程的不同线程(兄弟线程)来说:</p>
+<h5 id="共享的items"><a href="#共享的items" class="headerlink" title="共享的items"></a>共享的items</h5><ol>
+<li>地址空间</li>
+<li>全局变量</li>
+<li>文件流</li>
+<li>子进程</li>
+<li>Pending alarm (这是什么?)</li>
+<li>信号量</li>
+<li>记账信息( Accounting information)</li>
+</ol>
+<h5 id="私有的items"><a href="#私有的items" class="headerlink" title="私有的items"></a>私有的items</h5><ul>
+<li>PC</li>
+<li>寄存器(集)</li>
+<li>堆栈空间</li>
+<li>线程状态</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TODO：第二节：进程</span><br></pre></td></tr></table></figure>
+
+<h2 id="Scheduling"><a href="#Scheduling" class="headerlink" title="Scheduling"></a>Scheduling</h2><p>在本小节会涉及到：</p>
+<ol>
+<li>调度的概念<ol>
+<li>CPU密集型与IO密集型作业</li>
+<li>调度的目的</li>
+<li>什么时候需要调度？</li>
+<li>调度算法的目标（不同OS下目标有差异）</li>
+</ol>
+</li>
+<li>不同系统下常见的调度算法<ol>
+<li>批处理系统 (Batch SystemSs)<ol>
+<li>First-come first-served        (FCFS,先来先服务)</li>
+<li>Shortest job first             (SJF,短作业优先)</li>
+<li>Shortest remaining time first (SRTF,最短剩余时间优先)</li>
+</ol>
+</li>
+<li>交互式系统 (Interactive Systems)<ol>
+<li>Round Robin                    (RR,时间片轮转)</li>
+<li>Priority<ol>
+<li>Statically Priority         (静态优先级)</li>
+<li>Dynamically Priority        (动态优先级)</li>
+</ol>
+</li>
+<li>Shortest Process Next          (SPN, 最短进程优先)</li>
+<li>Others</li>
+</ol>
+</li>
+<li>实时操作系统 (Real-Time Systems)<ol>
+<li>可调度性</li>
+</ol>
+</li>
+<li>关于线程调度的一些补充</li>
+</ol>
+</li>
+</ol>
+<p>需要说明的是，虽然进程调度与线程调度是两种东西，但算法的核心思想是一致的，这里不过分区分。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TODO：第三节：调度</span><br></pre></td></tr></table></figure>
+
+<h2 id="IPC"><a href="#IPC" class="headerlink" title="IPC"></a>IPC</h2><p>在本小节会涉及到：</p>
+<ol>
+<li>什么是临界区资源<ol>
+<li>竞争</li>
+<li>保证临界区互斥的4个条件</li>
+</ol>
+</li>
+<li>互斥的策略1 (Busy Waiting)<ol>
+<li>禁止中断</li>
+<li>锁变量</li>
+<li>严格轮换法</li>
+<li>⭐Peterson 算法</li>
+<li>TSL 指令</li>
+</ol>
+</li>
+<li>互斥的策略2<ol>
+<li>上述策略的缺陷（忙等待 优先级反向）</li>
+<li>Sleep &amp; Wakeup<ol>
+<li>问题：唤醒丢失</li>
+</ol>
+</li>
+<li>⭐信号量 Semaphore<ol>
+<li>互斥信号量 Mutexe</li>
+<li>PV操作</li>
+</ol>
+</li>
+<li>管程 Monitor</li>
+<li>消息传递</li>
+<li>屏障</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TODO：第四节：IPC</span><br></pre></td></tr></table></figure>
+
+<h2 id="Classical-IPC-Problems"><a href="#Classical-IPC-Problems" class="headerlink" title="Classical IPC Problems"></a>Classical IPC Problems</h2><p>本小节将涉及到几个常见IPC模型：</p>
+<ol>
+<li>生产者与消费者</li>
+<li>读者与写者</li>
+<li>进餐的哲学家</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"># 操作系统</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/31/Hello-Hexo-Blog/" rel="prev" title="Hello_Hexo_Blog">
+      <i class="fa fa-chevron-left"></i> Hello_Hexo_Blog
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Process"><span class="nav-number">1.</span> <span class="nav-text">Process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-进程的引入及概念"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 进程的引入及概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-进程的生命周期"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 进程的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-进程的状态与转换"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 进程的状态与转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程的状态"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">进程的状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#状态之间转换"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">状态之间转换</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2-进程的创建"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2 进程的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程的创建场景"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">进程的创建场景:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#父子进程"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">父子进程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-3-进程的销毁"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.2.3 进程的销毁</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程销毁的场景"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">进程销毁的场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#级联终止"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">级联终止</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-4-进程的切换"><span class="nav-number">1.2.4.</span> <span class="nav-text">1.2.4 进程的切换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程切换的场景"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">进程切换的场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#上下文切换"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">上下文切换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进程调度队列"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">进程调度队列</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PCB"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">PCB</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Threads"><span class="nav-number">2.</span> <span class="nav-text">Threads</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-线程的引入及概念"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 线程的引入及概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-进程资源的私有与共享"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 进程资源的私有与共享</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#共享的items"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">共享的items</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#私有的items"><span class="nav-number">2.2.0.2.</span> <span class="nav-text">私有的items</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scheduling"><span class="nav-number">3.</span> <span class="nav-text">Scheduling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IPC"><span class="nav-number">4.</span> <span class="nav-text">IPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classical-IPC-Problems"><span class="nav-number">5.</span> <span class="nav-text">Classical IPC Problems</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">嘿, 这里是私人空间!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">3k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">6 分钟</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
