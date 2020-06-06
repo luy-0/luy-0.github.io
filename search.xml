@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello_Hexo_Blog</title>
+    <url>/2020/05/31/Hello-Hexo-Blog/</url>
+    <content><![CDATA[<p> 第一篇博客~ 开心</p>
+<a id="more"></a>
+
+<h3 id="简单记录一下搭建过程"><a href="#简单记录一下搭建过程" class="headerlink" title="简单记录一下搭建过程"></a>简单记录一下搭建过程</h3><p>博客基于<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo框架</a> + Github，域名当然是阿里云了 （6元一年他不香吗hhh）</p>
+<p>感谢舍友 <a href="https://www.117503445.top/" target="_blank" rel="noopener">@117503445</a> 指名了博客搭建的主要方向，搭建过程中主要参考了知乎用户 @吴润 的<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">这篇文章</a>，基本很顺畅地搭建起来了，一并致谢。</p>
+<ol>
+<li>安装并配置Node.js</li>
+<li>安装 Hexo 框架</li>
+<li>关联 Github 仓库</li>
+<li>申请域名并绑定</li>
+<li>发布第一篇博客</li>
+</ol>
+<h3 id="ToDo"><a href="#ToDo" class="headerlink" title="ToDo"></a>ToDo</h3><p>现在只是把房子搭起来还没有装修啥啊，让俺接着去学一学~</p>
+<p>[x] 更换 Hexo 主题</p>
+<p>[x] 熟悉博客的发布修改标签等功能</p>
+<p>[ ] 建立图床</p>
+<p>[ ] 增加其他的小插件 ~~</p>
+<h3 id="分类设置"><a href="#分类设置" class="headerlink" title="分类设置"></a>分类设置</h3><ul>
+<li>学习笔记    | 系统性的学习<ul>
+<li>专业课<ul>
+<li>操作系统</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>技术小记    | 碎片化知识</li>
+<li>生活随笔<ul>
+<li>山与水    | 游记</li>
+<li>书与影    | 书评影评</li>
+<li>时与光    | 定期总结</li>
+</ul>
+</li>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术小记</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用伪手写体搞定毛概笔记</title>
     <url>/2020/06/06/%E4%BD%BF%E7%94%A8%E4%BC%AA%E6%89%8B%E5%86%99%E4%BD%93%E6%90%9E%E5%AE%9A%E6%AF%9B%E6%A6%82%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>毛概课在接连上了五个月网课之后,终于到了期末.</p>
+    <content><![CDATA[<p>毛概课在接连上了五个月网课之后,终于等到了期末!</p>
 <p>对此,毛概老师给全班做出指示: “收  给我收笔记!” </p>
 <a id="more"></a>
 
@@ -369,51 +414,6 @@
       <tags>
         <tag>学习笔记</tag>
         <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello_Hexo_Blog</title>
-    <url>/2020/05/31/Hello-Hexo-Blog/</url>
-    <content><![CDATA[<p> 第一篇博客~ 开心</p>
-<a id="more"></a>
-
-<h3 id="简单记录一下搭建过程"><a href="#简单记录一下搭建过程" class="headerlink" title="简单记录一下搭建过程"></a>简单记录一下搭建过程</h3><p>博客基于<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo框架</a> + Github，域名当然是阿里云了 （6元一年他不香吗hhh）</p>
-<p>感谢舍友 <a href="https://www.117503445.top/" target="_blank" rel="noopener">@117503445</a> 指名了博客搭建的主要方向，搭建过程中主要参考了知乎用户 @吴润 的<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">这篇文章</a>，基本很顺畅地搭建起来了，一并致谢。</p>
-<ol>
-<li>安装并配置Node.js</li>
-<li>安装 Hexo 框架</li>
-<li>关联 Github 仓库</li>
-<li>申请域名并绑定</li>
-<li>发布第一篇博客</li>
-</ol>
-<h3 id="ToDo"><a href="#ToDo" class="headerlink" title="ToDo"></a>ToDo</h3><p>现在只是把房子搭起来还没有装修啥啊，让俺接着去学一学~</p>
-<p>[x] 更换 Hexo 主题</p>
-<p>[x] 熟悉博客的发布修改标签等功能</p>
-<p>[ ] 建立图床</p>
-<p>[ ] 增加其他的小插件 ~~</p>
-<h3 id="分类设置"><a href="#分类设置" class="headerlink" title="分类设置"></a>分类设置</h3><ul>
-<li>学习笔记    | 系统性的学习<ul>
-<li>专业课<ul>
-<li>操作系统</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>技术小记    | 碎片化知识</li>
-<li>生活随笔<ul>
-<li>山与水    | 游记</li>
-<li>书与影    | 书评影评</li>
-<li>时与光    | 定期总结</li>
-</ul>
-</li>
-<li></li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术小记</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
