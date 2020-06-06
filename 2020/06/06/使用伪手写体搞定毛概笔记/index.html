@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="毛概课在接连上了五个月网课之后,终于到了期末,对此,毛概老师给全班做出指示: “收  给我收笔记!”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用伪手写体搞定毛概笔记">
+<meta property="og:url" content="http://yoursite.com/2020/06/06/%E4%BD%BF%E7%94%A8%E4%BC%AA%E6%89%8B%E5%86%99%E4%BD%93%E6%90%9E%E5%AE%9A%E6%AF%9B%E6%A6%82%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="(ﾟ∀。)">
+<meta property="og:description" content="毛概课在接连上了五个月网课之后,终于到了期末,对此,毛概老师给全班做出指示: “收  给我收笔记!”">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/%5DI%7DRW22GJ%7B%401NL7JYIE%2483C.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/%5DI%7DRW22GJ%7B%401NL7JYIE%2483C.png?q-sign-algorithm=sha1&q-ak=AKIDTqxuzpgqyLfkcJ55B0b9YHFzUzIUnsne&q-sign-time=1591427517;1591434717&q-key-time=1591427517;1591434717&q-header-list=&q-url-param-list=&q-signature=f0368d4d204b52c72a8188eb1e750cecf6bc28e4">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/hongshezhi%20.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/2020%E5%B9%B46%E6%9C%886%E6%97%A53.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200606154923.jpg">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/2020%E5%B9%B46%E6%9C%886%E6%97%A515%E7%82%B951%E5%88%86.jpg">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/K%607_8GUVFXF0%24PQU81VDCUK.jpg">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200606161805.jpg">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200606161822.jpg">
+<meta property="article:published_time" content="2020-06-06T05:41:39.000Z">
+<meta property="article:modified_time" content="2020-06-06T08:34:19.355Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="手写体">
+<meta property="article:tag" content="word 宏命令">
+<meta property="article:tag" content="摸鱼">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/%5DI%7DRW22GJ%7B%401NL7JYIE%2483C.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/06/06/%E4%BD%BF%E7%94%A8%E4%BC%AA%E6%89%8B%E5%86%99%E4%BD%93%E6%90%9E%E5%AE%9A%E6%AF%9B%E6%A6%82%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>使用伪手写体搞定毛概笔记 | (ﾟ∀。)</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="(ﾟ∀。)" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">(ﾟ∀。)</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/06/%E4%BD%BF%E7%94%A8%E4%BC%AA%E6%89%8B%E5%86%99%E4%BD%93%E6%90%9E%E5%AE%9A%E6%AF%9B%E6%A6%82%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="嘿, 这里是私人空间!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="(ﾟ∀。)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用伪手写体搞定毛概笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-06 13:41:39 / 修改时间：16:34:19" itemprop="dateCreated datePublished" datetime="2020-06-06T13:41:39+08:00">2020-06-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%B0%8F%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">技术小记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%B0%8F%E8%AE%B0/%E5%BF%AB%E4%B9%90%E6%91%B8%E9%B1%BC/" itemprop="url" rel="index"><span itemprop="name">快乐摸鱼</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>毛概课在接连上了五个月网课之后,终于到了期末,对此,毛概老师给全班做出指示: “收  给我收笔记!” </p>
+<a id="more"></a>
+
+<h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>众所周知, 大学的思政课笔记是最无聊虽没意义的形式主义了.</p>
+<p>尤其是他还要求是手写的情况下.</p>
+<p>尤其是手写的笔记还要拍照提交的情况下.</p>
+<p><dev>不会吧不会吧, 不会真的有人还在用纸笔记笔记吧? 🐶<dev/></p>
+<p>受亲爱的<a href="https://moefactory.com/" target="_blank" rel="noopener">小梦同学</a>提点, 我们来研究一下怎么<strong>仿造手写体</strong>打印材料.</p>
+<p><strong>重要提醒</strong></p>
+<p>由于打印机本身的限制, 实物还是肉眼可见地分辨出伪手写稿. 本学期因为以前的影响只要求把笔记拍照上传检查, 比较好蒙混过关🤔</p>
+<p>如果是线下查收, 还是换个摸鱼方法吧….</p>
+<p>本方法无需编程基础. </p>
+<h2 id="开冲"><a href="#开冲" class="headerlink" title="开冲"></a>开冲</h2><h3 id="Step1-生成自己的手写字体"><a href="#Step1-生成自己的手写字体" class="headerlink" title="Step1. 生成自己的手写字体"></a>Step1. 生成自己的手写字体</h3><p>北京大学计算机科学技术研究所有一个项目<a href="http://59.108.48.27/flexifont-chn/login/" target="_blank" rel="noopener">Flexifont字库</a>, 可以实现自己的字库. 点开注册登录, 根据提示下载模板, 打印书写, 拍照生成就可以了. </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/%5DI%7DRW22GJ%7B%401NL7JYIE%2483C.png" alt=""></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/%5DI%7DRW22GJ%7B%401NL7JYIE%2483C.png?q-sign-algorithm=sha1&q-ak=AKIDTqxuzpgqyLfkcJ55B0b9YHFzUzIUnsne&q-sign-time=1591427517;1591434717&q-key-time=1591427517;1591434717&q-header-list=&q-url-param-list=&q-signature=f0368d4d204b52c72a8188eb1e750cecf6bc28e4" alt=""></p>
+<p>如图, 下载不同字数的模板, 打印出来填好,  上传生成即可.</p>
+<p>不过我没整这一步, 直接在字库分享里面下了别人的, 谢谢张建同学.</p>
+<p>下载好ttf文件后导入系统文件夹(C:\Windows\Fonts)即可.</p>
+<h3 id="Step2-设置-Word-宏命令"><a href="#Step2-设置-Word-宏命令" class="headerlink" title="Step2. 设置 Word 宏命令"></a>Step2. 设置 Word 宏命令</h3><p>参考了 <a href="https://www.zhihu.com/question/20308770" target="_blank" rel="noopener">这个问题 </a>下的回答</p>
+<p>在Word中依次点击 “文件 -&gt; 选项 -&gt; 信任中心 -&gt; 信任中心设置 -&gt; 宏设置” 在右侧选中 “启用所有宏”.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/hongshezhi%20.png" alt="宏设置"></p>
+<p><strong>回到主界面, 视图 - 宏 - 查看宏</strong></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/2020%E5%B9%B46%E6%9C%886%E6%97%A53.png" alt="宏代码编写1"></p>
+<p>输入方案名,新建, 并在弹出的窗口中插入以下代码</p>
+<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">' 注意是插入 不是直接把原来的替换掉哦</span></span><br><span class="line">    <span class="keyword">Dim</span> R_Character <span class="keyword">As</span> Range</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> FontSize(<span class="number">5</span>)</span><br><span class="line">	<span class="comment">' 字体大小在5个值之间进行波动，可以改写 </span></span><br><span class="line">	<span class="comment">' 个人建议 如果纸张线条间距为8mm, 字号设置为16左右比较合适</span></span><br><span class="line">    FontSize(<span class="number">1</span>) = <span class="string">"15.5"</span></span><br><span class="line">    FontSize(<span class="number">2</span>) = <span class="string">"15"</span></span><br><span class="line">    FontSize(<span class="number">3</span>) = <span class="string">"16"</span></span><br><span class="line">    FontSize(<span class="number">4</span>) = <span class="string">"17"</span></span><br><span class="line">    FontSize(<span class="number">5</span>) = <span class="string">"17.5"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> FontName(<span class="number">3</span>)</span><br><span class="line">    <span class="comment">'字体名称在三种字体之间进行波动，可改写，但需要保证系统拥有下列字体</span></span><br><span class="line">	FontName(<span class="number">1</span>) = <span class="string">"宋体"</span></span><br><span class="line">	FontName(<span class="number">2</span>) = <span class="string">"微软雅黑"</span></span><br><span class="line">	FontName(<span class="number">3</span>) = <span class="string">"黑体"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> ParagraphSpace(<span class="number">5</span>)</span><br><span class="line">	<span class="comment">'行间距 在一定以下值中均等分布，可改写 </span></span><br><span class="line">	<span class="comment">' 个人建议 如果纸张线条间距为8mm, 字号设置为23左右比较合适, 并且不建议波动过大</span></span><br><span class="line">    ParagraphSpace(<span class="number">1</span>) = <span class="string">"22"</span></span><br><span class="line">    ParagraphSpace(<span class="number">2</span>) = <span class="string">"22.5"</span></span><br><span class="line">    ParagraphSpace(<span class="number">3</span>) = <span class="string">"23"</span></span><br><span class="line">    ParagraphSpace(<span class="number">4</span>) = <span class="string">"23.5"</span></span><br><span class="line">    ParagraphSpace(<span class="number">5</span>) = <span class="string">"24"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">'下面是功能代码 不想要什么直接删除就行</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">For</span> <span class="keyword">Each</span> R_Character <span class="keyword">In</span> ActiveDocument.Characters</span><br><span class="line"></span><br><span class="line">        VBA.Randomize</span><br><span class="line"></span><br><span class="line">        R_Character.Font.Name = FontName(Int(VBA.Rnd * <span class="number">3</span>) + <span class="number">1</span>)</span><br><span class="line">	<span class="comment">'上面一行是随机变换字体,不想要可删除</span></span><br><span class="line">        R_Character.Font.Size = FontSize(Int(VBA.Rnd * <span class="number">5</span>) + <span class="number">1</span>)</span><br><span class="line">	<span class="comment">'上面一行是随机变换字体大小,不想要可删除</span></span><br><span class="line">        R_Character.Font.Position = Int(VBA.Rnd * <span class="number">3</span>) + <span class="number">1</span></span><br><span class="line">	<span class="comment">'上面一行对每个字随机上下微调,不想要可删除</span></span><br><span class="line">        R_Character.Font.Spacing = <span class="number">0</span></span><br><span class="line">	<span class="comment">'上面一行不要修改</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Next</span></span><br><span class="line"></span><br><span class="line">    Application.ScreenUpdating = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">For</span> <span class="keyword">Each</span> Cur_Paragraph <span class="keyword">In</span> ActiveDocument.Paragraphs</span><br><span class="line">	<span class="comment">'上面三行不要修改</span></span><br><span class="line">        Cur_Paragraph.LineSpacing = ParagraphSpace(Int(VBA.Rnd * <span class="number">5</span>) + <span class="number">1</span>)</span><br><span class="line">	<span class="comment">'上面一行对每个行间距微调,不想要可删除</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Next</span></span><br><span class="line">        Application.ScreenUpdating = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p>修改后如图, 记得要把代码16-19行换成你自己的手写体</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200606154923.jpg" alt="代码修改如下"></p>
+<p>点击上面的运行按钮(或者是个小绿三角) 等待</p>
+<p>不出意外结果如下</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/2020%E5%B9%B46%E6%9C%886%E6%97%A515%E7%82%B951%E5%88%86.jpg" alt="记得要把字体换成自己的手写体哦"></p>
+<p>记得把字体换成不同但相近的手写体, 别想现在一样丑不拉几的</p>
+<h3 id="Step3-设置页面与段落"><a href="#Step3-设置页面与段落" class="headerlink" title="Step3. 设置页面与段落"></a>Step3. 设置页面与段落</h3><p>准备好打印机, 复印纸, 以及浪费很多纸张的决心, 开始下一步.</p>
+<p><del>当然你要实现准备好电子笔记, 你不会真的没有记吧?<del/></p>
+<h4 id="字体字号"><a href="#字体字号" class="headerlink" title="字体字号"></a>字体字号</h4><p>在上一步我们应该是基本解决了这个问题, 如果没有, 若纸张线条间距为8mm, 字号设置为16左右比较合适.</p>
+<p>word 中字号的单位是磅, 约为0.3528毫米.也就是说16的字号打印出来大约是5.645毫米高.</p>
+<p>此外可以试一下全部用 <strong>粗体</strong> , 因为我用的字体比较纤细, 看着太假</p>
+<p>多试试, 不要怕废纸</p>
+<h4 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h4><p>全选, 右键段落, 设置行间距与段间距.</p>
+<p>间距一栏下</p>
+<p><strong>段前段后:</strong>全部设置成0 空白也要再设置一次</p>
+<p><strong>行距:</strong> 选择固定值, 这里单位依旧是磅数, 如果直线相隔8mm的话大约设置成23磅(23*0.35=8.1144‬)</p>
+<h4 id="页面"><a href="#页面" class="headerlink" title="页面"></a>页面</h4><p>word主页面 - 布局 - 页边距&amp;纸张大小</p>
+<p>自己量一量吧, 上边距是到第一行的<strong>字的上沿</strong>, 下边距是最后一行<strong>字的下沿</strong></p>
+<p>多试试, 不要怕废纸</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/K%607_8GUVFXF0%24PQU81VDCUK.jpg" alt="这么多全是浪费掉的"></p>
+<h3 id="Step4-其他作假手段"><a href="#Step4-其他作假手段" class="headerlink" title="Step4. 其他作假手段"></a>Step4. 其他作假手段</h3><ol>
+<li><p>全部用粗体, 生成的字体过于纤细</p>
+</li>
+<li><p>切换字体确实有效,但是字体风格不能相差太大</p>
+</li>
+<li><p>扫描后对PDF做一下黑白处理, 更难发现</p>
+<p>另外推荐使用app Scanbot扫描, 吊打某某扫描王</p>
+</li>
+<li><p>通过<a href="https://www.ilovepdf.com/compress_pdf" target="_blank" rel="noopener">这个网址</a>对PDF进行全损压缩, 直接挑压缩率最高的那个选项(斜眼笑)</p>
+</li>
+</ol>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>成品还是很满意滴~ </p>
+<p>线上检查的话应该足够以假乱真了吧👌</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200606161805.jpg" alt="效果图1"></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200606161822.jpg" alt="效果图2"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><p>听说Github上<a href="https://link.zhihu.com/?target=https%3A//github.com/Gsllchb/Handright">这个项目</a>可以进一步微调字体效果,实现同字不同样</p>
+</li>
+<li><p>使用喷墨式打印机应该会稍微好一些</p>
+</li>
+<li><p>学到了磅数这一没什么卵用的知识</p>
+</li>
+<li><p>为了本篇传图开了腾讯云的COS, 终于有图床了</p>
+</li>
+<li><p>其实笔记最好还是自己平时带着记比较好</p>
+<p><del>但是这当然是不可能的啊哈哈哈哈<del/></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%89%8B%E5%86%99%E4%BD%93/" rel="tag"># 手写体</a>
+              <a href="/tags/word-%E5%AE%8F%E5%91%BD%E4%BB%A4/" rel="tag"># word 宏命令</a>
+              <a href="/tags/%E6%91%B8%E9%B1%BC/" rel="tag"># 摸鱼</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/" rel="prev" title="操作系统之进程线程">
+      <i class="fa fa-chevron-left"></i> 操作系统之进程线程
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#起源"><span class="nav-number">1.</span> <span class="nav-text">起源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开冲"><span class="nav-number">2.</span> <span class="nav-text">开冲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-生成自己的手写字体"><span class="nav-number">2.1.</span> <span class="nav-text">Step1. 生成自己的手写字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-设置-Word-宏命令"><span class="nav-number">2.2.</span> <span class="nav-text">Step2. 设置 Word 宏命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-设置页面与段落"><span class="nav-number">2.3.</span> <span class="nav-text">Step3. 设置页面与段落</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字体字号"><span class="nav-number">2.3.1.</span> <span class="nav-text">字体字号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#段落"><span class="nav-number">2.3.2.</span> <span class="nav-text">段落</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面"><span class="nav-number">2.3.3.</span> <span class="nav-text">页面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step4-其他作假手段"><span class="nav-number">2.4.</span> <span class="nav-text">Step4. 其他作假手段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果"><span class="nav-number">3.</span> <span class="nav-text">效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">嘿, 这里是私人空间!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">6k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">10 分钟</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
