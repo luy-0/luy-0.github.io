@@ -348,16 +348,16 @@
 <li><p>可预测性?</p>
 </li>
 </ol>
-<h3 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h3><h4 id="批处理系统-1"><a href="#批处理系统-1" class="headerlink" title="批处理系统"></a>批处理系统</h4><h5 id="1-FCFS-First-come-first-served"><a href="#1-FCFS-First-come-first-served" class="headerlink" title="1. FCFS (First-come first-served )"></a>1. FCFS (First-come first-served )</h5><p>字面意思  不解释</p>
+<h3 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h3><h4 id="批处理系统-1"><a href="#批处理系统-1" class="headerlink" title="批处理系统"></a>批处理系统</h4><h5 id="FCFS-First-come-first-served"><a href="#FCFS-First-come-first-served" class="headerlink" title="FCFS (First-come first-served )"></a>FCFS (First-come first-served )</h5><p>字面意思  不解释</p>
 <p><strong>优势</strong>:</p>
 <p>便于实现, 绝对平等</p>
 <p><strong>缺点:</strong></p>
 <p>低CPU利用率</p>
-<h5 id="2-Shortest-Job-First-短作业优先"><a href="#2-Shortest-Job-First-短作业优先" class="headerlink" title="2. Shortest Job First (短作业优先)"></a>2. Shortest Job First (短作业优先)</h5><p><strong>优势:</strong></p>
+<h5 id="Shortest-Job-First-短作业优先"><a href="#Shortest-Job-First-短作业优先" class="headerlink" title="Shortest Job First (短作业优先)"></a>Shortest Job First (短作业优先)</h5><p><strong>优势:</strong></p>
 <p>提高了CPU利用率</p>
 <p><strong>劣势:</strong></p>
 <p>对长作业不利</p>
-<h5 id="3-Shortest-remaining-time-next-剩余时间最短优先"><a href="#3-Shortest-remaining-time-next-剩余时间最短优先" class="headerlink" title="3. Shortest remaining time next 剩余时间最短优先"></a>3. Shortest remaining time next 剩余时间最短优先</h5><h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="交互式系统-1"><a href="#交互式系统-1" class="headerlink" title="交互式系统"></a>交互式系统</h4><h5 id="4-Round-Robin-时间片轮转"><a href="#4-Round-Robin-时间片轮转" class="headerlink" title="4. Round Robin (时间片轮转)"></a>4. Round Robin (时间片轮转)</h5><ul>
+<h5 id="Shortest-remaining-time-next-剩余时间最短优先"><a href="#Shortest-remaining-time-next-剩余时间最短优先" class="headerlink" title="Shortest remaining time next 剩余时间最短优先"></a>Shortest remaining time next 剩余时间最短优先</h5><h4 id="交互式系统-1"><a href="#交互式系统-1" class="headerlink" title="交互式系统"></a>交互式系统</h4><h5 id="Round-Robin-时间片轮转"><a href="#Round-Robin-时间片轮转" class="headerlink" title="Round Robin (时间片轮转)"></a>Round Robin (时间片轮转)</h5><ul>
 <li>每个进程被分配时设置固定的时间轮片</li>
 <li>时间片用完或进程结束, 发生调度</li>
 </ul>
@@ -366,7 +366,7 @@
 <li>过短, CPU将浪费大量时间在频繁的切换上</li>
 <li>过长, 退化成FCFS算法</li>
 </ul>
-<h5 id="5-Priority-scheduling-优先级调度"><a href="#5-Priority-scheduling-优先级调度" class="headerlink" title="5. Priority scheduling (优先级调度)"></a>5. Priority scheduling (优先级调度)</h5><p>算法思想:</p>
+<h5 id="Priority-scheduling-优先级调度"><a href="#Priority-scheduling-优先级调度" class="headerlink" title="Priority scheduling (优先级调度)"></a>Priority scheduling (优先级调度)</h5><p>算法思想:</p>
 <ol>
 <li>优先调度优先级高的</li>
 <li>又优先级相同时, 采用其他算法(如FCFS)</li>
@@ -377,7 +377,7 @@
 <li>动态优先级, 变化</li>
 </ul>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200608155437.jpg" alt=""></p>
-<h5 id="6-Shortest-process-next-最短进程"><a href="#6-Shortest-process-next-最短进程" class="headerlink" title="6. Shortest process next (最短进程)"></a>6. Shortest process next (最短进程)</h5><p>SJF算法更加适用于批处理系统, 因为每次的任务费时都是确定的.</p>
+<h5 id="Shortest-process-next-最短进程"><a href="#Shortest-process-next-最短进程" class="headerlink" title="Shortest process next (最短进程)"></a>Shortest process next (最短进程)</h5><p>SJF算法更加适用于批处理系统, 因为每次的任务费时都是确定的.</p>
 <p>Q : 对于交互式系统, 如何预估工作的用时?</p>
 <p>A : 根据其过往表现估算<br>$$<br>T_n = \alpha T_NaN + (1-\alpha)T_NaN<br>$$<br>如果 <code>α = 1/2</code> ,那么预估时间为:<br>$$<br>T_0\<br>\frac{T_0}{2}+\frac{T_1}{2}\<br>\frac{T_0}{4}+\frac{T_1}{4}+\frac{T_2}{2}\<br>\frac{T_0}{8}+\frac{T_1}{8}+\frac{T_2}{4}+\frac{T_3}{2}<br>$$</p>
 <h5 id="其他调度算法"><a href="#其他调度算法" class="headerlink" title="其他调度算法"></a>其他调度算法</h5><ol start="7">
