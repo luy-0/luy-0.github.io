@@ -274,7 +274,6 @@
         <p>毛概课在接连上了五个月网课之后,终于等到了期末!</p>
 <p>对此,毛概老师给全班做出指示: “收  给我收笔记!” </p>
 <a id="more"></a>
-
 <h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>众所周知, 大学的思政课笔记是最无聊虽没意义的形式主义了.</p>
 <p>尤其是他还要求是手写的情况下.</p>
 <p>尤其是手写的笔记还要拍照提交的情况下.</p>
@@ -296,7 +295,6 @@
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/2020%E5%B9%B46%E6%9C%886%E6%97%A53.png" alt="宏代码编写1"></p>
 <p>输入方案名,新建, 并在弹出的窗口中插入以下代码</p>
 <figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">' 注意是插入 不是直接把原来的替换掉哦</span></span><br><span class="line">    <span class="keyword">Dim</span> R_Character <span class="keyword">As</span> Range</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> FontSize(<span class="number">5</span>)</span><br><span class="line">	<span class="comment">' 字体大小在5个值之间进行波动，可以改写 </span></span><br><span class="line">	<span class="comment">' 个人建议 如果纸张线条间距为8mm, 字号设置为16左右比较合适</span></span><br><span class="line">    FontSize(<span class="number">1</span>) = <span class="string">"15.5"</span></span><br><span class="line">    FontSize(<span class="number">2</span>) = <span class="string">"15"</span></span><br><span class="line">    FontSize(<span class="number">3</span>) = <span class="string">"16"</span></span><br><span class="line">    FontSize(<span class="number">4</span>) = <span class="string">"17"</span></span><br><span class="line">    FontSize(<span class="number">5</span>) = <span class="string">"17.5"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> FontName(<span class="number">3</span>)</span><br><span class="line">    <span class="comment">'字体名称在三种字体之间进行波动，可改写，但需要保证系统拥有下列字体</span></span><br><span class="line">	FontName(<span class="number">1</span>) = <span class="string">"宋体"</span></span><br><span class="line">	FontName(<span class="number">2</span>) = <span class="string">"微软雅黑"</span></span><br><span class="line">	FontName(<span class="number">3</span>) = <span class="string">"黑体"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> ParagraphSpace(<span class="number">5</span>)</span><br><span class="line">	<span class="comment">'行间距 在一定以下值中均等分布，可改写 </span></span><br><span class="line">	<span class="comment">' 个人建议 如果纸张线条间距为8mm, 字号设置为23左右比较合适, 并且不建议波动过大</span></span><br><span class="line">    ParagraphSpace(<span class="number">1</span>) = <span class="string">"22"</span></span><br><span class="line">    ParagraphSpace(<span class="number">2</span>) = <span class="string">"22.5"</span></span><br><span class="line">    ParagraphSpace(<span class="number">3</span>) = <span class="string">"23"</span></span><br><span class="line">    ParagraphSpace(<span class="number">4</span>) = <span class="string">"23.5"</span></span><br><span class="line">    ParagraphSpace(<span class="number">5</span>) = <span class="string">"24"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">'下面是功能代码 不想要什么直接删除就行</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">For</span> <span class="keyword">Each</span> R_Character <span class="keyword">In</span> ActiveDocument.Characters</span><br><span class="line"></span><br><span class="line">        VBA.Randomize</span><br><span class="line"></span><br><span class="line">        R_Character.Font.Name = FontName(Int(VBA.Rnd * <span class="number">3</span>) + <span class="number">1</span>)</span><br><span class="line">	<span class="comment">'上面一行是随机变换字体,不想要可删除</span></span><br><span class="line">        R_Character.Font.Size = FontSize(Int(VBA.Rnd * <span class="number">5</span>) + <span class="number">1</span>)</span><br><span class="line">	<span class="comment">'上面一行是随机变换字体大小,不想要可删除</span></span><br><span class="line">        R_Character.Font.Position = Int(VBA.Rnd * <span class="number">3</span>) + <span class="number">1</span></span><br><span class="line">	<span class="comment">'上面一行对每个字随机上下微调,不想要可删除</span></span><br><span class="line">        R_Character.Font.Spacing = <span class="number">0</span></span><br><span class="line">	<span class="comment">'上面一行不要修改</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Next</span></span><br><span class="line"></span><br><span class="line">    Application.ScreenUpdating = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">For</span> <span class="keyword">Each</span> Cur_Paragraph <span class="keyword">In</span> ActiveDocument.Paragraphs</span><br><span class="line">	<span class="comment">'上面三行不要修改</span></span><br><span class="line">        Cur_Paragraph.LineSpacing = ParagraphSpace(Int(VBA.Rnd * <span class="number">5</span>) + <span class="number">1</span>)</span><br><span class="line">	<span class="comment">'上面一行对每个行间距微调,不想要可删除</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Next</span></span><br><span class="line">        Application.ScreenUpdating = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
 <p>修改后如图, 记得要把代码16-19行换成你自己的手写体</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200606154923.jpg" alt="代码修改如下"></p>
 <p>点击上面的运行按钮(或者是个小绿三角) 等待</p>
@@ -384,6 +382,11 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -503,7 +506,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">21 分钟</span>
+    <span title="站点阅读时长">22 分钟</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -583,6 +586,24 @@ setInterval("createtime()",250);
   
 
   
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>

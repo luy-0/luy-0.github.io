@@ -264,7 +264,6 @@
       
         <p> 第一篇博客~ 开心</p>
 <a id="more"></a>
-
 <h3 id="简单记录一下搭建过程"><a href="#简单记录一下搭建过程" class="headerlink" title="简单记录一下搭建过程"></a>简单记录一下搭建过程</h3><p>博客基于<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo框架</a> + Github，域名当然是阿里云了 （6元一年他不香吗hhh）</p>
 <p>感谢舍友 <a href="https://www.117503445.top/" target="_blank" rel="noopener">@117503445</a> 指名了博客搭建的主要方向，搭建过程中主要参考了知乎用户 @吴润 的<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">这篇文章</a>，基本很顺畅地搭建起来了，一并致谢。</p>
 <ol>
@@ -330,6 +329,11 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -449,7 +453,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">21 分钟</span>
+    <span title="站点阅读时长">22 分钟</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -529,6 +533,24 @@ setInterval("createtime()",250);
   
 
   
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>

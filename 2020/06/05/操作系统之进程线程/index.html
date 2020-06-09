@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="未完成 本章节包括三个小节  进程 (Processes) 线程 (Threads) 调度 (Scheduling)">
+  <meta name="description" content="本章节包括三个小节  进程 (Processes) 线程 (Threads) 调度 (Scheduling)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统之进程线程">
 <meta property="og:url" content="http://yoursite.com/2020/06/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/index.html">
 <meta property="og:site_name" content="(ﾟ∀。)">
-<meta property="og:description" content="未完成 本章节包括三个小节  进程 (Processes) 线程 (Threads) 调度 (Scheduling)">
+<meta property="og:description" content="本章节包括三个小节  进程 (Processes) 线程 (Threads) 调度 (Scheduling)">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/%E8%BF%9B%E7%A8%8B%2C%20%E7%BA%BF%E7%A8%8B%2C%20%E8%B0%83%E5%BA%A6.png">
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/1.jpg">
@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200608155420.jpg">
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200608155427.jpg">
 <meta property="article:published_time" content="2020-06-05T09:06:22.000Z">
-<meta property="article:modified_time" content="2020-06-08T09:47:17.082Z">
+<meta property="article:modified_time" content="2020-06-09T06:13:58.037Z">
 <meta property="article:author" content="LUY">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="操作系统">
@@ -240,7 +240,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 17:47:17" itemprop="dateModified" datetime="2020-06-08T17:47:17+08:00">2020-06-08</time>
+                <time title="修改时间：2020-06-09 14:13:58" itemprop="dateModified" datetime="2020-06-09T14:13:58+08:00">2020-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,17 +285,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>未完成</strong></p>
-<p>本章节包括三个小节</p>
+        <p>本章节包括三个小节</p>
 <ol>
 <li>进程 (Processes)</li>
 <li>线程 (Threads)</li>
 <li>调度 (Scheduling)</li>
 </ol>
 <a id="more"></a>
-
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/%E8%BF%9B%E7%A8%8B%2C%20%E7%BA%BF%E7%A8%8B%2C%20%E8%B0%83%E5%BA%A6.png" alt=""></p>
-<h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><p>在本小节会涉及到：</p>
+<h1 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h1><p>在本小节会涉及到：</p>
 <ol>
 <li>CPU是如何工作的，并由此引入进程的概念与用途</li>
 <li>进程的生命周期：<ol>
@@ -311,7 +309,7 @@
 </ol>
 </li>
 </ol>
-<h3 id="进程的引入及概念"><a href="#进程的引入及概念" class="headerlink" title="进程的引入及概念"></a>进程的引入及概念</h3><p>本章的内容(包括进程线程调度IPC)在于探讨如何更高效地利用CPU. 尽管市面上早已采用了多核架构, 但下述分析均为单核CPU, 如果要考虑多核的情况会事先说明。</p>
+<h2 id="进程的引入及概念"><a href="#进程的引入及概念" class="headerlink" title="进程的引入及概念"></a>进程的引入及概念</h2><p>本章的内容(包括进程线程调度IPC)在于探讨如何更高效地利用CPU. 尽管市面上早已采用了多核架构, 但下述分析均为单核CPU, 如果要考虑多核的情况会事先说明。</p>
 <p>既然是单核CPU，那么在同一时间刻CPU计算资源只能用在一个地方。如果我此时一边敲代码，一边听歌，一边挂QQ，那么实际上CPU的运行状态是在这些工作之间以毫秒级别的速度来回迅速切换，在宏观上造成几个工作同时进行的假象。也即是<strong>“微观串行，宏观并行”</strong>。<br>这样的情况我们被称为<strong>多道程序</strong> ，即同时有多个程序在执行中(宏观)，但实际上只有一个进程在使用CPU(微观)</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/1.jpg" alt="待配图1"></p>
 <p><strong>进程：</strong> an executing program, including the current values of the program counter, register, and variables.<br>进程是进行中的程序。编写好的代码(.c, .py)或可运行的文件(.exe, .bat) 被成为程序。当他们被运行时才被称为进程。<br>一个进程包括：</p>
@@ -321,7 +319,7 @@
 <li>data section,数据部分</li>
 </ul>
 <p>那么显然，多道程序中每个程序都拥有自己的PC、stack…</p>
-<h3 id="进程的生命周期"><a href="#进程的生命周期" class="headerlink" title="进程的生命周期"></a>进程的生命周期</h3><h4 id="进程的状态与转换"><a href="#进程的状态与转换" class="headerlink" title="进程的状态与转换"></a>进程的状态与转换</h4><h5 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h5><p>进程是一个动态的客体，可以被创建销毁等。进程总共拥有五种生命状态(state)：</p>
+<h2 id="进程的生命周期"><a href="#进程的生命周期" class="headerlink" title="进程的生命周期"></a>进程的生命周期</h2><h3 id="进程的状态与转换"><a href="#进程的状态与转换" class="headerlink" title="进程的状态与转换"></a>进程的状态与转换</h3><h4 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h4><p>进程是一个动态的客体，可以被创建销毁等。进程总共拥有五种生命状态(state)：</p>
 <ol>
 <li>new               创建</li>
 <li>ready             就绪</li>
@@ -329,7 +327,7 @@
 <li>waiting/blocked   阻塞/等待态</li>
 <li>terminated/exit        销毁</li>
 </ol>
-<h5 id="状态之间转换"><a href="#状态之间转换" class="headerlink" title="状态之间转换"></a>状态之间转换</h5><ul>
+<h4 id="状态之间转换"><a href="#状态之间转换" class="headerlink" title="状态之间转换"></a>状态之间转换</h4><ul>
 <li>new -&gt; ready</li>
 <li>ready -&gt; running</li>
 <li>running -&gt; ready</li>
@@ -338,13 +336,13 @@
 <li>blocked -&gt; ready</li>
 </ul>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/2.jpg" alt="状态转换2"></p>
-<h4 id="进程的创建"><a href="#进程的创建" class="headerlink" title="进程的创建"></a>进程的创建</h4><h5 id="进程的创建场景"><a href="#进程的创建场景" class="headerlink" title="进程的创建场景:"></a>进程的创建场景:</h5><ol>
+<h3 id="进程的创建"><a href="#进程的创建" class="headerlink" title="进程的创建"></a>进程的创建</h3><h4 id="进程的创建场景"><a href="#进程的创建场景" class="headerlink" title="进程的创建场景:"></a>进程的创建场景:</h4><ol>
 <li>系统初始化</li>
 <li>系统调用</li>
 <li>用户命令</li>
 <li>批处理作业的初始化</li>
 </ol>
-<h5 id="父子进程"><a href="#父子进程" class="headerlink" title="父子进程"></a>父子进程</h5><ul>
+<h4 id="父子进程"><a href="#父子进程" class="headerlink" title="父子进程"></a>父子进程</h4><ul>
 <li>父进程不断创建子进程,由此形成进程树</li>
 <li>子进程<strong>可以</strong>继承父的资源(也可以不继承或半继承)</li>
 <li>父子进程可以同时执行,也有可能父等待子</li>
@@ -354,7 +352,7 @@
 </li>
 </ul>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/3.jpg" alt="Unix进程树3"></p>
-<h4 id="进程的销毁"><a href="#进程的销毁" class="headerlink" title="进程的销毁"></a>进程的销毁</h4><h5 id="进程销毁的场景"><a href="#进程销毁的场景" class="headerlink" title="进程销毁的场景"></a>进程销毁的场景</h5><ol>
+<h3 id="进程的销毁"><a href="#进程的销毁" class="headerlink" title="进程的销毁"></a>进程的销毁</h3><h4 id="进程销毁的场景"><a href="#进程销毁的场景" class="headerlink" title="进程销毁的场景"></a>进程销毁的场景</h4><ol>
 <li><p>Normal exit    正常退出 (自愿)</p>
 </li>
 <li><p>Error exit        错误退出 (自愿)</p>
@@ -366,12 +364,12 @@
 <p>eg: 父进程, 系统, 其他优先级更高的进程</p>
 </li>
 </ol>
-<h5 id="级联终止"><a href="#级联终止" class="headerlink" title="级联终止"></a>级联终止</h5><p>​    当父进程退出时,子进程必须退出.</p>
-<h4 id="进程的切换"><a href="#进程的切换" class="headerlink" title="进程的切换"></a>进程的切换</h4><ul>
+<h4 id="级联终止"><a href="#级联终止" class="headerlink" title="级联终止"></a>级联终止</h4><p>​    当父进程退出时,子进程必须退出.</p>
+<h3 id="进程的切换"><a href="#进程的切换" class="headerlink" title="进程的切换"></a>进程的切换</h3><ul>
 <li>进程的切换非常频繁, 一般在毫秒级</li>
 <li>进程切换需要耗费时间, 称为Gap</li>
 </ul>
-<h5 id="进程切换的场景"><a href="#进程切换的场景" class="headerlink" title="进程切换的场景"></a>进程切换的场景</h5><ol>
+<h4 id="进程切换的场景"><a href="#进程切换的场景" class="headerlink" title="进程切换的场景"></a>进程切换的场景</h4><ol>
 <li><p>时钟中断</p>
 <p>eg 时间轮片用尽</p>
 </li>
@@ -387,16 +385,16 @@
 <p>管理程序调用</p>
 </li>
 </ol>
-<h5 id="上下文切换"><a href="#上下文切换" class="headerlink" title="上下文切换"></a>上下文切换</h5><p>切出时, 必须保存该进程目前的环境.切入时,必须加载先前的环境</p>
+<h4 id="上下文切换"><a href="#上下文切换" class="headerlink" title="上下文切换"></a>上下文切换</h4><p>切出时, 必须保存该进程目前的环境.切入时,必须加载先前的环境</p>
 <p>使用 PCB(Processing Control Block, 进程表,进程控制块) 来储存进程的环境</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/4.jpg" alt=""></p>
-<h5 id="进程调度队列"><a href="#进程调度队列" class="headerlink" title="进程调度队列"></a>进程调度队列</h5><p>这一块没听 似乎是调度队列包括以下三种</p>
+<h4 id="进程调度队列"><a href="#进程调度队列" class="headerlink" title="进程调度队列"></a>进程调度队列</h4><p>这一块没听 似乎是调度队列包括以下三种</p>
 <ol>
 <li>Job queue 系统中所有进程的队列</li>
 <li>Ready queue 主存中所有进程的队列, 拿到CPU就跑的那种</li>
 <li>Device queues 等待IO设备的进程队列</li>
 </ol>
-<h5 id="PCB"><a href="#PCB" class="headerlink" title="PCB"></a><strong>PCB</strong></h5><p>包括:</p>
+<h4 id="PCB"><a href="#PCB" class="headerlink" title="PCB"></a>PCB</h4><p>包括:</p>
 <ol>
 <li>进程管理数据<ul>
 <li>寄存器</li>
@@ -442,7 +440,7 @@
 </ol>
 </blockquote>
 <hr>
-<h2 id="Threads"><a href="#Threads" class="headerlink" title="Threads"></a>Threads</h2><p>在本小节会涉及到：</p>
+<h1 id="Threads"><a href="#Threads" class="headerlink" title="Threads"></a>Threads</h1><p>在本小节会涉及到：</p>
 <ol>
 <li>了解进程切换中的缺陷（时空开销过大），并由此引入线程的概念及用途</li>
 <li>了解线程资源的私有与共享（有助于解决上一点的缺陷）, 并认识线程的优势</li>
@@ -454,7 +452,7 @@
 </ol>
 </li>
 </ol>
-<h3 id="线程的引入及概念"><a href="#线程的引入及概念" class="headerlink" title="线程的引入及概念"></a>线程的引入及概念</h3><p>你看进程之间切换是不是要保存好多东西,时空开销过大. 线程是轻量级的进程, 它拥有的环境没有进程那么多, 所以线程间的切换更加轻便.</p>
+<h2 id="线程的引入及概念"><a href="#线程的引入及概念" class="headerlink" title="线程的引入及概念"></a>线程的引入及概念</h2><p>你看进程之间切换是不是要保存好多东西,时空开销过大. 线程是轻量级的进程, 它拥有的环境没有进程那么多, 所以线程间的切换更加轻便.</p>
 <ul>
 <li>进程是为了避免等待IO的时间, 线程是为了缩短进程切换中的浪费的时间</li>
 <li>线程是隶属于某一进程, 或者说<em>( traditional or heavyweight )</em>进程是仅有一个线程的进程</li>
@@ -464,8 +462,8 @@
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/5.jpg" alt="进程与线程5"></p>
 <p>如上图, a图中每个进程都拥有一个线程, 这些线程拥有不同的地址空间. b图进程拥有3个线程, 共享一个进程地址.因此线程之间的切换会更加轻量.</p>
 <p>但是也由于线程之间没有数据保护, 所以要防止线程间相互修改数据.</p>
-<h3 id="进程资源的私有与共享"><a href="#进程资源的私有与共享" class="headerlink" title="进程资源的私有与共享"></a>进程资源的私有与共享</h3><p>对于同一个进程的不同线程(兄弟线程)来说:</p>
-<h5 id="共享的items"><a href="#共享的items" class="headerlink" title="共享的items"></a>共享的items</h5><ol>
+<h2 id="进程资源的私有与共享"><a href="#进程资源的私有与共享" class="headerlink" title="进程资源的私有与共享"></a>进程资源的私有与共享</h2><p>对于同一个进程的不同线程(兄弟线程)来说:</p>
+<h3 id="共享的items"><a href="#共享的items" class="headerlink" title="共享的items"></a>共享的items</h3><ol>
 <li>地址空间</li>
 <li>全局变量</li>
 <li>文件流</li>
@@ -474,7 +472,7 @@
 <li>信号量</li>
 <li>记账信息( Accounting information)</li>
 </ol>
-<h5 id="私有的items"><a href="#私有的items" class="headerlink" title="私有的items"></a>私有的items</h5><ul>
+<h3 id="私有的items"><a href="#私有的items" class="headerlink" title="私有的items"></a>私有的items</h3><ul>
 <li>PC</li>
 <li>寄存器(集)</li>
 <li>堆栈空间</li>
@@ -485,7 +483,7 @@
 <p>多线程运用在单核CPU上时并不能提升性能,反而因为线程切换而牺牲效率</p>
 </blockquote>
 <p>此处存疑: 无论单核多核, 线程切换不是总比进程切换高效吗?</p>
-<h3 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h3><p>与进程一致:</p>
+<h2 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h2><p>与进程一致:</p>
 <ol>
 <li>running</li>
 <li>blocked</li>
@@ -493,7 +491,7 @@
 <li>terminated</li>
 </ol>
 <p>我也不知道为什么没有new态, 可能太快忽略不计? ┑(￣Д ￣)┍</p>
-<h3 id="线程的优劣及应用场景"><a href="#线程的优劣及应用场景" class="headerlink" title="线程的优劣及应用场景"></a>线程的优劣及应用场景</h3><p>优势:</p>
+<h2 id="线程的优劣及应用场景"><a href="#线程的优劣及应用场景" class="headerlink" title="线程的优劣及应用场景"></a>线程的优劣及应用场景</h2><p>优势:</p>
 <ul>
 <li>占用空间小,切换时快捷</li>
 <li>划分的资源少, 创建销毁更加容易</li>
@@ -504,11 +502,12 @@
 <li>同时需要IO与处理的进程(eg 文字处理)</li>
 <li>大型服务器回应用户请求.  作业小而多</li>
 </ul>
-<h3 id="不同级别的线程"><a href="#不同级别的线程" class="headerlink" title="不同级别的线程"></a>不同级别的线程</h3><h4 id="User-level-Thread"><a href="#User-level-Thread" class="headerlink" title="User-level Thread"></a>User-level Thread</h4><p>用户级线程.</p>
+<h2 id="不同级别的线程"><a href="#不同级别的线程" class="headerlink" title="不同级别的线程"></a>不同级别的线程</h2><h3 id="User-level-Thread"><a href="#User-level-Thread" class="headerlink" title="User-level Thread"></a>User-level Thread</h3><p>用户级线程.</p>
 <p>对于线程的控制, 资源的分配都是由进程自己掌控. </p>
 <p>从内核角度, 系统只知进程, 感知不到其线程的存在.</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/7.jpg" alt="线程模型6"></p>
-<h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><ul>
+<p>优点</p>
+<ul>
 <li>可以在不支持线程的OS上实现线程.<ul>
 <li>OS管理进程表, 进程本身管理线程表</li>
 <li>管理效率更高, 相比内核管理时更少的函数调用</li>
@@ -517,20 +516,22 @@
 <li>不同进程的线程调度算法可以采取不同策略</li>
 <li>大大简化了内核的管理压力(需要管理的大量线程托付给进程管理了)</li>
 </ul>
-<h4 id="Kernel-level-Thread"><a href="#Kernel-level-Thread" class="headerlink" title="Kernel-level Thread"></a>Kernel-level Thread</h4><p>内核级线程</p>
+<h3 id="Kernel-level-Thread"><a href="#Kernel-level-Thread" class="headerlink" title="Kernel-level Thread"></a>Kernel-level Thread</h3><p>内核级线程</p>
 <p>线程还是属于进程, 但是线程的管理有OS负责</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/8.jpg" alt="待配图7"></p>
-<h5 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h5><ul>
+<p>优点</p>
+<ul>
 <li><p>内核管理全部的线程, 调度地更加灵活</p>
 <p>指: A进程的A1线程阻塞后, OS可以切换至A2线程 或B进程中的B1线程</p>
 <p><del>但是这不就是进程切换了吗哪儿是优点了啊喂</del>!</p>
 </li>
 </ul>
-<h4 id="Hybrid-Thread"><a href="#Hybrid-Thread" class="headerlink" title="Hybrid Thread"></a>Hybrid Thread</h4><p>混合级线程</p>
+<h3 id="Hybrid-Thread"><a href="#Hybrid-Thread" class="headerlink" title="Hybrid Thread"></a>Hybrid Thread</h3><p>混合级线程</p>
 <p>待配图</p>
 <p>就是一部分用户级一部分内核级</p>
 <p><del>其实我也没觉得好哪了</del></p>
-<h5 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h5><ul>
+<p>优点</p>
+<ul>
 <li>将用户级 内核级的优势相结合<ul>
 <li>内核级的模仿(mimic?)功能            //存疑 没懂想表达什么</li>
 <li>用户级的性能</li>
@@ -539,15 +540,15 @@
 <li>避免不必要的用户-内核转换</li>
 <li>Kernel assigns virtual processors to each process //存疑 没懂</li>
 </ul>
-<h4 id="Pop-up-Thread"><a href="#Pop-up-Thread" class="headerlink" title="Pop-up Thread"></a>Pop-up Thread</h4><p>弹出式线程</p>
+<h3 id="Pop-up-Thread"><a href="#Pop-up-Thread" class="headerlink" title="Pop-up Thread"></a>Pop-up Thread</h3><p>弹出式线程</p>
 <p>每当一个新消息(指外界请求)进入时, 进程弹出线程解决, 解决后销毁进程.</p>
 <p>适用于类批处理任务, 如大型服务器回应用户请求.  作业小而多</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/10.jpg" alt="配图10"></p>
-<h5 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h5><ul>
+<p>优势</p>
+<ul>
 <li>线程即用即弃, 没有切换, 也无需保存历史数据</li>
 </ul>
-<hr>
-<h2 id="Scheduling"><a href="#Scheduling" class="headerlink" title="Scheduling"></a>Scheduling</h2><p>在本小节会涉及到：</p>
+<h1 id="Scheduling"><a href="#Scheduling" class="headerlink" title="Scheduling"></a>Scheduling</h1><p>在本小节会涉及到：</p>
 <ol>
 <li>调度的概念<ol>
 <li>CPU密集型与IO密集型作业</li>
@@ -583,18 +584,18 @@
 <li>关于线程调度的一些补充</li>
 </ol>
 <p>需要说明的是，虽然进程调度与线程调度是两种东西，但算法的核心思想是一致的，这里不过分区分。</p>
-<h3 id="调度的概念"><a href="#调度的概念" class="headerlink" title="调度的概念"></a>调度的概念</h3><h4 id="CPU密集型任务与IO密集型任务"><a href="#CPU密集型任务与IO密集型任务" class="headerlink" title="CPU密集型任务与IO密集型任务"></a>CPU密集型任务与IO密集型任务</h4><p>如果一个任务更多地需要CPU资源 (例如Matlab, 大量的运算) 我们称之为CPU密集型任务.</p>
+<h2 id="调度的概念"><a href="#调度的概念" class="headerlink" title="调度的概念"></a>调度的概念</h2><h3 id="CPU密集型任务与IO密集型任务"><a href="#CPU密集型任务与IO密集型任务" class="headerlink" title="CPU密集型任务与IO密集型任务"></a>CPU密集型任务与IO密集型任务</h3><p>如果一个任务更多地需要CPU资源 (例如Matlab, 大量的运算) 我们称之为CPU密集型任务.</p>
 <p>如果一个任务更多地需要IO资源 (例如Word的打印任务(外设), 读写任务(外存)) 我们称之为CPU密集型任务.</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200608155404.jpg" alt="不同的任务种类"></p>
-<h4 id="调度的目的"><a href="#调度的目的" class="headerlink" title="调度的目的"></a>调度的目的</h4><p>还是考虑单核CPU, 在多道程序(即多个进程同时”工作”) 的情况下, 会出现不同进程同时需要CPU的情况. 这时候CPU的资源就需要合理分配.</p>
-<h4 id="什么时候需要调度"><a href="#什么时候需要调度" class="headerlink" title="什么时候需要调度?"></a>什么时候需要调度?</h4><ol>
+<h3 id="调度的目的"><a href="#调度的目的" class="headerlink" title="调度的目的"></a>调度的目的</h3><p>还是考虑单核CPU, 在多道程序(即多个进程同时”工作”) 的情况下, 会出现不同进程同时需要CPU的情况. 这时候CPU的资源就需要合理分配.</p>
+<h3 id="什么时候需要调度"><a href="#什么时候需要调度" class="headerlink" title="什么时候需要调度?"></a>什么时候需要调度?</h3><ol>
 <li>新进程的创建</li>
 <li>进程的退出</li>
 <li>某进程需要IO操作,</li>
 <li>IO设备申请CPU中断 (称之为IO中断)</li>
 </ol>
-<h4 id="调度的几个原则"><a href="#调度的几个原则" class="headerlink" title="调度的几个原则"></a>调度的几个原则</h4><p>我们希望什么样的调度算法?</p>
-<h5 id="All-System"><a href="#All-System" class="headerlink" title="All System"></a>All System</h5><ol>
+<h3 id="调度的几个原则"><a href="#调度的几个原则" class="headerlink" title="调度的几个原则"></a>调度的几个原则</h3><p>我们希望什么样的调度算法?</p>
+<h4 id="All-System"><a href="#All-System" class="headerlink" title="All System"></a>All System</h4><ol>
 <li><p>公平</p>
 <p>公平, 公平. 还是tmd公平</p>
 </li>
@@ -605,7 +606,7 @@
 <p>能够使系统中的各部件都保持busy</p>
 </li>
 </ol>
-<h5 id="批处理系统"><a href="#批处理系统" class="headerlink" title="批处理系统"></a>批处理系统</h5><ol>
+<h4 id="批处理系统"><a href="#批处理系统" class="headerlink" title="批处理系统"></a>批处理系统</h4><ol>
 <li><p>吞吐量</p>
 <p>每小时工作数</p>
 </li>
@@ -616,7 +617,7 @@
 <p>保持CPU始终忙碌</p>
 </li>
 </ol>
-<h5 id="交互式系统"><a href="#交互式系统" class="headerlink" title="交互式系统"></a>交互式系统</h5><ol>
+<h4 id="交互式系统"><a href="#交互式系统" class="headerlink" title="交互式系统"></a>交互式系统</h4><ol>
 <li><p>响应时间</p>
 <p>快速回应用户请求</p>
 </li>
@@ -624,23 +625,23 @@
 <p>满足用户请求</p>
 </li>
 </ol>
-<h5 id="实时系统"><a href="#实时系统" class="headerlink" title="实时系统"></a>实时系统</h5><ol>
+<h4 id="实时系统"><a href="#实时系统" class="headerlink" title="实时系统"></a>实时系统</h4><ol>
 <li><p>满足deadline</p>
 <p>保证时效性</p>
 </li>
 <li><p>可预测性?</p>
 </li>
 </ol>
-<h3 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h3><h4 id="批处理系统-1"><a href="#批处理系统-1" class="headerlink" title="批处理系统"></a>批处理系统</h4><h5 id="FCFS-First-come-first-served"><a href="#FCFS-First-come-first-served" class="headerlink" title="FCFS (First-come first-served )"></a>FCFS (First-come first-served )</h5><p>字面意思  不解释</p>
+<h2 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h2><h3 id="批处理系统-1"><a href="#批处理系统-1" class="headerlink" title="批处理系统"></a>批处理系统</h3><h4 id="FCFS-First-come-first-served"><a href="#FCFS-First-come-first-served" class="headerlink" title="FCFS (First-come first-served )"></a>FCFS (First-come first-served )</h4><p>字面意思  不解释</p>
 <p><strong>优势</strong>:</p>
 <p>便于实现, 绝对平等</p>
 <p><strong>缺点:</strong></p>
 <p>低CPU利用率</p>
-<h5 id="Shortest-Job-First-短作业优先"><a href="#Shortest-Job-First-短作业优先" class="headerlink" title="Shortest Job First (短作业优先)"></a>Shortest Job First (短作业优先)</h5><p><strong>优势:</strong></p>
+<h4 id="Shortest-Job-First-短作业优先"><a href="#Shortest-Job-First-短作业优先" class="headerlink" title="Shortest Job First (短作业优先)"></a>Shortest Job First (短作业优先)</h4><p><strong>优势:</strong></p>
 <p>提高了CPU利用率</p>
 <p><strong>劣势:</strong></p>
 <p>对长作业不利</p>
-<h5 id="Shortest-remaining-time-next-剩余时间最短优先"><a href="#Shortest-remaining-time-next-剩余时间最短优先" class="headerlink" title="Shortest remaining time next 剩余时间最短优先"></a>Shortest remaining time next 剩余时间最短优先</h5><h4 id="交互式系统-1"><a href="#交互式系统-1" class="headerlink" title="交互式系统"></a>交互式系统</h4><h5 id="Round-Robin-时间片轮转"><a href="#Round-Robin-时间片轮转" class="headerlink" title="Round Robin (时间片轮转)"></a>Round Robin (时间片轮转)</h5><ul>
+<h4 id="Shortest-remaining-time-next-剩余时间最短优先"><a href="#Shortest-remaining-time-next-剩余时间最短优先" class="headerlink" title="Shortest remaining time next 剩余时间最短优先"></a>Shortest remaining time next 剩余时间最短优先</h4><h3 id="交互式系统-1"><a href="#交互式系统-1" class="headerlink" title="交互式系统"></a>交互式系统</h3><h4 id="Round-Robin-时间片轮转"><a href="#Round-Robin-时间片轮转" class="headerlink" title="Round Robin (时间片轮转)"></a>Round Robin (时间片轮转)</h4><ul>
 <li>每个进程被分配时设置固定的时间轮片</li>
 <li>时间片用完或进程结束, 发生调度</li>
 </ul>
@@ -649,7 +650,7 @@
 <li>过短, CPU将浪费大量时间在频繁的切换上</li>
 <li>过长, 退化成FCFS算法</li>
 </ul>
-<h5 id="Priority-scheduling-优先级调度"><a href="#Priority-scheduling-优先级调度" class="headerlink" title="Priority scheduling (优先级调度)"></a>Priority scheduling (优先级调度)</h5><p>算法思想:</p>
+<h4 id="Priority-scheduling-优先级调度"><a href="#Priority-scheduling-优先级调度" class="headerlink" title="Priority scheduling (优先级调度)"></a>Priority scheduling (优先级调度)</h4><p>算法思想:</p>
 <ol>
 <li>优先调度优先级高的</li>
 <li>又优先级相同时, 采用其他算法(如FCFS)</li>
@@ -660,10 +661,16 @@
 <li>动态优先级, 变化</li>
 </ul>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200608155437.jpg" alt=""></p>
-<h5 id="Shortest-process-next-最短进程"><a href="#Shortest-process-next-最短进程" class="headerlink" title="Shortest process next (最短进程)"></a>Shortest process next (最短进程)</h5><p>SJF算法更加适用于批处理系统, 因为每次的任务费时都是确定的.</p>
+<h4 id="Shortest-process-next-最短进程"><a href="#Shortest-process-next-最短进程" class="headerlink" title="Shortest process next (最短进程)"></a>Shortest process next (最短进程)</h4><p>SJF算法更加适用于批处理系统, 因为每次的任务费时都是确定的.</p>
 <p>Q : 对于交互式系统, 如何预估工作的用时?</p>
-<p>A : 根据其过往表现估算<br>$$<br>T_n = \alpha T_NaN + (1-\alpha)T_NaN<br>$$<br>如果 <code>α = 1/2</code> ,那么预估时间为:<br>$$<br>T_0\<br>\frac{T_0}{2}+\frac{T_1}{2}\<br>\frac{T_0}{4}+\frac{T_1}{4}+\frac{T_2}{2}\<br>\frac{T_0}{8}+\frac{T_1}{8}+\frac{T_2}{4}+\frac{T_3}{2}<br>$$</p>
-<h5 id="其他调度算法"><a href="#其他调度算法" class="headerlink" title="其他调度算法"></a>其他调度算法</h5><ol start="7">
+<p>A : 根据其过往表现估算</p>
+<script type="math/tex; mode=display">
+T_n = \alpha T_NaN + (1-\alpha)T_NaN</script><p>如果 <code>α = 1/2</code> ,那么预估时间为:</p>
+<script type="math/tex; mode=display">
+T_0\\
+\frac{T_0}{2}+\frac{T_1}{2}\\
+\frac{T_0}{4}+\frac{T_1}{4}+\frac{T_2}{2}\\
+\frac{T_0}{8}+\frac{T_1}{8}+\frac{T_2}{4}+\frac{T_3}{2}</script><h4 id="其他调度算法"><a href="#其他调度算法" class="headerlink" title="其他调度算法"></a>其他调度算法</h4><ol>
 <li><p>多级队列调度</p>
 </li>
 <li><p>确保(部分任务)调度</p>
@@ -675,11 +682,12 @@
 <p>考虑进程所属的用户</p>
 </li>
 </ol>
-<h4 id="实时系统-1"><a href="#实时系统-1" class="headerlink" title="实时系统"></a>实时系统</h4><p><strong>系统的可调度性</strong></p>
-<p>假设某一时刻系统有 $m$ 个事件,每个事件 $i$ 需要在 $P_i$ 内完成,需要占据CPU的 $C_i$ 秒来实现<br>倘若满足<br>$$<br>\qquad \sum^{m}_{i=1}\frac{C_i}{P_i}\leq1\<br>$$<br>称此时系统是可调度的 (Schedulable)</p>
-<h3 id="关于线程调度的一些补充"><a href="#关于线程调度的一些补充" class="headerlink" title="关于线程调度的一些补充"></a>关于线程调度的一些补充</h3><p>用户级线程:</p>
+<h3 id="实时系统-1"><a href="#实时系统-1" class="headerlink" title="实时系统"></a>实时系统</h3><h4 id="系统的可调度性"><a href="#系统的可调度性" class="headerlink" title="系统的可调度性"></a><strong>系统的可调度性</strong></h4><p>假设某一时刻系统有 $m$ 个事件,每个事件 $i$ 需要在 $P_i$ 内完成,需要占据CPU的 $C_i$ 秒来实现<br>倘若满足</p>
+<script type="math/tex; mode=display">
+\qquad \sum^{m}_{i=1}\frac{C_i}{P_i}\leq1\\</script><p>称此时系统是可调度的 (Schedulable)</p>
+<h2 id="关于线程调度的一些补充"><a href="#关于线程调度的一些补充" class="headerlink" title="关于线程调度的一些补充"></a>关于线程调度的一些补充</h2><p>用户级线程:</p>
 <p>OS把时间片分配给进程, 进程再内部分配到每个线程.</p>
-<h3 id="关于调度的其他补充"><a href="#关于调度的其他补充" class="headerlink" title="关于调度的其他补充"></a>关于调度的其他补充</h3><ul>
+<h2 id="关于调度的其他补充"><a href="#关于调度的其他补充" class="headerlink" title="关于调度的其他补充"></a>关于调度的其他补充</h2><ul>
 <li><p>调度算法还有 抢占式/非抢占式之分</p>
 </li>
 <li><p>进程调度模块负责专业CPU控制权,包括:</p>
@@ -747,6 +755,11 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -793,7 +806,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Process"><span class="nav-number">1.</span> <span class="nav-text">Process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程的引入及概念"><span class="nav-number">1.1.</span> <span class="nav-text">进程的引入及概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程的生命周期"><span class="nav-number">1.2.</span> <span class="nav-text">进程的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进程的状态与转换"><span class="nav-number">1.2.1.</span> <span class="nav-text">进程的状态与转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程的状态"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">进程的状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#状态之间转换"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">状态之间转换</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程的创建"><span class="nav-number">1.2.2.</span> <span class="nav-text">进程的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程的创建场景"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">进程的创建场景:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#父子进程"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">父子进程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程的销毁"><span class="nav-number">1.2.3.</span> <span class="nav-text">进程的销毁</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程销毁的场景"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">进程销毁的场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#级联终止"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">级联终止</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程的切换"><span class="nav-number">1.2.4.</span> <span class="nav-text">进程的切换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程切换的场景"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">进程切换的场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#上下文切换"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">上下文切换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进程调度队列"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">进程调度队列</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PCB"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">PCB</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Threads"><span class="nav-number">2.</span> <span class="nav-text">Threads</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的引入及概念"><span class="nav-number">2.1.</span> <span class="nav-text">线程的引入及概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程资源的私有与共享"><span class="nav-number">2.2.</span> <span class="nav-text">进程资源的私有与共享</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#共享的items"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">共享的items</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#私有的items"><span class="nav-number">2.2.0.2.</span> <span class="nav-text">私有的items</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的状态"><span class="nav-number">2.3.</span> <span class="nav-text">线程的状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的优劣及应用场景"><span class="nav-number">2.4.</span> <span class="nav-text">线程的优劣及应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不同级别的线程"><span class="nav-number">2.5.</span> <span class="nav-text">不同级别的线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#User-level-Thread"><span class="nav-number">2.5.1.</span> <span class="nav-text">User-level Thread</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#优点"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">优点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Kernel-level-Thread"><span class="nav-number">2.5.2.</span> <span class="nav-text">Kernel-level Thread</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#优点-1"><span class="nav-number">2.5.2.1.</span> <span class="nav-text">优点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hybrid-Thread"><span class="nav-number">2.5.3.</span> <span class="nav-text">Hybrid Thread</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#优点-2"><span class="nav-number">2.5.3.1.</span> <span class="nav-text">优点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pop-up-Thread"><span class="nav-number">2.5.4.</span> <span class="nav-text">Pop-up Thread</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#优势"><span class="nav-number">2.5.4.1.</span> <span class="nav-text">优势</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scheduling"><span class="nav-number">3.</span> <span class="nav-text">Scheduling</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调度的概念"><span class="nav-number">3.1.</span> <span class="nav-text">调度的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU密集型任务与IO密集型任务"><span class="nav-number">3.1.1.</span> <span class="nav-text">CPU密集型任务与IO密集型任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调度的目的"><span class="nav-number">3.1.2.</span> <span class="nav-text">调度的目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么时候需要调度"><span class="nav-number">3.1.3.</span> <span class="nav-text">什么时候需要调度?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调度的几个原则"><span class="nav-number">3.1.4.</span> <span class="nav-text">调度的几个原则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#All-System"><span class="nav-number">3.1.4.1.</span> <span class="nav-text">All System</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#批处理系统"><span class="nav-number">3.1.4.2.</span> <span class="nav-text">批处理系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#交互式系统"><span class="nav-number">3.1.4.3.</span> <span class="nav-text">交互式系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实时系统"><span class="nav-number">3.1.4.4.</span> <span class="nav-text">实时系统</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调度算法"><span class="nav-number">3.2.</span> <span class="nav-text">调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#批处理系统-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">批处理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#FCFS-First-come-first-served"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">FCFS (First-come first-served )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Shortest-Job-First-短作业优先"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">Shortest Job First (短作业优先)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Shortest-remaining-time-next-剩余时间最短优先"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">Shortest remaining time next 剩余时间最短优先</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交互式系统-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">交互式系统</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Round-Robin-时间片轮转"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">Round Robin (时间片轮转)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Priority-scheduling-优先级调度"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">Priority scheduling (优先级调度)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Shortest-process-next-最短进程"><span class="nav-number">3.2.2.3.</span> <span class="nav-text">Shortest process next (最短进程)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#其他调度算法"><span class="nav-number">3.2.2.4.</span> <span class="nav-text">其他调度算法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实时系统-1"><span class="nav-number">3.2.3.</span> <span class="nav-text">实时系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于线程调度的一些补充"><span class="nav-number">3.3.</span> <span class="nav-text">关于线程调度的一些补充</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于调度的其他补充"><span class="nav-number">3.4.</span> <span class="nav-text">关于调度的其他补充</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Process"><span class="nav-number">1.</span> <span class="nav-text">Process</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的引入及概念"><span class="nav-number">1.1.</span> <span class="nav-text">进程的引入及概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的生命周期"><span class="nav-number">1.2.</span> <span class="nav-text">进程的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程的状态与转换"><span class="nav-number">1.2.1.</span> <span class="nav-text">进程的状态与转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进程的状态"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">进程的状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#状态之间转换"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">状态之间转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程的创建"><span class="nav-number">1.2.2.</span> <span class="nav-text">进程的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进程的创建场景"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">进程的创建场景:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#父子进程"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">父子进程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程的销毁"><span class="nav-number">1.2.3.</span> <span class="nav-text">进程的销毁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进程销毁的场景"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">进程销毁的场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#级联终止"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">级联终止</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程的切换"><span class="nav-number">1.2.4.</span> <span class="nav-text">进程的切换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进程切换的场景"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">进程切换的场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上下文切换"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">上下文切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程调度队列"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">进程调度队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PCB"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">PCB</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Threads"><span class="nav-number">2.</span> <span class="nav-text">Threads</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的引入及概念"><span class="nav-number">2.1.</span> <span class="nav-text">线程的引入及概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程资源的私有与共享"><span class="nav-number">2.2.</span> <span class="nav-text">进程资源的私有与共享</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#共享的items"><span class="nav-number">2.2.1.</span> <span class="nav-text">共享的items</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#私有的items"><span class="nav-number">2.2.2.</span> <span class="nav-text">私有的items</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的状态"><span class="nav-number">2.3.</span> <span class="nav-text">线程的状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的优劣及应用场景"><span class="nav-number">2.4.</span> <span class="nav-text">线程的优劣及应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同级别的线程"><span class="nav-number">2.5.</span> <span class="nav-text">不同级别的线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#User-level-Thread"><span class="nav-number">2.5.1.</span> <span class="nav-text">User-level Thread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kernel-level-Thread"><span class="nav-number">2.5.2.</span> <span class="nav-text">Kernel-level Thread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hybrid-Thread"><span class="nav-number">2.5.3.</span> <span class="nav-text">Hybrid Thread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pop-up-Thread"><span class="nav-number">2.5.4.</span> <span class="nav-text">Pop-up Thread</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scheduling"><span class="nav-number">3.</span> <span class="nav-text">Scheduling</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#调度的概念"><span class="nav-number">3.1.</span> <span class="nav-text">调度的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU密集型任务与IO密集型任务"><span class="nav-number">3.1.1.</span> <span class="nav-text">CPU密集型任务与IO密集型任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调度的目的"><span class="nav-number">3.1.2.</span> <span class="nav-text">调度的目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么时候需要调度"><span class="nav-number">3.1.3.</span> <span class="nav-text">什么时候需要调度?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调度的几个原则"><span class="nav-number">3.1.4.</span> <span class="nav-text">调度的几个原则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#All-System"><span class="nav-number">3.1.4.1.</span> <span class="nav-text">All System</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#批处理系统"><span class="nav-number">3.1.4.2.</span> <span class="nav-text">批处理系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交互式系统"><span class="nav-number">3.1.4.3.</span> <span class="nav-text">交互式系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实时系统"><span class="nav-number">3.1.4.4.</span> <span class="nav-text">实时系统</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调度算法"><span class="nav-number">3.2.</span> <span class="nav-text">调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#批处理系统-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">批处理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FCFS-First-come-first-served"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">FCFS (First-come first-served )</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-Job-First-短作业优先"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">Shortest Job First (短作业优先)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-remaining-time-next-剩余时间最短优先"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">Shortest remaining time next 剩余时间最短优先</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交互式系统-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">交互式系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-Robin-时间片轮转"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">Round Robin (时间片轮转)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Priority-scheduling-优先级调度"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">Priority scheduling (优先级调度)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-process-next-最短进程"><span class="nav-number">3.2.2.3.</span> <span class="nav-text">Shortest process next (最短进程)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他调度算法"><span class="nav-number">3.2.2.4.</span> <span class="nav-text">其他调度算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实时系统-1"><span class="nav-number">3.2.3.</span> <span class="nav-text">实时系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#系统的可调度性"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">系统的可调度性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于线程调度的一些补充"><span class="nav-number">3.3.</span> <span class="nav-text">关于线程调度的一些补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于调度的其他补充"><span class="nav-number">3.4.</span> <span class="nav-text">关于调度的其他补充</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -866,7 +879,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">21 分钟</span>
+    <span title="站点阅读时长">22 分钟</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -946,6 +959,77 @@ setInterval("createtime()",250);
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>

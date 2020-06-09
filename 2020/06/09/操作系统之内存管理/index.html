@@ -44,7 +44,7 @@
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125508.jpg">
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125518.jpg">
 <meta property="article:published_time" content="2020-06-09T01:14:11.000Z">
-<meta property="article:modified_time" content="2020-06-09T05:01:38.444Z">
+<meta property="article:modified_time" content="2020-06-09T06:48:04.382Z">
 <meta property="article:author" content="LUY">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="操作系统">
@@ -237,7 +237,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-06-09 09:14:11 / 修改时间：13:01:38" itemprop="dateCreated datePublished" datetime="2020-06-09T09:14:11+08:00">2020-06-09</time>
+              <time title="创建时间：2020-06-09 09:14:11 / 修改时间：14:48:04" itemprop="dateCreated datePublished" datetime="2020-06-09T09:14:11+08:00">2020-06-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,14 +263,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.6k</span>
+              <span>5.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>8 分钟</span>
+              <span>9 分钟</span>
             </span>
 
         </div>
@@ -291,7 +291,6 @@
 <li>其他需要考虑的问题</li>
 </ol>
 <a id="more"></a>
-
 <h2 id="基本内存管理"><a href="#基本内存管理" class="headerlink" title="基本内存管理"></a>基本内存管理</h2><p>本节会涉及到:</p>
 <ol>
 <li>储存层次</li>
@@ -303,7 +302,9 @@
 </li>
 </ol>
 <h3 id="储存层次"><a href="#储存层次" class="headerlink" title="储存层次"></a>储存层次</h3><p>参看计组部分, 不是重点, 略</p>
-<h3 id="CPU利用率"><a href="#CPU利用率" class="headerlink" title="CPU利用率"></a>CPU利用率</h3><p>如果考虑到内存的存在, CPU的利用率还将会进一步降低.  如果CPU中同时存在 $n$ 个运行中的程序 (称为多道程序的度 degree) ,则 CPU利用率为<br>$$<br>1-P^n<br>$$<br>其中 $P$ 是IO等待时间的占比</p>
+<h3 id="CPU利用率"><a href="#CPU利用率" class="headerlink" title="CPU利用率"></a>CPU利用率</h3><p>如果考虑到内存的存在, CPU的利用率还将会进一步降低.  如果CPU中同时存在 $n$ 个运行中的程序 (称为多道程序的度 degree) ,则 CPU利用率为</p>
+<script type="math/tex; mode=display">
+1-P^n</script><p>其中 $P$ 是IO等待时间的占比</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124321.jpg" alt="1591668423275"></p>
 <blockquote>
 <ul>
@@ -367,7 +368,7 @@
 <h3 id="Holes-空洞"><a href="#Holes-空洞" class="headerlink" title="Holes 空洞"></a>Holes 空洞</h3><p>空洞的产生</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124358.jpg" alt=""></p>
 <p>空洞还是难以清除的. 内存是处在高速变化中的, 试图将碎片合并为更大的内存空间片式必须要将目前的进程停滞. 对外表现为长达数十秒甚至分钟的机器假死, 是不可被忍受的.</p>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="内存的管理机制"><a href="#内存的管理机制" class="headerlink" title="内存的管理机制"></a>内存的管理机制</h3><p>将内存划分为更加精细的等大片段, 并记录其是否处于使用中, 如下图</p>
+<h3 id="内存的管理机制"><a href="#内存的管理机制" class="headerlink" title="内存的管理机制"></a>内存的管理机制</h3><p>将内存划分为更加精细的等大片段, 并记录其是否处于使用中, 如下图</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124410.jpg" alt="内存管理"></p>
 <h4 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h4><p>如图B, 1表示使用中, 0表示未使用.</p>
 <p>pro: 便于管理, 修改只需要取非操作即可</p>
@@ -417,7 +418,6 @@
 <p>当进程发现所需要的数据所在的页不在内存, 而在磁盘中时, 会发生<strong>页面失效(Page Fault)</strong> , 并通过页面调度将内存中某一页调出, 调入目标页. </p>
 <h4 id="分页过程"><a href="#分页过程" class="headerlink" title="分页过程"></a>分页过程</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125322.jpg" alt="分页"></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//分页算法  伪代码</span></span><br><span class="line">address ad_lo 	<span class="comment">//逻辑地址,已知</span></span><br><span class="line">address ad_phy	<span class="comment">//物理地址,待求</span></span><br><span class="line">address* Base	<span class="comment">//已知</span></span><br><span class="line">size	 Limit	<span class="comment">//已知</span></span><br><span class="line">size 	page_size	<span class="comment">//每一页的大小, 一般与页帧大小相同,已知</span></span><br><span class="line">pageTable table[]	<span class="comment">//页表,已知</span></span><br><span class="line"><span class="keyword">int</span> pageNo		<span class="comment">//页号,未知</span></span><br><span class="line"><span class="keyword">int</span> frameNo		<span class="comment">//页帧号,未知</span></span><br><span class="line"></span><br><span class="line">getAd_Phy()&#123;</span><br><span class="line">	<span class="keyword">if</span> (ad_lo &gt; *(Base + Limit) )</span><br><span class="line">		<span class="keyword">throw</span> error(<span class="string">"地址越界!"</span>)</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		pageNo = ad_lo % page_size	<span class="comment">//页号</span></span><br><span class="line">		offset = ad_lo - pageNo * page_size		<span class="comment">//页内偏移量</span></span><br><span class="line">		frameNo = table[PageNo]		<span class="comment">//页帧号</span></span><br><span class="line">		<span class="keyword">if</span> (frameNo == null)</span><br><span class="line">			<span class="keyword">throw</span> error(<span class="string">"页面失效!"</span>)</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			ad_phy = frameNo * page_size + offset</span><br><span class="line">			<span class="keyword">return</span> ad_phy</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/img_1173.png" alt="练习"></p>
 <h4 id="分页场景"><a href="#分页场景" class="headerlink" title="分页场景"></a>分页场景</h4><ol>
 <li><p>进程创建时</p>
@@ -461,6 +461,7 @@
 </ol>
 <p>多级列表,字面意思,  应该很好懂.</p>
 <p><strong>每项的大小</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -469,12 +470,15 @@
 <th>Offset</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>10 $bits$</td>
 <td>10  $bits$</td>
 <td>12  $bits$</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>那么总虚拟地址空间大小为 $2^{10+10+12} = 4G$ ,一级页表中每项对应的实际上是 $2^{10+12} = 4M$ 地址空间, 二级页表实际上是$2^{12} = 4K$</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125441.jpg" alt="页面大小"></p>
 <p><strong>实际上页表还包括</strong></p>
@@ -518,10 +522,10 @@
 </ul>
 </li>
 </ul>
-<h4 id="最优PRA"><a href="#最优PRA" class="headerlink" title="最优PRA"></a>最优PRA</h4><p>每次都将未来最远不会用到的调走</p>
+<h3 id="最优PRA"><a href="#最优PRA" class="headerlink" title="最优PRA"></a>最优PRA</h3><p>每次都将未来最远不会用到的调走</p>
 <p><del>废话但是我怎么知道啷个是未来不会用到的啊</del></p>
 <p>所以这个算法没有实际意义, 用于评价其他算法的性能</p>
-<h4 id="Not-Recently-Used-NRU-最近未使用"><a href="#Not-Recently-Used-NRU-最近未使用" class="headerlink" title="Not Recently Used (NRU, 最近未使用)"></a>Not Recently Used (NRU, 最近未使用)</h4><p>每个页码都有 Reference bit, Modified bit  (是否被访问, 修改位)</p>
+<h3 id="Not-Recently-Used-NRU-最近未使用"><a href="#Not-Recently-Used-NRU-最近未使用" class="headerlink" title="Not Recently Used (NRU, 最近未使用)"></a>Not Recently Used (NRU, 最近未使用)</h3><p>每个页码都有 Reference bit, Modified bit  (是否被访问, 修改位)</p>
 <p>按照以下顺序调出:</p>
 <ol>
 <li>not referenced, not modified </li>
@@ -529,25 +533,21 @@
 <li>referenced, not modified </li>
 <li>referenced, modified</li>
 </ol>
-<h4 id="FIFO-PRA"><a href="#FIFO-PRA" class="headerlink" title="FIFO PRA"></a>FIFO PRA</h4><p>先进先出</p>
+<h3 id="FIFO-PRA"><a href="#FIFO-PRA" class="headerlink" title="FIFO PRA"></a>FIFO PRA</h3><p>先进先出</p>
 <p>con: 经常将访问过, 修改过的位调出</p>
 <p>下面是它的改进</p>
-<h4 id="Second-Chance-PRA"><a href="#Second-Chance-PRA" class="headerlink" title="Second Chance PRA"></a>Second Chance PRA</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;SC PRA</span><br><span class="line">while(页面到队头)&#123;</span><br><span class="line">	if(referenceBit &#x3D;&#x3D; 0)</span><br><span class="line">		调出;</span><br><span class="line">	else &#123;</span><br><span class="line">		referenceBit &#x3D; 0;</span><br><span class="line">		页面出队;</span><br><span class="line">		页面入队; 	&#x2F;&#x2F;就是扔回队尾了</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="The-Clock-PRA"><a href="#The-Clock-PRA" class="headerlink" title="The Clock  PRA"></a>The Clock  PRA</h4><p>原理相同, 只是改成循环, 改变指针来仿造队列移动</p>
+<h3 id="Second-Chance-PRA"><a href="#Second-Chance-PRA" class="headerlink" title="Second Chance PRA"></a>Second Chance PRA</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;SC PRA</span><br><span class="line">while(页面到队头)&#123;</span><br><span class="line">	if(referenceBit &#x3D;&#x3D; 0)</span><br><span class="line">		调出;</span><br><span class="line">	else &#123;</span><br><span class="line">		referenceBit &#x3D; 0;</span><br><span class="line">		页面出队;</span><br><span class="line">		页面入队; 	&#x2F;&#x2F;就是扔回队尾了</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="The-Clock-PRA"><a href="#The-Clock-PRA" class="headerlink" title="The Clock  PRA"></a>The Clock  PRA</h3><p>原理相同, 只是改成循环, 改变指针来仿造队列移动</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">while(指针到本页了)&#123;</span><br><span class="line">	if(referenceBit &#x3D;&#x3D; 0)</span><br><span class="line">		调出;</span><br><span class="line">	else &#123;</span><br><span class="line">		referenceBit &#x3D; 0;</span><br><span class="line">		指针后移;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125508.jpg" alt="clock"></p>
-<h4 id="Least-Recently-Used-LRU-最近最少使用"><a href="#Least-Recently-Used-LRU-最近最少使用" class="headerlink" title="Least Recently Used (LRU, 最近最少使用)"></a>Least Recently Used (LRU, 最近最少使用)</h4><p>是NRU的升级版, 根据<a href="https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86/15572003?fr=aladdin" target="_blank" rel="noopener">程序局部性原理</a>, 最近被使用的往往将会再次被使用.</p>
+<h3 id="Least-Recently-Used-LRU-最近最少使用"><a href="#Least-Recently-Used-LRU-最近最少使用" class="headerlink" title="Least Recently Used (LRU, 最近最少使用)"></a>Least Recently Used (LRU, 最近最少使用)</h3><p>是NRU的升级版, 根据<a href="https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86/15572003?fr=aladdin" target="_blank" rel="noopener">程序局部性原理</a>, 最近被使用的往往将会再次被使用.</p>
 <p>实现方式:</p>
 <ol>
 <li>建立一个最近使用页面的集合</li>
 <li>在每个条目中保留计数器, 每次选择最低的(最少), 定期清零(最近)</li>
 </ol>
 <p><strong>模拟LRU</strong></p>
-<h5 id="硬件模拟"><a href="#硬件模拟" class="headerlink" title="硬件模拟"></a>硬件模拟</h5><ul>
+<h4 id="硬件模拟"><a href="#硬件模拟" class="headerlink" title="硬件模拟"></a>硬件模拟</h4><ul>
 <li><p>当访问 n 时, 第 n 列置0 , 第 n 行其他位置1</p>
 </li>
 <li><p>当需要调出时, 调出每行和最少的, 如果相同, 调出….</p>
@@ -557,6 +557,42 @@
 <p><strong>缺点</strong></p>
 <p>开销大</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125518.jpg" alt="矩阵"></p>
+<h4 id="软件模拟"><a href="#软件模拟" class="headerlink" title="软件模拟"></a>软件模拟</h4><ul>
+<li>每个页都拥有自己的标识数,每个一段时间将访问的页面对应的标识数的某位置1, 其他置0, 位数后移</li>
+<li>调出时选择标识值最小的调出</li>
+</ul>
+<h3 id="Working-Set"><a href="#Working-Set" class="headerlink" title="Working Set"></a>Working Set</h3><p>没听, 好像是把页面集中成集再调度</p>
+<h3 id="WSClock-PRA"><a href="#WSClock-PRA" class="headerlink" title="WSClock PRA"></a>WSClock PRA</h3><p>类似上面, 采用时钟模拟</p>
+<h2 id="其他需要考虑的"><a href="#其他需要考虑的" class="headerlink" title="其他需要考虑的"></a>其他需要考虑的</h2><h3 id="Local-vs-Global-Allocation-Policies"><a href="#Local-vs-Global-Allocation-Policies" class="headerlink" title="Local vs Global Allocation Policies"></a>Local vs Global Allocation Policies</h3><p>全局调度页面会使得一段时间后内存的利用趋近于实际进程所需的比例.</p>
+<h3 id="Load-Control"><a href="#Load-Control" class="headerlink" title="Load Control"></a>Load Control</h3><p>当 <strong>PFF (page fault frequency 页面失效频率)</strong> 过高时, 主动减少使用内存的进程.</p>
+<p><del>让一部分进程先跑起来</del></p>
+<h3 id="Page-Size"><a href="#Page-Size" class="headerlink" title="Page Size"></a>Page Size</h3><p>small page size (typically 4k or 8k):</p>
+<p>Advantages:</p>
+<ul>
+<li>减少内部碎片</li>
+<li>更好地适合各种数据结构和代码段</li>
+<li>减少内存中未使用的程序</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>程序需要很多页，因此产生巨大的页表</li>
+<li>传输小页所需的时间几乎与传输大页所需的时间相同, 但传输效率低</li>
+</ul>
+<h3 id="Cleaning-Policy"><a href="#Cleaning-Policy" class="headerlink" title="Cleaning Policy"></a>Cleaning Policy</h3><p>为了保证在新进程创建的时候有足够的空白页面支持, 必须时刻保证内存中有足够的空白页.</p>
+<p> <strong>paging daemon （分页守护进程）</strong>:当空白页面不足时, 会主动调出页, 但不调入页帧.</p>
+<p>也可以使用clock</p>
+<h2 id="附-Page-Fault-Handling"><a href="#附-Page-Fault-Handling" class="headerlink" title="附: Page Fault Handling"></a>附: Page Fault Handling</h2><ol>
+<li>trap 进内核, 保存PC</li>
+<li>保存进程寄存器</li>
+<li>OS 确定调入页</li>
+<li>OS 确定调出页</li>
+<li>若调出页修改过(dirty), 需要写入磁盘</li>
+<li>调入调入页</li>
+<li>更新页表</li>
+<li>恢复到页面失效的指令</li>
+<li>恢复进程</li>
+<li>恢复寄存器, 恢复PC</li>
+</ol>
 
     </div>
 
@@ -592,6 +628,11 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -638,7 +679,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本内存管理"><span class="nav-number">1.</span> <span class="nav-text">基本内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#储存层次"><span class="nav-number">1.1.</span> <span class="nav-text">储存层次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU利用率"><span class="nav-number">1.2.</span> <span class="nav-text">CPU利用率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定位"><span class="nav-number">1.3.</span> <span class="nav-text">重定位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基址与限址-Base-amp-Limit"><span class="nav-number">1.3.1.</span> <span class="nav-text">基址与限址   Base &amp; Limit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MMU"><span class="nav-number">1.3.2.</span> <span class="nav-text">MMU</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么时候发生重定位"><span class="nav-number">1.3.3.</span> <span class="nav-text">什么时候发生重定位?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segmentation-分段"><span class="nav-number">2.</span> <span class="nav-text">Segmentation 分段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GDT-amp-LDT"><span class="nav-number">2.1.</span> <span class="nav-text">GDT &amp; LDT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#段的大小"><span class="nav-number">2.2.</span> <span class="nav-text">段的大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分段与换页的比较"><span class="nav-number">2.3.</span> <span class="nav-text">分段与换页的比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Swap-交换"><span class="nav-number">3.</span> <span class="nav-text">Swap 交换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Holes-空洞"><span class="nav-number">3.1.</span> <span class="nav-text">Holes 空洞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">3.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存的管理机制"><span class="nav-number">3.3.</span> <span class="nav-text">内存的管理机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#位图"><span class="nav-number">3.3.1.</span> <span class="nav-text">位图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链表"><span class="nav-number">3.3.2.</span> <span class="nav-text">链表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存的分配机制"><span class="nav-number">3.4.</span> <span class="nav-text">内存的分配机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#First-fit"><span class="nav-number">3.4.1.</span> <span class="nav-text">First fit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Next-fit"><span class="nav-number">3.4.2.</span> <span class="nav-text">Next fit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Best-fit"><span class="nav-number">3.4.3.</span> <span class="nav-text">Best fit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Worst-fit"><span class="nav-number">3.4.4.</span> <span class="nav-text">Worst fit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Quick-fit"><span class="nav-number">3.4.5.</span> <span class="nav-text">Quick fit</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Virtual-Memory-虚拟内存"><span class="nav-number">4.</span> <span class="nav-text">Virtual Memory 虚拟内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分页"><span class="nav-number">4.1.</span> <span class="nav-text">分页</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分页过程"><span class="nav-number">4.1.1.</span> <span class="nav-text">分页过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分页场景"><span class="nav-number">4.1.2.</span> <span class="nav-text">分页场景</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多级页表"><span class="nav-number">4.2.</span> <span class="nav-text">多级页表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TLB-快表"><span class="nav-number">4.3.</span> <span class="nav-text">TLB 快表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反转页表"><span class="nav-number">4.4.</span> <span class="nav-text">反转页表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面调度算法"><span class="nav-number">5.</span> <span class="nav-text">页面调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最优PRA"><span class="nav-number">5.0.1.</span> <span class="nav-text">最优PRA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Not-Recently-Used-NRU-最近未使用"><span class="nav-number">5.0.2.</span> <span class="nav-text">Not Recently Used (NRU, 最近未使用)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FIFO-PRA"><span class="nav-number">5.0.3.</span> <span class="nav-text">FIFO PRA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Second-Chance-PRA"><span class="nav-number">5.0.4.</span> <span class="nav-text">Second Chance PRA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Clock-PRA"><span class="nav-number">5.0.5.</span> <span class="nav-text">The Clock  PRA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Least-Recently-Used-LRU-最近最少使用"><span class="nav-number">5.0.6.</span> <span class="nav-text">Least Recently Used (LRU, 最近最少使用)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#硬件模拟"><span class="nav-number">5.0.6.1.</span> <span class="nav-text">硬件模拟</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本内存管理"><span class="nav-number">1.</span> <span class="nav-text">基本内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#储存层次"><span class="nav-number">1.1.</span> <span class="nav-text">储存层次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU利用率"><span class="nav-number">1.2.</span> <span class="nav-text">CPU利用率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定位"><span class="nav-number">1.3.</span> <span class="nav-text">重定位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基址与限址-Base-amp-Limit"><span class="nav-number">1.3.1.</span> <span class="nav-text">基址与限址   Base &amp; Limit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MMU"><span class="nav-number">1.3.2.</span> <span class="nav-text">MMU</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么时候发生重定位"><span class="nav-number">1.3.3.</span> <span class="nav-text">什么时候发生重定位?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segmentation-分段"><span class="nav-number">2.</span> <span class="nav-text">Segmentation 分段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GDT-amp-LDT"><span class="nav-number">2.1.</span> <span class="nav-text">GDT &amp; LDT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#段的大小"><span class="nav-number">2.2.</span> <span class="nav-text">段的大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分段与换页的比较"><span class="nav-number">2.3.</span> <span class="nav-text">分段与换页的比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Swap-交换"><span class="nav-number">3.</span> <span class="nav-text">Swap 交换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Holes-空洞"><span class="nav-number">3.1.</span> <span class="nav-text">Holes 空洞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存的管理机制"><span class="nav-number">3.2.</span> <span class="nav-text">内存的管理机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#位图"><span class="nav-number">3.2.1.</span> <span class="nav-text">位图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链表"><span class="nav-number">3.2.2.</span> <span class="nav-text">链表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存的分配机制"><span class="nav-number">3.3.</span> <span class="nav-text">内存的分配机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#First-fit"><span class="nav-number">3.3.1.</span> <span class="nav-text">First fit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Next-fit"><span class="nav-number">3.3.2.</span> <span class="nav-text">Next fit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Best-fit"><span class="nav-number">3.3.3.</span> <span class="nav-text">Best fit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Worst-fit"><span class="nav-number">3.3.4.</span> <span class="nav-text">Worst fit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Quick-fit"><span class="nav-number">3.3.5.</span> <span class="nav-text">Quick fit</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Virtual-Memory-虚拟内存"><span class="nav-number">4.</span> <span class="nav-text">Virtual Memory 虚拟内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分页"><span class="nav-number">4.1.</span> <span class="nav-text">分页</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分页过程"><span class="nav-number">4.1.1.</span> <span class="nav-text">分页过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分页场景"><span class="nav-number">4.1.2.</span> <span class="nav-text">分页场景</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多级页表"><span class="nav-number">4.2.</span> <span class="nav-text">多级页表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TLB-快表"><span class="nav-number">4.3.</span> <span class="nav-text">TLB 快表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反转页表"><span class="nav-number">4.4.</span> <span class="nav-text">反转页表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面调度算法"><span class="nav-number">5.</span> <span class="nav-text">页面调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最优PRA"><span class="nav-number">5.1.</span> <span class="nav-text">最优PRA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Not-Recently-Used-NRU-最近未使用"><span class="nav-number">5.2.</span> <span class="nav-text">Not Recently Used (NRU, 最近未使用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FIFO-PRA"><span class="nav-number">5.3.</span> <span class="nav-text">FIFO PRA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Second-Chance-PRA"><span class="nav-number">5.4.</span> <span class="nav-text">Second Chance PRA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Clock-PRA"><span class="nav-number">5.5.</span> <span class="nav-text">The Clock  PRA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Least-Recently-Used-LRU-最近最少使用"><span class="nav-number">5.6.</span> <span class="nav-text">Least Recently Used (LRU, 最近最少使用)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬件模拟"><span class="nav-number">5.6.1.</span> <span class="nav-text">硬件模拟</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软件模拟"><span class="nav-number">5.6.2.</span> <span class="nav-text">软件模拟</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-Set"><span class="nav-number">5.7.</span> <span class="nav-text">Working Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WSClock-PRA"><span class="nav-number">5.8.</span> <span class="nav-text">WSClock PRA</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他需要考虑的"><span class="nav-number">6.</span> <span class="nav-text">其他需要考虑的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Local-vs-Global-Allocation-Policies"><span class="nav-number">6.1.</span> <span class="nav-text">Local vs Global Allocation Policies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Load-Control"><span class="nav-number">6.2.</span> <span class="nav-text">Load Control</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Page-Size"><span class="nav-number">6.3.</span> <span class="nav-text">Page Size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cleaning-Policy"><span class="nav-number">6.4.</span> <span class="nav-text">Cleaning Policy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附-Page-Fault-Handling"><span class="nav-number">7.</span> <span class="nav-text">附: Page Fault Handling</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -711,7 +752,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">21 分钟</span>
+    <span title="站点阅读时长">22 分钟</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -791,6 +832,77 @@ setInterval("createtime()",250);
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>
