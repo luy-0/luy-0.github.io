@@ -1,6 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>使用伪手写体搞定毛概笔记</title>
+    <url>/2020/06/06/%E4%BD%BF%E7%94%A8%E4%BC%AA%E6%89%8B%E5%86%99%E4%BD%93%E6%90%9E%E5%AE%9A%E6%AF%9B%E6%A6%82%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>毛概课在接连上了五个月网课之后,终于等到了期末!</p>
+<p>对此,毛概老师给全班做出指示: “收  给我收笔记!” </p>
+<a id="more"></a>
+<h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>众所周知, 大学的思政课笔记是最无聊虽没意义的形式主义了.</p>
+<p>尤其是他还要求是手写的情况下.</p>
+<p>尤其是手写的笔记还要拍照提交的情况下.</p>
+<p><del>不会吧不会吧, 不会真的有人还在用纸笔记笔记吧? 🐶<del/></p>
+<p>受亲爱的<a href="https://moefactory.com/" target="_blank" rel="noopener">小梦同学</a>提点, 我们来研究一下怎么<strong>仿造手写体</strong>打印材料.</p>
+<p><strong>重要提醒</strong></p>
+<p>由于打印机本身的限制, 实物还是肉眼可见地分辨出伪手写稿. 本学期因为以前的影响只要求把笔记拍照上传检查, 比较好蒙混过关🤔</p>
+<p>如果是线下查收, 还是换个摸鱼方法吧….</p>
+<p>本方法无需编程基础. </p>
+<h2 id="开冲"><a href="#开冲" class="headerlink" title="开冲"></a>开冲</h2><h3 id="Step1-生成自己的手写字体"><a href="#Step1-生成自己的手写字体" class="headerlink" title="Step1. 生成自己的手写字体"></a>Step1. 生成自己的手写字体</h3><p>北京大学计算机科学技术研究所有一个项目<a href="http://59.108.48.27/flexifont-chn/login/" target="_blank" rel="noopener">Flexifont字库</a>, 可以实现自己的字库. 点开注册登录, 根据提示下载模板, 打印书写, 拍照生成就可以了. </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/%5DI%7DRW22GJ%7B%401NL7JYIE%2483C.png" alt=""></p>
+<p>如图, 下载不同字数的模板, 打印出来填好,  上传生成即可.</p>
+<p>不过我没整这一步, 直接在字库分享里面下了别人的, 谢谢张建同学.</p>
+<p>下载好.ttf文件后导入系统文件夹(C:\Windows\Fonts)即可.</p>
+<h3 id="Step2-设置-Word-宏命令"><a href="#Step2-设置-Word-宏命令" class="headerlink" title="Step2. 设置 Word 宏命令"></a>Step2. 设置 Word 宏命令</h3><p>参考了 <a href="https://www.zhihu.com/question/20308770" target="_blank" rel="noopener">这个问题 </a>下的回答</p>
+<p>在Word中依次点击 “文件 -&gt; 选项 -&gt; 信任中心 -&gt; 信任中心设置 -&gt; 宏设置” 在右侧选中 “启用所有宏”.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/hongshezhi%20.png" alt="宏设置"></p>
+<p><strong>回到主界面, 视图 - 宏 - 查看宏</strong></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/2020%E5%B9%B46%E6%9C%886%E6%97%A53.png" alt="宏代码编写1"></p>
+<p>输入方案名,新建, 并在弹出的窗口中插入以下代码</p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">' 注意是插入 不是直接把原来的替换掉哦</span></span><br><span class="line">    <span class="keyword">Dim</span> R_Character <span class="keyword">As</span> Range</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> FontSize(<span class="number">5</span>)</span><br><span class="line">	<span class="comment">' 字体大小在5个值之间进行波动，可以改写 </span></span><br><span class="line">	<span class="comment">' 个人建议 如果纸张线条间距为8mm, 字号设置为16左右比较合适</span></span><br><span class="line">    FontSize(<span class="number">1</span>) = <span class="string">"15.5"</span></span><br><span class="line">    FontSize(<span class="number">2</span>) = <span class="string">"15"</span></span><br><span class="line">    FontSize(<span class="number">3</span>) = <span class="string">"16"</span></span><br><span class="line">    FontSize(<span class="number">4</span>) = <span class="string">"17"</span></span><br><span class="line">    FontSize(<span class="number">5</span>) = <span class="string">"17.5"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> FontName(<span class="number">3</span>)</span><br><span class="line">    <span class="comment">'字体名称在三种字体之间进行波动，可改写，但需要保证系统拥有下列字体</span></span><br><span class="line">	FontName(<span class="number">1</span>) = <span class="string">"宋体"</span></span><br><span class="line">	FontName(<span class="number">2</span>) = <span class="string">"微软雅黑"</span></span><br><span class="line">	FontName(<span class="number">3</span>) = <span class="string">"黑体"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> ParagraphSpace(<span class="number">5</span>)</span><br><span class="line">	<span class="comment">'行间距 在一定以下值中均等分布，可改写 </span></span><br><span class="line">	<span class="comment">' 个人建议 如果纸张线条间距为8mm, 字号设置为23左右比较合适, 并且不建议波动过大</span></span><br><span class="line">    ParagraphSpace(<span class="number">1</span>) = <span class="string">"22"</span></span><br><span class="line">    ParagraphSpace(<span class="number">2</span>) = <span class="string">"22.5"</span></span><br><span class="line">    ParagraphSpace(<span class="number">3</span>) = <span class="string">"23"</span></span><br><span class="line">    ParagraphSpace(<span class="number">4</span>) = <span class="string">"23.5"</span></span><br><span class="line">    ParagraphSpace(<span class="number">5</span>) = <span class="string">"24"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">'下面是功能代码 不想要什么直接删除就行</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">For</span> <span class="keyword">Each</span> R_Character <span class="keyword">In</span> ActiveDocument.Characters</span><br><span class="line"></span><br><span class="line">        VBA.Randomize</span><br><span class="line"></span><br><span class="line">        R_Character.Font.Name = FontName(Int(VBA.Rnd * <span class="number">3</span>) + <span class="number">1</span>)</span><br><span class="line">	<span class="comment">'上面一行是随机变换字体,不想要可删除</span></span><br><span class="line">        R_Character.Font.Size = FontSize(Int(VBA.Rnd * <span class="number">5</span>) + <span class="number">1</span>)</span><br><span class="line">	<span class="comment">'上面一行是随机变换字体大小,不想要可删除</span></span><br><span class="line">        R_Character.Font.Position = Int(VBA.Rnd * <span class="number">3</span>) + <span class="number">1</span></span><br><span class="line">	<span class="comment">'上面一行对每个字随机上下微调,不想要可删除</span></span><br><span class="line">        R_Character.Font.Spacing = <span class="number">0</span></span><br><span class="line">	<span class="comment">'上面一行不要修改</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Next</span></span><br><span class="line"></span><br><span class="line">    Application.ScreenUpdating = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">For</span> <span class="keyword">Each</span> Cur_Paragraph <span class="keyword">In</span> ActiveDocument.Paragraphs</span><br><span class="line">	<span class="comment">'上面三行不要修改</span></span><br><span class="line">        Cur_Paragraph.LineSpacing = ParagraphSpace(Int(VBA.Rnd * <span class="number">5</span>) + <span class="number">1</span>)</span><br><span class="line">	<span class="comment">'上面一行对每个行间距微调,不想要可删除</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Next</span></span><br><span class="line">        Application.ScreenUpdating = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>修改后如图, 记得要把代码16-19行换成你自己的手写体</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200606154923.jpg" alt="代码修改如下"></p>
+<p>点击上面的运行按钮(或者是个小绿三角) 等待</p>
+<p>不出意外结果如下</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/2020%E5%B9%B46%E6%9C%886%E6%97%A515%E7%82%B951%E5%88%86.jpg" alt="记得要把字体换成自己的手写体哦"></p>
+<p>记得把字体换成不同但相近的手写体, 别想现在一样丑不拉几的</p>
+<h3 id="Step3-设置页面与段落"><a href="#Step3-设置页面与段落" class="headerlink" title="Step3. 设置页面与段落"></a>Step3. 设置页面与段落</h3><p>准备好打印机, 复印纸, 以及浪费很多纸张的决心, 开始下一步.</p>
+<p><del>当然你要实现准备好电子笔记, 你不会真的没有记吧?<del/></p>
+<h4 id="字体字号"><a href="#字体字号" class="headerlink" title="字体字号"></a>字体字号</h4><p>在上一步我们应该是基本解决了这个问题, 如果没有, 若纸张线条间距为8mm, 字号设置为16左右比较合适.</p>
+<p>word 中字号的单位是磅, 约为0.3528毫米.也就是说16的字号打印出来大约是5.645毫米高.</p>
+<p>此外可以试一下全部用 <strong>粗体</strong> , 因为我用的字体比较纤细, 看着太假</p>
+<p>多试试, 不要怕废纸</p>
+<h4 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h4><p>全选, 右键段落, 设置行间距与段间距.</p>
+<p>间距一栏下</p>
+<p><strong>段前段后:</strong>全部设置成0 空白也要再设置一次</p>
+<p><strong>行距:</strong> 选择固定值, 这里单位依旧是磅数, 如果直线相隔8mm的话大约设置成23磅(23*0.35=8.1144‬)</p>
+<h4 id="页面"><a href="#页面" class="headerlink" title="页面"></a>页面</h4><p>word主页面 - 布局 - 页边距&amp;纸张大小</p>
+<p>自己量一量吧, 上边距是到第一行的<strong>字的上沿</strong>, 下边距是最后一行<strong>字的下沿</strong></p>
+<p>多试试, 不要怕废纸</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/K%607_8GUVFXF0%24PQU81VDCUK.jpg" alt="这么多全是浪费掉的"></p>
+<h3 id="Step4-其他作假手段"><a href="#Step4-其他作假手段" class="headerlink" title="Step4. 其他作假手段"></a>Step4. 其他作假手段</h3><ol>
+<li><p>全部用粗体, 生成的字体过于纤细</p>
+</li>
+<li><p>切换字体确实有效,但是字体风格不能相差太大</p>
+</li>
+<li><p>扫描后对PDF做一下黑白处理, 更难发现</p>
+<p>另外推荐使用app Scanbot扫描, 吊打某某扫描王</p>
+</li>
+<li><p>通过<a href="https://www.ilovepdf.com/compress_pdf" target="_blank" rel="noopener">这个网址</a>对PDF进行全损压缩, 直接挑压缩率最高的那个选项(斜眼笑)</p>
+</li>
+</ol>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>成品还是很满意滴~ </p>
+<p>线上检查的话应该足够以假乱真了吧👌</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200606161805.jpg" alt="效果图1"></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200606161822.jpg" alt="效果图2"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><p>听说Github上<a href="https://link.zhihu.com/?target=https%3A//github.com/Gsllchb/Handright">这个项目</a>可以进一步微调字体效果,实现同字不同样</p>
+</li>
+<li><p>使用喷墨式打印机应该会稍微好一些</p>
+</li>
+<li><p>学到了磅数这一没什么卵用的知识</p>
+</li>
+<li><p>为了本篇传图开了腾讯云的COS, 终于有图床了</p>
+</li>
+<li><p>其实笔记最好还是自己平时带着记比较好</p>
+<p><del>但是这当然是不可能的啊哈哈哈哈<del/></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术小记</category>
+        <category>快乐摸鱼</category>
+      </categories>
+      <tags>
+        <tag>手写体</tag>
+        <tag>word 宏命令</tag>
+        <tag>摸鱼</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时与光W_202006-4</title>
+    <url>/2020/06/28/%E6%97%B6%E4%B8%8E%E5%85%89W_202006-4/</url>
+    <content><![CDATA[<p>2020年6月22日 ~ 28日.</p>
+<p>开始个人小结计划</p>
+<p>学习 CSAPP </p>
+<p>追剧, 玩游戏</p>
+<a id="more"></a>
+<h2 id="时与光-个人小结计划"><a href="#时与光-个人小结计划" class="headerlink" title="时与光:个人小结计划"></a>时与光:个人小结计划</h2><p>听说每天坚持写技术博客有利于知识巩固与技能加深, 自觉没有每天坚持的能力, 想了个折中的办法: 以一周为阶段定期总结. 当然, 每月月底, 每半年, 每年也要整理记录! </p>
+<p>主要内容希望自己能够以技术学习, 生活记录为主. 反正也不会有别人看, 就写的简略且随性一些. </p>
+<p><strong>以下是每次小结的规范:</strong></p>
+<ol>
+<li>小结分为: 周记, 月记, 半年总结, 年度总结 四种, 后缀分别以<code>w,m,h,y</code>标识.</li>
+<li>命名格式例: <ol>
+<li>周记: <code>时与光W_202006-4</code> 末位数字代表本月第几周(周日为准)</li>
+<li>月记: <code>时与光M_202006</code></li>
+<li>半年记: <code>时与光H_2020上半年</code></li>
+<li>年度记: <code>时与光Y_2020年度总结</code></li>
+</ol>
+</li>
+<li>内容包括: <ol>
+<li>技术学习成果与产出总结</li>
+<li>记录生活, 如旅游 读书 观影 游戏</li>
+<li>突如其来的想法</li>
+<li>下一阶段的展望</li>
+</ol>
+</li>
+</ol>
+<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>项目地址:</p>
+<p><a href="https://github.com/luy-0/CS-APP-LABs" target="_blank" rel="noopener">https://github.com/luy-0/CS-APP-LABs</a></p>
+<p>对CSAPP这本书垂涎已久, 趁着疫情的期末大把空闲时间和两位同学组队学习CSAPP以及CMU的15-213课程. 更多学习情况参看README部分.</p>
+<p>本周着重于完成机器级别编程部分, 以及课程配套实验中的Bomb Lab, 这是一个通过 gdb 查看可执行文件的汇编代码, 并且推导出炸弹拆除的密钥. 在这几天习得了基本的汇编代码阅读能力, gdb 的基本运用能力, 对C计算机底层运算的实现有了更深的理解. </p>
+<p>这个Lab真是让人又爱又恨, 每拆除一个炸弹的时候成就感满满, 但是对着汇编代码死活瞪不出逻辑的暴躁和无奈…</p>
+<p>机器级别编程 是指 使用汇编代码完成函数操作. 主要学习内容包括 控制机器执行, 执行过程 数据的存储(数组 结构 联合) 以及其他进阶部分. 其中关于缓存区溢出, 栈攻击, 浮点代码等部分掌握的不好.</p>
+<h2 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h2><p>这一周在追《隐蔽的角落》 . 改编自紫金陈的推理小说《坏小孩》，讲述了在沿海小城三个孩子(朱朝阳, 岳普, 严良) 在景区游玩时无意间拍摄记录了一次谋杀(张东升, 秦昊饰)，想借机敲诈来筹钱，以及随后发生的一连串的故事。大结局播完豆瓣评分依旧为9.0</p>
+<p>主要是周围同学都在追哈哈哈, 感叹国产网剧真的很成熟了, 前几集导演对于节奏把握的很好, 中间叙事稍有平淡, 最后一部分还没看😂  配乐挺用心, 虽然我听不懂后现代, 但是还是有被情绪感染到. 在展现上制片组的细致程度令人感动, 例如张东升海夜追朝阳时对着脚步印, 例如试卷和板书上的题目真的是初中知识点 , 竟然有一点点对着美剧扣细节的感觉了. 演员也实力诠释, 秦昊的演技令人背后发凉, 小朋友的演技也很稳啊~ 朝阳那种说的少想得多的内向好学生非常真实, 普普的可爱是真的戏里戏外的可爱 ,就是太机灵懂事了, 牛逼的让人心疼(话说我怎么总觉得她最后要黑化一类的?) 严良其实没有很好地演出想象里的小痞子气, 缺点那种坏味.一部很优秀的国产剧, 拯救了我被言情耽改剧摧毁的信心~ (没错我就是指ssss和cql)</p>
+<p>希望结局能够依旧精彩吧! </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/XGYW%25K%7DKW%40MFX%7BQNNHBI95W.jpg" alt=""></p>
+<h2 id="玩游戏"><a href="#玩游戏" class="headerlink" title="玩游戏"></a>玩游戏</h2><p>嗯…最近又入了平安京的坑, MOBA真香:dog: 不过打了一周上了少属就没啥动力了… 快乐咸鱼佛系游戏, 竞技游戏嘛 心态放好就行了~</p>
+<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP </p>
+<p>开始刷LC</p>
+<p>控制每日游戏时长</p>
+]]></content>
+      <categories>
+        <category>时与光</category>
+      </categories>
+      <tags>
+        <tag>小结</tag>
+        <tag>周记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>操作系统之进程线程</title>
     <url>/2020/06/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/</url>
     <content><![CDATA[<p>本章节包括三个小节</p>
@@ -447,89 +584,64 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>使用伪手写体搞定毛概笔记</title>
-    <url>/2020/06/06/%E4%BD%BF%E7%94%A8%E4%BC%AA%E6%89%8B%E5%86%99%E4%BD%93%E6%90%9E%E5%AE%9A%E6%AF%9B%E6%A6%82%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>毛概课在接连上了五个月网课之后,终于等到了期末!</p>
-<p>对此,毛概老师给全班做出指示: “收  给我收笔记!” </p>
+    <title>时与光H_2020上半年</title>
+    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89H-2020%E4%B8%8A%E5%8D%8A%E5%B9%B4/</url>
+    <content><![CDATA[<p>2020年1月 ~ 6月</p>
+<p>关键词: 疫情, 学习, 健身</p>
 <a id="more"></a>
-<h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>众所周知, 大学的思政课笔记是最无聊虽没意义的形式主义了.</p>
-<p>尤其是他还要求是手写的情况下.</p>
-<p>尤其是手写的笔记还要拍照提交的情况下.</p>
-<p><del>不会吧不会吧, 不会真的有人还在用纸笔记笔记吧? 🐶<del/></p>
-<p>受亲爱的<a href="https://moefactory.com/" target="_blank" rel="noopener">小梦同学</a>提点, 我们来研究一下怎么<strong>仿造手写体</strong>打印材料.</p>
-<p><strong>重要提醒</strong></p>
-<p>由于打印机本身的限制, 实物还是肉眼可见地分辨出伪手写稿. 本学期因为以前的影响只要求把笔记拍照上传检查, 比较好蒙混过关🤔</p>
-<p>如果是线下查收, 还是换个摸鱼方法吧….</p>
-<p>本方法无需编程基础. </p>
-<h2 id="开冲"><a href="#开冲" class="headerlink" title="开冲"></a>开冲</h2><h3 id="Step1-生成自己的手写字体"><a href="#Step1-生成自己的手写字体" class="headerlink" title="Step1. 生成自己的手写字体"></a>Step1. 生成自己的手写字体</h3><p>北京大学计算机科学技术研究所有一个项目<a href="http://59.108.48.27/flexifont-chn/login/" target="_blank" rel="noopener">Flexifont字库</a>, 可以实现自己的字库. 点开注册登录, 根据提示下载模板, 打印书写, 拍照生成就可以了. </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/%5DI%7DRW22GJ%7B%401NL7JYIE%2483C.png" alt=""></p>
-<p>如图, 下载不同字数的模板, 打印出来填好,  上传生成即可.</p>
-<p>不过我没整这一步, 直接在字库分享里面下了别人的, 谢谢张建同学.</p>
-<p>下载好.ttf文件后导入系统文件夹(C:\Windows\Fonts)即可.</p>
-<h3 id="Step2-设置-Word-宏命令"><a href="#Step2-设置-Word-宏命令" class="headerlink" title="Step2. 设置 Word 宏命令"></a>Step2. 设置 Word 宏命令</h3><p>参考了 <a href="https://www.zhihu.com/question/20308770" target="_blank" rel="noopener">这个问题 </a>下的回答</p>
-<p>在Word中依次点击 “文件 -&gt; 选项 -&gt; 信任中心 -&gt; 信任中心设置 -&gt; 宏设置” 在右侧选中 “启用所有宏”.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/hongshezhi%20.png" alt="宏设置"></p>
-<p><strong>回到主界面, 视图 - 宏 - 查看宏</strong></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/2020%E5%B9%B46%E6%9C%886%E6%97%A53.png" alt="宏代码编写1"></p>
-<p>输入方案名,新建, 并在弹出的窗口中插入以下代码</p>
-<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">' 注意是插入 不是直接把原来的替换掉哦</span></span><br><span class="line">    <span class="keyword">Dim</span> R_Character <span class="keyword">As</span> Range</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> FontSize(<span class="number">5</span>)</span><br><span class="line">	<span class="comment">' 字体大小在5个值之间进行波动，可以改写 </span></span><br><span class="line">	<span class="comment">' 个人建议 如果纸张线条间距为8mm, 字号设置为16左右比较合适</span></span><br><span class="line">    FontSize(<span class="number">1</span>) = <span class="string">"15.5"</span></span><br><span class="line">    FontSize(<span class="number">2</span>) = <span class="string">"15"</span></span><br><span class="line">    FontSize(<span class="number">3</span>) = <span class="string">"16"</span></span><br><span class="line">    FontSize(<span class="number">4</span>) = <span class="string">"17"</span></span><br><span class="line">    FontSize(<span class="number">5</span>) = <span class="string">"17.5"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> FontName(<span class="number">3</span>)</span><br><span class="line">    <span class="comment">'字体名称在三种字体之间进行波动，可改写，但需要保证系统拥有下列字体</span></span><br><span class="line">	FontName(<span class="number">1</span>) = <span class="string">"宋体"</span></span><br><span class="line">	FontName(<span class="number">2</span>) = <span class="string">"微软雅黑"</span></span><br><span class="line">	FontName(<span class="number">3</span>) = <span class="string">"黑体"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> ParagraphSpace(<span class="number">5</span>)</span><br><span class="line">	<span class="comment">'行间距 在一定以下值中均等分布，可改写 </span></span><br><span class="line">	<span class="comment">' 个人建议 如果纸张线条间距为8mm, 字号设置为23左右比较合适, 并且不建议波动过大</span></span><br><span class="line">    ParagraphSpace(<span class="number">1</span>) = <span class="string">"22"</span></span><br><span class="line">    ParagraphSpace(<span class="number">2</span>) = <span class="string">"22.5"</span></span><br><span class="line">    ParagraphSpace(<span class="number">3</span>) = <span class="string">"23"</span></span><br><span class="line">    ParagraphSpace(<span class="number">4</span>) = <span class="string">"23.5"</span></span><br><span class="line">    ParagraphSpace(<span class="number">5</span>) = <span class="string">"24"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">'下面是功能代码 不想要什么直接删除就行</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">For</span> <span class="keyword">Each</span> R_Character <span class="keyword">In</span> ActiveDocument.Characters</span><br><span class="line"></span><br><span class="line">        VBA.Randomize</span><br><span class="line"></span><br><span class="line">        R_Character.Font.Name = FontName(Int(VBA.Rnd * <span class="number">3</span>) + <span class="number">1</span>)</span><br><span class="line">	<span class="comment">'上面一行是随机变换字体,不想要可删除</span></span><br><span class="line">        R_Character.Font.Size = FontSize(Int(VBA.Rnd * <span class="number">5</span>) + <span class="number">1</span>)</span><br><span class="line">	<span class="comment">'上面一行是随机变换字体大小,不想要可删除</span></span><br><span class="line">        R_Character.Font.Position = Int(VBA.Rnd * <span class="number">3</span>) + <span class="number">1</span></span><br><span class="line">	<span class="comment">'上面一行对每个字随机上下微调,不想要可删除</span></span><br><span class="line">        R_Character.Font.Spacing = <span class="number">0</span></span><br><span class="line">	<span class="comment">'上面一行不要修改</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Next</span></span><br><span class="line"></span><br><span class="line">    Application.ScreenUpdating = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">For</span> <span class="keyword">Each</span> Cur_Paragraph <span class="keyword">In</span> ActiveDocument.Paragraphs</span><br><span class="line">	<span class="comment">'上面三行不要修改</span></span><br><span class="line">        Cur_Paragraph.LineSpacing = ParagraphSpace(Int(VBA.Rnd * <span class="number">5</span>) + <span class="number">1</span>)</span><br><span class="line">	<span class="comment">'上面一行对每个行间距微调,不想要可删除</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Next</span></span><br><span class="line">        Application.ScreenUpdating = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<p>修改后如图, 记得要把代码16-19行换成你自己的手写体</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200606154923.jpg" alt="代码修改如下"></p>
-<p>点击上面的运行按钮(或者是个小绿三角) 等待</p>
-<p>不出意外结果如下</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/2020%E5%B9%B46%E6%9C%886%E6%97%A515%E7%82%B951%E5%88%86.jpg" alt="记得要把字体换成自己的手写体哦"></p>
-<p>记得把字体换成不同但相近的手写体, 别想现在一样丑不拉几的</p>
-<h3 id="Step3-设置页面与段落"><a href="#Step3-设置页面与段落" class="headerlink" title="Step3. 设置页面与段落"></a>Step3. 设置页面与段落</h3><p>准备好打印机, 复印纸, 以及浪费很多纸张的决心, 开始下一步.</p>
-<p><del>当然你要实现准备好电子笔记, 你不会真的没有记吧?<del/></p>
-<h4 id="字体字号"><a href="#字体字号" class="headerlink" title="字体字号"></a>字体字号</h4><p>在上一步我们应该是基本解决了这个问题, 如果没有, 若纸张线条间距为8mm, 字号设置为16左右比较合适.</p>
-<p>word 中字号的单位是磅, 约为0.3528毫米.也就是说16的字号打印出来大约是5.645毫米高.</p>
-<p>此外可以试一下全部用 <strong>粗体</strong> , 因为我用的字体比较纤细, 看着太假</p>
-<p>多试试, 不要怕废纸</p>
-<h4 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h4><p>全选, 右键段落, 设置行间距与段间距.</p>
-<p>间距一栏下</p>
-<p><strong>段前段后:</strong>全部设置成0 空白也要再设置一次</p>
-<p><strong>行距:</strong> 选择固定值, 这里单位依旧是磅数, 如果直线相隔8mm的话大约设置成23磅(23*0.35=8.1144‬)</p>
-<h4 id="页面"><a href="#页面" class="headerlink" title="页面"></a>页面</h4><p>word主页面 - 布局 - 页边距&amp;纸张大小</p>
-<p>自己量一量吧, 上边距是到第一行的<strong>字的上沿</strong>, 下边距是最后一行<strong>字的下沿</strong></p>
-<p>多试试, 不要怕废纸</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/K%607_8GUVFXF0%24PQU81VDCUK.jpg" alt="这么多全是浪费掉的"></p>
-<h3 id="Step4-其他作假手段"><a href="#Step4-其他作假手段" class="headerlink" title="Step4. 其他作假手段"></a>Step4. 其他作假手段</h3><ol>
-<li><p>全部用粗体, 生成的字体过于纤细</p>
-</li>
-<li><p>切换字体确实有效,但是字体风格不能相差太大</p>
-</li>
-<li><p>扫描后对PDF做一下黑白处理, 更难发现</p>
-<p>另外推荐使用app Scanbot扫描, 吊打某某扫描王</p>
-</li>
-<li><p>通过<a href="https://www.ilovepdf.com/compress_pdf" target="_blank" rel="noopener">这个网址</a>对PDF进行全损压缩, 直接挑压缩率最高的那个选项(斜眼笑)</p>
-</li>
-</ol>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>成品还是很满意滴~ </p>
-<p>线上检查的话应该足够以假乱真了吧👌</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200606161805.jpg" alt="效果图1"></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200606161822.jpg" alt="效果图2"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li><p>听说Github上<a href="https://link.zhihu.com/?target=https%3A//github.com/Gsllchb/Handright">这个项目</a>可以进一步微调字体效果,实现同字不同样</p>
-</li>
-<li><p>使用喷墨式打印机应该会稍微好一些</p>
-</li>
-<li><p>学到了磅数这一没什么卵用的知识</p>
-</li>
-<li><p>为了本篇传图开了腾讯云的COS, 终于有图床了</p>
-</li>
-<li><p>其实笔记最好还是自己平时带着记比较好</p>
-<p><del>但是这当然是不可能的啊哈哈哈哈<del/></p>
-</li>
-</ul>
+<p>第一篇半年记, 一时间竟然有些不知道该些写什么.</p>
+<p>从头说起吧, 纯流水账. </p>
+<p>明天再写吧(咕咕警告)</p>
 ]]></content>
       <categories>
-        <category>技术小记</category>
-        <category>快乐摸鱼</category>
+        <category>时与光</category>
       </categories>
       <tags>
-        <tag>手写体</tag>
-        <tag>word 宏命令</tag>
-        <tag>摸鱼</tag>
+        <tag>小结</tag>
+        <tag>半年记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时与光W_202007-1</title>
+    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-1/</url>
+    <content><![CDATA[<p>2020年6月29日 ~ 7月5日.</p>
+<p>学习CSAPP</p>
+<p>追剧, 游戏, 爬山</p>
+<a id="more"></a>
+<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>完成了Bomb Lab的最后两个炸弹, 并且撰写完成了<a href="[https://luy-hb.xyz/2020/07/01/CSAPP-Lab%E7%AC%94%E8%AE%B02-Bomb/](https://luy-hb.xyz/2020/07/01/CSAPP-Lab笔记2-Bomb/">实验报告</a>)</p>
+<p>巩固了上周最后遗留的不太理解的栈溢出攻击等知识点, 开始完成Attack Lab. 目前已完成了前两个小关. </p>
+<p>Attack Lab 是特别针对栈溢出攻击设计的配套实验 <del>虽然我觉得一小节一个实验非常奇怪</del>, 分别要求使用代码注入攻击与ROP(面向返回编程）对代码进行破坏. </p>
+<p>此外还在继续学习有关内存的层次结构等章节, 计划本周内写完有关内存的一篇学习报告.</p>
+<h2 id="追剧-游戏-爬山"><a href="#追剧-游戏-爬山" class="headerlink" title="追剧, 游戏, 爬山"></a>追剧, 游戏, 爬山</h2><h3 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h3><p>这周将隐蔽的角落看完了, 结局和自己中途推理的基本一致, 也有些许出入. (当然结局本身就是众说纷纭的). 起码早早地看出来朝阳是Boss了不是吗😂</p>
+<p>最佩服自己的是第一集看到张老师一口气一杯水的时候就吐槽 “ 这么能喝怕不是个糖尿病吧 “ , 谁知道居然一语成谶, 不过本身也是瞎猫碰上死耗子了.</p>
+<h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><p>今年Steam夏促真不行…最后一百出头入了 <a href="https://www.xiaoheihe.cn/games/detail/638230" target="_blank" rel="noopener">风之旅人</a> + <a href="https://www.xiaoheihe.cn/games/detail/632360" target="_blank" rel="noopener">雨中冒险2</a> + (被舍友安利的) <a href="https://www.xiaoheihe.cn/games/detail/8870" target="_blank" rel="noopener">生化奇兵:无限</a>. </p>
+<p>当晚打开了散步模拟器风之旅人. 其实作品本身倒是没有特别打动人的地方. 讲述的不过是一次经历千山万水的朝圣之旅, 哪怕洪水滔天,危机四伏, 命丧白土. 画面确实非常优秀, 沙漠的细腻触感比较真实. 部分画面也很适合截图当屏保, 但网上普遍略有过誉.</p>
+<p>一周目偶有遇到几个同行人, 可惜都匆匆离去, 大概是多周目玩家已经没有了荒野中遇到伙伴时的欣喜. 二周目的时候在断桥遇见了一位红袍, 似乎ta也并不是新手, 但是还是很激动地在我身边鸣叫. 于是我第一次遇到真正意义上的同行者. 我们在路上互相充能, 用单调的音节琴瑟和鸣, 在飞龙第一次出现前互相发出短促的提醒, 在雪地里看见ta被挑飞而无能为力, 在暴风雪中里用尽最后一丝力气发出微不可闻的鼓励. 最终在山巅, 在空中, 在瀑布, 在微光中起舞. 丝带在圣光的沾染中螺旋缠绕, 我突然有些庆幸选择开始了二周目, 而不是气呼呼地从硬盘中卸载游戏, 然后在他人问起时说一句: “ 啊画面挺好, 但不值.” </p>
+<p>谢谢你, 一期一会的陌生人. </p>
+<p>当然最后实在是不忍离别23333, 在雪地上磕磕绊绊地一个一个字符地写下自己的联系方式, 最后! 居然! 成功地! 加上了好友, 真是太幸运了~</p>
+<h3 id="爬山"><a href="#爬山" class="headerlink" title="爬山"></a>爬山</h3><p>一开始听说本地到黄山的高铁通车了, 想着周末去玩结果那里下雨. 但是已经勾起我的爬山欲望了23333. 第二天周六就收拾下准备起早去爬隔壁的小山. 临走前想想又把高中同学拽上了! 一天刷了俩座山.</p>
+<p>不过这个小土坡就是没挑战性啦.σ` ∀´)ﾟ∀ﾟ)σ (`ヮ´)</p>
+<p>晚上吃了快乐烤鱼, 好恰.</p>
+<p>结果第二天趴在床上起不来了o(TヘTo)</p>
+<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>收了好多专业书, 希望能一本本刷完! 加油! </p>
+<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><ul>
+<li>[x] 继续CSAPP </li>
+<li>[x] 开始刷LC</li>
+<li>[x] 控制每日游戏时长</li>
+</ul>
+<p>都有做到! ✌</p>
+<p>不过 LC 感觉自己还有很多不太清楚, 复杂度大概算是 O(能过) </p>
+<p>好久没有玩平安京了, 有效控制.<del>虽说是把时间花在journey上了</del></p>
+<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP (要加快速度了! )  </p>
+<p>继续刷 LC</p>
+<p>产出两篇以上的学习笔记(总结不算) </p>
+]]></content>
+      <categories>
+        <category>时与光</category>
+      </categories>
+      <tags>
+        <tag>小结</tag>
+        <tag>周记</tag>
       </tags>
   </entry>
   <entry>
@@ -958,57 +1070,6 @@ T_0\\
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时与光W_202006-4</title>
-    <url>/2020/06/28/%E6%97%B6%E4%B8%8E%E5%85%89W_202006-4/</url>
-    <content><![CDATA[<p>2020年6月22日 ~ 28日.</p>
-<p>开始个人小结计划</p>
-<p>学习 CSAPP </p>
-<p>追剧, 玩游戏</p>
-<a id="more"></a>
-<h2 id="时与光-个人小结计划"><a href="#时与光-个人小结计划" class="headerlink" title="时与光:个人小结计划"></a>时与光:个人小结计划</h2><p>听说每天坚持写技术博客有利于知识巩固与技能加深, 自觉没有每天坚持的能力, 想了个折中的办法: 以一周为阶段定期总结. 当然, 每月月底, 每半年, 每年也要整理记录! </p>
-<p>主要内容希望自己能够以技术学习, 生活记录为主. 反正也不会有别人看, 就写的简略且随性一些. </p>
-<p><strong>以下是每次小结的规范:</strong></p>
-<ol>
-<li>小结分为: 周记, 月记, 半年总结, 年度总结 四种, 后缀分别以<code>w,m,h,y</code>标识.</li>
-<li>命名格式例: <ol>
-<li>周记: <code>时与光W_202006-4</code> 末位数字代表本月第几周(周日为准)</li>
-<li>月记: <code>时与光M_202006</code></li>
-<li>半年记: <code>时与光H_2020上半年</code></li>
-<li>年度记: <code>时与光Y_2020年度总结</code></li>
-</ol>
-</li>
-<li>内容包括: <ol>
-<li>技术学习成果与产出总结</li>
-<li>记录生活, 如旅游 读书 观影 游戏</li>
-<li>突如其来的想法</li>
-<li>下一阶段的展望</li>
-</ol>
-</li>
-</ol>
-<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>项目地址:</p>
-<p><a href="https://github.com/luy-0/CS-APP-LABs" target="_blank" rel="noopener">https://github.com/luy-0/CS-APP-LABs</a></p>
-<p>对CSAPP这本书垂涎已久, 趁着疫情的期末大把空闲时间和两位同学组队学习CSAPP以及CMU的15-213课程. 更多学习情况参看README部分.</p>
-<p>本周着重于完成机器级别编程部分, 以及课程配套实验中的Bomb Lab, 这是一个通过 gdb 查看可执行文件的汇编代码, 并且推导出炸弹拆除的密钥. 在这几天习得了基本的汇编代码阅读能力, gdb 的基本运用能力, 对C计算机底层运算的实现有了更深的理解. </p>
-<p>这个Lab真是让人又爱又恨, 每拆除一个炸弹的时候成就感满满, 但是对着汇编代码死活瞪不出逻辑的暴躁和无奈…</p>
-<p>机器级别编程 是指 使用汇编代码完成函数操作. 主要学习内容包括 控制机器执行, 执行过程 数据的存储(数组 结构 联合) 以及其他进阶部分. 其中关于缓存区溢出, 栈攻击, 浮点代码等部分掌握的不好.</p>
-<h2 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h2><p>这一周在追《隐蔽的角落》 . 改编自紫金陈的推理小说《坏小孩》，讲述了在沿海小城三个孩子(朱朝阳, 岳普, 严良) 在景区游玩时无意间拍摄记录了一次谋杀(张东升, 秦昊饰)，想借机敲诈来筹钱，以及随后发生的一连串的故事。大结局播完豆瓣评分依旧为9.0</p>
-<p>主要是周围同学都在追哈哈哈, 感叹国产网剧真的很成熟了, 前几集导演对于节奏把握的很好, 中间叙事稍有平淡, 最后一部分还没看😂  配乐挺用心, 虽然我听不懂后现代, 但是还是有被情绪感染到. 在展现上制片组的细致程度令人感动, 例如张东升海夜追朝阳时对着脚步印, 例如试卷和板书上的题目真的是初中知识点 , 竟然有一点点对着美剧扣细节的感觉了. 演员也实力诠释, 秦昊的演技令人背后发凉, 小朋友的演技也很稳啊~ 朝阳那种说的少想得多的内向好学生非常真实, 普普的可爱是真的戏里戏外的可爱 ,就是太机灵懂事了, 牛逼的让人心疼(话说我怎么总觉得她最后要黑化一类的?) 严良其实没有很好地演出想象里的小痞子气, 缺点那种坏味.一部很优秀的国产剧, 拯救了我被言情耽改剧摧毁的信心~ (没错我就是指ssss和cql)</p>
-<p>希望结局能够依旧精彩吧! </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/XGYW%25K%7DKW%40MFX%7BQNNHBI95W.jpg" alt=""></p>
-<h2 id="玩游戏"><a href="#玩游戏" class="headerlink" title="玩游戏"></a>玩游戏</h2><p>嗯…最近又入了平安京的坑, MOBA真香:dog: 不过打了一周上了少属就没啥动力了… 快乐咸鱼佛系游戏, 竞技游戏嘛 心态放好就行了~</p>
-<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP </p>
-<p>开始刷LC</p>
-<p>控制每日游戏时长</p>
-]]></content>
-      <categories>
-        <category>时与光</category>
-      </categories>
-      <tags>
-        <tag>小结</tag>
-        <tag>周记</tag>
       </tags>
   </entry>
   <entry>
