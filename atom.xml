@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-24T13:24:46.209Z</updated>
+  <updated>2020-07-31T11:42:23.297Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>时与光W-202008-1</title>
+    <link href="http://yoursite.com/2020/07/31/%E6%97%B6%E4%B8%8E%E5%85%89W-202008-1/"/>
+    <id>http://yoursite.com/2020/07/31/%E6%97%B6%E4%B8%8E%E5%85%89W-202008-1/</id>
+    <published>2020-07-31T11:42:23.000Z</published>
+    <updated>2020-07-31T11:42:23.297Z</updated>
+    
+    <content type="html"><![CDATA[<p>2020年月日~月日</p><h1 id="在这里简要概括内容"><a href="#在这里简要概括内容" class="headerlink" title="在这里简要概括内容"></a>在这里简要概括内容</h1><a id="more"></a><h2 id="在这里开始内容"><a href="#在这里开始内容" class="headerlink" title="#在这里开始内容"></a>#在这里开始内容</h2><h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2020年月日~月日&lt;/p&gt;
+&lt;h1 id=&quot;在这里简要概括内容&quot;&gt;&lt;a href=&quot;#在这里简要概括内容&quot; class=&quot;headerlink&quot; title=&quot;在这里简要概括内容&quot;&gt;&lt;/a&gt;在这里简要概括内容&lt;/h1&gt;
+    
+    </summary>
+    
+    
+      <category term="时与光" scheme="http://yoursite.com/categories/%E6%97%B6%E4%B8%8E%E5%85%89/"/>
+    
+    
+      <category term="小结" scheme="http://yoursite.com/tags/%E5%B0%8F%E7%BB%93/"/>
+    
+      <category term="周记" scheme="http://yoursite.com/tags/%E5%91%A8%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>时与光W-202007-4</title>
+    <link href="http://yoursite.com/2020/07/31/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-4/"/>
+    <id>http://yoursite.com/2020/07/31/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-4/</id>
+    <published>2020-07-31T11:42:02.000Z</published>
+    <updated>2020-07-31T12:56:57.028Z</updated>
+    
+    <content type="html"><![CDATA[<p>2020年7月20日~7月26日</p><p>宿舍小厨</p><a id="more"></a><h2 id="宿舍小厨"><a href="#宿舍小厨" class="headerlink" title="宿舍小厨"></a>宿舍小厨</h2><p>上周买的食材陆陆续续到了, 即将开始与导员宿管的躲猫猫生活. 由于我手残下单鸡蛋的时候多下了一份,现在我对着80个鸡蛋欲哭无泪… </p><p>整理下目前的装备与食材.</p><ol><li>锅*2, 一个口深适合煮汤, 一个口浅适合煎东西;</li><li>一个蒸蛋器</li><li>面板, 擀面杖, 刀具餐具</li></ol><p>食材:</p><ol><li>鸡蛋</li><li>紫薯</li><li>黑小麦全麦粉</li><li>鸡肉肠, 鸡胸肉,金枪鱼肉罐头</li><li>燕麦麦片</li><li>荞麦面</li><li>全麦面包</li></ol><h3 id="鸡蛋羹"><a href="#鸡蛋羹" class="headerlink" title="鸡蛋羹"></a>鸡蛋羹</h3><p>试图使用蒸蛋器蒸出鸡蛋羹, 但是挺失败的, 尽管在网上找了很多食谱…</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">鸡蛋羹做法</span><br><span class="line"></span><br><span class="line">少水蛋(质地硬)</span><br><span class="line">1. ⭐蛋:水&#x3D;1:1.5</span><br><span class="line">2. ⭐小火&gt;&gt;大火</span><br><span class="line">3. 温水&gt;凉水</span><br><span class="line">4. 电解质&gt;水        #电解质:盐&#x2F;高汤</span><br><span class="line">5. 加盖&gt;无盖        #用布反向包裹锅盖</span><br><span class="line">6. ⭐时间刚好&gt;&gt;多蒸一会</span><br><span class="line">7. ⭐凉开水&gt;&gt;自来水</span><br><span class="line"></span><br><span class="line">多水蛋(质地软)</span><br><span class="line">1. 蛋:水&#x3D;1:2 or 1:3</span><br><span class="line">2. 一定要加电解质</span><br><span class="line">3. 火候,时间相对不重要</span><br><span class="line"></span><br><span class="line">其他</span><br><span class="line">1. 蒸锅上汽之后再放入</span><br><span class="line">总结自B站UP喃猫小厨房,BV1x441117r4</span><br></pre></td></tr></table></figure><p>但是总是蒸出来蜂窝蛋…</p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%B8%A1%E8%9B%8B%E7%BE%B9.jpg" alt=""></p><h3 id="煎鸡蛋"><a href="#煎鸡蛋" class="headerlink" title="煎鸡蛋"></a>煎鸡蛋</h3><p>从最开始打在锅里面热一热, 到后面在少放油的情况下尽量更香, 味道好极了现在.</p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E8%9B%8B.jpg" alt=""></p><h3 id="什锦-燕麦-紫薯-鸡蛋-牛奶饼"><a href="#什锦-燕麦-紫薯-鸡蛋-牛奶饼" class="headerlink" title="什锦-燕麦-紫薯-鸡蛋-牛奶饼"></a>什锦-燕麦-紫薯-鸡蛋-牛奶饼</h3><p>总而言是是各种奇妙的搭配组合…</p><h4 id="尝试1"><a href="#尝试1" class="headerlink" title="尝试1"></a>尝试1</h4><p>两个鸡蛋不加水搅拌,加入全麦粉, 加入烤熟切块的紫薯, 放入锅中烤熟.<br>但是我总觉得这么厚的饼不太适合直接烤, 不容易烤熟…而且紫薯块太大, 翻面的时候总是支离破碎.</p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%B4%AB%E8%96%AF%E9%A5%BC.jpg" alt=""></p><h4 id="尝试2"><a href="#尝试2" class="headerlink" title="尝试2"></a>尝试2</h4><p>第一次失败后决定做薄饼. 鸡蛋+麦片, 第一锅完全成了炒鸡蛋, 后续陆续放入面粉, 最终成形. 燕麦片本身的厚度使饼没有想象中那么薄, 但相比上一版好多了.</p><p>味道其实不太行, 由于只加入了少许盐, 基本没有任何滋味, 食之无味.</p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E9%A5%BC0.5.jpg" alt=""></p><h4 id="尝试3"><a href="#尝试3" class="headerlink" title="尝试3"></a>尝试3</h4><p>将燕麦片牛奶泡一晚, 次日打入鸡蛋搅拌, 放油下锅. 煎出来了奇形怪状的小饼干(疑似), 依旧没什么味道.</p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E9%A5%BC.jpg" alt=""></p><h4 id="尝试4"><a href="#尝试4" class="headerlink" title="尝试4"></a>尝试4</h4><p>直接鸡蛋液打匀分次倒入铺满锅底即可. 本来想加入切丁的鸡肉肠, 但是鸡蛋饼太薄肉丁根本镶嵌不上去, 最后变成了鸡蛋饼+炒肉丁.</p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%B8%A1%E8%9B%8B%E9%A5%BC%E8%82%89%E4%B8%81.jpg" alt=""></p><h3 id="紫薯燕麦粥"><a href="#紫薯燕麦粥" class="headerlink" title="紫薯燕麦粥"></a>紫薯燕麦粥</h3><p>紫薯蒸熟切块, 加水熬制30min,加入麦片熬煮20min, 香浓的燕麦紫薯粥就做好了.</p><p>粥越煮越稠, 我中间还以为自己水加多了去了点, 结果最后快熬干了orz.</p><p>水量没过紫薯上表面1-2公分.</p><p>味道还可以, 口中直呼烫烫烫</p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%B2%A5.jpg" alt=""></p><h4 id="荞麦面-煎鸡蛋-炒金枪鱼肉"><a href="#荞麦面-煎鸡蛋-炒金枪鱼肉" class="headerlink" title="荞麦面+煎鸡蛋+炒金枪鱼肉"></a>荞麦面+煎鸡蛋+炒金枪鱼肉</h4><p>好吧这个没啥技术含量..看图吧</p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%9D%A2.jpg" alt=""></p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>千里之行始于足下, 疫情期间也是看着其他人都化身大厨. 一直想开始却迟迟没有动身. 在学校尝试着开始自己做菜做饭才发现其实没有想象中那么困难, 没有锅碗瓢盆就想办法解决, 没有食材就京东天猫冷链, 缺少绿叶菜就多买水果补充维生素. 天下是有难易乎? 为之, 则难者亦易也.</p><p>还有就是对任何事情都不能等闲视之, 哪怕是简单的鸡蛋羹, 小学三年级在家里面拿微波炉轻松搞定的东西换了厨具做的依旧很糟糕. 煎鸡蛋放多少油? 做饼的面水比例是多少才不粘锅有能均匀铺开? 听到什么声音说明是火候太过了? 好多细节都是没有实操的情况下光靠别人的转述学不到的. 就像这几天在学校招新群里讨论的家长, 自己其实根本不了解行业情况, 道听途说地从别人的谈论, 亲戚朋友的个例中断定专业的优劣. 纸上得来终觉浅,绝知此事要躬行啊.</p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/ai.png" alt=""></p><h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>跟着宗主任去招新群里面答疑打白工, 每天都能碰见各种神奇的家长, 常面一度十分欢乐</p><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3><p>完全搞定数电+计组</p><p>检查牙齿</p><p>购买装备&amp;爬山</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2020年7月20日~7月26日&lt;/p&gt;
+&lt;p&gt;宿舍小厨&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="时与光" scheme="http://yoursite.com/categories/%E6%97%B6%E4%B8%8E%E5%85%89/"/>
+    
+    
+      <category term="小结" scheme="http://yoursite.com/tags/%E5%B0%8F%E7%BB%93/"/>
+    
+      <category term="周记" scheme="http://yoursite.com/tags/%E5%91%A8%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>CSAPP-Lab笔记3:Attack</title>
@@ -55,13 +107,14 @@
     <link href="http://yoursite.com/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-2/"/>
     <id>http://yoursite.com/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-2/</id>
     <published>2020-07-24T12:25:02.000Z</published>
-    <updated>2020-07-24T12:25:02.683Z</updated>
+    <updated>2020-07-31T11:35:36.336Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="在这里表明时间段"><a href="#在这里表明时间段" class="headerlink" title="在这里表明时间段"></a>在这里表明时间段</h1><h1 id="在这里简要概括内容"><a href="#在这里简要概括内容" class="headerlink" title="在这里简要概括内容"></a>在这里简要概括内容</h1><a id="more"></a><h2 id="在这里开始内容"><a href="#在这里开始内容" class="headerlink" title="#在这里开始内容"></a>#在这里开始内容</h2><h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3>]]></content>
+    <content type="html"><![CDATA[<p>2020年7月6日~2020年7月12日</p><p>徒步: 溧阳-丫髻山</p><a id="more"></a><h2 id="徒步-溧阳-丫髻山"><a href="#徒步-溧阳-丫髻山" class="headerlink" title="徒步: 溧阳-丫髻山"></a>徒步: 溧阳-丫髻山</h2><p>这周日 (7月11-12日) 第一次尝试徒步+爬野山. 以下为流水账记录:</p><p>因为集合的时间是周日大清早, 所以周六就提前去南京了, 找了一家普普通通的青旅安顿下来, 晚上在玄武湖公园逛了一圈 —— 预料之外的大啊哈哈哈, 晚上来这里跑步应该不错, 可惜还是在市中心, 空气不太行. 话说南京的早点包子真难吃啊… 早起去便利店安排了一些物资, 2L 的怡宝+1.5L 的绿茶, 后来证明买这些都是非常必要的.</p><p>领队是个很阳光的大兄弟, 很会唠. 等大巴的时候发现大家都是装备齐全, 背包+登山杖+徒步鞋, 只有我背个小破书包, 蹬了个平底运动鞋来了哈哈哈, 下次一定准备齐全😂. 大巴上领座是位带着两个双胞胎的大叔, 一看就是老户外达人了, 孩子约莫上初中, 一人一个登山杖. 一家人乐乐呵呵地来徒步, 又锻炼体质又促进感情, 真好啊🍋. </p><p>一个钟左右就到溧阳了. 目的地其实是溧阳, 句容交界的两座山头 (最后只爬了一座) . 本来的计划是野道去公路回, 结果前一天一直下雨, 就决定先走公路, 让山路多晒晒太阳. 说起来超级幸运, 本来都已经做好了下雨取消山路的心理准备了, 没想到早上突然晴天. 这也导致我没有带防晒(呜呜呜我以为会是阴天的脑子瓦特了), 带着防身又不多~ 一天走下来直接黑了两个度, 辛苦养半年,一朝回到解放前. </p><p>溧阳的一号彩虹公路, 其实只是中间的双黄道替换成三种不同颜色的标志线, 起初看图片觉得平平无奇, (不就是换个颜色吗有什么新鲜的) 实际上在公路走啊走啊, 看见一条彩虹从脚下延申向远方, 还是有种小确幸滴. 我甚至怀疑倘若自驾走这条路线都没有徒步来的快乐. 一路上和周围人谈笑风生. 有去时正好坐我后排的X, 主动来搭话的杰哥, 另一个小哥shè哥chù Y. 都是独行侠, 甚至都是互联网相关行业的, 只有我一个在校学生. 杰哥是老徒步者了,准备十分充分(连护袖都有准备) 我甚至被杰哥开玩笑”看鞋子就知道是不是新手徒步” (别骂了别骂了我回去就买鞋子😭) 一路上蓝天白云, 上半晌的柏油路还没有升温, 跟着大家东扯西扯: 杰哥今年才从Z大硕士毕业, X 在江宁工作一年, Y本科出来已经工作了五年了. 听他们谈论房租 未来发展, 人生规划. 在想过几年自己是不是也在某个城市漂泊, 在考虑户口, 房价, 股价, 政策发展与行业未来. 同行的还有一个背着女孩的父亲, 小女孩约莫四五岁, 坐在爸爸背后的座位上. 后面上坡下坡都是父亲一直背完了全程, 实在太厉害了!</p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%BD%A9%E8%99%B9%E5%85%AC%E8%B7%AF.jpg" alt="彩虹公路"></p><p>终于走过了上半程, 在常州一处小监狱门口稍作休整, 和新伙伴们互相分享了干粮和水—— 这种徒步后的饥饿感让食物瞬间升华, 好吃程度不是拿个方格布带个小竹篮能比拟的2333. 发现拿头巾沾水后带着真的太爽了! 大太阳照着水分汽化吸热, 不经过汗流浃背体会不到凉爽的感觉. 就算在空调房里待一整个夏天也不行. 给大家分享了水, (内心OS: 终于把这个大累赘分出去了! ) 双胞胎在接过水后, 大叔还在一旁督促要说谢谢,  在野外水是非常非常重要的资源云云, 家教极好! 休整之后大家进入了野道, 我也开始记录爬山的路径. </p><p>第一小关是一座摇摇欲坠的小竹桥, 还未见到影子, 就听见前方队友惊呼, 原来竹桥年久失修, 终于在今日不堪重负垮了一半, 半截桥身已然入水. 后面的人只能一个一个走. 扒着相对牢固的扶手. 在最后一个人走过时, 竹桥终于完成了自己一生的使命, 光荣牺牲. 第二天大叔在群里发了我们每个人过桥的照片, 原来他一直在对岸拍摄大家互帮互助过桥的照片, 实在是太惊喜了.</p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%BF%87%E6%A1%A5.jpg" alt=""></p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E6%A1%A5.jpg" width = "800" height = "1000" /></p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8A.jpg" width="800" height = "1200" /></p><p>接下来一段上坡路, 坡度大约三四十多度, 茂林修竹, 蚊虫四散. 有同行者带了小音箱, 歌声回绕. 过了这一小段竹林后便是稍显难走的林中小径, 不过半米宽度. 由于X是妹子, 体力不佳, 我们逐渐和脱离了大部队, 又等到了另外一位女生Z. 互相帮着背个包搭把手, 爬上了山顶. </p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%B1%B1%E9%A1%B6.jpg" alt=""></p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%88%E7%85%A7.jpg" alt="合照"></p><p>下山. </p><p>下山的路比我们想的要更加麻烦, 坡度更大, 沙土质地的路也更难走. 只能每次都踩着树根和石块落脚. 有几段路中间没有落脚点, 后一个人就踩着前一个人的脚作为落脚点, 我也才意识到平底鞋真的真的不适合爬山orz, 完全没有抓地力. </p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8B.jpg" width="800" height = "1800" /></p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%AE%B0%E5%BD%95.jpg" alt=""></p><p>晚上约了快乐火锅</p><h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3>]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;在这里表明时间段&quot;&gt;&lt;a href=&quot;#在这里表明时间段&quot; class=&quot;headerlink&quot; title=&quot;在这里表明时间段&quot;&gt;&lt;/a&gt;在这里表明时间段&lt;/h1&gt;&lt;h1 id=&quot;在这里简要概括内容&quot;&gt;&lt;a href=&quot;#在这里简要概括内容&quot; class=&quot;headerlink&quot; title=&quot;在这里简要概括内容&quot;&gt;&lt;/a&gt;在这里简要概括内容&lt;/h1&gt;
+      &lt;p&gt;2020年7月6日~2020年7月12日&lt;/p&gt;
+&lt;p&gt;徒步: 溧阳-丫髻山&lt;/p&gt;
     
     </summary>
     
