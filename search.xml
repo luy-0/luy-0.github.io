@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>操作系统之进程间通信</title>
+    <url>/2020/06/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</url>
+    <content><![CDATA[<p>本章节包括两个小节</p>
+<ol>
+<li>进程间通信 (InterProess Communicatiin,IPC)</li>
+<li>经典的IPC问题</li>
+</ol>
+<a id="more"></a>
+<h2 id="IPC"><a href="#IPC" class="headerlink" title="IPC"></a>IPC</h2><p>在本小节会涉及到：</p>
+<ol>
+<li>什么是临界区资源<ol>
+<li>竞争</li>
+<li>保证临界区互斥的4个条件</li>
+</ol>
+</li>
+<li>互斥的策略1 (Busy Waiting)<ol>
+<li>禁止中断</li>
+<li>锁变量</li>
+<li>严格轮换法</li>
+<li>⭐Peterson 算法</li>
+<li>TSL 指令</li>
+</ol>
+</li>
+<li>互斥的策略2<ol>
+<li>上述策略的缺陷（忙等待 优先级反向）</li>
+<li>Sleep &amp; Wakeup<ol>
+<li>问题：唤醒丢失</li>
+</ol>
+</li>
+<li>⭐信号量 Semaphore<ol>
+<li>互斥信号量 Mutexe</li>
+<li>PV操作</li>
+</ol>
+</li>
+<li>管程 Monitor</li>
+<li>消息传递</li>
+<li>屏障</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TODO：第四节：IPC</span><br></pre></td></tr></table></figure>
+<h2 id="Classical-IPC-Problems"><a href="#Classical-IPC-Problems" class="headerlink" title="Classical IPC Problems"></a>Classical IPC Problems</h2><p>本小节将涉及到几个常见IPC模型：</p>
+<ol>
+<li>生产者与消费者</li>
+<li>读者与写者</li>
+<li>进餐的哲学家</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>专业课</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用伪手写体搞定毛概笔记</title>
     <url>/2020/06/06/%E4%BD%BF%E7%94%A8%E4%BC%AA%E6%89%8B%E5%86%99%E4%BD%93%E6%90%9E%E5%AE%9A%E6%AF%9B%E6%A6%82%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>毛概课在接连上了五个月网课之后,终于等到了期末!</p>
@@ -84,57 +143,6 @@
         <tag>手写体</tag>
         <tag>word 宏命令</tag>
         <tag>摸鱼</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时与光W_202006-4</title>
-    <url>/2020/06/28/%E6%97%B6%E4%B8%8E%E5%85%89W_202006-4/</url>
-    <content><![CDATA[<p>2020年6月22日 ~ 28日.</p>
-<p>开始个人小结计划</p>
-<p>学习 CSAPP </p>
-<p>追剧, 玩游戏</p>
-<a id="more"></a>
-<h2 id="时与光-个人小结计划"><a href="#时与光-个人小结计划" class="headerlink" title="时与光:个人小结计划"></a>时与光:个人小结计划</h2><p>听说每天坚持写技术博客有利于知识巩固与技能加深, 自觉没有每天坚持的能力, 想了个折中的办法: 以一周为阶段定期总结. 当然, 每月月底, 每半年, 每年也要整理记录! </p>
-<p>主要内容希望自己能够以技术学习, 生活记录为主. 反正也不会有别人看, 就写的简略且随性一些. </p>
-<p><strong>以下是每次小结的规范:</strong></p>
-<ol>
-<li>小结分为: 周记, 月记, 半年总结, 年度总结 四种, 后缀分别以<code>w,m,h,y</code>标识.</li>
-<li>命名格式例: <ol>
-<li>周记: <code>时与光W_202006-4</code> 末位数字代表本月第几周(周日为准)</li>
-<li>月记: <code>时与光M_202006</code></li>
-<li>半年记: <code>时与光H_2020上半年</code></li>
-<li>年度记: <code>时与光Y_2020年度总结</code></li>
-</ol>
-</li>
-<li>内容包括: <ol>
-<li>技术学习成果与产出总结</li>
-<li>记录生活, 如旅游 读书 观影 游戏</li>
-<li>突如其来的想法</li>
-<li>下一阶段的展望</li>
-</ol>
-</li>
-</ol>
-<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>项目地址:</p>
-<p><a href="https://github.com/luy-0/CS-APP-LABs" target="_blank" rel="noopener">https://github.com/luy-0/CS-APP-LABs</a></p>
-<p>对CSAPP这本书垂涎已久, 趁着疫情的期末大把空闲时间和两位同学组队学习CSAPP以及CMU的15-213课程. 更多学习情况参看README部分.</p>
-<p>本周着重于完成机器级别编程部分, 以及课程配套实验中的Bomb Lab, 这是一个通过 gdb 查看可执行文件的汇编代码, 并且推导出炸弹拆除的密钥. 在这几天习得了基本的汇编代码阅读能力, gdb 的基本运用能力, 对C计算机底层运算的实现有了更深的理解. </p>
-<p>这个Lab真是让人又爱又恨, 每拆除一个炸弹的时候成就感满满, 但是对着汇编代码死活瞪不出逻辑的暴躁和无奈…</p>
-<p>机器级别编程 是指 使用汇编代码完成函数操作. 主要学习内容包括 控制机器执行, 执行过程 数据的存储(数组 结构 联合) 以及其他进阶部分. 其中关于缓存区溢出, 栈攻击, 浮点代码等部分掌握的不好.</p>
-<h2 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h2><p>这一周在追《隐蔽的角落》 . 改编自紫金陈的推理小说《坏小孩》，讲述了在沿海小城三个孩子(朱朝阳, 岳普, 严良) 在景区游玩时无意间拍摄记录了一次谋杀(张东升, 秦昊饰)，想借机敲诈来筹钱，以及随后发生的一连串的故事。大结局播完豆瓣评分依旧为9.0</p>
-<p>主要是周围同学都在追哈哈哈, 感叹国产网剧真的很成熟了, 前几集导演对于节奏把握的很好, 中间叙事稍有平淡, 最后一部分还没看😂  配乐挺用心, 虽然我听不懂后现代, 但是还是有被情绪感染到. 在展现上制片组的细致程度令人感动, 例如张东升海夜追朝阳时对着脚步印, 例如试卷和板书上的题目真的是初中知识点 , 竟然有一点点对着美剧扣细节的感觉了. 演员也实力诠释, 秦昊的演技令人背后发凉, 小朋友的演技也很稳啊~ 朝阳那种说的少想得多的内向好学生非常真实, 普普的可爱是真的戏里戏外的可爱 ,就是太机灵懂事了, 牛逼的让人心疼(话说我怎么总觉得她最后要黑化一类的?) 严良其实没有很好地演出想象里的小痞子气, 缺点那种坏味.一部很优秀的国产剧, 拯救了我被言情耽改剧摧毁的信心~ (没错我就是指ssss和cql)</p>
-<p>希望结局能够依旧精彩吧! </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/XGYW%25K%7DKW%40MFX%7BQNNHBI95W.jpg" alt=""></p>
-<h2 id="玩游戏"><a href="#玩游戏" class="headerlink" title="玩游戏"></a>玩游戏</h2><p>嗯…最近又入了平安京的坑, MOBA真香:dog: 不过打了一周上了少属就没啥动力了… 快乐咸鱼佛系游戏, 竞技游戏嘛 心态放好就行了~</p>
-<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP </p>
-<p>开始刷LC</p>
-<p>控制每日游戏时长</p>
-]]></content>
-      <categories>
-        <category>时与光</category>
-      </categories>
-      <tags>
-        <tag>小结</tag>
-        <tag>周记</tag>
       </tags>
   </entry>
   <entry>
@@ -584,126 +592,6 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>时与光H_2020上半年</title>
-    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89H-2020%E4%B8%8A%E5%8D%8A%E5%B9%B4/</url>
-    <content><![CDATA[<p>2020年1月 ~ 6月</p>
-<p>关键词: 疫情, 学习, 健身</p>
-<a id="more"></a>
-<p>第一篇半年记, 一时间竟然有些不知道该些写什么.</p>
-<p>从头说起吧, 纯流水账. </p>
-<p>明天再写吧(咕咕警告)</p>
-]]></content>
-      <categories>
-        <category>时与光</category>
-      </categories>
-      <tags>
-        <tag>小结</tag>
-        <tag>半年记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时与光W_202007-1</title>
-    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-1/</url>
-    <content><![CDATA[<p>2020年6月29日 ~ 7月5日.</p>
-<p>学习CSAPP</p>
-<p>追剧, 游戏, 爬山</p>
-<a id="more"></a>
-<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>完成了Bomb Lab的最后两个炸弹, 并且撰写完成了<a href="[https://luy-hb.xyz/2020/07/01/CSAPP-Lab%E7%AC%94%E8%AE%B02-Bomb/](https://luy-hb.xyz/2020/07/01/CSAPP-Lab笔记2-Bomb/">实验报告</a>)</p>
-<p>巩固了上周最后遗留的不太理解的栈溢出攻击等知识点, 开始完成Attack Lab. 目前已完成了前两个小关. </p>
-<p>Attack Lab 是特别针对栈溢出攻击设计的配套实验 <del>虽然我觉得一小节一个实验非常奇怪</del>, 分别要求使用代码注入攻击与ROP(面向返回编程）对代码进行破坏. </p>
-<p>此外还在继续学习有关内存的层次结构等章节, 计划本周内写完有关内存的一篇学习报告.</p>
-<h2 id="追剧-游戏-爬山"><a href="#追剧-游戏-爬山" class="headerlink" title="追剧, 游戏, 爬山"></a>追剧, 游戏, 爬山</h2><h3 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h3><p>这周将隐蔽的角落看完了, 结局和自己中途推理的基本一致, 也有些许出入. (当然结局本身就是众说纷纭的). 起码早早地看出来朝阳是Boss了不是吗😂</p>
-<p>最佩服自己的是第一集看到张老师一口气一杯水的时候就吐槽 “ 这么能喝怕不是个糖尿病吧 “ , 谁知道居然一语成谶, 不过本身也是瞎猫碰上死耗子了.</p>
-<h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><p>今年Steam夏促真不行…最后一百出头入了 <a href="https://www.xiaoheihe.cn/games/detail/638230" target="_blank" rel="noopener">风之旅人</a> + <a href="https://www.xiaoheihe.cn/games/detail/632360" target="_blank" rel="noopener">雨中冒险2</a> + (被舍友安利的) <a href="https://www.xiaoheihe.cn/games/detail/8870" target="_blank" rel="noopener">生化奇兵:无限</a>. </p>
-<p>当晚打开了散步模拟器风之旅人. 其实作品本身倒是没有特别打动人的地方. 讲述的不过是一次经历千山万水的朝圣之旅, 哪怕洪水滔天,危机四伏, 命丧白土. 画面确实非常优秀, 沙漠的细腻触感比较真实. 部分画面也很适合截图当屏保, 但网上普遍略有过誉.</p>
-<p>一周目偶有遇到几个同行人, 可惜都匆匆离去, 大概是多周目玩家已经没有了荒野中遇到伙伴时的欣喜. 二周目的时候在断桥遇见了一位红袍, 似乎ta也并不是新手, 但是还是很激动地在我身边鸣叫. 于是我第一次遇到真正意义上的同行者. 我们在路上互相充能, 用单调的音节琴瑟和鸣, 在飞龙第一次出现前互相发出短促的提醒, 在雪地里看见ta被挑飞而无能为力, 在暴风雪中里用尽最后一丝力气发出微不可闻的鼓励. 最终在山巅, 在空中, 在瀑布, 在微光中起舞. 丝带在圣光的沾染中螺旋缠绕, 我突然有些庆幸选择开始了二周目, 而不是气呼呼地从硬盘中卸载游戏, 然后在他人问起时说一句: “ 啊画面挺好, 但不值.” </p>
-<p>谢谢你, 一期一会的陌生人. </p>
-<p>当然最后实在是不忍离别23333, 在雪地上磕磕绊绊地一个一个字符地写下自己的联系方式, 最后! 居然! 成功地! 加上了好友, 真是太幸运了~</p>
-<h3 id="爬山"><a href="#爬山" class="headerlink" title="爬山"></a>爬山</h3><p>一开始听说本地到黄山的高铁通车了, 想着周末去玩结果那里下雨. 但是已经勾起我的爬山欲望了23333. 第二天周六就收拾下准备起早去爬隔壁的小山. 临走前想想又把高中同学拽上了! 一天刷了俩座山.</p>
-<p>不过这个小土坡就是没挑战性啦.σ` ∀´)ﾟ∀ﾟ)σ (`ヮ´)</p>
-<p>晚上吃了快乐烤鱼, 好恰.</p>
-<p>结果第二天趴在床上起不来了o(TヘTo)</p>
-<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>收了好多专业书, 希望能一本本刷完! 加油! </p>
-<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><ul>
-<li>[x] 继续CSAPP </li>
-<li>[x] 开始刷LC</li>
-<li>[x] 控制每日游戏时长</li>
-</ul>
-<p>都有做到! ✌</p>
-<p>不过 LC 感觉自己还有很多不太清楚, 复杂度大概算是 O(能过) </p>
-<p>好久没有玩平安京了, 有效控制.<del>虽说是把时间花在journey上了</del></p>
-<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP (要加快速度了! )  </p>
-<p>继续刷 LC</p>
-<p>产出两篇以上的学习笔记(总结不算) </p>
-]]></content>
-      <categories>
-        <category>时与光</category>
-      </categories>
-      <tags>
-        <tag>小结</tag>
-        <tag>周记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统之进程间通信</title>
-    <url>/2020/06/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</url>
-    <content><![CDATA[<p>本章节包括两个小节</p>
-<ol>
-<li>进程间通信 (InterProess Communicatiin,IPC)</li>
-<li>经典的IPC问题</li>
-</ol>
-<a id="more"></a>
-<h2 id="IPC"><a href="#IPC" class="headerlink" title="IPC"></a>IPC</h2><p>在本小节会涉及到：</p>
-<ol>
-<li>什么是临界区资源<ol>
-<li>竞争</li>
-<li>保证临界区互斥的4个条件</li>
-</ol>
-</li>
-<li>互斥的策略1 (Busy Waiting)<ol>
-<li>禁止中断</li>
-<li>锁变量</li>
-<li>严格轮换法</li>
-<li>⭐Peterson 算法</li>
-<li>TSL 指令</li>
-</ol>
-</li>
-<li>互斥的策略2<ol>
-<li>上述策略的缺陷（忙等待 优先级反向）</li>
-<li>Sleep &amp; Wakeup<ol>
-<li>问题：唤醒丢失</li>
-</ol>
-</li>
-<li>⭐信号量 Semaphore<ol>
-<li>互斥信号量 Mutexe</li>
-<li>PV操作</li>
-</ol>
-</li>
-<li>管程 Monitor</li>
-<li>消息传递</li>
-<li>屏障</li>
-</ol>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TODO：第四节：IPC</span><br></pre></td></tr></table></figure>
-<h2 id="Classical-IPC-Problems"><a href="#Classical-IPC-Problems" class="headerlink" title="Classical IPC Problems"></a>Classical IPC Problems</h2><p>本小节将涉及到几个常见IPC模型：</p>
-<ol>
-<li>生产者与消费者</li>
-<li>读者与写者</li>
-<li>进餐的哲学家</li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>专业课</category>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>操作系统之内存管理</title>
     <url>/2020/06/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<p>本章将会涉及到</p>
@@ -1029,47 +917,115 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>Hello_Hexo_Blog</title>
-    <url>/2020/05/31/Hello-Hexo-Blog/</url>
-    <content><![CDATA[<p> 第一篇博客~ 开心</p>
+    <title>时与光W_202006-4</title>
+    <url>/2020/06/28/%E6%97%B6%E4%B8%8E%E5%85%89W_202006-4/</url>
+    <content><![CDATA[<p>2020年6月22日 ~ 28日.</p>
+<p>开始个人小结计划</p>
+<p>学习 CSAPP </p>
+<p>追剧, 玩游戏</p>
 <a id="more"></a>
-<h3 id="简单记录一下搭建过程"><a href="#简单记录一下搭建过程" class="headerlink" title="简单记录一下搭建过程"></a>简单记录一下搭建过程</h3><p>博客基于<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo框架</a> + Github，域名当然是阿里云了 （6元一年他不香吗hhh）</p>
-<p>感谢舍友 <a href="https://www.117503445.top/" target="_blank" rel="noopener">@117503445</a> 指名了博客搭建的主要方向，搭建过程中主要参考了知乎用户 @吴润 的<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">这篇文章</a>，基本很顺畅地搭建起来了，一并致谢。</p>
+<h2 id="时与光-个人小结计划"><a href="#时与光-个人小结计划" class="headerlink" title="时与光:个人小结计划"></a>时与光:个人小结计划</h2><p>听说每天坚持写技术博客有利于知识巩固与技能加深, 自觉没有每天坚持的能力, 想了个折中的办法: 以一周为阶段定期总结. 当然, 每月月底, 每半年, 每年也要整理记录! </p>
+<p>主要内容希望自己能够以技术学习, 生活记录为主. 反正也不会有别人看, 就写的简略且随性一些. </p>
+<p><strong>以下是每次小结的规范:</strong></p>
 <ol>
-<li>安装并配置Node.js</li>
-<li>安装 Hexo 框架</li>
-<li>关联 Github 仓库</li>
-<li>申请域名并绑定</li>
-<li>发布第一篇博客</li>
+<li>小结分为: 周记, 月记, 半年总结, 年度总结 四种, 后缀分别以<code>w,m,h,y</code>标识.</li>
+<li>命名格式例: <ol>
+<li>周记: <code>时与光W_202006-4</code> 末位数字代表本月第几周(周日为准)</li>
+<li>月记: <code>时与光M_202006</code></li>
+<li>半年记: <code>时与光H_2020上半年</code></li>
+<li>年度记: <code>时与光Y_2020年度总结</code></li>
 </ol>
-<h3 id="ToDo"><a href="#ToDo" class="headerlink" title="ToDo"></a>ToDo</h3><p>现在只是把房子搭起来还没有装修啥啊，让俺接着去学一学~</p>
-<p>[x] 更换 Hexo 主题</p>
-<p>[x] 熟悉博客的发布修改标签等功能</p>
-<p>[ ] 建立图床</p>
-<p>[ ] 增加其他的小插件 ~~</p>
-<h3 id="分类设置"><a href="#分类设置" class="headerlink" title="分类设置"></a>分类设置</h3><ul>
-<li>学习笔记    | 系统性的学习<ul>
-<li>专业课<ul>
-<li>操作系统</li>
-</ul>
 </li>
-</ul>
+<li>内容包括: <ol>
+<li>技术学习成果与产出总结</li>
+<li>记录生活, 如旅游 读书 观影 游戏</li>
+<li>突如其来的想法</li>
+<li>下一阶段的展望</li>
+</ol>
 </li>
-<li>技术小记    | 碎片化知识</li>
-<li>生活随笔<ul>
-<li>山与水    | 游记</li>
-<li>书与影    | 书评影评</li>
-<li>时与光    | 定期总结</li>
-</ul>
-</li>
-<li></li>
-</ul>
+</ol>
+<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>项目地址:</p>
+<p><a href="https://github.com/luy-0/CS-APP-LABs" target="_blank" rel="noopener">https://github.com/luy-0/CS-APP-LABs</a></p>
+<p>对CSAPP这本书垂涎已久, 趁着疫情的期末大把空闲时间和两位同学组队学习CSAPP以及CMU的15-213课程. 更多学习情况参看README部分.</p>
+<p>本周着重于完成机器级别编程部分, 以及课程配套实验中的Bomb Lab, 这是一个通过 gdb 查看可执行文件的汇编代码, 并且推导出炸弹拆除的密钥. 在这几天习得了基本的汇编代码阅读能力, gdb 的基本运用能力, 对C计算机底层运算的实现有了更深的理解. </p>
+<p>这个Lab真是让人又爱又恨, 每拆除一个炸弹的时候成就感满满, 但是对着汇编代码死活瞪不出逻辑的暴躁和无奈…</p>
+<p>机器级别编程 是指 使用汇编代码完成函数操作. 主要学习内容包括 控制机器执行, 执行过程 数据的存储(数组 结构 联合) 以及其他进阶部分. 其中关于缓存区溢出, 栈攻击, 浮点代码等部分掌握的不好.</p>
+<h2 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h2><p>这一周在追《隐蔽的角落》 . 改编自紫金陈的推理小说《坏小孩》，讲述了在沿海小城三个孩子(朱朝阳, 岳普, 严良) 在景区游玩时无意间拍摄记录了一次谋杀(张东升, 秦昊饰)，想借机敲诈来筹钱，以及随后发生的一连串的故事。大结局播完豆瓣评分依旧为9.0</p>
+<p>主要是周围同学都在追哈哈哈, 感叹国产网剧真的很成熟了, 前几集导演对于节奏把握的很好, 中间叙事稍有平淡, 最后一部分还没看😂  配乐挺用心, 虽然我听不懂后现代, 但是还是有被情绪感染到. 在展现上制片组的细致程度令人感动, 例如张东升海夜追朝阳时对着脚步印, 例如试卷和板书上的题目真的是初中知识点 , 竟然有一点点对着美剧扣细节的感觉了. 演员也实力诠释, 秦昊的演技令人背后发凉, 小朋友的演技也很稳啊~ 朝阳那种说的少想得多的内向好学生非常真实, 普普的可爱是真的戏里戏外的可爱 ,就是太机灵懂事了, 牛逼的让人心疼(话说我怎么总觉得她最后要黑化一类的?) 严良其实没有很好地演出想象里的小痞子气, 缺点那种坏味.一部很优秀的国产剧, 拯救了我被言情耽改剧摧毁的信心~ (没错我就是指ssss和cql)</p>
+<p>希望结局能够依旧精彩吧! </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/XGYW%25K%7DKW%40MFX%7BQNNHBI95W.jpg" alt=""></p>
+<h2 id="玩游戏"><a href="#玩游戏" class="headerlink" title="玩游戏"></a>玩游戏</h2><p>嗯…最近又入了平安京的坑, MOBA真香:dog: 不过打了一周上了少属就没啥动力了… 快乐咸鱼佛系游戏, 竞技游戏嘛 心态放好就行了~</p>
+<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP </p>
+<p>开始刷LC</p>
+<p>控制每日游戏时长</p>
 ]]></content>
       <categories>
-        <category>技术小记</category>
+        <category>时与光</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>小结</tag>
+        <tag>周记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时与光H_2020上半年</title>
+    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89H-2020%E4%B8%8A%E5%8D%8A%E5%B9%B4/</url>
+    <content><![CDATA[<p>2020年1月 ~ 6月</p>
+<p>关键词: 疫情, 学习, 健身</p>
+<a id="more"></a>
+<p>第一篇半年记, 一时间竟然有些不知道该些写什么.</p>
+<p>从头说起吧, 纯流水账. </p>
+<p>明天再写吧(咕咕警告)</p>
+]]></content>
+      <categories>
+        <category>时与光</category>
+      </categories>
+      <tags>
+        <tag>小结</tag>
+        <tag>半年记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时与光W_202007-1</title>
+    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-1/</url>
+    <content><![CDATA[<p>2020年6月29日 ~ 7月5日.</p>
+<p>学习CSAPP</p>
+<p>追剧, 游戏, 爬山</p>
+<a id="more"></a>
+<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>完成了Bomb Lab的最后两个炸弹, 并且撰写完成了<a href="[https://luy-hb.xyz/2020/07/01/CSAPP-Lab%E7%AC%94%E8%AE%B02-Bomb/](https://luy-hb.xyz/2020/07/01/CSAPP-Lab笔记2-Bomb/">实验报告</a>)</p>
+<p>巩固了上周最后遗留的不太理解的栈溢出攻击等知识点, 开始完成Attack Lab. 目前已完成了前两个小关. </p>
+<p>Attack Lab 是特别针对栈溢出攻击设计的配套实验 <del>虽然我觉得一小节一个实验非常奇怪</del>, 分别要求使用代码注入攻击与ROP(面向返回编程）对代码进行破坏. </p>
+<p>此外还在继续学习有关内存的层次结构等章节, 计划本周内写完有关内存的一篇学习报告.</p>
+<h2 id="追剧-游戏-爬山"><a href="#追剧-游戏-爬山" class="headerlink" title="追剧, 游戏, 爬山"></a>追剧, 游戏, 爬山</h2><h3 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h3><p>这周将隐蔽的角落看完了, 结局和自己中途推理的基本一致, 也有些许出入. (当然结局本身就是众说纷纭的). 起码早早地看出来朝阳是Boss了不是吗😂</p>
+<p>最佩服自己的是第一集看到张老师一口气一杯水的时候就吐槽 “ 这么能喝怕不是个糖尿病吧 “ , 谁知道居然一语成谶, 不过本身也是瞎猫碰上死耗子了.</p>
+<h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><p>今年Steam夏促真不行…最后一百出头入了 <a href="https://www.xiaoheihe.cn/games/detail/638230" target="_blank" rel="noopener">风之旅人</a> + <a href="https://www.xiaoheihe.cn/games/detail/632360" target="_blank" rel="noopener">雨中冒险2</a> + (被舍友安利的) <a href="https://www.xiaoheihe.cn/games/detail/8870" target="_blank" rel="noopener">生化奇兵:无限</a>. </p>
+<p>当晚打开了散步模拟器风之旅人. 其实作品本身倒是没有特别打动人的地方. 讲述的不过是一次经历千山万水的朝圣之旅, 哪怕洪水滔天,危机四伏, 命丧白土. 画面确实非常优秀, 沙漠的细腻触感比较真实. 部分画面也很适合截图当屏保, 但网上普遍略有过誉.</p>
+<p>一周目偶有遇到几个同行人, 可惜都匆匆离去, 大概是多周目玩家已经没有了荒野中遇到伙伴时的欣喜. 二周目的时候在断桥遇见了一位红袍, 似乎ta也并不是新手, 但是还是很激动地在我身边鸣叫. 于是我第一次遇到真正意义上的同行者. 我们在路上互相充能, 用单调的音节琴瑟和鸣, 在飞龙第一次出现前互相发出短促的提醒, 在雪地里看见ta被挑飞而无能为力, 在暴风雪中里用尽最后一丝力气发出微不可闻的鼓励. 最终在山巅, 在空中, 在瀑布, 在微光中起舞. 丝带在圣光的沾染中螺旋缠绕, 我突然有些庆幸选择开始了二周目, 而不是气呼呼地从硬盘中卸载游戏, 然后在他人问起时说一句: “ 啊画面挺好, 但不值.” </p>
+<p>谢谢你, 一期一会的陌生人. </p>
+<p>当然最后实在是不忍离别23333, 在雪地上磕磕绊绊地一个一个字符地写下自己的联系方式, 最后! 居然! 成功地! 加上了好友, 真是太幸运了~</p>
+<h3 id="爬山"><a href="#爬山" class="headerlink" title="爬山"></a>爬山</h3><p>一开始听说本地到黄山的高铁通车了, 想着周末去玩结果那里下雨. 但是已经勾起我的爬山欲望了23333. 第二天周六就收拾下准备起早去爬隔壁的小山. 临走前想想又把高中同学拽上了! 一天刷了俩座山.</p>
+<p>不过这个小土坡就是没挑战性啦.σ` ∀´)ﾟ∀ﾟ)σ (`ヮ´)</p>
+<p>晚上吃了快乐烤鱼, 好恰.</p>
+<p>结果第二天趴在床上起不来了o(TヘTo)</p>
+<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>收了好多专业书, 希望能一本本刷完! 加油! </p>
+<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><ul>
+<li>[x] 继续CSAPP </li>
+<li>[x] 开始刷LC</li>
+<li>[x] 控制每日游戏时长</li>
+</ul>
+<p>都有做到! ✌</p>
+<p>不过 LC 感觉自己还有很多不太清楚, 复杂度大概算是 O(能过) </p>
+<p>好久没有玩平安京了, 有效控制.<del>虽说是把时间花在journey上了</del></p>
+<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP (要加快速度了! )  </p>
+<p>继续刷 LC</p>
+<p>产出两篇以上的学习笔记(总结不算) </p>
+]]></content>
+      <categories>
+        <category>时与光</category>
+      </categories>
+      <tags>
+        <tag>小结</tag>
+        <tag>周记</tag>
       </tags>
   </entry>
   <entry>
@@ -1408,70 +1364,6 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>时与光W-202007-2</title>
-    <url>/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-2/</url>
-    <content><![CDATA[<p>2020年7月6日~2020年7月12日</p>
-<p>徒步: 溧阳-丫髻山</p>
-<a id="more"></a>
-<h2 id="徒步-溧阳-丫髻山"><a href="#徒步-溧阳-丫髻山" class="headerlink" title="徒步: 溧阳-丫髻山"></a>徒步: 溧阳-丫髻山</h2><p>这周日 (7月11-12日) 第一次尝试徒步+爬野山. 以下为流水账记录:</p>
-<p>因为集合的时间是周日大清早, 所以周六就提前去南京了, 找了一家普普通通的青旅安顿下来, 晚上在玄武湖公园逛了一圈 —— 预料之外的大啊哈哈哈, 晚上来这里跑步应该不错, 可惜还是在市中心, 空气不太行. 话说南京的早点包子真难吃啊… 早起去便利店安排了一些物资, 2L 的怡宝+1.5L 的绿茶, 后来证明买这些都是非常必要的.</p>
-<p>领队是个很阳光的大兄弟, 很会唠. 等大巴的时候发现大家都是装备齐全, 背包+登山杖+徒步鞋, 只有我背个小破书包, 蹬了个平底运动鞋来了哈哈哈, 下次一定准备齐全😂. 大巴上领座是位带着两个双胞胎的大叔, 一看就是老户外达人了, 孩子约莫上初中, 一人一个登山杖. 一家人乐乐呵呵地来徒步, 又锻炼体质又促进感情, 真好啊🍋. </p>
-<p>一个钟左右就到溧阳了. 目的地其实是溧阳, 句容交界的两座山头 (最后只爬了一座) . 本来的计划是野道去公路回, 结果前一天一直下雨, 就决定先走公路, 让山路多晒晒太阳. 说起来超级幸运, 本来都已经做好了下雨取消山路的心理准备了, 没想到早上突然晴天. 这也导致我没有带防晒(呜呜呜我以为会是阴天的脑子瓦特了), 带着防身又不多~ 一天走下来直接黑了两个度, 辛苦养半年,一朝回到解放前. </p>
-<p>溧阳的一号彩虹公路, 其实只是中间的双黄道替换成三种不同颜色的标志线, 起初看图片觉得平平无奇, (不就是换个颜色吗有什么新鲜的) 实际上在公路走啊走啊, 看见一条彩虹从脚下延申向远方, 还是有种小确幸滴. 我甚至怀疑倘若自驾走这条路线都没有徒步来的快乐. 一路上和周围人谈笑风生. 有去时正好坐我后排的X, 主动来搭话的杰哥, 另一个小哥shè哥chù Y. 都是独行侠, 甚至都是互联网相关行业的, 只有我一个在校学生. 杰哥是老徒步者了,准备十分充分(连护袖都有准备) 我甚至被杰哥开玩笑”看鞋子就知道是不是新手徒步” (别骂了别骂了我回去就买鞋子😭) 一路上蓝天白云, 上半晌的柏油路还没有升温, 跟着大家东扯西扯: 杰哥今年才从Z大硕士毕业, X 在江宁工作一年, Y本科出来已经工作了五年了. 听他们谈论房租 未来发展, 人生规划. 在想过几年自己是不是也在某个城市漂泊, 在考虑户口, 房价, 股价, 政策发展与行业未来. 同行的还有一个背着女孩的父亲, 小女孩约莫四五岁, 坐在爸爸背后的座位上. 后面上坡下坡都是父亲一直背完了全程, 实在太厉害了!</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%BD%A9%E8%99%B9%E5%85%AC%E8%B7%AF.jpg" alt="彩虹公路"></p>
-<p>终于走过了上半程, 在常州一处小监狱门口稍作休整, 和新伙伴们互相分享了干粮和水—— 这种徒步后的饥饿感让食物瞬间升华, 好吃程度不是拿个方格布带个小竹篮能比拟的2333. 发现拿头巾沾水后带着真的太爽了! 大太阳照着水分汽化吸热, 不经过汗流浃背体会不到凉爽的感觉. 就算在空调房里待一整个夏天也不行. 给大家分享了水, (内心OS: 终于把这个大累赘分出去了! ) 双胞胎在接过水后, 大叔还在一旁督促要说谢谢,  在野外水是非常非常重要的资源云云, 家教极好! 休整之后大家进入了野道, 我也开始记录爬山的路径. </p>
-<p>第一小关是一座摇摇欲坠的小竹桥, 还未见到影子, 就听见前方队友惊呼, 原来竹桥年久失修, 终于在今日不堪重负垮了一半, 半截桥身已然入水. 后面的人只能一个一个走. 扒着相对牢固的扶手. 在最后一个人走过时, 竹桥终于完成了自己一生的使命, 光荣牺牲. 第二天大叔在群里发了我们每个人过桥的照片, 原来他一直在对岸拍摄大家互帮互助过桥的照片, 实在是太惊喜了.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%BF%87%E6%A1%A5.jpg" alt=""></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E6%A1%A5.jpg" width = "800" height = "1000" /></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8A.jpg" width="800" height = "1200" /></p>
-<p>接下来一段上坡路, 坡度大约三四十多度, 茂林修竹, 蚊虫四散. 有同行者带了小音箱, 歌声回绕. 过了这一小段竹林后便是稍显难走的林中小径, 不过半米宽度. 由于X是妹子, 体力不佳, 我们逐渐和脱离了大部队, 又等到了另外一位女生Z. 互相帮着背个包搭把手, 爬上了山顶. </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%B1%B1%E9%A1%B6.jpg" alt=""></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%88%E7%85%A7.jpg" alt="合照"></p>
-<p>下山. </p>
-<p>下山的路比我们想的要更加麻烦, 坡度更大, 沙土质地的路也更难走. 只能每次都踩着树根和石块落脚. 有几段路中间没有落脚点, 后一个人就踩着前一个人的脚作为落脚点, 我也才意识到平底鞋真的真的不适合爬山orz, 完全没有抓地力. </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8B.jpg" width="800" height = "1800" /></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%AE%B0%E5%BD%95.jpg" alt=""></p>
-<p>晚上约了快乐火锅</p>
-<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3>]]></content>
-      <categories>
-        <category>时与光</category>
-      </categories>
-      <tags>
-        <tag>小结</tag>
-        <tag>周记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时与光W-202007-3</title>
-    <url>/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-3/</url>
-    <content><![CDATA[<p>2020年7月13日~2020年7月19日</p>
-<p>看番: 瑞克与莫蒂</p>
-<p>回西安</p>
-<a id="more"></a>
-<h2 id="看番-瑞克与莫蒂"><a href="#看番-瑞克与莫蒂" class="headerlink" title="看番: 瑞克与莫蒂"></a>看番: 瑞克与莫蒂</h2><p>久闻大名的神番,终于在我爬山后的腰酸背痛的日子里看完了. 应该是第一次接触美漫 (也是第一次在A站看番) 果然比日漫亚撒西舒爽多了! </p>
-<p>鬼才剧本, 每一集都对时代和社会的痛点进行尽情的诠释——无论是批判还是讽刺, 解构还是歌颂, 常常在一两句话中忽然get到编剧的意图, 然后一拍大腿妈的绝了. </p>
-<p>配音太强了, 听说两个主角的配音都是一个人(这人还同时担任编剧) 我听过很多优秀的日本声优的出演, 能给角色赋予灵魂. 但还是有被这部惊到了: 瑞克与莫蒂的配音好像就是角色自己说出来的一样, 完全符合想象中的二人. </p>
-<p>脑洞比较大. 相对与好莱坞式拿着激光武器突突突的废科幻作品, 本作的幻想程度很对我胃口. 天马行空又大致符合逻辑, 再夹杂着一点点不科学. 比如日了星球, 或者满眼蚂蚁先生. 纯粹的美国式的低俗无聊不遗余力的边角料的屎尿屁想象, 毫无意义,因此让人翱翔.</p>
-<p>美国特色式的永远能在作品中影射现实. 哪怕是真·盒中盒这种老式科幻剧情都能整成奴隶制与博弈论. 多线并行又在结尾交会. 作品甚至能够同时影射资本主义的大部分社会问题 (没错我就是说的S3E7) 信息量最大，隐喻最多，故事最丰富立体，情节最波荡曲折. 没有人比我更懂民族矛盾 —— 其实都是阶级矛盾. </p>
-<p>以及被广大A站网友津津乐道的第四面墙…其实我倒是觉得这个还好, 孤独的看透宇宙荒谬本质的天才科学家, 虽然悲壮却亦不少见. 更打动的则是瑞克认清宇宙的真相, 却依旧热爱生活.</p>
-<p>附录: <a href="https://www.douban.com/group/topic/157799509/" target="_blank" rel="noopener">好看的相关壁纸与插画</a></p>
-<h2 id="收拾东西回长安"><a href="#收拾东西回长安" class="headerlink" title="收拾东西回长安"></a>收拾东西回长安</h2><p>字面意思, 收拾收拾回学校咯</p>
-<p>回去之前还顺便跟两位本地同学吃吃喝喝, 回民街的文文烧烤, 这个酱料真的很特色. 早上在建国路整了碗荤胡辣汤泡馍, 可以, 这很正宗.</p>
-<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>跟高中同学又起了联系, 逛了一下午, 快乐.</p>
-<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><p>none</p>
-<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>复习</p>
-<p>英语</p>
-<p>研究宿舍厨艺</p>
-]]></content>
-      <categories>
-        <category>时与光</category>
-      </categories>
-      <tags>
-        <tag>小结</tag>
-        <tag>周记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSAPP-Lab笔记3:Attack</title>
     <url>/2020/07/24/CSAPP-Lab%E7%AC%94%E8%AE%B03-Attack/</url>
     <content><![CDATA[<p>这是我在2020年7月3日~7月8日完成的Attack Lab的题解与笔记</p>
@@ -1666,11 +1558,61 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>时与光W-202008-1</title>
-    <url>/2020/07/31/%E6%97%B6%E4%B8%8E%E5%85%89W-202008-1/</url>
-    <content><![CDATA[<p>2020年月日~月日</p>
-<h1 id="在这里简要概括内容"><a href="#在这里简要概括内容" class="headerlink" title="在这里简要概括内容"></a>在这里简要概括内容</h1><a id="more"></a>
-<h2 id="在这里开始内容"><a href="#在这里开始内容" class="headerlink" title="#在这里开始内容"></a>#在这里开始内容</h2><h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3>]]></content>
+    <title>时与光W-202007-3</title>
+    <url>/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-3/</url>
+    <content><![CDATA[<p>2020年7月13日~2020年7月19日</p>
+<p>看番: 瑞克与莫蒂</p>
+<p>回西安</p>
+<a id="more"></a>
+<h2 id="看番-瑞克与莫蒂"><a href="#看番-瑞克与莫蒂" class="headerlink" title="看番: 瑞克与莫蒂"></a>看番: 瑞克与莫蒂</h2><p>久闻大名的神番,终于在我爬山后的腰酸背痛的日子里看完了. 应该是第一次接触美漫 (也是第一次在A站看番) 果然比日漫亚撒西舒爽多了! </p>
+<p>鬼才剧本, 每一集都对时代和社会的痛点进行尽情的诠释——无论是批判还是讽刺, 解构还是歌颂, 常常在一两句话中忽然get到编剧的意图, 然后一拍大腿妈的绝了. </p>
+<p>配音太强了, 听说两个主角的配音都是一个人(这人还同时担任编剧) 我听过很多优秀的日本声优的出演, 能给角色赋予灵魂. 但还是有被这部惊到了: 瑞克与莫蒂的配音好像就是角色自己说出来的一样, 完全符合想象中的二人. </p>
+<p>脑洞比较大. 相对与好莱坞式拿着激光武器突突突的废科幻作品, 本作的幻想程度很对我胃口. 天马行空又大致符合逻辑, 再夹杂着一点点不科学. 比如日了星球, 或者满眼蚂蚁先生. 纯粹的美国式的低俗无聊不遗余力的边角料的屎尿屁想象, 毫无意义,因此让人翱翔.</p>
+<p>美国特色式的永远能在作品中影射现实. 哪怕是真·盒中盒这种老式科幻剧情都能整成奴隶制与博弈论. 多线并行又在结尾交会. 作品甚至能够同时影射资本主义的大部分社会问题 (没错我就是说的S3E7) 信息量最大，隐喻最多，故事最丰富立体，情节最波荡曲折. 没有人比我更懂民族矛盾 —— 其实都是阶级矛盾. </p>
+<p>以及被广大A站网友津津乐道的第四面墙…其实我倒是觉得这个还好, 孤独的看透宇宙荒谬本质的天才科学家, 虽然悲壮却亦不少见. 更打动的则是瑞克认清宇宙的真相, 却依旧热爱生活.</p>
+<p>附录: <a href="https://www.douban.com/group/topic/157799509/" target="_blank" rel="noopener">好看的相关壁纸与插画</a></p>
+<h2 id="收拾东西回长安"><a href="#收拾东西回长安" class="headerlink" title="收拾东西回长安"></a>收拾东西回长安</h2><p>字面意思, 收拾收拾回学校咯</p>
+<p>回去之前还顺便跟两位本地同学吃吃喝喝, 回民街的文文烧烤, 这个酱料真的很特色. 早上在建国路整了碗荤胡辣汤泡馍, 可以, 这很正宗.</p>
+<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>跟高中同学又起了联系, 逛了一下午, 快乐.</p>
+<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><p>none</p>
+<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>复习</p>
+<p>英语</p>
+<p>研究宿舍厨艺</p>
+]]></content>
+      <categories>
+        <category>时与光</category>
+      </categories>
+      <tags>
+        <tag>小结</tag>
+        <tag>周记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时与光W-202007-2</title>
+    <url>/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-2/</url>
+    <content><![CDATA[<p>2020年7月6日~2020年7月12日</p>
+<p>徒步: 溧阳-丫髻山</p>
+<a id="more"></a>
+<h2 id="徒步-溧阳-丫髻山"><a href="#徒步-溧阳-丫髻山" class="headerlink" title="徒步: 溧阳-丫髻山"></a>徒步: 溧阳-丫髻山</h2><p>这周日 (7月11-12日) 第一次尝试徒步+爬野山. 以下为流水账记录:</p>
+<p>因为集合的时间是周日大清早, 所以周六就提前去南京了, 找了一家普普通通的青旅安顿下来, 晚上在玄武湖公园逛了一圈 —— 预料之外的大啊哈哈哈, 晚上来这里跑步应该不错, 可惜还是在市中心, 空气不太行. 话说南京的早点包子真难吃啊… 早起去便利店安排了一些物资, 2L 的怡宝+1.5L 的绿茶, 后来证明买这些都是非常必要的.</p>
+<p>领队是个很阳光的大兄弟, 很会唠. 等大巴的时候发现大家都是装备齐全, 背包+登山杖+徒步鞋, 只有我背个小破书包, 蹬了个平底运动鞋来了哈哈哈, 下次一定准备齐全😂. 大巴上领座是位带着两个双胞胎的大叔, 一看就是老户外达人了, 孩子约莫上初中, 一人一个登山杖. 一家人乐乐呵呵地来徒步, 又锻炼体质又促进感情, 真好啊🍋. </p>
+<p>一个钟左右就到溧阳了. 目的地其实是溧阳, 句容交界的两座山头 (最后只爬了一座) . 本来的计划是野道去公路回, 结果前一天一直下雨, 就决定先走公路, 让山路多晒晒太阳. 说起来超级幸运, 本来都已经做好了下雨取消山路的心理准备了, 没想到早上突然晴天. 这也导致我没有带防晒(呜呜呜我以为会是阴天的脑子瓦特了), 带着防身又不多~ 一天走下来直接黑了两个度, 辛苦养半年,一朝回到解放前. </p>
+<p>溧阳的一号彩虹公路, 其实只是中间的双黄道替换成三种不同颜色的标志线, 起初看图片觉得平平无奇, (不就是换个颜色吗有什么新鲜的) 实际上在公路走啊走啊, 看见一条彩虹从脚下延申向远方, 还是有种小确幸滴. 我甚至怀疑倘若自驾走这条路线都没有徒步来的快乐. 一路上和周围人谈笑风生. 有去时正好坐我后排的X, 主动来搭话的杰哥, 另一个小哥shè哥chù Y. 都是独行侠, 甚至都是互联网相关行业的, 只有我一个在校学生. 杰哥是老徒步者了,准备十分充分(连护袖都有准备) 我甚至被杰哥开玩笑”看鞋子就知道是不是新手徒步” (别骂了别骂了我回去就买鞋子😭) 一路上蓝天白云, 上半晌的柏油路还没有升温, 跟着大家东扯西扯: 杰哥今年才从Z大硕士毕业, X 在江宁工作一年, Y本科出来已经工作了五年了. 听他们谈论房租 未来发展, 人生规划. 在想过几年自己是不是也在某个城市漂泊, 在考虑户口, 房价, 股价, 政策发展与行业未来. 同行的还有一个背着女孩的父亲, 小女孩约莫四五岁, 坐在爸爸背后的座位上. 后面上坡下坡都是父亲一直背完了全程, 实在太厉害了!</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%BD%A9%E8%99%B9%E5%85%AC%E8%B7%AF.jpg" alt="彩虹公路"></p>
+<p>终于走过了上半程, 在常州一处小监狱门口稍作休整, 和新伙伴们互相分享了干粮和水—— 这种徒步后的饥饿感让食物瞬间升华, 好吃程度不是拿个方格布带个小竹篮能比拟的2333. 发现拿头巾沾水后带着真的太爽了! 大太阳照着水分汽化吸热, 不经过汗流浃背体会不到凉爽的感觉. 就算在空调房里待一整个夏天也不行. 给大家分享了水, (内心OS: 终于把这个大累赘分出去了! ) 双胞胎在接过水后, 大叔还在一旁督促要说谢谢,  在野外水是非常非常重要的资源云云, 家教极好! 休整之后大家进入了野道, 我也开始记录爬山的路径. </p>
+<p>第一小关是一座摇摇欲坠的小竹桥, 还未见到影子, 就听见前方队友惊呼, 原来竹桥年久失修, 终于在今日不堪重负垮了一半, 半截桥身已然入水. 后面的人只能一个一个走. 扒着相对牢固的扶手. 在最后一个人走过时, 竹桥终于完成了自己一生的使命, 光荣牺牲. 第二天大叔在群里发了我们每个人过桥的照片, 原来他一直在对岸拍摄大家互帮互助过桥的照片, 实在是太惊喜了.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%BF%87%E6%A1%A5.jpg" alt=""></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E6%A1%A5.jpg" width = "800" height = "1000" /></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8A.jpg" width="800" height = "1200" /></p>
+<p>接下来一段上坡路, 坡度大约三四十多度, 茂林修竹, 蚊虫四散. 有同行者带了小音箱, 歌声回绕. 过了这一小段竹林后便是稍显难走的林中小径, 不过半米宽度. 由于X是妹子, 体力不佳, 我们逐渐和脱离了大部队, 又等到了另外一位女生Z. 互相帮着背个包搭把手, 爬上了山顶. </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%B1%B1%E9%A1%B6.jpg" alt=""></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%88%E7%85%A7.jpg" alt="合照"></p>
+<p>下山. </p>
+<p>下山的路比我们想的要更加麻烦, 坡度更大, 沙土质地的路也更难走. 只能每次都踩着树根和石块落脚. 有几段路中间没有落脚点, 后一个人就踩着前一个人的脚作为落脚点, 我也才意识到平底鞋真的真的不适合爬山orz, 完全没有抓地力. </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8B.jpg" width="800" height = "1800" /></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%AE%B0%E5%BD%95.jpg" alt=""></p>
+<p>晚上约了快乐火锅</p>
+<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3>]]></content>
       <categories>
         <category>时与光</category>
       </categories>
@@ -1739,6 +1681,64 @@ T_0\\
       <tags>
         <tag>小结</tag>
         <tag>周记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时与光W-202008-1</title>
+    <url>/2020/07/31/%E6%97%B6%E4%B8%8E%E5%85%89W-202008-1/</url>
+    <content><![CDATA[<p>2020年月日~月日</p>
+<h1 id="在这里简要概括内容"><a href="#在这里简要概括内容" class="headerlink" title="在这里简要概括内容"></a>在这里简要概括内容</h1><a id="more"></a>
+<h2 id="在这里开始内容"><a href="#在这里开始内容" class="headerlink" title="#在这里开始内容"></a>#在这里开始内容</h2><h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3>]]></content>
+      <categories>
+        <category>时与光</category>
+      </categories>
+      <tags>
+        <tag>小结</tag>
+        <tag>周记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello_Hexo_Blog</title>
+    <url>/2020/05/31/Hello-Hexo-Blog/</url>
+    <content><![CDATA[<p> 第一篇博客~ 开心</p>
+<a id="more"></a>
+<h3 id="简单记录一下搭建过程"><a href="#简单记录一下搭建过程" class="headerlink" title="简单记录一下搭建过程"></a>简单记录一下搭建过程</h3><p>博客基于<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo框架</a> + Github，域名当然是阿里云了 （6元一年他不香吗hhh）</p>
+<p>感谢舍友 <a href="https://www.117503445.top/" target="_blank" rel="noopener">@117503445</a> 指名了博客搭建的主要方向，搭建过程中主要参考了知乎用户 @吴润 的<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">这篇文章</a>，基本很顺畅地搭建起来了，一并致谢。</p>
+<ol>
+<li>安装并配置Node.js</li>
+<li>安装 Hexo 框架</li>
+<li>关联 Github 仓库</li>
+<li>申请域名并绑定</li>
+<li>发布第一篇博客</li>
+</ol>
+<h3 id="ToDo"><a href="#ToDo" class="headerlink" title="ToDo"></a>ToDo</h3><p>现在只是把房子搭起来还没有装修啥啊，让俺接着去学一学~</p>
+<p>[x] 更换 Hexo 主题</p>
+<p>[x] 熟悉博客的发布修改标签等功能</p>
+<p>[ ] 建立图床</p>
+<p>[ ] 增加其他的小插件 ~~</p>
+<h3 id="分类设置"><a href="#分类设置" class="headerlink" title="分类设置"></a>分类设置</h3><ul>
+<li>学习笔记    | 系统性的学习<ul>
+<li>专业课<ul>
+<li>操作系统</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>技术小记    | 碎片化知识</li>
+<li>生活随笔<ul>
+<li>山与水    | 游记</li>
+<li>书与影    | 书评影评</li>
+<li>时与光    | 定期总结</li>
+</ul>
+</li>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术小记</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
