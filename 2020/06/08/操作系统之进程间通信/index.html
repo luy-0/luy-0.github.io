@@ -20,19 +20,22 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本章节包括两个小节  进程间通信 (InterProess Communicatiin,IPC) 经典的IPC问题">
+  <meta name="description" content="本章节包括两个小节  进程间通信 (InterProess Communicatiin,IPC) 临界区 使用忙等待的策略 禁止中断 &#x2F; 锁变量 &#x2F; 严格轮换法 &#x2F; ⭐Peterson 算法 &#x2F; TSL 指令   规避忙等待的策略 忙等待的弊端 休眠与唤醒 &#x2F; 信号量 Semaphore &#x2F; 互斥信号量 Mutexe &#x2F; PV操作 管程 Monitor &#x2F; 消息传递 &#x2F; 屏障     经典的IPC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统之进程间通信">
 <meta property="og:url" content="http://yoursite.com/2020/06/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/index.html">
 <meta property="og:site_name" content="(ﾟ∀。)">
-<meta property="og:description" content="本章节包括两个小节  进程间通信 (InterProess Communicatiin,IPC) 经典的IPC问题">
+<meta property="og:description" content="本章节包括两个小节  进程间通信 (InterProess Communicatiin,IPC) 临界区 使用忙等待的策略 禁止中断 &#x2F; 锁变量 &#x2F; 严格轮换法 &#x2F; ⭐Peterson 算法 &#x2F; TSL 指令   规避忙等待的策略 忙等待的弊端 休眠与唤醒 &#x2F; 信号量 Semaphore &#x2F; 互斥信号量 Mutexe &#x2F; PV操作 管程 Monitor &#x2F; 消息传递 &#x2F; 屏障     经典的IPC">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E5%B1%8F%E9%9A%9C.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E5%93%B2%E5%AD%A6%E5%AE%B6.png">
 <meta property="article:published_time" content="2020-06-08T07:59:19.000Z">
-<meta property="article:modified_time" content="2020-06-08T08:08:16.844Z">
+<meta property="article:modified_time" content="2020-08-04T08:40:30.516Z">
 <meta property="article:author" content="LUY">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E5%B1%8F%E9%9A%9C.png">
 
 <link rel="canonical" href="http://yoursite.com/2020/06/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/">
 
@@ -218,10 +221,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-06-08 15:59:19 / 修改时间：16:08:16" itemprop="dateCreated datePublished" datetime="2020-06-08T15:59:19+08:00">2020-06-08</time>
+              <time title="创建时间：2020-06-08 15:59:19" itemprop="dateCreated datePublished" datetime="2020-06-08T15:59:19+08:00">2020-06-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 16:40:30" itemprop="dateModified" datetime="2020-08-04T16:40:30+08:00">2020-08-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -246,14 +255,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>290</span>
+              <span>8.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>15 分钟</span>
             </span>
 
         </div>
@@ -267,8 +276,26 @@
       
         <p>本章节包括两个小节</p>
 <ol>
-<li>进程间通信 (InterProess Communicatiin,IPC)</li>
-<li>经典的IPC问题</li>
+<li>进程间通信 (InterProess Communicatiin,IPC)<ol>
+<li>临界区</li>
+<li>使用忙等待的策略<ol>
+<li>禁止中断 / 锁变量 / 严格轮换法 / ⭐Peterson 算法 / TSL 指令</li>
+</ol>
+</li>
+<li>规避忙等待的策略<ol>
+<li>忙等待的弊端</li>
+<li>休眠与唤醒 / 信号量 Semaphore / 互斥信号量 Mutexe / PV操作</li>
+<li>管程 Monitor / 消息传递 / 屏障</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>经典的IPC问题<ol>
+<li>生产与消费</li>
+<li>哲学家进餐</li>
+<li>读者与写者</li>
+</ol>
+</li>
 </ol>
 <a id="more"></a>
 <h2 id="IPC"><a href="#IPC" class="headerlink" title="IPC"></a>IPC</h2><p>在本小节会涉及到：</p>
@@ -278,7 +305,7 @@
 <li>保证临界区互斥的4个条件</li>
 </ol>
 </li>
-<li>互斥的策略1 (Busy Waiting)<ol>
+<li>互斥的策略1 (借助忙等待)<ol>
 <li>禁止中断</li>
 <li>锁变量</li>
 <li>严格轮换法</li>
@@ -286,7 +313,7 @@
 <li>TSL 指令</li>
 </ol>
 </li>
-<li>互斥的策略2<ol>
+<li>互斥的策略2(不使用忙等待)<ol>
 <li>上述策略的缺陷（忙等待 优先级反向）</li>
 <li>Sleep &amp; Wakeup<ol>
 <li>问题：唤醒丢失</li>
@@ -303,13 +330,131 @@
 </ol>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TODO：第四节：IPC</span><br></pre></td></tr></table></figure>
+<h3 id="竞争-互斥-临界区"><a href="#竞争-互斥-临界区" class="headerlink" title="竞争, 互斥, 临界区"></a>竞争, 互斥, 临界区</h3><p>两个或多个进程读写某些共享数据,而最后的结果取决于进程运行的实际精确时序, 称之为<strong>竞争条件</strong>.</p>
+<p>任何涉及到共享内存, 共享文件, 共享任何资源的情况都会引发竞争. 我们称这些共享的资源为 <strong>临界区</strong>. </p>
+<p>我们需要实现的是 <strong>互斥</strong> ,即以某种手段确保当一个进程在使用临界区时, 其他进程不能同样处于临界区中.</p>
+<p>一个好的互斥实现方案应当满足这四个条件:</p>
+<ol>
+<li><p>任意两个进程不能够同时处于临界区</p>
+<p><em>这其实是互斥的含义</em></p>
+</li>
+<li><p>不应该对CPU的速度与数量做任何假设</p>
+<p><em>方案应该普适</em></p>
+</li>
+<li><p>临界区外运行的进程不得阻塞其他进程</p>
+</li>
+<li><p>不得使进程无限期等待进入临界区</p>
+</li>
+</ol>
+<h3 id="借助忙等待的互斥策略"><a href="#借助忙等待的互斥策略" class="headerlink" title="借助忙等待的互斥策略"></a>借助忙等待的互斥策略</h3><h4 id="屏蔽中断"><a href="#屏蔽中断" class="headerlink" title="屏蔽中断"></a>屏蔽中断</h4><p>进程只有在发生中断的时候才会发生切换(比如时钟中断或IO中断), 最简单的方法就是进程A在进入临界区后立即屏蔽所有中断, 在离开之前再打开中断.这样当某进程屏蔽中断后, 不用担心CPU切换到其他的进程, 更不用担心临界区被别的进程读写.</p>
+<p>问题:</p>
+<ol>
+<li>将屏蔽中断的权力交给进程是不明智的</li>
+<li>如果是多核CPU, 单单屏蔽当前CPU并不能起到效果</li>
+</ol>
+<p>但是这个方法却适用于内核本身需要互斥时很方便, 尽管它不是一个适用于用户进程的通用机制.</p>
+<h4 id="锁变量"><a href="#锁变量" class="headerlink" title="锁变量"></a>锁变量</h4><p>使用一个共享的变量, 锁 Lock . 当Lock=1时表示正在使用拒绝其他进程访问, =0时表示空闲允许访问.</p>
+<p>但是锁变量本身就是一个临界区, 依旧存在疏漏, 例如某进程使用资源R的过程:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if Lock&#x3D;&#x3D;0 wait()</span><br><span class="line">Lock&#x3D;1</span><br><span class="line">use(R)</span><br><span class="line">Lock&#x3D;0</span><br></pre></td></tr></table></figure>
+<p>假设进程A与B.  代码执行为A.1;(进程切换)B.1;B.2;B.3;(进程切换)A.2;A.3</p>
+<p>此时AB同时访问临界区</p>
+<h4 id="严格轮换"><a href="#严格轮换" class="headerlink" title="严格轮换"></a>严格轮换</h4><p>使用一个整型变量turn记录哪个进程可以使用资源.</p>
+<p>假设进程0与进程1试图访问资源R</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">while(True)&#123;</span><br><span class="line">	while(turn !&#x3D; 0) wait();</span><br><span class="line">	use(R);</span><br><span class="line">	turn &#x3D; 1;</span><br><span class="line">	other_options();</span><br><span class="line">&#125;&#x2F;&#x2F;进程0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">while(True)&#123;</span><br><span class="line">	while(turn !&#x3D; 1) wait();</span><br><span class="line">	use(R);</span><br><span class="line">	turn &#x3D; 0;</span><br><span class="line">	other_options();</span><br><span class="line">&#125;&#x2F;&#x2F;进程1</span><br></pre></td></tr></table></figure>
+<p>进程0在执行到0.2时, 只有turn=0时(表示轮到进程0使用了)才会使用临界区; 否则将持续等待turn值的改变. 显然这是对CPU资源的严重浪费. 这种被称作 <strong>忙等待</strong>, 用于忙等待的锁称作 <strong>自旋锁.</strong></p>
+<p>此外, 这种机制要求进程0与进程1必须严格交替使用临界区. 进程0无法连续两次使用临界区.</p>
+<p><em>如果有三个进程, turn的值可取0,1,2即可.</em></p>
+<h4 id="Peterson解法"><a href="#Peterson解法" class="headerlink" title="Peterson解法"></a>Peterson解法</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 2				<span class="comment">// N表示可能访问临界区的进程数量</span></span></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">turn</span>;				<span class="comment">// 轮到谁了?</span></span><br><span class="line"><span class="keyword">int</span> interested[N];		<span class="comment">//表示进程是否试图访问临界区, 初值为0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enter_region</span><span class="params">(<span class="keyword">int</span> <span class="built_in">process</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> other = <span class="number">1</span>-<span class="built_in">process</span>;			<span class="comment">//表示除了本进程的其他进程, 注1</span></span><br><span class="line">	interested[<span class="built_in">process</span>]= TRUE; 		<span class="comment">//声明自己试图访问</span></span><br><span class="line">	<span class="built_in">turn</span> = <span class="built_in">process</span>;					<span class="comment">//声明轮到自己了</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">turn</span> = <span class="built_in">process</span> &amp;&amp; interested[other]== TRUE)</span><br><span class="line">        wait();					<span class="comment">//当轮到自己但别人感兴趣的时候等待,谦让,注2</span></span><br><span class="line">    </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">leave_region</span><span class="params">(<span class="keyword">int</span> <span class="built_in">process</span>)</span></span>&#123;</span><br><span class="line">    interested[<span class="built_in">process</span>]=FALSE; <span class="comment">//离开时声明自己放弃访问</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注1: 此处仅有两个进程, 因此other是非0即1的整型. 实际中表示所有其他的进程</p>
+<p>注2: 当轮到自己且别人都没兴趣(无需谦让), 或者没轮到自己但别人感兴趣(不谦让第二次)</p>
+<h4 id="TSL指令"><a href="#TSL指令" class="headerlink" title="TSL指令"></a>TSL指令</h4><p>TSL 意为 Test and Set Lock . 这个方法需要硬件的协助. 硬件需要支持一条汇编指令TSL</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">TSL REGISTER,LOCK	&#x2F;&#x2F;将LOCK变量复制到寄存器,并将LOCK设置为1</span><br><span class="line">&#x2F;&#x2F;这个操作是原子性的,复制和赋值之间不会被中断</span><br><span class="line">&#x2F;&#x2F;LOCK&#x3D;0可访问,&#x3D;1不可访问</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">enter_region:</span><br><span class="line">	TSL REGISTER,LOCK	&#x2F;&#x2F;将LOCK变量复制到寄存器,并将LOCK设置为1</span><br><span class="line">	CMP REGISTER #0		&#x2F;&#x2F;(原来的LOCK是0吗?)</span><br><span class="line">	JNE enter_region	&#x2F;&#x2F;原来就是1,别的正在使用,循环等待</span><br><span class="line">	RET					&#x2F;&#x2F;原来是1, 可以使用</span><br><span class="line">	</span><br><span class="line">leave_region:</span><br><span class="line">	MOVE LOCK.#O		&#x2F;&#x2F;用完了,设置为0</span><br><span class="line">	RET</span><br></pre></td></tr></table></figure>
+<p>当LOCK为1是时候,CPU将内存总线锁住, 无法访问内存.</p>
+<h3 id="无需忙等待的互斥策略"><a href="#无需忙等待的互斥策略" class="headerlink" title="无需忙等待的互斥策略"></a>无需忙等待的互斥策略</h3><h4 id="忙等待-CPU浪费与优先级反转"><a href="#忙等待-CPU浪费与优先级反转" class="headerlink" title="忙等待:CPU浪费与优先级反转"></a>忙等待:CPU浪费与优先级反转</h4><p>以上策略都是进入先试探能否进入,若不能原地等待,直到允许位置.</p>
+<p>这种方法不仅浪费了CPU, 还会导致 <strong>优先级翻转</strong> 的问题</p>
+<p>假设两个进程H与L, 他们在调度算法中优先级分别为高or低.某一时刻L正在临界区, 此时H转为就绪态. 调度算法将CPU使用权转移至H, 但由于临界区正在使用H处于忙等待, L由于得不到CPU使用权无法离开临界区. H将一直忙等待下去.</p>
+<h4 id="生产与消费-错解-休眠唤醒"><a href="#生产与消费-错解-休眠唤醒" class="headerlink" title="生产与消费_错解:休眠唤醒"></a>生产与消费_错解:休眠唤醒</h4><p>使用sleep与wakeup来实现生产者消费者问题<strong>会产生虚假唤醒(又叫唤醒丢失), 是行不通的.</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100</span></span><br><span class="line"><span class="keyword">int</span> count =<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">producer</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> item;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">while</span> (TRUE)&#123;</span><br><span class="line">       	item= produce_item();</span><br><span class="line">		<span class="keyword">if</span> (count = N)</span><br><span class="line">            sleep();</span><br><span class="line">		insert_item(item);</span><br><span class="line">		count = count+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(count == <span class="number">1</span>)wakeup(consumer);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*本意:</span></span><br><span class="line"><span class="comment">	不断生产, 如果生产满了就休眠;</span></span><br><span class="line"><span class="comment">	放入缓冲区,如果缓冲区数目为1唤醒消费者*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">consumer</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> item;</span><br><span class="line">	<span class="keyword">while</span>(TRUE)&#123;</span><br><span class="line">	<span class="keyword">if</span> (count == <span class="number">0</span>)</span><br><span class="line">        sleep();</span><br><span class="line">	item = move_item();</span><br><span class="line">	count= count <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span> (count == N<span class="number">-1</span>)wakeup(producer);</span><br><span class="line">	consume_tem(item);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*本意:</span></span><br><span class="line"><span class="comment">	不断消费, 如果消费完了就休眠;</span></span><br><span class="line"><span class="comment">	缓冲区--,如果缓冲区数目为N-1唤醒生产者*/</span></span><br></pre></td></tr></table></figure>
+<p>实际的问题:</p>
+<ul>
+<li><p>Case1: </p>
+<p>若当前count = 0, 消费者在#23 判断为应当睡眠, 但是还没有执行#24: sleep(), CPU使用权就被转移至producer; 生产者运行至#13, 认为消费者正在休眠故唤醒之, 但此时消费者并不再休眠, 故唤醒丢失;</p>
+<p>CPU使用权回到消费者, 继续执行#24 , 休眠.继续生产. 但此时count=1, 不断生产的过程中不会再次达到1唤醒消费者, 直到生产满, 生产者也陷入休眠</p>
+</li>
+<li><p>Case2:</p>
+<p>若当前count = N, 生产者在#9 判断为应当睡眠, 但是还没有执行#10: sleep(), CPU使用权就被转移至消费者; 消费者运行至#27, 认为生产者正在休眠故唤醒之, 但此时生产者并不再休眠, 故唤醒丢失;</p>
+<p>CPU使用权回到生产者, 继续执行#10 , 休眠. 继续消费. 但此时count=N-1, 不断消费的过程中不会再次达到N-1唤醒生产者, 直到消费完, 消费者也陷入休眠</p>
+</li>
+</ul>
+<h4 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int S &#x3D; m;		&#x2F;&#x2F;信号量S,初值m表示最大提供m个进程使用</span><br><span class="line">P(S)&#123;</span><br><span class="line">	S--;</span><br><span class="line">	if(S&lt;0)</span><br><span class="line">		bloked();</span><br><span class="line">&#125;</span><br><span class="line">V(S)&#123;</span><br><span class="line">	S++;</span><br><span class="line">	if(S&lt;&#x3D;0)</span><br><span class="line">		wakeup();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第一个进程申请使用资源, S: m-&gt;m-1</li>
+<li><p>……</p>
+</li>
+<li><p>第m-1个进程申请使用资源, S: 2 -&gt; 1;</p>
+</li>
+<li>第m个进程申请使用资源, S: 1 -&gt; 0 , 正好分配完毕;</li>
+<li>第m+1个进程申请使用资源, S: 0 -&gt; -1 , 无法分配, 被阻塞, 欠1个;</li>
+<li>第m+2个进程申请使用资源, S: -1 -&gt; -2 , 无法分配, 被阻塞, 欠2个;</li>
+<li>此时某进程执行V(), S: -2 -&gt; -1, 因为S &lt;= 0, 唤醒某个进程使用资源;</li>
+<li>此时某进程执行V(), S: -1 -&gt; 0, 因为S &lt;= 0, 唤醒某个进程使用资源;</li>
+<li>此时某进程执行V(), S: 0 -&gt; 1, 因为S &gt; 0, 无需唤醒;</li>
+<li>……</li>
+</ul>
+<p>说明:</p>
+<ol>
+<li>唤醒进程中, 具体唤醒的是哪一个进程由其他算法决定</li>
+<li>当S&gt;=0时, S表示资源还可供多少进程使用; 当S&lt;=0时, S表示有多少个进程在等待资源;</li>
+<li>有些地方的算法(比如教材中) 并不支持S为负数的情况, S最低为0; 那种算法是在V操作唤醒进程后进程再次使用P操作. 基本思路是类似的.</li>
+<li>P 操作又称down操作; V操作又称up操作; 这两个字母是从荷兰语中出来的.</li>
+</ol>
+<p>​        </p>
+<h4 id="生产者与消费者-正解-PV"><a href="#生产者与消费者-正解-PV" class="headerlink" title="生产者与消费者_正解:PV"></a>生产者与消费者_正解:PV</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100			<span class="comment">//缓冲区的槽数目</span></span></span><br><span class="line"><span class="keyword">int</span> mutex = <span class="number">1</span>;			<span class="comment">//临界区最多只允许1个进程访问</span></span><br><span class="line"><span class="keyword">int</span> empty = N;			<span class="comment">//缓冲区的空槽数目</span></span><br><span class="line"><span class="keyword">int</span> full = <span class="number">0</span>;			<span class="comment">//缓冲区的的满槽数目</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">producer</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> item;</span><br><span class="line">    <span class="keyword">while</span>(True)&#123;</span><br><span class="line">        item = produce_item();		<span class="comment">//生产</span></span><br><span class="line">        down(&amp;empty);				<span class="comment">//空槽--;若无空槽不会继续执行</span></span><br><span class="line">        down(&amp;mutex);				<span class="comment">//确保缓冲区仅被1进程使用</span></span><br><span class="line">        put_item(item);				<span class="comment">//将item放入缓冲区</span></span><br><span class="line">        up(&amp;mutex);					<span class="comment">//退出缓冲区</span></span><br><span class="line">        up(&amp;full);					<span class="comment">//满槽++</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">consumer</span><span class="params">()</span></span>&#123;</span><br><span class="line"> 	<span class="keyword">int</span> item;</span><br><span class="line">    <span class="keyword">while</span>(True)&#123;</span><br><span class="line">        down(&amp;full);				<span class="comment">//满槽--;若无满槽不会继续执行</span></span><br><span class="line">        down(&amp;mutex);				<span class="comment">//确保缓冲区仅被1进程使用</span></span><br><span class="line">        item = remove_item();		<span class="comment">//将item放入缓冲区</span></span><br><span class="line">        up(&amp;mutex);					<span class="comment">//退出缓冲区</span></span><br><span class="line">        up(&amp;empty);					<span class="comment">//空槽++</span></span><br><span class="line">    &#125;</span><br><span class="line">    consume_item(item);				<span class="comment">//消费</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>记忆:</p>
+<ul>
+<li>永远是先down后up</li>
+<li>对于临界区(本题为缓冲区), 永远是down与up紧紧夹住</li>
+<li>生产者down空槽, 消费者down满槽</li>
+</ul>
+<h4 id="管程-Monitor"><a href="#管程-Monitor" class="headerlink" title="管程 Monitor"></a>管程 Monitor</h4><p>PV操作是可以完全正确地使用临界区, 但是在程序编写的过程中容易出现死锁的情况. 引入 <strong>管程</strong> 使得程序的编写更加友好.</p>
+<p>管程是一个由过程,变量,以及数据结构组成的集合. 管程提供了访问和修改临界区资源的接口, 并且只允许进程通过管程(不能绕过管程)访问这些资源, 并且在同一时间只允许一个活跃进程使用管程来读写临界区. 管程本身是一种高级同步原语, 这使得它在执行时不会被中断. 管程本身并没有新技术, 而是编程语言提供的一个更加方便编程的辅助工具.</p>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是一个类Pascal语言, 原因见注1</span></span><br><span class="line"><span class="comment">//主要代码其实与 休眠唤醒 部分类似, wait &lt;-&gt; sleep, signal &lt;-&gt; wakeup</span></span><br><span class="line"><span class="comment">//但是管程不会出现唤醒丢失的问题, 原因见注2</span></span><br><span class="line">monitor ProducerConsumer	<span class="comment">//一个管程</span></span><br><span class="line">	condition full, empty;</span><br><span class="line">	integer count;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">procedure</span> <span class="title">insert</span><span class="params">(item: integer)</span>;</span>	<span class="comment">//管程中的插入函数</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> count =N <span class="keyword">then</span> wait(full);</span><br><span class="line">		insert_item(item);</span><br><span class="line">		count:=count +<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> count=<span class="number">1</span> <span class="keyword">then</span> signal(empty)	</span><br><span class="line">	<span class="keyword">end</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">remove</span>:</span>integer;			<span class="comment">//管程中的移除函数</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> count =<span class="number">0</span> <span class="keyword">then</span> wait(empty);</span><br><span class="line">		remove = remove_item;</span><br><span class="line">		count:=count-<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> count=N-<span class="number">1</span> <span class="keyword">then</span> signal(full)</span><br><span class="line">	<span class="keyword">end</span>;</span><br><span class="line">	count :=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">end</span> monitor;				<span class="comment">//管程结束</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">producer</span>;</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">while</span> true <span class="keyword">do</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">	item= produce_item;</span><br><span class="line">	ProducerConsumer.insert(item)		<span class="comment">//其他进程通过管程来访问临界区</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">consumer</span>;</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">while</span> true <span class="keyword">do</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">	item = ProducerConsumer.remove;		<span class="comment">//绕过管程而访问是不允许的</span></span><br><span class="line">	consume_item(item)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注1: 管程是语言概念, 使用管程需要编程语言本身支持. 很遗憾C语言并不支持管程. 这也是其缺陷之一. (Java是支持管程的) </li>
+<li>注2 : 任意时刻管程中只能有一个活跃进程, 从而保证管程本身的互斥. 这一特性是由语言的编译器实现的, 从而减少出错的可能性.</li>
+<li>管程中的阻塞函数wait与signal其实与sleep, wakeup基本一致.</li>
+</ul>
+<p>此外, 无论是管程还是信号量, 都有一个问题: 它们必须要求是单核机器, 或者是拥有共享内存的多核机器. 如果是多核且这些CPUs每个都拥有自己独立的内存, 这些方法都会失效.</p>
+<h4 id="消息传递-Message-Passing"><a href="#消息传递-Message-Passing" class="headerlink" title="消息传递 Message Passing"></a>消息传递 Message Passing</h4><p><em>不是重点</em></p>
+<p>如果没有共享内存, 甚至不在同一台机器上(例如互联网抢票) 上述利用共享内存的方法均失效. 此时使用消息传递来保证临界区的互斥.</p>
+<p>消息传递的实现中需要做到:</p>
+<ul>
+<li>应答机制来避免消息的丢失</li>
+<li>将消息的顺序复原成正确的顺序</li>
+<li>避免消息的混淆</li>
+<li>消息真实性的认证</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100</span></span><br><span class="line">#使用消息传递实现生产-消费</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">producer</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> item;</span><br><span class="line">	message m;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(TRUE)&#123;</span><br><span class="line">		item= produce_item();</span><br><span class="line">		receive(consumer,&amp;m);</span><br><span class="line">		<span class="function">build <span class="title">message</span><span class="params">(&amp;m, item)</span></span>;</span><br><span class="line">		send(consumer, &amp;m);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">consumer</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> item,i;</span><br><span class="line">	message m;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;N; i++) send(producer,&amp;m);</span><br><span class="line">	<span class="keyword">while</span>(TrUe)&#123;</span><br><span class="line">		receive(producer, &amp;m);</span><br><span class="line">		item= extract_ item(&amp;m);</span><br><span class="line">		send(producer, &amp;m);</span><br><span class="line">		<span class="function">consume <span class="title">item</span><span class="params">(item)</span></span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="屏障-Barriers"><a href="#屏障-Barriers" class="headerlink" title="屏障 Barriers"></a>屏障 Barriers</h4><p>将不同的进程划分为同一个组, 在某处设置一处屏障, 只有当组内的所有进程都达到了屏障才可以继续执行. 这种方法使得进程的快慢达到了一致.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E5%B1%8F%E9%9A%9C.png" alt=""></p>
+<hr>
 <h2 id="Classical-IPC-Problems"><a href="#Classical-IPC-Problems" class="headerlink" title="Classical IPC Problems"></a>Classical IPC Problems</h2><p>本小节将涉及到几个常见IPC模型：</p>
 <ol>
-<li>生产者与消费者</li>
-<li>读者与写者</li>
 <li>进餐的哲学家</li>
+<li>读者与写者</li>
 </ol>
+<p>此外生产者消费者问题见上.</p>
+<h3 id="进餐的哲学家"><a href="#进餐的哲学家" class="headerlink" title="进餐的哲学家"></a>进餐的哲学家</h3><p>哲学家吃了想想了吃, 每个哲学家要吃饭必须拥有两把叉子.不能同时拿起两把叉子.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E5%93%B2%E5%AD%A6%E5%AE%B6.png" alt=""></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N		5</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEFT 	(i+N-1)%N</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RIGht	(i+1)%N</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> THINKING 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> HUNgrY 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EATING</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> semaphore;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> state[N];				<span class="comment">//表示每个哲学家的当前状态</span></span><br><span class="line">semaphore mutex = <span class="number">1</span>;		<span class="comment">//每次只能都有一个哲学家处于判断状态</span></span><br><span class="line">semaphore s[N];				<span class="comment">//每个哲学家一个信号量</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">philosopher</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(TRUE)&#123;</span><br><span class="line">		think();</span><br><span class="line">		<span class="function">take <span class="title">forks</span><span class="params">(i)</span></span>;</span><br><span class="line">		eat();</span><br><span class="line">		<span class="function">put_ <span class="title">forks</span><span class="params">(i)</span></span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">take_forks</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    down(&amp;mutex);			<span class="comment">//本哲学家开始判断</span></span><br><span class="line">	state[i]=HUNGRY;		<span class="comment">//声明自己饿了</span></span><br><span class="line">	test(i);				<span class="comment">//测试自己</span></span><br><span class="line">	up(&amp;mutex);				<span class="comment">//判断结束</span></span><br><span class="line">	down(&amp;s[i]);			<span class="comment">//如果我开吃了,信号量复原;如果我没在吃,陷入阻塞</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">put_forks</span><span class="params">(i)</span></span>&#123;</span><br><span class="line">	down(&amp;mutex);			<span class="comment">//本哲学家开始判断</span></span><br><span class="line">	state[i]= THINKING;		<span class="comment">//我开始思考</span></span><br><span class="line">	test(LEFT);				<span class="comment">//判断左边的哲学家</span></span><br><span class="line">	test(RIGHT);</span><br><span class="line">	up(&amp;mutex);    			<span class="comment">//判断结束</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(i)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (state[i]== HUNGRY &amp;&amp; state[LEFT]!= EATING &amp; state[RIGHT]!= EATING)&#123;</span><br><span class="line">        state[i] = EATING;</span><br><span class="line">        up(&amp;s[i]);</span><br><span class="line">    &#125;	<span class="comment">//如果当前哲学家饿了且左右不在进食: 本哲学家吃且S++</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="读者与写者"><a href="#读者与写者" class="headerlink" title="读者与写者"></a>读者与写者</h3><p>对于同一个文件, 读者与读者可以共同访问, 但是写者不能与其他写着或读者共同访问.</p>
+<p>读者优先的代码:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> count=<span class="number">0</span>;			<span class="comment">//当前读者数量</span></span><br><span class="line">semaphore mutex=<span class="number">1</span>;		<span class="comment">//保护count的互斥</span></span><br><span class="line">semaphore rw=<span class="number">1</span>;			<span class="comment">//保证读者写者互斥访问</span></span><br><span class="line"></span><br><span class="line">writer()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;			<span class="comment">//写者只需要与其他任意进程互斥</span></span><br><span class="line">		P(rw);</span><br><span class="line">		writing;</span><br><span class="line">		v(rw);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">reader()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		P(mutex);		<span class="comment">//互斥:count</span></span><br><span class="line">		<span class="keyword">if</span>(count==<span class="number">0</span>)	<span class="comment">//如果当前是第一个读者,互斥:rw</span></span><br><span class="line">			P(rw);</span><br><span class="line">		count++;		<span class="comment">//count++</span></span><br><span class="line">		V(mutex);		<span class="comment">//互斥解除:count</span></span><br><span class="line">		reading;</span><br><span class="line">		P(mutex);		<span class="comment">//互斥:count</span></span><br><span class="line">		count--;		<span class="comment">//count--</span></span><br><span class="line">		<span class="keyword">if</span>(count==<span class="number">0</span>)	<span class="comment">//如果当前是最后一个读者,互斥解除:rw</span></span><br><span class="line">			v(rw);</span><br><span class="line">		V(mutex);		<span class="comment">//互斥解除:count</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写者优先的代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ReadCount=<span class="number">0</span>, WriteCount=<span class="number">0</span>;			<span class="comment">//当前读写数量</span></span><br><span class="line">semaphore mutex_rc=<span class="number">1</span>x, mutex_wc=<span class="number">1</span>y;		<span class="comment">//保护count的互斥</span></span><br><span class="line">semaphore rr=<span class="number">1</span>rs,ww=<span class="number">1</span>ws;			<span class="comment">//保证读者写者互斥访问</span></span><br><span class="line"></span><br><span class="line">writer()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;			</span><br><span class="line">        P(mutex_wc);			<span class="comment">//互斥wc</span></span><br><span class="line">        <span class="keyword">if</span>(WriteCount == <span class="number">0</span>)		<span class="comment">//如果是第一个写者</span></span><br><span class="line">            P(rr);				<span class="comment">//不允许其他读者进入</span></span><br><span class="line">        WriteCount++;</span><br><span class="line">        V(mutex_wc);			<span class="comment">//互斥解除:wc</span></span><br><span class="line">        </span><br><span class="line">		P(ww);					<span class="comment">//互斥其他写者</span></span><br><span class="line">		writing;</span><br><span class="line">		v(ww);					<span class="comment">//互斥解除:其他写者</span></span><br><span class="line">        </span><br><span class="line">        P(mutex_wc);			<span class="comment">//互斥wc</span></span><br><span class="line">        WriteCount--;</span><br><span class="line">        <span class="keyword">if</span>(WriteCount == <span class="number">0</span>)		<span class="comment">//如果是最后的写者</span></span><br><span class="line">            V(rr);				<span class="comment">//互斥解除:读者</span></span><br><span class="line">        V(mutex_wc);			<span class="comment">//互斥解除:wc</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">reader()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P(z);</span><br><span class="line">        P(rr);				<span class="comment">//</span></span><br><span class="line">		P(mutex_rc);		<span class="comment">//互斥:rc</span></span><br><span class="line">		<span class="keyword">if</span>(ReadCount==<span class="number">0</span>)	<span class="comment">//如果当前是第一个读者,互斥写者:ww</span></span><br><span class="line">			P(ww);</span><br><span class="line">		ReadCount++;		<span class="comment">//rc++</span></span><br><span class="line">		V(mutex_rc);		<span class="comment">//互斥解除:rc</span></span><br><span class="line">        V(rr);				<span class="comment">//</span></span><br><span class="line">        V(z);</span><br><span class="line">		reading;</span><br><span class="line">		P(mutex_rc);		<span class="comment">//互斥:rc</span></span><br><span class="line">		ReadCount--;		<span class="comment">//rc--</span></span><br><span class="line">		<span class="keyword">if</span>(ReadCount==<span class="number">0</span>)	<span class="comment">//如果当前是最后一个读者,互斥解除:写者ww</span></span><br><span class="line">			v(ww);</span><br><span class="line">		V(mutex_rc);		<span class="comment">//互斥解除:rc</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写者优先没完全看懂</p>
 
     </div>
 
@@ -399,7 +544,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IPC"><span class="nav-number">1.</span> <span class="nav-text">IPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classical-IPC-Problems"><span class="nav-number">2.</span> <span class="nav-text">Classical IPC Problems</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IPC"><span class="nav-number">1.</span> <span class="nav-text">IPC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#竞争-互斥-临界区"><span class="nav-number">1.1.</span> <span class="nav-text">竞争, 互斥, 临界区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#借助忙等待的互斥策略"><span class="nav-number">1.2.</span> <span class="nav-text">借助忙等待的互斥策略</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#屏蔽中断"><span class="nav-number">1.2.1.</span> <span class="nav-text">屏蔽中断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#锁变量"><span class="nav-number">1.2.2.</span> <span class="nav-text">锁变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#严格轮换"><span class="nav-number">1.2.3.</span> <span class="nav-text">严格轮换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Peterson解法"><span class="nav-number">1.2.4.</span> <span class="nav-text">Peterson解法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TSL指令"><span class="nav-number">1.2.5.</span> <span class="nav-text">TSL指令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无需忙等待的互斥策略"><span class="nav-number">1.3.</span> <span class="nav-text">无需忙等待的互斥策略</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#忙等待-CPU浪费与优先级反转"><span class="nav-number">1.3.1.</span> <span class="nav-text">忙等待:CPU浪费与优先级反转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生产与消费-错解-休眠唤醒"><span class="nav-number">1.3.2.</span> <span class="nav-text">生产与消费_错解:休眠唤醒</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PV操作"><span class="nav-number">1.3.3.</span> <span class="nav-text">PV操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生产者与消费者-正解-PV"><span class="nav-number">1.3.4.</span> <span class="nav-text">生产者与消费者_正解:PV</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管程-Monitor"><span class="nav-number">1.3.5.</span> <span class="nav-text">管程 Monitor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#消息传递-Message-Passing"><span class="nav-number">1.3.6.</span> <span class="nav-text">消息传递 Message Passing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#屏障-Barriers"><span class="nav-number">1.3.7.</span> <span class="nav-text">屏障 Barriers</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classical-IPC-Problems"><span class="nav-number">2.</span> <span class="nav-text">Classical IPC Problems</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进餐的哲学家"><span class="nav-number">2.1.</span> <span class="nav-text">进餐的哲学家</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读者与写者"><span class="nav-number">2.2.</span> <span class="nav-text">读者与写者</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -415,7 +560,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -469,12 +614,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">73k</span>
+    <span title="站点总字数">88k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:02</span>
+    <span title="站点阅读时长">2:27</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

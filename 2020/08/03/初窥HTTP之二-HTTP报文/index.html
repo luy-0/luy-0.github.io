@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="HTTP 报文的信息  HTTP 状态码 HTTP 首部(待完成)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初窥HTTP之二_HTTP报文">
+<meta property="og:url" content="http://yoursite.com/2020/08/03/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%BA%8C-HTTP%E6%8A%A5%E6%96%87/index.html">
+<meta property="og:site_name" content="(ﾟ∀。)">
+<meta property="og:description" content="HTTP 报文的信息  HTTP 状态码 HTTP 首部(待完成)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-03T01:00:15.000Z">
+<meta property="article:modified_time" content="2020-08-03T02:38:19.768Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="读书笔记:技术">
+<meta property="article:tag" content="HTTP">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/08/03/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%BA%8C-HTTP%E6%8A%A5%E6%96%87/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>初窥HTTP之二_HTTP报文 | (ﾟ∀。)</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="(ﾟ∀。)" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">(ﾟ∀。)</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/03/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%BA%8C-HTTP%E6%8A%A5%E6%96%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="嘿, 这里是私人空间!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="(ﾟ∀。)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          初窥HTTP之二_HTTP报文
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-03 09:00:15 / 修改时间：10:38:19" itemprop="dateCreated datePublished" datetime="2020-08-03T09:00:15+08:00">2020-08-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%A9%AD%E9%BE%99%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">驭龙术</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%A9%AD%E9%BE%99%E6%9C%AF/Web%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">Web开发</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%A9%AD%E9%BE%99%E6%9C%AF/Web%E5%BC%80%E5%8F%91/HTTP/" itemprop="url" rel="index"><span itemprop="name">HTTP</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>HTTP 报文的信息 </p>
+<p>HTTP 状态码</p>
+<p>HTTP 首部(待完成)</p>
+<a id="more"></a>
+<h2 id="HTTP-报文的信息"><a href="#HTTP-报文的信息" class="headerlink" title="HTTP 报文的信息"></a>HTTP 报文的信息</h2><p>本段将介绍HTTP报文中包括有那些信息.包括:</p>
+<ol>
+<li>报文的结构</li>
+<li>报文编码</li>
+<li>多部分对象集合</li>
+<li>范围传输</li>
+<li>内容协商</li>
+</ol>
+<h3 id="报文结构"><a href="#报文结构" class="headerlink" title="报文结构"></a>报文结构</h3><p>HTTP报文是由多行数据构成的, 每行之间使用<code>CR+LF</code>(\r\n) 进行换行.</p>
+<p>报文可被分为报文首部与报文主体, 后者并不是必须的.</p>
+<p>报文首部包括:</p>
+<ul>
+<li>请求行 / 状态行</li>
+<li>请求首部字段 / 响应首部字段</li>
+<li>通用首部字段</li>
+<li>实体首部字段</li>
+<li>其他</li>
+</ul>
+<p><strong>请求行</strong></p>
+<p>包括请求的方法, 请求URI, HTTP版本</p>
+<p><strong>状态行</strong></p>
+<p>包括响应的结果状态码, 原因短语, HTTP版本</p>
+<p><strong>首部字段</strong></p>
+<p>包括表示各种条件和属性的各类首部语句. 分为四种: </p>
+<ol>
+<li>请求首部字段(仅在请求报文中出现); </li>
+<li>响应首部字段(仅在响应报文中出现); </li>
+<li>通用首部字段; </li>
+<li>实体首部字段;</li>
+</ol>
+<p><strong>其他</strong></p>
+<p>其他未在RFC中定义的字段, 如Cookie</p>
+<h3 id="报文编码"><a href="#报文编码" class="headerlink" title="报文编码"></a>报文编码</h3><p>对传输的数据进行编码可以提高传输速率, 但是编码与解码会消耗CPU资源.</p>
+<h4 id="报文主体与实体主体"><a href="#报文主体与实体主体" class="headerlink" title="报文主体与实体主体"></a>报文主体与实体主体</h4><p>报文是HTTP实际传输的字节流. 报文包括报文首部与报文主体.(报文主体可以是0个或1个)</p>
+<p>实体是作为请求或响应的有效载荷数据. 由实体首部与实体主体组成.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">if(没有报文主体)</span><br><span class="line">	没有实体</span><br><span class="line">if(有报文主体)</span><br><span class="line">	if(有1个实体)</span><br><span class="line">		if(实体未被处理)	&#x2F;&#x2F;处理指: 传输中进行编码操作</span><br><span class="line">			无实体首部</span><br><span class="line">			实体主体&#x3D;&#x3D;报文主体</span><br><span class="line">		if(实体被处理)</span><br><span class="line">			有实体首部</span><br><span class="line">			实体主体!&#x3D;报文主体</span><br><span class="line">	if(有多个实体)</span><br><span class="line">		有实体首部</span><br><span class="line">		实体主体!&#x3D;报文主体</span><br></pre></td></tr></table></figure>
+<p>个人理解,不一定对.</p>
+<p><a href="https://www.zhihu.com/question/263752229" target="_blank" rel="noopener">知乎:http报文和实体的差别？</a></p>
+<h4 id="压缩传输"><a href="#压缩传输" class="headerlink" title="压缩传输"></a>压缩传输</h4><p>将实体内容通过编码进行压缩, 常见的内容编码有:</p>
+<ul>
+<li>gzip</li>
+<li>compress</li>
+<li>deflate</li>
+<li>identify (不进行编码)</li>
+</ul>
+<h3 id="分割传输"><a href="#分割传输" class="headerlink" title="分割传输"></a>分割传输</h3><p>将大容量的数据分割传输, 让浏览器逐步显示页面, 称作 <strong>分块传输编码</strong>(Chunked Transfer Coding).</p>
+<p>实体被分割成的多个部分使用一个十六进制来标记块的大小. </p>
+<h3 id="多部份对象集合"><a href="#多部份对象集合" class="headerlink" title="多部份对象集合"></a>多部份对象集合</h3><p><a href="https://en.wikipedia.org/wiki/MIME" target="_blank" rel="noopener"><em>Wiki:MIME</em></a></p>
+<p>多功能Internet邮件扩展（MIME）是一种Internet标准，以支持除ASCII以外的字符集以及音频，视频，图像和应用程序附件的文本.</p>
+<p>MIME使用了Multipart 的方法来容纳多种不同类型的数据, 这个方法也被HTTP 采纳.</p>
+<ul>
+<li><p>multipart/form-data</p>
+<p>这是在Web上传表单时使用</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Content-Type: multipart&#x2F;form-data; boundary&#x3D;AaB03x</span><br><span class="line"></span><br><span class="line">--AaB03x</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;fieldl&quot;</span><br><span class="line"></span><br><span class="line">Joe Blow</span><br><span class="line">--AaB03x</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;pics&quot;: filename&#x3D;filel. txt&quot;</span><br><span class="line">Content-Type: text&#x2F;plain</span><br><span class="line"></span><br><span class="line">(fi1e1.txt的数据)</span><br><span class="line">--AaB03x--</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>multipart/byteranges</p>
+<p>状态码206（Partial Content，部分内容）</p>
+<p>响应报文包含了多个范围的内容时使用。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Http&#x2F;1.1 206 parTial Content</span><br><span class="line">Date: Fri, 13 Jul 2012 02: 45: 26 GMT</span><br><span class="line">Last-Modified: Fri, 31 Aug 2007 02: 02: 20 GMT</span><br><span class="line">Content-Type: multipart&#x2F;byteranges: boundary&#x3D;THIS_STRING_SEPARATES</span><br><span class="line"></span><br><span class="line">--THIS_STRING_SEPARATES</span><br><span class="line">Content-Type: application&#x2F;pdf</span><br><span class="line">Content-Range: bytes 500-999&#x2F;8000</span><br><span class="line"></span><br><span class="line">...(范围指定的数据)...</span><br><span class="line">--THIS_STRING_SEPARATES</span><br><span class="line">Content-Type: application&#x2F;pdf</span><br><span class="line">Content-Range: bytes 7000-7999&#x2F;8000</span><br><span class="line"></span><br><span class="line">...(范围指定的数据)...</span><br><span class="line">--THIS_STRING_SEPARATES--</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在HTTP报文中使用多部分对象集合时，需要在首部字段里加上Content-type；</p>
+</li>
+<li><p>报文主体中包括多个实体,每个实体都由实体头部与实体主体组成</p>
+<p>实体的头部与主体之间依旧使用CR+LF换行.</p>
+</li>
+<li><p>使用boundary字符串来划分多部分对象集合指明的各类实体。在boundary字符串指定的各个实体的起始行之前插入”—“标记作为结束.</p>
+</li>
+<li><p>也可以在某处嵌套使用多部份对象集合</p>
+</li>
+</ul>
+<h3 id="范围请求"><a href="#范围请求" class="headerlink" title="范围请求"></a>范围请求</h3><p>指定范围发送的请求叫做<code>范围请求</code>(Range Request)。执行范围请求时，会用到首部字段<code>Range</code>来指定资源的byte范围。byte范围的指定形式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Range: bytes&#x3D;5001-10000	&#x2F;&#x2F;5001~10000字节</span><br><span class="line">Range: bytes&#x3D;5001-		&#x2F;&#x2F;从5001字节之后全部的</span><br><span class="line">Range: bytes&#x3D;-3000, 5000-7000	&#x2F;&#x2F;从一开始到3000字节和5000~7000字节的多重范围</span><br></pre></td></tr></table></figure>
+<p>针对范围请求，响应会返回状态码为<code>206 Partial Content</code>的响应报文。</p>
+<p>对于多重范围的范围请求，响应会在首部字段<code>Content-Type</code>表明<code>multipart/byteranges</code>后返回响应报文。</p>
+<p>如果服务器端无法响应范围请求，则会返回状态码<code>200 OK</code>和完整的实体内容。</p>
+<h3 id="内容协商"><a href="#内容协商" class="headerlink" title="内容协商"></a>内容协商</h3><p><code>内容协商</code>(Content Negotiation)机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户端最为适合的资源。内容协商会以响应资源的语言、字符集、编码方式等作为判断的基准。</p>
+<p>包含在请求报文中的某些首部字段就是判断的基准，比如：<code>Accept</code>、<code>Accept-Charset</code>、<code>Accept-Encoding</code>、<code>Accept-Language</code>、<code>Content-Language</code>。</p>
+<p>内容协商技术有以下3种类型：服务器驱动协商(Server-driven Negotiation)、客户端驱动协商(Agent-driven Negotiation)、透明协商(Transparent Negotiation)。</p>
+<hr>
+<h2 id="HTTP-状态码"><a href="#HTTP-状态码" class="headerlink" title="HTTP 状态码"></a>HTTP 状态码</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>类别</th>
+<th>原因短语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1XX</td>
+<td>Informational  (信息性状态码)</td>
+<td>接收的请求正在处理</td>
+</tr>
+<tr>
+<td>2XX</td>
+<td>Success（成功状态码）</td>
+<td>请求正常处理完毕</td>
+</tr>
+<tr>
+<td>3XX</td>
+<td>Redirection（重定向状态码）</td>
+<td>需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td>Client Error（客户端错误状态码）</td>
+<td>服务器无法处理请求</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td>Server Error（服务器错误状态码）</td>
+<td>服务器处理请求出错</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="2xx-成功"><a href="#2xx-成功" class="headerlink" title="2xx 成功"></a>2xx 成功</h3><blockquote>
+<p>表明请求被正常处理了</p>
+</blockquote>
+<ul>
+<li><p>200(OK) : 正常处理, 该返回啥返回啥</p>
+</li>
+<li><p>204(No Content): 请求处理成功, 但没有资源可返回. 浏览器显示的页面不会更新.</p>
+<p>一般用在只需要从客户端往服务器发送消息,而对客户端不需要发送新消息内容的情况下</p>
+</li>
+<li><p>206(Partial Content): 范围请求,响应报文中包含<code>Content-Range</code>指定范围实体</p>
+</li>
+</ul>
+<h3 id="3xx-重定向"><a href="#3xx-重定向" class="headerlink" title="3xx 重定向"></a>3xx 重定向</h3><blockquote>
+<p>表明浏览器需要执行某些特殊处理以正确处理请求</p>
+</blockquote>
+<ul>
+<li>301(Moved Permanently): 永久性重定向,资源<code>URI</code>改变.</li>
+<li>302(Found): 临时性重定向.希望用户(本次)使用新的<code>URI</code>访问</li>
+<li>303(See Other): 和302来ISI,但是明确表示客户端应当采用GET方法获取资源.</li>
+<li>304(Not Modified): 资源已找到,但未符合条件(不把任何相应主体).虽然是<code>3</code>系列,但和重定向没有关系</li>
+<li>307(Temporary Redirect): 临时重定向.和<code>302</code>类似.</li>
+</ul>
+<h3 id="4xx-客户端错误"><a href="#4xx-客户端错误" class="headerlink" title="4xx 客户端错误"></a>4xx 客户端错误</h3><blockquote>
+<p>表明客户端是发生错误的原因所在</p>
+</blockquote>
+<ul>
+<li>400(Bad Request): 请求报文中存在语法错误.浏览器会像200一样对待此状态码</li>
+<li>401(Unauthorized): 发送的请求需要通过<code>HTTP</code>认证.若之前已进行过一次请求,则表示用户认证失败.(初次会弹出认证用的对话框)</li>
+<li>403(Forbidden): 对请求资源的访问被服务器拒绝了.服务端可以(也可以不)给出 <code>拒绝的详细理由</code></li>
+<li>404(Not Found): 没有找到请求的资源. (也有可能是拒绝但且不想说明理由时使用)</li>
+</ul>
+<h3 id="5xx-服务器错误"><a href="#5xx-服务器错误" class="headerlink" title="5xx 服务器错误"></a>5xx 服务器错误</h3><blockquote>
+<p>表明服务器本身发生错误</p>
+</blockquote>
+<ul>
+<li>500(Internal Server Error): 执行请求时发生错误.可能是<code>Web</code>应用的<code>bug</code>或<code>临时故障</code></li>
+<li>503(Service Unavailable): 服务器暂时处于超负荷或者正在进行停机维护.</li>
+</ul>
+<p>事实上不少返回的<code>状态码</code>是错误的.</p>
+<p>此外, 服务器可以指定自己与客户端的协商状态码.</p>
+<hr>
+<h2 id="HTTP-首部"><a href="#HTTP-首部" class="headerlink" title="HTTP 首部"></a>HTTP 首部</h2><p>待完成</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%8A%80%E6%9C%AF/" rel="tag"># 读书笔记:技术</a>
+              <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/01/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%B8%80_HTTP%E5%9F%BA%E7%A1%80/" rel="prev" title="初窥HTTP之一_HTTP基础">
+      <i class="fa fa-chevron-left"></i> 初窥HTTP之一_HTTP基础
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%AD%BB%E9%94%81/" rel="next" title="操作系统之死锁">
+      操作系统之死锁 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-报文的信息"><span class="nav-number">1.</span> <span class="nav-text">HTTP 报文的信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#报文结构"><span class="nav-number">1.1.</span> <span class="nav-text">报文结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#报文编码"><span class="nav-number">1.2.</span> <span class="nav-text">报文编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#报文主体与实体主体"><span class="nav-number">1.2.1.</span> <span class="nav-text">报文主体与实体主体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#压缩传输"><span class="nav-number">1.2.2.</span> <span class="nav-text">压缩传输</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分割传输"><span class="nav-number">1.3.</span> <span class="nav-text">分割传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多部份对象集合"><span class="nav-number">1.4.</span> <span class="nav-text">多部份对象集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#范围请求"><span class="nav-number">1.5.</span> <span class="nav-text">范围请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容协商"><span class="nav-number">1.6.</span> <span class="nav-text">内容协商</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-状态码"><span class="nav-number">2.</span> <span class="nav-text">HTTP 状态码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2xx-成功"><span class="nav-number">2.1.</span> <span class="nav-text">2xx 成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3xx-重定向"><span class="nav-number">2.2.</span> <span class="nav-text">3xx 重定向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4xx-客户端错误"><span class="nav-number">2.3.</span> <span class="nav-text">4xx 客户端错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5xx-服务器错误"><span class="nav-number">2.4.</span> <span class="nav-text">5xx 服务器错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-首部"><span class="nav-number">3.</span> <span class="nav-text">HTTP 首部</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">嘿, 这里是私人空间!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">88k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:27</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

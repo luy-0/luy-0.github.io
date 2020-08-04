@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200608155420.jpg">
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200608155427.jpg">
 <meta property="article:published_time" content="2020-06-05T09:06:22.000Z">
-<meta property="article:modified_time" content="2020-06-09T06:13:58.037Z">
+<meta property="article:modified_time" content="2020-08-03T06:58:17.246Z">
 <meta property="article:author" content="LUY">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="操作系统">
@@ -240,7 +240,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-09 14:13:58" itemprop="dateModified" datetime="2020-06-09T14:13:58+08:00">2020-06-09</time>
+                <time title="修改时间：2020-08-03 14:58:17" itemprop="dateModified" datetime="2020-08-03T14:58:17+08:00">2020-08-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,7 +266,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.1k</span>
+              <span>5.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -310,7 +310,12 @@
 </li>
 </ol>
 <h2 id="进程的引入及概念"><a href="#进程的引入及概念" class="headerlink" title="进程的引入及概念"></a>进程的引入及概念</h2><p>本章的内容(包括进程线程调度IPC)在于探讨如何更高效地利用CPU. 尽管市面上早已采用了多核架构, 但下述分析均为单核CPU, 如果要考虑多核的情况会事先说明。</p>
-<p>既然是单核CPU，那么在同一时间刻CPU计算资源只能用在一个地方。如果我此时一边敲代码，一边听歌，一边挂QQ，那么实际上CPU的运行状态是在这些工作之间以毫秒级别的速度来回迅速切换，在宏观上造成几个工作同时进行的假象。也即是<strong>“微观串行，宏观并行”</strong>。<br>这样的情况我们被称为<strong>多道程序</strong> ，即同时有多个程序在执行中(宏观)，但实际上只有一个进程在使用CPU(微观)</p>
+<p>既然是单核CPU，那么在同一时间刻CPU计算资源只能用在一个地方。如果我此时一边敲代码，一边听歌，一边挂QQ，那么实际上CPU的运行状态是在这些工作之间以毫秒级别的速度来回迅速切换，在宏观上造成几个工作同时进行的假象。也即是<strong>“微观串行，宏观并行”</strong>(但不是真正的并行!)。</p>
+<blockquote>
+<p> 如果真的是在同一时刻有多个程序在执行(此时一定是多核计算机), 我们称之为<strong>并行</strong>.</p>
+<p>上述行为更准确的被称为 <strong>并发</strong>. (伪并行)</p>
+</blockquote>
+<p>这样的情况我们被称为<strong>多道程序(Multiprogramming)</strong> ，即同时有多个程序在执行中(宏观)，但实际上只有一个进程在使用CPU(微观)</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/1.jpg" alt="待配图1"></p>
 <p><strong>进程：</strong> an executing program, including the current values of the program counter, register, and variables.<br>进程是进行中的程序。编写好的代码(.c, .py)或可运行的文件(.exe, .bat) 被成为程序。当他们被运行时才被称为进程。<br>一个进程包括：</p>
 <ul>
@@ -318,7 +323,7 @@
 <li>stack, 栈; </li>
 <li>data section,数据部分</li>
 </ul>
-<p>那么显然，多道程序中每个程序都拥有自己的PC、stack…</p>
+<p>那么显然，多道程序中每个进程都拥有自己的PC、stack…</p>
 <h2 id="进程的生命周期"><a href="#进程的生命周期" class="headerlink" title="进程的生命周期"></a>进程的生命周期</h2><h3 id="进程的状态与转换"><a href="#进程的状态与转换" class="headerlink" title="进程的状态与转换"></a>进程的状态与转换</h3><h4 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h4><p>进程是一个动态的客体，可以被创建销毁等。进程总共拥有五种生命状态(state)：</p>
 <ol>
 <li>new               创建</li>
@@ -337,16 +342,39 @@
 </ul>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/2.jpg" alt="状态转换2"></p>
 <h3 id="进程的创建"><a href="#进程的创建" class="headerlink" title="进程的创建"></a>进程的创建</h3><h4 id="进程的创建场景"><a href="#进程的创建场景" class="headerlink" title="进程的创建场景:"></a>进程的创建场景:</h4><ol>
-<li>系统初始化</li>
-<li>系统调用</li>
-<li>用户命令</li>
-<li>批处理作业的初始化</li>
+<li><p>系统初始化</p>
+<blockquote>
+<p>比如一些系统的守护进程</p>
+</blockquote>
+</li>
+<li><p>系统调用</p>
+<blockquote>
+<p>新建一个进程以辅助原有进程工作</p>
+</blockquote>
+</li>
+<li><p>用户命令</p>
+<blockquote>
+<p>比如你双击某个应用程序</p>
+</blockquote>
+</li>
+<li><p>批处理作业的初始化</p>
+<blockquote>
+<p>仅在批处理系统, 系统认为有多余资源以开启一个新作业时, 会创建进程</p>
+</blockquote>
+</li>
 </ol>
 <h4 id="父子进程"><a href="#父子进程" class="headerlink" title="父子进程"></a>父子进程</h4><ul>
-<li>父进程不断创建子进程,由此形成进程树</li>
-<li>子进程<strong>可以</strong>继承父的资源(也可以不继承或半继承)</li>
-<li>父子进程可以同时执行,也有可能父等待子</li>
-<li>Unix 中存在这种进程的层级关系,Win 中进程的地位平等,不存在父子关系<ul>
+<li><p>父进程不断创建子进程,由此形成进程树</p>
+</li>
+<li><p>子进程<strong>可以</strong>继承父的资源(也可以不继承或半继承)</p>
+</li>
+<li><p>父子进程可以同时执行,也有可能父等待子</p>
+</li>
+<li><p>Unix 系统中, 子进程先复制父进程的所有(fork), 再执行一个系统调用使子女成为新进程.(execve)</p>
+<p>Window 则使用CreatProcess 系统调用同时完成上面两步</p>
+</li>
+<li><p>Unix 中存在这种进程的层级关系,Win 中进程的地位平等,不存在父子关系</p>
+<ul>
 <li>但是这一说法似乎不当, <a href="https://www.zhihu.com/question/31429459" target="_blank" rel="noopener">参看此处</a></li>
 </ul>
 </li>
@@ -354,14 +382,26 @@
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/3.jpg" alt="Unix进程树3"></p>
 <h3 id="进程的销毁"><a href="#进程的销毁" class="headerlink" title="进程的销毁"></a>进程的销毁</h3><h4 id="进程销毁的场景"><a href="#进程销毁的场景" class="headerlink" title="进程销毁的场景"></a>进程销毁的场景</h4><ol>
 <li><p>Normal exit    正常退出 (自愿)</p>
+<blockquote>
+<p>运行结束, 告知OS结束并再分配资源</p>
+</blockquote>
 </li>
 <li><p>Error exit        错误退出 (自愿)</p>
+<blockquote>
+<p>进程发现了一个错误并退出</p>
+</blockquote>
 </li>
 <li><p>Fatal error      致命性错误退出 (非自愿)</p>
-<p>eg: 除0, 取非法地址</p>
+<blockquote>
+<p>进程进行了一个错误操作, 被OS强制退出; 如除0, 取非法地址</p>
+</blockquote>
 </li>
 <li><p>被其他进程杀死  (非自愿)</p>
-<p>eg: 父进程, 系统, 其他优先级更高的进程</p>
+<blockquote>
+<p>父进程, 系统, 其他优先级更高的进程</p>
+<p>Unix:kill</p>
+<p>Windows: TerminalProces</p>
+</blockquote>
 </li>
 </ol>
 <h4 id="级联终止"><a href="#级联终止" class="headerlink" title="级联终止"></a>级联终止</h4><p>​    当父进程退出时,子进程必须退出.</p>
@@ -371,15 +411,25 @@
 </ul>
 <h4 id="进程切换的场景"><a href="#进程切换的场景" class="headerlink" title="进程切换的场景"></a>进程切换的场景</h4><ol>
 <li><p>时钟中断</p>
-<p>eg 时间轮片用尽</p>
+<blockquote>
+<p>时间轮片用尽</p>
+</blockquote>
 </li>
 <li><p>IO 中断</p>
+<blockquote>
+<p>CPU 先前指示IO操作, 当IO结束后返回向OS报告,  称为IO中断</p>
+</blockquote>
 </li>
 <li><p>Memory Fault  内存失效</p>
-<p>eg 内存中页面失效</p>
+<blockquote>
+<p>内存中页面失效, 需要从主存中把页面调入内存</p>
+</blockquote>
 </li>
 <li><p>Trap 陷入</p>
+<blockquote>
 <p>发生错误时</p>
+<p>程序转为exit态</p>
+</blockquote>
 </li>
 <li><p>Supervisor Call</p>
 <p>管理程序调用</p>
@@ -454,7 +504,7 @@
 </ol>
 <h2 id="线程的引入及概念"><a href="#线程的引入及概念" class="headerlink" title="线程的引入及概念"></a>线程的引入及概念</h2><p>你看进程之间切换是不是要保存好多东西,时空开销过大. 线程是轻量级的进程, 它拥有的环境没有进程那么多, 所以线程间的切换更加轻便.</p>
 <ul>
-<li>进程是为了避免等待IO的时间, 线程是为了缩短进程切换中的浪费的时间</li>
+<li>进程是为了避免等待IO的时间, 线程是为了缩短进程切换中的浪费的过多的时间</li>
 <li>线程是隶属于某一进程, 或者说<em>( traditional or heavyweight )</em>进程是仅有一个线程的进程</li>
 <li>但是线程还是有必要的环境的</li>
 <li>同一个进程的不同线程(兄弟线程)可以共享一部分资源</li>
@@ -478,11 +528,7 @@
 <li>堆栈空间</li>
 <li>线程状态</li>
 </ul>
-<blockquote>
-<p>When a multithreaded process is run on a single-CPU system, the threads take turns running</p>
-<p>多线程运用在单核CPU上时并不能提升性能,反而因为线程切换而牺牲效率</p>
-</blockquote>
-<p>此处存疑: 无论单核多核, 线程切换不是总比进程切换高效吗?</p>
+<p>多线程运用在单核CPU上时, 线程依旧是依次, 轮流, 一个接一个地执行的. 但是也稍微提高了些许效率(相对于进程切换还是省下时间了)</p>
 <h2 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h2><p>与进程一致:</p>
 <ol>
 <li>running</li>
@@ -493,9 +539,10 @@
 <p>我也不知道为什么没有new态, 可能太快忽略不计? ┑(￣Д ￣)┍</p>
 <h2 id="线程的优劣及应用场景"><a href="#线程的优劣及应用场景" class="headerlink" title="线程的优劣及应用场景"></a>线程的优劣及应用场景</h2><p>优势:</p>
 <ul>
+<li>兄弟线程之间可以共享地址空间与全部的数据</li>
 <li>占用空间小,切换时快捷</li>
 <li>划分的资源少, 创建销毁更加容易</li>
-<li>线程常被用于多核CPU</li>
+<li>线程常被用于多核CPU(这里可以真正实现并行)</li>
 </ul>
 <p>应用场景:</p>
 <ul>
@@ -516,14 +563,22 @@
 <li>不同进程的线程调度算法可以采取不同策略</li>
 <li>大大简化了内核的管理压力(需要管理的大量线程托付给进程管理了)</li>
 </ul>
+<p>缺点</p>
+<ul>
+<li>线程本身不能够调用阻塞的系统调用</li>
+<li>进程内部没有时钟, 所以其他线程将无法运行, 直到该线程主动退出</li>
+</ul>
 <h3 id="Kernel-level-Thread"><a href="#Kernel-level-Thread" class="headerlink" title="Kernel-level Thread"></a>Kernel-level Thread</h3><p>内核级线程</p>
-<p>线程还是属于进程, 但是线程的管理有OS负责</p>
+<p>线程还是属于进程, 但是线程的管理由OS负责.</p>
+<p>OS 管理进程表与线程表.</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/8.jpg" alt="待配图7"></p>
 <p>优点</p>
 <ul>
 <li><p>内核管理全部的线程, 调度地更加灵活</p>
 <p>指: A进程的A1线程阻塞后, OS可以切换至A2线程 或B进程中的B1线程</p>
 <p><del>但是这不就是进程切换了吗哪儿是优点了啊喂</del>!</p>
+</li>
+<li><p>不需要新的非阻塞的系统调用</p>
 </li>
 </ul>
 <h3 id="Hybrid-Thread"><a href="#Hybrid-Thread" class="headerlink" title="Hybrid Thread"></a>Hybrid Thread</h3><p>混合级线程</p>
@@ -533,7 +588,7 @@
 <p>优点</p>
 <ul>
 <li>将用户级 内核级的优势相结合<ul>
-<li>内核级的模仿(mimic?)功能            //存疑 没懂想表达什么</li>
+<li>内核级的功能</li>
 <li>用户级的性能</li>
 </ul>
 </li>
@@ -587,7 +642,7 @@
 <h2 id="调度的概念"><a href="#调度的概念" class="headerlink" title="调度的概念"></a>调度的概念</h2><h3 id="CPU密集型任务与IO密集型任务"><a href="#CPU密集型任务与IO密集型任务" class="headerlink" title="CPU密集型任务与IO密集型任务"></a>CPU密集型任务与IO密集型任务</h3><p>如果一个任务更多地需要CPU资源 (例如Matlab, 大量的运算) 我们称之为CPU密集型任务.</p>
 <p>如果一个任务更多地需要IO资源 (例如Word的打印任务(外设), 读写任务(外存)) 我们称之为CPU密集型任务.</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200608155404.jpg" alt="不同的任务种类"></p>
-<h3 id="调度的目的"><a href="#调度的目的" class="headerlink" title="调度的目的"></a>调度的目的</h3><p>还是考虑单核CPU, 在多道程序(即多个进程同时”工作”) 的情况下, 会出现不同进程同时需要CPU的情况. 这时候CPU的资源就需要合理分配.</p>
+<h3 id="调度的目的"><a href="#调度的目的" class="headerlink" title="调度的目的"></a>调度的目的</h3><p>还是考虑单核CPU, 在多道程序(即多个进程”同时”工作) 的情况下, 会出现不同进程同时需要CPU的情况. 这时候CPU的资源就需要合理分配.</p>
 <h3 id="什么时候需要调度"><a href="#什么时候需要调度" class="headerlink" title="什么时候需要调度?"></a>什么时候需要调度?</h3><ol>
 <li>新进程的创建</li>
 <li>进程的退出</li>
@@ -687,8 +742,12 @@ T_0\\
 \qquad \sum^{m}_{i=1}\frac{C_i}{P_i}\leq1\\</script><p>称此时系统是可调度的 (Schedulable)</p>
 <h2 id="关于线程调度的一些补充"><a href="#关于线程调度的一些补充" class="headerlink" title="关于线程调度的一些补充"></a>关于线程调度的一些补充</h2><p>用户级线程:</p>
 <p>OS把时间片分配给进程, 进程再内部分配到每个线程.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200608155420.jpg" alt="用户线程调度"></p>
+<p>系统级线程</p>
+<p>OS直接把时间片分配到线程.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200608155427.jpg" alt="系统线程调度"></p>
 <h2 id="关于调度的其他补充"><a href="#关于调度的其他补充" class="headerlink" title="关于调度的其他补充"></a>关于调度的其他补充</h2><ul>
-<li><p>调度算法还有 抢占式/非抢占式之分</p>
+<li><p>调度算法还有 抢占式/非抢占式(Preemptive/Non-Preemptive )之分</p>
 </li>
 <li><p>进程调度模块负责专业CPU控制权,包括:</p>
 <ul>
@@ -705,6 +764,7 @@ T_0\\
 <p>每个时间单元内进程完成的数目</p>
 </li>
 <li><p>周转时间  (min)</p>
+<p>从本任务<strong>到达</strong>到本任务<strong>完成</strong>的总时间</p>
 </li>
 <li><p>等待时间  (min)</p>
 </li>
@@ -713,10 +773,6 @@ T_0\\
 </ul>
 </li>
 </ul>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200608155420.jpg" alt="用户线程调度"></p>
-<p>系统级线程</p>
-<p>OS直接把时间片分配到线程.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/QQ%E6%88%AA%E5%9B%BE20200608155427.jpg" alt="系统线程调度"></p>
 
     </div>
 
@@ -822,7 +878,7 @@ T_0\\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -876,12 +932,12 @@ T_0\\
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">73k</span>
+    <span title="站点总字数">88k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:02</span>
+    <span title="站点阅读时长">2:27</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
