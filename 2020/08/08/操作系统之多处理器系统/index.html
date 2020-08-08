@@ -20,26 +20,34 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本章包括以下内容:  资源与死锁 处理死锁 冷处理: 鸵鸟算法 热处理: 死锁的检测与恢复   防范死锁 避免死锁 死锁预防   其他策略">
+  <meta name="description" content="本章将会涉及:  多处理器系统 多计算机系统 虚拟化 分布式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="操作系统之死锁">
-<meta property="og:url" content="http://yoursite.com/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%AD%BB%E9%94%81/index.html">
+<meta property="og:title" content="操作系统之多处理器系统">
+<meta property="og:url" content="http://yoursite.com/2020/08/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="(ﾟ∀。)">
-<meta property="og:description" content="本章包括以下内容:  资源与死锁 处理死锁 冷处理: 鸵鸟算法 热处理: 死锁的检测与恢复   防范死锁 避免死锁 死锁预防   其他策略">
+<meta property="og:description" content="本章将会涉及:  多处理器系统 多计算机系统 虚拟化 分布式">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E6%AD%BB%E9%94%81%E5%BB%BA%E6%A8%A1.png">
-<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E7%9F%A9%E9%98%B5%E6%A3%80%E6%B5%8B.png">
-<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E8%B5%84%E6%BA%90%E5%9B%BE.png">
-<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E9%93%B6%E8%A1%8C%E5%AE%B6.png">
-<meta property="article:published_time" content="2020-08-04T11:23:09.000Z">
-<meta property="article:modified_time" content="2020-08-08T12:43:28.875Z">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%89%E7%A7%8D%E6%8A%80%E6%9C%AF.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E6%AF%94%E8%BE%83.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%89%E7%A7%8D%E6%80%BB%E7%BA%BF.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%BA%A4%E5%8F%89%E5%BC%80%E5%85%B3.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E5%A4%9A%E7%BA%A7%E4%BA%A4%E6%8D%A2.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E7%8B%AC%E8%87%AA1.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%BB%E4%BB%8E2.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E5%AF%B9%E7%A7%B03.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%BA%92%E8%81%94%E6%8B%93%E6%89%91.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E8%99%9A%E6%8B%9F%E5%8C%961.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E8%99%9A%E6%8B%9F%E5%8C%962.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%AD%E9%97%B4%E4%BB%B6.png">
+<meta property="article:published_time" content="2020-08-08T14:59:29.000Z">
+<meta property="article:modified_time" content="2020-08-08T16:46:27.785Z">
 <meta property="article:author" content="LUY">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E6%AD%BB%E9%94%81%E5%BB%BA%E6%A8%A1.png">
+<meta name="twitter:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%89%E7%A7%8D%E6%8A%80%E6%9C%AF.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%AD%BB%E9%94%81/">
+<link rel="canonical" href="http://yoursite.com/2020/08/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8%E7%B3%BB%E7%BB%9F/">
 
 
 <script id="page-configurations">
@@ -52,7 +60,7 @@
   };
 </script>
 
-  <title>操作系统之死锁 | (ﾟ∀。)</title>
+  <title>操作系统之多处理器系统 | (ﾟ∀。)</title>
   
 
 
@@ -201,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%AD%BB%E9%94%81/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8%E7%B3%BB%E7%BB%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -214,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          操作系统之死锁
+          操作系统之多处理器系统
         </h1>
 
         <div class="post-meta">
@@ -224,14 +232,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-08-04 19:23:09" itemprop="dateCreated datePublished" datetime="2020-08-04T19:23:09+08:00">2020-08-04</time>
+              <time title="创建时间：2020-08-08 22:59:29" itemprop="dateCreated datePublished" datetime="2020-08-08T22:59:29+08:00">2020-08-08</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-08 20:43:28" itemprop="dateModified" datetime="2020-08-08T20:43:28+08:00">2020-08-08</time>
+                <time title="修改时间：2020-08-09 00:46:27" itemprop="dateModified" datetime="2020-08-09T00:46:27+08:00">2020-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,14 +265,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -276,117 +284,121 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本章包括以下内容:</p>
+        <p>本章将会涉及:</p>
 <ol>
-<li>资源与死锁</li>
-<li>处理死锁<ol>
-<li>冷处理: 鸵鸟算法</li>
-<li>热处理: 死锁的检测与恢复</li>
-</ol>
-</li>
-<li>防范死锁<ol>
-<li>避免死锁</li>
-<li>死锁预防</li>
-</ol>
-</li>
-<li>其他策略</li>
+<li>多处理器系统</li>
+<li>多计算机系统</li>
+<li>虚拟化</li>
+<li>分布式</li>
 </ol>
 <a id="more"></a>
-<h2 id="资源与死锁"><a href="#资源与死锁" class="headerlink" title="资源与死锁"></a>资源与死锁</h2><h3 id="资源定义与分类"><a href="#资源定义与分类" class="headerlink" title="资源定义与分类"></a>资源定义与分类</h3><p>计算机中具有 <strong>排他性使用</strong> 的对象称为 <strong><u>资源</u></strong> . (即每次只允许一个进程访问). 资源可以是硬件(设备)或软件(信息). 资源随着时间推移必须能<u>获得, 使用, 以及释放</u>.</p>
-<ul>
-<li>可抢占式资源: B进程可以将资源R从进程A出抢占<strong>而不会产生任何副作用</strong>. 例如储存器.</li>
-<li>不可抢占式资源: 在不引起相关失败的情况下, 无法将资源从占有它的进程处抢占过来.例如打印机.</li>
-</ul>
-<p><u>死锁仅可能出现在不可抢占式资源上.</u></p>
-<p>资源的使用流程:</p>
+<p>对更快的计算是推动计算机进步的动力. 除了从技术层面上突破(如优化芯片) , 人们还设计了这些系统来提高计算水平. </p>
 <ol>
-<li>申请资源</li>
-<li>使用资源</li>
-<li>释放资源</li>
-</ol>
-<p><em>当资源申请失败时,不同系统会采取不同反应: 阻塞申请(等待唤醒) 或 返回错误 (用户决定)</em> </p>
-<h3 id="死锁定义"><a href="#死锁定义" class="headerlink" title="死锁定义"></a>死锁定义</h3><blockquote>
-<p>如果一个进程集合中的每个进程都在等待只能由该进程集合中的其他进程才能引发的事件, 那么称这个进程集合的 <strong><u>死锁</u></strong> 的.</p>
-<p><em>A set of processes is deadlocked if each process in the set is waiting for an event that only another process in the set can cause</em> </p>
-</blockquote>
-<p><del>显然这个定义太正经了大家都知道死锁是什么.</del></p>
-<p>当发生死锁时, 任何一个进程都无法: 运行 / 释放资源 / 被唤醒</p>
-<h3 id="死锁的四个必要条件⭐"><a href="#死锁的四个必要条件⭐" class="headerlink" title="死锁的四个必要条件⭐"></a>死锁的四个必要条件⭐</h3><ul>
-<li><p>互斥条件</p>
-<p>每个资源要么被分给了一个进程, 要么是可用的</p>
-</li>
-<li><p>占有并等待</p>
-<p>进程可以在占有资源A的同时等待资源B的分配</p>
-</li>
-<li><p>不可抢占</p>
-<p>已经被分配的资源不可抢占, 只能等待占有它的进程主动释放</p>
-</li>
-<li><p>环路等待</p>
-<p>系统中有多于一个的进程, 每个进程都在等待下一个进程占有的资源</p>
-</li>
-</ul>
-<p><u>死锁发生时四个条件必须同时满足, 只要破坏任一条件即可破坏死锁.</u></p>
-<h3 id="死锁建模"><a href="#死锁建模" class="headerlink" title="死锁建模"></a>死锁建模</h3><p>圆形表示进程; 方形表示资源; </p>
-<p>资源指向进程: 该资源已被进程占用;</p>
-<p>进程指向资源: 该进程正在等待资源;</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E6%AD%BB%E9%94%81%E5%BB%BA%E6%A8%A1.png" alt=""></p>
-<p>例如, 上图中进程C在等待被进程D占有的资源T, 进程D在等待被进程C占有的资源U.</p>
-<p><em>如果模型中有闭合有向环, 表明存在死锁.</em></p>
-<hr>
-<h2 id="处理死锁⭐"><a href="#处理死锁⭐" class="headerlink" title="处理死锁⭐"></a>处理死锁⭐</h2><h3 id="冷处理-鸵鸟算法"><a href="#冷处理-鸵鸟算法" class="headerlink" title="冷处理: 鸵鸟算法"></a>冷处理: 鸵鸟算法</h3><p>假装没有问题, 如果进程执行时间过长就重启一下…</p>
-<p>这是由于死锁的产生是取决于进程执行的精确时序, 在同一进程集合的多次运行中可能死锁的出现是非常偶然的; 此外处理死锁的开销往往非常高昂.</p>
-<h3 id="热处理-检测并恢复"><a href="#热处理-检测并恢复" class="headerlink" title="热处理: 检测并恢复"></a>热处理: 检测并恢复</h3><p>系统并不会防范死锁的产生, 而是在死锁发生之后再进行死锁的检测与恢复.</p>
-<h4 id="死锁的检测"><a href="#死锁的检测" class="headerlink" title="死锁的检测"></a>死锁的检测</h4><p><strong>DFS算法</strong>: 依次将每一个节点作为一棵树的根节点, 并进行深度优先搜索, 如果再次遇到该节点表明找到了环.</p>
-<p><strong>剪枝算法</strong>: 如果某进程只申请不占有, 将该节点剪去;如果某资源只被占有不被申请, 将该节点剪去;重复这两步直到无法剪去, 存在环.</p>
-<p><strong>矩阵检测</strong>: E 矩阵: 所有资源的总数; A矩阵: 所有资源当前空余量;</p>
-<p>C矩阵: $C_{ij}$ 表示进程 $ i $  当前使用资源 $j$ 的数目;</p>
-<p>R矩阵: $R_{ij}$ 表示进程 $ i $  当前需要资源 $j$ 的数目;</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E7%9F%A9%E9%98%B5%E6%A3%80%E6%B5%8B.png" alt=""></p>
-<p>必定存在以下公式:</p>
-<script type="math/tex; mode=display">
-\sum^n_{i=1}C_{ij} +A_j=E_j</script><p>如果当前的A矩阵可以使R矩阵按照一定顺序退出, 说明未形成死锁.</p>
-<p>但死锁检测本身即浪费时间, 又需要定期检测, 所以热处理本身效果不佳.</p>
-<h4 id="死锁的恢复"><a href="#死锁的恢复" class="headerlink" title="死锁的恢复"></a>死锁的恢复</h4><ul>
-<li><p>资源抢占</p>
-<p>将资源强制抢占(例如人工干预)</p>
-</li>
-<li><p>状态回滚</p>
-<p>从之前某个状态重新加载, 重新跑未必发生死锁</p>
-</li>
-<li><p>杀死进程</p>
-<p>杀死一个或若干个进程, 直到打破死锁.</p>
-</li>
-</ul>
-<hr>
-<h2 id="防范死锁⭐"><a href="#防范死锁⭐" class="headerlink" title="防范死锁⭐"></a>防范死锁⭐</h2><h3 id="避免死锁"><a href="#避免死锁" class="headerlink" title="避免死锁"></a>避免死锁</h3><h4 id="资源轨迹图"><a href="#资源轨迹图" class="headerlink" title="资源轨迹图"></a>资源轨迹图</h4><p>当走向轨迹穿越阴影重叠区时<strong>有可能</strong>发生死锁. </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E8%B5%84%E6%BA%90%E5%9B%BE.png" alt=""></p>
-<h4 id="安全态"><a href="#安全态" class="headerlink" title="安全态"></a>安全态</h4><p>安全态: 如果没有死锁发生,即使所有进程突然请求最大的资源需求, 也存在某种调度次序使得每一个进程都运行完毕.</p>
-<p>不安全态: 如果没有死锁发生,若所有进程突然请求最大的资源需求, 不存在某种调度次序使得每一个进程都运行完毕.</p>
-<p><u>注意: 不安全态不代表一定发生死锁, 但死锁发生一定经过不安全态.</u></p>
-<h4 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E9%93%B6%E8%A1%8C%E5%AE%B6.png" alt=""></p>
-<p>如果A向量能够使用某种次序分配能够使所有进程安全退出就处于安全状态;</p>
-<p>如果一直使其处于安全状态则可以避免死锁.</p>
+<li><p>计算机并行处理, 主要体现在同一个计算机中存在多个处理器 , 这些处理器 <u>共享内存模块</u> (share memory model ). 称为 <strong>多处理器系统</strong> (Multiprocessors)</p>
 <blockquote>
-<p>实际上银行家算法缺少使用价值, 很少有进程在运行前知道需要多少资源, 而且进程数也在随时变化(新任务产生), 而且资源的状态也随时可能变化(例如打印机坏了).</p>
+<p>注意与 <strong>多核</strong> 的区别</p>
+<p>多处理器指: 在一个机器中有多个处理器;</p>
+<p>多核: 在一个处理器中有多个处理芯片</p>
 </blockquote>
-<h3 id="预防死锁"><a href="#预防死锁" class="headerlink" title="预防死锁"></a>预防死锁</h3><p>从理论上完全避免死锁的不可能的(因为需要获知未来的请求) , 但是我们可以通过对死锁的四个必要条件的破坏来预防死锁的产生.</p>
-<p><del>其实我觉得预防和避免这种文字游戏没啥意义,但是确实不知道怎么区分</del></p>
-<h4 id="破坏互斥条件"><a href="#破坏互斥条件" class="headerlink" title="破坏互斥条件"></a>破坏互斥条件</h4><p>如果资源不被一个进程独占, 则不会产生死锁. </p>
-<p>具体做法是将打印机使用假脱机, 即IO输出实际上是将文件发送至打印机的磁盘中, 再由打印机的控制程序慢慢打印磁盘的内容. 而多个进程可以同时对磁盘输出, 破坏了互斥条件.</p>
-<p>但如果在某些情况下磁盘本身称为了互斥的资源, 这种方法就失效了</p>
-<h4 id="破坏占有并等待"><a href="#破坏占有并等待" class="headerlink" title="破坏占有并等待"></a>破坏占有并等待</h4><p>禁止已持有资源的进程再申请其他资源.</p>
-<p>一种实现方式是在进程开始时申请好全部资源. 但是这是无法实现的 (如果能实现为什么不用银行家呢?) 此外一次性分配资源也是巨大的浪费.</p>
-<p>另一种实现方式是在申请新资源的时候先释放本来占有的资源. 但是开销大也不佳.</p>
-<h4 id="破坏不可抢占条件"><a href="#破坏不可抢占条件" class="headerlink" title="破坏不可抢占条件"></a>破坏不可抢占条件</h4><p>通过将资源(主要指硬件设备)虚拟化可以使其能够抢占. 但是并不是所有资源都能够虚拟化的. 而且消除了打印机的死锁也可能带来硬盘的死锁.</p>
-<h4 id="破坏环路等待条件"><a href="#破坏环路等待条件" class="headerlink" title="破坏环路等待条件"></a>破坏环路等待条件</h4><p>一种实现方式是每次只允许占据一个资源, 但是这显然不能接受的.</p>
-<p>另一种方式是对所有资源进行编号, 某进程每次请求的资源不能是比自己占有的资源序号低的资源. 这样资源分配图中肯定不会出现环 (而是一条链).这种方式也几乎不能找到一个令人满意的编号次序.</p>
-<hr>
-<h2 id="其他策略"><a href="#其他策略" class="headerlink" title="其他策略"></a>其他策略</h2><ul>
-<li>Two-Phase Locking</li>
-<li>Nonresource Deadlocks</li>
-<li>Starvation</li>
-<li>….</li>
+</li>
+<li><p>多个计算机相互协作. 表现为不同的计算机通过 <u>消息传递</u> 的而协作.(紧耦合)  称为 <strong>多计算机系统</strong> (Multicomputers )</p>
+</li>
+<li><p>多个计算机互相协作. 表现为通过 <u>广域分布式系统</u> (指网络) 协作. (松耦合) 称为 <strong>分布式系统</strong> (Distributed systems)</p>
+</li>
+</ol>
+<p><img src='https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%89%E7%A7%8D%E6%8A%80%E6%9C%AF.png' height = '500' width = '1300'></img></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E6%AF%94%E8%BE%83.png" alt=""></p>
+<p>除此之外本章还会涉及到 <strong>虚拟化技术</strong> (Virtualization ).</p>
+<h2 id="多处理器系统"><a href="#多处理器系统" class="headerlink" title="多处理器系统"></a>多处理器系统</h2><p>在一个计算机系统内部，两个以上的CPU共享对一个公共RAM都拥有的完全访问权限. 根据不同CPU读写速度的不同又分为</p>
+<ol>
+<li><p>UMA ( Uniform Memory Access ， 统一内存访问)</p>
+<p>每个存储器字的读出速度是一样快的。 </p>
+<p>主要有三种硬件实现</p>
+<ol>
+<li>Bus-Based Architectures 总线结构</li>
+<li>Crossbar Switches  交叉开关</li>
+<li>Multistage Switching Networks  多级交换网络</li>
+</ol>
+</li>
+<li><p>NUMA ( Nonuniform Memory Access， 非统一内存 访问 )</p>
+<p>存储器访问时间取决于相对于处理器的存储器位置.</p>
+<p>访问远程存储器的速度比本地存储器慢</p>
+</li>
+</ol>
+<h3 id="UMA-的硬件实现"><a href="#UMA-的硬件实现" class="headerlink" title="UMA 的硬件实现"></a>UMA 的硬件实现</h3><h4 id="总线结构"><a href="#总线结构" class="headerlink" title="总线结构"></a>总线结构</h4><p>字面意思, 每个CPU通过总线与内存交互. 又可分为三种:</p>
+<ol>
+<li>不带独立cache</li>
+<li>拥有独立cache</li>
+<li>拥有独立cache和私有内存</li>
+</ol>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%89%E7%A7%8D%E6%80%BB%E7%BA%BF.png" alt=""></p>
+<p>问题: CPU会争夺总线的使用权, 引起<strong>竞争</strong>.</p>
+<h4 id="交叉开关"><a href="#交叉开关" class="headerlink" title="交叉开关"></a>交叉开关</h4><p>对于 $n$ 个CPU 构建 $n\times n$ 的交叉开关网络. </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%BA%A4%E5%8F%89%E5%BC%80%E5%85%B3.png" alt=""></p>
+<p>优点: 绝对不会竞争或阻塞</p>
+<p>缺点: 开销过大</p>
+<h4 id="多级交换网络"><a href="#多级交换网络" class="headerlink" title="多级交换网络"></a>多级交换网络</h4><p>使用 2*2 的交换机来构建多级交换网络.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E5%A4%9A%E7%BA%A7%E4%BA%A4%E6%8D%A2.png" alt=""></p>
+<p>上图是三级交换网络, 对于 $n$ 个CPU, 仅需要 $3\times \frac n 2$ 个交换机. 同时每个线路的可通达度大幅提高了.</p>
+<h3 id="OS-划分类型"><a href="#OS-划分类型" class="headerlink" title="OS 划分类型"></a>OS 划分类型</h3><h4 id="类型１-每个CPU都有自己的OS"><a href="#类型１-每个CPU都有自己的OS" class="headerlink" title="类型１: 每个CPU都有自己的OS"></a>类型１: 每个CPU都有自己的OS</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E7%8B%AC%E8%87%AA1.png" alt=""></p>
+<ul>
+<li>内存划分为n个部分</li>
+<li>为每个CPU分配自己的专用内存和操作系统的专用副本</li>
+<li>OS每个操作系统都有自己的表，不共享进程；<br>没有共享页面</li>
 </ul>
+<h4 id="类型2-主从处理器"><a href="#类型2-主从处理器" class="headerlink" title="类型2: 主从处理器"></a>类型2: 主从处理器</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%BB%E4%BB%8E2.png" alt=""></p>
+<ul>
+<li>OS及其表的一个副本位于CPU1上</li>
+<li>所有系统调用都重定向到CPU1进行处理</li>
+<li>缺点: 如果从处理器过多, 主处理器的性能将成为系统的瓶颈</li>
+</ul>
+<h4 id="类型3-对称处理器"><a href="#类型3-对称处理器" class="headerlink" title="类型3: 对称处理器"></a>类型3: 对称处理器</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E5%AF%B9%E7%A7%B03.png" alt=""></p>
+<ul>
+<li>内存中只有一个OS副本，但是任何CPU都可以运行它</li>
+<li>使用互斥量(锁)保证只有一个处理器在使用OS </li>
+</ul>
+<p><em>其他的应该不是重点</em></p>
+<hr>
+<h2 id="多计算机系统"><a href="#多计算机系统" class="headerlink" title="多计算机系统"></a>多计算机系统</h2><p>一言以蔽之: <u>不共享内存的紧密耦合CPU</u></p>
+<p>又称为cluster computers (群集计算机) , clusters of workstations (群集工作站,COW)</p>
+<p>每个CPU的内存连接在自己的CPU上并且不会被其他CPU访问到. </p>
+<p><em>本节不是重点</em></p>
+<h3 id="互联拓扑结构"><a href="#互联拓扑结构" class="headerlink" title="互联拓扑结构"></a>互联拓扑结构</h3><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%BA%92%E8%81%94%E6%8B%93%E6%89%91.png" alt=""></p>
+<p>星型; 环型; 网格; 双环; 立方; 超立方</p>
+<h3 id="存储转发分组交换"><a href="#存储转发分组交换" class="headerlink" title="存储转发分组交换"></a><strong>存储转发分组交换</strong></h3><h3 id="其他链接方式"><a href="#其他链接方式" class="headerlink" title="其他链接方式"></a><strong>其他链接方式</strong></h3><p>电路交换</p>
+<p>虫孔路由</p>
+<p>…</p>
+<hr>
+<h2 id="虚拟化⭐"><a href="#虚拟化⭐" class="headerlink" title="虚拟化⭐"></a>虚拟化⭐</h2><p>虚拟机技术，通常简称为 <strong>虚拟化</strong> virtualization 。<br>该技术允许一台计算机托管多个虚拟机，每个虚拟机可能运行不同的操作系统。</p>
+<p>优点:</p>
+<ul>
+<li>一个虚拟机的故障不会自动导致其他任何故障。 </li>
+<li>拥有更少的物理机可以节省硬件成本并占用更少的空间</li>
+<li>检查点和迁移虚拟机比普通的要容易得多</li>
+<li>在不再受支持或无法在当前硬件上运行的操作系统上运行旧版应用程序</li>
+<li>在软件开发时确保软件可以在不同的OS上运行。</li>
+</ul>
+<p><strong>Hypervisor</strong>, also called Virtual Machine Monitor (VMM, 虚拟机监视器)它是在硬件层之上，独立于操作系统的一层软件。创建虚拟化平台，OS实例运行在这个平台上，使得硬件可以被多个OS和应用共享.</p>
+<h3 id="Type-1-Hypervisor"><a href="#Type-1-Hypervisor" class="headerlink" title="Type 1 Hypervisor"></a>Type 1 Hypervisor</h3><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E8%99%9A%E6%8B%9F%E5%8C%961.png" alt=""></p>
+<ul>
+<li>Hypervisor 直接运行在硬件之上, 其余的OS运行在Hypervisor 上.</li>
+<li>但是OS都以为自己在内核上 (实际是用户态)</li>
+<li>被称为 <strong>虚拟内核态</strong> (virtual kernel mode)</li>
+<li>例如: Hyper-V, Xen, Vmware vSphere</li>
+</ul>
+<h3 id="Type-2-Hypervisors"><a href="#Type-2-Hypervisors" class="headerlink" title="Type 2 Hypervisors"></a>Type 2 Hypervisors</h3><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E8%99%9A%E6%8B%9F%E5%8C%962.png" alt=""></p>
+<ul>
+<li>主OS运行在硬件上, Hypervisor 运行在主OS上, 其余OS 运行在Hypervisor 上.</li>
+<li>当虚拟OS第一次启动时, Hypervisor 引导它们安装在虚拟磁盘上</li>
+<li>例如:  Vmware worksation, Parallels, VM virtualBox</li>
+</ul>
+<h3 id="Paravirtualization-半虚拟化"><a href="#Paravirtualization-半虚拟化" class="headerlink" title="Paravirtualization  半虚拟化"></a>Paravirtualization  半虚拟化</h3><p>修改来宾操作系统的源代码，以便根本不执行敏感指令，而进行 <strong>hypervisor calls</strong>.</p>
+<p>Hypervisor 定义接口，该接口由guest操作系统可以使用的一组过程调用组成（API）.</p>
+<p>这种限制guest操作系统敏感操作的方式称为 <strong>半虚拟化</strong> (paravirtualized)</p>
+<hr>
+<h2 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h2><p><em>不是重点</em></p>
+<p>使用中间件技术实现一致性.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%AD%E9%97%B4%E4%BB%B6.png" alt=""></p>
 
     </div>
 
@@ -406,13 +418,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/08/03/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%BA%8C-HTTP%E6%8A%A5%E6%96%87/" rel="prev" title="初窥HTTP之二_HTTP报文">
-      <i class="fa fa-chevron-left"></i> 初窥HTTP之二_HTTP报文
+    <a href="/2020/08/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" rel="prev" title="操作系统之文件系统">
+      <i class="fa fa-chevron-left"></i> 操作系统之文件系统
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/08/05/%E5%B1%B1%E4%B8%8E%E6%B0%B4-%E6%BC%AB%E6%AD%A5%E7%A7%A6%E5%B2%AD%E4%B9%8B%E5%AD%90%E5%8D%88%E5%8F%A4%E9%81%93/" rel="next" title="山与水-漫步秦岭之子午古道">
-      山与水-漫步秦岭之子午古道 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -476,7 +485,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#资源与死锁"><span class="nav-number">1.</span> <span class="nav-text">资源与死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#资源定义与分类"><span class="nav-number">1.1.</span> <span class="nav-text">资源定义与分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#死锁定义"><span class="nav-number">1.2.</span> <span class="nav-text">死锁定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#死锁的四个必要条件⭐"><span class="nav-number">1.3.</span> <span class="nav-text">死锁的四个必要条件⭐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#死锁建模"><span class="nav-number">1.4.</span> <span class="nav-text">死锁建模</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理死锁⭐"><span class="nav-number">2.</span> <span class="nav-text">处理死锁⭐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#冷处理-鸵鸟算法"><span class="nav-number">2.1.</span> <span class="nav-text">冷处理: 鸵鸟算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#热处理-检测并恢复"><span class="nav-number">2.2.</span> <span class="nav-text">热处理: 检测并恢复</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#死锁的检测"><span class="nav-number">2.2.1.</span> <span class="nav-text">死锁的检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#死锁的恢复"><span class="nav-number">2.2.2.</span> <span class="nav-text">死锁的恢复</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防范死锁⭐"><span class="nav-number">3.</span> <span class="nav-text">防范死锁⭐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#避免死锁"><span class="nav-number">3.1.</span> <span class="nav-text">避免死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#资源轨迹图"><span class="nav-number">3.1.1.</span> <span class="nav-text">资源轨迹图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安全态"><span class="nav-number">3.1.2.</span> <span class="nav-text">安全态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#银行家算法"><span class="nav-number">3.1.3.</span> <span class="nav-text">银行家算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预防死锁"><span class="nav-number">3.2.</span> <span class="nav-text">预防死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#破坏互斥条件"><span class="nav-number">3.2.1.</span> <span class="nav-text">破坏互斥条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#破坏占有并等待"><span class="nav-number">3.2.2.</span> <span class="nav-text">破坏占有并等待</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#破坏不可抢占条件"><span class="nav-number">3.2.3.</span> <span class="nav-text">破坏不可抢占条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#破坏环路等待条件"><span class="nav-number">3.2.4.</span> <span class="nav-text">破坏环路等待条件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他策略"><span class="nav-number">4.</span> <span class="nav-text">其他策略</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#多处理器系统"><span class="nav-number">1.</span> <span class="nav-text">多处理器系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UMA-的硬件实现"><span class="nav-number">1.1.</span> <span class="nav-text">UMA 的硬件实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总线结构"><span class="nav-number">1.1.1.</span> <span class="nav-text">总线结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交叉开关"><span class="nav-number">1.1.2.</span> <span class="nav-text">交叉开关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多级交换网络"><span class="nav-number">1.1.3.</span> <span class="nav-text">多级交换网络</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OS-划分类型"><span class="nav-number">1.2.</span> <span class="nav-text">OS 划分类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类型１-每个CPU都有自己的OS"><span class="nav-number">1.2.1.</span> <span class="nav-text">类型１: 每个CPU都有自己的OS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类型2-主从处理器"><span class="nav-number">1.2.2.</span> <span class="nav-text">类型2: 主从处理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类型3-对称处理器"><span class="nav-number">1.2.3.</span> <span class="nav-text">类型3: 对称处理器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多计算机系统"><span class="nav-number">2.</span> <span class="nav-text">多计算机系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#互联拓扑结构"><span class="nav-number">2.1.</span> <span class="nav-text">互联拓扑结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储转发分组交换"><span class="nav-number">2.2.</span> <span class="nav-text">存储转发分组交换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他链接方式"><span class="nav-number">2.3.</span> <span class="nav-text">其他链接方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟化⭐"><span class="nav-number">3.</span> <span class="nav-text">虚拟化⭐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-1-Hypervisor"><span class="nav-number">3.1.</span> <span class="nav-text">Type 1 Hypervisor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-2-Hypervisors"><span class="nav-number">3.2.</span> <span class="nav-text">Type 2 Hypervisors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Paravirtualization-半虚拟化"><span class="nav-number">3.3.</span> <span class="nav-text">Paravirtualization  半虚拟化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式"><span class="nav-number">4.</span> <span class="nav-text">分布式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本章将会涉及:  文件 目录 文件系统的实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统之文件系统">
+<meta property="og:url" content="http://yoursite.com/2020/08/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="(ﾟ∀。)">
+<meta property="og:description" content="本章将会涉及:  文件 目录 文件系统的实现">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E5%90%8E%E7%BC%80.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B8%83%E5%B1%80.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/FAT.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6.png">
+<meta property="article:published_time" content="2020-08-06T08:27:07.000Z">
+<meta property="article:modified_time" content="2020-08-06T09:31:15.361Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E5%90%8E%E7%BC%80.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/08/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>操作系统之文件系统 | (ﾟ∀。)</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="(ﾟ∀。)" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">(ﾟ∀。)</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="嘿, 这里是私人空间!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="(ﾟ∀。)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          操作系统之文件系统
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-06 16:27:07 / 修改时间：17:31:15" itemprop="dateCreated datePublished" datetime="2020-08-06T16:27:07+08:00">2020-08-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本章将会涉及:</p>
+<ol>
+<li>文件</li>
+<li>目录</li>
+<li>文件系统的实现</li>
+</ol>
+<a id="more"></a>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p>在进程的运行过程中出现了以下需求: 1) 需要储存大量信息; 2)信息需要保存至进程结束后; 3) 多个进程需要同时对数据进行操作.</p>
+<p>为了解决以上问题, 我们将信息存储在磁盘和其他外部介质中, 称之为 <strong>文件</strong>.</p>
+<h3 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h3><p>文件的命名要求因操作系统而已. </p>
+<p>有的系统区分文件的大小写, 有的则不区分(MS-DOS).</p>
+<p>许多OS使用字符<code>.</code>将文件名分成两部分, 后半部分称为 <strong>文件后缀名</strong>(file extension)</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E5%90%8E%E7%BC%80.png" alt=""></p>
+<h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><p>文件有多种组成结构</p>
+<ol>
+<li>byte sequence  文件由字节序列组成 (UNIX和WIN都是如此)</li>
+<li>record sequence 文件由记录片组成(早期插卡式系统)</li>
+<li>tree 树型 文件是一层层地储存的</li>
+</ol>
+<h3 id="文件分类"><a href="#文件分类" class="headerlink" title="文件分类"></a>文件分类</h3><p>由使用用途</p>
+<ul>
+<li>系统文件</li>
+<li>用户文件</li>
+<li>库文件</li>
+</ul>
+<p>由数据形式</p>
+<ul>
+<li>源文件</li>
+<li>目标文件</li>
+<li>可执行文件</li>
+</ul>
+<p>由权限</p>
+<ul>
+<li>只可执行文件</li>
+<li>只读</li>
+<li>读写</li>
+</ul>
+<p>由逻辑结构</p>
+<ul>
+<li>结构化数据</li>
+<li>非结构化数据</li>
+</ul>
+<p>由(在硬盘上储存的)物理结构</p>
+<ul>
+<li>顺序文件</li>
+<li>连接文件</li>
+<li>索引文件</li>
+</ul>
+<p>UNIX和WIN都由常规文件和目录文件</p>
+<p>UNIX中还有 字符设备文件 和块设备文件, 进程文件等.</p>
+<h3 id="文件访问"><a href="#文件访问" class="headerlink" title="文件访问"></a>文件访问</h3><ul>
+<li><p>顺序访问</p>
+<p>只能从最开始访问</p>
+<p>不能跳转</p>
+</li>
+<li><p>随机访问</p>
+<p>以任意顺序访问</p>
+</li>
+</ul>
+<h3 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h3><p>文件包括很多属性,见图</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7.png" alt=""></p>
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><ul>
+<li>创建</li>
+<li>删除</li>
+<li>打开</li>
+<li>关闭</li>
+<li>读</li>
+<li>写</li>
+<li>追加</li>
+<li>查找</li>
+<li>访问属性</li>
+<li>设定属性</li>
+<li>重命名</li>
+</ul>
+<hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="目录系统的种类"><a href="#目录系统的种类" class="headerlink" title="目录系统的种类"></a>目录系统的种类</h3><ul>
+<li><p>单层析目录</p>
+<p>ROOT 下直接跟随各种文件</p>
+</li>
+<li><p>双层次目录</p>
+<p>ROOT 下由用户创建文件夹, 并在文件夹中储存文件</p>
+</li>
+<li><p>多层次目录</p>
+<p>ROOT 下由用户创建文件夹, 并在文件夹中储存文件或文件夹</p>
+</li>
+</ul>
+<h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><ul>
+<li>Absolute path name <ul>
+<li>/usr/ast/mailbox (UNIX) </li>
+<li>\usr\ast\mailbox (Win)</li>
+</ul>
+</li>
+<li>Relative path name<ul>
+<li>mailbox</li>
+</ul>
+</li>
+<li>Working directory ( current directory) <ul>
+<li>/usr/ast</li>
+</ul>
+</li>
+</ul>
+<p>注意这里好像规定的和正常不一样… 比如访问相对路径不需要加 <code>./</code></p>
+<h3 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h3><ul>
+<li>Create</li>
+<li>Delete</li>
+<li>Opendir</li>
+<li>Closedir</li>
+<li>Readdir</li>
+<li>Rename</li>
+<li>Link(hard link/symbol link)</li>
+<li>Unlink</li>
+</ul>
+<hr>
+<h2 id="文件系统的实现"><a href="#文件系统的实现" class="headerlink" title="文件系统的实现"></a>文件系统的实现</h2><h3 id="文件系统布局"><a href="#文件系统布局" class="headerlink" title="文件系统布局"></a>文件系统布局</h3><p>文件都是储存在磁盘上的. 大多数磁盘都分为一个或多个区(Partitions) ,  每个区都有自己的独立文件系统.</p>
+<p>磁盘的0扇区被称为 MBR (Master Boot Record) , 用于引导计算机启动.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B8%83%E5%B1%80.png" alt=""></p>
+<ul>
+<li>Partition table: 给出每个分区开始结束的地址信息gives the starting and ending addresses of each partition. </li>
+<li>Boot block: locate the active partition </li>
+<li>Superblock: magic number, number of blocks, … </li>
+<li>Free space mgmt: 使用位图/链表储存文件的空余信息</li>
+<li>i-nodes: an array of data structure, one per file. </li>
+<li>后面的部分就是真正的文件和目录内容了</li>
+</ul>
+<h3 id="文件的实现"><a href="#文件的实现" class="headerlink" title="文件的实现"></a>文件的实现</h3><ul>
+<li>顺序存放</li>
+<li>链接存放</li>
+<li>使用FAT在内存中链接存放</li>
+<li>I-Node </li>
+</ul>
+<h4 id="顺序存放"><a href="#顺序存放" class="headerlink" title="顺序存放"></a>顺序存放</h4><p>就是顺序存放.</p>
+<p>优点:</p>
+<ul>
+<li>简单</li>
+<li>读的性能非常和</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>文件如果后续需要删除, 重写会造成大量碎片</li>
+</ul>
+<p>常用于后续不会再写入数据. 如CD</p>
+<h4 id="链接存放"><a href="#链接存放" class="headerlink" title="链接存放"></a>链接存放</h4><p>每个文件都指明下一个文件的指针</p>
+<p>缺点: 随机访问非常非常慢, 找一个文件要从头找</p>
+<h4 id="使用FAT在内存中链接存放"><a href="#使用FAT在内存中链接存放" class="headerlink" title="使用FAT在内存中链接存放"></a>使用FAT在内存中链接存放</h4><p>将文件的链接关系放在一张表中, 称为 <strong>文件分配表</strong> (( File Allocation Table), FAT) </p>
+<p>缺点: 需要将整个文件系统的表(通常很大)载入内存.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/FAT.png" alt=""></p>
+<h4 id="I-Node"><a href="#I-Node" class="headerlink" title="I-Node"></a>I-Node</h4><p>给每个文件赋予一个相关联的数据结构, 称为 <strong>索引节点</strong>（I-Node , index-node），该数据结构列出了文件块的属性和磁盘地址。仅在访问本文件时, 才需要将节点载入内存.</p>
+<h3 id="目录的实现"><a href="#目录的实现" class="headerlink" title="目录的实现"></a>目录的实现</h3><p>目录系统的主要功能是将文件的ASCII名称映射到定位数据所需的信息上。</p>
+<p>Windows 系统给每个条目都分配了定长的数据段, 来保存文件的属性. </p>
+<p>UNIX 系统给每个条目分配一个I-node的引用</p>
+<h3 id="共享文件"><a href="#共享文件" class="headerlink" title="共享文件"></a>共享文件</h3><p>UNIX 提供共享文件的机制. 出现在多用户下.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6.png" alt=""></p>
+<p>C的一个文件出现在B的目录下。B的目录与该共享的联系称为一个连接 LINK.</p>
+<p>问题：若目录中包含磁盘地址，则连接文件时，C目录的磁盘地址复制到B目录<br>中，若B或C后又加内容，则新的数据块只会列入进行添加工作的目录中。</p>
+<h4 id="hard-link"><a href="#hard-link" class="headerlink" title="hard link"></a><strong>hard link</strong></h4><p>（硬连接或者实际连接）</p>
+<p>由于Linux里面每个文件都对应一个inode，而文件名是记录在目录的block里的，也就是说文件名和inode没有关系，这样就可以把多个文件名对应同一个inode，这就是hard link，简单的说：hard link只是在某个目录下新建一条文件名连接到某inode号码的关联记录而已。</p>
+<p>缺点</p>
+<ul>
+<li>不能够跨文件系统地做硬连接</li>
+<li>不能够连接到目录</li>
+</ul>
+<h4 id="symbolic-link"><a href="#symbolic-link" class="headerlink" title="symbolic link"></a><strong>symbolic link</strong></h4><p>软连接或者符号连接</p>
+<p>软连接创建一个新的文件，有自己的inode和block，只是在block里记录的是到连接目标文件的指向，读取到这个指向记录以后，系统再从根目录一层层进到目标文件的block里把数据读出来</p>
+<p>symbolic link有如下特点：</p>
+<p>1.等于是文件的一个“快捷方式”，只起一个指向作用</p>
+<p>2.是一个独立的新文件，对目标文件没有任何影响</p>
+<p>3.目标文件一旦删除，软连接会打不开</p>
+<p>两种连接方式都存在的问题: 查找文件时会将同一个文件重复查询.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"># 操作系统</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8BIO%E7%AE%A1%E7%90%86/" rel="prev" title="操作系统之IO管理">
+      <i class="fa fa-chevron-left"></i> 操作系统之IO管理
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8%E7%B3%BB%E7%BB%9F/" rel="next" title="操作系统之多处理器系统">
+      操作系统之多处理器系统 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件"><span class="nav-number">1.</span> <span class="nav-text">文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件命名"><span class="nav-number">1.1.</span> <span class="nav-text">文件命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件结构"><span class="nav-number">1.2.</span> <span class="nav-text">文件结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件分类"><span class="nav-number">1.3.</span> <span class="nav-text">文件分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件访问"><span class="nav-number">1.4.</span> <span class="nav-text">文件访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件属性"><span class="nav-number">1.5.</span> <span class="nav-text">文件属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件操作"><span class="nav-number">1.6.</span> <span class="nav-text">文件操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">2.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录系统的种类"><span class="nav-number">2.1.</span> <span class="nav-text">目录系统的种类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路径"><span class="nav-number">2.2.</span> <span class="nav-text">路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录操作"><span class="nav-number">2.3.</span> <span class="nav-text">目录操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统的实现"><span class="nav-number">3.</span> <span class="nav-text">文件系统的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统布局"><span class="nav-number">3.1.</span> <span class="nav-text">文件系统布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的实现"><span class="nav-number">3.2.</span> <span class="nav-text">文件的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#顺序存放"><span class="nav-number">3.2.1.</span> <span class="nav-text">顺序存放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链接存放"><span class="nav-number">3.2.2.</span> <span class="nav-text">链接存放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用FAT在内存中链接存放"><span class="nav-number">3.2.3.</span> <span class="nav-text">使用FAT在内存中链接存放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#I-Node"><span class="nav-number">3.2.4.</span> <span class="nav-text">I-Node</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录的实现"><span class="nav-number">3.3.</span> <span class="nav-text">目录的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共享文件"><span class="nav-number">3.4.</span> <span class="nav-text">共享文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hard-link"><span class="nav-number">3.4.1.</span> <span class="nav-text">hard link</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#symbolic-link"><span class="nav-number">3.4.2.</span> <span class="nav-text">symbolic link</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">嘿, 这里是私人空间!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">95k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:39</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>
