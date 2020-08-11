@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本章将涉及:  安全与威胁 简易密码学(真的很简易!) 用户认证 系统受到的攻击 来自内部 来自外部   保护机制 信任系统 OS安全  本文匆匆赶制, 内容粗糙简陋">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统之安全">
+<meta property="og:url" content="http://yoursite.com/2020/08/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%AE%89%E5%85%A8/index.html">
+<meta property="og:site_name" content="(ﾟ∀。)">
+<meta property="og:description" content="本章将涉及:  安全与威胁 简易密码学(真的很简易!) 用户认证 系统受到的攻击 来自内部 来自外部   保护机制 信任系统 OS安全  本文匆匆赶制, 内容粗糙简陋">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-11T06:42:28.000Z">
+<meta property="article:modified_time" content="2020-08-11T07:50:20.730Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/08/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%AE%89%E5%85%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>操作系统之安全 | (ﾟ∀。)</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="(ﾟ∀。)" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">(ﾟ∀。)</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%AE%89%E5%85%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="嘿, 这里是私人空间!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="(ﾟ∀。)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          操作系统之安全
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-11 14:42:28 / 修改时间：15:50:20" itemprop="dateCreated datePublished" datetime="2020-08-11T14:42:28+08:00">2020-08-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本章将涉及:</p>
+<ol>
+<li>安全与威胁</li>
+<li>简易密码学(真的很简易!)</li>
+<li>用户认证</li>
+<li>系统受到的攻击<ol>
+<li>来自内部</li>
+<li>来自外部</li>
+</ol>
+</li>
+<li>保护机制</li>
+<li>信任系统</li>
+<li>OS安全</li>
+</ol>
+<p><em>本文匆匆赶制, 内容粗糙简陋</em></p>
+<a id="more"></a>
+<h2 id="安全与威胁"><a href="#安全与威胁" class="headerlink" title="安全与威胁"></a>安全与威胁</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Threat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data confidentiality 数据机密性</td>
+<td>Exposure of data 数据泄露</td>
+</tr>
+<tr>
+<td>Data integrity           数据完整性</td>
+<td>Tampering with data 数据篡改</td>
+</tr>
+<tr>
+<td>System available     系统可用性</td>
+<td>Denial of service      拒绝服务</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>首先保护数据的机密性, 防止数据泄露.   需要保证数据不被外界所知.</p>
+<p>其次要保证数据的完整性, 防止数据被泄露.  不能被外界破坏.</p>
+<p>最后要保证系统的可用性, 防止系统拒绝服务. 例如DoS攻击等</p>
+<p>入侵者 intruder or sometimes 敌人 adversary<br>a) Passive intruders(被动入侵者)- to read files they are not authorized to<br>read<br>b) Active intruders(主动入侵者)- to make unauthorized changes to data</p>
+<p>常见的安全入侵场景有:</p>
+<ol>
+<li>Casual prying (窥探) by nontechnical users     被非专业使用者随意窥探</li>
+<li>Snooping by insiders  被内部人员窥视</li>
+<li>Determined attempt to make money  为了利益</li>
+<li>Commercial or military espionage   商业或军事间谍</li>
+</ol>
+<p>常见的数据丢失场景有:</p>
+<ol>
+<li><p>天灾</p>
+<p>fires, floods, wars</p>
+</li>
+<li><p>软硬件错误</p>
+<p>CPU malfunction, bad disk, program bugs </p>
+</li>
+<li><p>人为错误</p>
+<p>data entry, wrong tape mounted</p>
+<hr>
+</li>
+</ol>
+<h2 id="密码学基础"><a href="#密码学基础" class="headerlink" title="密码学基础"></a>密码学基础</h2><h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul>
+<li>斯巴达将军</li>
+<li>戚继光: 反切注音法</li>
+<li>周恩来: 豪密</li>
+<li>菲利普与玛丽女王</li>
+<li>一战: 齐默尔曼电报</li>
+<li>二战: Enigma密码机, 图灵</li>
+</ul>
+<h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><ul>
+<li>? - 1949 古典密码<ul>
+<li>密码学还不是科学, 而是艺术</li>
+<li>数据的安全<strong>基于算法的保密</strong></li>
+<li>一般的加密方法是<strong>替换</strong></li>
+<li>单表替换密码(凯撒密码), 多表替换密码(Playfair密码, Hill密码) , 转轮密码(Enigma)</li>
+</ul>
+</li>
+<li>1949 - 1975 复杂计算的密码<ul>
+<li>由于算力提升使得复杂计算的密码称为可能</li>
+<li>1949年,香农发表了&lt;&lt;保密系统的信息理论&gt;&gt;(The Communication Theory of Secrecy Systems), 它证明了密码编码 学是如何置于坚实的数学基础之上的，从此密码学发展成为 一个专门学科。——标志性事件 </li>
+<li>数据的安全<strong>基于密钥</strong>而不是算法的保密</li>
+</ul>
+</li>
+<li>1975 - 公钥密码<ul>
+<li>公钥密码学成为主要研究方向 </li>
+<li><strong>公钥密码</strong>使得发送端和接收端<strong>无密钥传输的保密通信</strong>成为可能</li>
+</ul>
+</li>
+</ul>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h4 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h4><ul>
+<li>传统密码/常规密码/私钥密码/单钥密码 conventional / private-key / single-key</li>
+<li>发送方和接收方共享一个共同的密钥</li>
+<li>20世纪70年代以前私钥密码是唯一类型 </li>
+<li>至今仍广泛应用</li>
+</ul>
+<h4 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h4><ul>
+<li>公钥/双钥/非对称密码都是指使用两个密钥: <ul>
+<li>公钥：可以对任何人公开的密钥，用于加密消息或 验证签名。 </li>
+<li>私钥：只能由接收者私存，用于解密消息或签名。 </li>
+</ul>
+</li>
+<li>非对称 <ul>
+<li>用于加密消息或验证签名的人不能进行消息的加密或消息的签名。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="用户认证⭐"><a href="#用户认证⭐" class="headerlink" title="用户认证⭐"></a>用户认证⭐</h2><p>Authentication<br>user authentication（用户验证） crackers（骇客）</p>
+<p>认证必须要能够标识使用者的身份</p>
+<p>用户认证应当在使用系统之前完成</p>
+<p>三种认证方式</p>
+<ol>
+<li><p>Something the user knows</p>
+<p>密码, 口令</p>
+</li>
+<li><p>Something the user has</p>
+<p>钥匙, 芯片, 动态密码, 验证码</p>
+</li>
+<li><p>Something the user is</p>
+<p>指纹, 虹膜</p>
+</li>
+</ol>
+<blockquote>
+<p>UNIX 安全系统会对输入的密码进行<strong>加盐</strong>(Salt), 即将每一个口令同一个叫做盐（Salt）的n位随机数相关联。无论何时口令改变，这个随机数就改变。将口令和随机数连接起来，一同加密，加密后的结果存放进口令文件。</p>
+<p>One-Time passwords 对于函数 y=f(x) 已知y求x的难度远大于已知x求y的难度. </p>
+</blockquote>
+<h3 id="一些用户认证时的对策"><a href="#一些用户认证时的对策" class="headerlink" title="一些用户认证时的对策"></a>一些用户认证时的对策</h3><ul>
+<li>Limiting times when someone can log in    限制登录时间</li>
+<li>Automatic callback at number prespecified   自动回调 (例如判断密码是否太过简单)</li>
+<li>Limited number of login tries   限制尝试的登录次数</li>
+<li>A database of all logins    记录所有尝试登录的数据</li>
+<li>Simple login name/password as a trap  使用简单的密码作为陷阱 (假装登陆成功)</li>
+<li>security personnel notified when attacker bites 当检测到攻击者时通知安全人员</li>
+</ul>
+<hr>
+<h2 id="系统受到的攻击"><a href="#系统受到的攻击" class="headerlink" title="系统受到的攻击"></a>系统受到的攻击</h2><h3 id="Insider-Attacks-内部攻击"><a href="#Insider-Attacks-内部攻击" class="headerlink" title="Insider Attacks 内部攻击"></a>Insider Attacks 内部攻击</h3><h4 id="Logic-Bombs"><a href="#Logic-Bombs" class="headerlink" title="Logic Bombs"></a>Logic Bombs</h4><p>（逻辑炸弹）由一些公司的编程人员或使用这些受保护的计算机、编制核心软件的员工实施.秘密的嵌在产品的操作系统中的代码，特定情况下爆炸</p>
+<h4 id="Trap-Doors"><a href="#Trap-Doors" class="headerlink" title="Trap Doors"></a>Trap Doors</h4><p>（后门）系统程序员跳过正常的认证过程并插入一段代码造成<br>的。代码审查 code review</p>
+<h4 id="Login-Spoofing"><a href="#Login-Spoofing" class="headerlink" title="Login Spoofing"></a>Login Spoofing</h4><p>（登录欺骗）假冒的登录屏幕</p>
+<h4 id="Trojan-Horses"><a href="#Trojan-Horses" class="headerlink" title="Trojan Horses"></a>Trojan Horses</h4><p>特洛伊木马 诱导用户运行攻击代码</p>
+<h4 id="Buffer-Overflow"><a href="#Buffer-Overflow" class="headerlink" title="Buffer Overflow"></a>Buffer Overflow</h4><p>缓冲区溢出攻击</p>
+<h3 id="Outside-Attacks-外部攻击"><a href="#Outside-Attacks-外部攻击" class="headerlink" title="Outside Attacks 外部攻击"></a>Outside Attacks 外部攻击</h3><h4 id="Virus"><a href="#Virus" class="headerlink" title="Virus"></a>Virus</h4><p>病毒: 不断地复制自身并传播</p>
+<h4 id="Morris-Worm"><a href="#Morris-Worm" class="headerlink" title="Morris Worm"></a>Morris Worm</h4><p>蠕虫: 先潜伏自己的存在, 直到传播到一定规模后再爆发</p>
+<p>(zero-day Attack</p>
+<p>Zombie</p>
+<p>…</p>
+<h2 id="保护机制-⭐"><a href="#保护机制-⭐" class="headerlink" title="保护机制 ⭐"></a>保护机制 ⭐</h2><h3 id="Protection-Domains"><a href="#Protection-Domains" class="headerlink" title="Protection Domains"></a>Protection Domains</h3><p>注: 下文中提到的 <em>用户</em> 也可能指进程</p>
+<p>保护域</p>
+<p>a domain is a set of （object， right） pairs. Each pair specifies an object and some<br>subset of the operations that can be performed. A right means permission to perform one of the operations.<br>一对对象权限的组合，每对组合指定一个对象和一些可在上面运行的操作子集指对某个操作的执行许可.</p>
+<p>人话: 一张表, 记录了所有的文件和每个用户允许对文件进行的操作</p>
+<p>缺点: 太大</p>
+<h3 id="Access-Control-Lists-ACL"><a href="#Access-Control-Lists-ACL" class="headerlink" title="Access Control Lists , ACL"></a>Access Control Lists , ACL</h3><p>访问控制列表</p>
+<p>每个对象的有序列表里包含了所有可访问对象的域以及这些域如何访问这些对象的方法</p>
+<p>人话: 由于文件多而域少, 因此在每个文件处记录哪些域能进行什么操作. 将保护域按文件分解</p>
+<h3 id="Capabilities"><a href="#Capabilities" class="headerlink" title="Capabilities"></a>Capabilities</h3><p>权能字</p>
+<p>使用按行存储时，与每个进程关联的是可访问的对象列表，以及每个对象上叫做权能字列表，每个单独的项目叫做权能字</p>
+<p>人话: 每个用户自己储存对每个文件能进行什么操作, 将保护域按用户分解</p>
+<p>因此要防止权能字被用户自己篡改(三种方法)</p>
+<ol>
+<li>First way, require a tagged architecture </li>
+<li>Second way, keep the C-list inside the OS </li>
+<li>Third way, keep the C-list in user space, but manage the capabilities cryptographically</li>
+</ol>
+<h2 id="可信任系统"><a href="#可信任系统" class="headerlink" title="可信任系统"></a>可信任系统</h2><p>完全可信任的系统是否存在?</p>
+<p>可信任系统的核心是 <strong>可信计算基Trusted Computing Base, TCB</strong></p>
+<p>TCB 是一种机制, 保护所有敏感操作; (例如切换进程, 进程创建, 内存映射管理等) 任何试图访问这些操作的进程必须通过可信计算基的安全审查, 称为 reference monitor (访问监视器)</p>
+<blockquote>
+<p>All system calls go through the reference monitor for security checking</p>
+</blockquote>
+<p>TCB可以通过硬件, 软件, 固件的形式实现, 它只是个机制. </p>
+<p>一旦可信计算机基的某个构件出现程序错误或者安全隐患，就对整个系统的安全造成危害。 与之相反，如果除可信计算基之外的系统的其他部分出现问题，也只是泄漏了系统安全策略赋予它们的相关权限而已，这些权限一般都是比较低的。</p>
+<p>现代操作系统努力降低TCB的大小，使得对其代码库彻底的检查成为可能.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"># 操作系统</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8%E7%B3%BB%E7%BB%9F/" rel="prev" title="操作系统之多处理器系统">
+      <i class="fa fa-chevron-left"></i> 操作系统之多处理器系统
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安全与威胁"><span class="nav-number">1.</span> <span class="nav-text">安全与威胁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#密码学基础"><span class="nav-number">2.</span> <span class="nav-text">密码学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">2.1.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#历史"><span class="nav-number">2.2.</span> <span class="nav-text">历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">2.3.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对称加密"><span class="nav-number">2.3.1.</span> <span class="nav-text">对称加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非对称加密"><span class="nav-number">2.3.2.</span> <span class="nav-text">非对称加密</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户认证⭐"><span class="nav-number">3.</span> <span class="nav-text">用户认证⭐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些用户认证时的对策"><span class="nav-number">3.1.</span> <span class="nav-text">一些用户认证时的对策</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统受到的攻击"><span class="nav-number">4.</span> <span class="nav-text">系统受到的攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insider-Attacks-内部攻击"><span class="nav-number">4.1.</span> <span class="nav-text">Insider Attacks 内部攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Logic-Bombs"><span class="nav-number">4.1.1.</span> <span class="nav-text">Logic Bombs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Trap-Doors"><span class="nav-number">4.1.2.</span> <span class="nav-text">Trap Doors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Login-Spoofing"><span class="nav-number">4.1.3.</span> <span class="nav-text">Login Spoofing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Trojan-Horses"><span class="nav-number">4.1.4.</span> <span class="nav-text">Trojan Horses</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Buffer-Overflow"><span class="nav-number">4.1.5.</span> <span class="nav-text">Buffer Overflow</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Outside-Attacks-外部攻击"><span class="nav-number">4.2.</span> <span class="nav-text">Outside Attacks 外部攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Virus"><span class="nav-number">4.2.1.</span> <span class="nav-text">Virus</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Morris-Worm"><span class="nav-number">4.2.2.</span> <span class="nav-text">Morris Worm</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保护机制-⭐"><span class="nav-number">5.</span> <span class="nav-text">保护机制 ⭐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Protection-Domains"><span class="nav-number">5.1.</span> <span class="nav-text">Protection Domains</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-Control-Lists-ACL"><span class="nav-number">5.2.</span> <span class="nav-text">Access Control Lists , ACL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Capabilities"><span class="nav-number">5.3.</span> <span class="nav-text">Capabilities</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可信任系统"><span class="nav-number">6.</span> <span class="nav-text">可信任系统</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">嘿, 这里是私人空间!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">99k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:44</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

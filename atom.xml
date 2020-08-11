@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-08T16:46:27.785Z</updated>
+  <updated>2020-08-11T07:50:20.730Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>操作系统之安全</title>
+    <link href="http://yoursite.com/2020/08/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%AE%89%E5%85%A8/"/>
+    <id>http://yoursite.com/2020/08/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%AE%89%E5%85%A8/</id>
+    <published>2020-08-11T06:42:28.000Z</published>
+    <updated>2020-08-11T07:50:20.730Z</updated>
+    
+    <content type="html"><![CDATA[<p>本章将涉及:</p><ol><li>安全与威胁</li><li>简易密码学(真的很简易!)</li><li>用户认证</li><li>系统受到的攻击<ol><li>来自内部</li><li>来自外部</li></ol></li><li>保护机制</li><li>信任系统</li><li>OS安全</li></ol><p><em>本文匆匆赶制, 内容粗糙简陋</em></p><a id="more"></a><h2 id="安全与威胁"><a href="#安全与威胁" class="headerlink" title="安全与威胁"></a>安全与威胁</h2><div class="table-container"><table><thead><tr><th>Goal</th><th>Threat</th></tr></thead><tbody><tr><td>Data confidentiality 数据机密性</td><td>Exposure of data 数据泄露</td></tr><tr><td>Data integrity           数据完整性</td><td>Tampering with data 数据篡改</td></tr><tr><td>System available     系统可用性</td><td>Denial of service      拒绝服务</td></tr></tbody></table></div><p>首先保护数据的机密性, 防止数据泄露.   需要保证数据不被外界所知.</p><p>其次要保证数据的完整性, 防止数据被泄露.  不能被外界破坏.</p><p>最后要保证系统的可用性, 防止系统拒绝服务. 例如DoS攻击等</p><p>入侵者 intruder or sometimes 敌人 adversary<br>a) Passive intruders(被动入侵者)- to read files they are not authorized to<br>read<br>b) Active intruders(主动入侵者)- to make unauthorized changes to data</p><p>常见的安全入侵场景有:</p><ol><li>Casual prying (窥探) by nontechnical users     被非专业使用者随意窥探</li><li>Snooping by insiders  被内部人员窥视</li><li>Determined attempt to make money  为了利益</li><li>Commercial or military espionage   商业或军事间谍</li></ol><p>常见的数据丢失场景有:</p><ol><li><p>天灾</p><p>fires, floods, wars</p></li><li><p>软硬件错误</p><p>CPU malfunction, bad disk, program bugs </p></li><li><p>人为错误</p><p>data entry, wrong tape mounted</p><hr></li></ol><h2 id="密码学基础"><a href="#密码学基础" class="headerlink" title="密码学基础"></a>密码学基础</h2><h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul><li>斯巴达将军</li><li>戚继光: 反切注音法</li><li>周恩来: 豪密</li><li>菲利普与玛丽女王</li><li>一战: 齐默尔曼电报</li><li>二战: Enigma密码机, 图灵</li></ul><h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><ul><li>? - 1949 古典密码<ul><li>密码学还不是科学, 而是艺术</li><li>数据的安全<strong>基于算法的保密</strong></li><li>一般的加密方法是<strong>替换</strong></li><li>单表替换密码(凯撒密码), 多表替换密码(Playfair密码, Hill密码) , 转轮密码(Enigma)</li></ul></li><li>1949 - 1975 复杂计算的密码<ul><li>由于算力提升使得复杂计算的密码称为可能</li><li>1949年,香农发表了&lt;&lt;保密系统的信息理论&gt;&gt;(The Communication Theory of Secrecy Systems), 它证明了密码编码 学是如何置于坚实的数学基础之上的，从此密码学发展成为 一个专门学科。——标志性事件 </li><li>数据的安全<strong>基于密钥</strong>而不是算法的保密</li></ul></li><li>1975 - 公钥密码<ul><li>公钥密码学成为主要研究方向 </li><li><strong>公钥密码</strong>使得发送端和接收端<strong>无密钥传输的保密通信</strong>成为可能</li></ul></li></ul><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h4 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h4><ul><li>传统密码/常规密码/私钥密码/单钥密码 conventional / private-key / single-key</li><li>发送方和接收方共享一个共同的密钥</li><li>20世纪70年代以前私钥密码是唯一类型 </li><li>至今仍广泛应用</li></ul><h4 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h4><ul><li>公钥/双钥/非对称密码都是指使用两个密钥: <ul><li>公钥：可以对任何人公开的密钥，用于加密消息或 验证签名。 </li><li>私钥：只能由接收者私存，用于解密消息或签名。 </li></ul></li><li>非对称 <ul><li>用于加密消息或验证签名的人不能进行消息的加密或消息的签名。</li></ul></li></ul><hr><h2 id="用户认证⭐"><a href="#用户认证⭐" class="headerlink" title="用户认证⭐"></a>用户认证⭐</h2><p>Authentication<br>user authentication（用户验证） crackers（骇客）</p><p>认证必须要能够标识使用者的身份</p><p>用户认证应当在使用系统之前完成</p><p>三种认证方式</p><ol><li><p>Something the user knows</p><p>密码, 口令</p></li><li><p>Something the user has</p><p>钥匙, 芯片, 动态密码, 验证码</p></li><li><p>Something the user is</p><p>指纹, 虹膜</p></li></ol><blockquote><p>UNIX 安全系统会对输入的密码进行<strong>加盐</strong>(Salt), 即将每一个口令同一个叫做盐（Salt）的n位随机数相关联。无论何时口令改变，这个随机数就改变。将口令和随机数连接起来，一同加密，加密后的结果存放进口令文件。</p><p>One-Time passwords 对于函数 y=f(x) 已知y求x的难度远大于已知x求y的难度. </p></blockquote><h3 id="一些用户认证时的对策"><a href="#一些用户认证时的对策" class="headerlink" title="一些用户认证时的对策"></a>一些用户认证时的对策</h3><ul><li>Limiting times when someone can log in    限制登录时间</li><li>Automatic callback at number prespecified   自动回调 (例如判断密码是否太过简单)</li><li>Limited number of login tries   限制尝试的登录次数</li><li>A database of all logins    记录所有尝试登录的数据</li><li>Simple login name/password as a trap  使用简单的密码作为陷阱 (假装登陆成功)</li><li>security personnel notified when attacker bites 当检测到攻击者时通知安全人员</li></ul><hr><h2 id="系统受到的攻击"><a href="#系统受到的攻击" class="headerlink" title="系统受到的攻击"></a>系统受到的攻击</h2><h3 id="Insider-Attacks-内部攻击"><a href="#Insider-Attacks-内部攻击" class="headerlink" title="Insider Attacks 内部攻击"></a>Insider Attacks 内部攻击</h3><h4 id="Logic-Bombs"><a href="#Logic-Bombs" class="headerlink" title="Logic Bombs"></a>Logic Bombs</h4><p>（逻辑炸弹）由一些公司的编程人员或使用这些受保护的计算机、编制核心软件的员工实施.秘密的嵌在产品的操作系统中的代码，特定情况下爆炸</p><h4 id="Trap-Doors"><a href="#Trap-Doors" class="headerlink" title="Trap Doors"></a>Trap Doors</h4><p>（后门）系统程序员跳过正常的认证过程并插入一段代码造成<br>的。代码审查 code review</p><h4 id="Login-Spoofing"><a href="#Login-Spoofing" class="headerlink" title="Login Spoofing"></a>Login Spoofing</h4><p>（登录欺骗）假冒的登录屏幕</p><h4 id="Trojan-Horses"><a href="#Trojan-Horses" class="headerlink" title="Trojan Horses"></a>Trojan Horses</h4><p>特洛伊木马 诱导用户运行攻击代码</p><h4 id="Buffer-Overflow"><a href="#Buffer-Overflow" class="headerlink" title="Buffer Overflow"></a>Buffer Overflow</h4><p>缓冲区溢出攻击</p><h3 id="Outside-Attacks-外部攻击"><a href="#Outside-Attacks-外部攻击" class="headerlink" title="Outside Attacks 外部攻击"></a>Outside Attacks 外部攻击</h3><h4 id="Virus"><a href="#Virus" class="headerlink" title="Virus"></a>Virus</h4><p>病毒: 不断地复制自身并传播</p><h4 id="Morris-Worm"><a href="#Morris-Worm" class="headerlink" title="Morris Worm"></a>Morris Worm</h4><p>蠕虫: 先潜伏自己的存在, 直到传播到一定规模后再爆发</p><p>(zero-day Attack</p><p>Zombie</p><p>…</p><h2 id="保护机制-⭐"><a href="#保护机制-⭐" class="headerlink" title="保护机制 ⭐"></a>保护机制 ⭐</h2><h3 id="Protection-Domains"><a href="#Protection-Domains" class="headerlink" title="Protection Domains"></a>Protection Domains</h3><p>注: 下文中提到的 <em>用户</em> 也可能指进程</p><p>保护域</p><p>a domain is a set of （object， right） pairs. Each pair specifies an object and some<br>subset of the operations that can be performed. A right means permission to perform one of the operations.<br>一对对象权限的组合，每对组合指定一个对象和一些可在上面运行的操作子集指对某个操作的执行许可.</p><p>人话: 一张表, 记录了所有的文件和每个用户允许对文件进行的操作</p><p>缺点: 太大</p><h3 id="Access-Control-Lists-ACL"><a href="#Access-Control-Lists-ACL" class="headerlink" title="Access Control Lists , ACL"></a>Access Control Lists , ACL</h3><p>访问控制列表</p><p>每个对象的有序列表里包含了所有可访问对象的域以及这些域如何访问这些对象的方法</p><p>人话: 由于文件多而域少, 因此在每个文件处记录哪些域能进行什么操作. 将保护域按文件分解</p><h3 id="Capabilities"><a href="#Capabilities" class="headerlink" title="Capabilities"></a>Capabilities</h3><p>权能字</p><p>使用按行存储时，与每个进程关联的是可访问的对象列表，以及每个对象上叫做权能字列表，每个单独的项目叫做权能字</p><p>人话: 每个用户自己储存对每个文件能进行什么操作, 将保护域按用户分解</p><p>因此要防止权能字被用户自己篡改(三种方法)</p><ol><li>First way, require a tagged architecture </li><li>Second way, keep the C-list inside the OS </li><li>Third way, keep the C-list in user space, but manage the capabilities cryptographically</li></ol><h2 id="可信任系统"><a href="#可信任系统" class="headerlink" title="可信任系统"></a>可信任系统</h2><p>完全可信任的系统是否存在?</p><p>可信任系统的核心是 <strong>可信计算基Trusted Computing Base, TCB</strong></p><p>TCB 是一种机制, 保护所有敏感操作; (例如切换进程, 进程创建, 内存映射管理等) 任何试图访问这些操作的进程必须通过可信计算基的安全审查, 称为 reference monitor (访问监视器)</p><blockquote><p>All system calls go through the reference monitor for security checking</p></blockquote><p>TCB可以通过硬件, 软件, 固件的形式实现, 它只是个机制. </p><p>一旦可信计算机基的某个构件出现程序错误或者安全隐患，就对整个系统的安全造成危害。 与之相反，如果除可信计算基之外的系统的其他部分出现问题，也只是泄漏了系统安全策略赋予它们的相关权限而已，这些权限一般都是比较低的。</p><p>现代操作系统努力降低TCB的大小，使得对其代码库彻底的检查成为可能.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本章将涉及:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安全与威胁&lt;/li&gt;
+&lt;li&gt;简易密码学(真的很简易!)&lt;/li&gt;
+&lt;li&gt;用户认证&lt;/li&gt;
+&lt;li&gt;系统受到的攻击&lt;ol&gt;
+&lt;li&gt;来自内部&lt;/li&gt;
+&lt;li&gt;来自外部&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;保护机制&lt;/li&gt;
+&lt;li&gt;信任系统&lt;/li&gt;
+&lt;li&gt;OS安全&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;本文匆匆赶制, 内容粗糙简陋&lt;/em&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="专业课" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
+    
+      <category term="操作系统" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="学习笔记" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="操作系统" scheme="http://yoursite.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统之多处理器系统</title>
@@ -628,29 +671,6 @@
       <category term="学习笔记" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
       <category term="操作系统" scheme="http://yoursite.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello_Hexo_Blog</title>
-    <link href="http://yoursite.com/2020/05/31/Hello-Hexo-Blog/"/>
-    <id>http://yoursite.com/2020/05/31/Hello-Hexo-Blog/</id>
-    <published>2020-05-31T05:53:07.000Z</published>
-    <updated>2020-06-05T09:01:50.723Z</updated>
-    
-    <content type="html"><![CDATA[<p> 第一篇博客~ 开心</p><a id="more"></a><h3 id="简单记录一下搭建过程"><a href="#简单记录一下搭建过程" class="headerlink" title="简单记录一下搭建过程"></a>简单记录一下搭建过程</h3><p>博客基于<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo框架</a> + Github，域名当然是阿里云了 （6元一年他不香吗hhh）</p><p>感谢舍友 <a href="https://www.117503445.top/" target="_blank" rel="noopener">@117503445</a> 指名了博客搭建的主要方向，搭建过程中主要参考了知乎用户 @吴润 的<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">这篇文章</a>，基本很顺畅地搭建起来了，一并致谢。</p><ol><li>安装并配置Node.js</li><li>安装 Hexo 框架</li><li>关联 Github 仓库</li><li>申请域名并绑定</li><li>发布第一篇博客</li></ol><h3 id="ToDo"><a href="#ToDo" class="headerlink" title="ToDo"></a>ToDo</h3><p>现在只是把房子搭起来还没有装修啥啊，让俺接着去学一学~</p><p>[x] 更换 Hexo 主题</p><p>[x] 熟悉博客的发布修改标签等功能</p><p>[ ] 建立图床</p><p>[ ] 增加其他的小插件 ~~</p><h3 id="分类设置"><a href="#分类设置" class="headerlink" title="分类设置"></a>分类设置</h3><ul><li>学习笔记    | 系统性的学习<ul><li>专业课<ul><li>操作系统</li></ul></li></ul></li><li>技术小记    | 碎片化知识</li><li>生活随笔<ul><li>山与水    | 游记</li><li>书与影    | 书评影评</li><li>时与光    | 定期总结</li></ul></li><li></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt; 第一篇博客~ 开心&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="技术小记" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%B0%8F%E8%AE%B0/"/>
-    
-    
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
   </entry>
   
