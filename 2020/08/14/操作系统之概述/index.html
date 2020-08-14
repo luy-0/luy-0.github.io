@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="操作系统 系列文章链接🔗 操作系统之概述:  OS 定义 OS 历史 OS 分类 计算机底层硬件一览 OS 中的基本概念 系统调用 OS 结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统之概述">
+<meta property="og:url" content="http://yoursite.com/2020/08/14/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%A6%82%E8%BF%B0/index.html">
+<meta property="og:site_name" content="(ﾟ∀。)">
+<meta property="og:description" content="操作系统 系列文章链接🔗 操作系统之概述:  OS 定义 OS 历史 OS 分类 计算机底层硬件一览 OS 中的基本概念 系统调用 OS 结构">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/toplevel.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/cache.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/device.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/io.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/bus.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/sys%20call.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/unix1.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/unix2.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/win32.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/mono.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/layer.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/CS%20Model.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E8%99%9A%E6%8B%9F%E5%8C%961.png">
+<meta property="article:published_time" content="2020-08-14T07:45:25.000Z">
+<meta property="article:modified_time" content="2020-08-14T10:16:48.989Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/toplevel.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/08/14/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%A6%82%E8%BF%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>操作系统之概述 | (ﾟ∀。)</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="(ﾟ∀。)" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">(ﾟ∀。)</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/14/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%A6%82%E8%BF%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="嘿, 这里是私人空间!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="(ﾟ∀。)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          操作系统之概述
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-14 15:45:25 / 修改时间：18:16:48" itemprop="dateCreated datePublished" datetime="2020-08-14T15:45:25+08:00">2020-08-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>操作系统 系列文章链接🔗</p>
+<p>操作系统之概述:</p>
+<ol>
+<li>OS 定义</li>
+<li>OS 历史</li>
+<li>OS 分类</li>
+<li>计算机底层硬件一览</li>
+<li>OS 中的基本概念</li>
+<li>系统调用</li>
+<li>OS 结构</li>
+</ol>
+<a id="more"></a>
+<h1 id="操作系统-系列文章链接🔗"><a href="#操作系统-系列文章链接🔗" class="headerlink" title="操作系统 系列文章链接🔗"></a>操作系统 系列文章链接🔗</h1><ol>
+<li>操作系统之概述 (本文)</li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/05/操作系统之进程线程/" target="_blank" rel="noopener">操作系统之进程线程</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/08/操作系统之进程间通信/" target="_blank" rel="noopener">操作系统之进程间通信</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/04/操作系统之死锁/" target="_blank" rel="noopener">操作系统之死锁</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/09/操作系统之内存管理/" target="_blank" rel="noopener">操作系统之内存管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/05/操作系统之IO管理/" target="_blank" rel="noopener">操作系统之IO管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/06/操作系统之文件系统/" target="_blank" rel="noopener">操作系统之文件系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/08/操作系统之多处理器系统/" target="_blank" rel="noopener">操作系统之多处理器系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/11/操作系统之安全/" target="_blank" rel="noopener">操作系统之安全</a></li>
+</ol>
+<h1 id="操作系统之概述"><a href="#操作系统之概述" class="headerlink" title="操作系统之概述"></a>操作系统之概述</h1><p>本章将涉及: </p>
+<ol>
+<li>OS 定义</li>
+<li>OS 历史</li>
+<li>OS 分类</li>
+<li>计算机底层硬件一览</li>
+<li>OS 中的基本概念</li>
+<li>系统调用</li>
+<li>OS 结构</li>
+</ol>
+<p><em>本部分基础概念较多, 仅为应付考试, 中英混杂且不做过多解释.  <del>背就完事了</del></em> </p>
+<h2 id="OS定义"><a href="#OS定义" class="headerlink" title="OS定义"></a>OS定义</h2><h3 id="计算机系统的组成部分"><a href="#计算机系统的组成部分" class="headerlink" title="计算机系统的组成部分"></a>计算机系统的组成部分</h3><p>A computer system consists of </p>
+<ol>
+<li>硬件 Hardware </li>
+<li>系统程序 system programs</li>
+<li>应用程序 application programs</li>
+</ol>
+<h3 id="操作系统扮演的角色"><a href="#操作系统扮演的角色" class="headerlink" title="操作系统扮演的角色"></a>操作系统扮演的角色</h3><ol>
+<li>an extended machine (对于用户: 让用户更好地使用机器, 是硬件的包装接口) </li>
+<li>a resource manager (对于机器: 告知机器如何分配硬件资源, 是用户的命令代理执行者, 也是资源的分配者)</li>
+</ol>
+<p>是 an intermediary(中间调解人) between a user of a computer and the computer hardware.</p>
+<h3 id="Operating-system-goals"><a href="#Operating-system-goals" class="headerlink" title="Operating system goals"></a>Operating system goals</h3><ol>
+<li>Execute user programs and make solving user problems <strong>easier</strong>. <strong>简单</strong></li>
+<li>Make the computer system <strong>convenient</strong> to use. <strong>易用</strong></li>
+<li>Use the computer hardware in an <strong>efficient</strong> manner. <strong>高效</strong></li>
+<li>Permit effective development, testing, and introduction of new system functions without interfering with service. （<strong>易于扩充</strong>）</li>
+</ol>
+<h3 id="一些正确叙述"><a href="#一些正确叙述" class="headerlink" title="一些正确叙述"></a>一些正确叙述</h3><ul>
+<li><p><strong>Resource allocator</strong> – manages and allocates resources. </p>
+</li>
+<li><p><strong>Control program</strong> – controls the execution of user programs and operations of I/O devices .</p>
+</li>
+<li><p><strong>Kernel</strong> – the one program running at all times (all else being application programs).</p>
+<p>OS 是唯一运行在内核态的程序, 并且是全程运行, 并且先于其他程序运行</p>
+</li>
+<li><p>OS 与用户交互的界面: <strong>Shell</strong> : 文本交互; <strong>GUI</strong> : 图像交互</p>
+</li>
+<li><p>内核态中, OS对所有的硬件具有完全的访问权, 可以执行任何对于硬件的指令. 而用户级程序只能使用机器指令中的子集</p>
+</li>
+</ul>
+<h2 id="OS历史"><a href="#OS历史" class="headerlink" title="OS历史"></a>OS历史</h2><p>根据计算机本身的发展而发展</p>
+<ul>
+<li><p>真空管, 穿孔卡</p>
+</li>
+<li><p>晶体管, 批处理程序</p>
+</li>
+<li><p>集成电路, 多道程序Multiprogramming        </p>
+<p>多道程序: 在计算机中同时存放多个作业( 但不一定是绝对意义上的 <strong>同时</strong> 运行 详细请参看进程一章)</p>
+</li>
+<li><p>个人计算机</p>
+</li>
+<li><p>手持计算机</p>
+</li>
+</ul>
+<h2 id="OS分类"><a href="#OS分类" class="headerlink" title="OS分类"></a>OS分类</h2><ul>
+<li> Mainframe operating systems （大型机OS）</li>
+<li> Server operating systems （服务器OS） </li>
+<li> Multiprocessor operating systems （多处理机OS） </li>
+<li> Personal computer operating systems （个人计算机OS）</li>
+<li> Real-time operating systems （实时 OS） <ul>
+<li>硬实时: <ul>
+<li>辅助储存空间有限或不存在, 所有数据只在寄存器或只读存储器ROM中保存</li>
+<li>例如: 导弹制动系统</li>
+<li>由于不存在任何辅助储存空间, 因此与分时系统是冲突的</li>
+</ul>
+</li>
+<li>软实时: <ul>
+<li>部分关键实时任务的优先级高于其他任务，并保留该优先级直到完成为止</li>
+<li>例如:  industrial control or robotics 以及 applications (多媒体 VR等) requiring  advanced operating system features.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> Embedded operating systems （嵌入式OS）</li>
+<li> Smart card operating systems （智能卡OS)</li>
+</ul>
+<h2 id="计算机底层硬件"><a href="#计算机底层硬件" class="headerlink" title="计算机底层硬件"></a>计算机底层硬件</h2><p>计算机包括这些硬件组成部分</p>
+<ol>
+<li>CPU </li>
+<li>Main Memory</li>
+<li>IO Module</li>
+<li>System Bus</li>
+<li>…</li>
+</ol>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/toplevel.png" alt=""></p>
+<h3 id="中央处理器"><a href="#中央处理器" class="headerlink" title="中央处理器"></a>中央处理器</h3><p>从内存中提取指令并执行它们。 </p>
+<ul>
+<li>每个CPU都有一组可以执行的特定指令 称为该CPU的指令集( 例如8086指令集)</li>
+<li>因为访问内存以获取指令或数据字比执行一条指令要花费更长的时间，所以所有CPU都在其中包含一些寄存器来保存键变量和临时结果。</li>
+</ul>
+<h4 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h4><ul>
+<li>中断是CPU 在工作中的必要操作, 能够使工作更加高效</li>
+<li>An interruption of the normal sequence of execution  </li>
+<li>例如等待IO的过程中执行别的进程, 在IO结束时产生中断回到原进程继续执行</li>
+<li>运行 - 中断 - 恢复 - 运行</li>
+<li>中断分类<ul>
+<li>程序中断<ul>
+<li>运算溢出</li>
+<li>除零</li>
+<li>页面失效</li>
+<li>执行非法指令</li>
+</ul>
+</li>
+<li>时钟中断<ul>
+<li>程序片使用完毕</li>
+</ul>
+</li>
+<li>IO 中断</li>
+<li>硬件错误</li>
+</ul>
+</li>
+</ul>
+<h3 id="主存"><a href="#主存" class="headerlink" title="主存"></a>主存</h3><h4 id="存储层次结构"><a href="#存储层次结构" class="headerlink" title="存储层次结构"></a>存储层次结构</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/cache.png" alt=""></p>
+<ul>
+<li>每一级都是下一级的内容的子集</li>
+<li>从上到下: 更大 更慢 更便宜</li>
+</ul>
+<p>详见内存管理章节</p>
+<h4 id="DMA-直接存储器存取"><a href="#DMA-直接存储器存取" class="headerlink" title="DMA 直接存储器存取"></a>DMA 直接存储器存取</h4><p>Transfers a block of data directly to or from memory</p>
+<p>可以在不经有CPU的情况下直接访问Data Bus, 用于进一步简化CPU等待时间</p>
+<h4 id="基址-限址-MMU"><a href="#基址-限址-MMU" class="headerlink" title="基址 限址 MMU"></a>基址 限址 MMU</h4><ul>
+<li>Base register and limit register 基址寄存器和限界寄存器</li>
+<li>MMU (Memory Management Unit) 内存管理单元</li>
+</ul>
+<h3 id="IO设备"><a href="#IO设备" class="headerlink" title="IO设备"></a>IO设备</h3><p>IO设备实际上包括(控制器与设备本身) A controller and the device itself. </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/device.png" alt=""></p>
+<p>IO中断</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/io.png" alt=""></p>
+<ul>
+<li>(a) Steps in starting an I/O device and getting interrupt 设备如何发起中断 </li>
+<li>(b) How the CPU is interrupted 中央处理器如何处理中断</li>
+</ul>
+<p>总线</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/bus.png" alt=""></p>
+<h2 id="OS概念"><a href="#OS概念" class="headerlink" title="OS概念"></a>OS概念</h2><h3 id="程序管理相关"><a href="#程序管理相关" class="headerlink" title="程序管理相关"></a>程序管理相关</h3><h4 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h4><ul>
+<li>Process: a program in execution.</li>
+</ul>
+<h4 id="地址空间"><a href="#地址空间" class="headerlink" title="地址空间"></a>地址空间</h4><ul>
+<li>Address space: a list of memory locations from some minimum to some maximum, which the process can read and write.</li>
+</ul>
+<h4 id="进程表"><a href="#进程表" class="headerlink" title="进程表"></a>进程表</h4><ul>
+<li>Process table: where all the information about each process is stored in.</li>
+</ul>
+<h4 id="进程树"><a href="#进程树" class="headerlink" title="进程树"></a>进程树</h4><ul>
+<li>process tree </li>
+</ul>
+<h4 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h4><ul>
+<li>process is divided into threads that can run simultaneously </li>
+<li>线程 Thread : <ul>
+<li>CPU可分配的最基本单元</li>
+<li>能够执行与中断</li>
+</ul>
+</li>
+</ul>
+<h4 id="通信"><a href="#通信" class="headerlink" title="通信"></a>通信</h4><ul>
+<li>Inter-process communication<ul>
+<li>Related processes that are cooperating to get some job done often need to communicate with one another and synchronize their activities.</li>
+<li>为了完成某项工作而进行协作的相关流程通常需要彼此通信并同步其活动。</li>
+</ul>
+</li>
+</ul>
+<h4 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h4><ul>
+<li>Deadlock: when two or more processes are interacting, they can sometimes get themselves into a stalemate (僵持) situation they cannot get out of.</li>
+</ul>
+<h4 id="管程"><a href="#管程" class="headerlink" title="管程"></a>管程</h4><ul>
+<li>Pipe: a sort of pseudofile that used to connect two processes.</li>
+</ul>
+<h3 id="文件管理相关"><a href="#文件管理相关" class="headerlink" title="文件管理相关"></a>文件管理相关</h3><h4 id="设备无关性"><a href="#设备无关性" class="headerlink" title="设备无关性"></a>设备无关性</h4><p>操作系统的主要功能是隐藏磁盘和其他IO设备的特性，并为程序员提供一个与设备无关的文件的漂亮，简洁的抽象模型。<strong>设备无关性</strong> : device-independent</p>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ul>
+<li>Director: A place to keep files, a way of grouping files together. System calls are then needed to create and remove directories. </li>
+</ul>
+<h4 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h4><ul>
+<li><p>File system: Calls are also provided to put an existing file in a directory, and to remove a file from a directory. Directory entries may be either files or other directories.</p>
+</li>
+<li><p>挂载mount</p>
+</li>
+</ul>
+<h3 id="架构相关"><a href="#架构相关" class="headerlink" title="架构相关"></a>架构相关</h3><h4 id="微内核"><a href="#微内核" class="headerlink" title="微内核"></a>微内核</h4><ul>
+<li>Microkernel architecture （微内核结构）</li>
+<li>assigns only a few essential functions to the kernel 只分配了最基本功能<ul>
+<li>➢ address space </li>
+<li>➢ inter-process communication (IPC)</li>
+<li>➢ basic scheduling</li>
+</ul>
+</li>
+</ul>
+<h4 id="对称多处理"><a href="#对称多处理" class="headerlink" title="对称多处理"></a>对称多处理</h4><ul>
+<li>Symmetric multiprocessing（对称多处理） <ul>
+<li>there are multiple processors 多个处理器</li>
+<li>these processors share same main memory and I/O facilities   共享主存与IO设备</li>
+<li>All processors can perform the same functions  所有处理器可执行相同的功能</li>
+</ul>
+</li>
+</ul>
+<h4 id="分布式系统"><a href="#分布式系统" class="headerlink" title="分布式系统"></a>分布式系统</h4><ul>
+<li>Distributed operating systems（分布）<ul>
+<li>provides the illusion of a single main memory and single secondary memory space 虽然是分布式但是给人感觉像是单个主存单个辅助存储空间的错觉</li>
+<li>used for distributed file system 常用于分布式文件系统</li>
+</ul>
+</li>
+</ul>
+<h4 id="面向对象设计"><a href="#面向对象设计" class="headerlink" title="面向对象设计"></a>面向对象设计</h4><ul>
+<li>Object-oriented design（面向对象设计） <ul>
+<li>used for adding modular extensions to a small kernel  用于向小内核添加模块化扩展</li>
+<li>enables programmers to customize an operating system without disrupting system integrity 使程序员能够自定义操作系统，而不会破坏系统完整性</li>
+</ul>
+</li>
+</ul>
+<h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><h3 id="系统调用的流程"><a href="#系统调用的流程" class="headerlink" title="系统调用的流程"></a>系统调用的流程</h3><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/sys%20call.png" alt=""></p>
+<p>系统调用需要11步来实现</p>
+<p>以 <code>read (fd, buffer, nbytes)</code> 为例; 从 <code>fd</code> 文件向<code>buffer</code> 缓冲区中读入 <code>nbytes</code> 内容</p>
+<ol>
+<li>用户程序:  保存 <code>nbytes</code> 参数</li>
+<li>用户程序:  保存 缓冲区地址 参数</li>
+<li>用户程序:  保存 文件 参数</li>
+<li>用户程序:  调用库函数中的代码</li>
+<li>库程序:      将相关代码存入寄存器</li>
+<li>陷入内核, 此时CPU的使用权转移至内核态</li>
+<li>处理指令</li>
+<li>读取数据</li>
+<li>返回库程序</li>
+<li>返回用户程序</li>
+<li>用户程序:  SP++ 执行下一条指令</li>
+</ol>
+<h3 id="常见的系统调用"><a href="#常见的系统调用" class="headerlink" title="常见的系统调用"></a>常见的系统调用</h3><h4 id="Unix"><a href="#Unix" class="headerlink" title="Unix"></a>Unix</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/unix1.png" alt=""></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/unix2.png" alt=""></p>
+<h4 id="Win32"><a href="#Win32" class="headerlink" title="Win32"></a>Win32</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/win32.png" alt=""></p>
+<h2 id="OS结构"><a href="#OS结构" class="headerlink" title="OS结构"></a>OS结构</h2><h3 id="单体系统"><a href="#单体系统" class="headerlink" title="单体系统"></a>单体系统</h3><ul>
+<li>Monolithic system (单体系统): The structure is that there is <strong>no structure</strong>. </li>
+<li>The OS is written as a collection of procedures, each of which can call any of the other ones whenever it needs to.操作系统是作为过程的集合编写的，每个过程都可以在需要时调用任何其他过程。</li>
+</ul>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/mono.png" alt=""></p>
+<h3 id="分层系统"><a href="#分层系统" class="headerlink" title="分层系统"></a>分层系统</h3><ul>
+<li>Layered system (分层系统): Organize the OS as a hierarchy of layers, each one constructed upon the one below it 层次结构，每个层次结构都基于其下一层</li>
+</ul>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/layer.png" alt=""></p>
+<h3 id="微内核系统"><a href="#微内核系统" class="headerlink" title="微内核系统"></a>微内核系统</h3><ul>
+<li>Microkernels (微内核结构): Put as little as possible in kernel model</li>
+</ul>
+<h3 id="Client-Server-Model"><a href="#Client-Server-Model" class="headerlink" title="Client-Server Model"></a>Client-Server Model</h3><ul>
+<li>现代OS的趋势是: 采用<strong>将代码进一步移到更高层</strong>的想法，并尽可能<strong>从内核模式中删除</strong>，从而保留最小的微内核。</li>
+<li>The client-server model, all the kernel does is handle the communication between clients and servers. 内核只负责处理客户端和服务器之间的通信。</li>
+</ul>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/14/CS%20Model.png" alt=""></p>
+<h3 id="虚拟系统"><a href="#虚拟系统" class="headerlink" title="虚拟系统"></a>虚拟系统</h3><ul>
+<li>Virtual Machines (虚拟机): 系统的核心被称为 <strong>虚拟机监视器</strong> virtual machine monitor直接运行在硬件层, 并且向下一层提供多个虚拟的机器</li>
+<li>下图仅为虚拟化的一种实现方式, 详见多处理器系统章节</li>
+</ul>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E8%99%9A%E6%8B%9F%E5%8C%961.png" alt=""></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"># 操作系统</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%AE%89%E5%85%A8/" rel="prev" title="操作系统之安全">
+      <i class="fa fa-chevron-left"></i> 操作系统之安全
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作系统-系列文章链接🔗"><span class="nav-number">1.</span> <span class="nav-text">操作系统 系列文章链接🔗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作系统之概述"><span class="nav-number">2.</span> <span class="nav-text">操作系统之概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OS定义"><span class="nav-number">2.1.</span> <span class="nav-text">OS定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机系统的组成部分"><span class="nav-number">2.1.1.</span> <span class="nav-text">计算机系统的组成部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统扮演的角色"><span class="nav-number">2.1.2.</span> <span class="nav-text">操作系统扮演的角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operating-system-goals"><span class="nav-number">2.1.3.</span> <span class="nav-text">Operating system goals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些正确叙述"><span class="nav-number">2.1.4.</span> <span class="nav-text">一些正确叙述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS历史"><span class="nav-number">2.2.</span> <span class="nav-text">OS历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS分类"><span class="nav-number">2.3.</span> <span class="nav-text">OS分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机底层硬件"><span class="nav-number">2.4.</span> <span class="nav-text">计算机底层硬件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#中央处理器"><span class="nav-number">2.4.1.</span> <span class="nav-text">中央处理器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#中断"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">中断</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主存"><span class="nav-number">2.4.2.</span> <span class="nav-text">主存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#存储层次结构"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">存储层次结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DMA-直接存储器存取"><span class="nav-number">2.4.2.2.</span> <span class="nav-text">DMA 直接存储器存取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基址-限址-MMU"><span class="nav-number">2.4.2.3.</span> <span class="nav-text">基址 限址 MMU</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IO设备"><span class="nav-number">2.4.3.</span> <span class="nav-text">IO设备</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS概念"><span class="nav-number">2.5.</span> <span class="nav-text">OS概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序管理相关"><span class="nav-number">2.5.1.</span> <span class="nav-text">程序管理相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进程"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#地址空间"><span class="nav-number">2.5.1.2.</span> <span class="nav-text">地址空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程表"><span class="nav-number">2.5.1.3.</span> <span class="nav-text">进程表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程树"><span class="nav-number">2.5.1.4.</span> <span class="nav-text">进程树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多线程"><span class="nav-number">2.5.1.5.</span> <span class="nav-text">多线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通信"><span class="nav-number">2.5.1.6.</span> <span class="nav-text">通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#死锁"><span class="nav-number">2.5.1.7.</span> <span class="nav-text">死锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管程"><span class="nav-number">2.5.1.8.</span> <span class="nav-text">管程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件管理相关"><span class="nav-number">2.5.2.</span> <span class="nav-text">文件管理相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设备无关性"><span class="nav-number">2.5.2.1.</span> <span class="nav-text">设备无关性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#目录"><span class="nav-number">2.5.2.2.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件系统"><span class="nav-number">2.5.2.3.</span> <span class="nav-text">文件系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#架构相关"><span class="nav-number">2.5.3.</span> <span class="nav-text">架构相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#微内核"><span class="nav-number">2.5.3.1.</span> <span class="nav-text">微内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对称多处理"><span class="nav-number">2.5.3.2.</span> <span class="nav-text">对称多处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分布式系统"><span class="nav-number">2.5.3.3.</span> <span class="nav-text">分布式系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象设计"><span class="nav-number">2.5.3.4.</span> <span class="nav-text">面向对象设计</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统调用"><span class="nav-number">2.6.</span> <span class="nav-text">系统调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统调用的流程"><span class="nav-number">2.6.1.</span> <span class="nav-text">系统调用的流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的系统调用"><span class="nav-number">2.6.2.</span> <span class="nav-text">常见的系统调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Unix"><span class="nav-number">2.6.2.1.</span> <span class="nav-text">Unix</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Win32"><span class="nav-number">2.6.2.2.</span> <span class="nav-text">Win32</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS结构"><span class="nav-number">2.7.</span> <span class="nav-text">OS结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单体系统"><span class="nav-number">2.7.1.</span> <span class="nav-text">单体系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分层系统"><span class="nav-number">2.7.2.</span> <span class="nav-text">分层系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微内核系统"><span class="nav-number">2.7.3.</span> <span class="nav-text">微内核系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Client-Server-Model"><span class="nav-number">2.7.4.</span> <span class="nav-text">Client-Server Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟系统"><span class="nav-number">2.7.5.</span> <span class="nav-text">虚拟系统</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">嘿, 这里是私人空间!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">103k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:52</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>
