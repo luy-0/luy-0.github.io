@@ -20,19 +20,23 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本文未完成">
+  <meta name="description" content="本章将涉及:   IO设备 盘 时钟 其他  本文匆匆赶制, 内容粗糙简陋  背就完事了">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统之IO管理">
 <meta property="og:url" content="http://yoursite.com/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8BIO%E7%AE%A1%E7%90%86/index.html">
 <meta property="og:site_name" content="(ﾟ∀。)">
-<meta property="og:description" content="本文未完成">
+<meta property="og:description" content="本章将涉及:   IO设备 盘 时钟 其他  本文匆匆赶制, 内容粗糙简陋  背就完事了">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/mmio.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/dmA.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/DISK%20FORMAT.png">
 <meta property="article:published_time" content="2020-08-05T13:08:03.000Z">
-<meta property="article:modified_time" content="2020-08-07T01:55:35.467Z">
+<meta property="article:modified_time" content="2020-08-15T04:13:52.046Z">
 <meta property="article:author" content="LUY">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/mmio.png">
 
 <link rel="canonical" href="http://yoursite.com/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8BIO%E7%AE%A1%E7%90%86/">
 
@@ -226,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-07 09:55:35" itemprop="dateModified" datetime="2020-08-07T09:55:35+08:00">2020-08-07</time>
+                <time title="修改时间：2020-08-15 12:13:52" itemprop="dateModified" datetime="2020-08-15T12:13:52+08:00">2020-08-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,14 +256,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -271,10 +275,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本文未完成</p>
+        <p>本章将涉及: </p>
+<ol>
+<li>IO设备</li>
+<li>盘</li>
+<li>时钟</li>
+<li>其他</li>
+</ol>
+<p><em>本文匆匆赶制, 内容粗糙简陋  <del>背就完事了</del></em> </p>
 <a id="more"></a>
-<p>IO设备分为:</p>
-<ul>
+<h2 id="IO设备"><a href="#IO设备" class="headerlink" title="IO设备"></a>IO设备</h2><h3 id="IO设备分类-⭐"><a href="#IO设备分类-⭐" class="headerlink" title="IO设备分类 ⭐"></a>IO设备分类 ⭐</h3><ul>
 <li>块设备 (Block device)<ul>
 <li>储存于固定大小的块中, 每块都有自己的地址</li>
 <li>每个块都可以可以独立于其他块进行读写</li>
@@ -293,33 +303,46 @@
 </li>
 </ul>
 <p><em>我们接下来的讨论一般是针对块设备</em></p>
-<p>IO 设备由以下两个部分组成</p>
-<ul>
+<h3 id="IO-设备部组成"><a href="#IO-设备部组成" class="headerlink" title="IO 设备部组成"></a>IO 设备部组成</h3><ul>
 <li>机械部件(即普遍意义上的设备)</li>
 <li>电子部件</li>
 </ul>
 <p>其中电子部件是用于控制管理机械部件的, 我们将电子部件称为 <strong>设备控制器</strong> .它的主要功能是: </p>
+<p><em><u>知道作用</u></em></p>
 <ul>
-<li>将串行字节流转化未字节块</li>
-<li>对于运行时可能的出错进行纠正</li>
-<li>将字节复制到主存</li>
+<li><p>Convert the serial bit stream into a block of bytes </p>
+<p>将串行字节流转化未字节块</p>
+</li>
+<li><p>Perform any error correction necessary </p>
+<p>对于运行时可能的出错进行纠正</p>
+</li>
+<li><p>Copy it to main memory</p>
+<p>将字节复制到主存</p>
+</li>
 </ul>
 <p><em>注: 一个设备控制器可能同时负责多个机械设备</em></p>
-<p>每个设备控制器都拥有一些寄存器用于与OS通信:</p>
+<p>此外每个设备控制器都拥有一些寄存器用于与OS通信:</p>
 <ul>
 <li>OS通过写入寄存器来命令设备执行操作等</li>
 <li>OS通过读取寄存器来获取设备的状态</li>
 </ul>
 <p>除了寄存器外, 许多设备还有OS可以读取/写入的数据缓冲区</p>
-<p>OS和控制器的通信可以分为三种方式:</p>
+<h3 id="与OS的通信方式"><a href="#与OS的通信方式" class="headerlink" title="与OS的通信方式"></a>与OS的通信方式</h3><p>OS和控制器的通信可以分为三种方式 ⭐</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/mmio.png" alt=""></p>
 <ol>
 <li><p>独立空间</p>
 <p>每个控制寄存器器都分配有一个单独的IO端口号</p>
 <p>内存的地址空间和IO的地址空间完全独立</p>
 </li>
-<li><p>内存映射</p>
+<li><p>内存映射 </p>
 <p>将所有的控制寄存器映射到内存空间.</p>
 <p>这些被映射的内存空间不会被其他内存映射, 只能由控制寄存器使用</p>
+<p><strong>优点</strong></p>
+<ol>
+<li>, a I/O device driver can be written entirely in C. Otherwise, some assembly code is needed</li>
+<li>No special protection mechanism is needed to keep user processes from performing I/O.</li>
+<li>Every instructions that can reference memory can also reference control registers.</li>
+</ol>
 </li>
 <li><p>混合</p>
 <p>IO数据缓冲区采用内存映射, 寄存器采用独立空间</p>
@@ -335,29 +358,31 @@
 <li>缓冲区</li>
 <li>共享设备&amp;专业设备</li>
 </ul>
-<p>IO方式</p>
-<ol>
-<li><p>程序控制IO</p>
-<p>使用程序不断查询设备以了解是否就绪, 忙等待, 低效</p>
+<h3 id="IO控制方式-⭐"><a href="#IO控制方式-⭐" class="headerlink" title="IO控制方式 ⭐"></a>IO控制方式 ⭐</h3><ol>
+<li><p>程序控制IO  Programmed I/O </p>
+<p>使用程序不断查询设备以了解是否就绪, 忙等待, 低效 浪费CPU</p>
 </li>
-<li><p>中断控制IO</p>
+<li><p>中断控制IO  Interrupt-Driven I/O </p>
 <p>允许CPU在IO工作时干其他时, 当IO完毕时发出中断.</p>
 <p>问题在于IO每次只能传输一个字符, 中断频率过高</p>
 </li>
-<li><p>DMA控制IO</p>
+<li><p>DMA控制IO⭐  I/O Using DMA </p>
 <p>DMA控制器Direct Memory Access 是一个能够独立于CPU访问系统总线的控制器, 相当于一个字符缓冲池, 当缓冲池满了再向CPU发出中断信号.</p>
+<blockquote>
+<p>DMA controller <strong>has access to the system bus independent of the CPU</strong>. It contains several registers that can be written and read by the CPU</p>
+</blockquote>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/dmA.png" alt=""></p>
 </li>
 </ol>
 <h3 id="IO软件层次"><a href="#IO软件层次" class="headerlink" title="IO软件层次"></a>IO软件层次</h3><p>中断处理</p>
 <p>最好是隐藏的, 不被感知. </p>
 <p>一般需要大量时间, 负责设备与设备驱动之间的通信.</p>
 <p>设备驱动器</p>
-<p>设备独立性</p>
+<p>设备独立性 : 设备在接入前不需要任何特殊处理</p>
 <p>统一接口</p>
 <p>缓冲区</p>
 <p>​    双BUFFER区(乒乓机制)</p>
-<p>光盘</p>
-<ol>
+<h2 id="盘"><a href="#盘" class="headerlink" title="盘"></a>盘</h2><ol>
 <li><p>每个byte由 14个bits构成</p>
 </li>
 <li><p>每42个byte构成1个帧(frame)</p>
@@ -369,13 +394,14 @@
 </ol>
 <p>柱面斜进, 每圈的零扇区在磁盘上不是位于同一条直线上.</p>
 <p>磁盘交错. </p>
-<p><img src="" alt=""></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/DISK%20FORMAT.png" alt=""></p>
 <ol>
 <li>无交错, 每个扇区顺序排列</li>
 <li>单交错</li>
 <li>双交错</li>
 </ol>
-<h2 id="Disk"><a href="#Disk" class="headerlink" title="Disk"></a>Disk</h2><h3 id="磁盘臂调度算法"><a href="#磁盘臂调度算法" class="headerlink" title="磁盘臂调度算法"></a>磁盘臂调度算法</h3><p>磁盘在读写过程种有三个时间决定: </p>
+<p><em>(以上了解)</em></p>
+<h3 id="磁盘臂调度算法⭐"><a href="#磁盘臂调度算法⭐" class="headerlink" title="磁盘臂调度算法⭐"></a>磁盘臂调度算法⭐</h3><p>磁盘在读写过程种有三个时间决定: </p>
 <ul>
 <li><p>寻道时间Seek Time </p>
 <p>将磁盘臂移动到适当的柱面上需要的时间</p>
@@ -391,6 +417,32 @@
 <h4 id="FCFS"><a href="#FCFS" class="headerlink" title="FCFS"></a>FCFS</h4><p>按照柱面访问顺序进行访问. </p>
 <h4 id="Shortest-Seek-Frist-最近柱面优先"><a href="#Shortest-Seek-Frist-最近柱面优先" class="headerlink" title="Shortest Seek Frist 最近柱面优先"></a>Shortest Seek Frist 最近柱面优先</h4><p>每次都访问离当前最近的</p>
 <h4 id="The-elevator-algorithm-电梯调度"><a href="#The-elevator-algorithm-电梯调度" class="headerlink" title="The elevator algorithm 电梯调度"></a>The elevator algorithm 电梯调度</h4><p>每次都从头到尾,再从尾到头</p>
+<h2 id="时钟"><a href="#时钟" class="headerlink" title="时钟"></a>时钟</h2><p>作用⭐</p>
+<ol>
+<li><p>Maintaining the time of day  维持一天中的时间。 </p>
+</li>
+<li><p>Preventing pro running longer  防止进程运行超出允许的时间</p>
+<p>在启动进程时设定一个计数器, 每个时钟中断处将计数器—, When it gets to zero, the clock driver calls the scheduler to set up another process.</p>
+</li>
+<li><p>Accounting for CPU usage  计算CPU使用率</p>
+<p>每当启动进程时，启动一个不同于主系统计时器的第二个计时器。当该过程停止时，可以读出计时器以告知该过程已运行了多长时间。</p>
+</li>
+<li><p>Handling the alarm system call  处理用户进程发出的警报系统调用</p>
+</li>
+<li><p>Providing watchdog timers  为系统本身的各个部分提供监视定时器</p>
+<p>例如: 在一定时间间隔内未确认的数据包必须重新发送</p>
+</li>
+</ol>
+<p><em><u>其他了解即可</u></em></p>
+<h2 id="Network-terminals-网络终端"><a href="#Network-terminals-网络终端" class="headerlink" title="Network terminals                    网络终端"></a>Network terminals                    网络终端</h2><h3 id="两类终端"><a href="#两类终端" class="headerlink" title="两类终端"></a>两类终端</h3><ul>
+<li><p>胖终端  X Windows</p>
+<p>终端具有大量的计算能力和内存，以便运行复杂的协议来压缩通过网络发送的数据量。 </p>
+</li>
+<li><p>瘦终端 SLIM</p>
+<p>终端非常简单，基本上是显示像素，并且为了使其便宜而没有做太多的复杂设计</p>
+</li>
+</ul>
+<p><em><u>其他了解即可</u></em></p>
 
     </div>
 
@@ -480,7 +532,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#IO软件层次"><span class="nav-number">1.</span> <span class="nav-text">IO软件层次</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Disk"><span class="nav-number"></span> <span class="nav-text">Disk</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘臂调度算法"><span class="nav-number">1.</span> <span class="nav-text">磁盘臂调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FCFS"><span class="nav-number">1.1.</span> <span class="nav-text">FCFS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-Seek-Frist-最近柱面优先"><span class="nav-number">1.2.</span> <span class="nav-text">Shortest Seek Frist 最近柱面优先</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-elevator-algorithm-电梯调度"><span class="nav-number">1.3.</span> <span class="nav-text">The elevator algorithm 电梯调度</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IO设备"><span class="nav-number">1.</span> <span class="nav-text">IO设备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IO设备分类-⭐"><span class="nav-number">1.1.</span> <span class="nav-text">IO设备分类 ⭐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IO-设备部组成"><span class="nav-number">1.2.</span> <span class="nav-text">IO 设备部组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与OS的通信方式"><span class="nav-number">1.3.</span> <span class="nav-text">与OS的通信方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IO控制方式-⭐"><span class="nav-number">1.4.</span> <span class="nav-text">IO控制方式 ⭐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IO软件层次"><span class="nav-number">1.5.</span> <span class="nav-text">IO软件层次</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盘"><span class="nav-number">2.</span> <span class="nav-text">盘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘臂调度算法⭐"><span class="nav-number">2.1.</span> <span class="nav-text">磁盘臂调度算法⭐</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FCFS"><span class="nav-number">2.1.1.</span> <span class="nav-text">FCFS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-Seek-Frist-最近柱面优先"><span class="nav-number">2.1.2.</span> <span class="nav-text">Shortest Seek Frist 最近柱面优先</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-elevator-algorithm-电梯调度"><span class="nav-number">2.1.3.</span> <span class="nav-text">The elevator algorithm 电梯调度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时钟"><span class="nav-number">3.</span> <span class="nav-text">时钟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-terminals-网络终端"><span class="nav-number">4.</span> <span class="nav-text">Network terminals                    网络终端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两类终端"><span class="nav-number">4.1.</span> <span class="nav-text">两类终端</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -550,12 +602,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">103k</span>
+    <span title="站点总字数">106k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:52</span>
+    <span title="站点阅读时长">2:56</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -635,59 +687,6 @@ setInterval("createtime()",250);
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 

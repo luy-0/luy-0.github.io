@@ -28,7 +28,7 @@
 <meta property="og:description" content="本章将涉及:  安全与威胁 简易密码学(真的很简易!) 用户认证 系统受到的攻击 来自内部 来自外部   保护机制 信任系统 OS安全  本文匆匆赶制, 内容粗糙简陋">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-11T06:42:28.000Z">
-<meta property="article:modified_time" content="2020-08-11T07:57:31.352Z">
+<meta property="article:modified_time" content="2020-08-15T10:46:33.781Z">
 <meta property="article:author" content="LUY">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="操作系统">
@@ -218,10 +218,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-08-11 14:42:28 / 修改时间：15:57:31" itemprop="dateCreated datePublished" datetime="2020-08-11T14:42:28+08:00">2020-08-11</time>
+              <time title="创建时间：2020-08-11 14:42:28" itemprop="dateCreated datePublished" datetime="2020-08-11T14:42:28+08:00">2020-08-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-15 18:46:33" itemprop="dateModified" datetime="2020-08-15T18:46:33+08:00">2020-08-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -246,14 +252,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
+              <span>3.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
+              <span>6 分钟</span>
             </span>
 
         </div>
@@ -329,7 +335,8 @@
 <hr>
 </li>
 </ol>
-<h2 id="密码学基础"><a href="#密码学基础" class="headerlink" title="密码学基础"></a>密码学基础</h2><h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul>
+<h2 id="密码学基础"><a href="#密码学基础" class="headerlink" title="密码学基础"></a>密码学基础</h2><p><em><u>了解即可</u></em></p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul>
 <li>斯巴达将军</li>
 <li>戚继光: 反切注音法</li>
 <li>周恩来: 豪密</li>
@@ -413,6 +420,19 @@
 <p>(zero-day Attack</p>
 <p>Zombie</p>
 <p>…</p>
+<h2 id="系统设计的原则"><a href="#系统设计的原则" class="headerlink" title="系统设计的原则"></a>系统设计的原则</h2><ol>
+<li>System design should be public </li>
+<li>Default should be no access </li>
+<li>Check for current authority </li>
+<li>Give each process least privilege possible </li>
+<li>Protection mechanism should be 保护机制应当<ul>
+<li>simple 简单</li>
+<li>uniform  统一</li>
+<li>in lowest layers of system  处于系统底层</li>
+</ul>
+</li>
+<li>Scheme should be psychologically acceptable</li>
+</ol>
 <h2 id="保护机制-⭐"><a href="#保护机制-⭐" class="headerlink" title="保护机制 ⭐"></a>保护机制 ⭐</h2><h3 id="Protection-Domains"><a href="#Protection-Domains" class="headerlink" title="Protection Domains"></a>Protection Domains</h3><p>注: 下文中提到的 <em>用户</em> 也可能指进程</p>
 <p>保护域</p>
 <p>a domain is a set of （object， right） pairs. Each pair specifies an object and some<br>subset of the operations that can be performed. A right means permission to perform one of the operations.<br>一对对象权限的组合，每对组合指定一个对象和一些可在上面运行的操作子集指对某个操作的执行许可.</p>
@@ -528,7 +548,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安全与威胁"><span class="nav-number">1.</span> <span class="nav-text">安全与威胁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#密码学基础"><span class="nav-number">2.</span> <span class="nav-text">密码学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">2.1.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#历史"><span class="nav-number">2.2.</span> <span class="nav-text">历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">2.3.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对称加密"><span class="nav-number">2.3.1.</span> <span class="nav-text">对称加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非对称加密"><span class="nav-number">2.3.2.</span> <span class="nav-text">非对称加密</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户认证⭐"><span class="nav-number">3.</span> <span class="nav-text">用户认证⭐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些用户认证时的对策"><span class="nav-number">3.1.</span> <span class="nav-text">一些用户认证时的对策</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统受到的攻击"><span class="nav-number">4.</span> <span class="nav-text">系统受到的攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insider-Attacks-内部攻击"><span class="nav-number">4.1.</span> <span class="nav-text">Insider Attacks 内部攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Logic-Bombs"><span class="nav-number">4.1.1.</span> <span class="nav-text">Logic Bombs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Trap-Doors"><span class="nav-number">4.1.2.</span> <span class="nav-text">Trap Doors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Login-Spoofing"><span class="nav-number">4.1.3.</span> <span class="nav-text">Login Spoofing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Trojan-Horses"><span class="nav-number">4.1.4.</span> <span class="nav-text">Trojan Horses</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Buffer-Overflow"><span class="nav-number">4.1.5.</span> <span class="nav-text">Buffer Overflow</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Outside-Attacks-外部攻击"><span class="nav-number">4.2.</span> <span class="nav-text">Outside Attacks 外部攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Virus"><span class="nav-number">4.2.1.</span> <span class="nav-text">Virus</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Morris-Worm"><span class="nav-number">4.2.2.</span> <span class="nav-text">Morris Worm</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保护机制-⭐"><span class="nav-number">5.</span> <span class="nav-text">保护机制 ⭐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Protection-Domains"><span class="nav-number">5.1.</span> <span class="nav-text">Protection Domains</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-Control-Lists-ACL"><span class="nav-number">5.2.</span> <span class="nav-text">Access Control Lists , ACL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Capabilities"><span class="nav-number">5.3.</span> <span class="nav-text">Capabilities</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可信任系统"><span class="nav-number">6.</span> <span class="nav-text">可信任系统</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安全与威胁"><span class="nav-number">1.</span> <span class="nav-text">安全与威胁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#密码学基础"><span class="nav-number">2.</span> <span class="nav-text">密码学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">2.1.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#历史"><span class="nav-number">2.2.</span> <span class="nav-text">历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">2.3.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对称加密"><span class="nav-number">2.3.1.</span> <span class="nav-text">对称加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非对称加密"><span class="nav-number">2.3.2.</span> <span class="nav-text">非对称加密</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户认证⭐"><span class="nav-number">3.</span> <span class="nav-text">用户认证⭐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些用户认证时的对策"><span class="nav-number">3.1.</span> <span class="nav-text">一些用户认证时的对策</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统受到的攻击"><span class="nav-number">4.</span> <span class="nav-text">系统受到的攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insider-Attacks-内部攻击"><span class="nav-number">4.1.</span> <span class="nav-text">Insider Attacks 内部攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Logic-Bombs"><span class="nav-number">4.1.1.</span> <span class="nav-text">Logic Bombs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Trap-Doors"><span class="nav-number">4.1.2.</span> <span class="nav-text">Trap Doors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Login-Spoofing"><span class="nav-number">4.1.3.</span> <span class="nav-text">Login Spoofing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Trojan-Horses"><span class="nav-number">4.1.4.</span> <span class="nav-text">Trojan Horses</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Buffer-Overflow"><span class="nav-number">4.1.5.</span> <span class="nav-text">Buffer Overflow</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Outside-Attacks-外部攻击"><span class="nav-number">4.2.</span> <span class="nav-text">Outside Attacks 外部攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Virus"><span class="nav-number">4.2.1.</span> <span class="nav-text">Virus</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Morris-Worm"><span class="nav-number">4.2.2.</span> <span class="nav-text">Morris Worm</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统设计的原则"><span class="nav-number">5.</span> <span class="nav-text">系统设计的原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保护机制-⭐"><span class="nav-number">6.</span> <span class="nav-text">保护机制 ⭐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Protection-Domains"><span class="nav-number">6.1.</span> <span class="nav-text">Protection Domains</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-Control-Lists-ACL"><span class="nav-number">6.2.</span> <span class="nav-text">Access Control Lists , ACL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Capabilities"><span class="nav-number">6.3.</span> <span class="nav-text">Capabilities</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可信任系统"><span class="nav-number">7.</span> <span class="nav-text">可信任系统</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -598,12 +618,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">103k</span>
+    <span title="站点总字数">106k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:52</span>
+    <span title="站点阅读时长">2:56</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

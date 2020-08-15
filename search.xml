@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>时与光W_202006-4</title>
+    <url>/2020/06/28/%E6%97%B6%E4%B8%8E%E5%85%89W_202006-4/</url>
+    <content><![CDATA[<p>2020年6月22日 ~ 28日.</p>
+<p>开始个人小结计划</p>
+<p>学习 CSAPP </p>
+<p>追剧, 玩游戏</p>
+<a id="more"></a>
+<h2 id="时与光-个人小结计划"><a href="#时与光-个人小结计划" class="headerlink" title="时与光:个人小结计划"></a>时与光:个人小结计划</h2><p>听说每天坚持写技术博客有利于知识巩固与技能加深, 自觉没有每天坚持的能力, 想了个折中的办法: 以一周为阶段定期总结. 当然, 每月月底, 每半年, 每年也要整理记录! </p>
+<p>主要内容希望自己能够以技术学习, 生活记录为主. 反正也不会有别人看, 就写的简略且随性一些. </p>
+<p><strong>以下是每次小结的规范:</strong></p>
+<ol>
+<li>小结分为: 周记, 月记, 半年总结, 年度总结 四种, 后缀分别以<code>w,m,h,y</code>标识.</li>
+<li>命名格式例: <ol>
+<li>周记: <code>时与光W_202006-4</code> 末位数字代表本月第几周(周日为准)</li>
+<li>月记: <code>时与光M_202006</code></li>
+<li>半年记: <code>时与光H_2020上半年</code></li>
+<li>年度记: <code>时与光Y_2020年度总结</code></li>
+</ol>
+</li>
+<li>内容包括: <ol>
+<li>技术学习成果与产出总结</li>
+<li>记录生活, 如旅游 读书 观影 游戏</li>
+<li>突如其来的想法</li>
+<li>下一阶段的展望</li>
+</ol>
+</li>
+</ol>
+<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>项目地址:</p>
+<p><a href="https://github.com/luy-0/CS-APP-LABs" target="_blank" rel="noopener">https://github.com/luy-0/CS-APP-LABs</a></p>
+<p>对CSAPP这本书垂涎已久, 趁着疫情的期末大把空闲时间和两位同学组队学习CSAPP以及CMU的15-213课程. 更多学习情况参看README部分.</p>
+<p>本周着重于完成机器级别编程部分, 以及课程配套实验中的Bomb Lab, 这是一个通过 gdb 查看可执行文件的汇编代码, 并且推导出炸弹拆除的密钥. 在这几天习得了基本的汇编代码阅读能力, gdb 的基本运用能力, 对C计算机底层运算的实现有了更深的理解. </p>
+<p>这个Lab真是让人又爱又恨, 每拆除一个炸弹的时候成就感满满, 但是对着汇编代码死活瞪不出逻辑的暴躁和无奈…</p>
+<p>机器级别编程 是指 使用汇编代码完成函数操作. 主要学习内容包括 控制机器执行, 执行过程 数据的存储(数组 结构 联合) 以及其他进阶部分. 其中关于缓存区溢出, 栈攻击, 浮点代码等部分掌握的不好.</p>
+<h2 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h2><p>这一周在追《隐蔽的角落》 . 改编自紫金陈的推理小说《坏小孩》，讲述了在沿海小城三个孩子(朱朝阳, 岳普, 严良) 在景区游玩时无意间拍摄记录了一次谋杀(张东升, 秦昊饰)，想借机敲诈来筹钱，以及随后发生的一连串的故事。大结局播完豆瓣评分依旧为9.0</p>
+<p>主要是周围同学都在追哈哈哈, 感叹国产网剧真的很成熟了, 前几集导演对于节奏把握的很好, 中间叙事稍有平淡, 最后一部分还没看😂  配乐挺用心, 虽然我听不懂后现代, 但是还是有被情绪感染到. 在展现上制片组的细致程度令人感动, 例如张东升海夜追朝阳时对着脚步印, 例如试卷和板书上的题目真的是初中知识点 , 竟然有一点点对着美剧扣细节的感觉了. 演员也实力诠释, 秦昊的演技令人背后发凉, 小朋友的演技也很稳啊~ 朝阳那种说的少想得多的内向好学生非常真实, 普普的可爱是真的戏里戏外的可爱 ,就是太机灵懂事了, 牛逼的让人心疼(话说我怎么总觉得她最后要黑化一类的?) 严良其实没有很好地演出想象里的小痞子气, 缺点那种坏味.一部很优秀的国产剧, 拯救了我被言情耽改剧摧毁的信心~ (没错我就是指ssss和cql)</p>
+<p>希望结局能够依旧精彩吧! </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/XGYW%25K%7DKW%40MFX%7BQNNHBI95W.jpg" alt=""></p>
+<h2 id="玩游戏"><a href="#玩游戏" class="headerlink" title="玩游戏"></a>玩游戏</h2><p>嗯…最近又入了平安京的坑, MOBA真香:dog: 不过打了一周上了少属就没啥动力了… 快乐咸鱼佛系游戏, 竞技游戏嘛 心态放好就行了~</p>
+<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP </p>
+<p>开始刷LC</p>
+<p>控制每日游戏时长</p>
+]]></content>
+      <categories>
+        <category>时与光</category>
+      </categories>
+      <tags>
+        <tag>小结</tag>
+        <tag>周记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello_Hexo_Blog</title>
     <url>/2020/05/31/Hello-Hexo-Blog/</url>
     <content><![CDATA[<p> 第一篇博客~ 开心</p>
@@ -42,202 +93,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统之进程间通信</title>
-    <url>/2020/06/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</url>
-    <content><![CDATA[<p>本章节包括两个小节</p>
-<ol>
-<li>进程间通信 (InterProess Communicatiin,IPC)<ol>
-<li>临界区</li>
-<li>使用忙等待的策略<ol>
-<li>禁止中断 / 锁变量 / 严格轮换法 / ⭐Peterson 算法 / TSL 指令</li>
-</ol>
-</li>
-<li>规避忙等待的策略<ol>
-<li>忙等待的弊端</li>
-<li>休眠与唤醒 / 信号量 Semaphore / 互斥信号量 Mutexe / PV操作</li>
-<li>管程 Monitor / 消息传递 / 屏障</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>经典的IPC问题<ol>
-<li>生产与消费</li>
-<li>哲学家进餐</li>
-<li>读者与写者</li>
-</ol>
-</li>
-</ol>
-<a id="more"></a>
-<hr>
-<h2 id="IPC"><a href="#IPC" class="headerlink" title="IPC"></a>IPC</h2><p>在本小节会涉及到：</p>
-<ol>
-<li>什么是临界区资源<ol>
-<li>竞争</li>
-<li>保证临界区互斥的4个条件</li>
-</ol>
-</li>
-<li>互斥的策略1 (借助忙等待)<ol>
-<li>禁止中断</li>
-<li>锁变量</li>
-<li>严格轮换法</li>
-<li>⭐Peterson 算法</li>
-<li>TSL 指令</li>
-</ol>
-</li>
-<li>互斥的策略2(不使用忙等待)<ol>
-<li>上述策略的缺陷（忙等待 优先级反向）</li>
-<li>Sleep &amp; Wakeup<ol>
-<li>问题：唤醒丢失</li>
-</ol>
-</li>
-<li>⭐信号量 Semaphore<ol>
-<li>互斥信号量 Mutexe</li>
-<li>PV操作</li>
-</ol>
-</li>
-<li>管程 Monitor</li>
-<li>消息传递</li>
-<li>屏障</li>
-</ol>
-</li>
-</ol>
-<h3 id="竞争-互斥-临界区"><a href="#竞争-互斥-临界区" class="headerlink" title="竞争, 互斥, 临界区"></a>竞争, 互斥, 临界区</h3><p>两个或多个进程读写某些共享数据,而最后的结果取决于进程运行的实际精确时序, 称之为<strong>竞争条件</strong>.</p>
-<p>任何涉及到共享内存, 共享文件, 共享任何资源的情况都会引发竞争. 我们称这些共享的资源为 <strong>临界区</strong>. </p>
-<p>我们需要实现的是 <strong>互斥</strong> ,即以某种手段确保当一个进程在使用临界区时, 其他进程不能同样处于临界区中.</p>
-<p>一个好的互斥实现方案应当满足这四个条件:</p>
-<ol>
-<li><p>任意两个进程不能够同时处于临界区</p>
-<p><em>这其实是互斥的含义</em></p>
-</li>
-<li><p>不应该对CPU的速度与数量做任何假设</p>
-<p><em>方案应该普适</em></p>
-</li>
-<li><p>临界区外运行的进程不得阻塞其他进程</p>
-</li>
-<li><p>不得使进程无限期等待进入临界区</p>
-</li>
-</ol>
-<h3 id="借助忙等待的互斥策略"><a href="#借助忙等待的互斥策略" class="headerlink" title="借助忙等待的互斥策略"></a>借助忙等待的互斥策略</h3><h4 id="屏蔽中断"><a href="#屏蔽中断" class="headerlink" title="屏蔽中断"></a>屏蔽中断</h4><p>进程只有在发生中断的时候才会发生切换(比如时钟中断或IO中断), 最简单的方法就是进程A在进入临界区后立即屏蔽所有中断, 在离开之前再打开中断.这样当某进程屏蔽中断后, 不用担心CPU切换到其他的进程, 更不用担心临界区被别的进程读写.</p>
-<p>问题:</p>
-<ol>
-<li>将屏蔽中断的权力交给进程是不明智的</li>
-<li>如果是多核CPU, 单单屏蔽当前CPU并不能起到效果</li>
-</ol>
-<p>但是这个方法却适用于内核本身需要互斥时很方便, 尽管它不是一个适用于用户进程的通用机制.</p>
-<h4 id="锁变量"><a href="#锁变量" class="headerlink" title="锁变量"></a>锁变量</h4><p>使用一个共享的变量, 锁 Lock . 当Lock=1时表示正在使用拒绝其他进程访问, =0时表示空闲允许访问.</p>
-<p>但是锁变量本身就是一个临界区, 依旧存在疏漏, 例如某进程使用资源R的过程:</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> Lock==<span class="number">0</span> wait()</span><br><span class="line">Lock=<span class="number">1</span></span><br><span class="line">use(R)</span><br><span class="line">Lock=<span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>假设进程A与B, Lock 初值=1.  代码执行为A.1;(进程切换)B.1;B.2;B.3;(进程切换)A.2;A.3</p>
-<p>此时AB同时访问临界区</p>
-<h4 id="严格轮换"><a href="#严格轮换" class="headerlink" title="严格轮换"></a>严格轮换</h4><p>使用一个整型变量turn记录哪个进程可以使用资源.</p>
-<p>假设进程0与进程1试图访问资源R</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(True)&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">turn</span> != <span class="number">0</span>) wait();</span><br><span class="line">	use(R);</span><br><span class="line">	<span class="built_in">turn</span> = <span class="number">1</span>;</span><br><span class="line">	other_options();</span><br><span class="line">&#125;<span class="comment">//进程0</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(True)&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">turn</span> != <span class="number">1</span>) wait();</span><br><span class="line">	use(R);</span><br><span class="line">	<span class="built_in">turn</span> = <span class="number">0</span>;</span><br><span class="line">	other_options();</span><br><span class="line">&#125;<span class="comment">//进程1</span></span><br></pre></td></tr></table></figure>
-<p>进程0在执行到0.2时, 只有turn=0时(表示轮到进程0使用了)才会使用临界区; 否则将持续等待turn值的改变. 显然这是对CPU资源的严重浪费. 这种被称作 <strong>忙等待</strong> (busy waiting) , 用于忙等待的锁称作 <strong>自旋锁.</strong> (Spin Lock)</p>
-<p>此外, 这种机制要求进程0与进程1必须严格交替使用临界区. 进程0无法连续两次使用临界区.</p>
-<p><em>如果有三个进程, turn的值可取0,1,2即可.</em></p>
-<h4 id="Peterson解法"><a href="#Peterson解法" class="headerlink" title="Peterson解法"></a>Peterson解法</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 2				<span class="comment">// N表示可能访问临界区的进程数量</span></span></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">turn</span>;				<span class="comment">// 轮到谁了?</span></span><br><span class="line"><span class="keyword">int</span> interested[N];		<span class="comment">//表示进程是否试图访问临界区, 初值为0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enter_region</span><span class="params">(<span class="keyword">int</span> <span class="built_in">process</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> other = <span class="number">1</span>-<span class="built_in">process</span>;			<span class="comment">//表示除了本进程的其他进程, 注1</span></span><br><span class="line">	interested[<span class="built_in">process</span>]= TRUE; 		<span class="comment">//声明自己试图访问</span></span><br><span class="line">	<span class="built_in">turn</span> = <span class="built_in">process</span>;					<span class="comment">//声明轮到自己了</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">turn</span> = <span class="built_in">process</span> &amp;&amp; interested[other]== TRUE)</span><br><span class="line">    	wait();					<span class="comment">//当轮到自己但别人感兴趣的时候等待,谦让,注2</span></span><br><span class="line">    </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">leave_region</span><span class="params">(<span class="keyword">int</span> <span class="built_in">process</span>)</span></span>&#123;</span><br><span class="line">    interested[<span class="built_in">process</span>]=FALSE; <span class="comment">//离开时声明自己放弃访问</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注1: 此处仅有两个进程, 因此other是非0即1的整型. 实际中表示所有其他的进程</p>
-<p>注2: 当轮到自己且别人都没兴趣(无需谦让), 或者没轮到自己但别人感兴趣(不谦让第二次)</p>
-<h4 id="TSL指令"><a href="#TSL指令" class="headerlink" title="TSL指令"></a>TSL指令</h4><p>TSL 意为 Test and Set Lock . 这个方法需要硬件的协助. 硬件需要支持一条汇编指令TSL</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TSL REGISTER,LOCK	&#x2F;&#x2F;将LOCK变量复制到寄存器,并将LOCK设置为1</span><br><span class="line">&#x2F;&#x2F;这个操作是原子性的,复制和赋值之间不会被中断</span><br><span class="line">&#x2F;&#x2F;LOCK&#x3D;0可访问,&#x3D;1不可访问</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enter_region:</span><br><span class="line">	TSL REGISTER,LOCK	&#x2F;&#x2F;将LOCK变量复制到寄存器,并将LOCK设置为1</span><br><span class="line">	CMP REGISTER #0		&#x2F;&#x2F;(原来的LOCK是0吗?)</span><br><span class="line">	JNE enter_region	&#x2F;&#x2F;原来就是1,别的正在使用,循环等待</span><br><span class="line">	RET					&#x2F;&#x2F;原来是1, 可以使用</span><br><span class="line">	</span><br><span class="line">leave_region:</span><br><span class="line">	MOVE LOCK.#O		&#x2F;&#x2F;用完了,设置为0</span><br><span class="line">	RET</span><br></pre></td></tr></table></figure>
-<p>当LOCK为1是时候,CPU将内存总线锁住, 无法访问内存.</p>
-<h3 id="无需忙等待的互斥策略"><a href="#无需忙等待的互斥策略" class="headerlink" title="无需忙等待的互斥策略"></a>无需忙等待的互斥策略</h3><h4 id="忙等待-CPU浪费与优先级反转"><a href="#忙等待-CPU浪费与优先级反转" class="headerlink" title="忙等待:CPU浪费与优先级反转"></a>忙等待:CPU浪费与优先级反转</h4><p>以上策略都是进入先试探能否进入,若不能原地等待,直到允许位置.</p>
-<p>这种方法不仅浪费了CPU, 还会导致 <strong>优先级翻转</strong> 的问题</p>
-<p>假设两个进程H与L, 他们在调度算法中优先级分别为高or低.某一时刻L正在临界区, 此时H转为就绪态. 调度算法将CPU使用权转移至H, 但由于临界区正在使用H处于忙等待, L由于得不到CPU使用权无法离开临界区. H将一直忙等待下去.</p>
-<h4 id="生产与消费-错解-休眠唤醒"><a href="#生产与消费-错解-休眠唤醒" class="headerlink" title="生产与消费_错解:休眠唤醒"></a>生产与消费_错解:休眠唤醒</h4><p>使用sleep与wakeup来实现生产者消费者问题<strong>会产生虚假唤醒(又叫唤醒丢失), 是行不通的.</strong></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100</span></span><br><span class="line"><span class="keyword">int</span> count =<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">producer</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> item;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">while</span> (TRUE)&#123;</span><br><span class="line">       	item= produce_item();</span><br><span class="line">		<span class="keyword">if</span> (count = N)</span><br><span class="line">            sleep();</span><br><span class="line">		insert_item(item);</span><br><span class="line">		count = count+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(count == <span class="number">1</span>)wakeup(consumer);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*本意:</span></span><br><span class="line"><span class="comment">	不断生产, 如果生产满了就休眠;</span></span><br><span class="line"><span class="comment">	放入缓冲区,如果缓冲区数目为1唤醒消费者*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">consumer</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> item;</span><br><span class="line">	<span class="keyword">while</span>(TRUE)&#123;</span><br><span class="line">	<span class="keyword">if</span> (count == <span class="number">0</span>)</span><br><span class="line">        sleep();</span><br><span class="line">	item = move_item();</span><br><span class="line">	count= count <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span> (count == N<span class="number">-1</span>)wakeup(producer);</span><br><span class="line">	consume_tem(item);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*本意:</span></span><br><span class="line"><span class="comment">	不断消费, 如果消费完了就休眠;</span></span><br><span class="line"><span class="comment">	缓冲区--,如果缓冲区数目为N-1唤醒生产者*/</span></span><br></pre></td></tr></table></figure>
-<p>实际的问题:</p>
-<ul>
-<li><p>Case1: </p>
-<p>若当前count = 0, 消费者在#23 判断为应当睡眠, 但是还没有执行#24: sleep(), CPU使用权就被转移至producer; 生产者运行至#13, 认为消费者正在休眠故唤醒之, 但此时消费者并不再休眠, 故唤醒丢失;</p>
-<p>CPU使用权回到消费者, 继续执行#24 , 休眠.继续生产. 但此时count=1, 不断生产的过程中不会再次达到1唤醒消费者, 直到生产满, 生产者也陷入休眠</p>
-</li>
-<li><p>Case2:</p>
-<p>若当前count = N, 生产者在#9 判断为应当睡眠, 但是还没有执行#10: sleep(), CPU使用权就被转移至消费者; 消费者运行至#27, 认为生产者正在休眠故唤醒之, 但此时生产者并不再休眠, 故唤醒丢失;</p>
-<p>CPU使用权回到生产者, 继续执行#10 , 休眠. 继续消费. 但此时count=N-1, 不断消费的过程中不会再次达到N-1唤醒生产者, 直到消费完, 消费者也陷入休眠</p>
-</li>
-</ul>
-<h4 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> S = m;		<span class="comment">//信号量S,初值m表示最大提供m个进程使用</span></span><br><span class="line">P(S)&#123;</span><br><span class="line">	S--;</span><br><span class="line">	<span class="keyword">if</span>(S&lt;<span class="number">0</span>)</span><br><span class="line">		bloked();</span><br><span class="line">&#125;</span><br><span class="line">V(S)&#123;</span><br><span class="line">	S++;</span><br><span class="line">	<span class="keyword">if</span>(S&lt;=<span class="number">0</span>)</span><br><span class="line">		wakeup();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>第一个进程申请使用资源, S: m-&gt;m-1</li>
-<li><p>……</p>
-</li>
-<li><p>第m-1个进程申请使用资源, S: 2 -&gt; 1;</p>
-</li>
-<li>第m个进程申请使用资源, S: 1 -&gt; 0 , 正好分配完毕;</li>
-<li>第m+1个进程申请使用资源, S: 0 -&gt; -1 , 无法分配, 被阻塞, 欠1个;</li>
-<li>第m+2个进程申请使用资源, S: -1 -&gt; -2 , 无法分配, 被阻塞, 欠2个;</li>
-<li>此时某进程执行V(), S: -2 -&gt; -1, 因为S &lt;= 0, 唤醒某个进程使用资源;</li>
-<li>此时某进程执行V(), S: -1 -&gt; 0, 因为S &lt;= 0, 唤醒某个进程使用资源;</li>
-<li>此时某进程执行V(), S: 0 -&gt; 1, 因为S &gt; 0, 无需唤醒;</li>
-<li>……</li>
-</ul>
-<p>说明:</p>
-<ol>
-<li>唤醒进程中, 具体唤醒的是哪一个进程由其他算法决定</li>
-<li>当S&gt;=0时, S表示资源还可供多少进程使用; 当S&lt;=0时, S表示有多少个进程在等待资源;</li>
-<li>有些地方的算法(比如教材中) 并不支持S为负数的情况, S最低为0; 那种算法是在V操作唤醒进程后进程再次使用P操作. 基本思路是类似的.</li>
-<li>P 操作又称down操作; V操作又称up操作; 这两个字母是从荷兰语中出来的.</li>
-</ol>
-<p>​        </p>
-<h4 id="生产者与消费者-正解-PV"><a href="#生产者与消费者-正解-PV" class="headerlink" title="生产者与消费者_正解:PV"></a>生产者与消费者_正解:PV</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100			<span class="comment">//缓冲区的槽数目</span></span></span><br><span class="line"><span class="keyword">int</span> mutex = <span class="number">1</span>;			<span class="comment">//临界区最多只允许1个进程访问</span></span><br><span class="line"><span class="keyword">int</span> empty = N;			<span class="comment">//缓冲区的空槽数目</span></span><br><span class="line"><span class="keyword">int</span> full = <span class="number">0</span>;			<span class="comment">//缓冲区的的满槽数目</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">producer</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> item;</span><br><span class="line">    <span class="keyword">while</span>(True)&#123;</span><br><span class="line">        item = produce_item();		<span class="comment">//生产</span></span><br><span class="line">        down(&amp;empty);				<span class="comment">//空槽--;若无空槽不会继续执行</span></span><br><span class="line">        down(&amp;mutex);				<span class="comment">//确保缓冲区仅被1进程使用</span></span><br><span class="line">        put_item(item);				<span class="comment">//将item放入缓冲区</span></span><br><span class="line">        up(&amp;mutex);					<span class="comment">//退出缓冲区</span></span><br><span class="line">        up(&amp;full);					<span class="comment">//满槽++</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">consumer</span><span class="params">()</span></span>&#123;</span><br><span class="line"> 	<span class="keyword">int</span> item;</span><br><span class="line">    <span class="keyword">while</span>(True)&#123;</span><br><span class="line">        down(&amp;full);				<span class="comment">//满槽--;若无满槽不会继续执行</span></span><br><span class="line">        down(&amp;mutex);				<span class="comment">//确保缓冲区仅被1进程使用</span></span><br><span class="line">        item = remove_item();		<span class="comment">//将item放入缓冲区</span></span><br><span class="line">        up(&amp;mutex);					<span class="comment">//退出缓冲区</span></span><br><span class="line">        up(&amp;empty);					<span class="comment">//空槽++</span></span><br><span class="line">    &#125;</span><br><span class="line">    consume_item(item);				<span class="comment">//消费</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>记忆:</p>
-<ul>
-<li>永远是先down后up</li>
-<li><del>对于临界区(本题为缓冲区), 永远是down与up紧紧夹住</del> 这句话不全面  忽略</li>
-<li>生产者down空槽, 消费者down满槽</li>
-</ul>
-<h4 id="管程-Monitor"><a href="#管程-Monitor" class="headerlink" title="管程 Monitor"></a>管程 Monitor</h4><p>PV操作是可以完全正确地使用临界区, 但是在程序编写的过程中容易出现死锁的情况. 引入 <strong>管程</strong> 使得程序的编写更加友好.</p>
-<p>管程是一个由过程,变量,以及数据结构组成的集合. 管程提供了访问和修改临界区资源的接口, 并且只允许进程通过管程(不能绕过管程)访问这些资源, 并且在同一时间只允许一个活跃进程使用管程来读写临界区. 管程本身是一种高级同步原语, 这使得它在执行时不会被中断. 管程本身并没有新技术, 而是编程语言提供的一个更加方便编程的辅助工具.</p>
-<figure class="highlight pascal"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这是一个类Pascal语言, 原因见注1</span></span><br><span class="line"><span class="comment">//主要代码其实与 休眠唤醒 部分类似, wait &lt;-&gt; sleep, signal &lt;-&gt; wakeup</span></span><br><span class="line"><span class="comment">//但是管程不会出现唤醒丢失的问题, 原因见注2</span></span><br><span class="line">monitor ProducerConsumer	<span class="comment">//一个管程</span></span><br><span class="line">	condition full, empty;</span><br><span class="line">	integer count;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">procedure</span> <span class="title">insert</span><span class="params">(item: integer)</span>;</span>	<span class="comment">//管程中的插入函数</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> count =N <span class="keyword">then</span> wait(full);</span><br><span class="line">		insert_item(item);</span><br><span class="line">		count:=count +<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> count=<span class="number">1</span> <span class="keyword">then</span> signal(empty)	</span><br><span class="line">	<span class="keyword">end</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">remove</span>:</span>integer;			<span class="comment">//管程中的移除函数</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> count =<span class="number">0</span> <span class="keyword">then</span> wait(empty);</span><br><span class="line">		remove = remove_item;</span><br><span class="line">		count:=count-<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> count=N-<span class="number">1</span> <span class="keyword">then</span> signal(full)</span><br><span class="line">	<span class="keyword">end</span>;</span><br><span class="line">	count :=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">end</span> monitor;				<span class="comment">//管程结束</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">producer</span>;</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">while</span> true <span class="keyword">do</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">	item= produce_item;</span><br><span class="line">	ProducerConsumer.insert(item)		<span class="comment">//其他进程通过管程来访问临界区</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">consumer</span>;</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">while</span> true <span class="keyword">do</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">	item = ProducerConsumer.remove;		<span class="comment">//绕过管程而访问是不允许的</span></span><br><span class="line">	consume_item(item)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>注1: 管程是语言概念, 使用管程需要编程语言本身支持. 很遗憾C语言并不支持管程. 这也是其缺陷之一. (Java是支持管程的) </li>
-<li>注2 : 任意时刻管程中只能有一个活跃进程, 从而保证管程本身的互斥. 这一特性是由语言的编译器实现的, 从而减少出错的可能性.</li>
-<li>管程中的阻塞函数wait与signal其实与sleep, wakeup基本一致.</li>
-</ul>
-<p>此外, 无论是管程还是信号量, 都有一个问题: 它们必须要求是单核机器, 或者是拥有共享内存的多核机器. 如果是多核且这些CPUs每个都拥有自己独立的内存, 这些方法都会失效.</p>
-<h4 id="消息传递-Message-Passing"><a href="#消息传递-Message-Passing" class="headerlink" title="消息传递 Message Passing"></a>消息传递 Message Passing</h4><p><em>不是重点</em></p>
-<p>如果没有共享内存, 甚至不在同一台机器上(例如互联网抢票) 上述利用共享内存的方法均失效. 此时使用消息传递来保证临界区的互斥.</p>
-<p>消息传递的实现中需要做到:</p>
-<ul>
-<li>应答机制来避免消息的丢失</li>
-<li>将消息的顺序复原成正确的顺序</li>
-<li>避免消息的混淆</li>
-<li>消息真实性的认证</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100</span></span><br><span class="line">#使用消息传递实现生产-消费</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">producer</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> item;</span><br><span class="line">	message m;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(TRUE)&#123;</span><br><span class="line">		item= produce_item();</span><br><span class="line">		receive(consumer,&amp;m);</span><br><span class="line">		<span class="function">build <span class="title">message</span><span class="params">(&amp;m, item)</span></span>;</span><br><span class="line">		send(consumer, &amp;m);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">consumer</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> item,i;</span><br><span class="line">	message m;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;N; i++) send(producer,&amp;m);</span><br><span class="line">	<span class="keyword">while</span>(TrUe)&#123;</span><br><span class="line">		receive(producer, &amp;m);</span><br><span class="line">		item= extract_ item(&amp;m);</span><br><span class="line">		send(producer, &amp;m);</span><br><span class="line">		<span class="function">consume <span class="title">item</span><span class="params">(item)</span></span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="屏障-Barriers"><a href="#屏障-Barriers" class="headerlink" title="屏障 Barriers"></a>屏障 Barriers</h4><p>将不同的进程划分为同一个组, 在某处设置一处屏障, 只有当组内的所有进程都达到了屏障才可以继续执行. 这种方法使得进程的快慢达到了一致.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E5%B1%8F%E9%9A%9C.png" alt=""></p>
-<hr>
-<h2 id="Classical-IPC-Problems"><a href="#Classical-IPC-Problems" class="headerlink" title="Classical IPC Problems"></a>Classical IPC Problems</h2><p>本小节将涉及到几个常见IPC模型：</p>
-<ol>
-<li>进餐的哲学家</li>
-<li>读者与写者</li>
-</ol>
-<p>此外生产者消费者问题见上.</p>
-<h3 id="进餐的哲学家"><a href="#进餐的哲学家" class="headerlink" title="进餐的哲学家"></a>进餐的哲学家</h3><p>哲学家吃了想想了吃, 每个哲学家要吃饭必须拥有两把叉子.不能同时拿起两把叉子.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E5%93%B2%E5%AD%A6%E5%AE%B6.png" alt=""></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N		5</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEFT 	(i+N-1)%N</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RIGht	(i+1)%N</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> THINKING 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> HUNgrY 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EATING</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> semaphore;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> state[N];				<span class="comment">//表示每个哲学家的当前状态</span></span><br><span class="line">semaphore mutex = <span class="number">1</span>;		<span class="comment">//每次只能都有一个哲学家处于判断状态</span></span><br><span class="line">semaphore s[N];				<span class="comment">//每个哲学家一个信号量</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">philosopher</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(TRUE)&#123;</span><br><span class="line">		think();</span><br><span class="line">		<span class="function">take <span class="title">forks</span><span class="params">(i)</span></span>;</span><br><span class="line">		eat();</span><br><span class="line">		<span class="function">put_ <span class="title">forks</span><span class="params">(i)</span></span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">take_forks</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    down(&amp;mutex);			<span class="comment">//本哲学家开始判断</span></span><br><span class="line">	state[i]=HUNGRY;		<span class="comment">//声明自己饿了</span></span><br><span class="line">	test(i);				<span class="comment">//测试自己</span></span><br><span class="line">	up(&amp;mutex);				<span class="comment">//判断结束</span></span><br><span class="line">	down(&amp;s[i]);			<span class="comment">//如果我开吃了,信号量复原;如果我没在吃,陷入阻塞</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">put_forks</span><span class="params">(i)</span></span>&#123;</span><br><span class="line">	down(&amp;mutex);			<span class="comment">//本哲学家开始判断</span></span><br><span class="line">	state[i]= THINKING;		<span class="comment">//我开始思考</span></span><br><span class="line">	test(LEFT);				<span class="comment">//判断左边的哲学家</span></span><br><span class="line">	test(RIGHT);</span><br><span class="line">	up(&amp;mutex);    			<span class="comment">//判断结束</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(i)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (state[i]== HUNGRY &amp;&amp; state[LEFT]!= EATING &amp; state[RIGHT]!= EATING)&#123;</span><br><span class="line">        state[i] = EATING;</span><br><span class="line">        up(&amp;s[i]);</span><br><span class="line">    &#125;	<span class="comment">//如果当前哲学家饿了且左右不在进食: 本哲学家吃且S++</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="读者与写者"><a href="#读者与写者" class="headerlink" title="读者与写者"></a>读者与写者</h3><p>对于同一个文件, 读者与读者可以共同访问, 但是写者不能与其他写着或读者共同访问.</p>
-<p>读者优先的代码:</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> count=<span class="number">0</span>;			<span class="comment">//当前读者数量</span></span><br><span class="line">semaphore mutex=<span class="number">1</span>;		<span class="comment">//保护count的互斥</span></span><br><span class="line">semaphore rw=<span class="number">1</span>;			<span class="comment">//保证读者写者互斥访问</span></span><br><span class="line"></span><br><span class="line">writer()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;			<span class="comment">//写者只需要与其他任意进程互斥</span></span><br><span class="line">		P(rw);</span><br><span class="line">		writing;</span><br><span class="line">		v(rw);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">reader()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		P(mutex);		<span class="comment">//互斥:count</span></span><br><span class="line">		<span class="keyword">if</span>(count==<span class="number">0</span>)	<span class="comment">//如果当前是第一个读者,互斥:rw</span></span><br><span class="line">			P(rw);</span><br><span class="line">		count++;		<span class="comment">//count++</span></span><br><span class="line">		V(mutex);		<span class="comment">//互斥解除:count</span></span><br><span class="line">		reading;</span><br><span class="line">		P(mutex);		<span class="comment">//互斥:count</span></span><br><span class="line">		count--;		<span class="comment">//count--</span></span><br><span class="line">		<span class="keyword">if</span>(count==<span class="number">0</span>)	<span class="comment">//如果当前是最后一个读者,互斥解除:rw</span></span><br><span class="line">			v(rw);</span><br><span class="line">		V(mutex);		<span class="comment">//互斥解除:count</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>写者优先的代码</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> ReadCount=<span class="number">0</span>, WriteCount=<span class="number">0</span>;			<span class="comment">//当前读写数量</span></span><br><span class="line">semaphore mutex_rc=<span class="number">1</span>x, mutex_wc=<span class="number">1</span>y;		<span class="comment">//保护count的互斥</span></span><br><span class="line">semaphore rr=<span class="number">1</span>rs,ww=<span class="number">1</span>ws;			<span class="comment">//保证读者写者互斥访问</span></span><br><span class="line"></span><br><span class="line">writer()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;			</span><br><span class="line">        P(mutex_wc);			<span class="comment">//互斥wc</span></span><br><span class="line">        <span class="keyword">if</span>(WriteCount == <span class="number">0</span>)		<span class="comment">//如果是第一个写者</span></span><br><span class="line">            P(rr);				<span class="comment">//不允许其他读者进入</span></span><br><span class="line">        WriteCount++;</span><br><span class="line">        V(mutex_wc);			<span class="comment">//互斥解除:wc</span></span><br><span class="line">        </span><br><span class="line">		P(ww);					<span class="comment">//互斥其他写者</span></span><br><span class="line">		writing;</span><br><span class="line">		v(ww);					<span class="comment">//互斥解除:其他写者</span></span><br><span class="line">        </span><br><span class="line">        P(mutex_wc);			<span class="comment">//互斥wc</span></span><br><span class="line">        WriteCount--;</span><br><span class="line">        <span class="keyword">if</span>(WriteCount == <span class="number">0</span>)		<span class="comment">//如果是最后的写者</span></span><br><span class="line">            V(rr);				<span class="comment">//互斥解除:读者</span></span><br><span class="line">        V(mutex_wc);			<span class="comment">//互斥解除:wc</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">reader()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P(z);</span><br><span class="line">        P(rr);				<span class="comment">//</span></span><br><span class="line">		P(mutex_rc);		<span class="comment">//互斥:rc</span></span><br><span class="line">		<span class="keyword">if</span>(ReadCount==<span class="number">0</span>)	<span class="comment">//如果当前是第一个读者,互斥写者:ww</span></span><br><span class="line">			P(ww);</span><br><span class="line">		ReadCount++;		<span class="comment">//rc++</span></span><br><span class="line">		V(mutex_rc);		<span class="comment">//互斥解除:rc</span></span><br><span class="line">        V(rr);				<span class="comment">//</span></span><br><span class="line">        V(z);</span><br><span class="line">		reading;</span><br><span class="line">		P(mutex_rc);		<span class="comment">//互斥:rc</span></span><br><span class="line">		ReadCount--;		<span class="comment">//rc--</span></span><br><span class="line">		<span class="keyword">if</span>(ReadCount==<span class="number">0</span>)	<span class="comment">//如果当前是最后一个读者,互斥解除:写者ww</span></span><br><span class="line">			v(ww);</span><br><span class="line">		V(mutex_rc);		<span class="comment">//互斥解除:rc</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>写者优先没完全看懂</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>专业课</category>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
@@ -753,6 +608,202 @@ T_0\\
       </tags>
   </entry>
   <entry>
+    <title>操作系统之进程间通信</title>
+    <url>/2020/06/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</url>
+    <content><![CDATA[<p>本章节包括两个小节</p>
+<ol>
+<li>进程间通信 (InterProess Communicatiin,IPC)<ol>
+<li>临界区</li>
+<li>使用忙等待的策略<ol>
+<li>禁止中断 / 锁变量 / 严格轮换法 / ⭐Peterson 算法 / TSL 指令</li>
+</ol>
+</li>
+<li>规避忙等待的策略<ol>
+<li>忙等待的弊端</li>
+<li>休眠与唤醒 / 信号量 Semaphore / 互斥信号量 Mutexe / PV操作</li>
+<li>管程 Monitor / 消息传递 / 屏障</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>经典的IPC问题<ol>
+<li>生产与消费</li>
+<li>哲学家进餐</li>
+<li>读者与写者</li>
+</ol>
+</li>
+</ol>
+<a id="more"></a>
+<hr>
+<h2 id="IPC"><a href="#IPC" class="headerlink" title="IPC"></a>IPC</h2><p>在本小节会涉及到：</p>
+<ol>
+<li>什么是临界区资源<ol>
+<li>竞争</li>
+<li>保证临界区互斥的4个条件</li>
+</ol>
+</li>
+<li>互斥的策略1 (借助忙等待)<ol>
+<li>禁止中断</li>
+<li>锁变量</li>
+<li>严格轮换法</li>
+<li>⭐Peterson 算法</li>
+<li>TSL 指令</li>
+</ol>
+</li>
+<li>互斥的策略2(不使用忙等待)<ol>
+<li>上述策略的缺陷（忙等待 优先级反向）</li>
+<li>Sleep &amp; Wakeup<ol>
+<li>问题：唤醒丢失</li>
+</ol>
+</li>
+<li>⭐信号量 Semaphore<ol>
+<li>互斥信号量 Mutexe</li>
+<li>PV操作</li>
+</ol>
+</li>
+<li>管程 Monitor</li>
+<li>消息传递</li>
+<li>屏障</li>
+</ol>
+</li>
+</ol>
+<h3 id="竞争-互斥-临界区"><a href="#竞争-互斥-临界区" class="headerlink" title="竞争, 互斥, 临界区"></a>竞争, 互斥, 临界区</h3><p>两个或多个进程读写某些共享数据,而最后的结果取决于进程运行的实际精确时序, 称之为<strong>竞争条件</strong>.</p>
+<p>任何涉及到共享内存, 共享文件, 共享任何资源的情况都会引发竞争. 我们称这些共享的资源为 <strong>临界区</strong>. </p>
+<p>我们需要实现的是 <strong>互斥</strong> ,即以某种手段确保当一个进程在使用临界区时, 其他进程不能同样处于临界区中.</p>
+<p>一个好的互斥实现方案应当满足这四个条件:</p>
+<ol>
+<li><p>任意两个进程不能够同时处于临界区</p>
+<p><em>这其实是互斥的含义</em></p>
+</li>
+<li><p>不应该对CPU的速度与数量做任何假设</p>
+<p><em>方案应该普适</em></p>
+</li>
+<li><p>临界区外运行的进程不得阻塞其他进程</p>
+</li>
+<li><p>不得使进程无限期等待进入临界区</p>
+</li>
+</ol>
+<h3 id="借助忙等待的互斥策略"><a href="#借助忙等待的互斥策略" class="headerlink" title="借助忙等待的互斥策略"></a>借助忙等待的互斥策略</h3><h4 id="屏蔽中断"><a href="#屏蔽中断" class="headerlink" title="屏蔽中断"></a>屏蔽中断</h4><p>进程只有在发生中断的时候才会发生切换(比如时钟中断或IO中断), 最简单的方法就是进程A在进入临界区后立即屏蔽所有中断, 在离开之前再打开中断.这样当某进程屏蔽中断后, 不用担心CPU切换到其他的进程, 更不用担心临界区被别的进程读写.</p>
+<p>问题:</p>
+<ol>
+<li>将屏蔽中断的权力交给进程是不明智的</li>
+<li>如果是多核CPU, 单单屏蔽当前CPU并不能起到效果</li>
+</ol>
+<p>但是这个方法却适用于内核本身需要互斥时很方便, 尽管它不是一个适用于用户进程的通用机制.</p>
+<h4 id="锁变量"><a href="#锁变量" class="headerlink" title="锁变量"></a>锁变量</h4><p>使用一个共享的变量, 锁 Lock . 当Lock=1时表示正在使用拒绝其他进程访问, =0时表示空闲允许访问.</p>
+<p>但是锁变量本身就是一个临界区, 依旧存在疏漏, 例如某进程使用资源R的过程:</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> Lock==<span class="number">0</span> wait()</span><br><span class="line">Lock=<span class="number">1</span></span><br><span class="line">use(R)</span><br><span class="line">Lock=<span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>假设进程A与B, Lock 初值=1.  代码执行为A.1;(进程切换)B.1;B.2;B.3;(进程切换)A.2;A.3</p>
+<p>此时AB同时访问临界区</p>
+<h4 id="严格轮换"><a href="#严格轮换" class="headerlink" title="严格轮换"></a>严格轮换</h4><p>使用一个整型变量turn记录哪个进程可以使用资源.</p>
+<p>假设进程0与进程1试图访问资源R</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(True)&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">turn</span> != <span class="number">0</span>) wait();</span><br><span class="line">	use(R);</span><br><span class="line">	<span class="built_in">turn</span> = <span class="number">1</span>;</span><br><span class="line">	other_options();</span><br><span class="line">&#125;<span class="comment">//进程0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(True)&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">turn</span> != <span class="number">1</span>) wait();</span><br><span class="line">	use(R);</span><br><span class="line">	<span class="built_in">turn</span> = <span class="number">0</span>;</span><br><span class="line">	other_options();</span><br><span class="line">&#125;<span class="comment">//进程1</span></span><br></pre></td></tr></table></figure>
+<p>进程0在执行到0.2时, 只有turn=0时(表示轮到进程0使用了)才会使用临界区; 否则将持续等待turn值的改变. 显然这是对CPU资源的严重浪费. 这种被称作 <strong>忙等待</strong> (busy waiting) , 用于忙等待的锁称作 <strong>自旋锁.</strong> (Spin Lock)</p>
+<p>此外, 这种机制要求进程0与进程1必须严格交替使用临界区. 进程0无法连续两次使用临界区.</p>
+<p><em>如果有三个进程, turn的值可取0,1,2即可.</em></p>
+<h4 id="Peterson解法"><a href="#Peterson解法" class="headerlink" title="Peterson解法"></a>Peterson解法</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 2				<span class="comment">// N表示可能访问临界区的进程数量</span></span></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">turn</span>;				<span class="comment">// 轮到谁了?</span></span><br><span class="line"><span class="keyword">int</span> interested[N];		<span class="comment">//表示进程是否试图访问临界区, 初值为0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enter_region</span><span class="params">(<span class="keyword">int</span> <span class="built_in">process</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> other = <span class="number">1</span>-<span class="built_in">process</span>;			<span class="comment">//表示除了本进程的其他进程, 注1</span></span><br><span class="line">	interested[<span class="built_in">process</span>]= TRUE; 		<span class="comment">//声明自己试图访问</span></span><br><span class="line">	<span class="built_in">turn</span> = <span class="built_in">process</span>;					<span class="comment">//声明轮到自己了</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">turn</span> = <span class="built_in">process</span> &amp;&amp; interested[other]== TRUE)</span><br><span class="line">    	wait();					<span class="comment">//当轮到自己但别人感兴趣的时候等待,谦让,注2</span></span><br><span class="line">    </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">leave_region</span><span class="params">(<span class="keyword">int</span> <span class="built_in">process</span>)</span></span>&#123;</span><br><span class="line">    interested[<span class="built_in">process</span>]=FALSE; <span class="comment">//离开时声明自己放弃访问</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注1: 此处仅有两个进程, 因此other是非0即1的整型. 实际中表示所有其他的进程</p>
+<p>注2: 当轮到自己且别人都没兴趣(无需谦让), 或者没轮到自己但别人感兴趣(不谦让第二次)</p>
+<h4 id="TSL指令"><a href="#TSL指令" class="headerlink" title="TSL指令"></a>TSL指令</h4><p>TSL 意为 Test and Set Lock . 这个方法需要硬件的协助. 硬件需要支持一条汇编指令TSL</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TSL REGISTER,LOCK	&#x2F;&#x2F;将LOCK变量复制到寄存器,并将LOCK设置为1</span><br><span class="line">&#x2F;&#x2F;这个操作是原子性的,复制和赋值之间不会被中断</span><br><span class="line">&#x2F;&#x2F;LOCK&#x3D;0可访问,&#x3D;1不可访问</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enter_region:</span><br><span class="line">	TSL REGISTER,LOCK	&#x2F;&#x2F;将LOCK变量复制到寄存器,并将LOCK设置为1</span><br><span class="line">	CMP REGISTER #0		&#x2F;&#x2F;(原来的LOCK是0吗?)</span><br><span class="line">	JNE enter_region	&#x2F;&#x2F;原来就是1,别的正在使用,循环等待</span><br><span class="line">	RET					&#x2F;&#x2F;原来是1, 可以使用</span><br><span class="line">	</span><br><span class="line">leave_region:</span><br><span class="line">	MOVE LOCK.#O		&#x2F;&#x2F;用完了,设置为0</span><br><span class="line">	RET</span><br></pre></td></tr></table></figure>
+<p>当LOCK为1是时候,CPU将内存总线锁住, 无法访问内存.</p>
+<h3 id="无需忙等待的互斥策略"><a href="#无需忙等待的互斥策略" class="headerlink" title="无需忙等待的互斥策略"></a>无需忙等待的互斥策略</h3><h4 id="忙等待-CPU浪费与优先级反转"><a href="#忙等待-CPU浪费与优先级反转" class="headerlink" title="忙等待:CPU浪费与优先级反转"></a>忙等待:CPU浪费与优先级反转</h4><p>以上策略都是进入先试探能否进入,若不能原地等待,直到允许位置.</p>
+<p>这种方法不仅浪费了CPU, 还会导致 <strong>优先级翻转</strong> 的问题</p>
+<p>假设两个进程H与L, 他们在调度算法中优先级分别为高or低.某一时刻L正在临界区, 此时H转为就绪态. 调度算法将CPU使用权转移至H, 但由于临界区正在使用H处于忙等待, L由于得不到CPU使用权无法离开临界区. H将一直忙等待下去.</p>
+<h4 id="生产与消费-错解-休眠唤醒"><a href="#生产与消费-错解-休眠唤醒" class="headerlink" title="生产与消费_错解:休眠唤醒"></a>生产与消费_错解:休眠唤醒</h4><p>使用sleep与wakeup来实现生产者消费者问题<strong>会产生虚假唤醒(又叫唤醒丢失), 是行不通的.</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100</span></span><br><span class="line"><span class="keyword">int</span> count =<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">producer</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> item;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">while</span> (TRUE)&#123;</span><br><span class="line">       	item= produce_item();</span><br><span class="line">		<span class="keyword">if</span> (count = N)</span><br><span class="line">            sleep();</span><br><span class="line">		insert_item(item);</span><br><span class="line">		count = count+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(count == <span class="number">1</span>)wakeup(consumer);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*本意:</span></span><br><span class="line"><span class="comment">	不断生产, 如果生产满了就休眠;</span></span><br><span class="line"><span class="comment">	放入缓冲区,如果缓冲区数目为1唤醒消费者*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">consumer</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> item;</span><br><span class="line">	<span class="keyword">while</span>(TRUE)&#123;</span><br><span class="line">	<span class="keyword">if</span> (count == <span class="number">0</span>)</span><br><span class="line">        sleep();</span><br><span class="line">	item = move_item();</span><br><span class="line">	count= count <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span> (count == N<span class="number">-1</span>)wakeup(producer);</span><br><span class="line">	consume_tem(item);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*本意:</span></span><br><span class="line"><span class="comment">	不断消费, 如果消费完了就休眠;</span></span><br><span class="line"><span class="comment">	缓冲区--,如果缓冲区数目为N-1唤醒生产者*/</span></span><br></pre></td></tr></table></figure>
+<p>实际的问题:</p>
+<ul>
+<li><p>Case1: </p>
+<p>若当前count = 0, 消费者在#23 判断为应当睡眠, 但是还没有执行#24: sleep(), CPU使用权就被转移至producer; 生产者运行至#13, 认为消费者正在休眠故唤醒之, 但此时消费者并不再休眠, 故唤醒丢失;</p>
+<p>CPU使用权回到消费者, 继续执行#24 , 休眠.继续生产. 但此时count=1, 不断生产的过程中不会再次达到1唤醒消费者, 直到生产满, 生产者也陷入休眠</p>
+</li>
+<li><p>Case2:</p>
+<p>若当前count = N, 生产者在#9 判断为应当睡眠, 但是还没有执行#10: sleep(), CPU使用权就被转移至消费者; 消费者运行至#27, 认为生产者正在休眠故唤醒之, 但此时生产者并不再休眠, 故唤醒丢失;</p>
+<p>CPU使用权回到生产者, 继续执行#10 , 休眠. 继续消费. 但此时count=N-1, 不断消费的过程中不会再次达到N-1唤醒生产者, 直到消费完, 消费者也陷入休眠</p>
+</li>
+</ul>
+<h4 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> S = m;		<span class="comment">//信号量S,初值m表示最大提供m个进程使用</span></span><br><span class="line">P(S)&#123;</span><br><span class="line">	S--;</span><br><span class="line">	<span class="keyword">if</span>(S&lt;<span class="number">0</span>)</span><br><span class="line">		bloked();</span><br><span class="line">&#125;</span><br><span class="line">V(S)&#123;</span><br><span class="line">	S++;</span><br><span class="line">	<span class="keyword">if</span>(S&lt;=<span class="number">0</span>)</span><br><span class="line">		wakeup();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第一个进程申请使用资源, S: m-&gt;m-1</li>
+<li><p>……</p>
+</li>
+<li><p>第m-1个进程申请使用资源, S: 2 -&gt; 1;</p>
+</li>
+<li>第m个进程申请使用资源, S: 1 -&gt; 0 , 正好分配完毕;</li>
+<li>第m+1个进程申请使用资源, S: 0 -&gt; -1 , 无法分配, 被阻塞, 欠1个;</li>
+<li>第m+2个进程申请使用资源, S: -1 -&gt; -2 , 无法分配, 被阻塞, 欠2个;</li>
+<li>此时某进程执行V(), S: -2 -&gt; -1, 因为S &lt;= 0, 唤醒某个进程使用资源;</li>
+<li>此时某进程执行V(), S: -1 -&gt; 0, 因为S &lt;= 0, 唤醒某个进程使用资源;</li>
+<li>此时某进程执行V(), S: 0 -&gt; 1, 因为S &gt; 0, 无需唤醒;</li>
+<li>……</li>
+</ul>
+<p>说明:</p>
+<ol>
+<li>唤醒进程中, 具体唤醒的是哪一个进程由其他算法决定</li>
+<li>当S&gt;=0时, S表示资源还可供多少进程使用; 当S&lt;=0时, S表示有多少个进程在等待资源;</li>
+<li>有些地方的算法(比如教材中) 并不支持S为负数的情况, S最低为0; 那种算法是在V操作唤醒进程后进程再次使用P操作. 基本思路是类似的.</li>
+<li>P 操作又称down操作; V操作又称up操作; 这两个字母是从荷兰语中出来的.</li>
+</ol>
+<p>​        </p>
+<h4 id="生产者与消费者-正解-PV"><a href="#生产者与消费者-正解-PV" class="headerlink" title="生产者与消费者_正解:PV"></a>生产者与消费者_正解:PV</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100			<span class="comment">//缓冲区的槽数目</span></span></span><br><span class="line"><span class="keyword">int</span> mutex = <span class="number">1</span>;			<span class="comment">//临界区最多只允许1个进程访问</span></span><br><span class="line"><span class="keyword">int</span> empty = N;			<span class="comment">//缓冲区的空槽数目</span></span><br><span class="line"><span class="keyword">int</span> full = <span class="number">0</span>;			<span class="comment">//缓冲区的的满槽数目</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">producer</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> item;</span><br><span class="line">    <span class="keyword">while</span>(True)&#123;</span><br><span class="line">        item = produce_item();		<span class="comment">//生产</span></span><br><span class="line">        down(&amp;empty);				<span class="comment">//空槽--;若无空槽不会继续执行</span></span><br><span class="line">        down(&amp;mutex);				<span class="comment">//确保缓冲区仅被1进程使用</span></span><br><span class="line">        put_item(item);				<span class="comment">//将item放入缓冲区</span></span><br><span class="line">        up(&amp;mutex);					<span class="comment">//退出缓冲区</span></span><br><span class="line">        up(&amp;full);					<span class="comment">//满槽++</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">consumer</span><span class="params">()</span></span>&#123;</span><br><span class="line"> 	<span class="keyword">int</span> item;</span><br><span class="line">    <span class="keyword">while</span>(True)&#123;</span><br><span class="line">        down(&amp;full);				<span class="comment">//满槽--;若无满槽不会继续执行</span></span><br><span class="line">        down(&amp;mutex);				<span class="comment">//确保缓冲区仅被1进程使用</span></span><br><span class="line">        item = remove_item();		<span class="comment">//将item放入缓冲区</span></span><br><span class="line">        up(&amp;mutex);					<span class="comment">//退出缓冲区</span></span><br><span class="line">        up(&amp;empty);					<span class="comment">//空槽++</span></span><br><span class="line">    &#125;</span><br><span class="line">    consume_item(item);				<span class="comment">//消费</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>记忆:</p>
+<ul>
+<li>永远是先down后up</li>
+<li><del>对于临界区(本题为缓冲区), 永远是down与up紧紧夹住</del> 这句话不全面  忽略</li>
+<li>生产者down空槽, 消费者down满槽</li>
+</ul>
+<h4 id="管程-Monitor"><a href="#管程-Monitor" class="headerlink" title="管程 Monitor"></a>管程 Monitor</h4><p>PV操作是可以完全正确地使用临界区, 但是在程序编写的过程中容易出现死锁的情况. 引入 <strong>管程</strong> 使得程序的编写更加友好.</p>
+<p>管程是一个由过程,变量,以及数据结构组成的集合. 管程提供了访问和修改临界区资源的接口, 并且只允许进程通过管程(不能绕过管程)访问这些资源, 并且在同一时间只允许一个活跃进程使用管程来读写临界区. 管程本身是一种高级同步原语, 这使得它在执行时不会被中断. 管程本身并没有新技术, 而是编程语言提供的一个更加方便编程的辅助工具.</p>
+<figure class="highlight pascal"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这是一个类Pascal语言, 原因见注1</span></span><br><span class="line"><span class="comment">//主要代码其实与 休眠唤醒 部分类似, wait &lt;-&gt; sleep, signal &lt;-&gt; wakeup</span></span><br><span class="line"><span class="comment">//但是管程不会出现唤醒丢失的问题, 原因见注2</span></span><br><span class="line">monitor ProducerConsumer	<span class="comment">//一个管程</span></span><br><span class="line">	condition full, empty;</span><br><span class="line">	integer count;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">procedure</span> <span class="title">insert</span><span class="params">(item: integer)</span>;</span>	<span class="comment">//管程中的插入函数</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> count =N <span class="keyword">then</span> wait(full);</span><br><span class="line">		insert_item(item);</span><br><span class="line">		count:=count +<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> count=<span class="number">1</span> <span class="keyword">then</span> signal(empty)	</span><br><span class="line">	<span class="keyword">end</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">remove</span>:</span>integer;			<span class="comment">//管程中的移除函数</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> count =<span class="number">0</span> <span class="keyword">then</span> wait(empty);</span><br><span class="line">		remove = remove_item;</span><br><span class="line">		count:=count-<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> count=N-<span class="number">1</span> <span class="keyword">then</span> signal(full)</span><br><span class="line">	<span class="keyword">end</span>;</span><br><span class="line">	count :=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">end</span> monitor;				<span class="comment">//管程结束</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">producer</span>;</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">while</span> true <span class="keyword">do</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">	item= produce_item;</span><br><span class="line">	ProducerConsumer.insert(item)		<span class="comment">//其他进程通过管程来访问临界区</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">consumer</span>;</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">while</span> true <span class="keyword">do</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">	item = ProducerConsumer.remove;		<span class="comment">//绕过管程而访问是不允许的</span></span><br><span class="line">	consume_item(item)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注1: 管程是语言概念, 使用管程需要编程语言本身支持. 很遗憾C语言并不支持管程. 这也是其缺陷之一. (Java是支持管程的) </li>
+<li>注2 : 任意时刻管程中只能有一个活跃进程, 从而保证管程本身的互斥. 这一特性是由语言的编译器实现的, 从而减少出错的可能性.</li>
+<li>管程中的阻塞函数wait与signal其实与sleep, wakeup基本一致.</li>
+</ul>
+<p>此外, 无论是管程还是信号量, 都有一个问题: 它们必须要求是单核机器, 或者是拥有共享内存的多核机器. 如果是多核且这些CPUs每个都拥有自己独立的内存, 这些方法都会失效.</p>
+<h4 id="消息传递-Message-Passing"><a href="#消息传递-Message-Passing" class="headerlink" title="消息传递 Message Passing"></a>消息传递 Message Passing</h4><p><em>不是重点</em></p>
+<p>如果没有共享内存, 甚至不在同一台机器上(例如互联网抢票) 上述利用共享内存的方法均失效. 此时使用消息传递来保证临界区的互斥.</p>
+<p>消息传递的实现中需要做到:</p>
+<ul>
+<li>应答机制来避免消息的丢失</li>
+<li>将消息的顺序复原成正确的顺序</li>
+<li>避免消息的混淆</li>
+<li>消息真实性的认证</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100</span></span><br><span class="line">#使用消息传递实现生产-消费</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">producer</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> item;</span><br><span class="line">	message m;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(TRUE)&#123;</span><br><span class="line">		item= produce_item();</span><br><span class="line">		receive(consumer,&amp;m);</span><br><span class="line">		<span class="function">build <span class="title">message</span><span class="params">(&amp;m, item)</span></span>;</span><br><span class="line">		send(consumer, &amp;m);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">consumer</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> item,i;</span><br><span class="line">	message m;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;N; i++) send(producer,&amp;m);</span><br><span class="line">	<span class="keyword">while</span>(TrUe)&#123;</span><br><span class="line">		receive(producer, &amp;m);</span><br><span class="line">		item= extract_ item(&amp;m);</span><br><span class="line">		send(producer, &amp;m);</span><br><span class="line">		<span class="function">consume <span class="title">item</span><span class="params">(item)</span></span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="屏障-Barriers"><a href="#屏障-Barriers" class="headerlink" title="屏障 Barriers"></a>屏障 Barriers</h4><p>将不同的进程划分为同一个组, 在某处设置一处屏障, 只有当组内的所有进程都达到了屏障才可以继续执行. 这种方法使得进程的快慢达到了一致.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E5%B1%8F%E9%9A%9C.png" alt=""></p>
+<hr>
+<h2 id="Classical-IPC-Problems"><a href="#Classical-IPC-Problems" class="headerlink" title="Classical IPC Problems"></a>Classical IPC Problems</h2><p>本小节将涉及到几个常见IPC模型：</p>
+<ol>
+<li>进餐的哲学家</li>
+<li>读者与写者</li>
+</ol>
+<p>此外生产者消费者问题见上.</p>
+<h3 id="进餐的哲学家"><a href="#进餐的哲学家" class="headerlink" title="进餐的哲学家"></a>进餐的哲学家</h3><p>哲学家吃了想想了吃, 每个哲学家要吃饭必须拥有两把叉子.不能同时拿起两把叉子.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E5%93%B2%E5%AD%A6%E5%AE%B6.png" alt=""></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N		5</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEFT 	(i+N-1)%N</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RIGht	(i+1)%N</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> THINKING 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> HUNgrY 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EATING</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> semaphore;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> state[N];				<span class="comment">//表示每个哲学家的当前状态</span></span><br><span class="line">semaphore mutex = <span class="number">1</span>;		<span class="comment">//每次只能都有一个哲学家处于判断状态</span></span><br><span class="line">semaphore s[N];				<span class="comment">//每个哲学家一个信号量</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">philosopher</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(TRUE)&#123;</span><br><span class="line">		think();</span><br><span class="line">		<span class="function">take <span class="title">forks</span><span class="params">(i)</span></span>;</span><br><span class="line">		eat();</span><br><span class="line">		<span class="function">put_ <span class="title">forks</span><span class="params">(i)</span></span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">take_forks</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    down(&amp;mutex);			<span class="comment">//本哲学家开始判断</span></span><br><span class="line">	state[i]=HUNGRY;		<span class="comment">//声明自己饿了</span></span><br><span class="line">	test(i);				<span class="comment">//测试自己</span></span><br><span class="line">	up(&amp;mutex);				<span class="comment">//判断结束</span></span><br><span class="line">	down(&amp;s[i]);			<span class="comment">//如果我开吃了,信号量复原;如果我没在吃,陷入阻塞</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">put_forks</span><span class="params">(i)</span></span>&#123;</span><br><span class="line">	down(&amp;mutex);			<span class="comment">//本哲学家开始判断</span></span><br><span class="line">	state[i]= THINKING;		<span class="comment">//我开始思考</span></span><br><span class="line">	test(LEFT);				<span class="comment">//判断左边的哲学家</span></span><br><span class="line">	test(RIGHT);</span><br><span class="line">	up(&amp;mutex);    			<span class="comment">//判断结束</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(i)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (state[i]== HUNGRY &amp;&amp; state[LEFT]!= EATING &amp; state[RIGHT]!= EATING)&#123;</span><br><span class="line">        state[i] = EATING;</span><br><span class="line">        up(&amp;s[i]);</span><br><span class="line">    &#125;	<span class="comment">//如果当前哲学家饿了且左右不在进食: 本哲学家吃且S++</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="读者与写者"><a href="#读者与写者" class="headerlink" title="读者与写者"></a>读者与写者</h3><p>对于同一个文件, 读者与读者可以共同访问, 但是写者不能与其他写着或读者共同访问.</p>
+<p>读者优先的代码:</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> count=<span class="number">0</span>;			<span class="comment">//当前读者数量</span></span><br><span class="line">semaphore mutex=<span class="number">1</span>;		<span class="comment">//保护count的互斥</span></span><br><span class="line">semaphore rw=<span class="number">1</span>;			<span class="comment">//保证读者写者互斥访问</span></span><br><span class="line"></span><br><span class="line">writer()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;			<span class="comment">//写者只需要与其他任意进程互斥</span></span><br><span class="line">		P(rw);</span><br><span class="line">		writing;</span><br><span class="line">		v(rw);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">reader()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		P(mutex);		<span class="comment">//互斥:count</span></span><br><span class="line">		<span class="keyword">if</span>(count==<span class="number">0</span>)	<span class="comment">//如果当前是第一个读者,互斥:rw</span></span><br><span class="line">			P(rw);</span><br><span class="line">		count++;		<span class="comment">//count++</span></span><br><span class="line">		V(mutex);		<span class="comment">//互斥解除:count</span></span><br><span class="line">		reading;</span><br><span class="line">		P(mutex);		<span class="comment">//互斥:count</span></span><br><span class="line">		count--;		<span class="comment">//count--</span></span><br><span class="line">		<span class="keyword">if</span>(count==<span class="number">0</span>)	<span class="comment">//如果当前是最后一个读者,互斥解除:rw</span></span><br><span class="line">			v(rw);</span><br><span class="line">		V(mutex);		<span class="comment">//互斥解除:count</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写者优先的代码</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> ReadCount=<span class="number">0</span>, WriteCount=<span class="number">0</span>;			<span class="comment">//当前读写数量</span></span><br><span class="line">semaphore mutex_rc=<span class="number">1</span>x, mutex_wc=<span class="number">1</span>y;		<span class="comment">//保护count的互斥</span></span><br><span class="line">semaphore rr=<span class="number">1</span>rs,ww=<span class="number">1</span>ws;			<span class="comment">//保证读者写者互斥访问</span></span><br><span class="line"></span><br><span class="line">writer()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;			</span><br><span class="line">        P(mutex_wc);			<span class="comment">//互斥wc</span></span><br><span class="line">        <span class="keyword">if</span>(WriteCount == <span class="number">0</span>)		<span class="comment">//如果是第一个写者</span></span><br><span class="line">            P(rr);				<span class="comment">//不允许其他读者进入</span></span><br><span class="line">        WriteCount++;</span><br><span class="line">        V(mutex_wc);			<span class="comment">//互斥解除:wc</span></span><br><span class="line">        </span><br><span class="line">		P(ww);					<span class="comment">//互斥其他写者</span></span><br><span class="line">		writing;</span><br><span class="line">		v(ww);					<span class="comment">//互斥解除:其他写者</span></span><br><span class="line">        </span><br><span class="line">        P(mutex_wc);			<span class="comment">//互斥wc</span></span><br><span class="line">        WriteCount--;</span><br><span class="line">        <span class="keyword">if</span>(WriteCount == <span class="number">0</span>)		<span class="comment">//如果是最后的写者</span></span><br><span class="line">            V(rr);				<span class="comment">//互斥解除:读者</span></span><br><span class="line">        V(mutex_wc);			<span class="comment">//互斥解除:wc</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">reader()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P(z);</span><br><span class="line">        P(rr);				<span class="comment">//</span></span><br><span class="line">		P(mutex_rc);		<span class="comment">//互斥:rc</span></span><br><span class="line">		<span class="keyword">if</span>(ReadCount==<span class="number">0</span>)	<span class="comment">//如果当前是第一个读者,互斥写者:ww</span></span><br><span class="line">			P(ww);</span><br><span class="line">		ReadCount++;		<span class="comment">//rc++</span></span><br><span class="line">		V(mutex_rc);		<span class="comment">//互斥解除:rc</span></span><br><span class="line">        V(rr);				<span class="comment">//</span></span><br><span class="line">        V(z);</span><br><span class="line">		reading;</span><br><span class="line">		P(mutex_rc);		<span class="comment">//互斥:rc</span></span><br><span class="line">		ReadCount--;		<span class="comment">//rc--</span></span><br><span class="line">		<span class="keyword">if</span>(ReadCount==<span class="number">0</span>)	<span class="comment">//如果当前是最后一个读者,互斥解除:写者ww</span></span><br><span class="line">			v(ww);</span><br><span class="line">		V(mutex_rc);		<span class="comment">//互斥解除:rc</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写者优先没完全看懂</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>专业课</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>时与光H_2020上半年</title>
     <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89H-2020%E4%B8%8A%E5%8D%8A%E5%B9%B4/</url>
     <content><![CDATA[<p>2020年1月 ~ 6月</p>
@@ -771,14 +822,57 @@ T_0\\
       </tags>
   </entry>
   <entry>
+    <title>时与光W_202007-1</title>
+    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-1/</url>
+    <content><![CDATA[<p>2020年6月29日 ~ 7月5日.</p>
+<p>学习CSAPP</p>
+<p>追剧, 游戏, 爬山</p>
+<a id="more"></a>
+<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>完成了Bomb Lab的最后两个炸弹, 并且撰写完成了<a href="[https://luy-hb.xyz/2020/07/01/CSAPP-Lab%E7%AC%94%E8%AE%B02-Bomb/](https://luy-hb.xyz/2020/07/01/CSAPP-Lab笔记2-Bomb/">实验报告</a>)</p>
+<p>巩固了上周最后遗留的不太理解的栈溢出攻击等知识点, 开始完成Attack Lab. 目前已完成了前两个小关. </p>
+<p>Attack Lab 是特别针对栈溢出攻击设计的配套实验 <del>虽然我觉得一小节一个实验非常奇怪</del>, 分别要求使用代码注入攻击与ROP(面向返回编程）对代码进行破坏. </p>
+<p>此外还在继续学习有关内存的层次结构等章节, 计划本周内写完有关内存的一篇学习报告.</p>
+<h2 id="追剧-游戏-爬山"><a href="#追剧-游戏-爬山" class="headerlink" title="追剧, 游戏, 爬山"></a>追剧, 游戏, 爬山</h2><h3 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h3><p>这周将隐蔽的角落看完了, 结局和自己中途推理的基本一致, 也有些许出入. (当然结局本身就是众说纷纭的). 起码早早地看出来朝阳是Boss了不是吗😂</p>
+<p>最佩服自己的是第一集看到张老师一口气一杯水的时候就吐槽 “ 这么能喝怕不是个糖尿病吧 “ , 谁知道居然一语成谶, 不过本身也是瞎猫碰上死耗子了.</p>
+<h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><p>今年Steam夏促真不行…最后一百出头入了 <a href="https://www.xiaoheihe.cn/games/detail/638230" target="_blank" rel="noopener">风之旅人</a> + <a href="https://www.xiaoheihe.cn/games/detail/632360" target="_blank" rel="noopener">雨中冒险2</a> + (被舍友安利的) <a href="https://www.xiaoheihe.cn/games/detail/8870" target="_blank" rel="noopener">生化奇兵:无限</a>. </p>
+<p>当晚打开了散步模拟器风之旅人. 其实作品本身倒是没有特别打动人的地方. 讲述的不过是一次经历千山万水的朝圣之旅, 哪怕洪水滔天,危机四伏, 命丧白土. 画面确实非常优秀, 沙漠的细腻触感比较真实. 部分画面也很适合截图当屏保, 但网上普遍略有过誉.</p>
+<p>一周目偶有遇到几个同行人, 可惜都匆匆离去, 大概是多周目玩家已经没有了荒野中遇到伙伴时的欣喜. 二周目的时候在断桥遇见了一位红袍, 似乎ta也并不是新手, 但是还是很激动地在我身边鸣叫. 于是我第一次遇到真正意义上的同行者. 我们在路上互相充能, 用单调的音节琴瑟和鸣, 在飞龙第一次出现前互相发出短促的提醒, 在雪地里看见ta被挑飞而无能为力, 在暴风雪中里用尽最后一丝力气发出微不可闻的鼓励. 最终在山巅, 在空中, 在瀑布, 在微光中起舞. 丝带在圣光的沾染中螺旋缠绕, 我突然有些庆幸选择开始了二周目, 而不是气呼呼地从硬盘中卸载游戏, 然后在他人问起时说一句: “ 啊画面挺好, 但不值.” </p>
+<p>谢谢你, 一期一会的陌生人. </p>
+<p>当然最后实在是不忍离别23333, 在雪地上磕磕绊绊地一个一个字符地写下自己的联系方式, 最后! 居然! 成功地! 加上了好友, 真是太幸运了~</p>
+<h3 id="爬山"><a href="#爬山" class="headerlink" title="爬山"></a>爬山</h3><p>一开始听说本地到黄山的高铁通车了, 想着周末去玩结果那里下雨. 但是已经勾起我的爬山欲望了23333. 第二天周六就收拾下准备起早去爬隔壁的小山. 临走前想想又把高中同学拽上了! 一天刷了俩座山.</p>
+<p>不过这个小土坡就是没挑战性啦.σ` ∀´)ﾟ∀ﾟ)σ (`ヮ´)</p>
+<p>晚上吃了快乐烤鱼, 好恰.</p>
+<p>结果第二天趴在床上起不来了o(TヘTo)</p>
+<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>收了好多专业书, 希望能一本本刷完! 加油! </p>
+<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><ul>
+<li>[x] 继续CSAPP </li>
+<li>[x] 开始刷LC</li>
+<li>[x] 控制每日游戏时长</li>
+</ul>
+<p>都有做到! ✌</p>
+<p>不过 LC 感觉自己还有很多不太清楚, 复杂度大概算是 O(能过) </p>
+<p>好久没有玩平安京了, 有效控制.<del>虽说是把时间花在journey上了</del></p>
+<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP (要加快速度了! )  </p>
+<p>继续刷 LC</p>
+<p>产出两篇以上的学习笔记(总结不算) </p>
+]]></content>
+      <categories>
+        <category>时与光</category>
+      </categories>
+      <tags>
+        <tag>小结</tag>
+        <tag>周记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>操作系统之内存管理</title>
     <url>/2020/06/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<p>本章将会涉及到</p>
 <ol>
 <li>基本内存管理</li>
 <li>Segmentation    分段 </li>
-<li>Swap    交换</li>
-<li>⭐Virtual   虚拟内存</li>
+<li>Swap    交换 ⭐</li>
+<li>Virtual   虚拟内存 ⭐</li>
 <li>其他需要考虑的问题</li>
 </ol>
 <a id="more"></a>
@@ -847,6 +941,7 @@ T_0\\
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125624.jpg" alt=""></p>
 <h3 id="段的大小"><a href="#段的大小" class="headerlink" title="段的大小"></a>段的大小</h3><p>一般 Inter 16K段, 每段拥有1 billion 32-bit words</p>
 <h3 id="分段与换页的比较"><a href="#分段与换页的比较" class="headerlink" title="分段与换页的比较"></a>分段与换页的比较</h3><p><img width="2000" src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125600.jpg"></img></p>
+<p>实际实现中大部分使用段页式. 每段中再使用分页机制.</p>
 <hr>
 <h2 id="Swap-交换"><a href="#Swap-交换" class="headerlink" title="Swap 交换"></a>Swap 交换</h2><p>本小节涉及到:</p>
 <ol>
@@ -865,7 +960,7 @@ T_0\\
 <h3 id="Holes-空洞"><a href="#Holes-空洞" class="headerlink" title="Holes 空洞"></a>Holes 空洞</h3><p>空洞的产生</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124358.jpg" alt=""></p>
 <p>空洞还是难以清除的. 内存是处在高速变化中的, 试图将碎片合并为更大的内存空间片式必须要将目前的进程停滞. 对外表现为长达数十秒甚至分钟的机器假死, 是不可被忍受的.</p>
-<h3 id="内存的管理机制"><a href="#内存的管理机制" class="headerlink" title="内存的管理机制"></a>内存的管理机制</h3><p>将内存划分为更加精细的等大片段, 并记录其是否处于使用中, 如下图</p>
+<h3 id="内存的管理机制⭐"><a href="#内存的管理机制⭐" class="headerlink" title="内存的管理机制⭐"></a>内存的管理机制⭐</h3><p>将内存划分为更加精细的等大片段, 并记录其是否处于使用中, 如下图</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609124410.jpg" alt="内存管理"></p>
 <h4 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h4><p>如图B, 1表示使用中, 0表示未使用.</p>
 <p>pro: 便于管理, 修改只需要取非操作即可</p>
@@ -999,7 +1094,8 @@ T_0\\
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/09/QQ%E6%88%AA%E5%9B%BE20200609125452.jpg" alt="内容"></p>
 <p>当页面访问在内存中不在TLB中时, 产生软失效, 更新一下TLB;</p>
 <p>当页面访问不在内存中(更不在TLB中)时, 产生硬失效, 磁盘存取以装入该页面;</p>
-<h3 id="反转页表"><a href="#反转页表" class="headerlink" title="反转页表"></a>反转页表</h3><p>没听, 好像是从页帧转页, 但是不重要</p>
+<p><em><u>如果是段页式, TLB 中还有段号</u></em></p>
+<h3 id="反转页表"><a href="#反转页表" class="headerlink" title="反转页表"></a>反转页表</h3><p>没听, 好像是从页帧转页, 但是不重要(了解一下)</p>
 <hr>
 <h2 id="页面调度算法"><a href="#页面调度算法" class="headerlink" title="页面调度算法"></a>页面调度算法</h2><p>本节包括</p>
 <ol>
@@ -1027,7 +1123,7 @@ T_0\\
 </ul>
 </li>
 </ul>
-<h3 id="最优PRA"><a href="#最优PRA" class="headerlink" title="最优PRA"></a>最优PRA</h3><p>每次都将未来最远不会用到的调走</p>
+<h3 id="最优-Optimal-Page-Replacement-Algorithm"><a href="#最优-Optimal-Page-Replacement-Algorithm" class="headerlink" title="最优 Optimal Page Replacement Algorithm"></a>最优 Optimal Page Replacement Algorithm</h3><p>每次都将未来最远不会用到的调走</p>
 <p><del>废话但是我怎么知道啷个是未来不会用到的啊</del></p>
 <p>该算法的唯一问题在于不可实现. <del>这句话笑死我了</del></p>
 <p>所以这个算法没有实际意义, 用于评价其他算法的性能</p>
@@ -1068,11 +1164,15 @@ T_0\\
 <li>调出时选择标识值最小的调出</li>
 </ul>
 <h3 id="Working-Set"><a href="#Working-Set" class="headerlink" title="Working Set"></a>Working Set</h3><p>没听, 好像是把页面集中成集再调度</p>
+<p>(了解)</p>
 <h3 id="WSClock-PRA"><a href="#WSClock-PRA" class="headerlink" title="WSClock PRA"></a>WSClock PRA</h3><p>类似上面, 采用时钟模拟</p>
+<p>(了解)</p>
 <h2 id="其他需要考虑的"><a href="#其他需要考虑的" class="headerlink" title="其他需要考虑的"></a>其他需要考虑的</h2><h3 id="Local-vs-Global-Allocation-Policies"><a href="#Local-vs-Global-Allocation-Policies" class="headerlink" title="Local vs Global Allocation Policies"></a>Local vs Global Allocation Policies</h3><p>多进程并发时,内存中的页时统一调度还是只在该进程内部调度</p>
 <p>全局调度页面会使得一段时间后内存的利用趋近于实际进程所需的比例.</p>
+<p>(了解)</p>
 <h3 id="Load-Control"><a href="#Load-Control" class="headerlink" title="Load Control"></a>Load Control</h3><p>当 <strong>PFF (page fault frequency 页面失效频率)</strong> 过高时, 主动减少使用内存的进程.</p>
 <p><del>让一部分进程先跑起来</del></p>
+<p>(了解)</p>
 <h3 id="Page-Size"><a href="#Page-Size" class="headerlink" title="Page Size"></a>Page Size</h3><p>small page size (typically 4k or 8k):</p>
 <p>Advantages:</p>
 <ul>
@@ -1085,9 +1185,11 @@ T_0\\
 <li>程序需要很多页，因此产生巨大的页表</li>
 <li>传输小页所需的时间几乎与传输大页所需的时间相同, 但传输效率低</li>
 </ul>
+<p>(了解)</p>
 <h3 id="Cleaning-Policy"><a href="#Cleaning-Policy" class="headerlink" title="Cleaning Policy"></a>Cleaning Policy</h3><p>为了保证在新进程创建的时候有足够的空白页面支持, 必须时刻保证内存中有足够的空白页.</p>
 <p> <strong>paging daemon （分页守护进程）</strong>:当空白页面不足时, 会主动调出页, 但不调入页帧.</p>
 <p>也可以使用clock</p>
+<p>(了解)</p>
 <h2 id="附-Page-Fault-Handling"><a href="#附-Page-Fault-Handling" class="headerlink" title="附: Page Fault Handling"></a>附: Page Fault Handling</h2><ol>
 <li>trap 进内核, 保存PC</li>
 <li>保存进程寄存器</li>
@@ -1112,90 +1214,26 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>时与光W_202007-1</title>
-    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-1/</url>
-    <content><![CDATA[<p>2020年6月29日 ~ 7月5日.</p>
-<p>学习CSAPP</p>
-<p>追剧, 游戏, 爬山</p>
+    <title>时与光W-202007-3</title>
+    <url>/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-3/</url>
+    <content><![CDATA[<p>2020年7月13日~2020年7月19日</p>
+<p>看番: 瑞克与莫蒂</p>
+<p>回西安</p>
 <a id="more"></a>
-<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>完成了Bomb Lab的最后两个炸弹, 并且撰写完成了<a href="[https://luy-hb.xyz/2020/07/01/CSAPP-Lab%E7%AC%94%E8%AE%B02-Bomb/](https://luy-hb.xyz/2020/07/01/CSAPP-Lab笔记2-Bomb/">实验报告</a>)</p>
-<p>巩固了上周最后遗留的不太理解的栈溢出攻击等知识点, 开始完成Attack Lab. 目前已完成了前两个小关. </p>
-<p>Attack Lab 是特别针对栈溢出攻击设计的配套实验 <del>虽然我觉得一小节一个实验非常奇怪</del>, 分别要求使用代码注入攻击与ROP(面向返回编程）对代码进行破坏. </p>
-<p>此外还在继续学习有关内存的层次结构等章节, 计划本周内写完有关内存的一篇学习报告.</p>
-<h2 id="追剧-游戏-爬山"><a href="#追剧-游戏-爬山" class="headerlink" title="追剧, 游戏, 爬山"></a>追剧, 游戏, 爬山</h2><h3 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h3><p>这周将隐蔽的角落看完了, 结局和自己中途推理的基本一致, 也有些许出入. (当然结局本身就是众说纷纭的). 起码早早地看出来朝阳是Boss了不是吗😂</p>
-<p>最佩服自己的是第一集看到张老师一口气一杯水的时候就吐槽 “ 这么能喝怕不是个糖尿病吧 “ , 谁知道居然一语成谶, 不过本身也是瞎猫碰上死耗子了.</p>
-<h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><p>今年Steam夏促真不行…最后一百出头入了 <a href="https://www.xiaoheihe.cn/games/detail/638230" target="_blank" rel="noopener">风之旅人</a> + <a href="https://www.xiaoheihe.cn/games/detail/632360" target="_blank" rel="noopener">雨中冒险2</a> + (被舍友安利的) <a href="https://www.xiaoheihe.cn/games/detail/8870" target="_blank" rel="noopener">生化奇兵:无限</a>. </p>
-<p>当晚打开了散步模拟器风之旅人. 其实作品本身倒是没有特别打动人的地方. 讲述的不过是一次经历千山万水的朝圣之旅, 哪怕洪水滔天,危机四伏, 命丧白土. 画面确实非常优秀, 沙漠的细腻触感比较真实. 部分画面也很适合截图当屏保, 但网上普遍略有过誉.</p>
-<p>一周目偶有遇到几个同行人, 可惜都匆匆离去, 大概是多周目玩家已经没有了荒野中遇到伙伴时的欣喜. 二周目的时候在断桥遇见了一位红袍, 似乎ta也并不是新手, 但是还是很激动地在我身边鸣叫. 于是我第一次遇到真正意义上的同行者. 我们在路上互相充能, 用单调的音节琴瑟和鸣, 在飞龙第一次出现前互相发出短促的提醒, 在雪地里看见ta被挑飞而无能为力, 在暴风雪中里用尽最后一丝力气发出微不可闻的鼓励. 最终在山巅, 在空中, 在瀑布, 在微光中起舞. 丝带在圣光的沾染中螺旋缠绕, 我突然有些庆幸选择开始了二周目, 而不是气呼呼地从硬盘中卸载游戏, 然后在他人问起时说一句: “ 啊画面挺好, 但不值.” </p>
-<p>谢谢你, 一期一会的陌生人. </p>
-<p>当然最后实在是不忍离别23333, 在雪地上磕磕绊绊地一个一个字符地写下自己的联系方式, 最后! 居然! 成功地! 加上了好友, 真是太幸运了~</p>
-<h3 id="爬山"><a href="#爬山" class="headerlink" title="爬山"></a>爬山</h3><p>一开始听说本地到黄山的高铁通车了, 想着周末去玩结果那里下雨. 但是已经勾起我的爬山欲望了23333. 第二天周六就收拾下准备起早去爬隔壁的小山. 临走前想想又把高中同学拽上了! 一天刷了俩座山.</p>
-<p>不过这个小土坡就是没挑战性啦.σ` ∀´)ﾟ∀ﾟ)σ (`ヮ´)</p>
-<p>晚上吃了快乐烤鱼, 好恰.</p>
-<p>结果第二天趴在床上起不来了o(TヘTo)</p>
-<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>收了好多专业书, 希望能一本本刷完! 加油! </p>
-<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><ul>
-<li>[x] 继续CSAPP </li>
-<li>[x] 开始刷LC</li>
-<li>[x] 控制每日游戏时长</li>
-</ul>
-<p>都有做到! ✌</p>
-<p>不过 LC 感觉自己还有很多不太清楚, 复杂度大概算是 O(能过) </p>
-<p>好久没有玩平安京了, 有效控制.<del>虽说是把时间花在journey上了</del></p>
-<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP (要加快速度了! )  </p>
-<p>继续刷 LC</p>
-<p>产出两篇以上的学习笔记(总结不算) </p>
-]]></content>
-      <categories>
-        <category>时与光</category>
-      </categories>
-      <tags>
-        <tag>小结</tag>
-        <tag>周记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时与光W_202006-4</title>
-    <url>/2020/06/28/%E6%97%B6%E4%B8%8E%E5%85%89W_202006-4/</url>
-    <content><![CDATA[<p>2020年6月22日 ~ 28日.</p>
-<p>开始个人小结计划</p>
-<p>学习 CSAPP </p>
-<p>追剧, 玩游戏</p>
-<a id="more"></a>
-<h2 id="时与光-个人小结计划"><a href="#时与光-个人小结计划" class="headerlink" title="时与光:个人小结计划"></a>时与光:个人小结计划</h2><p>听说每天坚持写技术博客有利于知识巩固与技能加深, 自觉没有每天坚持的能力, 想了个折中的办法: 以一周为阶段定期总结. 当然, 每月月底, 每半年, 每年也要整理记录! </p>
-<p>主要内容希望自己能够以技术学习, 生活记录为主. 反正也不会有别人看, 就写的简略且随性一些. </p>
-<p><strong>以下是每次小结的规范:</strong></p>
-<ol>
-<li>小结分为: 周记, 月记, 半年总结, 年度总结 四种, 后缀分别以<code>w,m,h,y</code>标识.</li>
-<li>命名格式例: <ol>
-<li>周记: <code>时与光W_202006-4</code> 末位数字代表本月第几周(周日为准)</li>
-<li>月记: <code>时与光M_202006</code></li>
-<li>半年记: <code>时与光H_2020上半年</code></li>
-<li>年度记: <code>时与光Y_2020年度总结</code></li>
-</ol>
-</li>
-<li>内容包括: <ol>
-<li>技术学习成果与产出总结</li>
-<li>记录生活, 如旅游 读书 观影 游戏</li>
-<li>突如其来的想法</li>
-<li>下一阶段的展望</li>
-</ol>
-</li>
-</ol>
-<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>项目地址:</p>
-<p><a href="https://github.com/luy-0/CS-APP-LABs" target="_blank" rel="noopener">https://github.com/luy-0/CS-APP-LABs</a></p>
-<p>对CSAPP这本书垂涎已久, 趁着疫情的期末大把空闲时间和两位同学组队学习CSAPP以及CMU的15-213课程. 更多学习情况参看README部分.</p>
-<p>本周着重于完成机器级别编程部分, 以及课程配套实验中的Bomb Lab, 这是一个通过 gdb 查看可执行文件的汇编代码, 并且推导出炸弹拆除的密钥. 在这几天习得了基本的汇编代码阅读能力, gdb 的基本运用能力, 对C计算机底层运算的实现有了更深的理解. </p>
-<p>这个Lab真是让人又爱又恨, 每拆除一个炸弹的时候成就感满满, 但是对着汇编代码死活瞪不出逻辑的暴躁和无奈…</p>
-<p>机器级别编程 是指 使用汇编代码完成函数操作. 主要学习内容包括 控制机器执行, 执行过程 数据的存储(数组 结构 联合) 以及其他进阶部分. 其中关于缓存区溢出, 栈攻击, 浮点代码等部分掌握的不好.</p>
-<h2 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h2><p>这一周在追《隐蔽的角落》 . 改编自紫金陈的推理小说《坏小孩》，讲述了在沿海小城三个孩子(朱朝阳, 岳普, 严良) 在景区游玩时无意间拍摄记录了一次谋杀(张东升, 秦昊饰)，想借机敲诈来筹钱，以及随后发生的一连串的故事。大结局播完豆瓣评分依旧为9.0</p>
-<p>主要是周围同学都在追哈哈哈, 感叹国产网剧真的很成熟了, 前几集导演对于节奏把握的很好, 中间叙事稍有平淡, 最后一部分还没看😂  配乐挺用心, 虽然我听不懂后现代, 但是还是有被情绪感染到. 在展现上制片组的细致程度令人感动, 例如张东升海夜追朝阳时对着脚步印, 例如试卷和板书上的题目真的是初中知识点 , 竟然有一点点对着美剧扣细节的感觉了. 演员也实力诠释, 秦昊的演技令人背后发凉, 小朋友的演技也很稳啊~ 朝阳那种说的少想得多的内向好学生非常真实, 普普的可爱是真的戏里戏外的可爱 ,就是太机灵懂事了, 牛逼的让人心疼(话说我怎么总觉得她最后要黑化一类的?) 严良其实没有很好地演出想象里的小痞子气, 缺点那种坏味.一部很优秀的国产剧, 拯救了我被言情耽改剧摧毁的信心~ (没错我就是指ssss和cql)</p>
-<p>希望结局能够依旧精彩吧! </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/XGYW%25K%7DKW%40MFX%7BQNNHBI95W.jpg" alt=""></p>
-<h2 id="玩游戏"><a href="#玩游戏" class="headerlink" title="玩游戏"></a>玩游戏</h2><p>嗯…最近又入了平安京的坑, MOBA真香:dog: 不过打了一周上了少属就没啥动力了… 快乐咸鱼佛系游戏, 竞技游戏嘛 心态放好就行了~</p>
-<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP </p>
-<p>开始刷LC</p>
-<p>控制每日游戏时长</p>
+<h2 id="看番-瑞克与莫蒂"><a href="#看番-瑞克与莫蒂" class="headerlink" title="看番: 瑞克与莫蒂"></a>看番: 瑞克与莫蒂</h2><p>久闻大名的神番,终于在我爬山后的腰酸背痛的日子里看完了. 应该是第一次接触美漫 (也是第一次在A站看番) 果然比日漫亚撒西舒爽多了! </p>
+<p>鬼才剧本, 每一集都对时代和社会的痛点进行尽情的诠释——无论是批判还是讽刺, 解构还是歌颂, 常常在一两句话中忽然get到编剧的意图, 然后一拍大腿妈的绝了. </p>
+<p>配音太强了, 听说两个主角的配音都是一个人(这人还同时担任编剧) 我听过很多优秀的日本声优的出演, 能给角色赋予灵魂. 但还是有被这部惊到了: 瑞克与莫蒂的配音好像就是角色自己说出来的一样, 完全符合想象中的二人. </p>
+<p>脑洞比较大. 相对与好莱坞式拿着激光武器突突突的废科幻作品, 本作的幻想程度很对我胃口. 天马行空又大致符合逻辑, 再夹杂着一点点不科学. 比如日了星球, 或者满眼蚂蚁先生. 纯粹的美国式的低俗无聊不遗余力的边角料的屎尿屁想象, 毫无意义,因此让人翱翔.</p>
+<p>美国特色式的永远能在作品中影射现实. 哪怕是真·盒中盒这种老式科幻剧情都能整成奴隶制与博弈论. 多线并行又在结尾交会. 作品甚至能够同时影射资本主义的大部分社会问题 (没错我就是说的S3E7) 信息量最大，隐喻最多，故事最丰富立体，情节最波荡曲折. 没有人比我更懂民族矛盾 —— 其实都是阶级矛盾. </p>
+<p>以及被广大A站网友津津乐道的第四面墙…其实我倒是觉得这个还好, 孤独的看透宇宙荒谬本质的天才科学家, 虽然悲壮却亦不少见. 更打动的则是瑞克认清宇宙的真相, 却依旧热爱生活.</p>
+<p>附录: <a href="https://www.douban.com/group/topic/157799509/" target="_blank" rel="noopener">好看的相关壁纸与插画</a></p>
+<h2 id="收拾东西回长安"><a href="#收拾东西回长安" class="headerlink" title="收拾东西回长安"></a>收拾东西回长安</h2><p>字面意思, 收拾收拾回学校咯</p>
+<p>回去之前还顺便跟两位本地同学吃吃喝喝, 回民街的文文烧烤, 这个酱料真的很特色. 早上在建国路整了碗荤胡辣汤泡馍, 可以, 这很正宗.</p>
+<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>跟高中同学又起了联系, 逛了一下午, 快乐.</p>
+<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><p>none</p>
+<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>复习</p>
+<p>英语</p>
+<p>研究宿舍厨艺</p>
 ]]></content>
       <categories>
         <category>时与光</category>
@@ -1289,6 +1327,204 @@ T_0\\
         <tag>手写体</tag>
         <tag>word 宏命令</tag>
         <tag>摸鱼</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初窥HTTP之一_HTTP基础</title>
+    <url>/2020/08/01/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%B8%80_HTTP%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<ol>
+<li>TCP/IP 基础</li>
+<li>HTTP简介</li>
+</ol>
+<a id="more"></a>
+<h2 id="TCP-IP-基础"><a href="#TCP-IP-基础" class="headerlink" title="TCP/IP 基础"></a>TCP/IP 基础</h2><p>字面上看, TCP/IP包括了TCP与IP这两大协议．但一般意义上认为TCP/IP是指得以TCP,IP为核心协议的一系列协议族<del>(ko no IPS da!)</del>, 这个协议族是整个互联网运作的基础. HTTP协议是包含在TCP/IP协议族的一个子集.</p>
+<blockquote>
+<p>互联网协议套件（英语：Internet Protocol Suite，缩写IPS）是一个网络通讯模型，以及一整个网络传输协议家族，为网际网络的基础通讯架构。它常被通称为TCP/IP协议族（英语：TCP/IP Protocol Suite，或TCP/IP Protocols），简称TCP/IP 。因为该协定家族的两个核心协定：TCP（传输控制协议）和IP（网际协议），为该家族中最早通过的标准。</p>
+<p>协议还包括: ARP，IP，ICMP，UDP，TCP，DNS，HTTP，FTP , SMTP，POP3，SNMP，ECHO，DHCP，SSH，NNTP 等.</p>
+<p>From: <a href="https://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F" target="_blank" rel="noopener">wiki: TCP/IP协议族</a></p>
+</blockquote>
+<p>本段将简单介绍:</p>
+<ol>
+<li>TCP/IP 的分层管理</li>
+<li>通信传输流,</li>
+<li>IP: 传输</li>
+<li>TCP:可靠性</li>
+<li>DNS: 域名解析</li>
+<li>URI : 资源定位</li>
+</ol>
+<p>以及他们与HTTP是怎么互相协作的.本段不涉及具体的HTTP内容.</p>
+<h3 id="TCP-IP的分层管理"><a href="#TCP-IP的分层管理" class="headerlink" title="TCP/IP的分层管理"></a>TCP/IP的分层管理</h3><p>假设你已经知道了 <a href="https://zh.wikipedia.org/zh-cn/OSI%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">OSI模型</a> 将信息传输分为七层, 他们依次是</p>
+<ol>
+<li>第7层 应用层</li>
+<li>第6层 表达层</li>
+<li>第5层 会话层</li>
+<li>第4层 传输层</li>
+<li>第3层 网络层</li>
+<li>第2层 数据链路层</li>
+<li>第1层 物理层</li>
+</ol>
+<p>TCP/IP协议簇(再次提醒并不是TCP与IP这两个协议) 将其简化成了四个层次:</p>
+<ol>
+<li><p>应用层, 对应OSI模型中的7~5层</p>
+<blockquote>
+<p>该层包括所有和应用程序协同工作，利用基础网络交换应用程序专用的数据的协议。数据从网络相关的程序以这种应用内部使用的格式进行传送，然后被编码成标准协议的格式。</p>
+<p>包括<strong>HTTP</strong>（万维网服务）、<strong>FTP</strong>（文件传输）、<strong>SMTP</strong>（电子邮件）、<strong>SSH</strong>（安全远程登录）、<strong>DNS</strong>（名称&lt;-&gt; IP地址寻找）以及许多其他协议</p>
+</blockquote>
+</li>
+<li><p>传输层, 对应OSI模型中的第4层</p>
+<blockquote>
+<p>解决诸如端到端可靠性（“数据是否已经到达目的地？”）和保证数据按照正确的顺序到达这样的问题。在TCP/IP协议组中，传输协议也包括所给数据应该送给哪个应用程序。</p>
+<p>包括 TCP与UDP 协议等</p>
+<blockquote>
+<p>TCP : 是一个“可靠的”、面向链接, 基于字节流的传输机制</p>
+<p>UDP: 是一个无链接的数据报协议。它是一个“尽力传递”（best effort）的协议, 因为它不检查数据包是否已经到达目的地，并且不保证它们按顺序到达。<del>但是快</del></p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>网络互连层, 对应OSI模型中的第3层</p>
+<blockquote>
+<p>解决在网络上流动的数据包. 解决如何选取网络中的路径将数据从源网络传输到目的网络.</p>
+<p>例如IP协议</p>
+</blockquote>
+</li>
+<li><p>网络链路层, 对应OSI模型中的第1~2层</p>
+<blockquote>
+<p>用来处理连接网络的硬件部分, 包括控制操作系统, 硬件设备驱动, NIC(网络适配器, 即网卡) , 以及光纤等物理部分</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="通信传输流"><a href="#通信传输流" class="headerlink" title="通信传输流"></a>通信传输流</h3><ol>
+<li>首先作为发送端的客户端在应用层利用（http）发出一个想看某个Web页面的HTTP请求。</li>
+<li>为了传输方便，在传输层把(TCP)从应用层传下来的数据进行分割，并在各个报文上打上标记序号及端口号发给网络层</li>
+<li>在网络层(IP)，给数据加上作为通信目的地址的MAC地址后发给链路层。到此发送网络的通信请求就准备齐全了</li>
+<li>接收端的服务器在链路层接收到数据，按序往上层发送，直到应用层。才算是真正接收到从客户端发送过来的HTTP请求</li>
+</ol>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/%E9%80%9A%E4%BF%A1%E4%BC%A0%E8%BE%93%E6%B5%81.png" alt=""></p>
+<p>发送端在层与层之间传输数据时，每经过一层必定会被打伤一个该层所属的首部信息。反之，接收端则会一层一层的去掉</p>
+<h3 id="IP-传输"><a href="#IP-传输" class="headerlink" title="IP : 传输"></a>IP : 传输</h3><p><em><a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">wiki链接</a></em></p>
+<p>网际协议（英语：Internet Protocol，缩写：IP；也称互联网协议）是用于分组交换数据网络的一种协议。</p>
+<blockquote>
+<p>IP是在TCP/IP协议族中网络层的主要协议，任务仅仅是根据源主机和目的主机的地址来传送数据。为此目的，IP定义了寻址方法和数据报的封装结构。第一个架构的主要版本为IPv4，目前仍然是广泛使用的互联网协议，尽管世界各地正在积极部署IPv6。</p>
+</blockquote>
+<p>要保证数据能够传输需要两个重要条件: IP地址与MAC地址.</p>
+<p>MAC地址是烧录在网卡或者接口上的<strong>物理地址</strong>，具有二层意义和<strong>全球唯一性</strong>，一般不能被改变。IP地址是网络中的主机或者三层接口在网络中的<strong>逻辑地址</strong>，在<strong>同一个网络内具有唯一性</strong>。</p>
+<p>IP地址通过ARP协议与MAC对应, IP地址是可变换的, MAC 地址是不变的.MAC 地址是杂乱无序的, 如果只是用MAC地址尽管可以传输但是造成浪费.(要从整个互联网中找到你这个MAC地址) , 使用IP地址则可以找到你所处的网络, 在从该网络设备转交给你. </p>
+<p><a href="https://www.zhihu.com/question/49335649/answer/120746792" target="_blank" rel="noopener"><em>IP地址和 MAC地址的区别和联系是什么?</em></a></p>
+<h3 id="TCP-可靠性"><a href="#TCP-可靠性" class="headerlink" title="TCP : 可靠性"></a>TCP : 可靠性</h3><p><a href="https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener"><em>wiki链接</em></a></p>
+<p>TCP提供了可靠的字节流服务. 字节流是指将大块数据分割更小块的<strong>报文段 </strong>(segment) 为单位进行传输. 并且能够将数据准确地传给对方, 并且确认数据的送达.</p>
+<p>为了保证数据可靠地送达, TCP 使用了<strong>三次握手</strong>.其中使用了 TCP 的标志（flag): SYN（synchronize） 和 ACK(acknowledgement)</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/%E4%B8%89%E6%AC%A1%E6%8C%A5%E6%89%8B.png" alt=""></p>
+<h3 id="DNS-域名解析"><a href="#DNS-域名解析" class="headerlink" title="DNS : 域名解析"></a>DNS : 域名解析</h3><p><a href="https://zh.wikipedia.org/wiki/Domain_Name_System" target="_blank" rel="noopener"><em>Wiki链接</em></a></p>
+<p><strong>DNS</strong>（Domain Name System）服务是和HTTP协议一样位于应用层的协议。它提供域名到IP地址之间的解析服务，或逆向从IP地址反查域名的服务。</p>
+<p>用户输入一个网址, 客户机首先向DNS请求IP地址, 获得后由HTTP协议生成针对目标服务器的 <em>请求报文</em> . TCP 将 请求报文分割成多个报文段并负责传输的可靠性. IP协议将这些报文段传送至指定的目标服务器. </p>
+<p>服务器收到这些报文段后由TCP协议将报文段还原成HTTP的请求报文并检查完整性（如果出错再引起另外的处理), HTTP协议对请求报文进行处理, 并返回响应报文, 后续过程类似. </p>
+<h3 id="URI-资源定位"><a href="#URI-资源定位" class="headerlink" title="URI : 资源定位"></a>URI : 资源定位</h3><p>统一资源标识符（英语：Uniform Resource Identifier，缩写：URI）在电脑术语中是一个用于标识某一互联网资源名称的字符串。</p>
+<p>注意 : URI 是用字符串标识的某一互联网资源, 而URL是资源在互联网上的地址, URL是URI的子集.</p>
+<p>通用URI的格式如下：</p>
+<blockquote>
+<p>[协议名]://用户名:密码@主机名:端口/路径?查询参数#片段ID</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">                    hierarchical part</span><br><span class="line">        ┌───────────────────┴─────────────────────┐</span><br><span class="line">                    authority               </span><br><span class="line">        ┌───────────────┴───────────────┐</span><br><span class="line">  abc:&#x2F;&#x2F;username:password@example.com:123&#x2F;path&#x2F;data?key&#x3D;value&amp;key2&#x3D;value2#fragid1</span><br><span class="line">  └┬┘   └───────┬───────┘ └────┬────┘ └┬┘ └───┬───┘ └─────────┬─────────┘ └──┬──┘</span><br><span class="line">scheme  user information     host     port  path            query         fragment</span><br><span class="line"> 协议	   	用户的登录信息		  服务器地址  端口	  路径		    查询参数		  片段ID</span><br><span class="line">  urn:example:mammal:monotreme:echidna</span><br><span class="line">  └┬┘ └──────────────┬───────────────┘</span><br><span class="line">scheme              path</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>协议方案</strong></p>
+<p>使用<code>http:</code> 或<code>https：</code>等协议方案名获取访问资源时要指定协议类型。不区分字母大小写，最后附一个冒号<code>：</code> . 也可使用<code>data：</code>或 <code>javascript：</code>这类指定数据或脚本程序的方案名。</p>
+</li>
+<li><p><strong>登录信息（认证）</strong></p>
+</li>
+</ul>
+<p>​    指定用户名和密码作为从服务器端获取资源时必要的登录信息（身份认证）。此项是可选项。</p>
+<ul>
+<li><strong>服务器地址</strong></li>
+</ul>
+<p>​    使用绝对URI必须指定待访问的服务器地址。地址可以是类似hackr.jp这种DNS可解析的名称，或是192.168.1.1这类IPv4地址名，还可以是[0:0:0:0:0:0:0:1]这样用方括号括起来的Pv6地址名。</p>
+<ul>
+<li><strong>服务器端口</strong></li>
+</ul>
+<p>​    指定服务器连接的网络端口号。此项也是可选项，若用户省略则自动使用默认端口号。带层次的文件路径。指定服务器上的文件路径来定位特指的资源。这与UNIX系统的文件目录结构相似。</p>
+<ul>
+<li><strong>带层次的文件路径</strong></li>
+</ul>
+<p>​    指定服务器上的文件路径来定位特指的资源。这与UNIX系统的文件目录结构相似。</p>
+<ul>
+<li><strong>查询字符串</strong></li>
+</ul>
+<p>​    针对已指定的文件路径内的资源，可以使用查询字符串传入任意参数。此项可选。</p>
+<ul>
+<li><p><strong>片段标识符</strong></p>
+<p>使用片段标识符通常可标记出已获取资源中的子资源（文档内的某个位置）。但在RFC中并没有明确规定其使用方法。该项也为可选项。</p>
+</li>
+</ul>
+<hr>
+<h2 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h2><p>本段将非常粗略地一览HTTP基本情况, 包括以下内容:</p>
+<ol>
+<li>HTTP基本情况</li>
+<li>HTTP报文</li>
+<li>HTTP方法与命令</li>
+<li>持久连接</li>
+<li>Cookie : 状态管理</li>
+</ol>
+<h3 id="HTTP基本情况"><a href="#HTTP基本情况" class="headerlink" title="HTTP基本情况"></a>HTTP基本情况</h3><p>HTTP协议用于客户端与服务端之间的通信. 客户端向服务端发出一个访问资源的<strong>请求</strong>, 服务端针对这个请求做出 <strong>响应</strong>. 服务端无法主动地向客户端建立通信.(除非附加了其他协议). 请求与响应都是通过HTTP报文来传送数据的.</p>
+<p>计算机扮演客户端与服务端的角色可能会切换, 但对于每条通信线路二者的角色是确定的.</p>
+<p>HTTP是<strong>无状态协议</strong>, HTTP协议自身对先前的通信状态不进行保存, 不进行持久化处理.这是为了快递处理大量事物,保证协议的可伸缩性.为了实现通信状态的保持状态, 引入了Cookie来实现持久化通信.</p>
+<p>HTTP使用URI进行资源的定位, 指定URI的方式有很多:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 完整的请求URI</span><br><span class="line">GET http:&#x2F;&#x2F;www.baidu.com&#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line"></span><br><span class="line">2. 使用相对URI地址</span><br><span class="line">GET &#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line">HOST: baidu.com</span><br></pre></td></tr></table></figure>
+<p>除此之外, 如果对于服务器本身(而不是访问资源)的请求, 可以只用<code>*</code>来代替请求URI</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">OPTIONS * HTTP&#x2F;1.1</span><br></pre></td></tr></table></figure>
+<h3 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h3><p>如前所述, HTTP是通过<strong>请求报文</strong>与<strong>响应报文</strong>进行信息传递的. </p>
+<h4 id="请求报文"><a href="#请求报文" class="headerlink" title="请求报文"></a>请求报文</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GET &#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line">HOST: baidu.com</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Content-Type: text&#x2F;html</span><br><span class="line">Content-Length: 5000</span><br><span class="line">If-Modified-Since: Thu. 12 Jul 2020 07: 30: 00 GMT</span><br><span class="line"></span><br><span class="line">name&#x3D;ueno&amp;age&#x3D;37</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>起始处的<code>GET</code> 表示向服务器请求的访问类型, 被称为 <strong>方法</strong>. 而后的字符串<code>/index.html</code> 是使用URI表示的请求访问的资源对象, 被称为 <strong>请求URI</strong>.  <code>HTTP/1.1</code> 是用于表明客户端使用的协议 的 <strong>协议版本号</strong>.</p>
+<p>以上三个参数组成了请求报文的 <strong>请求行.</strong></p>
+<p>后面的几行被称之为 <strong>请求首部字段</strong> (示例中2-6行), 存储了对请求的进一步要求. 最后接上 <strong>内容实体</strong> 的主体.(示例中8行及以后)</p>
+<h4 id="响应报文"><a href="#响应报文" class="headerlink" title="响应报文"></a>响应报文</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Http&#x2F;1.1 200 Ok</span><br><span class="line">Date: Thu. 12 Jul 2020 07: 30: 00 GMT</span><br><span class="line">Content-type:message&#x2F;http</span><br><span class="line">Content-Length: 1024</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+<p>首行依次是 <strong>协议版本号</strong>, <strong>状态码</strong>, <strong>状态码的原因短语</strong>, 这一行被称作 <strong>状态行.</strong></p>
+<p>后面几行被称为 <strong>响应首部字段</strong>, 最后被称为 <strong>资源实体</strong>的主体.</p>
+<h3 id="HTTP方法与命令"><a href="#HTTP方法与命令" class="headerlink" title="HTTP方法与命令"></a>HTTP方法与命令</h3><p>下面介绍一些HTTP/1.1中的方法.</p>
+<ul>
+<li><p>GET：获取资源<br>GET方法用来请求访问已被URI识别的资源。指定的资源经服务器端解析后返回响应内容。也就是说，如果请求的资源是文本，那就保持原样返回；如果是像CGl（Common Gateway Interface，通用网关接口）那样的程序，则返回经过执行后的输出结果。<br><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/GET.png" alt=""></p>
+</li>
+<li><p>POST：传输实体主体<br>POST方法用来传输实体的主体。虽然用GET方法也可以传输实体的主体，但一般不用GET方法进行传输，而是用POST方法。虽说POST的功能与GET很相似，但POST的主要目的并不是获取响应的主体内容。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/POST.png" alt=""></p>
+</li>
+<li><p>PUT：传输文件<br>PUT方法用来传输文件。就像FTP协议的文件上传一样，要求在请求报文的主体中包含文件内容，然后保存到请求URI指定的位置。但是，鉴于HTTP/1.1的PUT方法自身不带验证机制，任何人都可以上传文件，存在安全性问题，因此一般的Web网站不使用该方法。若配合Web应用程序的验证机制，或架构设计采用REST （REpresentational State Transfer，表征状态转移）标准的同类Web网站，就可能会开放使用PUT方法。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/PUT.png" alt=""></p>
+</li>
+<li><p>HEAD：获得报文首部<br>HEAD方法和GET方法一样，只是不返回报文主体部分。用于确认URI的有效性及资源更新的日期时间等。 </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/HEAD.png" alt=""></p>
+</li>
+<li><p>DELETE：删除文件<br>DELETE方法用来删除文件，是与PUT相反的方法。DELETE方法按请求URI删除指定的资源。但是，HTTP/1.1的DELETE方法本身和PUT方法一样不带验证机制，所以一般的Web网站也不使用DELETE方法。当配合Web应用程序的验证机制，或遵守REST标准时还是有可能会开放使用的。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/DELETE.png" alt=""></p>
+</li>
+<li><p>OPTIONS：询问支持的方法<br>OPTIONS方法用来查询针对请求URI指定的资源支持的方法</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/OPTIONS.png" alt=""></p>
+</li>
+<li><p>TRACE：追踪路径<br>TRACE方法是让Web服务器端将之前的请求通信环回给客户端的方法。发送请求时，在Max-Forwards首部字段中填入数值，每经过一个服务器端就将该数字减1，当数值刚好减到0时，就停止继续传输，最后接收到请求的服务器端则返回状态码200OK的响应。</p>
+<p>客户端通过TRACE方法可以查询发送出去的请求是怎样被加工修改/篡改的。这是因为，请求想要连接到源目标服务器可能会通过代理中转，TRACE方法就是用来确认连接过程中发生的一系列操作。但是，TRACE方法本来就不怎么常用，再加上它容易引发XST(Cross-Site Tracing，跨站追踪）攻击，通常就更不会用到了。 </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/TRACE.png" alt=""></p>
+</li>
+<li><p>CONNECT：要求用隧道协议连接代理<br>CONNECT方法要求在与代理服务器通信时建立隧道，实现用隧道协议进行TCP通信。主要使用SSL（Secure Sockets Layer，安全套接层）和TLS（Transport Layer Security，传输层安全）协议把通信内容加密后经网络隧道传输。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/CONNECT.png" alt=""></p>
+</li>
+</ul>
+<p>方法的名称区分大小写, 注意使用大写字母.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/ALL.png" alt=""></p>
+<h3 id="持久连接"><a href="#持久连接" class="headerlink" title="持久连接"></a>持久连接</h3><p>在最开始我们讲到通信建立前TCP协议需要进行三次握手, 此外在结束后还要进行四次挥手. 在HTTP协议的最初版本, 每进行一次通信就要重复执行上述步骤, 导致了大量资源的浪费. (例如一个网页中的多张图片均需要进行请求). 因此在/1.1版本中加入了<a href="https://zh.wikipedia.org/zh-hans/HTTP%E6%8C%81%E4%B9%85%E8%BF%9E%E6%8E%A5" target="_blank" rel="noopener"> <strong>持久连接</strong> </a>的方法. 只要任意端没有主动断开连接, 则持续保持TCP的连接状态. </p>
+<p>在 HTTP 1.1 中 所有的连接默认都是持续连接，除非特殊声明不支持。</p>
+<h4 id="管线化"><a href="#管线化" class="headerlink" title="管线化"></a>管线化</h4><p><a href="https://zh.wikipedia.org/zh-cn/HTTP%E7%AE%A1%E7%B7%9A%E5%8C%96" target="_blank" rel="noopener">HTTP管线化</a>（英语：HTTP pipelining）是将多个HTTP请求（request）整批提交的技术，而在发送过程中不需先等待服务器的回应。这是基于持久连接完成的.</p>
+<h3 id="Cookie-状态管理"><a href="#Cookie-状态管理" class="headerlink" title="Cookie : 状态管理"></a>Cookie : 状态管理</h3><p>为了保留无状态协议的轻便性又解决状态保存的问题引入了Cookie技术. 通过在请求与响应报文中写入Cookie信息来控制客户端的状态.</p>
+<p>Cookie 会根据从服务器端发送的响应报文内的一个叫做 <strong>Set-Cookie</strong> 的首部字段信息，通知客户端保存 Cookie。当下次客户端再往该服务器发送请求时，客户端会自动在请求报文中加入 Cookie值后发送出去。服务器端发现客户端发送过来的 Cookie 后，会去检查究竟是从哪一个客户端发来的连接请求，然后对比服务器上的记录，最后得到之前的状态信息.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;请求报文1</span><br><span class="line">GET &#x2F;reader&#x2F; HTTP&#x2F;1.1</span><br><span class="line">Host: hackr.jp</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;响应报文</span><br><span class="line">HTTP&#x2F;1.1 200 OK</span><br><span class="line">Date: Thu, 12 Jul 2012 07:12:20 GMT</span><br><span class="line">Server: Apache</span><br><span class="line">＜Set-Cookie: sid&#x3D;1342077140226724; path&#x3D;&#x2F;; expires&#x3D;Wed,10-Oct-12 07:12:20 GMT＞</span><br><span class="line">Content-Type: text&#x2F;plain; charset&#x3D;UTF-8</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;请求报文2</span><br><span class="line">GET &#x2F;image&#x2F; HTTP&#x2F;1.1</span><br><span class="line">Host: hackr.jp</span><br><span class="line">Cookie: sid&#x3D;1342077140226724</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>驭龙术</category>
+        <category>Web开发</category>
+        <category>HTTP</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+        <tag>读书笔记:技术</tag>
       </tags>
   </entry>
   <entry>
@@ -1486,225 +1722,31 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>初窥HTTP之一_HTTP基础</title>
-    <url>/2020/08/01/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%B8%80_HTTP%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<ol>
-<li>TCP/IP 基础</li>
-<li>HTTP简介</li>
-</ol>
+    <title>时与光W-202007-2</title>
+    <url>/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-2/</url>
+    <content><![CDATA[<p>2020年7月6日~2020年7月12日</p>
+<p>徒步: 溧阳-丫髻山</p>
 <a id="more"></a>
-<h2 id="TCP-IP-基础"><a href="#TCP-IP-基础" class="headerlink" title="TCP/IP 基础"></a>TCP/IP 基础</h2><p>字面上看, TCP/IP包括了TCP与IP这两大协议．但一般意义上认为TCP/IP是指得以TCP,IP为核心协议的一系列协议族<del>(ko no IPS da!)</del>, 这个协议族是整个互联网运作的基础. HTTP协议是包含在TCP/IP协议族的一个子集.</p>
-<blockquote>
-<p>互联网协议套件（英语：Internet Protocol Suite，缩写IPS）是一个网络通讯模型，以及一整个网络传输协议家族，为网际网络的基础通讯架构。它常被通称为TCP/IP协议族（英语：TCP/IP Protocol Suite，或TCP/IP Protocols），简称TCP/IP 。因为该协定家族的两个核心协定：TCP（传输控制协议）和IP（网际协议），为该家族中最早通过的标准。</p>
-<p>协议还包括: ARP，IP，ICMP，UDP，TCP，DNS，HTTP，FTP , SMTP，POP3，SNMP，ECHO，DHCP，SSH，NNTP 等.</p>
-<p>From: <a href="https://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F" target="_blank" rel="noopener">wiki: TCP/IP协议族</a></p>
-</blockquote>
-<p>本段将简单介绍:</p>
-<ol>
-<li>TCP/IP 的分层管理</li>
-<li>通信传输流,</li>
-<li>IP: 传输</li>
-<li>TCP:可靠性</li>
-<li>DNS: 域名解析</li>
-<li>URI : 资源定位</li>
-</ol>
-<p>以及他们与HTTP是怎么互相协作的.本段不涉及具体的HTTP内容.</p>
-<h3 id="TCP-IP的分层管理"><a href="#TCP-IP的分层管理" class="headerlink" title="TCP/IP的分层管理"></a>TCP/IP的分层管理</h3><p>假设你已经知道了 <a href="https://zh.wikipedia.org/zh-cn/OSI%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">OSI模型</a> 将信息传输分为七层, 他们依次是</p>
-<ol>
-<li>第7层 应用层</li>
-<li>第6层 表达层</li>
-<li>第5层 会话层</li>
-<li>第4层 传输层</li>
-<li>第3层 网络层</li>
-<li>第2层 数据链路层</li>
-<li>第1层 物理层</li>
-</ol>
-<p>TCP/IP协议簇(再次提醒并不是TCP与IP这两个协议) 将其简化成了四个层次:</p>
-<ol>
-<li><p>应用层, 对应OSI模型中的7~5层</p>
-<blockquote>
-<p>该层包括所有和应用程序协同工作，利用基础网络交换应用程序专用的数据的协议。数据从网络相关的程序以这种应用内部使用的格式进行传送，然后被编码成标准协议的格式。</p>
-<p>包括<strong>HTTP</strong>（万维网服务）、<strong>FTP</strong>（文件传输）、<strong>SMTP</strong>（电子邮件）、<strong>SSH</strong>（安全远程登录）、<strong>DNS</strong>（名称&lt;-&gt; IP地址寻找）以及许多其他协议</p>
-</blockquote>
-</li>
-<li><p>传输层, 对应OSI模型中的第4层</p>
-<blockquote>
-<p>解决诸如端到端可靠性（“数据是否已经到达目的地？”）和保证数据按照正确的顺序到达这样的问题。在TCP/IP协议组中，传输协议也包括所给数据应该送给哪个应用程序。</p>
-<p>包括 TCP与UDP 协议等</p>
-<blockquote>
-<p>TCP : 是一个“可靠的”、面向链接, 基于字节流的传输机制</p>
-<p>UDP: 是一个无链接的数据报协议。它是一个“尽力传递”（best effort）的协议, 因为它不检查数据包是否已经到达目的地，并且不保证它们按顺序到达。<del>但是快</del></p>
-</blockquote>
-</blockquote>
-</li>
-<li><p>网络互连层, 对应OSI模型中的第3层</p>
-<blockquote>
-<p>解决在网络上流动的数据包. 解决如何选取网络中的路径将数据从源网络传输到目的网络.</p>
-<p>例如IP协议</p>
-</blockquote>
-</li>
-<li><p>网络链路层, 对应OSI模型中的第1~2层</p>
-<blockquote>
-<p>用来处理连接网络的硬件部分, 包括控制操作系统, 硬件设备驱动, NIC(网络适配器, 即网卡) , 以及光纤等物理部分</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="通信传输流"><a href="#通信传输流" class="headerlink" title="通信传输流"></a>通信传输流</h3><ol>
-<li>首先作为发送端的客户端在应用层利用（http）发出一个想看某个Web页面的HTTP请求。</li>
-<li>为了传输方便，在传输层把(TCP)从应用层传下来的数据进行分割，并在各个报文上打上标记序号及端口号发给网络层</li>
-<li>在网络层(IP)，给数据加上作为通信目的地址的MAC地址后发给链路层。到此发送网络的通信请求就准备齐全了</li>
-<li>接收端的服务器在链路层接收到数据，按序往上层发送，直到应用层。才算是真正接收到从客户端发送过来的HTTP请求</li>
-</ol>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/%E9%80%9A%E4%BF%A1%E4%BC%A0%E8%BE%93%E6%B5%81.png" alt=""></p>
-<p>发送端在层与层之间传输数据时，每经过一层必定会被打伤一个该层所属的首部信息。反之，接收端则会一层一层的去掉</p>
-<h3 id="IP-传输"><a href="#IP-传输" class="headerlink" title="IP : 传输"></a>IP : 传输</h3><p><em><a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">wiki链接</a></em></p>
-<p>网际协议（英语：Internet Protocol，缩写：IP；也称互联网协议）是用于分组交换数据网络的一种协议。</p>
-<blockquote>
-<p>IP是在TCP/IP协议族中网络层的主要协议，任务仅仅是根据源主机和目的主机的地址来传送数据。为此目的，IP定义了寻址方法和数据报的封装结构。第一个架构的主要版本为IPv4，目前仍然是广泛使用的互联网协议，尽管世界各地正在积极部署IPv6。</p>
-</blockquote>
-<p>要保证数据能够传输需要两个重要条件: IP地址与MAC地址.</p>
-<p>MAC地址是烧录在网卡或者接口上的<strong>物理地址</strong>，具有二层意义和<strong>全球唯一性</strong>，一般不能被改变。IP地址是网络中的主机或者三层接口在网络中的<strong>逻辑地址</strong>，在<strong>同一个网络内具有唯一性</strong>。</p>
-<p>IP地址通过ARP协议与MAC对应, IP地址是可变换的, MAC 地址是不变的.MAC 地址是杂乱无序的, 如果只是用MAC地址尽管可以传输但是造成浪费.(要从整个互联网中找到你这个MAC地址) , 使用IP地址则可以找到你所处的网络, 在从该网络设备转交给你. </p>
-<p><a href="https://www.zhihu.com/question/49335649/answer/120746792" target="_blank" rel="noopener"><em>IP地址和 MAC地址的区别和联系是什么?</em></a></p>
-<h3 id="TCP-可靠性"><a href="#TCP-可靠性" class="headerlink" title="TCP : 可靠性"></a>TCP : 可靠性</h3><p><a href="https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener"><em>wiki链接</em></a></p>
-<p>TCP提供了可靠的字节流服务. 字节流是指将大块数据分割更小块的<strong>报文段 </strong>(segment) 为单位进行传输. 并且能够将数据准确地传给对方, 并且确认数据的送达.</p>
-<p>为了保证数据可靠地送达, TCP 使用了<strong>三次握手</strong>.其中使用了 TCP 的标志（flag): SYN（synchronize） 和 ACK(acknowledgement)</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/%E4%B8%89%E6%AC%A1%E6%8C%A5%E6%89%8B.png" alt=""></p>
-<h3 id="DNS-域名解析"><a href="#DNS-域名解析" class="headerlink" title="DNS : 域名解析"></a>DNS : 域名解析</h3><p><a href="https://zh.wikipedia.org/wiki/Domain_Name_System" target="_blank" rel="noopener"><em>Wiki链接</em></a></p>
-<p><strong>DNS</strong>（Domain Name System）服务是和HTTP协议一样位于应用层的协议。它提供域名到IP地址之间的解析服务，或逆向从IP地址反查域名的服务。</p>
-<p>用户输入一个网址, 客户机首先向DNS请求IP地址, 获得后由HTTP协议生成针对目标服务器的 <em>请求报文</em> . TCP 将 请求报文分割成多个报文段并负责传输的可靠性. IP协议将这些报文段传送至指定的目标服务器. </p>
-<p>服务器收到这些报文段后由TCP协议将报文段还原成HTTP的请求报文并检查完整性（如果出错再引起另外的处理), HTTP协议对请求报文进行处理, 并返回响应报文, 后续过程类似. </p>
-<h3 id="URI-资源定位"><a href="#URI-资源定位" class="headerlink" title="URI : 资源定位"></a>URI : 资源定位</h3><p>统一资源标识符（英语：Uniform Resource Identifier，缩写：URI）在电脑术语中是一个用于标识某一互联网资源名称的字符串。</p>
-<p>注意 : URI 是用字符串标识的某一互联网资源, 而URL是资源在互联网上的地址, URL是URI的子集.</p>
-<p>通用URI的格式如下：</p>
-<blockquote>
-<p>[协议名]://用户名:密码@主机名:端口/路径?查询参数#片段ID</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">                    hierarchical part</span><br><span class="line">        ┌───────────────────┴─────────────────────┐</span><br><span class="line">                    authority               </span><br><span class="line">        ┌───────────────┴───────────────┐</span><br><span class="line">  abc:&#x2F;&#x2F;username:password@example.com:123&#x2F;path&#x2F;data?key&#x3D;value&amp;key2&#x3D;value2#fragid1</span><br><span class="line">  └┬┘   └───────┬───────┘ └────┬────┘ └┬┘ └───┬───┘ └─────────┬─────────┘ └──┬──┘</span><br><span class="line">scheme  user information     host     port  path            query         fragment</span><br><span class="line"> 协议	   	用户的登录信息		  服务器地址  端口	  路径		    查询参数		  片段ID</span><br><span class="line">  urn:example:mammal:monotreme:echidna</span><br><span class="line">  └┬┘ └──────────────┬───────────────┘</span><br><span class="line">scheme              path</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>协议方案</strong></p>
-<p>使用<code>http:</code> 或<code>https：</code>等协议方案名获取访问资源时要指定协议类型。不区分字母大小写，最后附一个冒号<code>：</code> . 也可使用<code>data：</code>或 <code>javascript：</code>这类指定数据或脚本程序的方案名。</p>
-</li>
-<li><p><strong>登录信息（认证）</strong></p>
-</li>
-</ul>
-<p>​    指定用户名和密码作为从服务器端获取资源时必要的登录信息（身份认证）。此项是可选项。</p>
-<ul>
-<li><strong>服务器地址</strong></li>
-</ul>
-<p>​    使用绝对URI必须指定待访问的服务器地址。地址可以是类似hackr.jp这种DNS可解析的名称，或是192.168.1.1这类IPv4地址名，还可以是[0:0:0:0:0:0:0:1]这样用方括号括起来的Pv6地址名。</p>
-<ul>
-<li><strong>服务器端口</strong></li>
-</ul>
-<p>​    指定服务器连接的网络端口号。此项也是可选项，若用户省略则自动使用默认端口号。带层次的文件路径。指定服务器上的文件路径来定位特指的资源。这与UNIX系统的文件目录结构相似。</p>
-<ul>
-<li><strong>带层次的文件路径</strong></li>
-</ul>
-<p>​    指定服务器上的文件路径来定位特指的资源。这与UNIX系统的文件目录结构相似。</p>
-<ul>
-<li><strong>查询字符串</strong></li>
-</ul>
-<p>​    针对已指定的文件路径内的资源，可以使用查询字符串传入任意参数。此项可选。</p>
-<ul>
-<li><p><strong>片段标识符</strong></p>
-<p>使用片段标识符通常可标记出已获取资源中的子资源（文档内的某个位置）。但在RFC中并没有明确规定其使用方法。该项也为可选项。</p>
-</li>
-</ul>
-<hr>
-<h2 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h2><p>本段将非常粗略地一览HTTP基本情况, 包括以下内容:</p>
-<ol>
-<li>HTTP基本情况</li>
-<li>HTTP报文</li>
-<li>HTTP方法与命令</li>
-<li>持久连接</li>
-<li>Cookie : 状态管理</li>
-</ol>
-<h3 id="HTTP基本情况"><a href="#HTTP基本情况" class="headerlink" title="HTTP基本情况"></a>HTTP基本情况</h3><p>HTTP协议用于客户端与服务端之间的通信. 客户端向服务端发出一个访问资源的<strong>请求</strong>, 服务端针对这个请求做出 <strong>响应</strong>. 服务端无法主动地向客户端建立通信.(除非附加了其他协议). 请求与响应都是通过HTTP报文来传送数据的.</p>
-<p>计算机扮演客户端与服务端的角色可能会切换, 但对于每条通信线路二者的角色是确定的.</p>
-<p>HTTP是<strong>无状态协议</strong>, HTTP协议自身对先前的通信状态不进行保存, 不进行持久化处理.这是为了快递处理大量事物,保证协议的可伸缩性.为了实现通信状态的保持状态, 引入了Cookie来实现持久化通信.</p>
-<p>HTTP使用URI进行资源的定位, 指定URI的方式有很多:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 完整的请求URI</span><br><span class="line">GET http:&#x2F;&#x2F;www.baidu.com&#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line"></span><br><span class="line">2. 使用相对URI地址</span><br><span class="line">GET &#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line">HOST: baidu.com</span><br></pre></td></tr></table></figure>
-<p>除此之外, 如果对于服务器本身(而不是访问资源)的请求, 可以只用<code>*</code>来代替请求URI</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">OPTIONS * HTTP&#x2F;1.1</span><br></pre></td></tr></table></figure>
-<h3 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h3><p>如前所述, HTTP是通过<strong>请求报文</strong>与<strong>响应报文</strong>进行信息传递的. </p>
-<h4 id="请求报文"><a href="#请求报文" class="headerlink" title="请求报文"></a>请求报文</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GET &#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line">HOST: baidu.com</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Content-Type: text&#x2F;html</span><br><span class="line">Content-Length: 5000</span><br><span class="line">If-Modified-Since: Thu. 12 Jul 2020 07: 30: 00 GMT</span><br><span class="line"></span><br><span class="line">name&#x3D;ueno&amp;age&#x3D;37</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-<p>起始处的<code>GET</code> 表示向服务器请求的访问类型, 被称为 <strong>方法</strong>. 而后的字符串<code>/index.html</code> 是使用URI表示的请求访问的资源对象, 被称为 <strong>请求URI</strong>.  <code>HTTP/1.1</code> 是用于表明客户端使用的协议 的 <strong>协议版本号</strong>.</p>
-<p>以上三个参数组成了请求报文的 <strong>请求行.</strong></p>
-<p>后面的几行被称之为 <strong>请求首部字段</strong> (示例中2-6行), 存储了对请求的进一步要求. 最后接上 <strong>内容实体</strong> 的主体.(示例中8行及以后)</p>
-<h4 id="响应报文"><a href="#响应报文" class="headerlink" title="响应报文"></a>响应报文</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Http&#x2F;1.1 200 Ok</span><br><span class="line">Date: Thu. 12 Jul 2020 07: 30: 00 GMT</span><br><span class="line">Content-type:message&#x2F;http</span><br><span class="line">Content-Length: 1024</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
-<p>首行依次是 <strong>协议版本号</strong>, <strong>状态码</strong>, <strong>状态码的原因短语</strong>, 这一行被称作 <strong>状态行.</strong></p>
-<p>后面几行被称为 <strong>响应首部字段</strong>, 最后被称为 <strong>资源实体</strong>的主体.</p>
-<h3 id="HTTP方法与命令"><a href="#HTTP方法与命令" class="headerlink" title="HTTP方法与命令"></a>HTTP方法与命令</h3><p>下面介绍一些HTTP/1.1中的方法.</p>
-<ul>
-<li><p>GET：获取资源<br>GET方法用来请求访问已被URI识别的资源。指定的资源经服务器端解析后返回响应内容。也就是说，如果请求的资源是文本，那就保持原样返回；如果是像CGl（Common Gateway Interface，通用网关接口）那样的程序，则返回经过执行后的输出结果。<br><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/GET.png" alt=""></p>
-</li>
-<li><p>POST：传输实体主体<br>POST方法用来传输实体的主体。虽然用GET方法也可以传输实体的主体，但一般不用GET方法进行传输，而是用POST方法。虽说POST的功能与GET很相似，但POST的主要目的并不是获取响应的主体内容。</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/POST.png" alt=""></p>
-</li>
-<li><p>PUT：传输文件<br>PUT方法用来传输文件。就像FTP协议的文件上传一样，要求在请求报文的主体中包含文件内容，然后保存到请求URI指定的位置。但是，鉴于HTTP/1.1的PUT方法自身不带验证机制，任何人都可以上传文件，存在安全性问题，因此一般的Web网站不使用该方法。若配合Web应用程序的验证机制，或架构设计采用REST （REpresentational State Transfer，表征状态转移）标准的同类Web网站，就可能会开放使用PUT方法。</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/PUT.png" alt=""></p>
-</li>
-<li><p>HEAD：获得报文首部<br>HEAD方法和GET方法一样，只是不返回报文主体部分。用于确认URI的有效性及资源更新的日期时间等。 </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/HEAD.png" alt=""></p>
-</li>
-<li><p>DELETE：删除文件<br>DELETE方法用来删除文件，是与PUT相反的方法。DELETE方法按请求URI删除指定的资源。但是，HTTP/1.1的DELETE方法本身和PUT方法一样不带验证机制，所以一般的Web网站也不使用DELETE方法。当配合Web应用程序的验证机制，或遵守REST标准时还是有可能会开放使用的。</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/DELETE.png" alt=""></p>
-</li>
-<li><p>OPTIONS：询问支持的方法<br>OPTIONS方法用来查询针对请求URI指定的资源支持的方法</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/OPTIONS.png" alt=""></p>
-</li>
-<li><p>TRACE：追踪路径<br>TRACE方法是让Web服务器端将之前的请求通信环回给客户端的方法。发送请求时，在Max-Forwards首部字段中填入数值，每经过一个服务器端就将该数字减1，当数值刚好减到0时，就停止继续传输，最后接收到请求的服务器端则返回状态码200OK的响应。</p>
-<p>客户端通过TRACE方法可以查询发送出去的请求是怎样被加工修改/篡改的。这是因为，请求想要连接到源目标服务器可能会通过代理中转，TRACE方法就是用来确认连接过程中发生的一系列操作。但是，TRACE方法本来就不怎么常用，再加上它容易引发XST(Cross-Site Tracing，跨站追踪）攻击，通常就更不会用到了。 </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/TRACE.png" alt=""></p>
-</li>
-<li><p>CONNECT：要求用隧道协议连接代理<br>CONNECT方法要求在与代理服务器通信时建立隧道，实现用隧道协议进行TCP通信。主要使用SSL（Secure Sockets Layer，安全套接层）和TLS（Transport Layer Security，传输层安全）协议把通信内容加密后经网络隧道传输。</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/CONNECT.png" alt=""></p>
-</li>
-</ul>
-<p>方法的名称区分大小写, 注意使用大写字母.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/ALL.png" alt=""></p>
-<h3 id="持久连接"><a href="#持久连接" class="headerlink" title="持久连接"></a>持久连接</h3><p>在最开始我们讲到通信建立前TCP协议需要进行三次握手, 此外在结束后还要进行四次挥手. 在HTTP协议的最初版本, 每进行一次通信就要重复执行上述步骤, 导致了大量资源的浪费. (例如一个网页中的多张图片均需要进行请求). 因此在/1.1版本中加入了<a href="https://zh.wikipedia.org/zh-hans/HTTP%E6%8C%81%E4%B9%85%E8%BF%9E%E6%8E%A5" target="_blank" rel="noopener"> <strong>持久连接</strong> </a>的方法. 只要任意端没有主动断开连接, 则持续保持TCP的连接状态. </p>
-<p>在 HTTP 1.1 中 所有的连接默认都是持续连接，除非特殊声明不支持。</p>
-<h4 id="管线化"><a href="#管线化" class="headerlink" title="管线化"></a>管线化</h4><p><a href="https://zh.wikipedia.org/zh-cn/HTTP%E7%AE%A1%E7%B7%9A%E5%8C%96" target="_blank" rel="noopener">HTTP管线化</a>（英语：HTTP pipelining）是将多个HTTP请求（request）整批提交的技术，而在发送过程中不需先等待服务器的回应。这是基于持久连接完成的.</p>
-<h3 id="Cookie-状态管理"><a href="#Cookie-状态管理" class="headerlink" title="Cookie : 状态管理"></a>Cookie : 状态管理</h3><p>为了保留无状态协议的轻便性又解决状态保存的问题引入了Cookie技术. 通过在请求与响应报文中写入Cookie信息来控制客户端的状态.</p>
-<p>Cookie 会根据从服务器端发送的响应报文内的一个叫做 <strong>Set-Cookie</strong> 的首部字段信息，通知客户端保存 Cookie。当下次客户端再往该服务器发送请求时，客户端会自动在请求报文中加入 Cookie值后发送出去。服务器端发现客户端发送过来的 Cookie 后，会去检查究竟是从哪一个客户端发来的连接请求，然后对比服务器上的记录，最后得到之前的状态信息.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;请求报文1</span><br><span class="line">GET &#x2F;reader&#x2F; HTTP&#x2F;1.1</span><br><span class="line">Host: hackr.jp</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;响应报文</span><br><span class="line">HTTP&#x2F;1.1 200 OK</span><br><span class="line">Date: Thu, 12 Jul 2012 07:12:20 GMT</span><br><span class="line">Server: Apache</span><br><span class="line">＜Set-Cookie: sid&#x3D;1342077140226724; path&#x3D;&#x2F;; expires&#x3D;Wed,10-Oct-12 07:12:20 GMT＞</span><br><span class="line">Content-Type: text&#x2F;plain; charset&#x3D;UTF-8</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;请求报文2</span><br><span class="line">GET &#x2F;image&#x2F; HTTP&#x2F;1.1</span><br><span class="line">Host: hackr.jp</span><br><span class="line">Cookie: sid&#x3D;1342077140226724</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>驭龙术</category>
-        <category>Web开发</category>
-        <category>HTTP</category>
-      </categories>
-      <tags>
-        <tag>读书笔记:技术</tag>
-        <tag>HTTP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时与光W-202007-3</title>
-    <url>/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-3/</url>
-    <content><![CDATA[<p>2020年7月13日~2020年7月19日</p>
-<p>看番: 瑞克与莫蒂</p>
-<p>回西安</p>
-<a id="more"></a>
-<h2 id="看番-瑞克与莫蒂"><a href="#看番-瑞克与莫蒂" class="headerlink" title="看番: 瑞克与莫蒂"></a>看番: 瑞克与莫蒂</h2><p>久闻大名的神番,终于在我爬山后的腰酸背痛的日子里看完了. 应该是第一次接触美漫 (也是第一次在A站看番) 果然比日漫亚撒西舒爽多了! </p>
-<p>鬼才剧本, 每一集都对时代和社会的痛点进行尽情的诠释——无论是批判还是讽刺, 解构还是歌颂, 常常在一两句话中忽然get到编剧的意图, 然后一拍大腿妈的绝了. </p>
-<p>配音太强了, 听说两个主角的配音都是一个人(这人还同时担任编剧) 我听过很多优秀的日本声优的出演, 能给角色赋予灵魂. 但还是有被这部惊到了: 瑞克与莫蒂的配音好像就是角色自己说出来的一样, 完全符合想象中的二人. </p>
-<p>脑洞比较大. 相对与好莱坞式拿着激光武器突突突的废科幻作品, 本作的幻想程度很对我胃口. 天马行空又大致符合逻辑, 再夹杂着一点点不科学. 比如日了星球, 或者满眼蚂蚁先生. 纯粹的美国式的低俗无聊不遗余力的边角料的屎尿屁想象, 毫无意义,因此让人翱翔.</p>
-<p>美国特色式的永远能在作品中影射现实. 哪怕是真·盒中盒这种老式科幻剧情都能整成奴隶制与博弈论. 多线并行又在结尾交会. 作品甚至能够同时影射资本主义的大部分社会问题 (没错我就是说的S3E7) 信息量最大，隐喻最多，故事最丰富立体，情节最波荡曲折. 没有人比我更懂民族矛盾 —— 其实都是阶级矛盾. </p>
-<p>以及被广大A站网友津津乐道的第四面墙…其实我倒是觉得这个还好, 孤独的看透宇宙荒谬本质的天才科学家, 虽然悲壮却亦不少见. 更打动的则是瑞克认清宇宙的真相, 却依旧热爱生活.</p>
-<p>附录: <a href="https://www.douban.com/group/topic/157799509/" target="_blank" rel="noopener">好看的相关壁纸与插画</a></p>
-<h2 id="收拾东西回长安"><a href="#收拾东西回长安" class="headerlink" title="收拾东西回长安"></a>收拾东西回长安</h2><p>字面意思, 收拾收拾回学校咯</p>
-<p>回去之前还顺便跟两位本地同学吃吃喝喝, 回民街的文文烧烤, 这个酱料真的很特色. 早上在建国路整了碗荤胡辣汤泡馍, 可以, 这很正宗.</p>
-<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>跟高中同学又起了联系, 逛了一下午, 快乐.</p>
-<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><p>none</p>
-<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>复习</p>
-<p>英语</p>
-<p>研究宿舍厨艺</p>
-]]></content>
+<h2 id="徒步-溧阳-丫髻山"><a href="#徒步-溧阳-丫髻山" class="headerlink" title="徒步: 溧阳-丫髻山"></a>徒步: 溧阳-丫髻山</h2><p>这周日 (7月11-12日) 第一次尝试徒步+爬野山. 以下为流水账记录:</p>
+<p>因为集合的时间是周日大清早, 所以周六就提前去南京了, 找了一家普普通通的青旅安顿下来, 晚上在玄武湖公园逛了一圈 —— 预料之外的大啊哈哈哈, 晚上来这里跑步应该不错, 可惜还是在市中心, 空气不太行. 话说南京的早点包子真难吃啊… 早起去便利店安排了一些物资, 2L 的怡宝+1.5L 的绿茶, 后来证明买这些都是非常必要的.</p>
+<p>领队是个很阳光的大兄弟, 很会唠. 等大巴的时候发现大家都是装备齐全, 背包+登山杖+徒步鞋, 只有我背个小破书包, 蹬了个平底运动鞋来了哈哈哈, 下次一定准备齐全😂. 大巴上领座是位带着两个双胞胎的大叔, 一看就是老户外达人了, 孩子约莫上初中, 一人一个登山杖. 一家人乐乐呵呵地来徒步, 又锻炼体质又促进感情, 真好啊🍋. </p>
+<p>一个钟左右就到溧阳了. 目的地其实是溧阳, 句容交界的两座山头 (最后只爬了一座) . 本来的计划是野道去公路回, 结果前一天一直下雨, 就决定先走公路, 让山路多晒晒太阳. 说起来超级幸运, 本来都已经做好了下雨取消山路的心理准备了, 没想到早上突然晴天. 这也导致我没有带防晒(呜呜呜我以为会是阴天的脑子瓦特了), 带着防身又不多~ 一天走下来直接黑了两个度, 辛苦养半年,一朝回到解放前. </p>
+<p>溧阳的一号彩虹公路, 其实只是中间的双黄道替换成三种不同颜色的标志线, 起初看图片觉得平平无奇, (不就是换个颜色吗有什么新鲜的) 实际上在公路走啊走啊, 看见一条彩虹从脚下延申向远方, 还是有种小确幸滴. 我甚至怀疑倘若自驾走这条路线都没有徒步来的快乐. 一路上和周围人谈笑风生. 有去时正好坐我后排的X, 主动来搭话的杰哥, 另一个小哥shè哥chù Y. 都是独行侠, 甚至都是互联网相关行业的, 只有我一个在校学生. 杰哥是老徒步者了,准备十分充分(连护袖都有准备) 我甚至被杰哥开玩笑”看鞋子就知道是不是新手徒步” (别骂了别骂了我回去就买鞋子😭) 一路上蓝天白云, 上半晌的柏油路还没有升温, 跟着大家东扯西扯: 杰哥今年才从Z大硕士毕业, X 在江宁工作一年, Y本科出来已经工作了五年了. 听他们谈论房租 未来发展, 人生规划. 在想过几年自己是不是也在某个城市漂泊, 在考虑户口, 房价, 股价, 政策发展与行业未来. 同行的还有一个背着女孩的父亲, 小女孩约莫四五岁, 坐在爸爸背后的座位上. 后面上坡下坡都是父亲一直背完了全程, 实在太厉害了!</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%BD%A9%E8%99%B9%E5%85%AC%E8%B7%AF.jpg" alt="彩虹公路"></p>
+<p>终于走过了上半程, 在常州一处小监狱门口稍作休整, 和新伙伴们互相分享了干粮和水—— 这种徒步后的饥饿感让食物瞬间升华, 好吃程度不是拿个方格布带个小竹篮能比拟的2333. 发现拿头巾沾水后带着真的太爽了! 大太阳照着水分汽化吸热, 不经过汗流浃背体会不到凉爽的感觉. 就算在空调房里待一整个夏天也不行. 给大家分享了水, (内心OS: 终于把这个大累赘分出去了! ) 双胞胎在接过水后, 大叔还在一旁督促要说谢谢,  在野外水是非常非常重要的资源云云, 家教极好! 休整之后大家进入了野道, 我也开始记录爬山的路径. </p>
+<p>第一小关是一座摇摇欲坠的小竹桥, 还未见到影子, 就听见前方队友惊呼, 原来竹桥年久失修, 终于在今日不堪重负垮了一半, 半截桥身已然入水. 后面的人只能一个一个走. 扒着相对牢固的扶手. 在最后一个人走过时, 竹桥终于完成了自己一生的使命, 光荣牺牲. 第二天大叔在群里发了我们每个人过桥的照片, 原来他一直在对岸拍摄大家互帮互助过桥的照片, 实在是太惊喜了.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%BF%87%E6%A1%A5.jpg" alt=""></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E6%A1%A5.jpg" width = "800" height = "1000" /></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8A.jpg" width="800" height = "1200" /></p>
+<p>接下来一段上坡路, 坡度大约三四十多度, 茂林修竹, 蚊虫四散. 有同行者带了小音箱, 歌声回绕. 过了这一小段竹林后便是稍显难走的林中小径, 不过半米宽度. 由于X是妹子, 体力不佳, 我们逐渐和脱离了大部队, 又等到了另外一位女生Z. 互相帮着背个包搭把手, 爬上了山顶. </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%B1%B1%E9%A1%B6.jpg" alt=""></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%88%E7%85%A7.jpg" alt="合照"></p>
+<p>下山. </p>
+<p>下山的路比我们想的要更加麻烦, 坡度更大, 沙土质地的路也更难走. 只能每次都踩着树根和石块落脚. 有几段路中间没有落脚点, 后一个人就踩着前一个人的脚作为落脚点, 我也才意识到平底鞋真的真的不适合爬山orz, 完全没有抓地力. </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8B.jpg" width="800" height = "1800" /></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%AE%B0%E5%BD%95.jpg" alt=""></p>
+<p>晚上约了快乐火锅</p>
+<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3>]]></content>
       <categories>
         <category>时与光</category>
       </categories>
@@ -2111,6 +2153,135 @@ T_0\\
       </tags>
   </entry>
   <entry>
+    <title>操作系统之死锁</title>
+    <url>/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%AD%BB%E9%94%81/</url>
+    <content><![CDATA[<p>本章包括以下内容:</p>
+<ol>
+<li>资源与死锁</li>
+<li>处理死锁<ol>
+<li>冷处理: 鸵鸟算法</li>
+<li>热处理: 死锁的检测与恢复</li>
+</ol>
+</li>
+<li>防范死锁<ol>
+<li>避免死锁</li>
+<li>死锁预防</li>
+</ol>
+</li>
+<li>其他策略</li>
+</ol>
+<a id="more"></a>
+<h2 id="资源与死锁"><a href="#资源与死锁" class="headerlink" title="资源与死锁"></a>资源与死锁</h2><h3 id="资源定义与分类"><a href="#资源定义与分类" class="headerlink" title="资源定义与分类"></a>资源定义与分类</h3><p>计算机中具有 <strong>排他性使用</strong> 的对象称为 <strong><u>资源</u></strong> . (即每次只允许一个进程访问). 资源可以是硬件(设备)或软件(信息). 资源随着时间推移必须能<u>获得, 使用, 以及释放</u>.</p>
+<ul>
+<li>可抢占式资源: B进程可以将资源R从进程A出抢占<strong>而不会产生任何副作用</strong>. 例如储存器.</li>
+<li>不可抢占式资源: 在不引起相关失败的情况下, 无法将资源从占有它的进程处抢占过来.例如打印机.</li>
+</ul>
+<p><u>死锁仅可能出现在不可抢占式资源上.</u></p>
+<p>资源的使用流程:</p>
+<ol>
+<li>申请资源</li>
+<li>使用资源</li>
+<li>释放资源</li>
+</ol>
+<p><em>当资源申请失败时,不同系统会采取不同反应: 阻塞申请(等待唤醒) 或 返回错误 (用户决定)</em> </p>
+<h3 id="死锁定义"><a href="#死锁定义" class="headerlink" title="死锁定义"></a>死锁定义</h3><blockquote>
+<p>如果一个进程集合中的每个进程都在等待只能由该进程集合中的其他进程才能引发的事件, 那么称这个进程集合的 <strong><u>死锁</u></strong> 的.</p>
+<p><em>A set of processes is deadlocked if each process in the set is waiting for an event that only another process in the set can cause</em> </p>
+</blockquote>
+<p><del>显然这个定义太正经了大家都知道死锁是什么.</del></p>
+<p>当发生死锁时, 任何一个进程都无法: 运行 / 释放资源 / 被唤醒</p>
+<h3 id="死锁的四个必要条件⭐"><a href="#死锁的四个必要条件⭐" class="headerlink" title="死锁的四个必要条件⭐"></a>死锁的四个必要条件⭐</h3><ul>
+<li><p>互斥条件 <strong>Mutual exclusion</strong> condition</p>
+<p>每个资源要么被分给了一个进程, 要么是可用的</p>
+</li>
+<li><p>占有并等待  <strong>Hold and wait</strong> condition </p>
+<p>进程可以在占有资源A的同时等待资源B的分配</p>
+</li>
+<li><p>不可抢占  <strong>No preemption</strong> condition </p>
+<p>已经被分配的资源不可抢占, 只能等待占有它的进程主动释放</p>
+</li>
+<li><p>环路等待  <strong>Circular wait</strong> condition</p>
+<p>系统中有多于一个的进程, 每个进程都在等待下一个进程占有的资源</p>
+</li>
+</ul>
+<p><u>死锁发生时四个条件必须同时满足, 只要使任一条件不被满足即可预防死锁.</u></p>
+<h3 id="死锁建模"><a href="#死锁建模" class="headerlink" title="死锁建模"></a>死锁建模</h3><p>圆形表示进程; 方形表示资源; </p>
+<p>资源指向进程: 该资源已被进程占用;</p>
+<p>进程指向资源: 该进程正在等待资源;</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E6%AD%BB%E9%94%81%E5%BB%BA%E6%A8%A1.png" alt=""></p>
+<p>例如, 上图中进程C在等待被进程D占有的资源T, 进程D在等待被进程C占有的资源U.</p>
+<p><em>如果模型中有闭合有向环, 表明存在死锁.</em></p>
+<hr>
+<h2 id="处理死锁⭐"><a href="#处理死锁⭐" class="headerlink" title="处理死锁⭐"></a>处理死锁⭐</h2><h3 id="冷处理-鸵鸟算法"><a href="#冷处理-鸵鸟算法" class="headerlink" title="冷处理: 鸵鸟算法"></a>冷处理: 鸵鸟算法</h3><p>假装没有问题, 如果进程执行时间过长就重启一下…</p>
+<p>这是由于死锁的产生是取决于进程执行的精确时序, 在同一进程集合的多次运行中可能死锁的出现是非常偶然的; 此外处理死锁的开销往往非常高昂.</p>
+<p>实际中本算法效果较好</p>
+<h3 id="热处理-检测并恢复"><a href="#热处理-检测并恢复" class="headerlink" title="热处理: 检测并恢复"></a>热处理: 检测并恢复</h3><p>系统并不会防范死锁的产生, 而是在死锁发生之后再进行死锁的检测与恢复.</p>
+<h4 id="死锁的检测"><a href="#死锁的检测" class="headerlink" title="死锁的检测"></a>死锁的检测</h4><p><strong>DFS算法</strong>: (了解)</p>
+<p>依次将每一个节点作为一棵树的根节点, 并进行深度优先搜索, 如果再次遇到该节点表明找到了环.</p>
+<p><strong>剪枝算法</strong>: </p>
+<p>如果某进程只申请不占有, 将该节点剪去;如果某资源只被占有不被申请, 将该节点剪去;重复这两步直到无法剪去, 存在环.</p>
+<p><strong>矩阵检测</strong>: (了解)</p>
+<p>E 矩阵: 所有资源的总数; A矩阵: 所有资源当前空余量;</p>
+<p>C矩阵: $C_{ij}$ 表示进程 $ i $  当前使用资源 $j$ 的数目;</p>
+<p>R矩阵: $R_{ij}$ 表示进程 $ i $  当前需要资源 $j$ 的数目;</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E7%9F%A9%E9%98%B5%E6%A3%80%E6%B5%8B.png" alt=""></p>
+<p>必定存在以下公式:</p>
+<script type="math/tex; mode=display">
+\sum^n_{i=1}C_{ij} +A_j=E_j</script><p>如果当前的A矩阵可以使R矩阵按照一定顺序退出, 说明未形成死锁.</p>
+<p>但死锁检测本身即浪费时间, 又需要定期检测, 所以热处理本身效果不佳.</p>
+<h4 id="死锁的恢复"><a href="#死锁的恢复" class="headerlink" title="死锁的恢复"></a>死锁的恢复</h4><ul>
+<li><p>资源抢占</p>
+<p>将资源强制抢占(例如人工干预)</p>
+</li>
+<li><p>状态回滚</p>
+<p>从之前某个状态重新加载, 重新跑未必发生死锁</p>
+</li>
+<li><p>杀死进程</p>
+<p>杀死一个或若干个进程, 直到打破死锁.</p>
+</li>
+</ul>
+<hr>
+<h2 id="防范死锁⭐"><a href="#防范死锁⭐" class="headerlink" title="防范死锁⭐"></a>防范死锁⭐</h2><h3 id="避免死锁"><a href="#避免死锁" class="headerlink" title="避免死锁"></a>避免死锁</h3><h4 id="资源轨迹图"><a href="#资源轨迹图" class="headerlink" title="资源轨迹图"></a>资源轨迹图</h4><p>当走向轨迹穿越阴影重叠区时<strong>有可能</strong>发生死锁. </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E8%B5%84%E6%BA%90%E5%9B%BE.png" alt=""></p>
+<h4 id="安全态"><a href="#安全态" class="headerlink" title="安全态"></a>安全态</h4><p>安全态: 如果没有死锁发生,即使所有进程突然请求最大的资源需求, 也存在某种调度次序使得每一个进程都运行完毕.</p>
+<p>不安全态: 如果没有死锁发生,若所有进程突然请求最大的资源需求, 不存在某种调度次序使得每一个进程都运行完毕.</p>
+<p><u>注意: 不安全态不代表一定发生死锁, 但死锁发生一定经过不安全态.</u></p>
+<h4 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E9%93%B6%E8%A1%8C%E5%AE%B6.png" alt=""></p>
+<p>如果A向量能够使用某种次序分配能够使所有进程安全退出就处于安全状态;</p>
+<p>如果一直使其处于安全状态则可以避免死锁.</p>
+<blockquote>
+<p>实际上银行家算法缺少使用价值, 很少有进程在运行前知道需要多少资源, 而且进程数也在随时变化(新任务产生), 而且资源的状态也随时可能变化(例如打印机坏了).</p>
+</blockquote>
+<h3 id="预防死锁"><a href="#预防死锁" class="headerlink" title="预防死锁"></a>预防死锁</h3><p>从理论上完全避免死锁的不可能的(因为需要获知未来的请求) , 但是我们可以通过对死锁的四个必要条件的破坏来预防死锁的产生.</p>
+<p><del>其实我觉得预防和避免这种文字游戏没啥意义,但是确实不知道怎么区分</del></p>
+<h4 id="破坏互斥条件"><a href="#破坏互斥条件" class="headerlink" title="破坏互斥条件"></a>破坏互斥条件</h4><p>如果资源不被一个进程独占, 则不会产生死锁. </p>
+<p>具体做法是将打印机使用假脱机, 即IO输出实际上是将文件发送至打印机的磁盘中, 再由打印机的控制程序慢慢打印磁盘的内容. 而多个进程可以同时对磁盘输出, 破坏了互斥条件.</p>
+<p>但如果在某些情况下磁盘本身成为了互斥的资源, 这种方法就失效了</p>
+<h4 id="破坏占有并等待"><a href="#破坏占有并等待" class="headerlink" title="破坏占有并等待"></a>破坏占有并等待</h4><p>禁止已持有资源的进程再申请其他资源.</p>
+<p>一种实现方式是在进程开始时申请好全部资源. 但是这是无法实现的 (如果能实现为什么不用银行家呢?) 此外一次性分配资源也是巨大的浪费.</p>
+<p>另一种实现方式是在申请新资源的时候先释放本来占有的资源. 但是开销大也不佳.</p>
+<h4 id="破坏不可抢占条件"><a href="#破坏不可抢占条件" class="headerlink" title="破坏不可抢占条件"></a>破坏不可抢占条件</h4><p>通过将资源(主要指硬件设备)虚拟化可以使其能够抢占. 但是并不是所有资源都能够虚拟化的. 而且消除了打印机的死锁也可能带来硬盘的死锁.</p>
+<h4 id="破坏环路等待条件"><a href="#破坏环路等待条件" class="headerlink" title="破坏环路等待条件"></a>破坏环路等待条件</h4><p>一种实现方式是每次只允许占据一个资源, 但是这显然不能接受的.</p>
+<p>另一种方式是对所有资源进行编号, 某进程每次请求的资源不能是比自己占有的资源序号低的资源. 这样资源分配图中肯定不会出现环 (而是一条链).这种方式也几乎不能找到一个令人满意的编号次序.</p>
+<hr>
+<h2 id="其他策略"><a href="#其他策略" class="headerlink" title="其他策略"></a>其他策略</h2><ul>
+<li>Two-Phase Locking</li>
+<li>Non-resource Deadlocks</li>
+<li>Starvation</li>
+<li>….</li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>专业课</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>山与水-漫步秦岭之子午古道</title>
     <url>/2020/08/05/%E5%B1%B1%E4%B8%8E%E6%B0%B4-%E6%BC%AB%E6%AD%A5%E7%A7%A6%E5%B2%AD%E4%B9%8B%E5%AD%90%E5%8D%88%E5%8F%A4%E9%81%93/</url>
     <content><![CDATA[<p>2020年8月2日    海拔1564</p>
@@ -2159,46 +2330,18 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>时与光W-202007-2</title>
-    <url>/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-2/</url>
-    <content><![CDATA[<p>2020年7月6日~2020年7月12日</p>
-<p>徒步: 溧阳-丫髻山</p>
-<a id="more"></a>
-<h2 id="徒步-溧阳-丫髻山"><a href="#徒步-溧阳-丫髻山" class="headerlink" title="徒步: 溧阳-丫髻山"></a>徒步: 溧阳-丫髻山</h2><p>这周日 (7月11-12日) 第一次尝试徒步+爬野山. 以下为流水账记录:</p>
-<p>因为集合的时间是周日大清早, 所以周六就提前去南京了, 找了一家普普通通的青旅安顿下来, 晚上在玄武湖公园逛了一圈 —— 预料之外的大啊哈哈哈, 晚上来这里跑步应该不错, 可惜还是在市中心, 空气不太行. 话说南京的早点包子真难吃啊… 早起去便利店安排了一些物资, 2L 的怡宝+1.5L 的绿茶, 后来证明买这些都是非常必要的.</p>
-<p>领队是个很阳光的大兄弟, 很会唠. 等大巴的时候发现大家都是装备齐全, 背包+登山杖+徒步鞋, 只有我背个小破书包, 蹬了个平底运动鞋来了哈哈哈, 下次一定准备齐全😂. 大巴上领座是位带着两个双胞胎的大叔, 一看就是老户外达人了, 孩子约莫上初中, 一人一个登山杖. 一家人乐乐呵呵地来徒步, 又锻炼体质又促进感情, 真好啊🍋. </p>
-<p>一个钟左右就到溧阳了. 目的地其实是溧阳, 句容交界的两座山头 (最后只爬了一座) . 本来的计划是野道去公路回, 结果前一天一直下雨, 就决定先走公路, 让山路多晒晒太阳. 说起来超级幸运, 本来都已经做好了下雨取消山路的心理准备了, 没想到早上突然晴天. 这也导致我没有带防晒(呜呜呜我以为会是阴天的脑子瓦特了), 带着防身又不多~ 一天走下来直接黑了两个度, 辛苦养半年,一朝回到解放前. </p>
-<p>溧阳的一号彩虹公路, 其实只是中间的双黄道替换成三种不同颜色的标志线, 起初看图片觉得平平无奇, (不就是换个颜色吗有什么新鲜的) 实际上在公路走啊走啊, 看见一条彩虹从脚下延申向远方, 还是有种小确幸滴. 我甚至怀疑倘若自驾走这条路线都没有徒步来的快乐. 一路上和周围人谈笑风生. 有去时正好坐我后排的X, 主动来搭话的杰哥, 另一个小哥shè哥chù Y. 都是独行侠, 甚至都是互联网相关行业的, 只有我一个在校学生. 杰哥是老徒步者了,准备十分充分(连护袖都有准备) 我甚至被杰哥开玩笑”看鞋子就知道是不是新手徒步” (别骂了别骂了我回去就买鞋子😭) 一路上蓝天白云, 上半晌的柏油路还没有升温, 跟着大家东扯西扯: 杰哥今年才从Z大硕士毕业, X 在江宁工作一年, Y本科出来已经工作了五年了. 听他们谈论房租 未来发展, 人生规划. 在想过几年自己是不是也在某个城市漂泊, 在考虑户口, 房价, 股价, 政策发展与行业未来. 同行的还有一个背着女孩的父亲, 小女孩约莫四五岁, 坐在爸爸背后的座位上. 后面上坡下坡都是父亲一直背完了全程, 实在太厉害了!</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%BD%A9%E8%99%B9%E5%85%AC%E8%B7%AF.jpg" alt="彩虹公路"></p>
-<p>终于走过了上半程, 在常州一处小监狱门口稍作休整, 和新伙伴们互相分享了干粮和水—— 这种徒步后的饥饿感让食物瞬间升华, 好吃程度不是拿个方格布带个小竹篮能比拟的2333. 发现拿头巾沾水后带着真的太爽了! 大太阳照着水分汽化吸热, 不经过汗流浃背体会不到凉爽的感觉. 就算在空调房里待一整个夏天也不行. 给大家分享了水, (内心OS: 终于把这个大累赘分出去了! ) 双胞胎在接过水后, 大叔还在一旁督促要说谢谢,  在野外水是非常非常重要的资源云云, 家教极好! 休整之后大家进入了野道, 我也开始记录爬山的路径. </p>
-<p>第一小关是一座摇摇欲坠的小竹桥, 还未见到影子, 就听见前方队友惊呼, 原来竹桥年久失修, 终于在今日不堪重负垮了一半, 半截桥身已然入水. 后面的人只能一个一个走. 扒着相对牢固的扶手. 在最后一个人走过时, 竹桥终于完成了自己一生的使命, 光荣牺牲. 第二天大叔在群里发了我们每个人过桥的照片, 原来他一直在对岸拍摄大家互帮互助过桥的照片, 实在是太惊喜了.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%BF%87%E6%A1%A5.jpg" alt=""></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E6%A1%A5.jpg" width = "800" height = "1000" /></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8A.jpg" width="800" height = "1200" /></p>
-<p>接下来一段上坡路, 坡度大约三四十多度, 茂林修竹, 蚊虫四散. 有同行者带了小音箱, 歌声回绕. 过了这一小段竹林后便是稍显难走的林中小径, 不过半米宽度. 由于X是妹子, 体力不佳, 我们逐渐和脱离了大部队, 又等到了另外一位女生Z. 互相帮着背个包搭把手, 爬上了山顶. </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%B1%B1%E9%A1%B6.jpg" alt=""></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%88%E7%85%A7.jpg" alt="合照"></p>
-<p>下山. </p>
-<p>下山的路比我们想的要更加麻烦, 坡度更大, 沙土质地的路也更难走. 只能每次都踩着树根和石块落脚. 有几段路中间没有落脚点, 后一个人就踩着前一个人的脚作为落脚点, 我也才意识到平底鞋真的真的不适合爬山orz, 完全没有抓地力. </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E4%B8%8B.jpg" width="800" height = "1800" /></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%AE%B0%E5%BD%95.jpg" alt=""></p>
-<p>晚上约了快乐火锅</p>
-<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3>]]></content>
-      <categories>
-        <category>时与光</category>
-      </categories>
-      <tags>
-        <tag>小结</tag>
-        <tag>周记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>操作系统之IO管理</title>
     <url>/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8BIO%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<p>本文未完成</p>
+    <content><![CDATA[<p>本章将涉及: </p>
+<ol>
+<li>IO设备</li>
+<li>盘</li>
+<li>时钟</li>
+<li>其他</li>
+</ol>
+<p><em>本文匆匆赶制, 内容粗糙简陋  <del>背就完事了</del></em> </p>
 <a id="more"></a>
-<p>IO设备分为:</p>
-<ul>
+<h2 id="IO设备"><a href="#IO设备" class="headerlink" title="IO设备"></a>IO设备</h2><h3 id="IO设备分类-⭐"><a href="#IO设备分类-⭐" class="headerlink" title="IO设备分类 ⭐"></a>IO设备分类 ⭐</h3><ul>
 <li>块设备 (Block device)<ul>
 <li>储存于固定大小的块中, 每块都有自己的地址</li>
 <li>每个块都可以可以独立于其他块进行读写</li>
@@ -2217,33 +2360,46 @@ T_0\\
 </li>
 </ul>
 <p><em>我们接下来的讨论一般是针对块设备</em></p>
-<p>IO 设备由以下两个部分组成</p>
-<ul>
+<h3 id="IO-设备部组成"><a href="#IO-设备部组成" class="headerlink" title="IO 设备部组成"></a>IO 设备部组成</h3><ul>
 <li>机械部件(即普遍意义上的设备)</li>
 <li>电子部件</li>
 </ul>
 <p>其中电子部件是用于控制管理机械部件的, 我们将电子部件称为 <strong>设备控制器</strong> .它的主要功能是: </p>
+<p><em><u>知道作用</u></em></p>
 <ul>
-<li>将串行字节流转化未字节块</li>
-<li>对于运行时可能的出错进行纠正</li>
-<li>将字节复制到主存</li>
+<li><p>Convert the serial bit stream into a block of bytes </p>
+<p>将串行字节流转化未字节块</p>
+</li>
+<li><p>Perform any error correction necessary </p>
+<p>对于运行时可能的出错进行纠正</p>
+</li>
+<li><p>Copy it to main memory</p>
+<p>将字节复制到主存</p>
+</li>
 </ul>
 <p><em>注: 一个设备控制器可能同时负责多个机械设备</em></p>
-<p>每个设备控制器都拥有一些寄存器用于与OS通信:</p>
+<p>此外每个设备控制器都拥有一些寄存器用于与OS通信:</p>
 <ul>
 <li>OS通过写入寄存器来命令设备执行操作等</li>
 <li>OS通过读取寄存器来获取设备的状态</li>
 </ul>
 <p>除了寄存器外, 许多设备还有OS可以读取/写入的数据缓冲区</p>
-<p>OS和控制器的通信可以分为三种方式:</p>
+<h3 id="与OS的通信方式"><a href="#与OS的通信方式" class="headerlink" title="与OS的通信方式"></a>与OS的通信方式</h3><p>OS和控制器的通信可以分为三种方式 ⭐</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/mmio.png" alt=""></p>
 <ol>
 <li><p>独立空间</p>
 <p>每个控制寄存器器都分配有一个单独的IO端口号</p>
 <p>内存的地址空间和IO的地址空间完全独立</p>
 </li>
-<li><p>内存映射</p>
+<li><p>内存映射 </p>
 <p>将所有的控制寄存器映射到内存空间.</p>
 <p>这些被映射的内存空间不会被其他内存映射, 只能由控制寄存器使用</p>
+<p><strong>优点</strong></p>
+<ol>
+<li>, a I/O device driver can be written entirely in C. Otherwise, some assembly code is needed</li>
+<li>No special protection mechanism is needed to keep user processes from performing I/O.</li>
+<li>Every instructions that can reference memory can also reference control registers.</li>
+</ol>
 </li>
 <li><p>混合</p>
 <p>IO数据缓冲区采用内存映射, 寄存器采用独立空间</p>
@@ -2259,29 +2415,31 @@ T_0\\
 <li>缓冲区</li>
 <li>共享设备&amp;专业设备</li>
 </ul>
-<p>IO方式</p>
-<ol>
-<li><p>程序控制IO</p>
-<p>使用程序不断查询设备以了解是否就绪, 忙等待, 低效</p>
+<h3 id="IO控制方式-⭐"><a href="#IO控制方式-⭐" class="headerlink" title="IO控制方式 ⭐"></a>IO控制方式 ⭐</h3><ol>
+<li><p>程序控制IO  Programmed I/O </p>
+<p>使用程序不断查询设备以了解是否就绪, 忙等待, 低效 浪费CPU</p>
 </li>
-<li><p>中断控制IO</p>
+<li><p>中断控制IO  Interrupt-Driven I/O </p>
 <p>允许CPU在IO工作时干其他时, 当IO完毕时发出中断.</p>
 <p>问题在于IO每次只能传输一个字符, 中断频率过高</p>
 </li>
-<li><p>DMA控制IO</p>
+<li><p>DMA控制IO⭐  I/O Using DMA </p>
 <p>DMA控制器Direct Memory Access 是一个能够独立于CPU访问系统总线的控制器, 相当于一个字符缓冲池, 当缓冲池满了再向CPU发出中断信号.</p>
+<blockquote>
+<p>DMA controller <strong>has access to the system bus independent of the CPU</strong>. It contains several registers that can be written and read by the CPU</p>
+</blockquote>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/dmA.png" alt=""></p>
 </li>
 </ol>
 <h3 id="IO软件层次"><a href="#IO软件层次" class="headerlink" title="IO软件层次"></a>IO软件层次</h3><p>中断处理</p>
 <p>最好是隐藏的, 不被感知. </p>
 <p>一般需要大量时间, 负责设备与设备驱动之间的通信.</p>
 <p>设备驱动器</p>
-<p>设备独立性</p>
+<p>设备独立性 : 设备在接入前不需要任何特殊处理</p>
 <p>统一接口</p>
 <p>缓冲区</p>
 <p>​    双BUFFER区(乒乓机制)</p>
-<p>光盘</p>
-<ol>
+<h2 id="盘"><a href="#盘" class="headerlink" title="盘"></a>盘</h2><ol>
 <li><p>每个byte由 14个bits构成</p>
 </li>
 <li><p>每42个byte构成1个帧(frame)</p>
@@ -2293,13 +2451,14 @@ T_0\\
 </ol>
 <p>柱面斜进, 每圈的零扇区在磁盘上不是位于同一条直线上.</p>
 <p>磁盘交错. </p>
-<p><img src="" alt=""></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/DISK%20FORMAT.png" alt=""></p>
 <ol>
 <li>无交错, 每个扇区顺序排列</li>
 <li>单交错</li>
 <li>双交错</li>
 </ol>
-<h2 id="Disk"><a href="#Disk" class="headerlink" title="Disk"></a>Disk</h2><h3 id="磁盘臂调度算法"><a href="#磁盘臂调度算法" class="headerlink" title="磁盘臂调度算法"></a>磁盘臂调度算法</h3><p>磁盘在读写过程种有三个时间决定: </p>
+<p><em>(以上了解)</em></p>
+<h3 id="磁盘臂调度算法⭐"><a href="#磁盘臂调度算法⭐" class="headerlink" title="磁盘臂调度算法⭐"></a>磁盘臂调度算法⭐</h3><p>磁盘在读写过程种有三个时间决定: </p>
 <ul>
 <li><p>寻道时间Seek Time </p>
 <p>将磁盘臂移动到适当的柱面上需要的时间</p>
@@ -2315,6 +2474,32 @@ T_0\\
 <h4 id="FCFS"><a href="#FCFS" class="headerlink" title="FCFS"></a>FCFS</h4><p>按照柱面访问顺序进行访问. </p>
 <h4 id="Shortest-Seek-Frist-最近柱面优先"><a href="#Shortest-Seek-Frist-最近柱面优先" class="headerlink" title="Shortest Seek Frist 最近柱面优先"></a>Shortest Seek Frist 最近柱面优先</h4><p>每次都访问离当前最近的</p>
 <h4 id="The-elevator-algorithm-电梯调度"><a href="#The-elevator-algorithm-电梯调度" class="headerlink" title="The elevator algorithm 电梯调度"></a>The elevator algorithm 电梯调度</h4><p>每次都从头到尾,再从尾到头</p>
+<h2 id="时钟"><a href="#时钟" class="headerlink" title="时钟"></a>时钟</h2><p>作用⭐</p>
+<ol>
+<li><p>Maintaining the time of day  维持一天中的时间。 </p>
+</li>
+<li><p>Preventing pro running longer  防止进程运行超出允许的时间</p>
+<p>在启动进程时设定一个计数器, 每个时钟中断处将计数器—, When it gets to zero, the clock driver calls the scheduler to set up another process.</p>
+</li>
+<li><p>Accounting for CPU usage  计算CPU使用率</p>
+<p>每当启动进程时，启动一个不同于主系统计时器的第二个计时器。当该过程停止时，可以读出计时器以告知该过程已运行了多长时间。</p>
+</li>
+<li><p>Handling the alarm system call  处理用户进程发出的警报系统调用</p>
+</li>
+<li><p>Providing watchdog timers  为系统本身的各个部分提供监视定时器</p>
+<p>例如: 在一定时间间隔内未确认的数据包必须重新发送</p>
+</li>
+</ol>
+<p><em><u>其他了解即可</u></em></p>
+<h2 id="Network-terminals-网络终端"><a href="#Network-terminals-网络终端" class="headerlink" title="Network terminals                    网络终端"></a>Network terminals                    网络终端</h2><h3 id="两类终端"><a href="#两类终端" class="headerlink" title="两类终端"></a>两类终端</h3><ul>
+<li><p>胖终端  X Windows</p>
+<p>终端具有大量的计算能力和内存，以便运行复杂的协议来压缩通过网络发送的数据量。 </p>
+</li>
+<li><p>瘦终端 SLIM</p>
+<p>终端非常简单，基本上是显示像素，并且为了使其便宜而没有做太多的复杂设计</p>
+</li>
+</ul>
+<p><em><u>其他了解即可</u></em></p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -2324,6 +2509,590 @@ T_0\\
       <tags>
         <tag>学习笔记</tag>
         <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统之文件系统</title>
+    <url>/2020/08/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>本章将会涉及:</p>
+<ol>
+<li>文件</li>
+<li>目录</li>
+<li>文件系统的实现</li>
+</ol>
+<a id="more"></a>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p>在进程的运行过程中出现了以下需求: 1) 需要储存大量信息; 2)信息需要保存至进程结束后; 3) 多个进程需要同时对数据进行操作.</p>
+<p>为了解决以上问题, 我们将信息存储在磁盘和其他外部介质中, 称之为 <strong>文件</strong>.</p>
+<h3 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h3><p>文件的命名要求因操作系统而已. </p>
+<p>有的系统区分文件的大小写, 有的则不区分(MS-DOS).</p>
+<p>许多OS使用字符<code>.</code>将文件名分成两部分, 后半部分称为 <strong>文件后缀名</strong>(file extension)</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E5%90%8E%E7%BC%80.png" alt=""></p>
+<h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><p>文件有多种组成结构</p>
+<ol>
+<li>byte sequence  文件由字节序列组成 (UNIX和WIN都是如此)</li>
+<li>record sequence 文件由记录片组成(早期插卡式系统)</li>
+<li>tree 树型 文件是一层层地储存的</li>
+</ol>
+<h3 id="文件分类"><a href="#文件分类" class="headerlink" title="文件分类"></a>文件分类</h3><p>由使用用途</p>
+<ul>
+<li>系统文件</li>
+<li>用户文件</li>
+<li>库文件</li>
+</ul>
+<p>由数据形式</p>
+<ul>
+<li>源文件</li>
+<li>目标文件</li>
+<li>可执行文件</li>
+</ul>
+<p>由权限</p>
+<ul>
+<li>只可执行文件</li>
+<li>只读</li>
+<li>读写</li>
+</ul>
+<p>由逻辑结构</p>
+<ul>
+<li>结构化数据</li>
+<li>非结构化数据</li>
+</ul>
+<p>由(在硬盘上储存的)物理结构</p>
+<ul>
+<li>顺序文件</li>
+<li>连接文件</li>
+<li>索引文件</li>
+</ul>
+<p>UNIX和WIN都有常规文件和目录文件</p>
+<p>UNIX中还有 字符设备文件 和块设备文件, 进程文件(伪文件)等特殊文件.</p>
+<h3 id="文件访问"><a href="#文件访问" class="headerlink" title="文件访问"></a>文件访问</h3><ul>
+<li><p>顺序访问</p>
+<p>只能从最开始访问</p>
+<p>不能跳转</p>
+</li>
+<li><p>随机访问</p>
+<p>以任意顺序访问</p>
+</li>
+</ul>
+<h3 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h3><p>文件包括很多属性,见图</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7.png" alt=""></p>
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><ul>
+<li>创建</li>
+<li>删除</li>
+<li>打开</li>
+<li>关闭</li>
+<li>读</li>
+<li>写</li>
+<li>追加</li>
+<li>查找</li>
+<li>访问属性</li>
+<li>设定属性</li>
+<li>重命名</li>
+</ul>
+<hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="目录系统的种类"><a href="#目录系统的种类" class="headerlink" title="目录系统的种类"></a>目录系统的种类</h3><ul>
+<li><p>单层析目录</p>
+<p>ROOT 下直接跟随各种文件</p>
+</li>
+<li><p>双层次目录</p>
+<p>ROOT 下由用户创建文件夹, 并在文件夹中储存文件</p>
+</li>
+<li><p>多层次目录</p>
+<p>ROOT 下由用户创建文件夹, 并在文件夹中储存文件或文件夹</p>
+</li>
+</ul>
+<h3 id="路径-⭐"><a href="#路径-⭐" class="headerlink" title="路径 ⭐"></a>路径 ⭐</h3><p>假设文件层次如下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root:</span><br><span class="line">├─other1</span><br><span class="line">└─usr</span><br><span class="line">    ├─ast</span><br><span class="line">    │  ├─mailbox</span><br><span class="line">    │  ├─myInfo.txt</span><br><span class="line">    │  └─other3</span><br><span class="line">    └─other2</span><br></pre></td></tr></table></figure>
+<p>假设当前位于<code>ast</code>目录</p>
+<ul>
+<li><p>Absolute path name </p>
+<p>绝对路径(从根目录起) 前加 <code>/</code> </p>
+<ul>
+<li><code>/usr/ast/mailbox</code> (UNIX)   访问mailbox文件夹</li>
+<li><code>/usr/ast/myInfo.txt</code> (UNIX)   访问myInfo.txt</li>
+<li><code>\usr\ast\mailbox</code> (Win)    访问mailbox文件夹</li>
+</ul>
+</li>
+<li><p>Relative path name</p>
+<p>相对目录(从当前目录开始) </p>
+<ul>
+<li><code>mailbox</code>    访问mailbox文件夹</li>
+<li><code>./myInfo.txt</code> 访问myInfo.txt</li>
+</ul>
+<p>如访问当前目录的可执行文件，如果用相对路径必须是 ./filename</p>
+</li>
+<li><p>Working directory ( current directory) </p>
+<ul>
+<li><code>/usr/ast</code> 表示当前目录</li>
+</ul>
+</li>
+</ul>
+<h3 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h3><ul>
+<li>Create</li>
+<li>Delete</li>
+<li>Opendir</li>
+<li>Closedir</li>
+<li>Readdir</li>
+<li>Rename</li>
+<li>Link(hard link/symbol link)</li>
+<li>Unlink</li>
+</ul>
+<hr>
+<h2 id="文件系统的实现"><a href="#文件系统的实现" class="headerlink" title="文件系统的实现"></a>文件系统的实现</h2><h3 id="文件系统布局"><a href="#文件系统布局" class="headerlink" title="文件系统布局"></a>文件系统布局</h3><p>文件都是储存在磁盘上的. 大多数磁盘都分为一个或多个区(Partitions) ,  每个区都有自己的独立文件系统.</p>
+<p>磁盘的0扇区被称为 <strong>主引导区</strong> <strong>MBR</strong> (Master Boot Record) , 用于引导计算机启动.</p>
+<blockquote>
+<p> Sector 0 of the disk is called MBR (Master Boot Record) and is used to boot the computer.</p>
+</blockquote>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B8%83%E5%B1%80.png" alt=""></p>
+<ul>
+<li>Partition table: 给出每个分区开始结束的地址信息gives the starting and ending addresses of each partition. </li>
+<li>Boot block: locate the active partition </li>
+<li>Superblock: magic number, number of blocks, … </li>
+<li>Free space mgmt: 使用位图/链表储存文件的空余信息</li>
+<li>i-nodes: an array of data structure, one per file. </li>
+<li>后面的部分就是真正的文件和目录内容了</li>
+</ul>
+<h3 id="文件的实现"><a href="#文件的实现" class="headerlink" title="文件的实现"></a>文件的实现</h3><ul>
+<li>顺序存放</li>
+<li>链接存放</li>
+<li>使用FAT在内存中链接存放 </li>
+<li>I-Node ⭐</li>
+</ul>
+<h4 id="顺序存放"><a href="#顺序存放" class="headerlink" title="顺序存放"></a>顺序存放</h4><p>就是顺序存放.</p>
+<p>优点:</p>
+<ul>
+<li>简单</li>
+<li>读的性能非常高效</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>文件如果后续需要删除, 重写会造成大量碎片</li>
+</ul>
+<p>常用于后续不会再写入数据. 如CD</p>
+<h4 id="链接存放"><a href="#链接存放" class="headerlink" title="链接存放"></a>链接存放</h4><p>每个文件都指明下一个文件的指针</p>
+<p>缺点: 随机访问非常非常慢, 找一个文件要从头找</p>
+<h4 id="使用FAT在内存中链接存放⭐"><a href="#使用FAT在内存中链接存放⭐" class="headerlink" title="使用FAT在内存中链接存放⭐"></a>使用FAT在内存中链接存放⭐</h4><p>将文件的链接关系放在一张表中, 称为 <strong>文件分配表</strong> (( File Allocation Table), FAT) </p>
+<p>缺点: 需要将整个文件系统的表(通常很大)载入内存.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/FAT.png" alt=""></p>
+<h4 id="I-Node-⭐"><a href="#I-Node-⭐" class="headerlink" title="I-Node ⭐"></a>I-Node ⭐</h4><p>给每个文件赋予一个相关联的数据结构, 称为 <strong>索引节点</strong>（I-Node , index-node），该数据结构列出了文件块的<strong>属性</strong>和<strong>磁盘地址</strong>。仅在访问本文件时, 才需要将节点载入内存.</p>
+<p>也有可能储存文件的磁盘地址比较多, 可以再指向另外一个储存地址的地址</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/inode.png" alt=""></p>
+<h3 id="目录的实现"><a href="#目录的实现" class="headerlink" title="目录的实现"></a>目录的实现</h3><p>目录系统的主要功能是<strong>将文件的ASCII名称映射到定位数据所需的信息</strong>上。</p>
+<p>Windows 系统给每个条目都分配了定长的数据段, 来保存文件的属性. </p>
+<p>UNIX 系统给每个条目分配一个I-node的引用</p>
+<h3 id="共享文件"><a href="#共享文件" class="headerlink" title="共享文件"></a>共享文件</h3><p>UNIX 提供共享文件的机制. 出现在多用户下.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6.png" alt=""></p>
+<p>C的一个文件出现在B的目录下。B的目录与该共享的联系称为一个连接 LINK.</p>
+<p>问题：若目录中包含磁盘地址，则连接文件时，C目录的磁盘地址复制到B目录<br>中，若B或C后又加内容，则新的数据块只会列入进行添加工作的目录中。</p>
+<h4 id="hard-link"><a href="#hard-link" class="headerlink" title="hard link"></a><strong>hard link</strong></h4><p>（硬连接或者实际连接）</p>
+<p>由于Linux里面每个文件都对应一个inode，而文件名是记录在目录的block里的，也就是说文件名和inode没有关系，这样就可以把多个文件名对应同一个inode，这就是hard link，简单的说：hard link只是在某个目录下新建一条文件名连接到某inode号码的关联记录而已。</p>
+<p>缺点</p>
+<ul>
+<li>不能够跨文件系统地做硬连接</li>
+<li>不能够连接到目录</li>
+</ul>
+<h4 id="symbolic-link"><a href="#symbolic-link" class="headerlink" title="symbolic link"></a><strong>symbolic link</strong></h4><p>软连接或者符号连接</p>
+<p>软连接创建一个新的文件，有自己的inode和block，只是在block里记录的是到连接目标文件的指向，读取到这个指向记录以后，系统再从根目录一层层进到目标文件的block里把数据读出来</p>
+<p>symbolic link有如下特点：</p>
+<p>1.等于是文件的一个“快捷方式”，只起一个指向作用</p>
+<p>2.是一个独立的新文件，对目标文件没有任何影响</p>
+<p>3.目标文件一旦删除，软连接会打不开</p>
+<p>两种连接方式都存在的问题: 查找文件时会将同一个文件重复查询.</p>
+<h3 id="Linux虚拟文件系统VFS"><a href="#Linux虚拟文件系统VFS" class="headerlink" title="Linux虚拟文件系统VFS"></a>Linux虚拟文件系统VFS</h3><p> 整个 Linux 系统通过 Virtual Filesystem Switch 的核心功能去 读取 filesystem。整个 Linux 认识的 filesystem 都是 VFS 在 进行管理，使用者并不需要知道每个 partition 的 filesystem 是什么</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/VFS.png" alt=""></p>
+<p><em><u>其他了解即可</u></em></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>专业课</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统之安全</title>
+    <url>/2020/08/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%AE%89%E5%85%A8/</url>
+    <content><![CDATA[<p>本章将涉及:</p>
+<ol>
+<li>安全与威胁</li>
+<li>简易密码学(真的很简易!)</li>
+<li>用户认证</li>
+<li>系统受到的攻击<ol>
+<li>来自内部</li>
+<li>来自外部</li>
+</ol>
+</li>
+<li>保护机制</li>
+<li>信任系统</li>
+<li>OS安全</li>
+</ol>
+<p><em>本文匆匆赶制, 内容粗糙简陋</em></p>
+<a id="more"></a>
+<h2 id="安全与威胁"><a href="#安全与威胁" class="headerlink" title="安全与威胁"></a>安全与威胁</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Threat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data confidentiality 数据机密性</td>
+<td>Exposure of data 数据泄露</td>
+</tr>
+<tr>
+<td>Data integrity           数据完整性</td>
+<td>Tampering with data 数据篡改</td>
+</tr>
+<tr>
+<td>System available     系统可用性</td>
+<td>Denial of service      拒绝服务</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>首先保护数据的机密性, 防止数据泄露.   需要保证数据不被外界所知.</p>
+<p>其次要保证数据的完整性, 防止数据被破坏.  不能被外界破坏.</p>
+<p>最后要保证系统的可用性, 防止系统拒绝服务. 例如DoS攻击等</p>
+<p>入侵者 intruder or sometimes 敌人 adversary<br>a) Passive intruders(被动入侵者)- to read files they are not authorized to<br>read<br>b) Active intruders(主动入侵者)- to make unauthorized changes to data</p>
+<p>常见的安全入侵场景有:</p>
+<ol>
+<li>Casual prying (窥探) by nontechnical users     被非专业使用者随意窥探</li>
+<li>Snooping by insiders  被内部人员窥视</li>
+<li>Determined attempt to make money  为了利益</li>
+<li>Commercial or military espionage   商业或军事间谍</li>
+</ol>
+<p>常见的数据丢失场景有:</p>
+<ol>
+<li><p>天灾</p>
+<p>fires, floods, wars</p>
+</li>
+<li><p>软硬件错误</p>
+<p>CPU malfunction, bad disk, program bugs </p>
+</li>
+<li><p>人为错误</p>
+<p>data entry, wrong tape mounted</p>
+<hr>
+</li>
+</ol>
+<h2 id="密码学基础"><a href="#密码学基础" class="headerlink" title="密码学基础"></a>密码学基础</h2><p><em><u>了解即可</u></em></p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul>
+<li>斯巴达将军</li>
+<li>戚继光: 反切注音法</li>
+<li>周恩来: 豪密</li>
+<li>菲利普与玛丽女王</li>
+<li>一战: 齐默尔曼电报</li>
+<li>二战: Enigma密码机, 图灵</li>
+</ul>
+<h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><ul>
+<li>? - 1949 古典密码<ul>
+<li>密码学还不是科学, 而是艺术</li>
+<li>数据的安全<strong>基于算法的保密</strong></li>
+<li>一般的加密方法是<strong>替换</strong></li>
+<li>单表替换密码(凯撒密码), 多表替换密码(Playfair密码, Hill密码) , 转轮密码(Enigma)</li>
+</ul>
+</li>
+<li>1949 - 1975 复杂计算的密码<ul>
+<li>由于算力提升使得复杂计算的密码称为可能</li>
+<li>1949年,香农发表了&lt;&lt;保密系统的信息理论&gt;&gt;(The Communication Theory of Secrecy Systems), 它证明了密码编码 学是如何置于坚实的数学基础之上的，从此密码学发展成为 一个专门学科。——标志性事件 </li>
+<li>数据的安全<strong>基于密钥</strong>而不是算法的保密</li>
+</ul>
+</li>
+<li>1975 - 公钥密码<ul>
+<li>公钥密码学成为主要研究方向 </li>
+<li><strong>公钥密码</strong>使得发送端和接收端<strong>无密钥传输的保密通信</strong>成为可能</li>
+</ul>
+</li>
+</ul>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h4 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h4><ul>
+<li>传统密码/常规密码/私钥密码/单钥密码 conventional / private-key / single-key</li>
+<li>发送方和接收方共享一个共同的密钥</li>
+<li>20世纪70年代以前私钥密码是唯一类型 </li>
+<li>至今仍广泛应用</li>
+</ul>
+<h4 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h4><ul>
+<li>公钥/双钥/非对称密码都是指使用两个密钥: <ul>
+<li>公钥：可以对任何人公开的密钥，用于加密消息或 验证签名。 </li>
+<li>私钥：只能由接收者私存，用于解密消息或签名。 </li>
+</ul>
+</li>
+<li>非对称 <ul>
+<li>用于加密消息或验证签名的人不能进行消息的加密或消息的签名。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="用户认证⭐"><a href="#用户认证⭐" class="headerlink" title="用户认证⭐"></a>用户认证⭐</h2><p>Authentication<br>user authentication（用户验证） crackers（骇客）</p>
+<p>认证必须要能够标识使用者的身份</p>
+<p>用户认证应当在使用系统之前完成</p>
+<p>三种认证方式</p>
+<ol>
+<li><p>Something the user knows</p>
+<p>密码, 口令</p>
+</li>
+<li><p>Something the user has</p>
+<p>钥匙, 芯片, 动态密码, 验证码</p>
+</li>
+<li><p>Something the user is</p>
+<p>指纹, 虹膜</p>
+</li>
+</ol>
+<blockquote>
+<p>UNIX 安全系统会对输入的密码进行<strong>加盐</strong>(Salt), 即将每一个口令同一个叫做盐（Salt）的n位随机数相关联。无论何时口令改变，这个随机数就改变。将口令和随机数连接起来，一同加密，加密后的结果存放进口令文件。</p>
+<p>One-Time passwords 对于函数 y=f(x) 已知y求x的难度远大于已知x求y的难度. </p>
+</blockquote>
+<h3 id="一些用户认证时的对策"><a href="#一些用户认证时的对策" class="headerlink" title="一些用户认证时的对策"></a>一些用户认证时的对策</h3><ul>
+<li>Limiting times when someone can log in    限制登录时间</li>
+<li>Automatic callback at number prespecified   自动回调 (例如判断密码是否太过简单)</li>
+<li>Limited number of login tries   限制尝试的登录次数</li>
+<li>A database of all logins    记录所有尝试登录的数据</li>
+<li>Simple login name/password as a trap  使用简单的密码作为陷阱 (假装登陆成功)</li>
+<li>security personnel notified when attacker bites 当检测到攻击者时通知安全人员</li>
+</ul>
+<hr>
+<h2 id="系统受到的攻击"><a href="#系统受到的攻击" class="headerlink" title="系统受到的攻击"></a>系统受到的攻击</h2><h3 id="Insider-Attacks-内部攻击"><a href="#Insider-Attacks-内部攻击" class="headerlink" title="Insider Attacks 内部攻击"></a>Insider Attacks 内部攻击</h3><h4 id="Logic-Bombs"><a href="#Logic-Bombs" class="headerlink" title="Logic Bombs"></a>Logic Bombs</h4><p>（逻辑炸弹）由一些公司的编程人员或使用这些受保护的计算机、编制核心软件的员工实施.秘密的嵌在产品的操作系统中的代码，特定情况下爆炸</p>
+<h4 id="Trap-Doors"><a href="#Trap-Doors" class="headerlink" title="Trap Doors"></a>Trap Doors</h4><p>（后门）系统程序员跳过正常的认证过程并插入一段代码造成<br>的。代码审查 code review</p>
+<h4 id="Login-Spoofing"><a href="#Login-Spoofing" class="headerlink" title="Login Spoofing"></a>Login Spoofing</h4><p>（登录欺骗）假冒的登录屏幕</p>
+<h4 id="Trojan-Horses"><a href="#Trojan-Horses" class="headerlink" title="Trojan Horses"></a>Trojan Horses</h4><p>特洛伊木马 诱导用户运行攻击代码</p>
+<h4 id="Buffer-Overflow"><a href="#Buffer-Overflow" class="headerlink" title="Buffer Overflow"></a>Buffer Overflow</h4><p>缓冲区溢出攻击</p>
+<h3 id="Outside-Attacks-外部攻击"><a href="#Outside-Attacks-外部攻击" class="headerlink" title="Outside Attacks 外部攻击"></a>Outside Attacks 外部攻击</h3><h4 id="Virus"><a href="#Virus" class="headerlink" title="Virus"></a>Virus</h4><p>病毒: 不断地复制自身并传播</p>
+<h4 id="Morris-Worm"><a href="#Morris-Worm" class="headerlink" title="Morris Worm"></a>Morris Worm</h4><p>蠕虫: 先潜伏自己的存在, 直到传播到一定规模后再爆发</p>
+<p>(zero-day Attack</p>
+<p>Zombie</p>
+<p>…</p>
+<h2 id="系统设计的原则"><a href="#系统设计的原则" class="headerlink" title="系统设计的原则"></a>系统设计的原则</h2><ol>
+<li>System design should be public </li>
+<li>Default should be no access </li>
+<li>Check for current authority </li>
+<li>Give each process least privilege possible </li>
+<li>Protection mechanism should be 保护机制应当<ul>
+<li>simple 简单</li>
+<li>uniform  统一</li>
+<li>in lowest layers of system  处于系统底层</li>
+</ul>
+</li>
+<li>Scheme should be psychologically acceptable</li>
+</ol>
+<h2 id="保护机制-⭐"><a href="#保护机制-⭐" class="headerlink" title="保护机制 ⭐"></a>保护机制 ⭐</h2><h3 id="Protection-Domains"><a href="#Protection-Domains" class="headerlink" title="Protection Domains"></a>Protection Domains</h3><p>注: 下文中提到的 <em>用户</em> 也可能指进程</p>
+<p>保护域</p>
+<p>a domain is a set of （object， right） pairs. Each pair specifies an object and some<br>subset of the operations that can be performed. A right means permission to perform one of the operations.<br>一对对象权限的组合，每对组合指定一个对象和一些可在上面运行的操作子集指对某个操作的执行许可.</p>
+<p>人话: 一张表, 记录了所有的文件和每个用户允许对文件进行的操作</p>
+<p>缺点: 太大</p>
+<h3 id="Access-Control-Lists-ACL"><a href="#Access-Control-Lists-ACL" class="headerlink" title="Access Control Lists , ACL"></a>Access Control Lists , ACL</h3><p>访问控制列表</p>
+<p>每个对象的有序列表里包含了所有可访问对象的域以及这些域如何访问这些对象的方法</p>
+<p>人话: 由于文件多而域少, 因此在每个文件处记录哪些域能进行什么操作. 将保护域按文件分解</p>
+<h3 id="Capabilities"><a href="#Capabilities" class="headerlink" title="Capabilities"></a>Capabilities</h3><p>权能字</p>
+<p>使用按行存储时，与每个进程关联的是可访问的对象列表，以及每个对象上叫做权能字列表，每个单独的项目叫做权能字</p>
+<p>人话: 每个用户自己储存对每个文件能进行什么操作, 将保护域按用户分解</p>
+<p>因此要防止权能字被用户自己篡改(三种方法)</p>
+<ol>
+<li>First way, require a tagged architecture </li>
+<li>Second way, keep the C-list inside the OS </li>
+<li>Third way, keep the C-list in user space, but manage the capabilities cryptographically</li>
+</ol>
+<h2 id="可信任系统"><a href="#可信任系统" class="headerlink" title="可信任系统"></a>可信任系统</h2><p>完全可信任的系统是否存在?</p>
+<p>可信任系统的核心是 <strong>可信计算基Trusted Computing Base, TCB</strong></p>
+<p>TCB 是一种机制, 保护所有敏感操作; (例如切换进程, 进程创建, 内存映射管理等) 任何试图访问这些操作的进程必须通过可信计算基的安全审查, 称为 reference monitor (访问监视器)</p>
+<blockquote>
+<p>All system calls go through the reference monitor for security checking</p>
+</blockquote>
+<p>TCB可以通过硬件, 软件, 固件的形式实现, 它只是个机制. </p>
+<p>一旦可信计算机基的某个构件出现程序错误或者安全隐患，就对整个系统的安全造成危害。 与之相反，如果除可信计算基之外的系统的其他部分出现问题，也只是泄漏了系统安全策略赋予它们的相关权限而已，这些权限一般都是比较低的。</p>
+<p>现代操作系统努力降低TCB的大小，使得对其代码库彻底的检查成为可能.</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>专业课</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初窥HTTP之二_HTTP报文</title>
+    <url>/2020/08/03/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%BA%8C-HTTP%E6%8A%A5%E6%96%87/</url>
+    <content><![CDATA[<p>HTTP 报文的信息 </p>
+<p>HTTP 状态码</p>
+<p>HTTP 首部(待完成)</p>
+<a id="more"></a>
+<h2 id="HTTP-报文的信息"><a href="#HTTP-报文的信息" class="headerlink" title="HTTP 报文的信息"></a>HTTP 报文的信息</h2><p>本段将介绍HTTP报文中包括有那些信息.包括:</p>
+<ol>
+<li>报文的结构</li>
+<li>报文编码</li>
+<li>多部分对象集合</li>
+<li>范围传输</li>
+<li>内容协商</li>
+</ol>
+<h3 id="报文结构"><a href="#报文结构" class="headerlink" title="报文结构"></a>报文结构</h3><p>HTTP报文是由多行数据构成的, 每行之间使用<code>CR+LF</code>(\r\n) 进行换行.</p>
+<p>报文可被分为报文首部与报文主体, 后者并不是必须的.</p>
+<p>报文首部包括:</p>
+<ul>
+<li>请求行 / 状态行</li>
+<li>请求首部字段 / 响应首部字段</li>
+<li>通用首部字段</li>
+<li>实体首部字段</li>
+<li>其他</li>
+</ul>
+<p><strong>请求行</strong></p>
+<p>包括请求的方法, 请求URI, HTTP版本</p>
+<p><strong>状态行</strong></p>
+<p>包括响应的结果状态码, 原因短语, HTTP版本</p>
+<p><strong>首部字段</strong></p>
+<p>包括表示各种条件和属性的各类首部语句. 分为四种: </p>
+<ol>
+<li>请求首部字段(仅在请求报文中出现); </li>
+<li>响应首部字段(仅在响应报文中出现); </li>
+<li>通用首部字段; </li>
+<li>实体首部字段;</li>
+</ol>
+<p><strong>其他</strong></p>
+<p>其他未在RFC中定义的字段, 如Cookie</p>
+<h3 id="报文编码"><a href="#报文编码" class="headerlink" title="报文编码"></a>报文编码</h3><p>对传输的数据进行编码可以提高传输速率, 但是编码与解码会消耗CPU资源.</p>
+<h4 id="报文主体与实体主体"><a href="#报文主体与实体主体" class="headerlink" title="报文主体与实体主体"></a>报文主体与实体主体</h4><p>报文是HTTP实际传输的字节流. 报文包括报文首部与报文主体.(报文主体可以是0个或1个)</p>
+<p>实体是作为请求或响应的有效载荷数据. 由实体首部与实体主体组成.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(没有报文主体)</span><br><span class="line">	没有实体</span><br><span class="line">if(有报文主体)</span><br><span class="line">	if(有1个实体)</span><br><span class="line">		if(实体未被处理)	&#x2F;&#x2F;处理指: 传输中进行编码操作</span><br><span class="line">			无实体首部</span><br><span class="line">			实体主体&#x3D;&#x3D;报文主体</span><br><span class="line">		if(实体被处理)</span><br><span class="line">			有实体首部</span><br><span class="line">			实体主体!&#x3D;报文主体</span><br><span class="line">	if(有多个实体)</span><br><span class="line">		有实体首部</span><br><span class="line">		实体主体!&#x3D;报文主体</span><br></pre></td></tr></table></figure>
+<p>个人理解,不一定对.</p>
+<p><a href="https://www.zhihu.com/question/263752229" target="_blank" rel="noopener">知乎:http报文和实体的差别？</a></p>
+<h4 id="压缩传输"><a href="#压缩传输" class="headerlink" title="压缩传输"></a>压缩传输</h4><p>将实体内容通过编码进行压缩, 常见的内容编码有:</p>
+<ul>
+<li>gzip</li>
+<li>compress</li>
+<li>deflate</li>
+<li>identify (不进行编码)</li>
+</ul>
+<h3 id="分割传输"><a href="#分割传输" class="headerlink" title="分割传输"></a>分割传输</h3><p>将大容量的数据分割传输, 让浏览器逐步显示页面, 称作 <strong>分块传输编码</strong>(Chunked Transfer Coding).</p>
+<p>实体被分割成的多个部分使用一个十六进制来标记块的大小. </p>
+<h3 id="多部份对象集合"><a href="#多部份对象集合" class="headerlink" title="多部份对象集合"></a>多部份对象集合</h3><p><a href="https://en.wikipedia.org/wiki/MIME" target="_blank" rel="noopener"><em>Wiki:MIME</em></a></p>
+<p>多功能Internet邮件扩展（MIME）是一种Internet标准，以支持除ASCII以外的字符集以及音频，视频，图像和应用程序附件的文本.</p>
+<p>MIME使用了Multipart 的方法来容纳多种不同类型的数据, 这个方法也被HTTP 采纳.</p>
+<ul>
+<li><p>multipart/form-data</p>
+<p>这是在Web上传表单时使用</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Content-Type: multipart&#x2F;form-data; boundary&#x3D;AaB03x</span><br><span class="line"></span><br><span class="line">--AaB03x</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;fieldl&quot;</span><br><span class="line"></span><br><span class="line">Joe Blow</span><br><span class="line">--AaB03x</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;pics&quot;: filename&#x3D;filel. txt&quot;</span><br><span class="line">Content-Type: text&#x2F;plain</span><br><span class="line"></span><br><span class="line">(fi1e1.txt的数据)</span><br><span class="line">--AaB03x--</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>multipart/byteranges</p>
+<p>状态码206（Partial Content，部分内容）</p>
+<p>响应报文包含了多个范围的内容时使用。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Http&#x2F;1.1 206 parTial Content</span><br><span class="line">Date: Fri, 13 Jul 2012 02: 45: 26 GMT</span><br><span class="line">Last-Modified: Fri, 31 Aug 2007 02: 02: 20 GMT</span><br><span class="line">Content-Type: multipart&#x2F;byteranges: boundary&#x3D;THIS_STRING_SEPARATES</span><br><span class="line"></span><br><span class="line">--THIS_STRING_SEPARATES</span><br><span class="line">Content-Type: application&#x2F;pdf</span><br><span class="line">Content-Range: bytes 500-999&#x2F;8000</span><br><span class="line"></span><br><span class="line">...(范围指定的数据)...</span><br><span class="line">--THIS_STRING_SEPARATES</span><br><span class="line">Content-Type: application&#x2F;pdf</span><br><span class="line">Content-Range: bytes 7000-7999&#x2F;8000</span><br><span class="line"></span><br><span class="line">...(范围指定的数据)...</span><br><span class="line">--THIS_STRING_SEPARATES--</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在HTTP报文中使用多部分对象集合时，需要在首部字段里加上Content-type；</p>
+</li>
+<li><p>报文主体中包括多个实体,每个实体都由实体头部与实体主体组成</p>
+<p>实体的头部与主体之间依旧使用CR+LF换行.</p>
+</li>
+<li><p>使用boundary字符串来划分多部分对象集合指明的各类实体。在boundary字符串指定的各个实体的起始行之前插入”—“标记作为结束.</p>
+</li>
+<li><p>也可以在某处嵌套使用多部份对象集合</p>
+</li>
+</ul>
+<h3 id="范围请求"><a href="#范围请求" class="headerlink" title="范围请求"></a>范围请求</h3><p>指定范围发送的请求叫做<code>范围请求</code>(Range Request)。执行范围请求时，会用到首部字段<code>Range</code>来指定资源的byte范围。byte范围的指定形式如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Range: bytes&#x3D;5001-10000	&#x2F;&#x2F;5001~10000字节</span><br><span class="line">Range: bytes&#x3D;5001-		&#x2F;&#x2F;从5001字节之后全部的</span><br><span class="line">Range: bytes&#x3D;-3000, 5000-7000	&#x2F;&#x2F;从一开始到3000字节和5000~7000字节的多重范围</span><br></pre></td></tr></table></figure>
+<p>针对范围请求，响应会返回状态码为<code>206 Partial Content</code>的响应报文。</p>
+<p>对于多重范围的范围请求，响应会在首部字段<code>Content-Type</code>表明<code>multipart/byteranges</code>后返回响应报文。</p>
+<p>如果服务器端无法响应范围请求，则会返回状态码<code>200 OK</code>和完整的实体内容。</p>
+<h3 id="内容协商"><a href="#内容协商" class="headerlink" title="内容协商"></a>内容协商</h3><p><code>内容协商</code>(Content Negotiation)机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户端最为适合的资源。内容协商会以响应资源的语言、字符集、编码方式等作为判断的基准。</p>
+<p>包含在请求报文中的某些首部字段就是判断的基准，比如：<code>Accept</code>、<code>Accept-Charset</code>、<code>Accept-Encoding</code>、<code>Accept-Language</code>、<code>Content-Language</code>。</p>
+<p>内容协商技术有以下3种类型：服务器驱动协商(Server-driven Negotiation)、客户端驱动协商(Agent-driven Negotiation)、透明协商(Transparent Negotiation)。</p>
+<hr>
+<h2 id="HTTP-状态码"><a href="#HTTP-状态码" class="headerlink" title="HTTP 状态码"></a>HTTP 状态码</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>类别</th>
+<th>原因短语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1XX</td>
+<td>Informational  (信息性状态码)</td>
+<td>接收的请求正在处理</td>
+</tr>
+<tr>
+<td>2XX</td>
+<td>Success（成功状态码）</td>
+<td>请求正常处理完毕</td>
+</tr>
+<tr>
+<td>3XX</td>
+<td>Redirection（重定向状态码）</td>
+<td>需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td>Client Error（客户端错误状态码）</td>
+<td>服务器无法处理请求</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td>Server Error（服务器错误状态码）</td>
+<td>服务器处理请求出错</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="2xx-成功"><a href="#2xx-成功" class="headerlink" title="2xx 成功"></a>2xx 成功</h3><blockquote>
+<p>表明请求被正常处理了</p>
+</blockquote>
+<ul>
+<li><p>200(OK) : 正常处理, 该返回啥返回啥</p>
+</li>
+<li><p>204(No Content): 请求处理成功, 但没有资源可返回. 浏览器显示的页面不会更新.</p>
+<p>一般用在只需要从客户端往服务器发送消息,而对客户端不需要发送新消息内容的情况下</p>
+</li>
+<li><p>206(Partial Content): 范围请求,响应报文中包含<code>Content-Range</code>指定范围实体</p>
+</li>
+</ul>
+<h3 id="3xx-重定向"><a href="#3xx-重定向" class="headerlink" title="3xx 重定向"></a>3xx 重定向</h3><blockquote>
+<p>表明浏览器需要执行某些特殊处理以正确处理请求</p>
+</blockquote>
+<ul>
+<li>301(Moved Permanently): 永久性重定向,资源<code>URI</code>改变.</li>
+<li>302(Found): 临时性重定向.希望用户(本次)使用新的<code>URI</code>访问</li>
+<li>303(See Other): 和302来ISI,但是明确表示客户端应当采用GET方法获取资源.</li>
+<li>304(Not Modified): 资源已找到,但未符合条件(不把任何相应主体).虽然是<code>3</code>系列,但和重定向没有关系</li>
+<li>307(Temporary Redirect): 临时重定向.和<code>302</code>类似.</li>
+</ul>
+<h3 id="4xx-客户端错误"><a href="#4xx-客户端错误" class="headerlink" title="4xx 客户端错误"></a>4xx 客户端错误</h3><blockquote>
+<p>表明客户端是发生错误的原因所在</p>
+</blockquote>
+<ul>
+<li>400(Bad Request): 请求报文中存在语法错误.浏览器会像200一样对待此状态码</li>
+<li>401(Unauthorized): 发送的请求需要通过<code>HTTP</code>认证.若之前已进行过一次请求,则表示用户认证失败.(初次会弹出认证用的对话框)</li>
+<li>403(Forbidden): 对请求资源的访问被服务器拒绝了.服务端可以(也可以不)给出 <code>拒绝的详细理由</code></li>
+<li>404(Not Found): 没有找到请求的资源. (也有可能是拒绝但且不想说明理由时使用)</li>
+</ul>
+<h3 id="5xx-服务器错误"><a href="#5xx-服务器错误" class="headerlink" title="5xx 服务器错误"></a>5xx 服务器错误</h3><blockquote>
+<p>表明服务器本身发生错误</p>
+</blockquote>
+<ul>
+<li>500(Internal Server Error): 执行请求时发生错误.可能是<code>Web</code>应用的<code>bug</code>或<code>临时故障</code></li>
+<li>503(Service Unavailable): 服务器暂时处于超负荷或者正在进行停机维护.</li>
+</ul>
+<p>事实上不少返回的<code>状态码</code>是错误的.</p>
+<p>此外, 服务器可以指定自己与客户端的协商状态码.</p>
+<hr>
+<h2 id="HTTP-首部"><a href="#HTTP-首部" class="headerlink" title="HTTP 首部"></a>HTTP 首部</h2><p>待完成</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>驭龙术</category>
+        <category>Web开发</category>
+        <category>HTTP</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+        <tag>读书笔记:技术</tag>
       </tags>
   </entry>
   <entry>
@@ -2339,16 +3108,16 @@ T_0\\
 <a id="more"></a>
 <p>对更快的计算是推动计算机进步的动力. 除了从技术层面上突破(如优化芯片) , 人们还设计了这些系统来提高计算水平. </p>
 <ol>
-<li><p>计算机并行处理, 主要体现在同一个计算机中存在多个处理器 , 这些处理器 <u>共享内存模块</u> (share memory model ). 称为 <strong>多处理器系统</strong> (Multiprocessors)</p>
+<li><p>计算机并行处理, 主要体现在同一个计算机中存在多个处理器 , 这些处理器 <u>共享内存模块</u> (share memory model ). 称为 <strong>多处理器系统</strong> (<strong>Multiprocessors</strong>)</p>
 <blockquote>
 <p>注意与 <strong>多核</strong> 的区别</p>
 <p>多处理器指: 在一个机器中有多个处理器;</p>
 <p>多核: 在一个处理器中有多个处理芯片</p>
 </blockquote>
 </li>
-<li><p>多个计算机相互协作. 表现为不同的计算机通过 <u>消息传递</u> 的而协作.(紧耦合)  称为 <strong>多计算机系统</strong> (Multicomputers )</p>
+<li><p>多个计算机相互协作. 表现为不同的计算机通过 <u>消息传递</u> 的而协作.(紧耦合)  称为 <strong>多计算机系统</strong> (<strong>Multicomputers</strong> )</p>
 </li>
-<li><p>多个计算机互相协作. 表现为通过 <u>广域分布式系统</u> (指网络) 协作. (松耦合) 称为 <strong>分布式系统</strong> (Distributed systems)</p>
+<li><p>多个计算机互相协作. 表现为通过 <u>广域分布式系统</u> (指网络) 协作. (松耦合) 称为 <strong>分布式系统</strong> (<strong>Distributed systems</strong>)</p>
 </li>
 </ol>
 <p><img src='https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%89%E7%A7%8D%E6%8A%80%E6%9C%AF.png' height = '500' width = '1300'></img></p>
@@ -2370,7 +3139,8 @@ T_0\\
 <p>访问远程存储器的速度比本地存储器慢</p>
 </li>
 </ol>
-<h3 id="UMA-的硬件实现"><a href="#UMA-的硬件实现" class="headerlink" title="UMA 的硬件实现"></a>UMA 的硬件实现</h3><h4 id="总线结构"><a href="#总线结构" class="headerlink" title="总线结构"></a>总线结构</h4><p>字面意思, 每个CPU通过总线与内存交互. 又可分为三种:</p>
+<h3 id="UMA-的硬件实现"><a href="#UMA-的硬件实现" class="headerlink" title="UMA 的硬件实现"></a>UMA 的硬件实现</h3><p><em><u>了解</u></em></p>
+<h4 id="总线结构"><a href="#总线结构" class="headerlink" title="总线结构"></a>总线结构</h4><p>字面意思, 每个CPU通过总线与内存交互. 又可分为三种:</p>
 <ol>
 <li>不带独立cache</li>
 <li>拥有独立cache</li>
@@ -2402,6 +3172,15 @@ T_0\\
 <li>内存中只有一个OS副本，但是任何CPU都可以运行它</li>
 <li>使用互斥量(锁)保证只有一个处理器在使用OS </li>
 </ul>
+<h3 id="处理器的调度"><a href="#处理器的调度" class="headerlink" title="处理器的调度"></a>处理器的调度</h3><h4 id="分时调度-Timesharing"><a href="#分时调度-Timesharing" class="headerlink" title="分时调度 Timesharing"></a>分时调度 Timesharing</h4><p>Using a single data structure for scheduling a multiprocessor</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/time.png" alt=""></p>
+<h4 id="分空间调度-Space-sharing"><a href="#分空间调度-Space-sharing" class="headerlink" title="分空间调度 Space sharing"></a>分空间调度 Space sharing</h4><p>multiple threads at same time across multiple CPUs</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/space.png" alt=""></p>
+<h4 id="Gang-Scheduling-（-群调度-）"><a href="#Gang-Scheduling-（-群调度-）" class="headerlink" title="Gang Scheduling （ 群调度 ）"></a>Gang Scheduling （ 群调度 ）</h4><ol>
+<li>Groups of related threads scheduled as a unit (a gang)</li>
+<li>All members of gang run simultaneously （ 同时 ） on different timeshared CPUs </li>
+<li>All gang members start and end time slices together</li>
+</ol>
 <p><em>其他的应该不是重点</em></p>
 <hr>
 <h2 id="多计算机系统"><a href="#多计算机系统" class="headerlink" title="多计算机系统"></a>多计算机系统</h2><p>一言以蔽之: <u>不共享内存的紧密耦合CPU</u></p>
@@ -2413,6 +3192,11 @@ T_0\\
 <h3 id="存储转发分组交换"><a href="#存储转发分组交换" class="headerlink" title="存储转发分组交换"></a><strong>存储转发分组交换</strong></h3><h3 id="其他链接方式"><a href="#其他链接方式" class="headerlink" title="其他链接方式"></a><strong>其他链接方式</strong></h3><p>电路交换</p>
 <p>虫孔路由</p>
 <p>…</p>
+<h3 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h3><ul>
+<li>根据计算能力的需要，可能需要在多台刀片服务器上部署 应用，即分布式应用部署。</li>
+<li>为了在这个分布式计算环境上，给最终用户一个集成的开 发环境，让用户感觉是在一台计算机上进行编程一样，底 层多台刀片服务器之间需要使用远程过程调用RPC。</li>
+<li>选型RPC 框架时，主要考虑三个关键方面：传输协议与数 据类型（JSON、XML 等），数据的存储、传输效率，服 务器端对数据的请求方式。</li>
+</ul>
 <hr>
 <h2 id="虚拟化⭐"><a href="#虚拟化⭐" class="headerlink" title="虚拟化⭐"></a>虚拟化⭐</h2><p>虚拟机技术，通常简称为 <strong>虚拟化</strong> virtualization 。<br>该技术允许一台计算机托管多个虚拟机，每个虚拟机可能运行不同的操作系统。</p>
 <p>优点:</p>
@@ -2424,6 +3208,7 @@ T_0\\
 <li>在软件开发时确保软件可以在不同的OS上运行。</li>
 </ul>
 <p><strong>Hypervisor</strong>, also called Virtual Machine Monitor (VMM, 虚拟机监视器)它是在硬件层之上，独立于操作系统的一层软件。创建虚拟化平台，OS实例运行在这个平台上，使得硬件可以被多个OS和应用共享.</p>
+<p><em><u>搞清楚几种的区别</u></em></p>
 <h3 id="Type-1-Hypervisor"><a href="#Type-1-Hypervisor" class="headerlink" title="Type 1 Hypervisor"></a>Type 1 Hypervisor</h3><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E8%99%9A%E6%8B%9F%E5%8C%961.png" alt=""></p>
 <ul>
 <li>Hypervisor 直接运行在硬件之上, 其余的OS运行在Hypervisor 上.</li>
@@ -2731,683 +3516,6 @@ T_0\\
 <li>下图仅为虚拟化的一种实现方式, 详见多处理器系统章节</li>
 </ul>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E8%99%9A%E6%8B%9F%E5%8C%961.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>专业课</category>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统之安全</title>
-    <url>/2020/08/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%AE%89%E5%85%A8/</url>
-    <content><![CDATA[<p>本章将涉及:</p>
-<ol>
-<li>安全与威胁</li>
-<li>简易密码学(真的很简易!)</li>
-<li>用户认证</li>
-<li>系统受到的攻击<ol>
-<li>来自内部</li>
-<li>来自外部</li>
-</ol>
-</li>
-<li>保护机制</li>
-<li>信任系统</li>
-<li>OS安全</li>
-</ol>
-<p><em>本文匆匆赶制, 内容粗糙简陋</em></p>
-<a id="more"></a>
-<h2 id="安全与威胁"><a href="#安全与威胁" class="headerlink" title="安全与威胁"></a>安全与威胁</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Goal</th>
-<th>Threat</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Data confidentiality 数据机密性</td>
-<td>Exposure of data 数据泄露</td>
-</tr>
-<tr>
-<td>Data integrity           数据完整性</td>
-<td>Tampering with data 数据篡改</td>
-</tr>
-<tr>
-<td>System available     系统可用性</td>
-<td>Denial of service      拒绝服务</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>首先保护数据的机密性, 防止数据泄露.   需要保证数据不被外界所知.</p>
-<p>其次要保证数据的完整性, 防止数据被破坏.  不能被外界破坏.</p>
-<p>最后要保证系统的可用性, 防止系统拒绝服务. 例如DoS攻击等</p>
-<p>入侵者 intruder or sometimes 敌人 adversary<br>a) Passive intruders(被动入侵者)- to read files they are not authorized to<br>read<br>b) Active intruders(主动入侵者)- to make unauthorized changes to data</p>
-<p>常见的安全入侵场景有:</p>
-<ol>
-<li>Casual prying (窥探) by nontechnical users     被非专业使用者随意窥探</li>
-<li>Snooping by insiders  被内部人员窥视</li>
-<li>Determined attempt to make money  为了利益</li>
-<li>Commercial or military espionage   商业或军事间谍</li>
-</ol>
-<p>常见的数据丢失场景有:</p>
-<ol>
-<li><p>天灾</p>
-<p>fires, floods, wars</p>
-</li>
-<li><p>软硬件错误</p>
-<p>CPU malfunction, bad disk, program bugs </p>
-</li>
-<li><p>人为错误</p>
-<p>data entry, wrong tape mounted</p>
-<hr>
-</li>
-</ol>
-<h2 id="密码学基础"><a href="#密码学基础" class="headerlink" title="密码学基础"></a>密码学基础</h2><h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul>
-<li>斯巴达将军</li>
-<li>戚继光: 反切注音法</li>
-<li>周恩来: 豪密</li>
-<li>菲利普与玛丽女王</li>
-<li>一战: 齐默尔曼电报</li>
-<li>二战: Enigma密码机, 图灵</li>
-</ul>
-<h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><ul>
-<li>? - 1949 古典密码<ul>
-<li>密码学还不是科学, 而是艺术</li>
-<li>数据的安全<strong>基于算法的保密</strong></li>
-<li>一般的加密方法是<strong>替换</strong></li>
-<li>单表替换密码(凯撒密码), 多表替换密码(Playfair密码, Hill密码) , 转轮密码(Enigma)</li>
-</ul>
-</li>
-<li>1949 - 1975 复杂计算的密码<ul>
-<li>由于算力提升使得复杂计算的密码称为可能</li>
-<li>1949年,香农发表了&lt;&lt;保密系统的信息理论&gt;&gt;(The Communication Theory of Secrecy Systems), 它证明了密码编码 学是如何置于坚实的数学基础之上的，从此密码学发展成为 一个专门学科。——标志性事件 </li>
-<li>数据的安全<strong>基于密钥</strong>而不是算法的保密</li>
-</ul>
-</li>
-<li>1975 - 公钥密码<ul>
-<li>公钥密码学成为主要研究方向 </li>
-<li><strong>公钥密码</strong>使得发送端和接收端<strong>无密钥传输的保密通信</strong>成为可能</li>
-</ul>
-</li>
-</ul>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h4 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h4><ul>
-<li>传统密码/常规密码/私钥密码/单钥密码 conventional / private-key / single-key</li>
-<li>发送方和接收方共享一个共同的密钥</li>
-<li>20世纪70年代以前私钥密码是唯一类型 </li>
-<li>至今仍广泛应用</li>
-</ul>
-<h4 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h4><ul>
-<li>公钥/双钥/非对称密码都是指使用两个密钥: <ul>
-<li>公钥：可以对任何人公开的密钥，用于加密消息或 验证签名。 </li>
-<li>私钥：只能由接收者私存，用于解密消息或签名。 </li>
-</ul>
-</li>
-<li>非对称 <ul>
-<li>用于加密消息或验证签名的人不能进行消息的加密或消息的签名。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="用户认证⭐"><a href="#用户认证⭐" class="headerlink" title="用户认证⭐"></a>用户认证⭐</h2><p>Authentication<br>user authentication（用户验证） crackers（骇客）</p>
-<p>认证必须要能够标识使用者的身份</p>
-<p>用户认证应当在使用系统之前完成</p>
-<p>三种认证方式</p>
-<ol>
-<li><p>Something the user knows</p>
-<p>密码, 口令</p>
-</li>
-<li><p>Something the user has</p>
-<p>钥匙, 芯片, 动态密码, 验证码</p>
-</li>
-<li><p>Something the user is</p>
-<p>指纹, 虹膜</p>
-</li>
-</ol>
-<blockquote>
-<p>UNIX 安全系统会对输入的密码进行<strong>加盐</strong>(Salt), 即将每一个口令同一个叫做盐（Salt）的n位随机数相关联。无论何时口令改变，这个随机数就改变。将口令和随机数连接起来，一同加密，加密后的结果存放进口令文件。</p>
-<p>One-Time passwords 对于函数 y=f(x) 已知y求x的难度远大于已知x求y的难度. </p>
-</blockquote>
-<h3 id="一些用户认证时的对策"><a href="#一些用户认证时的对策" class="headerlink" title="一些用户认证时的对策"></a>一些用户认证时的对策</h3><ul>
-<li>Limiting times when someone can log in    限制登录时间</li>
-<li>Automatic callback at number prespecified   自动回调 (例如判断密码是否太过简单)</li>
-<li>Limited number of login tries   限制尝试的登录次数</li>
-<li>A database of all logins    记录所有尝试登录的数据</li>
-<li>Simple login name/password as a trap  使用简单的密码作为陷阱 (假装登陆成功)</li>
-<li>security personnel notified when attacker bites 当检测到攻击者时通知安全人员</li>
-</ul>
-<hr>
-<h2 id="系统受到的攻击"><a href="#系统受到的攻击" class="headerlink" title="系统受到的攻击"></a>系统受到的攻击</h2><h3 id="Insider-Attacks-内部攻击"><a href="#Insider-Attacks-内部攻击" class="headerlink" title="Insider Attacks 内部攻击"></a>Insider Attacks 内部攻击</h3><h4 id="Logic-Bombs"><a href="#Logic-Bombs" class="headerlink" title="Logic Bombs"></a>Logic Bombs</h4><p>（逻辑炸弹）由一些公司的编程人员或使用这些受保护的计算机、编制核心软件的员工实施.秘密的嵌在产品的操作系统中的代码，特定情况下爆炸</p>
-<h4 id="Trap-Doors"><a href="#Trap-Doors" class="headerlink" title="Trap Doors"></a>Trap Doors</h4><p>（后门）系统程序员跳过正常的认证过程并插入一段代码造成<br>的。代码审查 code review</p>
-<h4 id="Login-Spoofing"><a href="#Login-Spoofing" class="headerlink" title="Login Spoofing"></a>Login Spoofing</h4><p>（登录欺骗）假冒的登录屏幕</p>
-<h4 id="Trojan-Horses"><a href="#Trojan-Horses" class="headerlink" title="Trojan Horses"></a>Trojan Horses</h4><p>特洛伊木马 诱导用户运行攻击代码</p>
-<h4 id="Buffer-Overflow"><a href="#Buffer-Overflow" class="headerlink" title="Buffer Overflow"></a>Buffer Overflow</h4><p>缓冲区溢出攻击</p>
-<h3 id="Outside-Attacks-外部攻击"><a href="#Outside-Attacks-外部攻击" class="headerlink" title="Outside Attacks 外部攻击"></a>Outside Attacks 外部攻击</h3><h4 id="Virus"><a href="#Virus" class="headerlink" title="Virus"></a>Virus</h4><p>病毒: 不断地复制自身并传播</p>
-<h4 id="Morris-Worm"><a href="#Morris-Worm" class="headerlink" title="Morris Worm"></a>Morris Worm</h4><p>蠕虫: 先潜伏自己的存在, 直到传播到一定规模后再爆发</p>
-<p>(zero-day Attack</p>
-<p>Zombie</p>
-<p>…</p>
-<h2 id="保护机制-⭐"><a href="#保护机制-⭐" class="headerlink" title="保护机制 ⭐"></a>保护机制 ⭐</h2><h3 id="Protection-Domains"><a href="#Protection-Domains" class="headerlink" title="Protection Domains"></a>Protection Domains</h3><p>注: 下文中提到的 <em>用户</em> 也可能指进程</p>
-<p>保护域</p>
-<p>a domain is a set of （object， right） pairs. Each pair specifies an object and some<br>subset of the operations that can be performed. A right means permission to perform one of the operations.<br>一对对象权限的组合，每对组合指定一个对象和一些可在上面运行的操作子集指对某个操作的执行许可.</p>
-<p>人话: 一张表, 记录了所有的文件和每个用户允许对文件进行的操作</p>
-<p>缺点: 太大</p>
-<h3 id="Access-Control-Lists-ACL"><a href="#Access-Control-Lists-ACL" class="headerlink" title="Access Control Lists , ACL"></a>Access Control Lists , ACL</h3><p>访问控制列表</p>
-<p>每个对象的有序列表里包含了所有可访问对象的域以及这些域如何访问这些对象的方法</p>
-<p>人话: 由于文件多而域少, 因此在每个文件处记录哪些域能进行什么操作. 将保护域按文件分解</p>
-<h3 id="Capabilities"><a href="#Capabilities" class="headerlink" title="Capabilities"></a>Capabilities</h3><p>权能字</p>
-<p>使用按行存储时，与每个进程关联的是可访问的对象列表，以及每个对象上叫做权能字列表，每个单独的项目叫做权能字</p>
-<p>人话: 每个用户自己储存对每个文件能进行什么操作, 将保护域按用户分解</p>
-<p>因此要防止权能字被用户自己篡改(三种方法)</p>
-<ol>
-<li>First way, require a tagged architecture </li>
-<li>Second way, keep the C-list inside the OS </li>
-<li>Third way, keep the C-list in user space, but manage the capabilities cryptographically</li>
-</ol>
-<h2 id="可信任系统"><a href="#可信任系统" class="headerlink" title="可信任系统"></a>可信任系统</h2><p>完全可信任的系统是否存在?</p>
-<p>可信任系统的核心是 <strong>可信计算基Trusted Computing Base, TCB</strong></p>
-<p>TCB 是一种机制, 保护所有敏感操作; (例如切换进程, 进程创建, 内存映射管理等) 任何试图访问这些操作的进程必须通过可信计算基的安全审查, 称为 reference monitor (访问监视器)</p>
-<blockquote>
-<p>All system calls go through the reference monitor for security checking</p>
-</blockquote>
-<p>TCB可以通过硬件, 软件, 固件的形式实现, 它只是个机制. </p>
-<p>一旦可信计算机基的某个构件出现程序错误或者安全隐患，就对整个系统的安全造成危害。 与之相反，如果除可信计算基之外的系统的其他部分出现问题，也只是泄漏了系统安全策略赋予它们的相关权限而已，这些权限一般都是比较低的。</p>
-<p>现代操作系统努力降低TCB的大小，使得对其代码库彻底的检查成为可能.</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>专业课</category>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统之文件系统</title>
-    <url>/2020/08/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>本章将会涉及:</p>
-<ol>
-<li>文件</li>
-<li>目录</li>
-<li>文件系统的实现</li>
-</ol>
-<a id="more"></a>
-<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p>在进程的运行过程中出现了以下需求: 1) 需要储存大量信息; 2)信息需要保存至进程结束后; 3) 多个进程需要同时对数据进行操作.</p>
-<p>为了解决以上问题, 我们将信息存储在磁盘和其他外部介质中, 称之为 <strong>文件</strong>.</p>
-<h3 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h3><p>文件的命名要求因操作系统而已. </p>
-<p>有的系统区分文件的大小写, 有的则不区分(MS-DOS).</p>
-<p>许多OS使用字符<code>.</code>将文件名分成两部分, 后半部分称为 <strong>文件后缀名</strong>(file extension)</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E5%90%8E%E7%BC%80.png" alt=""></p>
-<h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><p>文件有多种组成结构</p>
-<ol>
-<li>byte sequence  文件由字节序列组成 (UNIX和WIN都是如此)</li>
-<li>record sequence 文件由记录片组成(早期插卡式系统)</li>
-<li>tree 树型 文件是一层层地储存的</li>
-</ol>
-<h3 id="文件分类"><a href="#文件分类" class="headerlink" title="文件分类"></a>文件分类</h3><p>由使用用途</p>
-<ul>
-<li>系统文件</li>
-<li>用户文件</li>
-<li>库文件</li>
-</ul>
-<p>由数据形式</p>
-<ul>
-<li>源文件</li>
-<li>目标文件</li>
-<li>可执行文件</li>
-</ul>
-<p>由权限</p>
-<ul>
-<li>只可执行文件</li>
-<li>只读</li>
-<li>读写</li>
-</ul>
-<p>由逻辑结构</p>
-<ul>
-<li>结构化数据</li>
-<li>非结构化数据</li>
-</ul>
-<p>由(在硬盘上储存的)物理结构</p>
-<ul>
-<li>顺序文件</li>
-<li>连接文件</li>
-<li>索引文件</li>
-</ul>
-<p>UNIX和WIN都由常规文件和目录文件</p>
-<p>UNIX中还有 字符设备文件 和块设备文件, 进程文件等.</p>
-<h3 id="文件访问"><a href="#文件访问" class="headerlink" title="文件访问"></a>文件访问</h3><ul>
-<li><p>顺序访问</p>
-<p>只能从最开始访问</p>
-<p>不能跳转</p>
-</li>
-<li><p>随机访问</p>
-<p>以任意顺序访问</p>
-</li>
-</ul>
-<h3 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h3><p>文件包括很多属性,见图</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7.png" alt=""></p>
-<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><ul>
-<li>创建</li>
-<li>删除</li>
-<li>打开</li>
-<li>关闭</li>
-<li>读</li>
-<li>写</li>
-<li>追加</li>
-<li>查找</li>
-<li>访问属性</li>
-<li>设定属性</li>
-<li>重命名</li>
-</ul>
-<hr>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="目录系统的种类"><a href="#目录系统的种类" class="headerlink" title="目录系统的种类"></a>目录系统的种类</h3><ul>
-<li><p>单层析目录</p>
-<p>ROOT 下直接跟随各种文件</p>
-</li>
-<li><p>双层次目录</p>
-<p>ROOT 下由用户创建文件夹, 并在文件夹中储存文件</p>
-</li>
-<li><p>多层次目录</p>
-<p>ROOT 下由用户创建文件夹, 并在文件夹中储存文件或文件夹</p>
-</li>
-</ul>
-<h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><ul>
-<li>Absolute path name <ul>
-<li>/usr/ast/mailbox (UNIX) </li>
-<li>\usr\ast\mailbox (Win)</li>
-</ul>
-</li>
-<li>Relative path name<ul>
-<li>mailbox</li>
-</ul>
-</li>
-<li>Working directory ( current directory) <ul>
-<li>/usr/ast</li>
-</ul>
-</li>
-</ul>
-<p>注意这里好像规定的和正常不一样… 比如访问相对路径不需要加 <code>./</code></p>
-<h3 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h3><ul>
-<li>Create</li>
-<li>Delete</li>
-<li>Opendir</li>
-<li>Closedir</li>
-<li>Readdir</li>
-<li>Rename</li>
-<li>Link(hard link/symbol link)</li>
-<li>Unlink</li>
-</ul>
-<hr>
-<h2 id="文件系统的实现"><a href="#文件系统的实现" class="headerlink" title="文件系统的实现"></a>文件系统的实现</h2><h3 id="文件系统布局"><a href="#文件系统布局" class="headerlink" title="文件系统布局"></a>文件系统布局</h3><p>文件都是储存在磁盘上的. 大多数磁盘都分为一个或多个区(Partitions) ,  每个区都有自己的独立文件系统.</p>
-<p>磁盘的0扇区被称为 MBR (Master Boot Record) , 用于引导计算机启动.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B8%83%E5%B1%80.png" alt=""></p>
-<ul>
-<li>Partition table: 给出每个分区开始结束的地址信息gives the starting and ending addresses of each partition. </li>
-<li>Boot block: locate the active partition </li>
-<li>Superblock: magic number, number of blocks, … </li>
-<li>Free space mgmt: 使用位图/链表储存文件的空余信息</li>
-<li>i-nodes: an array of data structure, one per file. </li>
-<li>后面的部分就是真正的文件和目录内容了</li>
-</ul>
-<h3 id="文件的实现"><a href="#文件的实现" class="headerlink" title="文件的实现"></a>文件的实现</h3><ul>
-<li>顺序存放</li>
-<li>链接存放</li>
-<li>使用FAT在内存中链接存放</li>
-<li>I-Node </li>
-</ul>
-<h4 id="顺序存放"><a href="#顺序存放" class="headerlink" title="顺序存放"></a>顺序存放</h4><p>就是顺序存放.</p>
-<p>优点:</p>
-<ul>
-<li>简单</li>
-<li>读的性能非常和</li>
-</ul>
-<p>缺点</p>
-<ul>
-<li>文件如果后续需要删除, 重写会造成大量碎片</li>
-</ul>
-<p>常用于后续不会再写入数据. 如CD</p>
-<h4 id="链接存放"><a href="#链接存放" class="headerlink" title="链接存放"></a>链接存放</h4><p>每个文件都指明下一个文件的指针</p>
-<p>缺点: 随机访问非常非常慢, 找一个文件要从头找</p>
-<h4 id="使用FAT在内存中链接存放"><a href="#使用FAT在内存中链接存放" class="headerlink" title="使用FAT在内存中链接存放"></a>使用FAT在内存中链接存放</h4><p>将文件的链接关系放在一张表中, 称为 <strong>文件分配表</strong> (( File Allocation Table), FAT) </p>
-<p>缺点: 需要将整个文件系统的表(通常很大)载入内存.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/FAT.png" alt=""></p>
-<h4 id="I-Node"><a href="#I-Node" class="headerlink" title="I-Node"></a>I-Node</h4><p>给每个文件赋予一个相关联的数据结构, 称为 <strong>索引节点</strong>（I-Node , index-node），该数据结构列出了文件块的属性和磁盘地址。仅在访问本文件时, 才需要将节点载入内存.</p>
-<h3 id="目录的实现"><a href="#目录的实现" class="headerlink" title="目录的实现"></a>目录的实现</h3><p>目录系统的主要功能是将文件的ASCII名称映射到定位数据所需的信息上。</p>
-<p>Windows 系统给每个条目都分配了定长的数据段, 来保存文件的属性. </p>
-<p>UNIX 系统给每个条目分配一个I-node的引用</p>
-<h3 id="共享文件"><a href="#共享文件" class="headerlink" title="共享文件"></a>共享文件</h3><p>UNIX 提供共享文件的机制. 出现在多用户下.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/06/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6.png" alt=""></p>
-<p>C的一个文件出现在B的目录下。B的目录与该共享的联系称为一个连接 LINK.</p>
-<p>问题：若目录中包含磁盘地址，则连接文件时，C目录的磁盘地址复制到B目录<br>中，若B或C后又加内容，则新的数据块只会列入进行添加工作的目录中。</p>
-<h4 id="hard-link"><a href="#hard-link" class="headerlink" title="hard link"></a><strong>hard link</strong></h4><p>（硬连接或者实际连接）</p>
-<p>由于Linux里面每个文件都对应一个inode，而文件名是记录在目录的block里的，也就是说文件名和inode没有关系，这样就可以把多个文件名对应同一个inode，这就是hard link，简单的说：hard link只是在某个目录下新建一条文件名连接到某inode号码的关联记录而已。</p>
-<p>缺点</p>
-<ul>
-<li>不能够跨文件系统地做硬连接</li>
-<li>不能够连接到目录</li>
-</ul>
-<h4 id="symbolic-link"><a href="#symbolic-link" class="headerlink" title="symbolic link"></a><strong>symbolic link</strong></h4><p>软连接或者符号连接</p>
-<p>软连接创建一个新的文件，有自己的inode和block，只是在block里记录的是到连接目标文件的指向，读取到这个指向记录以后，系统再从根目录一层层进到目标文件的block里把数据读出来</p>
-<p>symbolic link有如下特点：</p>
-<p>1.等于是文件的一个“快捷方式”，只起一个指向作用</p>
-<p>2.是一个独立的新文件，对目标文件没有任何影响</p>
-<p>3.目标文件一旦删除，软连接会打不开</p>
-<p>两种连接方式都存在的问题: 查找文件时会将同一个文件重复查询.</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>专业课</category>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初窥HTTP之二_HTTP报文</title>
-    <url>/2020/08/03/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%BA%8C-HTTP%E6%8A%A5%E6%96%87/</url>
-    <content><![CDATA[<p>HTTP 报文的信息 </p>
-<p>HTTP 状态码</p>
-<p>HTTP 首部(待完成)</p>
-<a id="more"></a>
-<h2 id="HTTP-报文的信息"><a href="#HTTP-报文的信息" class="headerlink" title="HTTP 报文的信息"></a>HTTP 报文的信息</h2><p>本段将介绍HTTP报文中包括有那些信息.包括:</p>
-<ol>
-<li>报文的结构</li>
-<li>报文编码</li>
-<li>多部分对象集合</li>
-<li>范围传输</li>
-<li>内容协商</li>
-</ol>
-<h3 id="报文结构"><a href="#报文结构" class="headerlink" title="报文结构"></a>报文结构</h3><p>HTTP报文是由多行数据构成的, 每行之间使用<code>CR+LF</code>(\r\n) 进行换行.</p>
-<p>报文可被分为报文首部与报文主体, 后者并不是必须的.</p>
-<p>报文首部包括:</p>
-<ul>
-<li>请求行 / 状态行</li>
-<li>请求首部字段 / 响应首部字段</li>
-<li>通用首部字段</li>
-<li>实体首部字段</li>
-<li>其他</li>
-</ul>
-<p><strong>请求行</strong></p>
-<p>包括请求的方法, 请求URI, HTTP版本</p>
-<p><strong>状态行</strong></p>
-<p>包括响应的结果状态码, 原因短语, HTTP版本</p>
-<p><strong>首部字段</strong></p>
-<p>包括表示各种条件和属性的各类首部语句. 分为四种: </p>
-<ol>
-<li>请求首部字段(仅在请求报文中出现); </li>
-<li>响应首部字段(仅在响应报文中出现); </li>
-<li>通用首部字段; </li>
-<li>实体首部字段;</li>
-</ol>
-<p><strong>其他</strong></p>
-<p>其他未在RFC中定义的字段, 如Cookie</p>
-<h3 id="报文编码"><a href="#报文编码" class="headerlink" title="报文编码"></a>报文编码</h3><p>对传输的数据进行编码可以提高传输速率, 但是编码与解码会消耗CPU资源.</p>
-<h4 id="报文主体与实体主体"><a href="#报文主体与实体主体" class="headerlink" title="报文主体与实体主体"></a>报文主体与实体主体</h4><p>报文是HTTP实际传输的字节流. 报文包括报文首部与报文主体.(报文主体可以是0个或1个)</p>
-<p>实体是作为请求或响应的有效载荷数据. 由实体首部与实体主体组成.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(没有报文主体)</span><br><span class="line">	没有实体</span><br><span class="line">if(有报文主体)</span><br><span class="line">	if(有1个实体)</span><br><span class="line">		if(实体未被处理)	&#x2F;&#x2F;处理指: 传输中进行编码操作</span><br><span class="line">			无实体首部</span><br><span class="line">			实体主体&#x3D;&#x3D;报文主体</span><br><span class="line">		if(实体被处理)</span><br><span class="line">			有实体首部</span><br><span class="line">			实体主体!&#x3D;报文主体</span><br><span class="line">	if(有多个实体)</span><br><span class="line">		有实体首部</span><br><span class="line">		实体主体!&#x3D;报文主体</span><br></pre></td></tr></table></figure>
-<p>个人理解,不一定对.</p>
-<p><a href="https://www.zhihu.com/question/263752229" target="_blank" rel="noopener">知乎:http报文和实体的差别？</a></p>
-<h4 id="压缩传输"><a href="#压缩传输" class="headerlink" title="压缩传输"></a>压缩传输</h4><p>将实体内容通过编码进行压缩, 常见的内容编码有:</p>
-<ul>
-<li>gzip</li>
-<li>compress</li>
-<li>deflate</li>
-<li>identify (不进行编码)</li>
-</ul>
-<h3 id="分割传输"><a href="#分割传输" class="headerlink" title="分割传输"></a>分割传输</h3><p>将大容量的数据分割传输, 让浏览器逐步显示页面, 称作 <strong>分块传输编码</strong>(Chunked Transfer Coding).</p>
-<p>实体被分割成的多个部分使用一个十六进制来标记块的大小. </p>
-<h3 id="多部份对象集合"><a href="#多部份对象集合" class="headerlink" title="多部份对象集合"></a>多部份对象集合</h3><p><a href="https://en.wikipedia.org/wiki/MIME" target="_blank" rel="noopener"><em>Wiki:MIME</em></a></p>
-<p>多功能Internet邮件扩展（MIME）是一种Internet标准，以支持除ASCII以外的字符集以及音频，视频，图像和应用程序附件的文本.</p>
-<p>MIME使用了Multipart 的方法来容纳多种不同类型的数据, 这个方法也被HTTP 采纳.</p>
-<ul>
-<li><p>multipart/form-data</p>
-<p>这是在Web上传表单时使用</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Content-Type: multipart&#x2F;form-data; boundary&#x3D;AaB03x</span><br><span class="line"></span><br><span class="line">--AaB03x</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;fieldl&quot;</span><br><span class="line"></span><br><span class="line">Joe Blow</span><br><span class="line">--AaB03x</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;pics&quot;: filename&#x3D;filel. txt&quot;</span><br><span class="line">Content-Type: text&#x2F;plain</span><br><span class="line"></span><br><span class="line">(fi1e1.txt的数据)</span><br><span class="line">--AaB03x--</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>multipart/byteranges</p>
-<p>状态码206（Partial Content，部分内容）</p>
-<p>响应报文包含了多个范围的内容时使用。</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Http&#x2F;1.1 206 parTial Content</span><br><span class="line">Date: Fri, 13 Jul 2012 02: 45: 26 GMT</span><br><span class="line">Last-Modified: Fri, 31 Aug 2007 02: 02: 20 GMT</span><br><span class="line">Content-Type: multipart&#x2F;byteranges: boundary&#x3D;THIS_STRING_SEPARATES</span><br><span class="line"></span><br><span class="line">--THIS_STRING_SEPARATES</span><br><span class="line">Content-Type: application&#x2F;pdf</span><br><span class="line">Content-Range: bytes 500-999&#x2F;8000</span><br><span class="line"></span><br><span class="line">...(范围指定的数据)...</span><br><span class="line">--THIS_STRING_SEPARATES</span><br><span class="line">Content-Type: application&#x2F;pdf</span><br><span class="line">Content-Range: bytes 7000-7999&#x2F;8000</span><br><span class="line"></span><br><span class="line">...(范围指定的数据)...</span><br><span class="line">--THIS_STRING_SEPARATES--</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>在HTTP报文中使用多部分对象集合时，需要在首部字段里加上Content-type；</p>
-</li>
-<li><p>报文主体中包括多个实体,每个实体都由实体头部与实体主体组成</p>
-<p>实体的头部与主体之间依旧使用CR+LF换行.</p>
-</li>
-<li><p>使用boundary字符串来划分多部分对象集合指明的各类实体。在boundary字符串指定的各个实体的起始行之前插入”—“标记作为结束.</p>
-</li>
-<li><p>也可以在某处嵌套使用多部份对象集合</p>
-</li>
-</ul>
-<h3 id="范围请求"><a href="#范围请求" class="headerlink" title="范围请求"></a>范围请求</h3><p>指定范围发送的请求叫做<code>范围请求</code>(Range Request)。执行范围请求时，会用到首部字段<code>Range</code>来指定资源的byte范围。byte范围的指定形式如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Range: bytes&#x3D;5001-10000	&#x2F;&#x2F;5001~10000字节</span><br><span class="line">Range: bytes&#x3D;5001-		&#x2F;&#x2F;从5001字节之后全部的</span><br><span class="line">Range: bytes&#x3D;-3000, 5000-7000	&#x2F;&#x2F;从一开始到3000字节和5000~7000字节的多重范围</span><br></pre></td></tr></table></figure>
-<p>针对范围请求，响应会返回状态码为<code>206 Partial Content</code>的响应报文。</p>
-<p>对于多重范围的范围请求，响应会在首部字段<code>Content-Type</code>表明<code>multipart/byteranges</code>后返回响应报文。</p>
-<p>如果服务器端无法响应范围请求，则会返回状态码<code>200 OK</code>和完整的实体内容。</p>
-<h3 id="内容协商"><a href="#内容协商" class="headerlink" title="内容协商"></a>内容协商</h3><p><code>内容协商</code>(Content Negotiation)机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户端最为适合的资源。内容协商会以响应资源的语言、字符集、编码方式等作为判断的基准。</p>
-<p>包含在请求报文中的某些首部字段就是判断的基准，比如：<code>Accept</code>、<code>Accept-Charset</code>、<code>Accept-Encoding</code>、<code>Accept-Language</code>、<code>Content-Language</code>。</p>
-<p>内容协商技术有以下3种类型：服务器驱动协商(Server-driven Negotiation)、客户端驱动协商(Agent-driven Negotiation)、透明协商(Transparent Negotiation)。</p>
-<hr>
-<h2 id="HTTP-状态码"><a href="#HTTP-状态码" class="headerlink" title="HTTP 状态码"></a>HTTP 状态码</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>类别</th>
-<th>原因短语</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1XX</td>
-<td>Informational  (信息性状态码)</td>
-<td>接收的请求正在处理</td>
-</tr>
-<tr>
-<td>2XX</td>
-<td>Success（成功状态码）</td>
-<td>请求正常处理完毕</td>
-</tr>
-<tr>
-<td>3XX</td>
-<td>Redirection（重定向状态码）</td>
-<td>需要进行附加操作以完成请求</td>
-</tr>
-<tr>
-<td>4XX</td>
-<td>Client Error（客户端错误状态码）</td>
-<td>服务器无法处理请求</td>
-</tr>
-<tr>
-<td>5XX</td>
-<td>Server Error（服务器错误状态码）</td>
-<td>服务器处理请求出错</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="2xx-成功"><a href="#2xx-成功" class="headerlink" title="2xx 成功"></a>2xx 成功</h3><blockquote>
-<p>表明请求被正常处理了</p>
-</blockquote>
-<ul>
-<li><p>200(OK) : 正常处理, 该返回啥返回啥</p>
-</li>
-<li><p>204(No Content): 请求处理成功, 但没有资源可返回. 浏览器显示的页面不会更新.</p>
-<p>一般用在只需要从客户端往服务器发送消息,而对客户端不需要发送新消息内容的情况下</p>
-</li>
-<li><p>206(Partial Content): 范围请求,响应报文中包含<code>Content-Range</code>指定范围实体</p>
-</li>
-</ul>
-<h3 id="3xx-重定向"><a href="#3xx-重定向" class="headerlink" title="3xx 重定向"></a>3xx 重定向</h3><blockquote>
-<p>表明浏览器需要执行某些特殊处理以正确处理请求</p>
-</blockquote>
-<ul>
-<li>301(Moved Permanently): 永久性重定向,资源<code>URI</code>改变.</li>
-<li>302(Found): 临时性重定向.希望用户(本次)使用新的<code>URI</code>访问</li>
-<li>303(See Other): 和302来ISI,但是明确表示客户端应当采用GET方法获取资源.</li>
-<li>304(Not Modified): 资源已找到,但未符合条件(不把任何相应主体).虽然是<code>3</code>系列,但和重定向没有关系</li>
-<li>307(Temporary Redirect): 临时重定向.和<code>302</code>类似.</li>
-</ul>
-<h3 id="4xx-客户端错误"><a href="#4xx-客户端错误" class="headerlink" title="4xx 客户端错误"></a>4xx 客户端错误</h3><blockquote>
-<p>表明客户端是发生错误的原因所在</p>
-</blockquote>
-<ul>
-<li>400(Bad Request): 请求报文中存在语法错误.浏览器会像200一样对待此状态码</li>
-<li>401(Unauthorized): 发送的请求需要通过<code>HTTP</code>认证.若之前已进行过一次请求,则表示用户认证失败.(初次会弹出认证用的对话框)</li>
-<li>403(Forbidden): 对请求资源的访问被服务器拒绝了.服务端可以(也可以不)给出 <code>拒绝的详细理由</code></li>
-<li>404(Not Found): 没有找到请求的资源. (也有可能是拒绝但且不想说明理由时使用)</li>
-</ul>
-<h3 id="5xx-服务器错误"><a href="#5xx-服务器错误" class="headerlink" title="5xx 服务器错误"></a>5xx 服务器错误</h3><blockquote>
-<p>表明服务器本身发生错误</p>
-</blockquote>
-<ul>
-<li>500(Internal Server Error): 执行请求时发生错误.可能是<code>Web</code>应用的<code>bug</code>或<code>临时故障</code></li>
-<li>503(Service Unavailable): 服务器暂时处于超负荷或者正在进行停机维护.</li>
-</ul>
-<p>事实上不少返回的<code>状态码</code>是错误的.</p>
-<p>此外, 服务器可以指定自己与客户端的协商状态码.</p>
-<hr>
-<h2 id="HTTP-首部"><a href="#HTTP-首部" class="headerlink" title="HTTP 首部"></a>HTTP 首部</h2><p>待完成</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>驭龙术</category>
-        <category>Web开发</category>
-        <category>HTTP</category>
-      </categories>
-      <tags>
-        <tag>读书笔记:技术</tag>
-        <tag>HTTP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统之死锁</title>
-    <url>/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%AD%BB%E9%94%81/</url>
-    <content><![CDATA[<p>本章包括以下内容:</p>
-<ol>
-<li>资源与死锁</li>
-<li>处理死锁<ol>
-<li>冷处理: 鸵鸟算法</li>
-<li>热处理: 死锁的检测与恢复</li>
-</ol>
-</li>
-<li>防范死锁<ol>
-<li>避免死锁</li>
-<li>死锁预防</li>
-</ol>
-</li>
-<li>其他策略</li>
-</ol>
-<a id="more"></a>
-<h2 id="资源与死锁"><a href="#资源与死锁" class="headerlink" title="资源与死锁"></a>资源与死锁</h2><h3 id="资源定义与分类"><a href="#资源定义与分类" class="headerlink" title="资源定义与分类"></a>资源定义与分类</h3><p>计算机中具有 <strong>排他性使用</strong> 的对象称为 <strong><u>资源</u></strong> . (即每次只允许一个进程访问). 资源可以是硬件(设备)或软件(信息). 资源随着时间推移必须能<u>获得, 使用, 以及释放</u>.</p>
-<ul>
-<li>可抢占式资源: B进程可以将资源R从进程A出抢占<strong>而不会产生任何副作用</strong>. 例如储存器.</li>
-<li>不可抢占式资源: 在不引起相关失败的情况下, 无法将资源从占有它的进程处抢占过来.例如打印机.</li>
-</ul>
-<p><u>死锁仅可能出现在不可抢占式资源上.</u></p>
-<p>资源的使用流程:</p>
-<ol>
-<li>申请资源</li>
-<li>使用资源</li>
-<li>释放资源</li>
-</ol>
-<p><em>当资源申请失败时,不同系统会采取不同反应: 阻塞申请(等待唤醒) 或 返回错误 (用户决定)</em> </p>
-<h3 id="死锁定义"><a href="#死锁定义" class="headerlink" title="死锁定义"></a>死锁定义</h3><blockquote>
-<p>如果一个进程集合中的每个进程都在等待只能由该进程集合中的其他进程才能引发的事件, 那么称这个进程集合的 <strong><u>死锁</u></strong> 的.</p>
-<p><em>A set of processes is deadlocked if each process in the set is waiting for an event that only another process in the set can cause</em> </p>
-</blockquote>
-<p><del>显然这个定义太正经了大家都知道死锁是什么.</del></p>
-<p>当发生死锁时, 任何一个进程都无法: 运行 / 释放资源 / 被唤醒</p>
-<h3 id="死锁的四个必要条件⭐"><a href="#死锁的四个必要条件⭐" class="headerlink" title="死锁的四个必要条件⭐"></a>死锁的四个必要条件⭐</h3><ul>
-<li><p>互斥条件</p>
-<p>每个资源要么被分给了一个进程, 要么是可用的</p>
-</li>
-<li><p>占有并等待</p>
-<p>进程可以在占有资源A的同时等待资源B的分配</p>
-</li>
-<li><p>不可抢占</p>
-<p>已经被分配的资源不可抢占, 只能等待占有它的进程主动释放</p>
-</li>
-<li><p>环路等待</p>
-<p>系统中有多于一个的进程, 每个进程都在等待下一个进程占有的资源</p>
-</li>
-</ul>
-<p><u>死锁发生时四个条件必须同时满足, 只要破坏任一条件即可破坏死锁.</u></p>
-<h3 id="死锁建模"><a href="#死锁建模" class="headerlink" title="死锁建模"></a>死锁建模</h3><p>圆形表示进程; 方形表示资源; </p>
-<p>资源指向进程: 该资源已被进程占用;</p>
-<p>进程指向资源: 该进程正在等待资源;</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E6%AD%BB%E9%94%81%E5%BB%BA%E6%A8%A1.png" alt=""></p>
-<p>例如, 上图中进程C在等待被进程D占有的资源T, 进程D在等待被进程C占有的资源U.</p>
-<p><em>如果模型中有闭合有向环, 表明存在死锁.</em></p>
-<hr>
-<h2 id="处理死锁⭐"><a href="#处理死锁⭐" class="headerlink" title="处理死锁⭐"></a>处理死锁⭐</h2><h3 id="冷处理-鸵鸟算法"><a href="#冷处理-鸵鸟算法" class="headerlink" title="冷处理: 鸵鸟算法"></a>冷处理: 鸵鸟算法</h3><p>假装没有问题, 如果进程执行时间过长就重启一下…</p>
-<p>这是由于死锁的产生是取决于进程执行的精确时序, 在同一进程集合的多次运行中可能死锁的出现是非常偶然的; 此外处理死锁的开销往往非常高昂.</p>
-<h3 id="热处理-检测并恢复"><a href="#热处理-检测并恢复" class="headerlink" title="热处理: 检测并恢复"></a>热处理: 检测并恢复</h3><p>系统并不会防范死锁的产生, 而是在死锁发生之后再进行死锁的检测与恢复.</p>
-<h4 id="死锁的检测"><a href="#死锁的检测" class="headerlink" title="死锁的检测"></a>死锁的检测</h4><p><strong>DFS算法</strong>: 依次将每一个节点作为一棵树的根节点, 并进行深度优先搜索, 如果再次遇到该节点表明找到了环.</p>
-<p><strong>剪枝算法</strong>: 如果某进程只申请不占有, 将该节点剪去;如果某资源只被占有不被申请, 将该节点剪去;重复这两步直到无法剪去, 存在环.</p>
-<p><strong>矩阵检测</strong>: E 矩阵: 所有资源的总数; A矩阵: 所有资源当前空余量;</p>
-<p>C矩阵: $C_{ij}$ 表示进程 $ i $  当前使用资源 $j$ 的数目;</p>
-<p>R矩阵: $R_{ij}$ 表示进程 $ i $  当前需要资源 $j$ 的数目;</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E7%9F%A9%E9%98%B5%E6%A3%80%E6%B5%8B.png" alt=""></p>
-<p>必定存在以下公式:</p>
-<script type="math/tex; mode=display">
-\sum^n_{i=1}C_{ij} +A_j=E_j</script><p>如果当前的A矩阵可以使R矩阵按照一定顺序退出, 说明未形成死锁.</p>
-<p>但死锁检测本身即浪费时间, 又需要定期检测, 所以热处理本身效果不佳.</p>
-<h4 id="死锁的恢复"><a href="#死锁的恢复" class="headerlink" title="死锁的恢复"></a>死锁的恢复</h4><ul>
-<li><p>资源抢占</p>
-<p>将资源强制抢占(例如人工干预)</p>
-</li>
-<li><p>状态回滚</p>
-<p>从之前某个状态重新加载, 重新跑未必发生死锁</p>
-</li>
-<li><p>杀死进程</p>
-<p>杀死一个或若干个进程, 直到打破死锁.</p>
-</li>
-</ul>
-<hr>
-<h2 id="防范死锁⭐"><a href="#防范死锁⭐" class="headerlink" title="防范死锁⭐"></a>防范死锁⭐</h2><h3 id="避免死锁"><a href="#避免死锁" class="headerlink" title="避免死锁"></a>避免死锁</h3><h4 id="资源轨迹图"><a href="#资源轨迹图" class="headerlink" title="资源轨迹图"></a>资源轨迹图</h4><p>当走向轨迹穿越阴影重叠区时<strong>有可能</strong>发生死锁. </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E8%B5%84%E6%BA%90%E5%9B%BE.png" alt=""></p>
-<h4 id="安全态"><a href="#安全态" class="headerlink" title="安全态"></a>安全态</h4><p>安全态: 如果没有死锁发生,即使所有进程突然请求最大的资源需求, 也存在某种调度次序使得每一个进程都运行完毕.</p>
-<p>不安全态: 如果没有死锁发生,若所有进程突然请求最大的资源需求, 不存在某种调度次序使得每一个进程都运行完毕.</p>
-<p><u>注意: 不安全态不代表一定发生死锁, 但死锁发生一定经过不安全态.</u></p>
-<h4 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/04/%E9%93%B6%E8%A1%8C%E5%AE%B6.png" alt=""></p>
-<p>如果A向量能够使用某种次序分配能够使所有进程安全退出就处于安全状态;</p>
-<p>如果一直使其处于安全状态则可以避免死锁.</p>
-<blockquote>
-<p>实际上银行家算法缺少使用价值, 很少有进程在运行前知道需要多少资源, 而且进程数也在随时变化(新任务产生), 而且资源的状态也随时可能变化(例如打印机坏了).</p>
-</blockquote>
-<h3 id="预防死锁"><a href="#预防死锁" class="headerlink" title="预防死锁"></a>预防死锁</h3><p>从理论上完全避免死锁的不可能的(因为需要获知未来的请求) , 但是我们可以通过对死锁的四个必要条件的破坏来预防死锁的产生.</p>
-<p><del>其实我觉得预防和避免这种文字游戏没啥意义,但是确实不知道怎么区分</del></p>
-<h4 id="破坏互斥条件"><a href="#破坏互斥条件" class="headerlink" title="破坏互斥条件"></a>破坏互斥条件</h4><p>如果资源不被一个进程独占, 则不会产生死锁. </p>
-<p>具体做法是将打印机使用假脱机, 即IO输出实际上是将文件发送至打印机的磁盘中, 再由打印机的控制程序慢慢打印磁盘的内容. 而多个进程可以同时对磁盘输出, 破坏了互斥条件.</p>
-<p>但如果在某些情况下磁盘本身称为了互斥的资源, 这种方法就失效了</p>
-<h4 id="破坏占有并等待"><a href="#破坏占有并等待" class="headerlink" title="破坏占有并等待"></a>破坏占有并等待</h4><p>禁止已持有资源的进程再申请其他资源.</p>
-<p>一种实现方式是在进程开始时申请好全部资源. 但是这是无法实现的 (如果能实现为什么不用银行家呢?) 此外一次性分配资源也是巨大的浪费.</p>
-<p>另一种实现方式是在申请新资源的时候先释放本来占有的资源. 但是开销大也不佳.</p>
-<h4 id="破坏不可抢占条件"><a href="#破坏不可抢占条件" class="headerlink" title="破坏不可抢占条件"></a>破坏不可抢占条件</h4><p>通过将资源(主要指硬件设备)虚拟化可以使其能够抢占. 但是并不是所有资源都能够虚拟化的. 而且消除了打印机的死锁也可能带来硬盘的死锁.</p>
-<h4 id="破坏环路等待条件"><a href="#破坏环路等待条件" class="headerlink" title="破坏环路等待条件"></a>破坏环路等待条件</h4><p>一种实现方式是每次只允许占据一个资源, 但是这显然不能接受的.</p>
-<p>另一种方式是对所有资源进行编号, 某进程每次请求的资源不能是比自己占有的资源序号低的资源. 这样资源分配图中肯定不会出现环 (而是一条链).这种方式也几乎不能找到一个令人满意的编号次序.</p>
-<hr>
-<h2 id="其他策略"><a href="#其他策略" class="headerlink" title="其他策略"></a>其他策略</h2><ul>
-<li>Two-Phase Locking</li>
-<li>Nonresource Deadlocks</li>
-<li>Starvation</li>
-<li>….</li>
-</ul>
 ]]></content>
       <categories>
         <category>学习笔记</category>
