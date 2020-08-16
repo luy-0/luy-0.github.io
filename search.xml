@@ -1,57 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>时与光W_202006-4</title>
-    <url>/2020/06/28/%E6%97%B6%E4%B8%8E%E5%85%89W_202006-4/</url>
-    <content><![CDATA[<p>2020年6月22日 ~ 28日.</p>
-<p>开始个人小结计划</p>
-<p>学习 CSAPP </p>
-<p>追剧, 玩游戏</p>
-<a id="more"></a>
-<h2 id="时与光-个人小结计划"><a href="#时与光-个人小结计划" class="headerlink" title="时与光:个人小结计划"></a>时与光:个人小结计划</h2><p>听说每天坚持写技术博客有利于知识巩固与技能加深, 自觉没有每天坚持的能力, 想了个折中的办法: 以一周为阶段定期总结. 当然, 每月月底, 每半年, 每年也要整理记录! </p>
-<p>主要内容希望自己能够以技术学习, 生活记录为主. 反正也不会有别人看, 就写的简略且随性一些. </p>
-<p><strong>以下是每次小结的规范:</strong></p>
-<ol>
-<li>小结分为: 周记, 月记, 半年总结, 年度总结 四种, 后缀分别以<code>w,m,h,y</code>标识.</li>
-<li>命名格式例: <ol>
-<li>周记: <code>时与光W_202006-4</code> 末位数字代表本月第几周(周日为准)</li>
-<li>月记: <code>时与光M_202006</code></li>
-<li>半年记: <code>时与光H_2020上半年</code></li>
-<li>年度记: <code>时与光Y_2020年度总结</code></li>
-</ol>
-</li>
-<li>内容包括: <ol>
-<li>技术学习成果与产出总结</li>
-<li>记录生活, 如旅游 读书 观影 游戏</li>
-<li>突如其来的想法</li>
-<li>下一阶段的展望</li>
-</ol>
-</li>
-</ol>
-<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>项目地址:</p>
-<p><a href="https://github.com/luy-0/CS-APP-LABs" target="_blank" rel="noopener">https://github.com/luy-0/CS-APP-LABs</a></p>
-<p>对CSAPP这本书垂涎已久, 趁着疫情的期末大把空闲时间和两位同学组队学习CSAPP以及CMU的15-213课程. 更多学习情况参看README部分.</p>
-<p>本周着重于完成机器级别编程部分, 以及课程配套实验中的Bomb Lab, 这是一个通过 gdb 查看可执行文件的汇编代码, 并且推导出炸弹拆除的密钥. 在这几天习得了基本的汇编代码阅读能力, gdb 的基本运用能力, 对C计算机底层运算的实现有了更深的理解. </p>
-<p>这个Lab真是让人又爱又恨, 每拆除一个炸弹的时候成就感满满, 但是对着汇编代码死活瞪不出逻辑的暴躁和无奈…</p>
-<p>机器级别编程 是指 使用汇编代码完成函数操作. 主要学习内容包括 控制机器执行, 执行过程 数据的存储(数组 结构 联合) 以及其他进阶部分. 其中关于缓存区溢出, 栈攻击, 浮点代码等部分掌握的不好.</p>
-<h2 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h2><p>这一周在追《隐蔽的角落》 . 改编自紫金陈的推理小说《坏小孩》，讲述了在沿海小城三个孩子(朱朝阳, 岳普, 严良) 在景区游玩时无意间拍摄记录了一次谋杀(张东升, 秦昊饰)，想借机敲诈来筹钱，以及随后发生的一连串的故事。大结局播完豆瓣评分依旧为9.0</p>
-<p>主要是周围同学都在追哈哈哈, 感叹国产网剧真的很成熟了, 前几集导演对于节奏把握的很好, 中间叙事稍有平淡, 最后一部分还没看😂  配乐挺用心, 虽然我听不懂后现代, 但是还是有被情绪感染到. 在展现上制片组的细致程度令人感动, 例如张东升海夜追朝阳时对着脚步印, 例如试卷和板书上的题目真的是初中知识点 , 竟然有一点点对着美剧扣细节的感觉了. 演员也实力诠释, 秦昊的演技令人背后发凉, 小朋友的演技也很稳啊~ 朝阳那种说的少想得多的内向好学生非常真实, 普普的可爱是真的戏里戏外的可爱 ,就是太机灵懂事了, 牛逼的让人心疼(话说我怎么总觉得她最后要黑化一类的?) 严良其实没有很好地演出想象里的小痞子气, 缺点那种坏味.一部很优秀的国产剧, 拯救了我被言情耽改剧摧毁的信心~ (没错我就是指ssss和cql)</p>
-<p>希望结局能够依旧精彩吧! </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/XGYW%25K%7DKW%40MFX%7BQNNHBI95W.jpg" alt=""></p>
-<h2 id="玩游戏"><a href="#玩游戏" class="headerlink" title="玩游戏"></a>玩游戏</h2><p>嗯…最近又入了平安京的坑, MOBA真香:dog: 不过打了一周上了少属就没啥动力了… 快乐咸鱼佛系游戏, 竞技游戏嘛 心态放好就行了~</p>
-<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP </p>
-<p>开始刷LC</p>
-<p>控制每日游戏时长</p>
-]]></content>
-      <categories>
-        <category>时与光</category>
-      </categories>
-      <tags>
-        <tag>小结</tag>
-        <tag>周记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello_Hexo_Blog</title>
     <url>/2020/05/31/Hello-Hexo-Blog/</url>
     <content><![CDATA[<p> 第一篇博客~ 开心</p>
@@ -478,7 +427,7 @@
 <li><p>吞吐量</p>
 <p>每小时工作数</p>
 </li>
-<li><p>周转时间</p>
+<li><p>周转时间 Turnaround time  ⭐</p>
 <p>单次作业开始结束间的时间</p>
 </li>
 <li><p>CPU利用率</p>
@@ -510,7 +459,22 @@
 <p>哪个进程获得处理器资源（通常所说的调度）</p>
 </li>
 </ol>
-<h2 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h2><h3 id="批处理系统-1"><a href="#批处理系统-1" class="headerlink" title="批处理系统"></a>批处理系统</h3><h4 id="FCFS-First-come-first-served"><a href="#FCFS-First-come-first-served" class="headerlink" title="FCFS (First-come first-served )"></a>FCFS (First-come first-served )</h4><p>字面意思  不解释</p>
+<h2 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h2><h3 id="评判算法优劣的标准"><a href="#评判算法优劣的标准" class="headerlink" title="评判算法优劣的标准"></a>评判算法优劣的标准</h3><p>假设你 10:00 进入银行, 等待了15分钟, 10:15~10:25办理业务, 这时业务员说需要等总部处理数据, 大概等待5分钟, 10:30~11:00办理了业务的剩下部分.然后离开银行</p>
+<ol>
+<li><p>Turnaround time  周转时间</p>
+<p>the interval from submission to completion </p>
+<p>从提交任务到完成任务. 例子中60min(10:00~11:00)</p>
+</li>
+<li><p>Waiting time 等待时间</p>
+<p> amount of time a process has been waiting in the ready queue</p>
+<p>在整个任务中你等待的时间 例子中15+10 = 25 min (10:00~10:15, 10:25~10:30)</p>
+</li>
+<li><p>Response time 响应时间</p>
+<p> amount of time it takes from when a request was submitted until the first response is produced, not output </p>
+<p>从任务提交到第一次被响应的时间 例子中15min (10:00~10:15)</p>
+</li>
+</ol>
+<h3 id="批处理系统-1"><a href="#批处理系统-1" class="headerlink" title="批处理系统"></a>批处理系统</h3><h4 id="FCFS-First-come-first-served"><a href="#FCFS-First-come-first-served" class="headerlink" title="FCFS (First-come first-served )"></a>FCFS (First-come first-served )</h4><p>字面意思  不解释</p>
 <p><strong>优势</strong>:</p>
 <p>便于实现, 绝对平等</p>
 <p><strong>缺点:</strong></p>
@@ -596,6 +560,19 @@ T_0\\
 </ul>
 </li>
 </ul>
+<hr>
+<p><strong>操作系统系列</strong></p>
+<ol>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/14/操作系统之概述/" target="_blank" rel="noopener">操作系统之概述</a></li>
+<li>操作系统之进程线程 (本文)</li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/08/操作系统之进程间通信/" target="_blank" rel="noopener">操作系统之进程间通信</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/04/操作系统之死锁/" target="_blank" rel="noopener">操作系统之死锁</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/09/操作系统之内存管理/" target="_blank" rel="noopener">操作系统之内存管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/05/操作系统之IO管理/" target="_blank" rel="noopener">操作系统之IO管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/06/操作系统之文件系统/" target="_blank" rel="noopener">操作系统之文件系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/08/操作系统之多处理器系统/" target="_blank" rel="noopener">操作系统之多处理器系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/11/操作系统之安全/" target="_blank" rel="noopener">操作系统之安全</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -605,6 +582,24 @@ T_0\\
       <tags>
         <tag>学习笔记</tag>
         <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时与光H_2020上半年</title>
+    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89H-2020%E4%B8%8A%E5%8D%8A%E5%B9%B4/</url>
+    <content><![CDATA[<p>2020年1月 ~ 6月</p>
+<p>关键词: 疫情, 学习, 健身</p>
+<a id="more"></a>
+<p>第一篇半年记, 一时间竟然有些不知道该些写什么.</p>
+<p>从头说起吧, 纯流水账. </p>
+<p>明天再写吧(咕咕警告)</p>
+]]></content>
+      <categories>
+        <category>时与光</category>
+      </categories>
+      <tags>
+        <tag>小结</tag>
+        <tag>半年记</tag>
       </tags>
   </entry>
   <entry>
@@ -756,7 +751,7 @@ T_0\\
 <li>生产者down空槽, 消费者down满槽</li>
 </ul>
 <h4 id="管程-Monitor"><a href="#管程-Monitor" class="headerlink" title="管程 Monitor"></a>管程 Monitor</h4><p>PV操作是可以完全正确地使用临界区, 但是在程序编写的过程中容易出现死锁的情况. 引入 <strong>管程</strong> 使得程序的编写更加友好.</p>
-<p>管程是一个由过程,变量,以及数据结构组成的集合. 管程提供了访问和修改临界区资源的接口, 并且只允许进程通过管程(不能绕过管程)访问这些资源, 并且在同一时间只允许一个活跃进程使用管程来读写临界区. 管程本身是一种高级同步原语, 这使得它在执行时不会被中断. 管程本身并没有新技术, 而是编程语言提供的一个更加方便编程的辅助工具.</p>
+<p>管程是一个由过程,变量,以及数据结构组成的集合. 管程提供了访问和修改临界区资源的接口, 并且<strong>只允许进程通过管程(不能绕过管程)访问这些资源</strong>, 并且在<strong>同一时间只允许一个活跃进程使用管程来读写临界</strong>区. 管程本身是一种高级同步原语, 这使得它在执行时不会被中断. <u>管程本身并没有新技术, 而是编程语言提供的一个更加方便编程的辅助工具.</u></p>
 <figure class="highlight pascal"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这是一个类Pascal语言, 原因见注1</span></span><br><span class="line"><span class="comment">//主要代码其实与 休眠唤醒 部分类似, wait &lt;-&gt; sleep, signal &lt;-&gt; wakeup</span></span><br><span class="line"><span class="comment">//但是管程不会出现唤醒丢失的问题, 原因见注2</span></span><br><span class="line">monitor ProducerConsumer	<span class="comment">//一个管程</span></span><br><span class="line">	condition full, empty;</span><br><span class="line">	integer count;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">procedure</span> <span class="title">insert</span><span class="params">(item: integer)</span>;</span>	<span class="comment">//管程中的插入函数</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> count =N <span class="keyword">then</span> wait(full);</span><br><span class="line">		insert_item(item);</span><br><span class="line">		count:=count +<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> count=<span class="number">1</span> <span class="keyword">then</span> signal(empty)	</span><br><span class="line">	<span class="keyword">end</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">remove</span>:</span>integer;			<span class="comment">//管程中的移除函数</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> count =<span class="number">0</span> <span class="keyword">then</span> wait(empty);</span><br><span class="line">		remove = remove_item;</span><br><span class="line">		count:=count-<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> count=N-<span class="number">1</span> <span class="keyword">then</span> signal(full)</span><br><span class="line">	<span class="keyword">end</span>;</span><br><span class="line">	count :=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">end</span> monitor;				<span class="comment">//管程结束</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">producer</span>;</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">while</span> true <span class="keyword">do</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">	item= produce_item;</span><br><span class="line">	ProducerConsumer.insert(item)		<span class="comment">//其他进程通过管程来访问临界区</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">consumer</span>;</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">while</span> true <span class="keyword">do</span></span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">	item = ProducerConsumer.remove;		<span class="comment">//绕过管程而访问是不允许的</span></span><br><span class="line">	consume_item(item)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>注1: 管程是语言概念, 使用管程需要编程语言本身支持. 很遗憾C语言并不支持管程. 这也是其缺陷之一. (Java是支持管程的) </li>
@@ -792,6 +787,19 @@ T_0\\
 <p>写者优先的代码</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> ReadCount=<span class="number">0</span>, WriteCount=<span class="number">0</span>;			<span class="comment">//当前读写数量</span></span><br><span class="line">semaphore mutex_rc=<span class="number">1</span>x, mutex_wc=<span class="number">1</span>y;		<span class="comment">//保护count的互斥</span></span><br><span class="line">semaphore rr=<span class="number">1</span>rs,ww=<span class="number">1</span>ws;			<span class="comment">//保证读者写者互斥访问</span></span><br><span class="line"></span><br><span class="line">writer()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;			</span><br><span class="line">        P(mutex_wc);			<span class="comment">//互斥wc</span></span><br><span class="line">        <span class="keyword">if</span>(WriteCount == <span class="number">0</span>)		<span class="comment">//如果是第一个写者</span></span><br><span class="line">            P(rr);				<span class="comment">//不允许其他读者进入</span></span><br><span class="line">        WriteCount++;</span><br><span class="line">        V(mutex_wc);			<span class="comment">//互斥解除:wc</span></span><br><span class="line">        </span><br><span class="line">		P(ww);					<span class="comment">//互斥其他写者</span></span><br><span class="line">		writing;</span><br><span class="line">		v(ww);					<span class="comment">//互斥解除:其他写者</span></span><br><span class="line">        </span><br><span class="line">        P(mutex_wc);			<span class="comment">//互斥wc</span></span><br><span class="line">        WriteCount--;</span><br><span class="line">        <span class="keyword">if</span>(WriteCount == <span class="number">0</span>)		<span class="comment">//如果是最后的写者</span></span><br><span class="line">            V(rr);				<span class="comment">//互斥解除:读者</span></span><br><span class="line">        V(mutex_wc);			<span class="comment">//互斥解除:wc</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">reader()&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P(z);</span><br><span class="line">        P(rr);				<span class="comment">//</span></span><br><span class="line">		P(mutex_rc);		<span class="comment">//互斥:rc</span></span><br><span class="line">		<span class="keyword">if</span>(ReadCount==<span class="number">0</span>)	<span class="comment">//如果当前是第一个读者,互斥写者:ww</span></span><br><span class="line">			P(ww);</span><br><span class="line">		ReadCount++;		<span class="comment">//rc++</span></span><br><span class="line">		V(mutex_rc);		<span class="comment">//互斥解除:rc</span></span><br><span class="line">        V(rr);				<span class="comment">//</span></span><br><span class="line">        V(z);</span><br><span class="line">		reading;</span><br><span class="line">		P(mutex_rc);		<span class="comment">//互斥:rc</span></span><br><span class="line">		ReadCount--;		<span class="comment">//rc--</span></span><br><span class="line">		<span class="keyword">if</span>(ReadCount==<span class="number">0</span>)	<span class="comment">//如果当前是最后一个读者,互斥解除:写者ww</span></span><br><span class="line">			v(ww);</span><br><span class="line">		V(mutex_rc);		<span class="comment">//互斥解除:rc</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>写者优先没完全看懂</p>
+<hr>
+<p><strong>操作系统系列</strong></p>
+<ol>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/14/操作系统之概述/" target="_blank" rel="noopener">操作系统之概述</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/05/操作系统之进程线程/" target="_blank" rel="noopener">操作系统之进程线程</a></li>
+<li>操作系统之进程间通信  (本文)</li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/04/操作系统之死锁/" target="_blank" rel="noopener">操作系统之死锁</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/09/操作系统之内存管理/" target="_blank" rel="noopener">操作系统之内存管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/05/操作系统之IO管理/" target="_blank" rel="noopener">操作系统之IO管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/06/操作系统之文件系统/" target="_blank" rel="noopener">操作系统之文件系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/08/操作系统之多处理器系统/" target="_blank" rel="noopener">操作系统之多处理器系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/11/操作系统之安全/" target="_blank" rel="noopener">操作系统之安全</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -801,67 +809,6 @@ T_0\\
       <tags>
         <tag>学习笔记</tag>
         <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时与光H_2020上半年</title>
-    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89H-2020%E4%B8%8A%E5%8D%8A%E5%B9%B4/</url>
-    <content><![CDATA[<p>2020年1月 ~ 6月</p>
-<p>关键词: 疫情, 学习, 健身</p>
-<a id="more"></a>
-<p>第一篇半年记, 一时间竟然有些不知道该些写什么.</p>
-<p>从头说起吧, 纯流水账. </p>
-<p>明天再写吧(咕咕警告)</p>
-]]></content>
-      <categories>
-        <category>时与光</category>
-      </categories>
-      <tags>
-        <tag>小结</tag>
-        <tag>半年记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时与光W_202007-1</title>
-    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-1/</url>
-    <content><![CDATA[<p>2020年6月29日 ~ 7月5日.</p>
-<p>学习CSAPP</p>
-<p>追剧, 游戏, 爬山</p>
-<a id="more"></a>
-<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>完成了Bomb Lab的最后两个炸弹, 并且撰写完成了<a href="[https://luy-hb.xyz/2020/07/01/CSAPP-Lab%E7%AC%94%E8%AE%B02-Bomb/](https://luy-hb.xyz/2020/07/01/CSAPP-Lab笔记2-Bomb/">实验报告</a>)</p>
-<p>巩固了上周最后遗留的不太理解的栈溢出攻击等知识点, 开始完成Attack Lab. 目前已完成了前两个小关. </p>
-<p>Attack Lab 是特别针对栈溢出攻击设计的配套实验 <del>虽然我觉得一小节一个实验非常奇怪</del>, 分别要求使用代码注入攻击与ROP(面向返回编程）对代码进行破坏. </p>
-<p>此外还在继续学习有关内存的层次结构等章节, 计划本周内写完有关内存的一篇学习报告.</p>
-<h2 id="追剧-游戏-爬山"><a href="#追剧-游戏-爬山" class="headerlink" title="追剧, 游戏, 爬山"></a>追剧, 游戏, 爬山</h2><h3 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h3><p>这周将隐蔽的角落看完了, 结局和自己中途推理的基本一致, 也有些许出入. (当然结局本身就是众说纷纭的). 起码早早地看出来朝阳是Boss了不是吗😂</p>
-<p>最佩服自己的是第一集看到张老师一口气一杯水的时候就吐槽 “ 这么能喝怕不是个糖尿病吧 “ , 谁知道居然一语成谶, 不过本身也是瞎猫碰上死耗子了.</p>
-<h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><p>今年Steam夏促真不行…最后一百出头入了 <a href="https://www.xiaoheihe.cn/games/detail/638230" target="_blank" rel="noopener">风之旅人</a> + <a href="https://www.xiaoheihe.cn/games/detail/632360" target="_blank" rel="noopener">雨中冒险2</a> + (被舍友安利的) <a href="https://www.xiaoheihe.cn/games/detail/8870" target="_blank" rel="noopener">生化奇兵:无限</a>. </p>
-<p>当晚打开了散步模拟器风之旅人. 其实作品本身倒是没有特别打动人的地方. 讲述的不过是一次经历千山万水的朝圣之旅, 哪怕洪水滔天,危机四伏, 命丧白土. 画面确实非常优秀, 沙漠的细腻触感比较真实. 部分画面也很适合截图当屏保, 但网上普遍略有过誉.</p>
-<p>一周目偶有遇到几个同行人, 可惜都匆匆离去, 大概是多周目玩家已经没有了荒野中遇到伙伴时的欣喜. 二周目的时候在断桥遇见了一位红袍, 似乎ta也并不是新手, 但是还是很激动地在我身边鸣叫. 于是我第一次遇到真正意义上的同行者. 我们在路上互相充能, 用单调的音节琴瑟和鸣, 在飞龙第一次出现前互相发出短促的提醒, 在雪地里看见ta被挑飞而无能为力, 在暴风雪中里用尽最后一丝力气发出微不可闻的鼓励. 最终在山巅, 在空中, 在瀑布, 在微光中起舞. 丝带在圣光的沾染中螺旋缠绕, 我突然有些庆幸选择开始了二周目, 而不是气呼呼地从硬盘中卸载游戏, 然后在他人问起时说一句: “ 啊画面挺好, 但不值.” </p>
-<p>谢谢你, 一期一会的陌生人. </p>
-<p>当然最后实在是不忍离别23333, 在雪地上磕磕绊绊地一个一个字符地写下自己的联系方式, 最后! 居然! 成功地! 加上了好友, 真是太幸运了~</p>
-<h3 id="爬山"><a href="#爬山" class="headerlink" title="爬山"></a>爬山</h3><p>一开始听说本地到黄山的高铁通车了, 想着周末去玩结果那里下雨. 但是已经勾起我的爬山欲望了23333. 第二天周六就收拾下准备起早去爬隔壁的小山. 临走前想想又把高中同学拽上了! 一天刷了俩座山.</p>
-<p>不过这个小土坡就是没挑战性啦.σ` ∀´)ﾟ∀ﾟ)σ (`ヮ´)</p>
-<p>晚上吃了快乐烤鱼, 好恰.</p>
-<p>结果第二天趴在床上起不来了o(TヘTo)</p>
-<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>收了好多专业书, 希望能一本本刷完! 加油! </p>
-<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><ul>
-<li>[x] 继续CSAPP </li>
-<li>[x] 开始刷LC</li>
-<li>[x] 控制每日游戏时长</li>
-</ul>
-<p>都有做到! ✌</p>
-<p>不过 LC 感觉自己还有很多不太清楚, 复杂度大概算是 O(能过) </p>
-<p>好久没有玩平安京了, 有效控制.<del>虽说是把时间花在journey上了</del></p>
-<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP (要加快速度了! )  </p>
-<p>继续刷 LC</p>
-<p>产出两篇以上的学习笔记(总结不算) </p>
-]]></content>
-      <categories>
-        <category>时与光</category>
-      </categories>
-      <tags>
-        <tag>小结</tag>
-        <tag>周记</tag>
       </tags>
   </entry>
   <entry>
@@ -1202,6 +1149,19 @@ T_0\\
 <li>恢复进程</li>
 <li>恢复寄存器, 恢复PC </li>
 </ol>
+<hr>
+<p><strong>操作系统系列</strong></p>
+<ol>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/14/操作系统之概述/" target="_blank" rel="noopener">操作系统之概述</a> </li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/05/操作系统之进程线程/" target="_blank" rel="noopener">操作系统之进程线程</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/08/操作系统之进程间通信/" target="_blank" rel="noopener">操作系统之进程间通信</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/04/操作系统之死锁/" target="_blank" rel="noopener">操作系统之死锁</a></li>
+<li>操作系统之内存管理 (本文)</li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/05/操作系统之IO管理/" target="_blank" rel="noopener">操作系统之IO管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/06/操作系统之文件系统/" target="_blank" rel="noopener">操作系统之文件系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/08/操作系统之多处理器系统/" target="_blank" rel="noopener">操作系统之多处理器系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/11/操作系统之安全/" target="_blank" rel="noopener">操作系统之安全</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -1214,26 +1174,90 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>时与光W-202007-3</title>
-    <url>/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-3/</url>
-    <content><![CDATA[<p>2020年7月13日~2020年7月19日</p>
-<p>看番: 瑞克与莫蒂</p>
-<p>回西安</p>
+    <title>时与光W_202007-1</title>
+    <url>/2020/07/06/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-1/</url>
+    <content><![CDATA[<p>2020年6月29日 ~ 7月5日.</p>
+<p>学习CSAPP</p>
+<p>追剧, 游戏, 爬山</p>
 <a id="more"></a>
-<h2 id="看番-瑞克与莫蒂"><a href="#看番-瑞克与莫蒂" class="headerlink" title="看番: 瑞克与莫蒂"></a>看番: 瑞克与莫蒂</h2><p>久闻大名的神番,终于在我爬山后的腰酸背痛的日子里看完了. 应该是第一次接触美漫 (也是第一次在A站看番) 果然比日漫亚撒西舒爽多了! </p>
-<p>鬼才剧本, 每一集都对时代和社会的痛点进行尽情的诠释——无论是批判还是讽刺, 解构还是歌颂, 常常在一两句话中忽然get到编剧的意图, 然后一拍大腿妈的绝了. </p>
-<p>配音太强了, 听说两个主角的配音都是一个人(这人还同时担任编剧) 我听过很多优秀的日本声优的出演, 能给角色赋予灵魂. 但还是有被这部惊到了: 瑞克与莫蒂的配音好像就是角色自己说出来的一样, 完全符合想象中的二人. </p>
-<p>脑洞比较大. 相对与好莱坞式拿着激光武器突突突的废科幻作品, 本作的幻想程度很对我胃口. 天马行空又大致符合逻辑, 再夹杂着一点点不科学. 比如日了星球, 或者满眼蚂蚁先生. 纯粹的美国式的低俗无聊不遗余力的边角料的屎尿屁想象, 毫无意义,因此让人翱翔.</p>
-<p>美国特色式的永远能在作品中影射现实. 哪怕是真·盒中盒这种老式科幻剧情都能整成奴隶制与博弈论. 多线并行又在结尾交会. 作品甚至能够同时影射资本主义的大部分社会问题 (没错我就是说的S3E7) 信息量最大，隐喻最多，故事最丰富立体，情节最波荡曲折. 没有人比我更懂民族矛盾 —— 其实都是阶级矛盾. </p>
-<p>以及被广大A站网友津津乐道的第四面墙…其实我倒是觉得这个还好, 孤独的看透宇宙荒谬本质的天才科学家, 虽然悲壮却亦不少见. 更打动的则是瑞克认清宇宙的真相, 却依旧热爱生活.</p>
-<p>附录: <a href="https://www.douban.com/group/topic/157799509/" target="_blank" rel="noopener">好看的相关壁纸与插画</a></p>
-<h2 id="收拾东西回长安"><a href="#收拾东西回长安" class="headerlink" title="收拾东西回长安"></a>收拾东西回长安</h2><p>字面意思, 收拾收拾回学校咯</p>
-<p>回去之前还顺便跟两位本地同学吃吃喝喝, 回民街的文文烧烤, 这个酱料真的很特色. 早上在建国路整了碗荤胡辣汤泡馍, 可以, 这很正宗.</p>
-<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>跟高中同学又起了联系, 逛了一下午, 快乐.</p>
-<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><p>none</p>
-<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>复习</p>
-<p>英语</p>
-<p>研究宿舍厨艺</p>
+<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>完成了Bomb Lab的最后两个炸弹, 并且撰写完成了<a href="[https://luy-hb.xyz/2020/07/01/CSAPP-Lab%E7%AC%94%E8%AE%B02-Bomb/](https://luy-hb.xyz/2020/07/01/CSAPP-Lab笔记2-Bomb/">实验报告</a>)</p>
+<p>巩固了上周最后遗留的不太理解的栈溢出攻击等知识点, 开始完成Attack Lab. 目前已完成了前两个小关. </p>
+<p>Attack Lab 是特别针对栈溢出攻击设计的配套实验 <del>虽然我觉得一小节一个实验非常奇怪</del>, 分别要求使用代码注入攻击与ROP(面向返回编程）对代码进行破坏. </p>
+<p>此外还在继续学习有关内存的层次结构等章节, 计划本周内写完有关内存的一篇学习报告.</p>
+<h2 id="追剧-游戏-爬山"><a href="#追剧-游戏-爬山" class="headerlink" title="追剧, 游戏, 爬山"></a>追剧, 游戏, 爬山</h2><h3 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h3><p>这周将隐蔽的角落看完了, 结局和自己中途推理的基本一致, 也有些许出入. (当然结局本身就是众说纷纭的). 起码早早地看出来朝阳是Boss了不是吗😂</p>
+<p>最佩服自己的是第一集看到张老师一口气一杯水的时候就吐槽 “ 这么能喝怕不是个糖尿病吧 “ , 谁知道居然一语成谶, 不过本身也是瞎猫碰上死耗子了.</p>
+<h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><p>今年Steam夏促真不行…最后一百出头入了 <a href="https://www.xiaoheihe.cn/games/detail/638230" target="_blank" rel="noopener">风之旅人</a> + <a href="https://www.xiaoheihe.cn/games/detail/632360" target="_blank" rel="noopener">雨中冒险2</a> + (被舍友安利的) <a href="https://www.xiaoheihe.cn/games/detail/8870" target="_blank" rel="noopener">生化奇兵:无限</a>. </p>
+<p>当晚打开了散步模拟器风之旅人. 其实作品本身倒是没有特别打动人的地方. 讲述的不过是一次经历千山万水的朝圣之旅, 哪怕洪水滔天,危机四伏, 命丧白土. 画面确实非常优秀, 沙漠的细腻触感比较真实. 部分画面也很适合截图当屏保, 但网上普遍略有过誉.</p>
+<p>一周目偶有遇到几个同行人, 可惜都匆匆离去, 大概是多周目玩家已经没有了荒野中遇到伙伴时的欣喜. 二周目的时候在断桥遇见了一位红袍, 似乎ta也并不是新手, 但是还是很激动地在我身边鸣叫. 于是我第一次遇到真正意义上的同行者. 我们在路上互相充能, 用单调的音节琴瑟和鸣, 在飞龙第一次出现前互相发出短促的提醒, 在雪地里看见ta被挑飞而无能为力, 在暴风雪中里用尽最后一丝力气发出微不可闻的鼓励. 最终在山巅, 在空中, 在瀑布, 在微光中起舞. 丝带在圣光的沾染中螺旋缠绕, 我突然有些庆幸选择开始了二周目, 而不是气呼呼地从硬盘中卸载游戏, 然后在他人问起时说一句: “ 啊画面挺好, 但不值.” </p>
+<p>谢谢你, 一期一会的陌生人. </p>
+<p>当然最后实在是不忍离别23333, 在雪地上磕磕绊绊地一个一个字符地写下自己的联系方式, 最后! 居然! 成功地! 加上了好友, 真是太幸运了~</p>
+<h3 id="爬山"><a href="#爬山" class="headerlink" title="爬山"></a>爬山</h3><p>一开始听说本地到黄山的高铁通车了, 想着周末去玩结果那里下雨. 但是已经勾起我的爬山欲望了23333. 第二天周六就收拾下准备起早去爬隔壁的小山. 临走前想想又把高中同学拽上了! 一天刷了俩座山.</p>
+<p>不过这个小土坡就是没挑战性啦.σ` ∀´)ﾟ∀ﾟ)σ (`ヮ´)</p>
+<p>晚上吃了快乐烤鱼, 好恰.</p>
+<p>结果第二天趴在床上起不来了o(TヘTo)</p>
+<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>收了好多专业书, 希望能一本本刷完! 加油! </p>
+<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><ul>
+<li>[x] 继续CSAPP </li>
+<li>[x] 开始刷LC</li>
+<li>[x] 控制每日游戏时长</li>
+</ul>
+<p>都有做到! ✌</p>
+<p>不过 LC 感觉自己还有很多不太清楚, 复杂度大概算是 O(能过) </p>
+<p>好久没有玩平安京了, 有效控制.<del>虽说是把时间花在journey上了</del></p>
+<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP (要加快速度了! )  </p>
+<p>继续刷 LC</p>
+<p>产出两篇以上的学习笔记(总结不算) </p>
+]]></content>
+      <categories>
+        <category>时与光</category>
+      </categories>
+      <tags>
+        <tag>小结</tag>
+        <tag>周记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时与光W_202006-4</title>
+    <url>/2020/06/28/%E6%97%B6%E4%B8%8E%E5%85%89W_202006-4/</url>
+    <content><![CDATA[<p>2020年6月22日 ~ 28日.</p>
+<p>开始个人小结计划</p>
+<p>学习 CSAPP </p>
+<p>追剧, 玩游戏</p>
+<a id="more"></a>
+<h2 id="时与光-个人小结计划"><a href="#时与光-个人小结计划" class="headerlink" title="时与光:个人小结计划"></a>时与光:个人小结计划</h2><p>听说每天坚持写技术博客有利于知识巩固与技能加深, 自觉没有每天坚持的能力, 想了个折中的办法: 以一周为阶段定期总结. 当然, 每月月底, 每半年, 每年也要整理记录! </p>
+<p>主要内容希望自己能够以技术学习, 生活记录为主. 反正也不会有别人看, 就写的简略且随性一些. </p>
+<p><strong>以下是每次小结的规范:</strong></p>
+<ol>
+<li>小结分为: 周记, 月记, 半年总结, 年度总结 四种, 后缀分别以<code>w,m,h,y</code>标识.</li>
+<li>命名格式例: <ol>
+<li>周记: <code>时与光W_202006-4</code> 末位数字代表本月第几周(周日为准)</li>
+<li>月记: <code>时与光M_202006</code></li>
+<li>半年记: <code>时与光H_2020上半年</code></li>
+<li>年度记: <code>时与光Y_2020年度总结</code></li>
+</ol>
+</li>
+<li>内容包括: <ol>
+<li>技术学习成果与产出总结</li>
+<li>记录生活, 如旅游 读书 观影 游戏</li>
+<li>突如其来的想法</li>
+<li>下一阶段的展望</li>
+</ol>
+</li>
+</ol>
+<h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>项目地址:</p>
+<p><a href="https://github.com/luy-0/CS-APP-LABs" target="_blank" rel="noopener">https://github.com/luy-0/CS-APP-LABs</a></p>
+<p>对CSAPP这本书垂涎已久, 趁着疫情的期末大把空闲时间和两位同学组队学习CSAPP以及CMU的15-213课程. 更多学习情况参看README部分.</p>
+<p>本周着重于完成机器级别编程部分, 以及课程配套实验中的Bomb Lab, 这是一个通过 gdb 查看可执行文件的汇编代码, 并且推导出炸弹拆除的密钥. 在这几天习得了基本的汇编代码阅读能力, gdb 的基本运用能力, 对C计算机底层运算的实现有了更深的理解. </p>
+<p>这个Lab真是让人又爱又恨, 每拆除一个炸弹的时候成就感满满, 但是对着汇编代码死活瞪不出逻辑的暴躁和无奈…</p>
+<p>机器级别编程 是指 使用汇编代码完成函数操作. 主要学习内容包括 控制机器执行, 执行过程 数据的存储(数组 结构 联合) 以及其他进阶部分. 其中关于缓存区溢出, 栈攻击, 浮点代码等部分掌握的不好.</p>
+<h2 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h2><p>这一周在追《隐蔽的角落》 . 改编自紫金陈的推理小说《坏小孩》，讲述了在沿海小城三个孩子(朱朝阳, 岳普, 严良) 在景区游玩时无意间拍摄记录了一次谋杀(张东升, 秦昊饰)，想借机敲诈来筹钱，以及随后发生的一连串的故事。大结局播完豆瓣评分依旧为9.0</p>
+<p>主要是周围同学都在追哈哈哈, 感叹国产网剧真的很成熟了, 前几集导演对于节奏把握的很好, 中间叙事稍有平淡, 最后一部分还没看😂  配乐挺用心, 虽然我听不懂后现代, 但是还是有被情绪感染到. 在展现上制片组的细致程度令人感动, 例如张东升海夜追朝阳时对着脚步印, 例如试卷和板书上的题目真的是初中知识点 , 竟然有一点点对着美剧扣细节的感觉了. 演员也实力诠释, 秦昊的演技令人背后发凉, 小朋友的演技也很稳啊~ 朝阳那种说的少想得多的内向好学生非常真实, 普普的可爱是真的戏里戏外的可爱 ,就是太机灵懂事了, 牛逼的让人心疼(话说我怎么总觉得她最后要黑化一类的?) 严良其实没有很好地演出想象里的小痞子气, 缺点那种坏味.一部很优秀的国产剧, 拯救了我被言情耽改剧摧毁的信心~ (没错我就是指ssss和cql)</p>
+<p>希望结局能够依旧精彩吧! </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/XGYW%25K%7DKW%40MFX%7BQNNHBI95W.jpg" alt=""></p>
+<h2 id="玩游戏"><a href="#玩游戏" class="headerlink" title="玩游戏"></a>玩游戏</h2><p>嗯…最近又入了平安京的坑, MOBA真香:dog: 不过打了一周上了少属就没啥动力了… 快乐咸鱼佛系游戏, 竞技游戏嘛 心态放好就行了~</p>
+<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP </p>
+<p>开始刷LC</p>
+<p>控制每日游戏时长</p>
 ]]></content>
       <categories>
         <category>时与光</category>
@@ -1330,201 +1354,65 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>初窥HTTP之一_HTTP基础</title>
-    <url>/2020/08/01/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%B8%80_HTTP%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<ol>
-<li>TCP/IP 基础</li>
-<li>HTTP简介</li>
-</ol>
+    <title>时与光W-202007-4</title>
+    <url>/2020/07/31/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-4/</url>
+    <content><![CDATA[<p>2020年7月20日~7月26日</p>
+<p>宿舍小厨</p>
 <a id="more"></a>
-<h2 id="TCP-IP-基础"><a href="#TCP-IP-基础" class="headerlink" title="TCP/IP 基础"></a>TCP/IP 基础</h2><p>字面上看, TCP/IP包括了TCP与IP这两大协议．但一般意义上认为TCP/IP是指得以TCP,IP为核心协议的一系列协议族<del>(ko no IPS da!)</del>, 这个协议族是整个互联网运作的基础. HTTP协议是包含在TCP/IP协议族的一个子集.</p>
-<blockquote>
-<p>互联网协议套件（英语：Internet Protocol Suite，缩写IPS）是一个网络通讯模型，以及一整个网络传输协议家族，为网际网络的基础通讯架构。它常被通称为TCP/IP协议族（英语：TCP/IP Protocol Suite，或TCP/IP Protocols），简称TCP/IP 。因为该协定家族的两个核心协定：TCP（传输控制协议）和IP（网际协议），为该家族中最早通过的标准。</p>
-<p>协议还包括: ARP，IP，ICMP，UDP，TCP，DNS，HTTP，FTP , SMTP，POP3，SNMP，ECHO，DHCP，SSH，NNTP 等.</p>
-<p>From: <a href="https://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F" target="_blank" rel="noopener">wiki: TCP/IP协议族</a></p>
-</blockquote>
-<p>本段将简单介绍:</p>
+<h2 id="宿舍小厨"><a href="#宿舍小厨" class="headerlink" title="宿舍小厨"></a>宿舍小厨</h2><p>上周买的食材陆陆续续到了, 即将开始与导员宿管的躲猫猫生活. 由于我手残下单鸡蛋的时候多下了一份,现在我对着80个鸡蛋欲哭无泪… </p>
+<p>整理下目前的装备与食材.</p>
 <ol>
-<li>TCP/IP 的分层管理</li>
-<li>通信传输流,</li>
-<li>IP: 传输</li>
-<li>TCP:可靠性</li>
-<li>DNS: 域名解析</li>
-<li>URI : 资源定位</li>
+<li>锅*2, 一个口深适合煮汤, 一个口浅适合煎东西;</li>
+<li>一个蒸蛋器</li>
+<li>面板, 擀面杖, 刀具餐具</li>
 </ol>
-<p>以及他们与HTTP是怎么互相协作的.本段不涉及具体的HTTP内容.</p>
-<h3 id="TCP-IP的分层管理"><a href="#TCP-IP的分层管理" class="headerlink" title="TCP/IP的分层管理"></a>TCP/IP的分层管理</h3><p>假设你已经知道了 <a href="https://zh.wikipedia.org/zh-cn/OSI%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">OSI模型</a> 将信息传输分为七层, 他们依次是</p>
+<p>食材:</p>
 <ol>
-<li>第7层 应用层</li>
-<li>第6层 表达层</li>
-<li>第5层 会话层</li>
-<li>第4层 传输层</li>
-<li>第3层 网络层</li>
-<li>第2层 数据链路层</li>
-<li>第1层 物理层</li>
+<li>鸡蛋</li>
+<li>紫薯</li>
+<li>黑小麦全麦粉</li>
+<li>鸡肉肠, 鸡胸肉,金枪鱼肉罐头</li>
+<li>燕麦麦片</li>
+<li>荞麦面</li>
+<li>全麦面包</li>
 </ol>
-<p>TCP/IP协议簇(再次提醒并不是TCP与IP这两个协议) 将其简化成了四个层次:</p>
-<ol>
-<li><p>应用层, 对应OSI模型中的7~5层</p>
-<blockquote>
-<p>该层包括所有和应用程序协同工作，利用基础网络交换应用程序专用的数据的协议。数据从网络相关的程序以这种应用内部使用的格式进行传送，然后被编码成标准协议的格式。</p>
-<p>包括<strong>HTTP</strong>（万维网服务）、<strong>FTP</strong>（文件传输）、<strong>SMTP</strong>（电子邮件）、<strong>SSH</strong>（安全远程登录）、<strong>DNS</strong>（名称&lt;-&gt; IP地址寻找）以及许多其他协议</p>
-</blockquote>
-</li>
-<li><p>传输层, 对应OSI模型中的第4层</p>
-<blockquote>
-<p>解决诸如端到端可靠性（“数据是否已经到达目的地？”）和保证数据按照正确的顺序到达这样的问题。在TCP/IP协议组中，传输协议也包括所给数据应该送给哪个应用程序。</p>
-<p>包括 TCP与UDP 协议等</p>
-<blockquote>
-<p>TCP : 是一个“可靠的”、面向链接, 基于字节流的传输机制</p>
-<p>UDP: 是一个无链接的数据报协议。它是一个“尽力传递”（best effort）的协议, 因为它不检查数据包是否已经到达目的地，并且不保证它们按顺序到达。<del>但是快</del></p>
-</blockquote>
-</blockquote>
-</li>
-<li><p>网络互连层, 对应OSI模型中的第3层</p>
-<blockquote>
-<p>解决在网络上流动的数据包. 解决如何选取网络中的路径将数据从源网络传输到目的网络.</p>
-<p>例如IP协议</p>
-</blockquote>
-</li>
-<li><p>网络链路层, 对应OSI模型中的第1~2层</p>
-<blockquote>
-<p>用来处理连接网络的硬件部分, 包括控制操作系统, 硬件设备驱动, NIC(网络适配器, 即网卡) , 以及光纤等物理部分</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="通信传输流"><a href="#通信传输流" class="headerlink" title="通信传输流"></a>通信传输流</h3><ol>
-<li>首先作为发送端的客户端在应用层利用（http）发出一个想看某个Web页面的HTTP请求。</li>
-<li>为了传输方便，在传输层把(TCP)从应用层传下来的数据进行分割，并在各个报文上打上标记序号及端口号发给网络层</li>
-<li>在网络层(IP)，给数据加上作为通信目的地址的MAC地址后发给链路层。到此发送网络的通信请求就准备齐全了</li>
-<li>接收端的服务器在链路层接收到数据，按序往上层发送，直到应用层。才算是真正接收到从客户端发送过来的HTTP请求</li>
-</ol>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/%E9%80%9A%E4%BF%A1%E4%BC%A0%E8%BE%93%E6%B5%81.png" alt=""></p>
-<p>发送端在层与层之间传输数据时，每经过一层必定会被打伤一个该层所属的首部信息。反之，接收端则会一层一层的去掉</p>
-<h3 id="IP-传输"><a href="#IP-传输" class="headerlink" title="IP : 传输"></a>IP : 传输</h3><p><em><a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">wiki链接</a></em></p>
-<p>网际协议（英语：Internet Protocol，缩写：IP；也称互联网协议）是用于分组交换数据网络的一种协议。</p>
-<blockquote>
-<p>IP是在TCP/IP协议族中网络层的主要协议，任务仅仅是根据源主机和目的主机的地址来传送数据。为此目的，IP定义了寻址方法和数据报的封装结构。第一个架构的主要版本为IPv4，目前仍然是广泛使用的互联网协议，尽管世界各地正在积极部署IPv6。</p>
-</blockquote>
-<p>要保证数据能够传输需要两个重要条件: IP地址与MAC地址.</p>
-<p>MAC地址是烧录在网卡或者接口上的<strong>物理地址</strong>，具有二层意义和<strong>全球唯一性</strong>，一般不能被改变。IP地址是网络中的主机或者三层接口在网络中的<strong>逻辑地址</strong>，在<strong>同一个网络内具有唯一性</strong>。</p>
-<p>IP地址通过ARP协议与MAC对应, IP地址是可变换的, MAC 地址是不变的.MAC 地址是杂乱无序的, 如果只是用MAC地址尽管可以传输但是造成浪费.(要从整个互联网中找到你这个MAC地址) , 使用IP地址则可以找到你所处的网络, 在从该网络设备转交给你. </p>
-<p><a href="https://www.zhihu.com/question/49335649/answer/120746792" target="_blank" rel="noopener"><em>IP地址和 MAC地址的区别和联系是什么?</em></a></p>
-<h3 id="TCP-可靠性"><a href="#TCP-可靠性" class="headerlink" title="TCP : 可靠性"></a>TCP : 可靠性</h3><p><a href="https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener"><em>wiki链接</em></a></p>
-<p>TCP提供了可靠的字节流服务. 字节流是指将大块数据分割更小块的<strong>报文段 </strong>(segment) 为单位进行传输. 并且能够将数据准确地传给对方, 并且确认数据的送达.</p>
-<p>为了保证数据可靠地送达, TCP 使用了<strong>三次握手</strong>.其中使用了 TCP 的标志（flag): SYN（synchronize） 和 ACK(acknowledgement)</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/%E4%B8%89%E6%AC%A1%E6%8C%A5%E6%89%8B.png" alt=""></p>
-<h3 id="DNS-域名解析"><a href="#DNS-域名解析" class="headerlink" title="DNS : 域名解析"></a>DNS : 域名解析</h3><p><a href="https://zh.wikipedia.org/wiki/Domain_Name_System" target="_blank" rel="noopener"><em>Wiki链接</em></a></p>
-<p><strong>DNS</strong>（Domain Name System）服务是和HTTP协议一样位于应用层的协议。它提供域名到IP地址之间的解析服务，或逆向从IP地址反查域名的服务。</p>
-<p>用户输入一个网址, 客户机首先向DNS请求IP地址, 获得后由HTTP协议生成针对目标服务器的 <em>请求报文</em> . TCP 将 请求报文分割成多个报文段并负责传输的可靠性. IP协议将这些报文段传送至指定的目标服务器. </p>
-<p>服务器收到这些报文段后由TCP协议将报文段还原成HTTP的请求报文并检查完整性（如果出错再引起另外的处理), HTTP协议对请求报文进行处理, 并返回响应报文, 后续过程类似. </p>
-<h3 id="URI-资源定位"><a href="#URI-资源定位" class="headerlink" title="URI : 资源定位"></a>URI : 资源定位</h3><p>统一资源标识符（英语：Uniform Resource Identifier，缩写：URI）在电脑术语中是一个用于标识某一互联网资源名称的字符串。</p>
-<p>注意 : URI 是用字符串标识的某一互联网资源, 而URL是资源在互联网上的地址, URL是URI的子集.</p>
-<p>通用URI的格式如下：</p>
-<blockquote>
-<p>[协议名]://用户名:密码@主机名:端口/路径?查询参数#片段ID</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">                    hierarchical part</span><br><span class="line">        ┌───────────────────┴─────────────────────┐</span><br><span class="line">                    authority               </span><br><span class="line">        ┌───────────────┴───────────────┐</span><br><span class="line">  abc:&#x2F;&#x2F;username:password@example.com:123&#x2F;path&#x2F;data?key&#x3D;value&amp;key2&#x3D;value2#fragid1</span><br><span class="line">  └┬┘   └───────┬───────┘ └────┬────┘ └┬┘ └───┬───┘ └─────────┬─────────┘ └──┬──┘</span><br><span class="line">scheme  user information     host     port  path            query         fragment</span><br><span class="line"> 协议	   	用户的登录信息		  服务器地址  端口	  路径		    查询参数		  片段ID</span><br><span class="line">  urn:example:mammal:monotreme:echidna</span><br><span class="line">  └┬┘ └──────────────┬───────────────┘</span><br><span class="line">scheme              path</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>协议方案</strong></p>
-<p>使用<code>http:</code> 或<code>https：</code>等协议方案名获取访问资源时要指定协议类型。不区分字母大小写，最后附一个冒号<code>：</code> . 也可使用<code>data：</code>或 <code>javascript：</code>这类指定数据或脚本程序的方案名。</p>
-</li>
-<li><p><strong>登录信息（认证）</strong></p>
-</li>
-</ul>
-<p>​    指定用户名和密码作为从服务器端获取资源时必要的登录信息（身份认证）。此项是可选项。</p>
-<ul>
-<li><strong>服务器地址</strong></li>
-</ul>
-<p>​    使用绝对URI必须指定待访问的服务器地址。地址可以是类似hackr.jp这种DNS可解析的名称，或是192.168.1.1这类IPv4地址名，还可以是[0:0:0:0:0:0:0:1]这样用方括号括起来的Pv6地址名。</p>
-<ul>
-<li><strong>服务器端口</strong></li>
-</ul>
-<p>​    指定服务器连接的网络端口号。此项也是可选项，若用户省略则自动使用默认端口号。带层次的文件路径。指定服务器上的文件路径来定位特指的资源。这与UNIX系统的文件目录结构相似。</p>
-<ul>
-<li><strong>带层次的文件路径</strong></li>
-</ul>
-<p>​    指定服务器上的文件路径来定位特指的资源。这与UNIX系统的文件目录结构相似。</p>
-<ul>
-<li><strong>查询字符串</strong></li>
-</ul>
-<p>​    针对已指定的文件路径内的资源，可以使用查询字符串传入任意参数。此项可选。</p>
-<ul>
-<li><p><strong>片段标识符</strong></p>
-<p>使用片段标识符通常可标记出已获取资源中的子资源（文档内的某个位置）。但在RFC中并没有明确规定其使用方法。该项也为可选项。</p>
-</li>
-</ul>
-<hr>
-<h2 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h2><p>本段将非常粗略地一览HTTP基本情况, 包括以下内容:</p>
-<ol>
-<li>HTTP基本情况</li>
-<li>HTTP报文</li>
-<li>HTTP方法与命令</li>
-<li>持久连接</li>
-<li>Cookie : 状态管理</li>
-</ol>
-<h3 id="HTTP基本情况"><a href="#HTTP基本情况" class="headerlink" title="HTTP基本情况"></a>HTTP基本情况</h3><p>HTTP协议用于客户端与服务端之间的通信. 客户端向服务端发出一个访问资源的<strong>请求</strong>, 服务端针对这个请求做出 <strong>响应</strong>. 服务端无法主动地向客户端建立通信.(除非附加了其他协议). 请求与响应都是通过HTTP报文来传送数据的.</p>
-<p>计算机扮演客户端与服务端的角色可能会切换, 但对于每条通信线路二者的角色是确定的.</p>
-<p>HTTP是<strong>无状态协议</strong>, HTTP协议自身对先前的通信状态不进行保存, 不进行持久化处理.这是为了快递处理大量事物,保证协议的可伸缩性.为了实现通信状态的保持状态, 引入了Cookie来实现持久化通信.</p>
-<p>HTTP使用URI进行资源的定位, 指定URI的方式有很多:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 完整的请求URI</span><br><span class="line">GET http:&#x2F;&#x2F;www.baidu.com&#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line"></span><br><span class="line">2. 使用相对URI地址</span><br><span class="line">GET &#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line">HOST: baidu.com</span><br></pre></td></tr></table></figure>
-<p>除此之外, 如果对于服务器本身(而不是访问资源)的请求, 可以只用<code>*</code>来代替请求URI</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">OPTIONS * HTTP&#x2F;1.1</span><br></pre></td></tr></table></figure>
-<h3 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h3><p>如前所述, HTTP是通过<strong>请求报文</strong>与<strong>响应报文</strong>进行信息传递的. </p>
-<h4 id="请求报文"><a href="#请求报文" class="headerlink" title="请求报文"></a>请求报文</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GET &#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line">HOST: baidu.com</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Content-Type: text&#x2F;html</span><br><span class="line">Content-Length: 5000</span><br><span class="line">If-Modified-Since: Thu. 12 Jul 2020 07: 30: 00 GMT</span><br><span class="line"></span><br><span class="line">name&#x3D;ueno&amp;age&#x3D;37</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-<p>起始处的<code>GET</code> 表示向服务器请求的访问类型, 被称为 <strong>方法</strong>. 而后的字符串<code>/index.html</code> 是使用URI表示的请求访问的资源对象, 被称为 <strong>请求URI</strong>.  <code>HTTP/1.1</code> 是用于表明客户端使用的协议 的 <strong>协议版本号</strong>.</p>
-<p>以上三个参数组成了请求报文的 <strong>请求行.</strong></p>
-<p>后面的几行被称之为 <strong>请求首部字段</strong> (示例中2-6行), 存储了对请求的进一步要求. 最后接上 <strong>内容实体</strong> 的主体.(示例中8行及以后)</p>
-<h4 id="响应报文"><a href="#响应报文" class="headerlink" title="响应报文"></a>响应报文</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Http&#x2F;1.1 200 Ok</span><br><span class="line">Date: Thu. 12 Jul 2020 07: 30: 00 GMT</span><br><span class="line">Content-type:message&#x2F;http</span><br><span class="line">Content-Length: 1024</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
-<p>首行依次是 <strong>协议版本号</strong>, <strong>状态码</strong>, <strong>状态码的原因短语</strong>, 这一行被称作 <strong>状态行.</strong></p>
-<p>后面几行被称为 <strong>响应首部字段</strong>, 最后被称为 <strong>资源实体</strong>的主体.</p>
-<h3 id="HTTP方法与命令"><a href="#HTTP方法与命令" class="headerlink" title="HTTP方法与命令"></a>HTTP方法与命令</h3><p>下面介绍一些HTTP/1.1中的方法.</p>
-<ul>
-<li><p>GET：获取资源<br>GET方法用来请求访问已被URI识别的资源。指定的资源经服务器端解析后返回响应内容。也就是说，如果请求的资源是文本，那就保持原样返回；如果是像CGl（Common Gateway Interface，通用网关接口）那样的程序，则返回经过执行后的输出结果。<br><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/GET.png" alt=""></p>
-</li>
-<li><p>POST：传输实体主体<br>POST方法用来传输实体的主体。虽然用GET方法也可以传输实体的主体，但一般不用GET方法进行传输，而是用POST方法。虽说POST的功能与GET很相似，但POST的主要目的并不是获取响应的主体内容。</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/POST.png" alt=""></p>
-</li>
-<li><p>PUT：传输文件<br>PUT方法用来传输文件。就像FTP协议的文件上传一样，要求在请求报文的主体中包含文件内容，然后保存到请求URI指定的位置。但是，鉴于HTTP/1.1的PUT方法自身不带验证机制，任何人都可以上传文件，存在安全性问题，因此一般的Web网站不使用该方法。若配合Web应用程序的验证机制，或架构设计采用REST （REpresentational State Transfer，表征状态转移）标准的同类Web网站，就可能会开放使用PUT方法。</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/PUT.png" alt=""></p>
-</li>
-<li><p>HEAD：获得报文首部<br>HEAD方法和GET方法一样，只是不返回报文主体部分。用于确认URI的有效性及资源更新的日期时间等。 </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/HEAD.png" alt=""></p>
-</li>
-<li><p>DELETE：删除文件<br>DELETE方法用来删除文件，是与PUT相反的方法。DELETE方法按请求URI删除指定的资源。但是，HTTP/1.1的DELETE方法本身和PUT方法一样不带验证机制，所以一般的Web网站也不使用DELETE方法。当配合Web应用程序的验证机制，或遵守REST标准时还是有可能会开放使用的。</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/DELETE.png" alt=""></p>
-</li>
-<li><p>OPTIONS：询问支持的方法<br>OPTIONS方法用来查询针对请求URI指定的资源支持的方法</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/OPTIONS.png" alt=""></p>
-</li>
-<li><p>TRACE：追踪路径<br>TRACE方法是让Web服务器端将之前的请求通信环回给客户端的方法。发送请求时，在Max-Forwards首部字段中填入数值，每经过一个服务器端就将该数字减1，当数值刚好减到0时，就停止继续传输，最后接收到请求的服务器端则返回状态码200OK的响应。</p>
-<p>客户端通过TRACE方法可以查询发送出去的请求是怎样被加工修改/篡改的。这是因为，请求想要连接到源目标服务器可能会通过代理中转，TRACE方法就是用来确认连接过程中发生的一系列操作。但是，TRACE方法本来就不怎么常用，再加上它容易引发XST(Cross-Site Tracing，跨站追踪）攻击，通常就更不会用到了。 </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/TRACE.png" alt=""></p>
-</li>
-<li><p>CONNECT：要求用隧道协议连接代理<br>CONNECT方法要求在与代理服务器通信时建立隧道，实现用隧道协议进行TCP通信。主要使用SSL（Secure Sockets Layer，安全套接层）和TLS（Transport Layer Security，传输层安全）协议把通信内容加密后经网络隧道传输。</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/CONNECT.png" alt=""></p>
-</li>
-</ul>
-<p>方法的名称区分大小写, 注意使用大写字母.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/ALL.png" alt=""></p>
-<h3 id="持久连接"><a href="#持久连接" class="headerlink" title="持久连接"></a>持久连接</h3><p>在最开始我们讲到通信建立前TCP协议需要进行三次握手, 此外在结束后还要进行四次挥手. 在HTTP协议的最初版本, 每进行一次通信就要重复执行上述步骤, 导致了大量资源的浪费. (例如一个网页中的多张图片均需要进行请求). 因此在/1.1版本中加入了<a href="https://zh.wikipedia.org/zh-hans/HTTP%E6%8C%81%E4%B9%85%E8%BF%9E%E6%8E%A5" target="_blank" rel="noopener"> <strong>持久连接</strong> </a>的方法. 只要任意端没有主动断开连接, 则持续保持TCP的连接状态. </p>
-<p>在 HTTP 1.1 中 所有的连接默认都是持续连接，除非特殊声明不支持。</p>
-<h4 id="管线化"><a href="#管线化" class="headerlink" title="管线化"></a>管线化</h4><p><a href="https://zh.wikipedia.org/zh-cn/HTTP%E7%AE%A1%E7%B7%9A%E5%8C%96" target="_blank" rel="noopener">HTTP管线化</a>（英语：HTTP pipelining）是将多个HTTP请求（request）整批提交的技术，而在发送过程中不需先等待服务器的回应。这是基于持久连接完成的.</p>
-<h3 id="Cookie-状态管理"><a href="#Cookie-状态管理" class="headerlink" title="Cookie : 状态管理"></a>Cookie : 状态管理</h3><p>为了保留无状态协议的轻便性又解决状态保存的问题引入了Cookie技术. 通过在请求与响应报文中写入Cookie信息来控制客户端的状态.</p>
-<p>Cookie 会根据从服务器端发送的响应报文内的一个叫做 <strong>Set-Cookie</strong> 的首部字段信息，通知客户端保存 Cookie。当下次客户端再往该服务器发送请求时，客户端会自动在请求报文中加入 Cookie值后发送出去。服务器端发现客户端发送过来的 Cookie 后，会去检查究竟是从哪一个客户端发来的连接请求，然后对比服务器上的记录，最后得到之前的状态信息.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;请求报文1</span><br><span class="line">GET &#x2F;reader&#x2F; HTTP&#x2F;1.1</span><br><span class="line">Host: hackr.jp</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;响应报文</span><br><span class="line">HTTP&#x2F;1.1 200 OK</span><br><span class="line">Date: Thu, 12 Jul 2012 07:12:20 GMT</span><br><span class="line">Server: Apache</span><br><span class="line">＜Set-Cookie: sid&#x3D;1342077140226724; path&#x3D;&#x2F;; expires&#x3D;Wed,10-Oct-12 07:12:20 GMT＞</span><br><span class="line">Content-Type: text&#x2F;plain; charset&#x3D;UTF-8</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;请求报文2</span><br><span class="line">GET &#x2F;image&#x2F; HTTP&#x2F;1.1</span><br><span class="line">Host: hackr.jp</span><br><span class="line">Cookie: sid&#x3D;1342077140226724</span><br></pre></td></tr></table></figure>
+<h3 id="鸡蛋羹"><a href="#鸡蛋羹" class="headerlink" title="鸡蛋羹"></a>鸡蛋羹</h3><p>试图使用蒸蛋器蒸出鸡蛋羹, 但是挺失败的, 尽管在网上找了很多食谱…</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">鸡蛋羹做法</span><br><span class="line"></span><br><span class="line">少水蛋(质地硬)</span><br><span class="line">1. ⭐蛋:水&#x3D;1:1.5</span><br><span class="line">2. ⭐小火&gt;&gt;大火</span><br><span class="line">3. 温水&gt;凉水</span><br><span class="line">4. 电解质&gt;水        #电解质:盐&#x2F;高汤</span><br><span class="line">5. 加盖&gt;无盖        #用布反向包裹锅盖</span><br><span class="line">6. ⭐时间刚好&gt;&gt;多蒸一会</span><br><span class="line">7. ⭐凉开水&gt;&gt;自来水</span><br><span class="line"></span><br><span class="line">多水蛋(质地软)</span><br><span class="line">1. 蛋:水&#x3D;1:2 or 1:3</span><br><span class="line">2. 一定要加电解质</span><br><span class="line">3. 火候,时间相对不重要</span><br><span class="line"></span><br><span class="line">其他</span><br><span class="line">1. 蒸锅上汽之后再放入</span><br><span class="line">总结自B站UP喃猫小厨房,BV1x441117r4</span><br></pre></td></tr></table></figure>
+<p>但是总是蒸出来蜂窝蛋…</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%B8%A1%E8%9B%8B%E7%BE%B9.jpg" alt=""></p>
+<h3 id="煎鸡蛋"><a href="#煎鸡蛋" class="headerlink" title="煎鸡蛋"></a>煎鸡蛋</h3><p>从最开始打在锅里面热一热, 到后面在少放油的情况下尽量更香, 味道好极了现在.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E8%9B%8B.jpg" alt=""></p>
+<h3 id="什锦-燕麦-紫薯-鸡蛋-牛奶饼"><a href="#什锦-燕麦-紫薯-鸡蛋-牛奶饼" class="headerlink" title="什锦-燕麦-紫薯-鸡蛋-牛奶饼"></a>什锦-燕麦-紫薯-鸡蛋-牛奶饼</h3><p>总而言是是各种奇妙的搭配组合…</p>
+<h4 id="尝试1"><a href="#尝试1" class="headerlink" title="尝试1"></a>尝试1</h4><p>两个鸡蛋不加水搅拌,加入全麦粉, 加入烤熟切块的紫薯, 放入锅中烤熟.<br>但是我总觉得这么厚的饼不太适合直接烤, 不容易烤熟…而且紫薯块太大, 翻面的时候总是支离破碎.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%B4%AB%E8%96%AF%E9%A5%BC.jpg" alt=""></p>
+<h4 id="尝试2"><a href="#尝试2" class="headerlink" title="尝试2"></a>尝试2</h4><p>第一次失败后决定做薄饼. 鸡蛋+麦片, 第一锅完全成了炒鸡蛋, 后续陆续放入面粉, 最终成形. 燕麦片本身的厚度使饼没有想象中那么薄, 但相比上一版好多了.</p>
+<p>味道其实不太行, 由于只加入了少许盐, 基本没有任何滋味, 食之无味.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E9%A5%BC0.5.jpg" alt=""></p>
+<h4 id="尝试3"><a href="#尝试3" class="headerlink" title="尝试3"></a>尝试3</h4><p>将燕麦片牛奶泡一晚, 次日打入鸡蛋搅拌, 放油下锅. 煎出来了奇形怪状的小饼干(疑似), 依旧没什么味道.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E9%A5%BC.jpg" alt=""></p>
+<h4 id="尝试4"><a href="#尝试4" class="headerlink" title="尝试4"></a>尝试4</h4><p>直接鸡蛋液打匀分次倒入铺满锅底即可. 本来想加入切丁的鸡肉肠, 但是鸡蛋饼太薄肉丁根本镶嵌不上去, 最后变成了鸡蛋饼+炒肉丁.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%B8%A1%E8%9B%8B%E9%A5%BC%E8%82%89%E4%B8%81.jpg" alt=""></p>
+<h3 id="紫薯燕麦粥"><a href="#紫薯燕麦粥" class="headerlink" title="紫薯燕麦粥"></a>紫薯燕麦粥</h3><p>紫薯蒸熟切块, 加水熬制30min,加入麦片熬煮20min, 香浓的燕麦紫薯粥就做好了.</p>
+<p>粥越煮越稠, 我中间还以为自己水加多了去了点, 结果最后快熬干了orz.</p>
+<p>水量没过紫薯上表面1-2公分.</p>
+<p>味道还可以, 口中直呼烫烫烫</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%B2%A5.jpg" alt=""></p>
+<h4 id="荞麦面-煎鸡蛋-炒金枪鱼肉"><a href="#荞麦面-煎鸡蛋-炒金枪鱼肉" class="headerlink" title="荞麦面+煎鸡蛋+炒金枪鱼肉"></a>荞麦面+煎鸡蛋+炒金枪鱼肉</h4><p>好吧这个没啥技术含量..看图吧</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%9D%A2.jpg" alt=""></p>
+<h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>千里之行始于足下, 疫情期间也是看着其他人都化身大厨. 一直想开始却迟迟没有动身. 在学校尝试着开始自己做菜做饭才发现其实没有想象中那么困难, 没有锅碗瓢盆就想办法解决, 没有食材就京东天猫冷链, 缺少绿叶菜就多买水果补充维生素. 天下是有难易乎? 为之, 则难者亦易也.</p>
+<p>还有就是对任何事情都不能等闲视之, 哪怕是简单的鸡蛋羹, 小学三年级在家里面拿微波炉轻松搞定的东西换了厨具做的依旧很糟糕. 煎鸡蛋放多少油? 做饼的面水比例是多少才不粘锅有能均匀铺开? 听到什么声音说明是火候太过了? 好多细节都是没有实操的情况下光靠别人的转述学不到的. 就像这几天在学校招新群里讨论的家长, 自己其实根本不了解行业情况, 道听途说地从别人的谈论, 亲戚朋友的个例中断定专业的优劣. 纸上得来终觉浅,绝知此事要躬行啊.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/ai.png" alt=""></p>
+<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>跟着宗主任去招新群里面答疑打白工, 每天都能碰见各种神奇的家长, 常面一度十分欢乐</p>
+<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3><p>完全搞定数电+计组</p>
+<p>检查牙齿</p>
+<p>购买装备&amp;爬山</p>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
-        <category>驭龙术</category>
-        <category>Web开发</category>
-        <category>HTTP</category>
+        <category>时与光</category>
       </categories>
       <tags>
-        <tag>HTTP</tag>
-        <tag>读书笔记:技术</tag>
+        <tag>小结</tag>
+        <tag>周记</tag>
       </tags>
   </entry>
   <entry>
@@ -1747,6 +1635,36 @@ T_0\\
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E8%AE%B0%E5%BD%95.jpg" alt=""></p>
 <p>晚上约了快乐火锅</p>
 <h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3>]]></content>
+      <categories>
+        <category>时与光</category>
+      </categories>
+      <tags>
+        <tag>小结</tag>
+        <tag>周记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时与光W-202007-3</title>
+    <url>/2020/07/24/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-3/</url>
+    <content><![CDATA[<p>2020年7月13日~2020年7月19日</p>
+<p>看番: 瑞克与莫蒂</p>
+<p>回西安</p>
+<a id="more"></a>
+<h2 id="看番-瑞克与莫蒂"><a href="#看番-瑞克与莫蒂" class="headerlink" title="看番: 瑞克与莫蒂"></a>看番: 瑞克与莫蒂</h2><p>久闻大名的神番,终于在我爬山后的腰酸背痛的日子里看完了. 应该是第一次接触美漫 (也是第一次在A站看番) 果然比日漫亚撒西舒爽多了! </p>
+<p>鬼才剧本, 每一集都对时代和社会的痛点进行尽情的诠释——无论是批判还是讽刺, 解构还是歌颂, 常常在一两句话中忽然get到编剧的意图, 然后一拍大腿妈的绝了. </p>
+<p>配音太强了, 听说两个主角的配音都是一个人(这人还同时担任编剧) 我听过很多优秀的日本声优的出演, 能给角色赋予灵魂. 但还是有被这部惊到了: 瑞克与莫蒂的配音好像就是角色自己说出来的一样, 完全符合想象中的二人. </p>
+<p>脑洞比较大. 相对与好莱坞式拿着激光武器突突突的废科幻作品, 本作的幻想程度很对我胃口. 天马行空又大致符合逻辑, 再夹杂着一点点不科学. 比如日了星球, 或者满眼蚂蚁先生. 纯粹的美国式的低俗无聊不遗余力的边角料的屎尿屁想象, 毫无意义,因此让人翱翔.</p>
+<p>美国特色式的永远能在作品中影射现实. 哪怕是真·盒中盒这种老式科幻剧情都能整成奴隶制与博弈论. 多线并行又在结尾交会. 作品甚至能够同时影射资本主义的大部分社会问题 (没错我就是说的S3E7) 信息量最大，隐喻最多，故事最丰富立体，情节最波荡曲折. 没有人比我更懂民族矛盾 —— 其实都是阶级矛盾. </p>
+<p>以及被广大A站网友津津乐道的第四面墙…其实我倒是觉得这个还好, 孤独的看透宇宙荒谬本质的天才科学家, 虽然悲壮却亦不少见. 更打动的则是瑞克认清宇宙的真相, 却依旧热爱生活.</p>
+<p>附录: <a href="https://www.douban.com/group/topic/157799509/" target="_blank" rel="noopener">好看的相关壁纸与插画</a></p>
+<h2 id="收拾东西回长安"><a href="#收拾东西回长安" class="headerlink" title="收拾东西回长安"></a>收拾东西回长安</h2><p>字面意思, 收拾收拾回学校咯</p>
+<p>回去之前还顺便跟两位本地同学吃吃喝喝, 回民街的文文烧烤, 这个酱料真的很特色. 早上在建国路整了碗荤胡辣汤泡馍, 可以, 这很正宗.</p>
+<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>跟高中同学又起了联系, 逛了一下午, 快乐.</p>
+<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><p>none</p>
+<h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>复习</p>
+<p>英语</p>
+<p>研究宿舍厨艺</p>
+]]></content>
       <categories>
         <category>时与光</category>
       </categories>
@@ -2091,65 +2009,201 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>时与光W-202007-4</title>
-    <url>/2020/07/31/%E6%97%B6%E4%B8%8E%E5%85%89W-202007-4/</url>
-    <content><![CDATA[<p>2020年7月20日~7月26日</p>
-<p>宿舍小厨</p>
+    <title>初窥HTTP之一_HTTP基础</title>
+    <url>/2020/08/01/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%B8%80_HTTP%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<ol>
+<li>TCP/IP 基础</li>
+<li>HTTP简介</li>
+</ol>
 <a id="more"></a>
-<h2 id="宿舍小厨"><a href="#宿舍小厨" class="headerlink" title="宿舍小厨"></a>宿舍小厨</h2><p>上周买的食材陆陆续续到了, 即将开始与导员宿管的躲猫猫生活. 由于我手残下单鸡蛋的时候多下了一份,现在我对着80个鸡蛋欲哭无泪… </p>
-<p>整理下目前的装备与食材.</p>
+<h2 id="TCP-IP-基础"><a href="#TCP-IP-基础" class="headerlink" title="TCP/IP 基础"></a>TCP/IP 基础</h2><p>字面上看, TCP/IP包括了TCP与IP这两大协议．但一般意义上认为TCP/IP是指得以TCP,IP为核心协议的一系列协议族<del>(ko no IPS da!)</del>, 这个协议族是整个互联网运作的基础. HTTP协议是包含在TCP/IP协议族的一个子集.</p>
+<blockquote>
+<p>互联网协议套件（英语：Internet Protocol Suite，缩写IPS）是一个网络通讯模型，以及一整个网络传输协议家族，为网际网络的基础通讯架构。它常被通称为TCP/IP协议族（英语：TCP/IP Protocol Suite，或TCP/IP Protocols），简称TCP/IP 。因为该协定家族的两个核心协定：TCP（传输控制协议）和IP（网际协议），为该家族中最早通过的标准。</p>
+<p>协议还包括: ARP，IP，ICMP，UDP，TCP，DNS，HTTP，FTP , SMTP，POP3，SNMP，ECHO，DHCP，SSH，NNTP 等.</p>
+<p>From: <a href="https://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F" target="_blank" rel="noopener">wiki: TCP/IP协议族</a></p>
+</blockquote>
+<p>本段将简单介绍:</p>
 <ol>
-<li>锅*2, 一个口深适合煮汤, 一个口浅适合煎东西;</li>
-<li>一个蒸蛋器</li>
-<li>面板, 擀面杖, 刀具餐具</li>
+<li>TCP/IP 的分层管理</li>
+<li>通信传输流,</li>
+<li>IP: 传输</li>
+<li>TCP:可靠性</li>
+<li>DNS: 域名解析</li>
+<li>URI : 资源定位</li>
 </ol>
-<p>食材:</p>
+<p>以及他们与HTTP是怎么互相协作的.本段不涉及具体的HTTP内容.</p>
+<h3 id="TCP-IP的分层管理"><a href="#TCP-IP的分层管理" class="headerlink" title="TCP/IP的分层管理"></a>TCP/IP的分层管理</h3><p>假设你已经知道了 <a href="https://zh.wikipedia.org/zh-cn/OSI%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">OSI模型</a> 将信息传输分为七层, 他们依次是</p>
 <ol>
-<li>鸡蛋</li>
-<li>紫薯</li>
-<li>黑小麦全麦粉</li>
-<li>鸡肉肠, 鸡胸肉,金枪鱼肉罐头</li>
-<li>燕麦麦片</li>
-<li>荞麦面</li>
-<li>全麦面包</li>
+<li>第7层 应用层</li>
+<li>第6层 表达层</li>
+<li>第5层 会话层</li>
+<li>第4层 传输层</li>
+<li>第3层 网络层</li>
+<li>第2层 数据链路层</li>
+<li>第1层 物理层</li>
 </ol>
-<h3 id="鸡蛋羹"><a href="#鸡蛋羹" class="headerlink" title="鸡蛋羹"></a>鸡蛋羹</h3><p>试图使用蒸蛋器蒸出鸡蛋羹, 但是挺失败的, 尽管在网上找了很多食谱…</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">鸡蛋羹做法</span><br><span class="line"></span><br><span class="line">少水蛋(质地硬)</span><br><span class="line">1. ⭐蛋:水&#x3D;1:1.5</span><br><span class="line">2. ⭐小火&gt;&gt;大火</span><br><span class="line">3. 温水&gt;凉水</span><br><span class="line">4. 电解质&gt;水        #电解质:盐&#x2F;高汤</span><br><span class="line">5. 加盖&gt;无盖        #用布反向包裹锅盖</span><br><span class="line">6. ⭐时间刚好&gt;&gt;多蒸一会</span><br><span class="line">7. ⭐凉开水&gt;&gt;自来水</span><br><span class="line"></span><br><span class="line">多水蛋(质地软)</span><br><span class="line">1. 蛋:水&#x3D;1:2 or 1:3</span><br><span class="line">2. 一定要加电解质</span><br><span class="line">3. 火候,时间相对不重要</span><br><span class="line"></span><br><span class="line">其他</span><br><span class="line">1. 蒸锅上汽之后再放入</span><br><span class="line">总结自B站UP喃猫小厨房,BV1x441117r4</span><br></pre></td></tr></table></figure>
-<p>但是总是蒸出来蜂窝蛋…</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%B8%A1%E8%9B%8B%E7%BE%B9.jpg" alt=""></p>
-<h3 id="煎鸡蛋"><a href="#煎鸡蛋" class="headerlink" title="煎鸡蛋"></a>煎鸡蛋</h3><p>从最开始打在锅里面热一热, 到后面在少放油的情况下尽量更香, 味道好极了现在.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E8%9B%8B.jpg" alt=""></p>
-<h3 id="什锦-燕麦-紫薯-鸡蛋-牛奶饼"><a href="#什锦-燕麦-紫薯-鸡蛋-牛奶饼" class="headerlink" title="什锦-燕麦-紫薯-鸡蛋-牛奶饼"></a>什锦-燕麦-紫薯-鸡蛋-牛奶饼</h3><p>总而言是是各种奇妙的搭配组合…</p>
-<h4 id="尝试1"><a href="#尝试1" class="headerlink" title="尝试1"></a>尝试1</h4><p>两个鸡蛋不加水搅拌,加入全麦粉, 加入烤熟切块的紫薯, 放入锅中烤熟.<br>但是我总觉得这么厚的饼不太适合直接烤, 不容易烤熟…而且紫薯块太大, 翻面的时候总是支离破碎.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%B4%AB%E8%96%AF%E9%A5%BC.jpg" alt=""></p>
-<h4 id="尝试2"><a href="#尝试2" class="headerlink" title="尝试2"></a>尝试2</h4><p>第一次失败后决定做薄饼. 鸡蛋+麦片, 第一锅完全成了炒鸡蛋, 后续陆续放入面粉, 最终成形. 燕麦片本身的厚度使饼没有想象中那么薄, 但相比上一版好多了.</p>
-<p>味道其实不太行, 由于只加入了少许盐, 基本没有任何滋味, 食之无味.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E9%A5%BC0.5.jpg" alt=""></p>
-<h4 id="尝试3"><a href="#尝试3" class="headerlink" title="尝试3"></a>尝试3</h4><p>将燕麦片牛奶泡一晚, 次日打入鸡蛋搅拌, 放油下锅. 煎出来了奇形怪状的小饼干(疑似), 依旧没什么味道.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%85%8E%E9%A5%BC.jpg" alt=""></p>
-<h4 id="尝试4"><a href="#尝试4" class="headerlink" title="尝试4"></a>尝试4</h4><p>直接鸡蛋液打匀分次倒入铺满锅底即可. 本来想加入切丁的鸡肉肠, 但是鸡蛋饼太薄肉丁根本镶嵌不上去, 最后变成了鸡蛋饼+炒肉丁.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%B8%A1%E8%9B%8B%E9%A5%BC%E8%82%89%E4%B8%81.jpg" alt=""></p>
-<h3 id="紫薯燕麦粥"><a href="#紫薯燕麦粥" class="headerlink" title="紫薯燕麦粥"></a>紫薯燕麦粥</h3><p>紫薯蒸熟切块, 加水熬制30min,加入麦片熬煮20min, 香浓的燕麦紫薯粥就做好了.</p>
-<p>粥越煮越稠, 我中间还以为自己水加多了去了点, 结果最后快熬干了orz.</p>
-<p>水量没过紫薯上表面1-2公分.</p>
-<p>味道还可以, 口中直呼烫烫烫</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E7%B2%A5.jpg" alt=""></p>
-<h4 id="荞麦面-煎鸡蛋-炒金枪鱼肉"><a href="#荞麦面-煎鸡蛋-炒金枪鱼肉" class="headerlink" title="荞麦面+煎鸡蛋+炒金枪鱼肉"></a>荞麦面+煎鸡蛋+炒金枪鱼肉</h4><p>好吧这个没啥技术含量..看图吧</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/%E5%90%83%E7%9A%84/%E9%9D%A2.jpg" alt=""></p>
-<h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>千里之行始于足下, 疫情期间也是看着其他人都化身大厨. 一直想开始却迟迟没有动身. 在学校尝试着开始自己做菜做饭才发现其实没有想象中那么困难, 没有锅碗瓢盆就想办法解决, 没有食材就京东天猫冷链, 缺少绿叶菜就多买水果补充维生素. 天下是有难易乎? 为之, 则难者亦易也.</p>
-<p>还有就是对任何事情都不能等闲视之, 哪怕是简单的鸡蛋羹, 小学三年级在家里面拿微波炉轻松搞定的东西换了厨具做的依旧很糟糕. 煎鸡蛋放多少油? 做饼的面水比例是多少才不粘锅有能均匀铺开? 听到什么声音说明是火候太过了? 好多细节都是没有实操的情况下光靠别人的转述学不到的. 就像这几天在学校招新群里讨论的家长, 自己其实根本不了解行业情况, 道听途说地从别人的谈论, 亲戚朋友的个例中断定专业的优劣. 纸上得来终觉浅,绝知此事要躬行啊.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202007/ai.png" alt=""></p>
-<h2 id="其他琐碎事件"><a href="#其他琐碎事件" class="headerlink" title="其他琐碎事件"></a>其他琐碎事件</h2><p>跟着宗主任去招新群里面答疑打白工, 每天都能碰见各种神奇的家长, 常面一度十分欢乐</p>
-<h2 id="上周目标完成度"><a href="#上周目标完成度" class="headerlink" title="上周目标完成度"></a>上周目标完成度</h2><h3 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h3><p>完全搞定数电+计组</p>
-<p>检查牙齿</p>
-<p>购买装备&amp;爬山</p>
+<p>TCP/IP协议簇(再次提醒并不是TCP与IP这两个协议) 将其简化成了四个层次:</p>
+<ol>
+<li><p>应用层, 对应OSI模型中的7~5层</p>
+<blockquote>
+<p>该层包括所有和应用程序协同工作，利用基础网络交换应用程序专用的数据的协议。数据从网络相关的程序以这种应用内部使用的格式进行传送，然后被编码成标准协议的格式。</p>
+<p>包括<strong>HTTP</strong>（万维网服务）、<strong>FTP</strong>（文件传输）、<strong>SMTP</strong>（电子邮件）、<strong>SSH</strong>（安全远程登录）、<strong>DNS</strong>（名称&lt;-&gt; IP地址寻找）以及许多其他协议</p>
+</blockquote>
+</li>
+<li><p>传输层, 对应OSI模型中的第4层</p>
+<blockquote>
+<p>解决诸如端到端可靠性（“数据是否已经到达目的地？”）和保证数据按照正确的顺序到达这样的问题。在TCP/IP协议组中，传输协议也包括所给数据应该送给哪个应用程序。</p>
+<p>包括 TCP与UDP 协议等</p>
+<blockquote>
+<p>TCP : 是一个“可靠的”、面向链接, 基于字节流的传输机制</p>
+<p>UDP: 是一个无链接的数据报协议。它是一个“尽力传递”（best effort）的协议, 因为它不检查数据包是否已经到达目的地，并且不保证它们按顺序到达。<del>但是快</del></p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>网络互连层, 对应OSI模型中的第3层</p>
+<blockquote>
+<p>解决在网络上流动的数据包. 解决如何选取网络中的路径将数据从源网络传输到目的网络.</p>
+<p>例如IP协议</p>
+</blockquote>
+</li>
+<li><p>网络链路层, 对应OSI模型中的第1~2层</p>
+<blockquote>
+<p>用来处理连接网络的硬件部分, 包括控制操作系统, 硬件设备驱动, NIC(网络适配器, 即网卡) , 以及光纤等物理部分</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="通信传输流"><a href="#通信传输流" class="headerlink" title="通信传输流"></a>通信传输流</h3><ol>
+<li>首先作为发送端的客户端在应用层利用（http）发出一个想看某个Web页面的HTTP请求。</li>
+<li>为了传输方便，在传输层把(TCP)从应用层传下来的数据进行分割，并在各个报文上打上标记序号及端口号发给网络层</li>
+<li>在网络层(IP)，给数据加上作为通信目的地址的MAC地址后发给链路层。到此发送网络的通信请求就准备齐全了</li>
+<li>接收端的服务器在链路层接收到数据，按序往上层发送，直到应用层。才算是真正接收到从客户端发送过来的HTTP请求</li>
+</ol>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/%E9%80%9A%E4%BF%A1%E4%BC%A0%E8%BE%93%E6%B5%81.png" alt=""></p>
+<p>发送端在层与层之间传输数据时，每经过一层必定会被打伤一个该层所属的首部信息。反之，接收端则会一层一层的去掉</p>
+<h3 id="IP-传输"><a href="#IP-传输" class="headerlink" title="IP : 传输"></a>IP : 传输</h3><p><em><a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">wiki链接</a></em></p>
+<p>网际协议（英语：Internet Protocol，缩写：IP；也称互联网协议）是用于分组交换数据网络的一种协议。</p>
+<blockquote>
+<p>IP是在TCP/IP协议族中网络层的主要协议，任务仅仅是根据源主机和目的主机的地址来传送数据。为此目的，IP定义了寻址方法和数据报的封装结构。第一个架构的主要版本为IPv4，目前仍然是广泛使用的互联网协议，尽管世界各地正在积极部署IPv6。</p>
+</blockquote>
+<p>要保证数据能够传输需要两个重要条件: IP地址与MAC地址.</p>
+<p>MAC地址是烧录在网卡或者接口上的<strong>物理地址</strong>，具有二层意义和<strong>全球唯一性</strong>，一般不能被改变。IP地址是网络中的主机或者三层接口在网络中的<strong>逻辑地址</strong>，在<strong>同一个网络内具有唯一性</strong>。</p>
+<p>IP地址通过ARP协议与MAC对应, IP地址是可变换的, MAC 地址是不变的.MAC 地址是杂乱无序的, 如果只是用MAC地址尽管可以传输但是造成浪费.(要从整个互联网中找到你这个MAC地址) , 使用IP地址则可以找到你所处的网络, 在从该网络设备转交给你. </p>
+<p><a href="https://www.zhihu.com/question/49335649/answer/120746792" target="_blank" rel="noopener"><em>IP地址和 MAC地址的区别和联系是什么?</em></a></p>
+<h3 id="TCP-可靠性"><a href="#TCP-可靠性" class="headerlink" title="TCP : 可靠性"></a>TCP : 可靠性</h3><p><a href="https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener"><em>wiki链接</em></a></p>
+<p>TCP提供了可靠的字节流服务. 字节流是指将大块数据分割更小块的<strong>报文段 </strong>(segment) 为单位进行传输. 并且能够将数据准确地传给对方, 并且确认数据的送达.</p>
+<p>为了保证数据可靠地送达, TCP 使用了<strong>三次握手</strong>.其中使用了 TCP 的标志（flag): SYN（synchronize） 和 ACK(acknowledgement)</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/%E4%B8%89%E6%AC%A1%E6%8C%A5%E6%89%8B.png" alt=""></p>
+<h3 id="DNS-域名解析"><a href="#DNS-域名解析" class="headerlink" title="DNS : 域名解析"></a>DNS : 域名解析</h3><p><a href="https://zh.wikipedia.org/wiki/Domain_Name_System" target="_blank" rel="noopener"><em>Wiki链接</em></a></p>
+<p><strong>DNS</strong>（Domain Name System）服务是和HTTP协议一样位于应用层的协议。它提供域名到IP地址之间的解析服务，或逆向从IP地址反查域名的服务。</p>
+<p>用户输入一个网址, 客户机首先向DNS请求IP地址, 获得后由HTTP协议生成针对目标服务器的 <em>请求报文</em> . TCP 将 请求报文分割成多个报文段并负责传输的可靠性. IP协议将这些报文段传送至指定的目标服务器. </p>
+<p>服务器收到这些报文段后由TCP协议将报文段还原成HTTP的请求报文并检查完整性（如果出错再引起另外的处理), HTTP协议对请求报文进行处理, 并返回响应报文, 后续过程类似. </p>
+<h3 id="URI-资源定位"><a href="#URI-资源定位" class="headerlink" title="URI : 资源定位"></a>URI : 资源定位</h3><p>统一资源标识符（英语：Uniform Resource Identifier，缩写：URI）在电脑术语中是一个用于标识某一互联网资源名称的字符串。</p>
+<p>注意 : URI 是用字符串标识的某一互联网资源, 而URL是资源在互联网上的地址, URL是URI的子集.</p>
+<p>通用URI的格式如下：</p>
+<blockquote>
+<p>[协议名]://用户名:密码@主机名:端口/路径?查询参数#片段ID</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">                    hierarchical part</span><br><span class="line">        ┌───────────────────┴─────────────────────┐</span><br><span class="line">                    authority               </span><br><span class="line">        ┌───────────────┴───────────────┐</span><br><span class="line">  abc:&#x2F;&#x2F;username:password@example.com:123&#x2F;path&#x2F;data?key&#x3D;value&amp;key2&#x3D;value2#fragid1</span><br><span class="line">  └┬┘   └───────┬───────┘ └────┬────┘ └┬┘ └───┬───┘ └─────────┬─────────┘ └──┬──┘</span><br><span class="line">scheme  user information     host     port  path            query         fragment</span><br><span class="line"> 协议	   	用户的登录信息		  服务器地址  端口	  路径		    查询参数		  片段ID</span><br><span class="line">  urn:example:mammal:monotreme:echidna</span><br><span class="line">  └┬┘ └──────────────┬───────────────┘</span><br><span class="line">scheme              path</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>协议方案</strong></p>
+<p>使用<code>http:</code> 或<code>https：</code>等协议方案名获取访问资源时要指定协议类型。不区分字母大小写，最后附一个冒号<code>：</code> . 也可使用<code>data：</code>或 <code>javascript：</code>这类指定数据或脚本程序的方案名。</p>
+</li>
+<li><p><strong>登录信息（认证）</strong></p>
+</li>
+</ul>
+<p>​    指定用户名和密码作为从服务器端获取资源时必要的登录信息（身份认证）。此项是可选项。</p>
+<ul>
+<li><strong>服务器地址</strong></li>
+</ul>
+<p>​    使用绝对URI必须指定待访问的服务器地址。地址可以是类似hackr.jp这种DNS可解析的名称，或是192.168.1.1这类IPv4地址名，还可以是[0:0:0:0:0:0:0:1]这样用方括号括起来的Pv6地址名。</p>
+<ul>
+<li><strong>服务器端口</strong></li>
+</ul>
+<p>​    指定服务器连接的网络端口号。此项也是可选项，若用户省略则自动使用默认端口号。带层次的文件路径。指定服务器上的文件路径来定位特指的资源。这与UNIX系统的文件目录结构相似。</p>
+<ul>
+<li><strong>带层次的文件路径</strong></li>
+</ul>
+<p>​    指定服务器上的文件路径来定位特指的资源。这与UNIX系统的文件目录结构相似。</p>
+<ul>
+<li><strong>查询字符串</strong></li>
+</ul>
+<p>​    针对已指定的文件路径内的资源，可以使用查询字符串传入任意参数。此项可选。</p>
+<ul>
+<li><p><strong>片段标识符</strong></p>
+<p>使用片段标识符通常可标记出已获取资源中的子资源（文档内的某个位置）。但在RFC中并没有明确规定其使用方法。该项也为可选项。</p>
+</li>
+</ul>
+<hr>
+<h2 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h2><p>本段将非常粗略地一览HTTP基本情况, 包括以下内容:</p>
+<ol>
+<li>HTTP基本情况</li>
+<li>HTTP报文</li>
+<li>HTTP方法与命令</li>
+<li>持久连接</li>
+<li>Cookie : 状态管理</li>
+</ol>
+<h3 id="HTTP基本情况"><a href="#HTTP基本情况" class="headerlink" title="HTTP基本情况"></a>HTTP基本情况</h3><p>HTTP协议用于客户端与服务端之间的通信. 客户端向服务端发出一个访问资源的<strong>请求</strong>, 服务端针对这个请求做出 <strong>响应</strong>. 服务端无法主动地向客户端建立通信.(除非附加了其他协议). 请求与响应都是通过HTTP报文来传送数据的.</p>
+<p>计算机扮演客户端与服务端的角色可能会切换, 但对于每条通信线路二者的角色是确定的.</p>
+<p>HTTP是<strong>无状态协议</strong>, HTTP协议自身对先前的通信状态不进行保存, 不进行持久化处理.这是为了快递处理大量事物,保证协议的可伸缩性.为了实现通信状态的保持状态, 引入了Cookie来实现持久化通信.</p>
+<p>HTTP使用URI进行资源的定位, 指定URI的方式有很多:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 完整的请求URI</span><br><span class="line">GET http:&#x2F;&#x2F;www.baidu.com&#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line"></span><br><span class="line">2. 使用相对URI地址</span><br><span class="line">GET &#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line">HOST: baidu.com</span><br></pre></td></tr></table></figure>
+<p>除此之外, 如果对于服务器本身(而不是访问资源)的请求, 可以只用<code>*</code>来代替请求URI</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">OPTIONS * HTTP&#x2F;1.1</span><br></pre></td></tr></table></figure>
+<h3 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h3><p>如前所述, HTTP是通过<strong>请求报文</strong>与<strong>响应报文</strong>进行信息传递的. </p>
+<h4 id="请求报文"><a href="#请求报文" class="headerlink" title="请求报文"></a>请求报文</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GET &#x2F;index.html HTTP&#x2F;1.1</span><br><span class="line">HOST: baidu.com</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Content-Type: text&#x2F;html</span><br><span class="line">Content-Length: 5000</span><br><span class="line">If-Modified-Since: Thu. 12 Jul 2020 07: 30: 00 GMT</span><br><span class="line"></span><br><span class="line">name&#x3D;ueno&amp;age&#x3D;37</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>起始处的<code>GET</code> 表示向服务器请求的访问类型, 被称为 <strong>方法</strong>. 而后的字符串<code>/index.html</code> 是使用URI表示的请求访问的资源对象, 被称为 <strong>请求URI</strong>.  <code>HTTP/1.1</code> 是用于表明客户端使用的协议 的 <strong>协议版本号</strong>.</p>
+<p>以上三个参数组成了请求报文的 <strong>请求行.</strong></p>
+<p>后面的几行被称之为 <strong>请求首部字段</strong> (示例中2-6行), 存储了对请求的进一步要求. 最后接上 <strong>内容实体</strong> 的主体.(示例中8行及以后)</p>
+<h4 id="响应报文"><a href="#响应报文" class="headerlink" title="响应报文"></a>响应报文</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Http&#x2F;1.1 200 Ok</span><br><span class="line">Date: Thu. 12 Jul 2020 07: 30: 00 GMT</span><br><span class="line">Content-type:message&#x2F;http</span><br><span class="line">Content-Length: 1024</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+<p>首行依次是 <strong>协议版本号</strong>, <strong>状态码</strong>, <strong>状态码的原因短语</strong>, 这一行被称作 <strong>状态行.</strong></p>
+<p>后面几行被称为 <strong>响应首部字段</strong>, 最后被称为 <strong>资源实体</strong>的主体.</p>
+<h3 id="HTTP方法与命令"><a href="#HTTP方法与命令" class="headerlink" title="HTTP方法与命令"></a>HTTP方法与命令</h3><p>下面介绍一些HTTP/1.1中的方法.</p>
+<ul>
+<li><p>GET：获取资源<br>GET方法用来请求访问已被URI识别的资源。指定的资源经服务器端解析后返回响应内容。也就是说，如果请求的资源是文本，那就保持原样返回；如果是像CGl（Common Gateway Interface，通用网关接口）那样的程序，则返回经过执行后的输出结果。<br><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/GET.png" alt=""></p>
+</li>
+<li><p>POST：传输实体主体<br>POST方法用来传输实体的主体。虽然用GET方法也可以传输实体的主体，但一般不用GET方法进行传输，而是用POST方法。虽说POST的功能与GET很相似，但POST的主要目的并不是获取响应的主体内容。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/POST.png" alt=""></p>
+</li>
+<li><p>PUT：传输文件<br>PUT方法用来传输文件。就像FTP协议的文件上传一样，要求在请求报文的主体中包含文件内容，然后保存到请求URI指定的位置。但是，鉴于HTTP/1.1的PUT方法自身不带验证机制，任何人都可以上传文件，存在安全性问题，因此一般的Web网站不使用该方法。若配合Web应用程序的验证机制，或架构设计采用REST （REpresentational State Transfer，表征状态转移）标准的同类Web网站，就可能会开放使用PUT方法。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/PUT.png" alt=""></p>
+</li>
+<li><p>HEAD：获得报文首部<br>HEAD方法和GET方法一样，只是不返回报文主体部分。用于确认URI的有效性及资源更新的日期时间等。 </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/HEAD.png" alt=""></p>
+</li>
+<li><p>DELETE：删除文件<br>DELETE方法用来删除文件，是与PUT相反的方法。DELETE方法按请求URI删除指定的资源。但是，HTTP/1.1的DELETE方法本身和PUT方法一样不带验证机制，所以一般的Web网站也不使用DELETE方法。当配合Web应用程序的验证机制，或遵守REST标准时还是有可能会开放使用的。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/DELETE.png" alt=""></p>
+</li>
+<li><p>OPTIONS：询问支持的方法<br>OPTIONS方法用来查询针对请求URI指定的资源支持的方法</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/OPTIONS.png" alt=""></p>
+</li>
+<li><p>TRACE：追踪路径<br>TRACE方法是让Web服务器端将之前的请求通信环回给客户端的方法。发送请求时，在Max-Forwards首部字段中填入数值，每经过一个服务器端就将该数字减1，当数值刚好减到0时，就停止继续传输，最后接收到请求的服务器端则返回状态码200OK的响应。</p>
+<p>客户端通过TRACE方法可以查询发送出去的请求是怎样被加工修改/篡改的。这是因为，请求想要连接到源目标服务器可能会通过代理中转，TRACE方法就是用来确认连接过程中发生的一系列操作。但是，TRACE方法本来就不怎么常用，再加上它容易引发XST(Cross-Site Tracing，跨站追踪）攻击，通常就更不会用到了。 </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/TRACE.png" alt=""></p>
+</li>
+<li><p>CONNECT：要求用隧道协议连接代理<br>CONNECT方法要求在与代理服务器通信时建立隧道，实现用隧道协议进行TCP通信。主要使用SSL（Secure Sockets Layer，安全套接层）和TLS（Transport Layer Security，传输层安全）协议把通信内容加密后经网络隧道传输。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/CONNECT.png" alt=""></p>
+</li>
+</ul>
+<p>方法的名称区分大小写, 注意使用大写字母.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/01/ALL.png" alt=""></p>
+<h3 id="持久连接"><a href="#持久连接" class="headerlink" title="持久连接"></a>持久连接</h3><p>在最开始我们讲到通信建立前TCP协议需要进行三次握手, 此外在结束后还要进行四次挥手. 在HTTP协议的最初版本, 每进行一次通信就要重复执行上述步骤, 导致了大量资源的浪费. (例如一个网页中的多张图片均需要进行请求). 因此在/1.1版本中加入了<a href="https://zh.wikipedia.org/zh-hans/HTTP%E6%8C%81%E4%B9%85%E8%BF%9E%E6%8E%A5" target="_blank" rel="noopener"> <strong>持久连接</strong> </a>的方法. 只要任意端没有主动断开连接, 则持续保持TCP的连接状态. </p>
+<p>在 HTTP 1.1 中 所有的连接默认都是持续连接，除非特殊声明不支持。</p>
+<h4 id="管线化"><a href="#管线化" class="headerlink" title="管线化"></a>管线化</h4><p><a href="https://zh.wikipedia.org/zh-cn/HTTP%E7%AE%A1%E7%B7%9A%E5%8C%96" target="_blank" rel="noopener">HTTP管线化</a>（英语：HTTP pipelining）是将多个HTTP请求（request）整批提交的技术，而在发送过程中不需先等待服务器的回应。这是基于持久连接完成的.</p>
+<h3 id="Cookie-状态管理"><a href="#Cookie-状态管理" class="headerlink" title="Cookie : 状态管理"></a>Cookie : 状态管理</h3><p>为了保留无状态协议的轻便性又解决状态保存的问题引入了Cookie技术. 通过在请求与响应报文中写入Cookie信息来控制客户端的状态.</p>
+<p>Cookie 会根据从服务器端发送的响应报文内的一个叫做 <strong>Set-Cookie</strong> 的首部字段信息，通知客户端保存 Cookie。当下次客户端再往该服务器发送请求时，客户端会自动在请求报文中加入 Cookie值后发送出去。服务器端发现客户端发送过来的 Cookie 后，会去检查究竟是从哪一个客户端发来的连接请求，然后对比服务器上的记录，最后得到之前的状态信息.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;请求报文1</span><br><span class="line">GET &#x2F;reader&#x2F; HTTP&#x2F;1.1</span><br><span class="line">Host: hackr.jp</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;响应报文</span><br><span class="line">HTTP&#x2F;1.1 200 OK</span><br><span class="line">Date: Thu, 12 Jul 2012 07:12:20 GMT</span><br><span class="line">Server: Apache</span><br><span class="line">＜Set-Cookie: sid&#x3D;1342077140226724; path&#x3D;&#x2F;; expires&#x3D;Wed,10-Oct-12 07:12:20 GMT＞</span><br><span class="line">Content-Type: text&#x2F;plain; charset&#x3D;UTF-8</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;请求报文2</span><br><span class="line">GET &#x2F;image&#x2F; HTTP&#x2F;1.1</span><br><span class="line">Host: hackr.jp</span><br><span class="line">Cookie: sid&#x3D;1342077140226724</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>时与光</category>
+        <category>学习笔记</category>
+        <category>驭龙术</category>
+        <category>Web开发</category>
+        <category>HTTP</category>
       </categories>
       <tags>
-        <tag>小结</tag>
-        <tag>周记</tag>
+        <tag>读书笔记:技术</tag>
+        <tag>HTTP</tag>
       </tags>
   </entry>
   <entry>
@@ -2270,6 +2324,19 @@ T_0\\
 <li>Starvation</li>
 <li>….</li>
 </ul>
+<hr>
+<p><strong>操作系统系列</strong></p>
+<ol>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/14/操作系统之概述/" target="_blank" rel="noopener">操作系统之概述</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/05/操作系统之进程线程/" target="_blank" rel="noopener">操作系统之进程线程</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/08/操作系统之进程间通信/" target="_blank" rel="noopener">操作系统之进程间通信</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/04/操作系统之死锁/" target="_blank" rel="noopener">操作系统之死锁</a> (本文)</li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/09/操作系统之内存管理/" target="_blank" rel="noopener">操作系统之内存管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/05/操作系统之IO管理/" target="_blank" rel="noopener">操作系统之IO管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/06/操作系统之文件系统/" target="_blank" rel="noopener">操作系统之文件系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/08/操作系统之多处理器系统/" target="_blank" rel="noopener">操作系统之多处理器系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/11/操作系统之安全/" target="_blank" rel="noopener">操作系统之安全</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -2327,188 +2394,6 @@ T_0\\
       <tags>
         <tag>游记</tag>
         <tag>漫步秦岭</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统之IO管理</title>
-    <url>/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8BIO%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<p>本章将涉及: </p>
-<ol>
-<li>IO设备</li>
-<li>盘</li>
-<li>时钟</li>
-<li>其他</li>
-</ol>
-<p><em>本文匆匆赶制, 内容粗糙简陋  <del>背就完事了</del></em> </p>
-<a id="more"></a>
-<h2 id="IO设备"><a href="#IO设备" class="headerlink" title="IO设备"></a>IO设备</h2><h3 id="IO设备分类-⭐"><a href="#IO设备分类-⭐" class="headerlink" title="IO设备分类 ⭐"></a>IO设备分类 ⭐</h3><ul>
-<li>块设备 (Block device)<ul>
-<li>储存于固定大小的块中, 每块都有自己的地址</li>
-<li>每个块都可以可以独立于其他块进行读写</li>
-<li>例如: 磁盘</li>
-</ul>
-</li>
-<li>字符设备 ( Character device )<ul>
-<li>使用字符流进行传递</li>
-<li>不可寻址, 没有任何查找功能</li>
-<li>例如: 打印机, 键鼠</li>
-</ul>
-</li>
-<li>其他<ul>
-<li>时钟</li>
-</ul>
-</li>
-</ul>
-<p><em>我们接下来的讨论一般是针对块设备</em></p>
-<h3 id="IO-设备部组成"><a href="#IO-设备部组成" class="headerlink" title="IO 设备部组成"></a>IO 设备部组成</h3><ul>
-<li>机械部件(即普遍意义上的设备)</li>
-<li>电子部件</li>
-</ul>
-<p>其中电子部件是用于控制管理机械部件的, 我们将电子部件称为 <strong>设备控制器</strong> .它的主要功能是: </p>
-<p><em><u>知道作用</u></em></p>
-<ul>
-<li><p>Convert the serial bit stream into a block of bytes </p>
-<p>将串行字节流转化未字节块</p>
-</li>
-<li><p>Perform any error correction necessary </p>
-<p>对于运行时可能的出错进行纠正</p>
-</li>
-<li><p>Copy it to main memory</p>
-<p>将字节复制到主存</p>
-</li>
-</ul>
-<p><em>注: 一个设备控制器可能同时负责多个机械设备</em></p>
-<p>此外每个设备控制器都拥有一些寄存器用于与OS通信:</p>
-<ul>
-<li>OS通过写入寄存器来命令设备执行操作等</li>
-<li>OS通过读取寄存器来获取设备的状态</li>
-</ul>
-<p>除了寄存器外, 许多设备还有OS可以读取/写入的数据缓冲区</p>
-<h3 id="与OS的通信方式"><a href="#与OS的通信方式" class="headerlink" title="与OS的通信方式"></a>与OS的通信方式</h3><p>OS和控制器的通信可以分为三种方式 ⭐</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/mmio.png" alt=""></p>
-<ol>
-<li><p>独立空间</p>
-<p>每个控制寄存器器都分配有一个单独的IO端口号</p>
-<p>内存的地址空间和IO的地址空间完全独立</p>
-</li>
-<li><p>内存映射 </p>
-<p>将所有的控制寄存器映射到内存空间.</p>
-<p>这些被映射的内存空间不会被其他内存映射, 只能由控制寄存器使用</p>
-<p><strong>优点</strong></p>
-<ol>
-<li>, a I/O device driver can be written entirely in C. Otherwise, some assembly code is needed</li>
-<li>No special protection mechanism is needed to keep user processes from performing I/O.</li>
-<li>Every instructions that can reference memory can also reference control registers.</li>
-</ol>
-</li>
-<li><p>混合</p>
-<p>IO数据缓冲区采用内存映射, 寄存器采用独立空间</p>
-</li>
-</ol>
-<p>IO软件层次: 驱动</p>
-<p>需要实现:</p>
-<ul>
-<li>设备独立性, 设备在接入前不需要任何特殊处理</li>
-<li>统一命名</li>
-<li>纠错(贴近硬件层, 不需要OS费心)</li>
-<li>异步传输</li>
-<li>缓冲区</li>
-<li>共享设备&amp;专业设备</li>
-</ul>
-<h3 id="IO控制方式-⭐"><a href="#IO控制方式-⭐" class="headerlink" title="IO控制方式 ⭐"></a>IO控制方式 ⭐</h3><ol>
-<li><p>程序控制IO  Programmed I/O </p>
-<p>使用程序不断查询设备以了解是否就绪, 忙等待, 低效 浪费CPU</p>
-</li>
-<li><p>中断控制IO  Interrupt-Driven I/O </p>
-<p>允许CPU在IO工作时干其他时, 当IO完毕时发出中断.</p>
-<p>问题在于IO每次只能传输一个字符, 中断频率过高</p>
-</li>
-<li><p>DMA控制IO⭐  I/O Using DMA </p>
-<p>DMA控制器Direct Memory Access 是一个能够独立于CPU访问系统总线的控制器, 相当于一个字符缓冲池, 当缓冲池满了再向CPU发出中断信号.</p>
-<blockquote>
-<p>DMA controller <strong>has access to the system bus independent of the CPU</strong>. It contains several registers that can be written and read by the CPU</p>
-</blockquote>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/dmA.png" alt=""></p>
-</li>
-</ol>
-<h3 id="IO软件层次"><a href="#IO软件层次" class="headerlink" title="IO软件层次"></a>IO软件层次</h3><p>中断处理</p>
-<p>最好是隐藏的, 不被感知. </p>
-<p>一般需要大量时间, 负责设备与设备驱动之间的通信.</p>
-<p>设备驱动器</p>
-<p>设备独立性 : 设备在接入前不需要任何特殊处理</p>
-<p>统一接口</p>
-<p>缓冲区</p>
-<p>​    双BUFFER区(乒乓机制)</p>
-<h2 id="盘"><a href="#盘" class="headerlink" title="盘"></a>盘</h2><ol>
-<li><p>每个byte由 14个bits构成</p>
-</li>
-<li><p>每42个byte构成1个帧(frame)</p>
-<p>但是每frame种只有24byte用于记录数据, 剩下的用于校验和控制</p>
-</li>
-<li><p>98个帧构成扇区sector </p>
-<p>每个扇区有16byte的引导符preamble, 后面又有288byte的ECC(纠错)</p>
-</li>
-</ol>
-<p>柱面斜进, 每圈的零扇区在磁盘上不是位于同一条直线上.</p>
-<p>磁盘交错. </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/DISK%20FORMAT.png" alt=""></p>
-<ol>
-<li>无交错, 每个扇区顺序排列</li>
-<li>单交错</li>
-<li>双交错</li>
-</ol>
-<p><em>(以上了解)</em></p>
-<h3 id="磁盘臂调度算法⭐"><a href="#磁盘臂调度算法⭐" class="headerlink" title="磁盘臂调度算法⭐"></a>磁盘臂调度算法⭐</h3><p>磁盘在读写过程种有三个时间决定: </p>
-<ul>
-<li><p>寻道时间Seek Time </p>
-<p>将磁盘臂移动到适当的柱面上需要的时间</p>
-</li>
-<li><p>旋转延迟Rotational delay</p>
-<p>等待适当的扇区旋转到磁头下的时间</p>
-</li>
-<li><p>数据传输时间Actual data trasfer time.</p>
-<p>相比前面两个来说非常小</p>
-</li>
-</ul>
-<p>传输时间相对忽略不计, 旋转延迟由机械决定, 讨论寻道时间</p>
-<h4 id="FCFS"><a href="#FCFS" class="headerlink" title="FCFS"></a>FCFS</h4><p>按照柱面访问顺序进行访问. </p>
-<h4 id="Shortest-Seek-Frist-最近柱面优先"><a href="#Shortest-Seek-Frist-最近柱面优先" class="headerlink" title="Shortest Seek Frist 最近柱面优先"></a>Shortest Seek Frist 最近柱面优先</h4><p>每次都访问离当前最近的</p>
-<h4 id="The-elevator-algorithm-电梯调度"><a href="#The-elevator-algorithm-电梯调度" class="headerlink" title="The elevator algorithm 电梯调度"></a>The elevator algorithm 电梯调度</h4><p>每次都从头到尾,再从尾到头</p>
-<h2 id="时钟"><a href="#时钟" class="headerlink" title="时钟"></a>时钟</h2><p>作用⭐</p>
-<ol>
-<li><p>Maintaining the time of day  维持一天中的时间。 </p>
-</li>
-<li><p>Preventing pro running longer  防止进程运行超出允许的时间</p>
-<p>在启动进程时设定一个计数器, 每个时钟中断处将计数器—, When it gets to zero, the clock driver calls the scheduler to set up another process.</p>
-</li>
-<li><p>Accounting for CPU usage  计算CPU使用率</p>
-<p>每当启动进程时，启动一个不同于主系统计时器的第二个计时器。当该过程停止时，可以读出计时器以告知该过程已运行了多长时间。</p>
-</li>
-<li><p>Handling the alarm system call  处理用户进程发出的警报系统调用</p>
-</li>
-<li><p>Providing watchdog timers  为系统本身的各个部分提供监视定时器</p>
-<p>例如: 在一定时间间隔内未确认的数据包必须重新发送</p>
-</li>
-</ol>
-<p><em><u>其他了解即可</u></em></p>
-<h2 id="Network-terminals-网络终端"><a href="#Network-terminals-网络终端" class="headerlink" title="Network terminals                    网络终端"></a>Network terminals                    网络终端</h2><h3 id="两类终端"><a href="#两类终端" class="headerlink" title="两类终端"></a>两类终端</h3><ul>
-<li><p>胖终端  X Windows</p>
-<p>终端具有大量的计算能力和内存，以便运行复杂的协议来压缩通过网络发送的数据量。 </p>
-</li>
-<li><p>瘦终端 SLIM</p>
-<p>终端非常简单，基本上是显示像素，并且为了使其便宜而没有做太多的复杂设计</p>
-</li>
-</ul>
-<p><em><u>其他了解即可</u></em></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>专业课</category>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
@@ -2700,6 +2585,19 @@ T_0\\
 <h3 id="Linux虚拟文件系统VFS"><a href="#Linux虚拟文件系统VFS" class="headerlink" title="Linux虚拟文件系统VFS"></a>Linux虚拟文件系统VFS</h3><p> 整个 Linux 系统通过 Virtual Filesystem Switch 的核心功能去 读取 filesystem。整个 Linux 认识的 filesystem 都是 VFS 在 进行管理，使用者并不需要知道每个 partition 的 filesystem 是什么</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/VFS.png" alt=""></p>
 <p><em><u>其他了解即可</u></em></p>
+<hr>
+<p><strong>操作系统系列</strong></p>
+<ol>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/14/操作系统之概述/" target="_blank" rel="noopener">操作系统之概述</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/05/操作系统之进程线程/" target="_blank" rel="noopener">操作系统之进程线程</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/08/操作系统之进程间通信/" target="_blank" rel="noopener">操作系统之进程间通信</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/04/操作系统之死锁/" target="_blank" rel="noopener">操作系统之死锁</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/09/操作系统之内存管理/" target="_blank" rel="noopener">操作系统之内存管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/05/操作系统之IO管理/" target="_blank" rel="noopener">操作系统之IO管理</a></li>
+<li>操作系统之文件系统 (本文)</li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/08/操作系统之多处理器系统/" target="_blank" rel="noopener">操作系统之多处理器系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/11/操作系统之安全/" target="_blank" rel="noopener">操作系统之安全</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -2712,523 +2610,189 @@ T_0\\
       </tags>
   </entry>
   <entry>
-    <title>操作系统之安全</title>
-    <url>/2020/08/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%AE%89%E5%85%A8/</url>
-    <content><![CDATA[<p>本章将涉及:</p>
+    <title>操作系统之IO管理</title>
+    <url>/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8BIO%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<p>本章将涉及: </p>
 <ol>
-<li>安全与威胁</li>
-<li>简易密码学(真的很简易!)</li>
-<li>用户认证</li>
-<li>系统受到的攻击<ol>
-<li>来自内部</li>
-<li>来自外部</li>
-</ol>
-</li>
-<li>保护机制</li>
-<li>信任系统</li>
-<li>OS安全</li>
-</ol>
-<p><em>本文匆匆赶制, 内容粗糙简陋</em></p>
-<a id="more"></a>
-<h2 id="安全与威胁"><a href="#安全与威胁" class="headerlink" title="安全与威胁"></a>安全与威胁</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Goal</th>
-<th>Threat</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Data confidentiality 数据机密性</td>
-<td>Exposure of data 数据泄露</td>
-</tr>
-<tr>
-<td>Data integrity           数据完整性</td>
-<td>Tampering with data 数据篡改</td>
-</tr>
-<tr>
-<td>System available     系统可用性</td>
-<td>Denial of service      拒绝服务</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>首先保护数据的机密性, 防止数据泄露.   需要保证数据不被外界所知.</p>
-<p>其次要保证数据的完整性, 防止数据被破坏.  不能被外界破坏.</p>
-<p>最后要保证系统的可用性, 防止系统拒绝服务. 例如DoS攻击等</p>
-<p>入侵者 intruder or sometimes 敌人 adversary<br>a) Passive intruders(被动入侵者)- to read files they are not authorized to<br>read<br>b) Active intruders(主动入侵者)- to make unauthorized changes to data</p>
-<p>常见的安全入侵场景有:</p>
-<ol>
-<li>Casual prying (窥探) by nontechnical users     被非专业使用者随意窥探</li>
-<li>Snooping by insiders  被内部人员窥视</li>
-<li>Determined attempt to make money  为了利益</li>
-<li>Commercial or military espionage   商业或军事间谍</li>
-</ol>
-<p>常见的数据丢失场景有:</p>
-<ol>
-<li><p>天灾</p>
-<p>fires, floods, wars</p>
-</li>
-<li><p>软硬件错误</p>
-<p>CPU malfunction, bad disk, program bugs </p>
-</li>
-<li><p>人为错误</p>
-<p>data entry, wrong tape mounted</p>
-<hr>
-</li>
-</ol>
-<h2 id="密码学基础"><a href="#密码学基础" class="headerlink" title="密码学基础"></a>密码学基础</h2><p><em><u>了解即可</u></em></p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul>
-<li>斯巴达将军</li>
-<li>戚继光: 反切注音法</li>
-<li>周恩来: 豪密</li>
-<li>菲利普与玛丽女王</li>
-<li>一战: 齐默尔曼电报</li>
-<li>二战: Enigma密码机, 图灵</li>
-</ul>
-<h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><ul>
-<li>? - 1949 古典密码<ul>
-<li>密码学还不是科学, 而是艺术</li>
-<li>数据的安全<strong>基于算法的保密</strong></li>
-<li>一般的加密方法是<strong>替换</strong></li>
-<li>单表替换密码(凯撒密码), 多表替换密码(Playfair密码, Hill密码) , 转轮密码(Enigma)</li>
-</ul>
-</li>
-<li>1949 - 1975 复杂计算的密码<ul>
-<li>由于算力提升使得复杂计算的密码称为可能</li>
-<li>1949年,香农发表了&lt;&lt;保密系统的信息理论&gt;&gt;(The Communication Theory of Secrecy Systems), 它证明了密码编码 学是如何置于坚实的数学基础之上的，从此密码学发展成为 一个专门学科。——标志性事件 </li>
-<li>数据的安全<strong>基于密钥</strong>而不是算法的保密</li>
-</ul>
-</li>
-<li>1975 - 公钥密码<ul>
-<li>公钥密码学成为主要研究方向 </li>
-<li><strong>公钥密码</strong>使得发送端和接收端<strong>无密钥传输的保密通信</strong>成为可能</li>
-</ul>
-</li>
-</ul>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h4 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h4><ul>
-<li>传统密码/常规密码/私钥密码/单钥密码 conventional / private-key / single-key</li>
-<li>发送方和接收方共享一个共同的密钥</li>
-<li>20世纪70年代以前私钥密码是唯一类型 </li>
-<li>至今仍广泛应用</li>
-</ul>
-<h4 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h4><ul>
-<li>公钥/双钥/非对称密码都是指使用两个密钥: <ul>
-<li>公钥：可以对任何人公开的密钥，用于加密消息或 验证签名。 </li>
-<li>私钥：只能由接收者私存，用于解密消息或签名。 </li>
-</ul>
-</li>
-<li>非对称 <ul>
-<li>用于加密消息或验证签名的人不能进行消息的加密或消息的签名。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="用户认证⭐"><a href="#用户认证⭐" class="headerlink" title="用户认证⭐"></a>用户认证⭐</h2><p>Authentication<br>user authentication（用户验证） crackers（骇客）</p>
-<p>认证必须要能够标识使用者的身份</p>
-<p>用户认证应当在使用系统之前完成</p>
-<p>三种认证方式</p>
-<ol>
-<li><p>Something the user knows</p>
-<p>密码, 口令</p>
-</li>
-<li><p>Something the user has</p>
-<p>钥匙, 芯片, 动态密码, 验证码</p>
-</li>
-<li><p>Something the user is</p>
-<p>指纹, 虹膜</p>
-</li>
-</ol>
-<blockquote>
-<p>UNIX 安全系统会对输入的密码进行<strong>加盐</strong>(Salt), 即将每一个口令同一个叫做盐（Salt）的n位随机数相关联。无论何时口令改变，这个随机数就改变。将口令和随机数连接起来，一同加密，加密后的结果存放进口令文件。</p>
-<p>One-Time passwords 对于函数 y=f(x) 已知y求x的难度远大于已知x求y的难度. </p>
-</blockquote>
-<h3 id="一些用户认证时的对策"><a href="#一些用户认证时的对策" class="headerlink" title="一些用户认证时的对策"></a>一些用户认证时的对策</h3><ul>
-<li>Limiting times when someone can log in    限制登录时间</li>
-<li>Automatic callback at number prespecified   自动回调 (例如判断密码是否太过简单)</li>
-<li>Limited number of login tries   限制尝试的登录次数</li>
-<li>A database of all logins    记录所有尝试登录的数据</li>
-<li>Simple login name/password as a trap  使用简单的密码作为陷阱 (假装登陆成功)</li>
-<li>security personnel notified when attacker bites 当检测到攻击者时通知安全人员</li>
-</ul>
-<hr>
-<h2 id="系统受到的攻击"><a href="#系统受到的攻击" class="headerlink" title="系统受到的攻击"></a>系统受到的攻击</h2><h3 id="Insider-Attacks-内部攻击"><a href="#Insider-Attacks-内部攻击" class="headerlink" title="Insider Attacks 内部攻击"></a>Insider Attacks 内部攻击</h3><h4 id="Logic-Bombs"><a href="#Logic-Bombs" class="headerlink" title="Logic Bombs"></a>Logic Bombs</h4><p>（逻辑炸弹）由一些公司的编程人员或使用这些受保护的计算机、编制核心软件的员工实施.秘密的嵌在产品的操作系统中的代码，特定情况下爆炸</p>
-<h4 id="Trap-Doors"><a href="#Trap-Doors" class="headerlink" title="Trap Doors"></a>Trap Doors</h4><p>（后门）系统程序员跳过正常的认证过程并插入一段代码造成<br>的。代码审查 code review</p>
-<h4 id="Login-Spoofing"><a href="#Login-Spoofing" class="headerlink" title="Login Spoofing"></a>Login Spoofing</h4><p>（登录欺骗）假冒的登录屏幕</p>
-<h4 id="Trojan-Horses"><a href="#Trojan-Horses" class="headerlink" title="Trojan Horses"></a>Trojan Horses</h4><p>特洛伊木马 诱导用户运行攻击代码</p>
-<h4 id="Buffer-Overflow"><a href="#Buffer-Overflow" class="headerlink" title="Buffer Overflow"></a>Buffer Overflow</h4><p>缓冲区溢出攻击</p>
-<h3 id="Outside-Attacks-外部攻击"><a href="#Outside-Attacks-外部攻击" class="headerlink" title="Outside Attacks 外部攻击"></a>Outside Attacks 外部攻击</h3><h4 id="Virus"><a href="#Virus" class="headerlink" title="Virus"></a>Virus</h4><p>病毒: 不断地复制自身并传播</p>
-<h4 id="Morris-Worm"><a href="#Morris-Worm" class="headerlink" title="Morris Worm"></a>Morris Worm</h4><p>蠕虫: 先潜伏自己的存在, 直到传播到一定规模后再爆发</p>
-<p>(zero-day Attack</p>
-<p>Zombie</p>
-<p>…</p>
-<h2 id="系统设计的原则"><a href="#系统设计的原则" class="headerlink" title="系统设计的原则"></a>系统设计的原则</h2><ol>
-<li>System design should be public </li>
-<li>Default should be no access </li>
-<li>Check for current authority </li>
-<li>Give each process least privilege possible </li>
-<li>Protection mechanism should be 保护机制应当<ul>
-<li>simple 简单</li>
-<li>uniform  统一</li>
-<li>in lowest layers of system  处于系统底层</li>
-</ul>
-</li>
-<li>Scheme should be psychologically acceptable</li>
-</ol>
-<h2 id="保护机制-⭐"><a href="#保护机制-⭐" class="headerlink" title="保护机制 ⭐"></a>保护机制 ⭐</h2><h3 id="Protection-Domains"><a href="#Protection-Domains" class="headerlink" title="Protection Domains"></a>Protection Domains</h3><p>注: 下文中提到的 <em>用户</em> 也可能指进程</p>
-<p>保护域</p>
-<p>a domain is a set of （object， right） pairs. Each pair specifies an object and some<br>subset of the operations that can be performed. A right means permission to perform one of the operations.<br>一对对象权限的组合，每对组合指定一个对象和一些可在上面运行的操作子集指对某个操作的执行许可.</p>
-<p>人话: 一张表, 记录了所有的文件和每个用户允许对文件进行的操作</p>
-<p>缺点: 太大</p>
-<h3 id="Access-Control-Lists-ACL"><a href="#Access-Control-Lists-ACL" class="headerlink" title="Access Control Lists , ACL"></a>Access Control Lists , ACL</h3><p>访问控制列表</p>
-<p>每个对象的有序列表里包含了所有可访问对象的域以及这些域如何访问这些对象的方法</p>
-<p>人话: 由于文件多而域少, 因此在每个文件处记录哪些域能进行什么操作. 将保护域按文件分解</p>
-<h3 id="Capabilities"><a href="#Capabilities" class="headerlink" title="Capabilities"></a>Capabilities</h3><p>权能字</p>
-<p>使用按行存储时，与每个进程关联的是可访问的对象列表，以及每个对象上叫做权能字列表，每个单独的项目叫做权能字</p>
-<p>人话: 每个用户自己储存对每个文件能进行什么操作, 将保护域按用户分解</p>
-<p>因此要防止权能字被用户自己篡改(三种方法)</p>
-<ol>
-<li>First way, require a tagged architecture </li>
-<li>Second way, keep the C-list inside the OS </li>
-<li>Third way, keep the C-list in user space, but manage the capabilities cryptographically</li>
-</ol>
-<h2 id="可信任系统"><a href="#可信任系统" class="headerlink" title="可信任系统"></a>可信任系统</h2><p>完全可信任的系统是否存在?</p>
-<p>可信任系统的核心是 <strong>可信计算基Trusted Computing Base, TCB</strong></p>
-<p>TCB 是一种机制, 保护所有敏感操作; (例如切换进程, 进程创建, 内存映射管理等) 任何试图访问这些操作的进程必须通过可信计算基的安全审查, 称为 reference monitor (访问监视器)</p>
-<blockquote>
-<p>All system calls go through the reference monitor for security checking</p>
-</blockquote>
-<p>TCB可以通过硬件, 软件, 固件的形式实现, 它只是个机制. </p>
-<p>一旦可信计算机基的某个构件出现程序错误或者安全隐患，就对整个系统的安全造成危害。 与之相反，如果除可信计算基之外的系统的其他部分出现问题，也只是泄漏了系统安全策略赋予它们的相关权限而已，这些权限一般都是比较低的。</p>
-<p>现代操作系统努力降低TCB的大小，使得对其代码库彻底的检查成为可能.</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>专业课</category>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初窥HTTP之二_HTTP报文</title>
-    <url>/2020/08/03/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%BA%8C-HTTP%E6%8A%A5%E6%96%87/</url>
-    <content><![CDATA[<p>HTTP 报文的信息 </p>
-<p>HTTP 状态码</p>
-<p>HTTP 首部(待完成)</p>
-<a id="more"></a>
-<h2 id="HTTP-报文的信息"><a href="#HTTP-报文的信息" class="headerlink" title="HTTP 报文的信息"></a>HTTP 报文的信息</h2><p>本段将介绍HTTP报文中包括有那些信息.包括:</p>
-<ol>
-<li>报文的结构</li>
-<li>报文编码</li>
-<li>多部分对象集合</li>
-<li>范围传输</li>
-<li>内容协商</li>
-</ol>
-<h3 id="报文结构"><a href="#报文结构" class="headerlink" title="报文结构"></a>报文结构</h3><p>HTTP报文是由多行数据构成的, 每行之间使用<code>CR+LF</code>(\r\n) 进行换行.</p>
-<p>报文可被分为报文首部与报文主体, 后者并不是必须的.</p>
-<p>报文首部包括:</p>
-<ul>
-<li>请求行 / 状态行</li>
-<li>请求首部字段 / 响应首部字段</li>
-<li>通用首部字段</li>
-<li>实体首部字段</li>
+<li>IO设备</li>
+<li>盘</li>
+<li>时钟</li>
 <li>其他</li>
-</ul>
-<p><strong>请求行</strong></p>
-<p>包括请求的方法, 请求URI, HTTP版本</p>
-<p><strong>状态行</strong></p>
-<p>包括响应的结果状态码, 原因短语, HTTP版本</p>
-<p><strong>首部字段</strong></p>
-<p>包括表示各种条件和属性的各类首部语句. 分为四种: </p>
-<ol>
-<li>请求首部字段(仅在请求报文中出现); </li>
-<li>响应首部字段(仅在响应报文中出现); </li>
-<li>通用首部字段; </li>
-<li>实体首部字段;</li>
 </ol>
-<p><strong>其他</strong></p>
-<p>其他未在RFC中定义的字段, 如Cookie</p>
-<h3 id="报文编码"><a href="#报文编码" class="headerlink" title="报文编码"></a>报文编码</h3><p>对传输的数据进行编码可以提高传输速率, 但是编码与解码会消耗CPU资源.</p>
-<h4 id="报文主体与实体主体"><a href="#报文主体与实体主体" class="headerlink" title="报文主体与实体主体"></a>报文主体与实体主体</h4><p>报文是HTTP实际传输的字节流. 报文包括报文首部与报文主体.(报文主体可以是0个或1个)</p>
-<p>实体是作为请求或响应的有效载荷数据. 由实体首部与实体主体组成.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(没有报文主体)</span><br><span class="line">	没有实体</span><br><span class="line">if(有报文主体)</span><br><span class="line">	if(有1个实体)</span><br><span class="line">		if(实体未被处理)	&#x2F;&#x2F;处理指: 传输中进行编码操作</span><br><span class="line">			无实体首部</span><br><span class="line">			实体主体&#x3D;&#x3D;报文主体</span><br><span class="line">		if(实体被处理)</span><br><span class="line">			有实体首部</span><br><span class="line">			实体主体!&#x3D;报文主体</span><br><span class="line">	if(有多个实体)</span><br><span class="line">		有实体首部</span><br><span class="line">		实体主体!&#x3D;报文主体</span><br></pre></td></tr></table></figure>
-<p>个人理解,不一定对.</p>
-<p><a href="https://www.zhihu.com/question/263752229" target="_blank" rel="noopener">知乎:http报文和实体的差别？</a></p>
-<h4 id="压缩传输"><a href="#压缩传输" class="headerlink" title="压缩传输"></a>压缩传输</h4><p>将实体内容通过编码进行压缩, 常见的内容编码有:</p>
-<ul>
-<li>gzip</li>
-<li>compress</li>
-<li>deflate</li>
-<li>identify (不进行编码)</li>
-</ul>
-<h3 id="分割传输"><a href="#分割传输" class="headerlink" title="分割传输"></a>分割传输</h3><p>将大容量的数据分割传输, 让浏览器逐步显示页面, 称作 <strong>分块传输编码</strong>(Chunked Transfer Coding).</p>
-<p>实体被分割成的多个部分使用一个十六进制来标记块的大小. </p>
-<h3 id="多部份对象集合"><a href="#多部份对象集合" class="headerlink" title="多部份对象集合"></a>多部份对象集合</h3><p><a href="https://en.wikipedia.org/wiki/MIME" target="_blank" rel="noopener"><em>Wiki:MIME</em></a></p>
-<p>多功能Internet邮件扩展（MIME）是一种Internet标准，以支持除ASCII以外的字符集以及音频，视频，图像和应用程序附件的文本.</p>
-<p>MIME使用了Multipart 的方法来容纳多种不同类型的数据, 这个方法也被HTTP 采纳.</p>
-<ul>
-<li><p>multipart/form-data</p>
-<p>这是在Web上传表单时使用</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Content-Type: multipart&#x2F;form-data; boundary&#x3D;AaB03x</span><br><span class="line"></span><br><span class="line">--AaB03x</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;fieldl&quot;</span><br><span class="line"></span><br><span class="line">Joe Blow</span><br><span class="line">--AaB03x</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;pics&quot;: filename&#x3D;filel. txt&quot;</span><br><span class="line">Content-Type: text&#x2F;plain</span><br><span class="line"></span><br><span class="line">(fi1e1.txt的数据)</span><br><span class="line">--AaB03x--</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>multipart/byteranges</p>
-<p>状态码206（Partial Content，部分内容）</p>
-<p>响应报文包含了多个范围的内容时使用。</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Http&#x2F;1.1 206 parTial Content</span><br><span class="line">Date: Fri, 13 Jul 2012 02: 45: 26 GMT</span><br><span class="line">Last-Modified: Fri, 31 Aug 2007 02: 02: 20 GMT</span><br><span class="line">Content-Type: multipart&#x2F;byteranges: boundary&#x3D;THIS_STRING_SEPARATES</span><br><span class="line"></span><br><span class="line">--THIS_STRING_SEPARATES</span><br><span class="line">Content-Type: application&#x2F;pdf</span><br><span class="line">Content-Range: bytes 500-999&#x2F;8000</span><br><span class="line"></span><br><span class="line">...(范围指定的数据)...</span><br><span class="line">--THIS_STRING_SEPARATES</span><br><span class="line">Content-Type: application&#x2F;pdf</span><br><span class="line">Content-Range: bytes 7000-7999&#x2F;8000</span><br><span class="line"></span><br><span class="line">...(范围指定的数据)...</span><br><span class="line">--THIS_STRING_SEPARATES--</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>在HTTP报文中使用多部分对象集合时，需要在首部字段里加上Content-type；</p>
-</li>
-<li><p>报文主体中包括多个实体,每个实体都由实体头部与实体主体组成</p>
-<p>实体的头部与主体之间依旧使用CR+LF换行.</p>
-</li>
-<li><p>使用boundary字符串来划分多部分对象集合指明的各类实体。在boundary字符串指定的各个实体的起始行之前插入”—“标记作为结束.</p>
-</li>
-<li><p>也可以在某处嵌套使用多部份对象集合</p>
-</li>
-</ul>
-<h3 id="范围请求"><a href="#范围请求" class="headerlink" title="范围请求"></a>范围请求</h3><p>指定范围发送的请求叫做<code>范围请求</code>(Range Request)。执行范围请求时，会用到首部字段<code>Range</code>来指定资源的byte范围。byte范围的指定形式如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Range: bytes&#x3D;5001-10000	&#x2F;&#x2F;5001~10000字节</span><br><span class="line">Range: bytes&#x3D;5001-		&#x2F;&#x2F;从5001字节之后全部的</span><br><span class="line">Range: bytes&#x3D;-3000, 5000-7000	&#x2F;&#x2F;从一开始到3000字节和5000~7000字节的多重范围</span><br></pre></td></tr></table></figure>
-<p>针对范围请求，响应会返回状态码为<code>206 Partial Content</code>的响应报文。</p>
-<p>对于多重范围的范围请求，响应会在首部字段<code>Content-Type</code>表明<code>multipart/byteranges</code>后返回响应报文。</p>
-<p>如果服务器端无法响应范围请求，则会返回状态码<code>200 OK</code>和完整的实体内容。</p>
-<h3 id="内容协商"><a href="#内容协商" class="headerlink" title="内容协商"></a>内容协商</h3><p><code>内容协商</code>(Content Negotiation)机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户端最为适合的资源。内容协商会以响应资源的语言、字符集、编码方式等作为判断的基准。</p>
-<p>包含在请求报文中的某些首部字段就是判断的基准，比如：<code>Accept</code>、<code>Accept-Charset</code>、<code>Accept-Encoding</code>、<code>Accept-Language</code>、<code>Content-Language</code>。</p>
-<p>内容协商技术有以下3种类型：服务器驱动协商(Server-driven Negotiation)、客户端驱动协商(Agent-driven Negotiation)、透明协商(Transparent Negotiation)。</p>
-<hr>
-<h2 id="HTTP-状态码"><a href="#HTTP-状态码" class="headerlink" title="HTTP 状态码"></a>HTTP 状态码</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>类别</th>
-<th>原因短语</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1XX</td>
-<td>Informational  (信息性状态码)</td>
-<td>接收的请求正在处理</td>
-</tr>
-<tr>
-<td>2XX</td>
-<td>Success（成功状态码）</td>
-<td>请求正常处理完毕</td>
-</tr>
-<tr>
-<td>3XX</td>
-<td>Redirection（重定向状态码）</td>
-<td>需要进行附加操作以完成请求</td>
-</tr>
-<tr>
-<td>4XX</td>
-<td>Client Error（客户端错误状态码）</td>
-<td>服务器无法处理请求</td>
-</tr>
-<tr>
-<td>5XX</td>
-<td>Server Error（服务器错误状态码）</td>
-<td>服务器处理请求出错</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="2xx-成功"><a href="#2xx-成功" class="headerlink" title="2xx 成功"></a>2xx 成功</h3><blockquote>
-<p>表明请求被正常处理了</p>
-</blockquote>
-<ul>
-<li><p>200(OK) : 正常处理, 该返回啥返回啥</p>
-</li>
-<li><p>204(No Content): 请求处理成功, 但没有资源可返回. 浏览器显示的页面不会更新.</p>
-<p>一般用在只需要从客户端往服务器发送消息,而对客户端不需要发送新消息内容的情况下</p>
-</li>
-<li><p>206(Partial Content): 范围请求,响应报文中包含<code>Content-Range</code>指定范围实体</p>
-</li>
-</ul>
-<h3 id="3xx-重定向"><a href="#3xx-重定向" class="headerlink" title="3xx 重定向"></a>3xx 重定向</h3><blockquote>
-<p>表明浏览器需要执行某些特殊处理以正确处理请求</p>
-</blockquote>
-<ul>
-<li>301(Moved Permanently): 永久性重定向,资源<code>URI</code>改变.</li>
-<li>302(Found): 临时性重定向.希望用户(本次)使用新的<code>URI</code>访问</li>
-<li>303(See Other): 和302来ISI,但是明确表示客户端应当采用GET方法获取资源.</li>
-<li>304(Not Modified): 资源已找到,但未符合条件(不把任何相应主体).虽然是<code>3</code>系列,但和重定向没有关系</li>
-<li>307(Temporary Redirect): 临时重定向.和<code>302</code>类似.</li>
-</ul>
-<h3 id="4xx-客户端错误"><a href="#4xx-客户端错误" class="headerlink" title="4xx 客户端错误"></a>4xx 客户端错误</h3><blockquote>
-<p>表明客户端是发生错误的原因所在</p>
-</blockquote>
-<ul>
-<li>400(Bad Request): 请求报文中存在语法错误.浏览器会像200一样对待此状态码</li>
-<li>401(Unauthorized): 发送的请求需要通过<code>HTTP</code>认证.若之前已进行过一次请求,则表示用户认证失败.(初次会弹出认证用的对话框)</li>
-<li>403(Forbidden): 对请求资源的访问被服务器拒绝了.服务端可以(也可以不)给出 <code>拒绝的详细理由</code></li>
-<li>404(Not Found): 没有找到请求的资源. (也有可能是拒绝但且不想说明理由时使用)</li>
-</ul>
-<h3 id="5xx-服务器错误"><a href="#5xx-服务器错误" class="headerlink" title="5xx 服务器错误"></a>5xx 服务器错误</h3><blockquote>
-<p>表明服务器本身发生错误</p>
-</blockquote>
-<ul>
-<li>500(Internal Server Error): 执行请求时发生错误.可能是<code>Web</code>应用的<code>bug</code>或<code>临时故障</code></li>
-<li>503(Service Unavailable): 服务器暂时处于超负荷或者正在进行停机维护.</li>
-</ul>
-<p>事实上不少返回的<code>状态码</code>是错误的.</p>
-<p>此外, 服务器可以指定自己与客户端的协商状态码.</p>
-<hr>
-<h2 id="HTTP-首部"><a href="#HTTP-首部" class="headerlink" title="HTTP 首部"></a>HTTP 首部</h2><p>待完成</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>驭龙术</category>
-        <category>Web开发</category>
-        <category>HTTP</category>
-      </categories>
-      <tags>
-        <tag>HTTP</tag>
-        <tag>读书笔记:技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统之多处理器系统</title>
-    <url>/2020/08/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>本章将会涉及:</p>
-<ol>
-<li>多处理器系统</li>
-<li>多计算机系统</li>
-<li>虚拟化</li>
-<li>分布式</li>
-</ol>
+<p><em>本文匆匆赶制, 内容粗糙简陋  <del>背就完事了</del></em> </p>
 <a id="more"></a>
-<p>对更快的计算是推动计算机进步的动力. 除了从技术层面上突破(如优化芯片) , 人们还设计了这些系统来提高计算水平. </p>
+<h2 id="IO设备"><a href="#IO设备" class="headerlink" title="IO设备"></a>IO设备</h2><h3 id="IO设备分类-⭐"><a href="#IO设备分类-⭐" class="headerlink" title="IO设备分类 ⭐"></a>IO设备分类 ⭐</h3><ul>
+<li>块设备 (Block device)<ul>
+<li>储存于固定大小的块中, 每块都有自己的地址</li>
+<li>每个块都可以可以独立于其他块进行读写</li>
+<li>例如: 磁盘</li>
+</ul>
+</li>
+<li>字符设备 ( Character device )<ul>
+<li>使用字符流进行传递</li>
+<li>不可寻址, 没有任何查找功能</li>
+<li>例如: 打印机, 键鼠</li>
+</ul>
+</li>
+<li>其他<ul>
+<li>时钟</li>
+</ul>
+</li>
+</ul>
+<p><em>我们接下来的讨论一般是针对块设备</em></p>
+<h3 id="IO-设备部组成"><a href="#IO-设备部组成" class="headerlink" title="IO 设备部组成"></a>IO 设备部组成</h3><ul>
+<li>机械部件(即普遍意义上的设备)</li>
+<li>电子部件</li>
+</ul>
+<p>其中电子部件是用于控制管理机械部件的, 我们将电子部件称为 <strong>设备控制器</strong> .它的主要功能是: </p>
+<p><em><u>知道作用</u></em></p>
+<ul>
+<li><p>Convert the serial bit stream into a block of bytes </p>
+<p>将串行字节流转化未字节块</p>
+</li>
+<li><p>Perform any error correction necessary </p>
+<p>对于运行时可能的出错进行纠正</p>
+</li>
+<li><p>Copy it to main memory</p>
+<p>将字节复制到主存</p>
+</li>
+</ul>
+<p><em>注: 一个设备控制器可能同时负责多个机械设备</em></p>
+<p>此外每个设备控制器都拥有一些寄存器用于与OS通信:</p>
+<ul>
+<li>OS通过写入寄存器来命令设备执行操作等</li>
+<li>OS通过读取寄存器来获取设备的状态</li>
+</ul>
+<p>除了寄存器外, 许多设备还有OS可以读取/写入的数据缓冲区</p>
+<h3 id="与OS的通信方式"><a href="#与OS的通信方式" class="headerlink" title="与OS的通信方式"></a>与OS的通信方式</h3><p>OS和控制器的通信可以分为三种方式 ⭐</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/mmio.png" alt=""></p>
 <ol>
-<li><p>计算机并行处理, 主要体现在同一个计算机中存在多个处理器 , 这些处理器 <u>共享内存模块</u> (share memory model ). 称为 <strong>多处理器系统</strong> (<strong>Multiprocessors</strong>)</p>
+<li><p>独立空间</p>
+<p>每个控制寄存器器都分配有一个单独的IO端口号</p>
+<p>内存的地址空间和IO的地址空间完全独立</p>
+</li>
+<li><p>内存映射 </p>
+<p>将所有的控制寄存器映射到内存空间.</p>
+<p>这些被映射的内存空间不会被其他内存映射, 只能由控制寄存器使用</p>
+<p><strong>优点</strong></p>
+<ol>
+<li>, a I/O device driver can be written entirely in C. Otherwise, some assembly code is needed</li>
+<li>No special protection mechanism is needed to keep user processes from performing I/O.</li>
+<li>Every instructions that can reference memory can also reference control registers.</li>
+</ol>
+</li>
+<li><p>混合</p>
+<p>IO数据缓冲区采用内存映射, 寄存器采用独立空间</p>
+</li>
+</ol>
+<p>IO软件层次: 驱动</p>
+<p>需要实现:</p>
+<ul>
+<li>设备独立性, 设备在接入前不需要任何特殊处理</li>
+<li>统一命名</li>
+<li>纠错(贴近硬件层, 不需要OS费心)</li>
+<li>异步传输</li>
+<li>缓冲区</li>
+<li>共享设备&amp;专业设备</li>
+</ul>
+<h3 id="IO控制方式-⭐"><a href="#IO控制方式-⭐" class="headerlink" title="IO控制方式 ⭐"></a>IO控制方式 ⭐</h3><ol>
+<li><p>程序控制IO  Programmed I/O </p>
+<p>使用程序不断查询设备以了解是否就绪, 忙等待, 低效 浪费CPU</p>
+</li>
+<li><p>中断控制IO  Interrupt-Driven I/O </p>
+<p>允许CPU在IO工作时干其他时, 当IO完毕时发出中断.</p>
+<p>问题在于IO每次只能传输一个字符, 中断频率过高</p>
+</li>
+<li><p>DMA控制IO⭐  I/O Using DMA </p>
+<p>DMA控制器Direct Memory Access 是一个能够独立于CPU访问系统总线的控制器, 相当于一个字符缓冲池, 当缓冲池满了再向CPU发出中断信号.</p>
 <blockquote>
-<p>注意与 <strong>多核</strong> 的区别</p>
-<p>多处理器指: 在一个机器中有多个处理器;</p>
-<p>多核: 在一个处理器中有多个处理芯片</p>
+<p>DMA controller <strong>has access to the system bus independent of the CPU</strong>. It contains several registers that can be written and read by the CPU</p>
 </blockquote>
-</li>
-<li><p>多个计算机相互协作. 表现为不同的计算机通过 <u>消息传递</u> 的而协作.(紧耦合)  称为 <strong>多计算机系统</strong> (<strong>Multicomputers</strong> )</p>
-</li>
-<li><p>多个计算机互相协作. 表现为通过 <u>广域分布式系统</u> (指网络) 协作. (松耦合) 称为 <strong>分布式系统</strong> (<strong>Distributed systems</strong>)</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/dmA.png" alt=""></p>
 </li>
 </ol>
-<p><img src='https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%89%E7%A7%8D%E6%8A%80%E6%9C%AF.png' height = '500' width = '1300'></img></p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E6%AF%94%E8%BE%83.png" alt=""></p>
-<p>除此之外本章还会涉及到 <strong>虚拟化技术</strong> (Virtualization ).</p>
-<h2 id="多处理器系统"><a href="#多处理器系统" class="headerlink" title="多处理器系统"></a>多处理器系统</h2><p>在一个计算机系统内部，两个以上的CPU共享对一个公共RAM都拥有的完全访问权限. 根据不同CPU读写速度的不同又分为</p>
+<h3 id="IO软件层次"><a href="#IO软件层次" class="headerlink" title="IO软件层次"></a>IO软件层次</h3><p>中断处理</p>
+<p>最好是隐藏的, 不被感知. </p>
+<p>一般需要大量时间, 负责设备与设备驱动之间的通信.</p>
+<p>设备驱动器</p>
+<p>设备独立性 : 设备在接入前不需要任何特殊处理</p>
+<p>统一接口</p>
+<p>缓冲区</p>
+<p>​    双BUFFER区(乒乓机制)</p>
+<h2 id="盘"><a href="#盘" class="headerlink" title="盘"></a>盘</h2><ol>
+<li><p>每个byte由 14个bits构成</p>
+</li>
+<li><p>每42个byte构成1个帧(frame)</p>
+<p>但是每frame种只有24byte用于记录数据, 剩下的用于校验和控制</p>
+</li>
+<li><p>98个帧构成扇区sector </p>
+<p>每个扇区有16byte的引导符preamble, 后面又有288byte的ECC(纠错)</p>
+</li>
+</ol>
+<p>柱面斜进, 每圈的零扇区在磁盘上不是位于同一条直线上.</p>
+<p>磁盘交错. </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/DISK%20FORMAT.png" alt=""></p>
 <ol>
-<li><p>UMA ( Uniform Memory Access ， 统一内存访问)</p>
-<p>每个存储器字的读出速度是一样快的。 </p>
-<p>主要有三种硬件实现</p>
-<ol>
-<li>Bus-Based Architectures 总线结构</li>
-<li>Crossbar Switches  交叉开关</li>
-<li>Multistage Switching Networks  多级交换网络</li>
+<li>无交错, 每个扇区顺序排列</li>
+<li>单交错</li>
+<li>双交错</li>
 </ol>
+<p><em>(以上了解)</em></p>
+<h3 id="磁盘臂调度算法⭐"><a href="#磁盘臂调度算法⭐" class="headerlink" title="磁盘臂调度算法⭐"></a>磁盘臂调度算法⭐</h3><p>磁盘在读写过程种有三个时间决定: </p>
+<ul>
+<li><p>寻道时间Seek Time </p>
+<p>将磁盘臂移动到适当的柱面上需要的时间</p>
 </li>
-<li><p>NUMA ( Nonuniform Memory Access， 非统一内存 访问 )</p>
-<p>存储器访问时间取决于相对于处理器的存储器位置.</p>
-<p>访问远程存储器的速度比本地存储器慢</p>
+<li><p>旋转延迟Rotational delay</p>
+<p>等待适当的扇区旋转到磁头下的时间</p>
+</li>
+<li><p>数据传输时间Actual data trasfer time.</p>
+<p>相比前面两个来说非常小</p>
+</li>
+</ul>
+<p>传输时间相对忽略不计, 旋转延迟由机械决定, 讨论寻道时间</p>
+<h4 id="FCFS"><a href="#FCFS" class="headerlink" title="FCFS"></a>FCFS</h4><p>按照柱面访问顺序进行访问. </p>
+<h4 id="Shortest-Seek-Frist-最近柱面优先"><a href="#Shortest-Seek-Frist-最近柱面优先" class="headerlink" title="Shortest Seek Frist 最近柱面优先"></a>Shortest Seek Frist 最近柱面优先</h4><p>每次都访问离当前最近的</p>
+<h4 id="The-elevator-algorithm-电梯调度"><a href="#The-elevator-algorithm-电梯调度" class="headerlink" title="The elevator algorithm 电梯调度"></a>The elevator algorithm 电梯调度</h4><p>每次都从头到尾,再从尾到头</p>
+<h2 id="时钟"><a href="#时钟" class="headerlink" title="时钟"></a>时钟</h2><p>作用⭐</p>
+<ol>
+<li><p>Maintaining the time of day  维持一天中的时间。 </p>
+</li>
+<li><p>Preventing pro running longer  防止进程运行超出允许的时间</p>
+<p>在启动进程时设定一个计数器, 每个时钟中断处将计数器—, When it gets to zero, the clock driver calls the scheduler to set up another process.</p>
+</li>
+<li><p>Accounting for CPU usage  计算CPU使用率</p>
+<p>每当启动进程时，启动一个不同于主系统计时器的第二个计时器。当该过程停止时，可以读出计时器以告知该过程已运行了多长时间。</p>
+</li>
+<li><p>Handling the alarm system call  处理用户进程发出的警报系统调用</p>
+</li>
+<li><p>Providing watchdog timers  为系统本身的各个部分提供监视定时器</p>
+<p>例如: 在一定时间间隔内未确认的数据包必须重新发送</p>
 </li>
 </ol>
-<h3 id="UMA-的硬件实现"><a href="#UMA-的硬件实现" class="headerlink" title="UMA 的硬件实现"></a>UMA 的硬件实现</h3><p><em><u>了解</u></em></p>
-<h4 id="总线结构"><a href="#总线结构" class="headerlink" title="总线结构"></a>总线结构</h4><p>字面意思, 每个CPU通过总线与内存交互. 又可分为三种:</p>
+<p><em><u>其他了解即可</u></em></p>
+<h2 id="Network-terminals-网络终端"><a href="#Network-terminals-网络终端" class="headerlink" title="Network terminals                    网络终端"></a>Network terminals                    网络终端</h2><h3 id="两类终端"><a href="#两类终端" class="headerlink" title="两类终端"></a>两类终端</h3><ul>
+<li><p>胖终端  X Windows</p>
+<p>终端具有大量的计算能力和内存，以便运行复杂的协议来压缩通过网络发送的数据量。 </p>
+</li>
+<li><p>瘦终端 SLIM</p>
+<p>终端非常简单，基本上是显示像素，并且为了使其便宜而没有做太多的复杂设计</p>
+</li>
+</ul>
+<p><em><u>其他了解即可</u></em></p>
+<hr>
+<p><strong>操作系统系列</strong></p>
 <ol>
-<li>不带独立cache</li>
-<li>拥有独立cache</li>
-<li>拥有独立cache和私有内存</li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/14/操作系统之概述/" target="_blank" rel="noopener">操作系统之概述</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/05/操作系统之进程线程/" target="_blank" rel="noopener">操作系统之进程线程</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/08/操作系统之进程间通信/" target="_blank" rel="noopener">操作系统之进程间通信</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/04/操作系统之死锁/" target="_blank" rel="noopener">操作系统之死锁</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/09/操作系统之内存管理/" target="_blank" rel="noopener">操作系统之内存管理</a></li>
+<li>操作系统之IO管理  (本文)</li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/06/操作系统之文件系统/" target="_blank" rel="noopener">操作系统之文件系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/08/操作系统之多处理器系统/" target="_blank" rel="noopener">操作系统之多处理器系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/11/操作系统之安全/" target="_blank" rel="noopener">操作系统之安全</a></li>
 </ol>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%89%E7%A7%8D%E6%80%BB%E7%BA%BF.png" alt=""></p>
-<p>问题: CPU会争夺总线的使用权, 引起<strong>竞争</strong>.</p>
-<h4 id="交叉开关"><a href="#交叉开关" class="headerlink" title="交叉开关"></a>交叉开关</h4><p>对于 $n$ 个CPU 构建 $n\times n$ 的交叉开关网络. </p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%BA%A4%E5%8F%89%E5%BC%80%E5%85%B3.png" alt=""></p>
-<p>优点: 绝对不会竞争或阻塞</p>
-<p>缺点: 开销过大</p>
-<h4 id="多级交换网络"><a href="#多级交换网络" class="headerlink" title="多级交换网络"></a>多级交换网络</h4><p>使用 2*2 的交换机来构建多级交换网络.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E5%A4%9A%E7%BA%A7%E4%BA%A4%E6%8D%A2.png" alt=""></p>
-<p>上图是三级交换网络, 对于 $n$ 个CPU, 仅需要 $3\times \frac n 2$ 个交换机. 同时每个线路的可通达度大幅提高了.</p>
-<h3 id="OS-划分类型"><a href="#OS-划分类型" class="headerlink" title="OS 划分类型"></a>OS 划分类型</h3><h4 id="类型１-每个CPU都有自己的OS"><a href="#类型１-每个CPU都有自己的OS" class="headerlink" title="类型１: 每个CPU都有自己的OS"></a>类型１: 每个CPU都有自己的OS</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E7%8B%AC%E8%87%AA1.png" alt=""></p>
-<ul>
-<li>内存划分为n个部分</li>
-<li>为每个CPU分配自己的专用内存和操作系统的专用副本</li>
-<li>OS每个操作系统都有自己的表，不共享进程；<br>没有共享页面</li>
-</ul>
-<h4 id="类型2-主从处理器"><a href="#类型2-主从处理器" class="headerlink" title="类型2: 主从处理器"></a>类型2: 主从处理器</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%BB%E4%BB%8E2.png" alt=""></p>
-<ul>
-<li>OS及其表的一个副本位于CPU1上</li>
-<li>所有系统调用都重定向到CPU1进行处理</li>
-<li>缺点: 如果从处理器过多, 主处理器的性能将成为系统的瓶颈</li>
-</ul>
-<h4 id="类型3-对称处理器"><a href="#类型3-对称处理器" class="headerlink" title="类型3: 对称处理器"></a>类型3: 对称处理器</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E5%AF%B9%E7%A7%B03.png" alt=""></p>
-<ul>
-<li>内存中只有一个OS副本，但是任何CPU都可以运行它</li>
-<li>使用互斥量(锁)保证只有一个处理器在使用OS </li>
-</ul>
-<h3 id="处理器的调度"><a href="#处理器的调度" class="headerlink" title="处理器的调度"></a>处理器的调度</h3><h4 id="分时调度-Timesharing"><a href="#分时调度-Timesharing" class="headerlink" title="分时调度 Timesharing"></a>分时调度 Timesharing</h4><p>Using a single data structure for scheduling a multiprocessor</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/time.png" alt=""></p>
-<h4 id="分空间调度-Space-sharing"><a href="#分空间调度-Space-sharing" class="headerlink" title="分空间调度 Space sharing"></a>分空间调度 Space sharing</h4><p>multiple threads at same time across multiple CPUs</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/space.png" alt=""></p>
-<h4 id="Gang-Scheduling-（-群调度-）"><a href="#Gang-Scheduling-（-群调度-）" class="headerlink" title="Gang Scheduling （ 群调度 ）"></a>Gang Scheduling （ 群调度 ）</h4><ol>
-<li>Groups of related threads scheduled as a unit (a gang)</li>
-<li>All members of gang run simultaneously （ 同时 ） on different timeshared CPUs </li>
-<li>All gang members start and end time slices together</li>
-</ol>
-<p><em>其他的应该不是重点</em></p>
-<hr>
-<h2 id="多计算机系统"><a href="#多计算机系统" class="headerlink" title="多计算机系统"></a>多计算机系统</h2><p>一言以蔽之: <u>不共享内存的紧密耦合CPU</u></p>
-<p>又称为cluster computers (群集计算机) , clusters of workstations (群集工作站,COW)</p>
-<p>每个CPU的内存连接在自己的CPU上并且不会被其他CPU访问到. </p>
-<p><em>本节不是重点</em></p>
-<h3 id="互联拓扑结构"><a href="#互联拓扑结构" class="headerlink" title="互联拓扑结构"></a>互联拓扑结构</h3><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%BA%92%E8%81%94%E6%8B%93%E6%89%91.png" alt=""></p>
-<p>星型; 环型; 网格; 双环; 立方; 超立方</p>
-<h3 id="存储转发分组交换"><a href="#存储转发分组交换" class="headerlink" title="存储转发分组交换"></a><strong>存储转发分组交换</strong></h3><h3 id="其他链接方式"><a href="#其他链接方式" class="headerlink" title="其他链接方式"></a><strong>其他链接方式</strong></h3><p>电路交换</p>
-<p>虫孔路由</p>
-<p>…</p>
-<h3 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h3><ul>
-<li>根据计算能力的需要，可能需要在多台刀片服务器上部署 应用，即分布式应用部署。</li>
-<li>为了在这个分布式计算环境上，给最终用户一个集成的开 发环境，让用户感觉是在一台计算机上进行编程一样，底 层多台刀片服务器之间需要使用远程过程调用RPC。</li>
-<li>选型RPC 框架时，主要考虑三个关键方面：传输协议与数 据类型（JSON、XML 等），数据的存储、传输效率，服 务器端对数据的请求方式。</li>
-</ul>
-<hr>
-<h2 id="虚拟化⭐"><a href="#虚拟化⭐" class="headerlink" title="虚拟化⭐"></a>虚拟化⭐</h2><p>虚拟机技术，通常简称为 <strong>虚拟化</strong> virtualization 。<br>该技术允许一台计算机托管多个虚拟机，每个虚拟机可能运行不同的操作系统。</p>
-<p>优点:</p>
-<ul>
-<li>一个虚拟机的故障不会自动导致其他任何故障。 </li>
-<li>拥有更少的物理机可以节省硬件成本并占用更少的空间</li>
-<li>检查点和迁移虚拟机比普通的要容易得多</li>
-<li>在不再受支持或无法在当前硬件上运行的操作系统上运行旧版应用程序</li>
-<li>在软件开发时确保软件可以在不同的OS上运行。</li>
-</ul>
-<p><strong>Hypervisor</strong>, also called Virtual Machine Monitor (VMM, 虚拟机监视器)它是在硬件层之上，独立于操作系统的一层软件。创建虚拟化平台，OS实例运行在这个平台上，使得硬件可以被多个OS和应用共享.</p>
-<p><em><u>搞清楚几种的区别</u></em></p>
-<h3 id="Type-1-Hypervisor"><a href="#Type-1-Hypervisor" class="headerlink" title="Type 1 Hypervisor"></a>Type 1 Hypervisor</h3><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E8%99%9A%E6%8B%9F%E5%8C%961.png" alt=""></p>
-<ul>
-<li>Hypervisor 直接运行在硬件之上, 其余的OS运行在Hypervisor 上.</li>
-<li>但是OS都以为自己在内核上 (实际是用户态)</li>
-<li>被称为 <strong>虚拟内核态</strong> (virtual kernel mode)</li>
-<li>例如: Hyper-V, Xen, Vmware vSphere</li>
-</ul>
-<h3 id="Type-2-Hypervisors"><a href="#Type-2-Hypervisors" class="headerlink" title="Type 2 Hypervisors"></a>Type 2 Hypervisors</h3><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E8%99%9A%E6%8B%9F%E5%8C%962.png" alt=""></p>
-<ul>
-<li>主OS运行在硬件上, Hypervisor 运行在主OS上, 其余OS 运行在Hypervisor 上.</li>
-<li>当虚拟OS第一次启动时, Hypervisor 引导它们安装在虚拟磁盘上</li>
-<li>例如:  Vmware worksation, Parallels, VM virtualBox</li>
-</ul>
-<h3 id="Paravirtualization-半虚拟化"><a href="#Paravirtualization-半虚拟化" class="headerlink" title="Paravirtualization  半虚拟化"></a>Paravirtualization  半虚拟化</h3><p>修改来宾操作系统的源代码，以便根本不执行敏感指令，而进行 <strong>hypervisor calls</strong>.</p>
-<p>Hypervisor 定义接口，该接口由guest操作系统可以使用的一组过程调用组成（API）.</p>
-<p>这种限制guest操作系统敏感操作的方式称为 <strong>半虚拟化</strong> (paravirtualized)</p>
-<hr>
-<h2 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h2><p><em>不是重点</em></p>
-<p>使用中间件技术实现一致性.</p>
-<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%AD%E9%97%B4%E4%BB%B6.png" alt=""></p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -3431,7 +2995,7 @@ T_0\\
 <h4 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h4><ul>
 <li>Deadlock: when two or more processes are interacting, they can sometimes get themselves into a stalemate (僵持) situation they cannot get out of.</li>
 </ul>
-<h4 id="管程"><a href="#管程" class="headerlink" title="管程"></a>管程</h4><ul>
+<h4 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h4><ul>
 <li>Pipe: a sort of pseudofile that used to connect two processes.</li>
 </ul>
 <h3 id="文件管理相关"><a href="#文件管理相关" class="headerlink" title="文件管理相关"></a>文件管理相关</h3><h4 id="设备无关性"><a href="#设备无关性" class="headerlink" title="设备无关性"></a>设备无关性</h4><p>操作系统的主要功能是隐藏磁盘和其他IO设备的特性，并为程序员提供一个与设备无关的文件的漂亮，简洁的抽象模型。<strong>设备无关性</strong> : device-independent</p>
@@ -3525,6 +3089,561 @@ T_0\\
       <tags>
         <tag>学习笔记</tag>
         <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统之多处理器系统</title>
+    <url>/2020/08/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>本章将会涉及:</p>
+<ol>
+<li>多处理器系统</li>
+<li>多计算机系统</li>
+<li>虚拟化</li>
+<li>分布式</li>
+</ol>
+<a id="more"></a>
+<p>对更快的计算是推动计算机进步的动力. 除了从技术层面上突破(如优化芯片) , 人们还设计了这些系统来提高计算水平. </p>
+<ol>
+<li><p>计算机并行处理, 主要体现在同一个计算机中存在多个处理器 , 这些处理器 <u>共享内存模块</u> (share memory model ). 称为 <strong>多处理器系统</strong> (<strong>Multiprocessors</strong>)</p>
+<blockquote>
+<p>注意与 <strong>多核</strong> 的区别</p>
+<p>多处理器指: 在一个机器中有多个处理器;</p>
+<p>多核: 在一个处理器中有多个处理芯片</p>
+</blockquote>
+</li>
+<li><p>多个计算机相互协作. 表现为不同的计算机通过 <u>消息传递</u> 的而协作.(紧耦合)  称为 <strong>多计算机系统</strong> (<strong>Multicomputers</strong> )</p>
+</li>
+<li><p>多个计算机互相协作. 表现为通过 <u>广域分布式系统</u> (指网络) 协作. (松耦合) 称为 <strong>分布式系统</strong> (<strong>Distributed systems</strong>)</p>
+</li>
+</ol>
+<p><img src='https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%89%E7%A7%8D%E6%8A%80%E6%9C%AF.png' height = '500' width = '1300'></img></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E6%AF%94%E8%BE%83.png" alt=""></p>
+<p>除此之外本章还会涉及到 <strong>虚拟化技术</strong> (Virtualization ).</p>
+<h2 id="多处理器系统"><a href="#多处理器系统" class="headerlink" title="多处理器系统"></a>多处理器系统</h2><p>在一个计算机系统内部，两个以上的CPU共享对一个公共RAM都拥有的完全访问权限. 根据不同CPU读写速度的不同又分为</p>
+<ol>
+<li><p>UMA ( Uniform Memory Access ， 统一内存访问)</p>
+<p>每个存储器字的读出速度是一样快的。 </p>
+<p>主要有三种硬件实现</p>
+<ol>
+<li>Bus-Based Architectures 总线结构</li>
+<li>Crossbar Switches  交叉开关</li>
+<li>Multistage Switching Networks  多级交换网络</li>
+</ol>
+</li>
+<li><p>NUMA ( Nonuniform Memory Access， 非统一内存 访问 )</p>
+<p>存储器访问时间取决于相对于处理器的存储器位置.</p>
+<p>访问远程存储器的速度比本地存储器慢</p>
+</li>
+</ol>
+<h3 id="UMA-的硬件实现"><a href="#UMA-的硬件实现" class="headerlink" title="UMA 的硬件实现"></a>UMA 的硬件实现</h3><p><em><u>了解</u></em></p>
+<h4 id="总线结构"><a href="#总线结构" class="headerlink" title="总线结构"></a>总线结构</h4><p>字面意思, 每个CPU通过总线与内存交互. 又可分为三种:</p>
+<ol>
+<li>不带独立cache</li>
+<li>拥有独立cache</li>
+<li>拥有独立cache和私有内存</li>
+</ol>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%89%E7%A7%8D%E6%80%BB%E7%BA%BF.png" alt=""></p>
+<p>问题: CPU会争夺总线的使用权, 引起<strong>竞争</strong>.</p>
+<h4 id="交叉开关"><a href="#交叉开关" class="headerlink" title="交叉开关"></a>交叉开关</h4><p>对于 $n$ 个CPU 构建 $n\times n$ 的交叉开关网络. </p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%BA%A4%E5%8F%89%E5%BC%80%E5%85%B3.png" alt=""></p>
+<p>优点: 绝对不会竞争或阻塞</p>
+<p>缺点: 开销过大</p>
+<h4 id="多级交换网络"><a href="#多级交换网络" class="headerlink" title="多级交换网络"></a>多级交换网络</h4><p>使用 2*2 的交换机来构建多级交换网络.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E5%A4%9A%E7%BA%A7%E4%BA%A4%E6%8D%A2.png" alt=""></p>
+<p>上图是三级交换网络, 对于 $n$ 个CPU, 仅需要 $3\times \frac n 2$ 个交换机. 同时每个线路的可通达度大幅提高了.</p>
+<h3 id="OS-划分类型"><a href="#OS-划分类型" class="headerlink" title="OS 划分类型"></a>OS 划分类型</h3><h4 id="类型１-每个CPU都有自己的OS"><a href="#类型１-每个CPU都有自己的OS" class="headerlink" title="类型１: 每个CPU都有自己的OS"></a>类型１: 每个CPU都有自己的OS</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E7%8B%AC%E8%87%AA1.png" alt=""></p>
+<ul>
+<li>内存划分为n个部分</li>
+<li>为每个CPU分配自己的专用内存和操作系统的专用副本</li>
+<li>OS每个操作系统都有自己的表，不共享进程；<br>没有共享页面</li>
+</ul>
+<h4 id="类型2-主从处理器"><a href="#类型2-主从处理器" class="headerlink" title="类型2: 主从处理器"></a>类型2: 主从处理器</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%BB%E4%BB%8E2.png" alt=""></p>
+<ul>
+<li>OS及其表的一个副本位于CPU1上</li>
+<li>所有系统调用都重定向到CPU1进行处理</li>
+<li>缺点: 如果从处理器过多, 主处理器的性能将成为系统的瓶颈</li>
+</ul>
+<h4 id="类型3-对称处理器"><a href="#类型3-对称处理器" class="headerlink" title="类型3: 对称处理器"></a>类型3: 对称处理器</h4><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E5%AF%B9%E7%A7%B03.png" alt=""></p>
+<ul>
+<li>内存中只有一个OS副本，但是任何CPU都可以运行它</li>
+<li>使用互斥量(锁)保证只有一个处理器在使用OS </li>
+</ul>
+<h3 id="处理器的调度"><a href="#处理器的调度" class="headerlink" title="处理器的调度"></a>处理器的调度</h3><h4 id="分时调度-Timesharing"><a href="#分时调度-Timesharing" class="headerlink" title="分时调度 Timesharing"></a>分时调度 Timesharing</h4><p>Using a single data structure for scheduling a multiprocessor</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/time.png" alt=""></p>
+<h4 id="分空间调度-Space-sharing"><a href="#分空间调度-Space-sharing" class="headerlink" title="分空间调度 Space sharing"></a>分空间调度 Space sharing</h4><p>multiple threads at same time across multiple CPUs</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/15/space.png" alt=""></p>
+<h4 id="Gang-Scheduling-（-群调度-）"><a href="#Gang-Scheduling-（-群调度-）" class="headerlink" title="Gang Scheduling （ 群调度 ）"></a>Gang Scheduling （ 群调度 ）</h4><ol>
+<li>Groups of related threads scheduled as a unit (a gang)</li>
+<li>All members of gang run simultaneously （ 同时 ） on different timeshared CPUs </li>
+<li>All gang members start and end time slices together</li>
+</ol>
+<p><em>其他的应该不是重点</em></p>
+<hr>
+<h2 id="多计算机系统"><a href="#多计算机系统" class="headerlink" title="多计算机系统"></a>多计算机系统</h2><p>一言以蔽之: <u>不共享内存的紧密耦合CPU</u></p>
+<p>又称为cluster computers (群集计算机) , clusters of workstations (群集工作站,COW)</p>
+<p>每个CPU的内存连接在自己的CPU上并且不会被其他CPU访问到. </p>
+<p><em>本节不是重点</em></p>
+<h3 id="互联拓扑结构"><a href="#互联拓扑结构" class="headerlink" title="互联拓扑结构"></a>互联拓扑结构</h3><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%BA%92%E8%81%94%E6%8B%93%E6%89%91.png" alt=""></p>
+<p>星型; 环型; 网格; 双环; 立方; 超立方</p>
+<h3 id="存储转发分组交换"><a href="#存储转发分组交换" class="headerlink" title="存储转发分组交换"></a><strong>存储转发分组交换</strong></h3><h3 id="其他链接方式"><a href="#其他链接方式" class="headerlink" title="其他链接方式"></a><strong>其他链接方式</strong></h3><p>电路交换</p>
+<p>虫孔路由</p>
+<p>…</p>
+<h3 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h3><ul>
+<li>根据计算能力的需要，可能需要在多台刀片服务器上部署 应用，即分布式应用部署。</li>
+<li>为了在这个分布式计算环境上，给最终用户一个集成的开 发环境，让用户感觉是在一台计算机上进行编程一样，底 层多台刀片服务器之间需要使用远程过程调用RPC。</li>
+<li>选型RPC 框架时，主要考虑三个关键方面：传输协议与数 据类型（JSON、XML 等），数据的存储、传输效率，服 务器端对数据的请求方式。</li>
+</ul>
+<hr>
+<h2 id="虚拟化⭐"><a href="#虚拟化⭐" class="headerlink" title="虚拟化⭐"></a>虚拟化⭐</h2><p>虚拟机技术，通常简称为 <strong>虚拟化</strong> virtualization 。<br>该技术允许一台计算机托管多个虚拟机，每个虚拟机可能运行不同的操作系统。</p>
+<p>优点:</p>
+<ul>
+<li>一个虚拟机的故障不会自动导致其他任何故障。 </li>
+<li>拥有更少的物理机可以节省硬件成本并占用更少的空间</li>
+<li>检查点和迁移虚拟机比普通的要容易得多</li>
+<li>在不再受支持或无法在当前硬件上运行的操作系统上运行旧版应用程序</li>
+<li>在软件开发时确保软件可以在不同的OS上运行。</li>
+</ul>
+<p><strong>Hypervisor</strong>, also called Virtual Machine Monitor (VMM, 虚拟机监视器)它是在硬件层之上，独立于操作系统的一层软件。创建虚拟化平台，OS实例运行在这个平台上，使得硬件可以被多个OS和应用共享.</p>
+<p><em><u>搞清楚几种的区别</u></em></p>
+<h3 id="Type-1-Hypervisor"><a href="#Type-1-Hypervisor" class="headerlink" title="Type 1 Hypervisor"></a>Type 1 Hypervisor</h3><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E8%99%9A%E6%8B%9F%E5%8C%961.png" alt=""></p>
+<ul>
+<li>Hypervisor 直接运行在硬件之上, 其余的OS运行在Hypervisor 上.</li>
+<li>但是OS都以为自己在内核上 (实际是用户态)</li>
+<li>被称为 <strong>虚拟内核态</strong> (virtual kernel mode)</li>
+<li>例如: Hyper-V, Xen, Vmware vSphere</li>
+</ul>
+<h3 id="Type-2-Hypervisors"><a href="#Type-2-Hypervisors" class="headerlink" title="Type 2 Hypervisors"></a>Type 2 Hypervisors</h3><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E8%99%9A%E6%8B%9F%E5%8C%962.png" alt=""></p>
+<ul>
+<li>主OS运行在硬件上, Hypervisor 运行在主OS上, 其余OS 运行在Hypervisor 上.</li>
+<li>当虚拟OS第一次启动时, Hypervisor 引导它们安装在虚拟磁盘上</li>
+<li>例如:  Vmware worksation, Parallels, VM virtualBox</li>
+</ul>
+<h3 id="Paravirtualization-半虚拟化"><a href="#Paravirtualization-半虚拟化" class="headerlink" title="Paravirtualization  半虚拟化"></a>Paravirtualization  半虚拟化</h3><p>修改来宾操作系统的源代码，以便根本不执行敏感指令，而进行 <strong>hypervisor calls</strong>.</p>
+<p>Hypervisor 定义接口，该接口由guest操作系统可以使用的一组过程调用组成（API）.</p>
+<p>这种限制guest操作系统敏感操作的方式称为 <strong>半虚拟化</strong> (paravirtualized)</p>
+<hr>
+<h2 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h2><p><em>不是重点</em></p>
+<p>使用中间件技术实现一致性.</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202008/08/%E4%B8%AD%E9%97%B4%E4%BB%B6.png" alt=""></p>
+<hr>
+<p><strong>操作系统系列</strong></p>
+<ol>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/14/操作系统之概述/" target="_blank" rel="noopener">操作系统之概述</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/05/操作系统之进程线程/" target="_blank" rel="noopener">操作系统之进程线程</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/08/操作系统之进程间通信/" target="_blank" rel="noopener">操作系统之进程间通信</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/04/操作系统之死锁/" target="_blank" rel="noopener">操作系统之死锁</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/09/操作系统之内存管理/" target="_blank" rel="noopener">操作系统之内存管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/05/操作系统之IO管理/" target="_blank" rel="noopener">操作系统之IO管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/06/操作系统之文件系统/" target="_blank" rel="noopener">操作系统之文件系统</a></li>
+<li>操作系统之多处理器系统 (本文)</li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/11/操作系统之安全/" target="_blank" rel="noopener">操作系统之安全</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>专业课</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统之安全</title>
+    <url>/2020/08/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%AE%89%E5%85%A8/</url>
+    <content><![CDATA[<p>本章将涉及:</p>
+<ol>
+<li>安全与威胁</li>
+<li>简易密码学(真的很简易!)</li>
+<li>用户认证</li>
+<li>系统受到的攻击<ol>
+<li>来自内部</li>
+<li>来自外部</li>
+</ol>
+</li>
+<li>保护机制</li>
+<li>信任系统</li>
+<li>OS安全</li>
+</ol>
+<p><em>本文匆匆赶制, 内容粗糙简陋</em></p>
+<a id="more"></a>
+<h2 id="安全与威胁"><a href="#安全与威胁" class="headerlink" title="安全与威胁"></a>安全与威胁</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Threat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data confidentiality 数据机密性</td>
+<td>Exposure of data 数据泄露</td>
+</tr>
+<tr>
+<td>Data integrity           数据完整性</td>
+<td>Tampering with data 数据篡改</td>
+</tr>
+<tr>
+<td>System available     系统可用性</td>
+<td>Denial of service      拒绝服务</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>首先保护数据的机密性, 防止数据泄露.   需要保证数据不被外界所知.</p>
+<p>其次要保证数据的完整性, 防止数据被破坏.  不能被外界破坏.</p>
+<p>最后要保证系统的可用性, 防止系统拒绝服务. 例如DoS攻击等</p>
+<p>入侵者 intruder or sometimes 敌人 adversary<br>a) Passive intruders(被动入侵者)- to read files they are not authorized to<br>read<br>b) Active intruders(主动入侵者)- to make unauthorized changes to data</p>
+<p>常见的安全入侵场景有:</p>
+<ol>
+<li>Casual prying (窥探) by nontechnical users     被非专业使用者随意窥探</li>
+<li>Snooping by insiders  被内部人员窥视</li>
+<li>Determined attempt to make money  为了利益</li>
+<li>Commercial or military espionage   商业或军事间谍</li>
+</ol>
+<p>常见的数据丢失场景有:</p>
+<ol>
+<li><p>天灾</p>
+<p>fires, floods, wars</p>
+</li>
+<li><p>软硬件错误</p>
+<p>CPU malfunction, bad disk, program bugs </p>
+</li>
+<li><p>人为错误</p>
+<p>data entry, wrong tape mounted</p>
+<hr>
+</li>
+</ol>
+<h2 id="密码学基础"><a href="#密码学基础" class="headerlink" title="密码学基础"></a>密码学基础</h2><p><em><u>了解即可</u></em></p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul>
+<li>斯巴达将军</li>
+<li>戚继光: 反切注音法</li>
+<li>周恩来: 豪密</li>
+<li>菲利普与玛丽女王</li>
+<li>一战: 齐默尔曼电报</li>
+<li>二战: Enigma密码机, 图灵</li>
+</ul>
+<h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><ul>
+<li>? - 1949 古典密码<ul>
+<li>密码学还不是科学, 而是艺术</li>
+<li>数据的安全<strong>基于算法的保密</strong></li>
+<li>一般的加密方法是<strong>替换</strong></li>
+<li>单表替换密码(凯撒密码), 多表替换密码(Playfair密码, Hill密码) , 转轮密码(Enigma)</li>
+</ul>
+</li>
+<li>1949 - 1975 复杂计算的密码<ul>
+<li>由于算力提升使得复杂计算的密码称为可能</li>
+<li>1949年,香农发表了&lt;&lt;保密系统的信息理论&gt;&gt;(The Communication Theory of Secrecy Systems), 它证明了密码编码 学是如何置于坚实的数学基础之上的，从此密码学发展成为 一个专门学科。——标志性事件 </li>
+<li>数据的安全<strong>基于密钥</strong>而不是算法的保密</li>
+</ul>
+</li>
+<li>1975 - 公钥密码<ul>
+<li>公钥密码学成为主要研究方向 </li>
+<li><strong>公钥密码</strong>使得发送端和接收端<strong>无密钥传输的保密通信</strong>成为可能</li>
+</ul>
+</li>
+</ul>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h4 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h4><ul>
+<li>传统密码/常规密码/私钥密码/单钥密码 conventional / private-key / single-key</li>
+<li>发送方和接收方共享一个共同的密钥</li>
+<li>20世纪70年代以前私钥密码是唯一类型 </li>
+<li>至今仍广泛应用</li>
+</ul>
+<h4 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h4><ul>
+<li>公钥/双钥/非对称密码都是指使用两个密钥: <ul>
+<li>公钥：可以对任何人公开的密钥，用于加密消息或 验证签名。 </li>
+<li>私钥：只能由接收者私存，用于解密消息或签名。 </li>
+</ul>
+</li>
+<li>非对称 <ul>
+<li>用于加密消息或验证签名的人不能进行消息的加密或消息的签名。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="用户认证⭐"><a href="#用户认证⭐" class="headerlink" title="用户认证⭐"></a>用户认证⭐</h2><p>Authentication<br>user authentication（用户验证） crackers（骇客）</p>
+<p>认证必须要能够标识使用者的身份</p>
+<p>用户认证应当在使用系统之前完成</p>
+<p>三种认证方式</p>
+<ol>
+<li><p>Something the user knows</p>
+<p>密码, 口令</p>
+</li>
+<li><p>Something the user has</p>
+<p>钥匙, 芯片, 动态密码, 验证码</p>
+</li>
+<li><p>Something the user is</p>
+<p>指纹, 虹膜</p>
+</li>
+</ol>
+<blockquote>
+<p>UNIX 安全系统会对输入的密码进行<strong>加盐</strong>(Salt), 即将每一个口令同一个叫做盐（Salt）的n位随机数相关联。无论何时口令改变，这个随机数就改变。将口令和随机数连接起来，一同加密，加密后的结果存放进口令文件。</p>
+<p>One-Time passwords 对于函数 y=f(x) 已知y求x的难度远大于已知x求y的难度. </p>
+</blockquote>
+<h3 id="一些用户认证时的对策"><a href="#一些用户认证时的对策" class="headerlink" title="一些用户认证时的对策"></a>一些用户认证时的对策</h3><ul>
+<li>Limiting times when someone can log in    限制登录时间</li>
+<li>Automatic callback at number prespecified   自动回调 (例如判断密码是否太过简单)</li>
+<li>Limited number of login tries   限制尝试的登录次数</li>
+<li>A database of all logins    记录所有尝试登录的数据</li>
+<li>Simple login name/password as a trap  使用简单的密码作为陷阱 (假装登陆成功)</li>
+<li>security personnel notified when attacker bites 当检测到攻击者时通知安全人员</li>
+</ul>
+<hr>
+<h2 id="系统受到的攻击"><a href="#系统受到的攻击" class="headerlink" title="系统受到的攻击"></a>系统受到的攻击</h2><h3 id="Insider-Attacks-内部攻击"><a href="#Insider-Attacks-内部攻击" class="headerlink" title="Insider Attacks 内部攻击"></a>Insider Attacks 内部攻击</h3><h4 id="Logic-Bombs"><a href="#Logic-Bombs" class="headerlink" title="Logic Bombs"></a>Logic Bombs</h4><p>（逻辑炸弹）由一些公司的编程人员或使用这些受保护的计算机、编制核心软件的员工实施.秘密的嵌在产品的操作系统中的代码，特定情况下爆炸</p>
+<h4 id="Trap-Doors"><a href="#Trap-Doors" class="headerlink" title="Trap Doors"></a>Trap Doors</h4><p>（后门）系统程序员跳过正常的认证过程并插入一段代码造成<br>的。代码审查 code review</p>
+<h4 id="Login-Spoofing"><a href="#Login-Spoofing" class="headerlink" title="Login Spoofing"></a>Login Spoofing</h4><p>（登录欺骗）假冒的登录屏幕</p>
+<h4 id="Trojan-Horses"><a href="#Trojan-Horses" class="headerlink" title="Trojan Horses"></a>Trojan Horses</h4><p>特洛伊木马 诱导用户运行攻击代码</p>
+<h4 id="Buffer-Overflow"><a href="#Buffer-Overflow" class="headerlink" title="Buffer Overflow"></a>Buffer Overflow</h4><p>缓冲区溢出攻击</p>
+<h3 id="Outside-Attacks-外部攻击"><a href="#Outside-Attacks-外部攻击" class="headerlink" title="Outside Attacks 外部攻击"></a>Outside Attacks 外部攻击</h3><h4 id="Virus"><a href="#Virus" class="headerlink" title="Virus"></a>Virus</h4><p>病毒: 不断地复制自身并传播</p>
+<h4 id="Morris-Worm"><a href="#Morris-Worm" class="headerlink" title="Morris Worm"></a>Morris Worm</h4><p>蠕虫: 先潜伏自己的存在, 直到传播到一定规模后再爆发</p>
+<p>(zero-day Attack</p>
+<p>Zombie</p>
+<p>…</p>
+<h2 id="系统设计的原则"><a href="#系统设计的原则" class="headerlink" title="系统设计的原则"></a>系统设计的原则</h2><ol>
+<li>System design should be public </li>
+<li>Default should be no access </li>
+<li>Check for current authority </li>
+<li>Give each process least privilege possible </li>
+<li>Protection mechanism should be 保护机制应当<ul>
+<li>simple 简单</li>
+<li>uniform  统一</li>
+<li>in lowest layers of system  处于系统底层</li>
+</ul>
+</li>
+<li>Scheme should be psychologically acceptable</li>
+</ol>
+<h2 id="保护机制-⭐"><a href="#保护机制-⭐" class="headerlink" title="保护机制 ⭐"></a>保护机制 ⭐</h2><h3 id="Protection-Domains"><a href="#Protection-Domains" class="headerlink" title="Protection Domains"></a>Protection Domains</h3><p>注: 下文中提到的 <em>用户</em> 也可能指进程</p>
+<p>保护域</p>
+<p>a domain is a set of （object， right） pairs. Each pair specifies an object and some<br>subset of the operations that can be performed. A right means permission to perform one of the operations.<br>一对对象权限的组合，每对组合指定一个对象和一些可在上面运行的操作子集指对某个操作的执行许可.</p>
+<p>人话: 一张表, 记录了所有的文件和每个用户允许对文件进行的操作</p>
+<p>缺点: 太大</p>
+<h3 id="Access-Control-Lists-ACL"><a href="#Access-Control-Lists-ACL" class="headerlink" title="Access Control Lists , ACL"></a>Access Control Lists , ACL</h3><p>访问控制列表</p>
+<p>每个对象的有序列表里包含了所有可访问对象的域以及这些域如何访问这些对象的方法</p>
+<p>人话: 由于文件多而域少, 因此在每个文件处记录哪些域能进行什么操作. 将保护域按文件分解</p>
+<h3 id="Capabilities"><a href="#Capabilities" class="headerlink" title="Capabilities"></a>Capabilities</h3><p>权能字</p>
+<p>使用按行存储时，与每个进程关联的是可访问的对象列表，以及每个对象上叫做权能字列表，每个单独的项目叫做权能字</p>
+<p>人话: 每个用户自己储存对每个文件能进行什么操作, 将保护域按用户分解</p>
+<p>因此要防止权能字被用户自己篡改(三种方法)</p>
+<ol>
+<li>First way, require a tagged architecture </li>
+<li>Second way, keep the C-list inside the OS </li>
+<li>Third way, keep the C-list in user space, but manage the capabilities cryptographically</li>
+</ol>
+<h2 id="可信任系统"><a href="#可信任系统" class="headerlink" title="可信任系统"></a>可信任系统</h2><p>完全可信任的系统是否存在?</p>
+<p>可信任系统的核心是 <strong>可信计算基Trusted Computing Base, TCB</strong></p>
+<p>TCB 是一种机制, 保护所有敏感操作; (例如切换进程, 进程创建, 内存映射管理等) 任何试图访问这些操作的进程必须通过可信计算基的安全审查, 称为 reference monitor (访问监视器)</p>
+<blockquote>
+<p>All system calls go through the reference monitor for security checking</p>
+</blockquote>
+<p>TCB可以通过硬件, 软件, 固件的形式实现, 它只是个机制. </p>
+<p>一旦可信计算机基的某个构件出现程序错误或者安全隐患，就对整个系统的安全造成危害。 与之相反，如果除可信计算基之外的系统的其他部分出现问题，也只是泄漏了系统安全策略赋予它们的相关权限而已，这些权限一般都是比较低的。</p>
+<p>现代操作系统努力降低TCB的大小，使得对其代码库彻底的检查成为可能.</p>
+<hr>
+<p><strong>操作系统系列</strong></p>
+<ol>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/14/操作系统之概述/" target="_blank" rel="noopener">操作系统之概述</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/05/操作系统之进程线程/" target="_blank" rel="noopener">操作系统之进程线程</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/08/操作系统之进程间通信/" target="_blank" rel="noopener">操作系统之进程间通信</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/04/操作系统之死锁/" target="_blank" rel="noopener">操作系统之死锁</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/06/09/操作系统之内存管理/" target="_blank" rel="noopener">操作系统之内存管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/05/操作系统之IO管理/" target="_blank" rel="noopener">操作系统之IO管理</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/06/操作系统之文件系统/" target="_blank" rel="noopener">操作系统之文件系统</a></li>
+<li>🔗<a href="https://luy-hb.xyz/2020/08/08/操作系统之多处理器系统/" target="_blank" rel="noopener">操作系统之多处理器系统</a></li>
+<li>操作系统之安全  (本文)</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>专业课</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初窥HTTP之二_HTTP报文</title>
+    <url>/2020/08/03/%E5%88%9D%E7%AA%A5HTTP%E4%B9%8B%E4%BA%8C-HTTP%E6%8A%A5%E6%96%87/</url>
+    <content><![CDATA[<p>HTTP 报文的信息 </p>
+<p>HTTP 状态码</p>
+<p>HTTP 首部(待完成)</p>
+<a id="more"></a>
+<h2 id="HTTP-报文的信息"><a href="#HTTP-报文的信息" class="headerlink" title="HTTP 报文的信息"></a>HTTP 报文的信息</h2><p>本段将介绍HTTP报文中包括有那些信息.包括:</p>
+<ol>
+<li>报文的结构</li>
+<li>报文编码</li>
+<li>多部分对象集合</li>
+<li>范围传输</li>
+<li>内容协商</li>
+</ol>
+<h3 id="报文结构"><a href="#报文结构" class="headerlink" title="报文结构"></a>报文结构</h3><p>HTTP报文是由多行数据构成的, 每行之间使用<code>CR+LF</code>(\r\n) 进行换行.</p>
+<p>报文可被分为报文首部与报文主体, 后者并不是必须的.</p>
+<p>报文首部包括:</p>
+<ul>
+<li>请求行 / 状态行</li>
+<li>请求首部字段 / 响应首部字段</li>
+<li>通用首部字段</li>
+<li>实体首部字段</li>
+<li>其他</li>
+</ul>
+<p><strong>请求行</strong></p>
+<p>包括请求的方法, 请求URI, HTTP版本</p>
+<p><strong>状态行</strong></p>
+<p>包括响应的结果状态码, 原因短语, HTTP版本</p>
+<p><strong>首部字段</strong></p>
+<p>包括表示各种条件和属性的各类首部语句. 分为四种: </p>
+<ol>
+<li>请求首部字段(仅在请求报文中出现); </li>
+<li>响应首部字段(仅在响应报文中出现); </li>
+<li>通用首部字段; </li>
+<li>实体首部字段;</li>
+</ol>
+<p><strong>其他</strong></p>
+<p>其他未在RFC中定义的字段, 如Cookie</p>
+<h3 id="报文编码"><a href="#报文编码" class="headerlink" title="报文编码"></a>报文编码</h3><p>对传输的数据进行编码可以提高传输速率, 但是编码与解码会消耗CPU资源.</p>
+<h4 id="报文主体与实体主体"><a href="#报文主体与实体主体" class="headerlink" title="报文主体与实体主体"></a>报文主体与实体主体</h4><p>报文是HTTP实际传输的字节流. 报文包括报文首部与报文主体.(报文主体可以是0个或1个)</p>
+<p>实体是作为请求或响应的有效载荷数据. 由实体首部与实体主体组成.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(没有报文主体)</span><br><span class="line">	没有实体</span><br><span class="line">if(有报文主体)</span><br><span class="line">	if(有1个实体)</span><br><span class="line">		if(实体未被处理)	&#x2F;&#x2F;处理指: 传输中进行编码操作</span><br><span class="line">			无实体首部</span><br><span class="line">			实体主体&#x3D;&#x3D;报文主体</span><br><span class="line">		if(实体被处理)</span><br><span class="line">			有实体首部</span><br><span class="line">			实体主体!&#x3D;报文主体</span><br><span class="line">	if(有多个实体)</span><br><span class="line">		有实体首部</span><br><span class="line">		实体主体!&#x3D;报文主体</span><br></pre></td></tr></table></figure>
+<p>个人理解,不一定对.</p>
+<p><a href="https://www.zhihu.com/question/263752229" target="_blank" rel="noopener">知乎:http报文和实体的差别？</a></p>
+<h4 id="压缩传输"><a href="#压缩传输" class="headerlink" title="压缩传输"></a>压缩传输</h4><p>将实体内容通过编码进行压缩, 常见的内容编码有:</p>
+<ul>
+<li>gzip</li>
+<li>compress</li>
+<li>deflate</li>
+<li>identify (不进行编码)</li>
+</ul>
+<h3 id="分割传输"><a href="#分割传输" class="headerlink" title="分割传输"></a>分割传输</h3><p>将大容量的数据分割传输, 让浏览器逐步显示页面, 称作 <strong>分块传输编码</strong>(Chunked Transfer Coding).</p>
+<p>实体被分割成的多个部分使用一个十六进制来标记块的大小. </p>
+<h3 id="多部份对象集合"><a href="#多部份对象集合" class="headerlink" title="多部份对象集合"></a>多部份对象集合</h3><p><a href="https://en.wikipedia.org/wiki/MIME" target="_blank" rel="noopener"><em>Wiki:MIME</em></a></p>
+<p>多功能Internet邮件扩展（MIME）是一种Internet标准，以支持除ASCII以外的字符集以及音频，视频，图像和应用程序附件的文本.</p>
+<p>MIME使用了Multipart 的方法来容纳多种不同类型的数据, 这个方法也被HTTP 采纳.</p>
+<ul>
+<li><p>multipart/form-data</p>
+<p>这是在Web上传表单时使用</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Content-Type: multipart&#x2F;form-data; boundary&#x3D;AaB03x</span><br><span class="line"></span><br><span class="line">--AaB03x</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;fieldl&quot;</span><br><span class="line"></span><br><span class="line">Joe Blow</span><br><span class="line">--AaB03x</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;pics&quot;: filename&#x3D;filel. txt&quot;</span><br><span class="line">Content-Type: text&#x2F;plain</span><br><span class="line"></span><br><span class="line">(fi1e1.txt的数据)</span><br><span class="line">--AaB03x--</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>multipart/byteranges</p>
+<p>状态码206（Partial Content，部分内容）</p>
+<p>响应报文包含了多个范围的内容时使用。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Http&#x2F;1.1 206 parTial Content</span><br><span class="line">Date: Fri, 13 Jul 2012 02: 45: 26 GMT</span><br><span class="line">Last-Modified: Fri, 31 Aug 2007 02: 02: 20 GMT</span><br><span class="line">Content-Type: multipart&#x2F;byteranges: boundary&#x3D;THIS_STRING_SEPARATES</span><br><span class="line"></span><br><span class="line">--THIS_STRING_SEPARATES</span><br><span class="line">Content-Type: application&#x2F;pdf</span><br><span class="line">Content-Range: bytes 500-999&#x2F;8000</span><br><span class="line"></span><br><span class="line">...(范围指定的数据)...</span><br><span class="line">--THIS_STRING_SEPARATES</span><br><span class="line">Content-Type: application&#x2F;pdf</span><br><span class="line">Content-Range: bytes 7000-7999&#x2F;8000</span><br><span class="line"></span><br><span class="line">...(范围指定的数据)...</span><br><span class="line">--THIS_STRING_SEPARATES--</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在HTTP报文中使用多部分对象集合时，需要在首部字段里加上Content-type；</p>
+</li>
+<li><p>报文主体中包括多个实体,每个实体都由实体头部与实体主体组成</p>
+<p>实体的头部与主体之间依旧使用CR+LF换行.</p>
+</li>
+<li><p>使用boundary字符串来划分多部分对象集合指明的各类实体。在boundary字符串指定的各个实体的起始行之前插入”—“标记作为结束.</p>
+</li>
+<li><p>也可以在某处嵌套使用多部份对象集合</p>
+</li>
+</ul>
+<h3 id="范围请求"><a href="#范围请求" class="headerlink" title="范围请求"></a>范围请求</h3><p>指定范围发送的请求叫做<code>范围请求</code>(Range Request)。执行范围请求时，会用到首部字段<code>Range</code>来指定资源的byte范围。byte范围的指定形式如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Range: bytes&#x3D;5001-10000	&#x2F;&#x2F;5001~10000字节</span><br><span class="line">Range: bytes&#x3D;5001-		&#x2F;&#x2F;从5001字节之后全部的</span><br><span class="line">Range: bytes&#x3D;-3000, 5000-7000	&#x2F;&#x2F;从一开始到3000字节和5000~7000字节的多重范围</span><br></pre></td></tr></table></figure>
+<p>针对范围请求，响应会返回状态码为<code>206 Partial Content</code>的响应报文。</p>
+<p>对于多重范围的范围请求，响应会在首部字段<code>Content-Type</code>表明<code>multipart/byteranges</code>后返回响应报文。</p>
+<p>如果服务器端无法响应范围请求，则会返回状态码<code>200 OK</code>和完整的实体内容。</p>
+<h3 id="内容协商"><a href="#内容协商" class="headerlink" title="内容协商"></a>内容协商</h3><p><code>内容协商</code>(Content Negotiation)机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户端最为适合的资源。内容协商会以响应资源的语言、字符集、编码方式等作为判断的基准。</p>
+<p>包含在请求报文中的某些首部字段就是判断的基准，比如：<code>Accept</code>、<code>Accept-Charset</code>、<code>Accept-Encoding</code>、<code>Accept-Language</code>、<code>Content-Language</code>。</p>
+<p>内容协商技术有以下3种类型：服务器驱动协商(Server-driven Negotiation)、客户端驱动协商(Agent-driven Negotiation)、透明协商(Transparent Negotiation)。</p>
+<hr>
+<h2 id="HTTP-状态码"><a href="#HTTP-状态码" class="headerlink" title="HTTP 状态码"></a>HTTP 状态码</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>类别</th>
+<th>原因短语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1XX</td>
+<td>Informational  (信息性状态码)</td>
+<td>接收的请求正在处理</td>
+</tr>
+<tr>
+<td>2XX</td>
+<td>Success（成功状态码）</td>
+<td>请求正常处理完毕</td>
+</tr>
+<tr>
+<td>3XX</td>
+<td>Redirection（重定向状态码）</td>
+<td>需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td>Client Error（客户端错误状态码）</td>
+<td>服务器无法处理请求</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td>Server Error（服务器错误状态码）</td>
+<td>服务器处理请求出错</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="2xx-成功"><a href="#2xx-成功" class="headerlink" title="2xx 成功"></a>2xx 成功</h3><blockquote>
+<p>表明请求被正常处理了</p>
+</blockquote>
+<ul>
+<li><p>200(OK) : 正常处理, 该返回啥返回啥</p>
+</li>
+<li><p>204(No Content): 请求处理成功, 但没有资源可返回. 浏览器显示的页面不会更新.</p>
+<p>一般用在只需要从客户端往服务器发送消息,而对客户端不需要发送新消息内容的情况下</p>
+</li>
+<li><p>206(Partial Content): 范围请求,响应报文中包含<code>Content-Range</code>指定范围实体</p>
+</li>
+</ul>
+<h3 id="3xx-重定向"><a href="#3xx-重定向" class="headerlink" title="3xx 重定向"></a>3xx 重定向</h3><blockquote>
+<p>表明浏览器需要执行某些特殊处理以正确处理请求</p>
+</blockquote>
+<ul>
+<li>301(Moved Permanently): 永久性重定向,资源<code>URI</code>改变.</li>
+<li>302(Found): 临时性重定向.希望用户(本次)使用新的<code>URI</code>访问</li>
+<li>303(See Other): 和302来ISI,但是明确表示客户端应当采用GET方法获取资源.</li>
+<li>304(Not Modified): 资源已找到,但未符合条件(不把任何相应主体).虽然是<code>3</code>系列,但和重定向没有关系</li>
+<li>307(Temporary Redirect): 临时重定向.和<code>302</code>类似.</li>
+</ul>
+<h3 id="4xx-客户端错误"><a href="#4xx-客户端错误" class="headerlink" title="4xx 客户端错误"></a>4xx 客户端错误</h3><blockquote>
+<p>表明客户端是发生错误的原因所在</p>
+</blockquote>
+<ul>
+<li>400(Bad Request): 请求报文中存在语法错误.浏览器会像200一样对待此状态码</li>
+<li>401(Unauthorized): 发送的请求需要通过<code>HTTP</code>认证.若之前已进行过一次请求,则表示用户认证失败.(初次会弹出认证用的对话框)</li>
+<li>403(Forbidden): 对请求资源的访问被服务器拒绝了.服务端可以(也可以不)给出 <code>拒绝的详细理由</code></li>
+<li>404(Not Found): 没有找到请求的资源. (也有可能是拒绝但且不想说明理由时使用)</li>
+</ul>
+<h3 id="5xx-服务器错误"><a href="#5xx-服务器错误" class="headerlink" title="5xx 服务器错误"></a>5xx 服务器错误</h3><blockquote>
+<p>表明服务器本身发生错误</p>
+</blockquote>
+<ul>
+<li>500(Internal Server Error): 执行请求时发生错误.可能是<code>Web</code>应用的<code>bug</code>或<code>临时故障</code></li>
+<li>503(Service Unavailable): 服务器暂时处于超负荷或者正在进行停机维护.</li>
+</ul>
+<p>事实上不少返回的<code>状态码</code>是错误的.</p>
+<p>此外, 服务器可以指定自己与客户端的协商状态码.</p>
+<hr>
+<h2 id="HTTP-首部"><a href="#HTTP-首部" class="headerlink" title="HTTP 首部"></a>HTTP 首部</h2><p>待完成</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>驭龙术</category>
+        <category>Web开发</category>
+        <category>HTTP</category>
+      </categories>
+      <tags>
+        <tag>读书笔记:技术</tag>
+        <tag>HTTP</tag>
       </tags>
   </entry>
 </search>
