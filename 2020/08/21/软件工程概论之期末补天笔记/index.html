@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="综述了学校软件工程概论课程的常考知识点(中英对照), 不保证考点完全覆盖. 推荐一位学长的博客, 建议搭配打印店往年题食用, 效果奇佳. 西电无纸化之软件工程分群:929629717">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程概论之期末补天笔记">
+<meta property="og:url" content="http://yoursite.com/2020/08/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA%E4%B9%8B%E6%9C%9F%E6%9C%AB%E8%A1%A5%E5%A4%A9%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="(ﾟ∀。)">
+<meta property="og:description" content="综述了学校软件工程概论课程的常考知识点(中英对照), 不保证考点完全覆盖. 推荐一位学长的博客, 建议搭配打印店往年题食用, 效果奇佳. 西电无纸化之软件工程分群:929629717">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-21T08:06:48.000Z">
+<meta property="article:modified_time" content="2020-08-21T08:21:58.769Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="软件工程">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/08/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA%E4%B9%8B%E6%9C%9F%E6%9C%AB%E8%A1%A5%E5%A4%A9%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>软件工程概论之期末补天笔记 | (ﾟ∀。)</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="(ﾟ∀。)" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">(ﾟ∀。)</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA%E4%B9%8B%E6%9C%9F%E6%9C%AB%E8%A1%A5%E5%A4%A9%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="嘿, 这里是私人空间!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="(ﾟ∀。)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          软件工程概论之期末补天笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-21 16:06:48 / 修改时间：16:21:58" itemprop="dateCreated datePublished" datetime="2020-08-21T16:06:48+08:00">2020-08-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">软件工程概论</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>16 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>综述了学校软件工程概论课程的常考知识点(中英对照), 不保证考点完全覆盖.</p>
+<p>推荐<a href="https://blog.csdn.net/sandalphon4869/category_9045731.html" target="_blank" rel="noopener">一位学长的博客</a>, 建议搭配打印店往年题食用, 效果奇佳.</p>
+<p>西电无纸化之软件工程分群:929629717</p>
+<a id="more"></a>
+<h2 id="第一章-概述"><a href="#第一章-概述" class="headerlink" title="第一章 概述"></a>第一章 概述</h2><h3 id="定义-软件"><a href="#定义-软件" class="headerlink" title="定义: 软件"></a>定义: <strong>软件</strong></h3><p><em>必考</em></p>
+<p>软件是文档、指令、数据结构的集合</p>
+<ul>
+<li><strong>Documents</strong> that describe the operation and use of the programs.<br>文档描述了程序的操作(operation)和使用(use)。</li>
+<li><strong>Instructions</strong> (computer programs) that when executed provide desired function and performance;<br>指令在执行时提供了所需的功能(function)和性能(performance)。</li>
+<li><strong>Data</strong> <strong>structures</strong> that enable the programs to adequately manipulate information;<br>数据结构使程序能够充分地操作信息(information)。</li>
+</ul>
+<h3 id="软件的3个特性"><a href="#软件的3个特性" class="headerlink" title="软件的3个特性"></a><strong>软件的3个特性</strong></h3><p><em>理解</em></p>
+<ol>
+<li>Software is developed or engineered, it is not manufactured in the classical sense.<br>软件是开发或工程的，而不是传统意义上的制造.</li>
+<li>Software doesn’t “wear out”, but it does deteriorate.<br>软件不会“磨损”，但会恶化。</li>
+<li>Most software is custom-built, rather than being assembled from existing component.<br>大多数软件都是定制的，而不是由现有组件组装而成.</li>
+</ol>
+<h3 id="定义-软件工程"><a href="#定义-软件工程" class="headerlink" title="定义: 软件工程 "></a>定义: <strong>软件工程 </strong></h3><p><em>必考</em></p>
+<p>The application of a <strong>systematic</strong> , <strong>disciplined</strong>, <strong>measure-able</strong> approach to the <strong>development</strong>, <strong>operation</strong>, and <strong>maintenance</strong> of software. That is, the application of engineering to software.</p>
+<p>软件工程是将系统的(systematic)、规范的(disciplined)、可度量的(measurable)方法应用于软件的开发(development)、运行(operation)和维护(maintenance)的过程，即将工程化应用于软件中。</p>
+<h3 id="软件涉及到的人员"><a href="#软件涉及到的人员" class="headerlink" title="软件涉及到的人员"></a>软件涉及到的人员</h3><ul>
+<li>consumer   需求提出者</li>
+<li>developer   开发人员</li>
+<li>user   软件的实际使用者</li>
+</ul>
+<h3 id="质量指标"><a href="#质量指标" class="headerlink" title="质量指标"></a>质量指标</h3><p> <em>理解</em></p>
+<ol>
+<li><p>The Quality of the Product,  <strong>McCall</strong></p>
+<p>度量<strong>软件质量</strong>的指标模型</p>
+</li>
+<li><p>The Quality of the Process,  <strong>CMM</strong> (Capability Maturity Mode)</p>
+<p>度量<strong>过程质量</strong>的指标模型</p>
+</li>
+<li><p>The Quality in the Context of the Business Environment, <strong>ROI</strong></p>
+<p>度量<strong>商业价值</strong>的指标模型</p>
+</li>
+</ol>
+<h2 id="第二章-过程"><a href="#第二章-过程" class="headerlink" title="第二章 过程"></a>第二章 过程</h2><h3 id="定义-过程-process"><a href="#定义-过程-process" class="headerlink" title="定义: 过程 process"></a>定义: <strong>过程 process</strong></h3><p><em>必考</em></p>
+<p>process：</p>
+<ul>
+<li>A series of <strong>ordered steps</strong> involving <u><strong>activities</strong>, <strong>constraints</strong>, and <strong>resources</strong></u> that <strong><u>produce an intended output</u></strong> of some kind.</li>
+<li>一系列涉及活动、约束和资源的步骤，这些步骤会产生某种预期的输出。</li>
+</ul>
+<h3 id="Characteristics-of-process"><a href="#Characteristics-of-process" class="headerlink" title="Characteristics of process"></a>Characteristics of process</h3><p><em>了解</em></p>
+<ol>
+<li>过程描述了所有主要的过程活动。<pre><code>   The process describes all the major  process activities.
+</code></pre></li>
+<li>这个过程使用资源，但受到一系列限制，并生产中间产品和最终产品。<pre><code>   The process uses the resources, subject to a set of constraints, and produces intermediate and final products.
+</code></pre></li>
+<li>过程可能由以某种方式链接的子过程组成。<pre><code>     The process may be composed of sub-processes that that linked in some way。
+</code></pre></li>
+<li>每个过程活动都有进入和退出标准，因此我们知道活动开始和结束的时间。<pre><code>   Each process activity has entry and exit criteria, so that we know when the activity begins and ends .
+</code></pre></li>
+<li>活动按顺序组织，因此一个活动相对于另一个活动的执行时间很清楚。<pre><code>     The activities are organized in a sequence, so that it is clear when one activity is performed relative to the other activity .
+</code></pre></li>
+<li>每个过程都有一组指导原则来解释每个活动的目标。<pre><code>     Every process has a set of guiding principles that explain the goals of each activity。
+</code></pre></li>
+<li>约束或控制可以应用于活动、资源或产品<pre><code>   Constraints  or controls may apply to an activity, resource, or product。
+</code></pre></li>
+</ol>
+<h3 id="定义-生命周期-Life-cycle"><a href="#定义-生命周期-Life-cycle" class="headerlink" title="定义: 生命周期 Life cycle"></a>定义: <strong>生命周期 Life cycle</strong></h3><p><em>必考</em></p>
+<ul>
+<li>当过程涉及到建设某些产品，我们有时把过程称为生命周期。</li>
+<li>when the process involves the building of some product, we sometimes refer to the process as a life cycle.</li>
+<li>The life cycle of a software product include <strong>conception</strong>(概念化)，<strong>implementation</strong>(实现)，<strong>delivery</strong>(交付)，<strong>use</strong>, <strong>maintenance</strong>.(维护)</li>
+</ul>
+<h3 id="定义-模型"><a href="#定义-模型" class="headerlink" title="定义: 模型"></a>定义: 模型</h3><p>  <em>了解</em></p>
+<ul>
+<li>一个过程可以用多种方法来描述，使用文字、图片或组合</li>
+</ul>
+<p>A process can be described in a variety of ways, using text, pictures or a combination.</p>
+<h4 id="瀑布模型"><a href="#瀑布模型" class="headerlink" title="瀑布模型"></a><strong>瀑布模型</strong></h4><p><em>必考(步骤与优缺点)</em></p>
+<h4 id="Step-8"><a href="#Step-8" class="headerlink" title="Step (8)"></a>Step (8)</h4><ol>
+<li>Requirements Analysis 需求分析</li>
+<li>System Design 系统设计</li>
+<li>Program Design 程序设计</li>
+<li>Coding 编程</li>
+<li>Unit &amp; Integration Test 单元&amp;集成测试</li>
+<li>System Test 系统测试</li>
+<li>Acceptance Test 验收测试</li>
+<li>Operation &amp; Maintenance 使用与维护</li>
+</ol>
+<p>特点</p>
+<ol>
+<li><p>One of the first process development models </p>
+<p>是第一个被提出的开发模型之一</p>
+</li>
+<li><p>Works for well understood problems with minimal or no changes in the requirements</p>
+<p>仅需极少的需求或没有任何变化即可解决众所周知的问题</p>
+</li>
+<li><p>It presents a very high-level view of the development process开发过程的顶层理解</p>
+</li>
+<li><p>and sequence of process activities 过程活动的顺序</p>
+</li>
+<li><p>Each major phase is marked by milestones and deliverables  每个主要阶段都具有里程碑和可交付成果</p>
+</li>
+</ol>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li><p>The waterfall model can be very useful in <u>helping developers lay out what they need to do</u>.</p>
+<p>在帮助开发人员规划他们需要做的事情时非常有用</p>
+</li>
+<li><p>Its simplicity makes it <u>easy to explain to customers</u> who are not familiar with software development.</p>
+<p>它的简单性使得向不熟悉软件开发的客户解释它很容易</p>
+</li>
+<li><p>It <u>makes explicit which intermediate products are necessary</u> in order to begin the next stage of development.</p>
+<p>它明确了哪些中间产品是必要的，以便开始下一阶段的开发。</p>
+</li>
+<li><p>Many other,more complex models are really just embellishments of waterfall,incorporating feedback loops and extra activities. </p>
+<p>许多其他更复杂的模型实际上只是瀑布的点缀</p>
+</li>
+</ul>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li><p>Provides no guidance how to handle changes to products and activities during development (<u>assumes requirements can be frozen</u>)</p>
+<p>没有提供有关如何在开发过程中处理产品和活动更改的指导（假设要求可以冻结）</p>
+</li>
+<li><p>Views software development as manufacturing process rather than as creative process</p>
+<p>将软件开发视为制造过程而非创意过程</p>
+</li>
+<li><p>There is <u>no iterative activities</u> that lead to creating a final Product</p>
+<p>没有迭代活动可以创建最终产品</p>
+</li>
+<li><p>Long wait before a final product</p>
+<p>长时间等待最终产品</p>
+</li>
+</ul>
+<h2 id="第三章-项目管理"><a href="#第三章-项目管理" class="headerlink" title="第三章 项目管理"></a>第三章 项目管理</h2><h3 id="定义-进度-Schedule"><a href="#定义-进度-Schedule" class="headerlink" title="定义: 进度 Schedule"></a>定义: 进度 Schedule</h3><ul>
+<li>A project schedule describes the software development cycle for a particular project by enumerating the phases or stages of the project and breaking each into discrete tasks or activities to be done.</li>
+<li>项目进度通过列举项目的时期或阶段，并将每个阶段分解为待完成的离散任务或活动来描述特定项目的软件开发周期。</li>
+<li>The schedule is a <strong>timeline</strong> that shows when activities will begin and end,and when the related development products while be ready.</li>
+<li>进度是显示活动开始和结束的时间线，以及相关开发产品准备就绪的时间线</li>
+</ul>
+<h3 id="定义-活动"><a href="#定义-活动" class="headerlink" title="定义: 活动"></a>定义: <strong>活动</strong></h3><ul>
+<li>An activity is a <u>part of the project that takes place over a period of time</u>.</li>
+<li>活动是在一段时间内发生的项目的一部分</li>
+</ul>
+<h3 id="定义-里程碑-Milestone"><a href="#定义-里程碑-Milestone" class="headerlink" title="定义: 里程碑 Milestone"></a>定义: <strong>里程碑</strong> Milestone</h3><ul>
+<li>A milestone is <strong><u>the completion of an activity</u></strong>，<strong><u>a particular point in time</u></strong>.</li>
+<li>里程碑是一个活动的完成，一个特定的时间点。</li>
+</ul>
+<h3 id="WBS"><a href="#WBS" class="headerlink" title="WBS"></a>WBS</h3><ul>
+<li>工作分解结构(WBS)将项目描述为一组离散的工作片段。</li>
+<li>work breakdown structure depicts the project as a set of discrete pieces of work.<ul>
+<li>Precursor is an event or set of events that must occur before the activity can begin.<br>前驱是在活动开始之前必须发生的一个或一组事件。</li>
+<li>Due date is the date by which the activity must be completed,frequently determined by contractual deadlines.<br>截止时间是活动必须完成的日期，通常由合同期限决定。</li>
+<li>Duration is length of time needed to complete an activity。<br>工期是完成一项活动所需的时间长度。</li>
+<li>Endpoint is usually a milestone or deliverable<br>终点是里程碑或可交付件。</li>
+</ul>
+</li>
+</ul>
+<h3 id="关键路径"><a href="#关键路径" class="headerlink" title="关键路径"></a>关键路径</h3><ul>
+<li>The critical path is the one for which the slack at every node is zero.</li>
+<li>关键路径是每个节点的松弛度为零的路径。</li>
+</ul>
+<p>从活动图找出关键路径!!! 书后两条练习题 ⭐</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对于活动A_B,P-A-B-S 表示前驱活动P_A,后继活动B_S</span></span><br><span class="line"><span class="comment">//活动A_B可能有不止一个前驱/后继, 此时用Pi_A,B_Si表示</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> time_point int		<span class="comment">//时刻</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> time_period int		<span class="comment">//时间段</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> START 1				<span class="comment">//开始时间=1</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> END END				<span class="comment">//结束时间END</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pre</span><span class="params">(A_B)</span></span>&#123;</span><br><span class="line">    <span class="comment">//返回活动A_B的前驱活动数量</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sub</span><span class="params">(A_B)</span></span>&#123;</span><br><span class="line">    <span class="comment">//返回活动A_B的后继活动数量</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">time_period <span class="title">T</span><span class="params">(A_B)</span></span>&#123;</span><br><span class="line">    <span class="comment">//返回活动A_B需要的时间</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">time_point <span class="title">EST</span><span class="params">(A_B)</span></span>&#123;</span><br><span class="line">    time_point re;</span><br><span class="line">    <span class="keyword">int</span> preNum = pre(A_B);</span><br><span class="line">    <span class="keyword">if</span>(preNum == <span class="number">0</span>)</span><br><span class="line">        re = START;</span><br><span class="line">    <span class="keyword">if</span>(preNum == <span class="number">1</span>)</span><br><span class="line">        re = EST(P_A) + T(P_A);</span><br><span class="line">    <span class="keyword">if</span>(preNum &gt; <span class="number">1</span>)</span><br><span class="line">        re = <span class="built_in">max</span>(EST(Pi_A) + T(Pi_A));</span><br><span class="line">    <span class="keyword">return</span> re;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">time_point <span class="title">LST</span><span class="params">(A_B)</span></span>&#123;</span><br><span class="line">    time_point re;</span><br><span class="line">    <span class="keyword">int</span> subNum = sub(A_B);</span><br><span class="line">    <span class="keyword">if</span>(subNum == <span class="number">0</span>)</span><br><span class="line">        re = END - T(A_B);</span><br><span class="line">    <span class="keyword">if</span>(subNum == <span class="number">1</span>)</span><br><span class="line">        re = LST(B_S) - T(A_B);</span><br><span class="line">    <span class="keyword">if</span>(subNum &gt; <span class="number">1</span>)</span><br><span class="line">        re = <span class="built_in">min</span>(LST(B_Si) - T(A_B));</span><br><span class="line">    <span class="keyword">return</span> re;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第四章-需求分析"><a href="#第四章-需求分析" class="headerlink" title="第四章 需求分析"></a>第四章 需求分析</h2><h3 id="定义-需求"><a href="#定义-需求" class="headerlink" title="定义: 需求"></a>定义: 需求</h3><ul>
+<li><p>An <strong>Expression</strong> of desired <strong>Behavior</strong></p>
+<p>期望行为的一种表达。</p>
+</li>
+</ul>
+<p>四种需求</p>
+<ul>
+<li><p>functional requirement : 功能性需求</p>
+<p>describes required behavior in terms of required activities</p>
+</li>
+<li><p>nonfunctional requirement (quality function) 非功能性需求(质量需求)</p>
+<p>describes some quality characteristic that the software must possess.</p>
+</li>
+<li><p>design constraint 设计约束</p>
+<p>a design decision,such as choice of platform.</p>
+</li>
+<li><p>process constraint 过程约束</p>
+<p>a restriction on the techniques or resources that can be used to build the system.</p>
+</li>
+</ul>
+<h3 id="ERD（实体关系图）"><a href="#ERD（实体关系图）" class="headerlink" title="ERD（实体关系图）"></a>ERD（实体关系图）</h3><ul>
+<li><p>entity-relationship diagram (ERD): </p>
+<p>is a popular graphical notational paradigm.</p>
+</li>
+<li><p>三要素</p>
+<ul>
+<li>An entity, epicted as a rectangle, represents a collection of  <pre><code>real-world objects that have common properties and behaviors.
+</code></pre></li>
+<li>A relationship, depicted as an edge between two entities, with diamond<pre><code>in the middle  of the edge specifying the type of relationship.
+</code></pre></li>
+<li>An attribute, an annotation(注释) on an entity that describes data or <pre><code>properties associated with the entity.
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="DFD-Data-Flow-Diagram数据流图"><a href="#DFD-Data-Flow-Diagram数据流图" class="headerlink" title="DFD Data Flow Diagram数据流图"></a>DFD Data Flow Diagram数据流图</h3><p>Process, data flow, data store, actors </p>
+<h3 id="UCD-（用例图）"><a href="#UCD-（用例图）" class="headerlink" title="UCD （用例图）"></a>UCD （用例图）</h3><ul>
+<li>概念: use-case diagram(UCD) is similar to a top-level data-flow diagram that depicts observable,user-initiated functionality in terms of interactions between the system and its environment.用例图(UCD)类似于顶级数据流图，根据系统和环境之间的交互描述可观察的、用户发起的功能。</li>
+<li>用处: <u>用于表示需求, 不是设计</u></li>
+<li>怎么画?<ul>
+<li>边界</li>
+<li>case</li>
+</ul>
+</li>
+</ul>
+<h3 id="两种文档-区别作用"><a href="#两种文档-区别作用" class="headerlink" title="两种文档 (区别作用)"></a>两种文档 (区别作用)</h3><ul>
+<li><p>require <strong><u>definition</u></strong> 需求分析说明书 For <strong>Customer</strong></p>
+<p>一般是对某个市场或者是客户群来讲的，类似于调研报告，重点是体现出产品要满足哪些功能，哪些是重点、热点。</p>
+</li>
+<li><p>require <strong><u>specificatiuon</u></strong> 需求规格说明书 For <strong>Developer</strong></p>
+<p>是从业务规则讲起的，细一点偏向于软件的概要设计。是从开发、测试的角度去讲产品功能，里面要包含原型界面、业务接口、活动图等 </p>
+</li>
+</ul>
+<h2 id="第五章-体系结构"><a href="#第五章-体系结构" class="headerlink" title="第五章 体系结构"></a>第五章 体系结构</h2><h3 id="定义-设计"><a href="#定义-设计" class="headerlink" title="定义: 设计"></a>定义: 设计</h3><ul>
+<li>Design is the creative process of figuring out how to implement all of the customer’s requirements; </li>
+<li>the resulting plan is also called the design.</li>
+<li>设计是找出如何实现客户所有要求的创造性过程;</li>
+<li>最终的方案也称为设计。</li>
+</ul>
+<h3 id="体系结构三要素-3C-⭐"><a href="#体系结构三要素-3C-⭐" class="headerlink" title="体系结构三要素(3C)⭐"></a>体系结构三要素(3C)⭐</h3><p>软件体系结构={构件，连接件，约束}</p>
+<ul>
+<li>component(构件): 可以是一组代码，如程序模块，也可以是一个独立运行的程序，如数据库服务器。</li>
+<li>connector(连接件):可以是过程调用，管道，远程调用等，用于表示构建之间的相互作用。</li>
+<li>constraint(约束)：对象的连接规则。</li>
+</ul>
+<p>分解</p>
+<p>自顶向下</p>
+<p>合成</p>
+<h3 id="Style"><a href="#Style" class="headerlink" title="Style"></a>Style</h3><p>概念! </p>
+<ul>
+<li>管道过滤器 <strong>Piper-and-Filter</strong><ul>
+<li>管道是干什么的? 过滤器是什么?</li>
+<li>Transmit data form one filter to then next</li>
+<li>MIS system of XIDIAN University 西电迎新系统</li>
+</ul>
+</li>
+<li>客户服务器 <strong>Client-Server</strong><ul>
+<li>Most transaction processing system(事务处理系统)    Eg. Bank System</li>
+</ul>
+</li>
+<li>…</li>
+</ul>
+<h2 id="第六章-模块设计"><a href="#第六章-模块设计" class="headerlink" title="第六章 模块设计"></a>第六章 模块设计</h2><p>什么是模块化?</p>
+<ul>
+<li>Modularity, also called separation of concerns, is the principle of keeping separate the various unrelated aspects of a system, so that each aspect can be studied in isolation. </li>
+<li>不相关的方面的相互独立</li>
+</ul>
+<p>什么是独立性? Independence?   Separation of Concern</p>
+<h3 id="Coupling-六耦合"><a href="#Coupling-六耦合" class="headerlink" title="Coupling 六耦合"></a>Coupling 六耦合</h3><ul>
+<li>非直接耦合 Uncoupled</li>
+<li>数据耦合 Data</li>
+<li>标记耦合 Stamp</li>
+<li>控制耦合 Control</li>
+<li>公共耦合 Common</li>
+<li>内容耦合 Content</li>
+</ul>
+<h3 id="Concerns-七内聚"><a href="#Concerns-七内聚" class="headerlink" title="Concerns  七内聚"></a>Concerns  七内聚</h3><ul>
+<li>偶然内聚 Coincidence</li>
+<li>逻辑内聚 Logic</li>
+<li>时间内聚 Temporal</li>
+<li>过程内聚 Procedural</li>
+<li>通信内聚 Communicational</li>
+<li>功能内聚 Functional</li>
+<li>(信息内聚) Information</li>
+</ul>
+<p>耦合与内聚 各考一个(判断是什么类型的耦合\内聚)</p>
+<h2 id="第七章-编程"><a href="#第七章-编程" class="headerlink" title="第七章 编程"></a>第七章 编程</h2><h3 id="程序三要素"><a href="#程序三要素" class="headerlink" title="程序三要素"></a>程序三要素</h3><ul>
+<li>控制结构 Control Structural</li>
+<li>算法 Algorithm</li>
+<li>数据结构 Data Structure</li>
+</ul>
+<h3 id="注释-Head-comment-Block"><a href="#注释-Head-comment-Block" class="headerlink" title="注释: Head_comment_Block"></a>注释: Head_comment_Block</h3><p>里面有什么东西(7个)</p>
+<ol>
+<li>Program SCAN</li>
+<li>Programmer</li>
+<li>Calling sequence</li>
+<li>Version</li>
+<li>Revision</li>
+<li>Purpose</li>
+<li>Data structure</li>
+<li>Algorithm</li>
+</ol>
+<h3 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h3><p>内部 Internal documentation</p>
+<ul>
+<li>Head Comment Block</li>
+<li>Other Program Comment</li>
+<li>Meaningful Variable Names and Statement Labels</li>
+<li>Formatting to Enhance Understanding</li>
+</ul>
+<p>外部 External documentation</p>
+<ul>
+<li>describing the problem</li>
+<li>describing the algorithm</li>
+<li>describing the data</li>
+</ul>
+<p>各包括什么content</p>
+<h2 id="第八章-单元测试-⭐"><a href="#第八章-单元测试-⭐" class="headerlink" title="第八章 单元测试 ⭐"></a>第八章 单元测试 ⭐</h2><p>测试方法</p>
+<p>测试用例: </p>
+<ul>
+<li>A test point or test case is <u>a particular choice of <strong>input data</strong></u> to be used in test a program.</li>
+<li>测试点或测试用例是用于测试程序的输入数据的特定选择</li>
+</ul>
+<p>覆盖  由方法选数据</p>
+<p>黑盒白盒: 各测试什么(功能/结构)</p>
+<ul>
+<li>We view the test object form the outside as a <u>closed or black box</u> whose contents are unknown, our testing <strong>feeds inputs to the closed box and notes what output is produced.</strong><br>我们从外部将测试对象视为一个关闭的或内容未知的黑盒，我们的测试将输入输入到关闭的盒子中，并记录产生了什么输出。</li>
+<li>We view the test object as an <u>open</u> <u>box and or white box</u>, we can use the <strong>structure</strong> of the test object to test in different way.<br>我们将测试对象看作是一个开放的盒子或者白盒子，我们可以使用测试对象的结构以不同的方式进行测试。</li>
+</ul>
+<p>路径测试———-给程序, 画流程图,画控制图; 给图, 找测试路径</p>
+<h2 id="第九章-系统测试"><a href="#第九章-系统测试" class="headerlink" title="第九章 系统测试"></a>第九章 系统测试</h2><p>Rush Time 高峰时间</p>
+<p>概念: 前五个</p>
+<ul>
+<li>压力 Stress Test</li>
+<li>容量 Volume Test</li>
+<li>配置 Configuration Test</li>
+<li>Compatibility Test</li>
+<li>Regression Test</li>
+<li>…</li>
+</ul>
+<h2 id="第十章-系统交付"><a href="#第十章-系统交付" class="headerlink" title="第十章 系统交付"></a>第十章 系统交付</h2><p>概念</p>
+<ul>
+<li><p>R 可靠性</p>
+<p>The software reliability is a <strong>possibility</strong> of the system will <strong>operate without failure</strong> under a given conditions and a given time interval.<br>软件可靠性是指系统在给定条件和给定时间间隔下无故障运行的可能性。</p>
+</li>
+<li><p>A 可用性</p>
+<p>The software availability is the <strong>probability</strong> that a system <strong>is operating successfully</strong> according to specification at a given point of time.</p>
+</li>
+<li><p>M 可维护性</p>
+<p>The software maintainability is the probability that , for a given condition of use, a maintenance activity <strong>can be carried out</strong> within stated time interval and using stated procedures and resources.</p>
+<p>给定的使用条件下，可以在规定的时间间隔内并使用规定的过程和资源进行维护活动的可能性。</p>
+</li>
+<li><p>PPT原话!!!!</p>
+</li>
+</ul>
+<h2 id="第十一章-系统维护"><a href="#第十一章-系统维护" class="headerlink" title="第十一章 系统维护"></a>第十一章 系统维护</h2><p>维护的定义</p>
+<p>Any work done to change the system after it is in operation is considered to be maintenance.<br>在系统运行后为改变系统所做的任何工作都被认为是维护。</p>
+<p>四类维护: 判断是什么样的维护…</p>
+<ol>
+<li>Corrective Maintenance     ：Bug 改正性维护</li>
+<li>Adaptive Maintenance    ：Table-Driven Design 适应性维护</li>
+<li>Perfective Maintenance    : DB Upgrade to New Version 完善性维护</li>
+<li>Preventive Maintenance    : Printer Driver: Print-line 预防性维护</li>
+</ol>
+<h2 id="彩蛋-2020年软工概论考题回忆版"><a href="#彩蛋-2020年软工概论考题回忆版" class="headerlink" title="彩蛋: 2020年软工概论考题回忆版"></a>彩蛋: 2020年软工概论考题回忆版</h2><p>题型:选择*15+判断*10+简答*5+大题*3</p>
+<p>选择判断基本全是课后题里面的原句扣关键字</p>
+<p>20年简答:<br>简述瀑布模型及优缺点<br>ERD三要素及功能<br>简述pip and filter的功能<br>简述Head block comment包括的内容<br>简述corrective maintenance</p>
+<p>20年大题:<br>Critical Path<br>Branch Test<br>Logic Flow-&gt;possible path</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
+              <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="tag"># 软件工程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/14/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%A6%82%E8%BF%B0/" rel="prev" title="操作系统之概述">
+      <i class="fa fa-chevron-left"></i> 操作系统之概述
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA%E4%B9%8B%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B/" rel="next" title="软件工程概论之过程模型">
+      软件工程概论之过程模型 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-概述"><span class="nav-number">1.</span> <span class="nav-text">第一章 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-软件"><span class="nav-number">1.1.</span> <span class="nav-text">定义: 软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件的3个特性"><span class="nav-number">1.2.</span> <span class="nav-text">软件的3个特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-软件工程"><span class="nav-number">1.3.</span> <span class="nav-text">定义: 软件工程 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件涉及到的人员"><span class="nav-number">1.4.</span> <span class="nav-text">软件涉及到的人员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#质量指标"><span class="nav-number">1.5.</span> <span class="nav-text">质量指标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-过程"><span class="nav-number">2.</span> <span class="nav-text">第二章 过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-过程-process"><span class="nav-number">2.1.</span> <span class="nav-text">定义: 过程 process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Characteristics-of-process"><span class="nav-number">2.2.</span> <span class="nav-text">Characteristics of process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-生命周期-Life-cycle"><span class="nav-number">2.3.</span> <span class="nav-text">定义: 生命周期 Life cycle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-模型"><span class="nav-number">2.4.</span> <span class="nav-text">定义: 模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#瀑布模型"><span class="nav-number">2.4.1.</span> <span class="nav-text">瀑布模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Step-8"><span class="nav-number">2.4.2.</span> <span class="nav-text">Step (8)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">2.4.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点"><span class="nav-number">2.4.4.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章-项目管理"><span class="nav-number">3.</span> <span class="nav-text">第三章 项目管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-进度-Schedule"><span class="nav-number">3.1.</span> <span class="nav-text">定义: 进度 Schedule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-活动"><span class="nav-number">3.2.</span> <span class="nav-text">定义: 活动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-里程碑-Milestone"><span class="nav-number">3.3.</span> <span class="nav-text">定义: 里程碑 Milestone</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WBS"><span class="nav-number">3.4.</span> <span class="nav-text">WBS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键路径"><span class="nav-number">3.5.</span> <span class="nav-text">关键路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四章-需求分析"><span class="nav-number">4.</span> <span class="nav-text">第四章 需求分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-需求"><span class="nav-number">4.1.</span> <span class="nav-text">定义: 需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ERD（实体关系图）"><span class="nav-number">4.2.</span> <span class="nav-text">ERD（实体关系图）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DFD-Data-Flow-Diagram数据流图"><span class="nav-number">4.3.</span> <span class="nav-text">DFD Data Flow Diagram数据流图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UCD-（用例图）"><span class="nav-number">4.4.</span> <span class="nav-text">UCD （用例图）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两种文档-区别作用"><span class="nav-number">4.5.</span> <span class="nav-text">两种文档 (区别作用)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五章-体系结构"><span class="nav-number">5.</span> <span class="nav-text">第五章 体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-设计"><span class="nav-number">5.1.</span> <span class="nav-text">定义: 设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#体系结构三要素-3C-⭐"><span class="nav-number">5.2.</span> <span class="nav-text">体系结构三要素(3C)⭐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Style"><span class="nav-number">5.3.</span> <span class="nav-text">Style</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六章-模块设计"><span class="nav-number">6.</span> <span class="nav-text">第六章 模块设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Coupling-六耦合"><span class="nav-number">6.1.</span> <span class="nav-text">Coupling 六耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Concerns-七内聚"><span class="nav-number">6.2.</span> <span class="nav-text">Concerns  七内聚</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七章-编程"><span class="nav-number">7.</span> <span class="nav-text">第七章 编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序三要素"><span class="nav-number">7.1.</span> <span class="nav-text">程序三要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释-Head-comment-Block"><span class="nav-number">7.2.</span> <span class="nav-text">注释: Head_comment_Block</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文档"><span class="nav-number">7.3.</span> <span class="nav-text">文档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八章-单元测试-⭐"><span class="nav-number">8.</span> <span class="nav-text">第八章 单元测试 ⭐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九章-系统测试"><span class="nav-number">9.</span> <span class="nav-text">第九章 系统测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十章-系统交付"><span class="nav-number">10.</span> <span class="nav-text">第十章 系统交付</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十一章-系统维护"><span class="nav-number">11.</span> <span class="nav-text">第十一章 系统维护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#彩蛋-2020年软工概论考题回忆版"><span class="nav-number">12.</span> <span class="nav-text">彩蛋: 2020年软工概论考题回忆版</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">嘿, 这里是私人空间!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">126k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:30</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

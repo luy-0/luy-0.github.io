@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本文介绍了敏捷方法中的极限编程与Scrum，就二者的相似与区别、各自在实践中的优劣势进行了论述分析。并根据相关资料整理得出其在国内应用的现状，进一步分析其背后的原因，并加以展望未来的发展可能性。 关键词：敏捷开发，极限编程，Scrum，系统开发方法，软件工程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程之敏捷方法综述:XP与Scrum">
+<meta property="og:url" content="http://yoursite.com/2020/08/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B9%8B%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95%E7%BB%BC%E8%BF%B0-XP%E4%B8%8EScrum/index.html">
+<meta property="og:site_name" content="(ﾟ∀。)">
+<meta property="og:description" content="本文介绍了敏捷方法中的极限编程与Scrum，就二者的相似与区别、各自在实践中的优劣势进行了论述分析。并根据相关资料整理得出其在国内应用的现状，进一步分析其背后的原因，并加以展望未来的发展可能性。 关键词：敏捷开发，极限编程，Scrum，系统开发方法，软件工程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-21T08:13:58.000Z">
+<meta property="article:modified_time" content="2020-08-21T08:16:34.378Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="软件工程">
+<meta property="article:tag" content="敏捷开发">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/08/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B9%8B%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95%E7%BB%BC%E8%BF%B0-XP%E4%B8%8EScrum/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>软件工程之敏捷方法综述:XP与Scrum | (ﾟ∀。)</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="(ﾟ∀。)" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">(ﾟ∀。)</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B9%8B%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95%E7%BB%BC%E8%BF%B0-XP%E4%B8%8EScrum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="嘿, 这里是私人空间!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="(ﾟ∀。)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          软件工程之敏捷方法综述:XP与Scrum
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-21 16:13:58 / 修改时间：16:16:34" itemprop="dateCreated datePublished" datetime="2020-08-21T16:13:58+08:00">2020-08-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">软件工程概论</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>11 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文介绍了敏捷方法中的极限编程与Scrum，就二者的相似与区别、各自在实践中的优劣势进行了论述分析。并根据相关资料整理得出其在国内应用的现状，进一步分析其背后的原因，并加以展望未来的发展可能性。</p>
+<p>关键词：敏捷开发，极限编程，Scrum，系统开发方法，软件工程</p>
+<a id="more"></a>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li>极限编程与 Scrum方法概述<ol>
+<li>什么是极限编程<ol>
+<li>极限编程的简述</li>
+<li>极限编程的目的</li>
+<li>极限编程的12条军规</li>
+<li>极限编程的4个价值</li>
+</ol>
+</li>
+<li>什么是Scrum？<ol>
+<li>Scrum的简述与流程</li>
+<li>Scrum中的三大角色</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>二者的比较分析<ol>
+<li>Xp与scrum的主要异同</li>
+<li>二者的区别<ol>
+<li>迭代长度的不同</li>
+<li>是否允许修改需求</li>
+<li>User Story是否严格按照优先级别来实现</li>
+<li>是否采用严格的工程方法保证进度或者质量</li>
+</ol>
+</li>
+<li>Xp与 Scrum在生产实践中的优劣</li>
+</ol>
+</li>
+<li>国内应用现状</li>
+<li>小结</li>
+</ol>
+<hr>
+<h2 id="一、极限编程与Scrum方法概述"><a href="#一、极限编程与Scrum方法概述" class="headerlink" title="一、极限编程与Scrum方法概述"></a>一、极限编程与Scrum方法概述</h2><h3 id="什么是极限编程（Extreme-Programming，XP）？"><a href="#什么是极限编程（Extreme-Programming，XP）？" class="headerlink" title="什么是极限编程（Extreme Programming，XP）？"></a>什么是极限编程（Extreme Programming，XP）？</h3><h4 id="极限编程的简述"><a href="#极限编程的简述" class="headerlink" title="极限编程的简述"></a>极限编程的简述</h4><p>极限编程是一种软件工程方法学，并且是敏捷软件开发中应用最为广泛和最富有成效的几种方法学之一。相对于传统的软件开发方法学，它更加强调字开发过程中软件需求的不断变化性，认为这种变化是及其正常且不可避免的。正因为如此，极限编程非常注重对于变化的适应，而不是对变化的规避或预测。</p>
+<h4 id="极限编程的目的"><a href="#极限编程的目的" class="headerlink" title="极限编程的目的"></a>极限编程的目的</h4><p>极限编程的主要目标在于<strong>降低因需求变更而带来的成本</strong>。</p>
+<p>在传统系统开发方法中，系统需求在开始阶段后在之后的开发过程中保持不变的。这意味着项目在进入后期阶段时出现的需求变更将导致开发成本急速增加。</p>
+<p>极限编程通过引入基本价值、原则、方法等概念来达到降低变更成本的目的。一个应用了极限编程方法的系统开发项目在应对需求变更时将显得更为灵活。</p>
+<h4 id="极限编程的12条军规"><a href="#极限编程的12条军规" class="headerlink" title="极限编程的12条军规"></a>极限编程的12条军规</h4><p>短交付周期    计划游戏    结对编程    可持续的节奏    </p>
+<p>代码集体所有    编码规范    简单设计    测试驱动开发    </p>
+<p>重构    系统隐喻    持续集成    现场客户</p>
+<h4 id="极限编程的4个价值"><a href="#极限编程的4个价值" class="headerlink" title="极限编程的4个价值"></a>极限编程的4个价值</h4><h5 id="沟通"><a href="#沟通" class="headerlink" title="沟通"></a>沟通</h5><p>是在开发小组的成员之间迅速构建与传播制度上的认识的一种方法。极限编程支持设计、抽象、还有用户-程序员间交流的简单化，鼓励经常性的口头交流与回馈。</p>
+<h5 id="简单"><a href="#简单" class="headerlink" title="简单"></a>简单</h5><p>鼓励从最简单的解决方式入手，再通过不断重构达到更好的结果。它只关注于对当前的需求来进行设计、编码。为了将来不确定的需求进行设计以及编码意味着在不必要的方面浪费资源。</p>
+<p>而且设计与代码上的简化可以提高交流的质量。</p>
+<h5 id="反馈"><a href="#反馈" class="headerlink" title="反馈"></a>反馈</h5><p>XP团队重视反馈，反馈越快越好。</p>
+<ol>
+<li>来自系统的反馈：通过编写单元测试，程序员能够很直观的得到经过修改后系统的状态。</li>
+<li>来自客户的反馈：功能性测试是由客户还有测试人员来编写的。他们能由此得知当前系统的状态。</li>
+<li>来自小组的反馈：当客户带着新需求来参加项目计划会议时，小组可以直接对于实现新需求所需要的时间进行评估然后反馈给客户。</li>
+</ol>
+<h5 id="勇气"><a href="#勇气" class="headerlink" title="勇气"></a>勇气</h5><p>勇气是软件开发中的一个重要价值，因为它需要勇气来坦率真诚地面对客户，它需要勇气来识别我们自己，我们的团队和我们的组织的缺点，并努力改善这些缺点。</p>
+<h3 id="什么是Scrum？"><a href="#什么是Scrum？" class="headerlink" title="什么是Scrum？"></a>什么是Scrum？</h3><h4 id="Scrum-的简述与流程"><a href="#Scrum-的简述与流程" class="headerlink" title="Scrum 的简述与流程"></a>Scrum 的简述与流程</h4><p>Scrum 是用于开发、交付和持续支持复杂产品的一个框架，是一个增量的、迭代的开发过程。</p>
+<p>在这个框架中，整个开发过程由若干个短的迭代周期（Sprint）组成，每个Sprint的建议长度是一至四周。</p>
+<p>在Scrum中，使用按照商业价值排序的需求列表（Backlog）来管理产品的需求。Scrum团队总是先开发对客户具有较高价值的需求。</p>
+<p>在每一个Sprint计划会议上，将高优先级的需求经过讨论、分析得到相应的任务列表，称它为Sprint backlog。每个成员根据Sprint Backlog再细化成更小的任务。</p>
+<p>在一次迭代环节中，需要进行 Daily Scrum Meeting（每日站立会议），每次会议控制在15分钟左右，每个人都必须汇报你昨天完成了什么、承诺你今天要完成什么，以及遇到不能解决的问题。最后要走到黑板前更新自己的 Sprint burn down（Sprint燃尽图）</p>
+<p>在每个迭代结束时，Scrum团队将召开  Sprint Retrospective Meeting（回顾会议），总结并讨论改进的地方，放入下一轮Sprint的产品需求中；并递交潜在可交付的产品增量（Increment）</p>
+<h4 id="Scrum中的三大角色"><a href="#Scrum中的三大角色" class="headerlink" title="Scrum中的三大角色"></a>Scrum中的三大角色</h4><h5 id="产品负责人（Product-Owner）"><a href="#产品负责人（Product-Owner）" class="headerlink" title="产品负责人（Product Owner）"></a>产品负责人（Product Owner）</h5><p>主要负责确定产品的功能和达到要求的标准，指定软件的发布日期和交付的内容，同时有权力接受或拒绝开发团队的工作成果。</p>
+<h5 id="流程管理员（Scrum-Master）"><a href="#流程管理员（Scrum-Master）" class="headerlink" title="流程管理员（Scrum Master）"></a>流程管理员（Scrum Master）</h5><p>主要负责整个Scrum流程在项目中的顺利实施和进行，以及清除挡在客户和开发工作之间的沟通障碍，使得客户可以直接驱动开发。</p>
+<h5 id="开发团队（Scrum-Team）"><a href="#开发团队（Scrum-Team）" class="headerlink" title="开发团队（Scrum Team）"></a>开发团队（Scrum Team）</h5><p>主要负责软件产品在Scrum规定流程下进行开发工作，人数控制在5~10人左右，每个成员可能负责不同的技术方面，但要求每成员必须要有很强的自我管理能力，同时具有一定的表达能力；成员可以采用任何工作方式，只要能达到Sprint的目标。</p>
+<h2 id="二、二者的比较分析"><a href="#二、二者的比较分析" class="headerlink" title="二、二者的比较分析"></a>二、二者的比较分析</h2><h3 id="XP与Scrum的主要异同"><a href="#XP与Scrum的主要异同" class="headerlink" title="XP与Scrum的主要异同"></a>XP与Scrum的主要异同</h3><h4 id="二者的相同"><a href="#二者的相同" class="headerlink" title="二者的相同"></a>二者的相同</h4><p>同属于敏捷开发，都是为了在不确定或混乱的环境中取得项目的成功。</p>
+<p>最终目的相同：都是为了迭代出更好的产品交付给用户。</p>
+<h4 id="二者的区别"><a href="#二者的区别" class="headerlink" title="二者的区别"></a>二者的区别</h4><h5 id="迭代长度的不同"><a href="#迭代长度的不同" class="headerlink" title="迭代长度的不同"></a>迭代长度的不同</h5><p>XP的一个Sprint的迭代长度大致为1~2周, 而Scrum的迭代长度一般为 2~ 4周</p>
+<h5 id="是否允许修改需求"><a href="#是否允许修改需求" class="headerlink" title="是否允许修改需求"></a>是否允许修改需求</h5><p>XP在一个迭代中，如果一个User Story还没有实现， 则可以考虑用另外的需求将其替换， 替换的原则是需求实现的时间量是相等的。</p>
+<p> 而Scrum是不允许这样做的，一旦迭代开工会完毕, 任何需求都不允许添加进来。</p>
+<h5 id="User-Story是否严格按照优先级别来实现"><a href="#User-Story是否严格按照优先级别来实现" class="headerlink" title="User Story是否严格按照优先级别来实现"></a>User Story是否严格按照优先级别来实现</h5><p>XP是务必要遵守优先级别的。 但Scrum在这点做得很灵活， 可以不按照优先级别来做。</p>
+<h5 id="是否采用严格的工程方法保证进度或者质量"><a href="#是否采用严格的工程方法保证进度或者质量" class="headerlink" title="是否采用严格的工程方法保证进度或者质量"></a>是否采用严格的工程方法保证进度或者质量</h5><p>Scrum没有对软件的整个实施过程定义任何方法。要求开发者自觉保证产品的生产。</p>
+<p>但XP对整个流程方法定义非常严格，规定需要采用TDD, 自动测试， 结对编程，简单设计，重构等约束团队的行为。</p>
+<h3 id="XP与Scrum在生产实践中的优劣"><a href="#XP与Scrum在生产实践中的优劣" class="headerlink" title="XP与Scrum在生产实践中的优劣"></a>XP与Scrum在生产实践中的优劣</h3><p>Scrum的出现实践比极限开发更早。scrum被定义为一个“框架”，提供了宏观上的概念及方法论——鸡类人员、猪类人员、计划会议、每日站立会议、验收会议和回顾会议等等。但是没有提出对于细节的控制与要求（这在前面的区别也有论述），这导致了Scrum更多的是作为一种实践思想与范本，而不是生产过程中的标准。此外，这也导致了Scrum在实际运用中质量的良莠不齐。</p>
+<p>极限开发的出现晚于Scrum ，其中也鲜明地带有或多或少的Scrum烙印。Xp是由“价值观”“原则”和“实践”组成，其中的理念（价值观与）是统筹Xp所有方法的核心。但是在实际的生产实践中，Xp大量的实践约束带来了相当大的成本。无论是人员成本较高的结对编程，还是技术门槛较高的TDD，都给Xp带来了实现的困难。这也导致了在生产实践中，Xp很少会作为一套“完整的流程”，而更多地作为生产中的建议而部分采纳。</p>
+<p>当然，实践中更多地是采用两种多种不同的方法之长进行混合开发。</p>
+<h2 id="三、国内应用现状"><a href="#三、国内应用现状" class="headerlink" title="三、国内应用现状"></a>三、国内应用现状</h2><p>Scrum作为从国外引进的系统开发的技术。在国内的实践并不顺利。酷壳站长陈皓曾经编译过一篇《为什么Scrum不行？》，其中提到了9个Scrum不行的理由。如下：</p>
+<blockquote>
+<p><strong>Reason 1:</strong> Scrum的基石是相信人。创造一个安全的环境，这样每个人都能相互学习，相互直言。但是，这是不行的，这世上有很多人并不关心这些，而且政治和竞争到处都是，办公室里无小事，你和别人交心，你相信他们，最终受伤的你自己。你真的以为那里有空间让你可以去犯错，去冒险吗？</p>
+<p><strong>Reason 2:</strong> Scrum认为只要给员工足够多的自由员工就能做得最好。这该死的理论是基于什么玩意？不可能，人的天性是懒惰的，他们才不会把事做好的，他们只会做相应报酬的工作量，还可能基本甚至达不到其相应的报酬，大多数人都在混日子。尤其是和经理比起来，谁不想能尽快地成为经理或Team leader啊，因为那样他们就可以即不干活，又挣得多。另外，你给他们自由，你就会发现，他们会只会做他们感兴趣的事，要么聊QQ，要么打游戏，看闲书，反正不干正事。直到你催了，他们才动一动。</p>
+<p><strong>Reason 3:</strong> 因为前面的原因，所以，我们仍然要把一个PM放在Scrum团队的上面做管理，这样才会有产出。于是，PM给团队分配任何，管得细枝末节，事无巨细，天天让你做进度汇报，等等。直至把团队拖垮。</p>
+<p><strong>Reason 4:</strong>Scrum只不过是一个流程。这世上有太多的流程，尤其是那那些执行CMMI的公司。几乎所有玩CMMI流程的公司，你都能看到的是员工都是那一副副难看的脸。所以，Scrum的流程同样会这样。因为这些都不是开发团队自发出来的，而是上面管你喜欢不喜欢按给你的。Scrum根本不可能增进你的软件质量和技术，只能是优秀的人才才可能！使用Scrum的公司都是些吝啬鬼，他们不愿花大钱招优秀的人，他们妄图使用Scrum这种东西让现有的这些廉价劳动力发挥更大的生产效率，Scrum成了push程序员最有用的工具。</p>
+<p><strong>Reason 5:</strong>Scrum delivers ‘business value’。不是这样的，实际上，Scrum不可能。这有很多原因。真正了解业务的那帮人根本不可能加入项目团队，那些人谁TMD愿意和苦逼的技术人员加班啊。 那些人喜欢和我们的用户吃吃喝喝，花天酒地的，根本不会和你们那些奇怪的东西（如：backlog）或是那堆ugly的内向古怪的技术人员打交道，更别说什么技术了。所以，你的团队就像一个客服团队或救火队一样疲于奔命。</p>
+<p><strong>Reason 6:</strong> 一个敏捷的团队应该是持续进步的。这就是为什么Scrum总是在问什么干得好，什么需要改进，并定义行动方案。你真的以为员工想进步吗？让他们不得不去想想自己和团队怎么进步，然后他们还不得不去执行行动方案。别天真了，人的天性是不喜欢改变的，人的天性是习惯于一些按部就搬的事，也许那样做令人讨厌，但是人家还是能干点东西出来。如果你逼着人家改变，你就是在压迫人家，人家自然会反抗。</p>
+<p><strong>Reason 7:</strong>Product Owner专注于 ‘what’ 和 ‘why’ 的问题，开发团队决定 ‘how’。很不错的分工，于是可以造就一个即高速有重质量的团队。然而，这根本不行。你的Product Owner马上就想要这个功能，他才不管你的软件开发的技术难题，人家只要快，要你meet deadline，要你给我们重要的客户做出承诺。另外，你千万不要以为你们可以轰走这个初级的product owner，因为他的后台是直接汇报到高层管理。你作为一个程序员可能只是其个小部门的一个小喽啰，或者只是外包公司，你觉得可能吗？你觉得建立信任可能吗？</p>
+<p><strong>Reason 8:</strong> 软件质量和生产率成正比。也就是说，质量越高，生产率越高。如果质量不高，你开发效率就会低下，但是谁管呢？我们朝九晚五的上班，质量好了也是做8小时，质量差了也是做8小时，无所为嘛。另外，我们的project manager (或者是Scrum master!) 总是会批评我们没有按计划完成。所以，这根本不可能。</p>
+<p><strong>Reason 9:</strong> “是的，如果我们只做需要的功能，那么我们就会最低的成本，对吗？”，为什么这世上总是会有这些幼稚的人？这种事怎么可能啊。很多很多的银行或保险公司的项目在你还没有启动项目前就谈好了一个价格（可能还会有回扣），为了打单子，销售什么都干得出来，让你去做项目是因为你是廉价劳动力，而且，他们会不断地加需求，因为软件合同谈好的价格时候，连需求都没有，你去做了才有，还是模糊和不确定或根本就是错的，然后需求是越来越多，越改越多。等你精疲力尽的时候，你才意识到，销售早就把你卖了。</p>
+</blockquote>
+<p>这九点抨击了<strong>Scrum方法体系中过度的理想化，构建了一个平等、高效、友善的类乌托邦式的开发团队</strong>。而作者指出这一理想环境是很难在现实中遇到的，无论是开发团队成员拒绝不断积极地改进重构；还是项目负责人只是追求开发结果；还是业务人员不愿与团队交流…这些都是在社会语境下会存在的实际问题。</p>
+<p>我认为国内对于Scrum方法运用的屡屡碰壁也由此的一部分原因。姑且假设Scrum方法是高效的，但是在我国生产环境及行业背景下却很难将这一高效的特性发挥出来（甚至有可能更加低效）。我国的互联网行业普遍存在高级程序员稀缺、低级程序员泛滥的问题。对于某一出现的问题，可能大部分开发者不适沟通与解决。<strong>Scrum更加适合于一帮资深程序员组成的team，每个人都是牛人，每个人都有激情干活</strong>。在国内大家只是干活拿工资，没什么激情，不适合Scrum。</p>
+<p>极限编程在实践落地中的现状与问题已经在前述优劣处提过，在于<strong>过于复杂的实践带来了更高的成本</strong>。结伴开发。每周40工时等一设想几乎不可能在国内互联网公司（尤其是各中小型公司）推广，更多的公司和PM选择借鉴其中的一部分作为项目开发的“建议”。而Xp中的 <strong>价值观 和原则 更是不被互联网公司重视</strong>，可能在互联网及迅速发展的大背景下，更多的公司热衷于能直接带来红利的狼性文化，而不是沟通、简答、反馈和勇气。</p>
+<p>尽管如此，我们依旧发现<strong>国内的生产实践中存在不少实践成功的事例</strong>。早在2008年，在 google 的 Agile China 讨论组中出现了一系列的帖子讨论Scrum ，内容涉及对Scrum 的理解、CSM 的接受程度及其在国内的实施效果等方面。从这些讨论的字里行间不难看出，业内人员已对“敏捷”有了更深入的思考，而不再是最初的模仿。发展至今，也许以Xp和Scrum为代表的敏捷开发早已深入人心，但是其<strong>在具体实践中的细节仍然需要国内互联网从业者们根据国情进行不断的取舍、优化与迭代。</strong></p>
+<h2 id="四、小结"><a href="#四、小结" class="headerlink" title="四、小结"></a>四、小结</h2><ol>
+<li>极限编程和Scrum作为21世纪兴起的敏捷开发的代表性方法论，各具特性又互相影响。Scrum更多提供了框架供开发团队参考和自我完善。而极限编程作为一整个价值观、原则与实践，为开发的各项环节确定了可供使用的标准。</li>
+<li>二者思想相近、内容相异，彼此在兴起与发展过程中互相融合补充。也在十数年的实践中体现了各自的优劣性与适用场景。</li>
+<li>目前大多数公司采用以Scrum为框架，Xp中借鉴部分的实践方法进行开发。</li>
+<li>国内目前对于二者的应用并不顺利，在引进这两种高效开发方法的同属遇到了很多我国特定的社会与技术问题有待解决。也许未来随着我国互联网产业的进一步成熟，会在此为框架基础上形成一套适合我国国情的中国特色敏捷开发方法体系。</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li>什么是敏捷    <a href="http://www.scrumcn.com/agile/scrum-knowledge-libray/agile101.html" target="_blank" rel="noopener">http://www.scrumcn.com/agile/scrum-knowledge-libray/agile101.html</a></li>
+<li>什么是SCRUM    <a href="http://www.scrumcn.com/agile/xp.html" target="_blank" rel="noopener">http://www.scrumcn.com/agile/xp.html</a></li>
+<li>什么是极限编程    <a href="http://www.scrumcn.com/agile/scrum-knowledge-library/scrum.html" target="_blank" rel="noopener">http://www.scrumcn.com/agile/scrum-knowledge-library/scrum.html</a></li>
+<li>xp和scrum在实战中的应用问题    <a href="https://www.cnblogs.com/cly84920/archive/2012/12/26/4426470.html" target="_blank" rel="noopener">https://www.cnblogs.com/cly84920/archive/2012/12/26/4426470.html</a></li>
+<li>敏捷方法之极限编程(XP)和 Scrum区别    <a href="https://www.cnblogs.com/dekevin/p/5613664.html" target="_blank" rel="noopener">https://www.cnblogs.com/dekevin/p/5613664.html</a>)</li>
+<li>运用Scrum做项目管理真实案例    <a href="https://blog.csdn.net/lackin/article/details/7265992" target="_blank" rel="noopener">https://blog.csdn.net/lackin/article/details/7265992</a></li>
+<li>Scrum 在中国——企业实施情况调查实录   <a href="https://www.infoq.cn/article/scrum_china_2008_investigate" target="_blank" rel="noopener">https://www.infoq.cn/article/scrum_china_2008_investigate</a></li>
+<li>凤翼天翔——Scrum 在 Yahoo! 中的成功应用    <a href="https://www.infoq.cn/article/2008/03/Scrum-Adoption-in-Yahoo/" target="_blank" rel="noopener">https://www.infoq.cn/article/2008/03/Scrum-Adoption-in-Yahoo/</a></li>
+<li>国人眼中的 Scrum    <a href="https://www.infoq.cn/article/2008/03/Scrum-Perspective-in-China" target="_blank" rel="noopener">https://www.infoq.cn/article/2008/03/Scrum-Perspective-in-China</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
+              <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="tag"># 软件工程</a>
+              <a href="/tags/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/" rel="tag"># 敏捷开发</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA%E4%B9%8B%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B/" rel="prev" title="软件工程概论之过程模型">
+      <i class="fa fa-chevron-left"></i> 软件工程概论之过程模型
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、极限编程与Scrum方法概述"><span class="nav-number">2.</span> <span class="nav-text">一、极限编程与Scrum方法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是极限编程（Extreme-Programming，XP）？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是极限编程（Extreme Programming，XP）？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#极限编程的简述"><span class="nav-number">2.1.1.</span> <span class="nav-text">极限编程的简述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#极限编程的目的"><span class="nav-number">2.1.2.</span> <span class="nav-text">极限编程的目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#极限编程的12条军规"><span class="nav-number">2.1.3.</span> <span class="nav-text">极限编程的12条军规</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#极限编程的4个价值"><span class="nav-number">2.1.4.</span> <span class="nav-text">极限编程的4个价值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#沟通"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">沟通</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#简单"><span class="nav-number">2.1.4.2.</span> <span class="nav-text">简单</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#反馈"><span class="nav-number">2.1.4.3.</span> <span class="nav-text">反馈</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#勇气"><span class="nav-number">2.1.4.4.</span> <span class="nav-text">勇气</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Scrum？"><span class="nav-number">2.2.</span> <span class="nav-text">什么是Scrum？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Scrum-的简述与流程"><span class="nav-number">2.2.1.</span> <span class="nav-text">Scrum 的简述与流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scrum中的三大角色"><span class="nav-number">2.2.2.</span> <span class="nav-text">Scrum中的三大角色</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#产品负责人（Product-Owner）"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">产品负责人（Product Owner）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#流程管理员（Scrum-Master）"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">流程管理员（Scrum Master）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#开发团队（Scrum-Team）"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">开发团队（Scrum Team）</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、二者的比较分析"><span class="nav-number">3.</span> <span class="nav-text">二、二者的比较分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XP与Scrum的主要异同"><span class="nav-number">3.1.</span> <span class="nav-text">XP与Scrum的主要异同</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二者的相同"><span class="nav-number">3.1.1.</span> <span class="nav-text">二者的相同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二者的区别"><span class="nav-number">3.1.2.</span> <span class="nav-text">二者的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代长度的不同"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">迭代长度的不同</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#是否允许修改需求"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">是否允许修改需求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#User-Story是否严格按照优先级别来实现"><span class="nav-number">3.1.2.3.</span> <span class="nav-text">User Story是否严格按照优先级别来实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#是否采用严格的工程方法保证进度或者质量"><span class="nav-number">3.1.2.4.</span> <span class="nav-text">是否采用严格的工程方法保证进度或者质量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XP与Scrum在生产实践中的优劣"><span class="nav-number">3.2.</span> <span class="nav-text">XP与Scrum在生产实践中的优劣</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、国内应用现状"><span class="nav-number">4.</span> <span class="nav-text">三、国内应用现状</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、小结"><span class="nav-number">5.</span> <span class="nav-text">四、小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">嘿, 这里是私人空间!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">126k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:30</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>
