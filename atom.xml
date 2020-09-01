@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-21T08:16:34.378Z</updated>
+  <updated>2020-09-01T13:27:42.865Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode刷题流水账2020-08</title>
+    <link href="http://yoursite.com/2020/09/01/LeetCode%E5%88%B7%E9%A2%98%E6%B5%81%E6%B0%B4%E8%B4%A62020-08/"/>
+    <id>http://yoursite.com/2020/09/01/LeetCode%E5%88%B7%E9%A2%98%E6%B5%81%E6%B0%B4%E8%B4%A62020-08/</id>
+    <published>2020-09-01T13:21:59.000Z</published>
+    <updated>2020-09-01T13:27:42.865Z</updated>
+    
+    <content type="html"><![CDATA[<p>Week 4 ✔</p><p>Week 5 ✘ ​</p><a id="more"></a><p>2020年8月22日 “再度”开始刷力扣</p><p>既然决定不读研就好好刷题学工程吧</p><p>每周七题以上. 如果遇到考试周等特别情况可以提前一周完成任务, 不得向后拖延.</p><h2 id="2020年8月22日-week4"><a href="#2020年8月22日-week4" class="headerlink" title="2020年8月22日-week4"></a>2020年8月22日-week4</h2><p>主题: 链表</p><h3 id="237-删除链表中的节点"><a href="#237-删除链表中的节点" class="headerlink" title="[237] 删除链表中的节点"></a>[237] 删除链表中的节点</h3><p>简单题</p><p>复习单链表</p><h4 id="删除当前节点"><a href="#删除当前节点" class="headerlink" title="删除当前节点"></a>删除当前节点</h4><p>传入参数仅为要删除的节点, (保证不是最后一个节点, 保证链表有两个及以上节点)</p><p>最初的思路自然是<strong>将前驱节点的指针指向后继节点</strong>, 但是无法取得前驱节点.</p><p>正确的思路: <strong>将本节点赋值为后继节点, 并删去后继节点.</strong></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(ListNode* node)</span> </span>&#123;</span><br><span class="line">        node-&gt;val = node-&gt;next-&gt;val;</span><br><span class="line">        node-&gt;next = node-&gt;next-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="19-删除链表的倒数第N个节点"><a href="#19-删除链表的倒数第N个节点" class="headerlink" title="[19] 删除链表的倒数第N个节点"></a>[19] 删除链表的倒数第N个节点</h3><p>中等题</p><p>学习了链表的两个常用技巧: 快慢双指针, 哑节点</p><h4 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a><strong>双指针</strong></h4><p>比较慢的做法是遍历两遍, 一次获取链表长度L, 一次删去倒数第几个数</p><p>可以设置两个指针, 快指针先走n步, 然后快慢指针一起走, 这样快指针到尾的时候慢指针正好到了倒数第n个</p><h4 id="哑节点"><a href="#哑节点" class="headerlink" title="哑节点"></a><strong>哑节点</strong></h4><p>其实就是数据结构课上那个首结点还是什么来着的, 就那个实际第一个节点的前面一个没有数据仅为了引导链表的节点. 加入这玩意可以简化链表操作.</p><blockquote><p>但是当我面对操作<strong>头节点</strong>的问题时，代码就无法通过测试了。<br>例如：我们一共有<strong>四个节点</strong>，需要删除<strong>倒数第四个</strong>节点。<br>因为当我们删除了头节点的时候，我们用什么来返回链表呢？</p></blockquote><h2 id="2020年8月31日-week5"><a href="#2020年8月31日-week5" class="headerlink" title="2020年8月31日-week5"></a>2020年8月31日-week5</h2><p>主题:链表</p><h3 id="206-反转链表"><a href="#206-反转链表" class="headerlink" title="[206]反转链表"></a>[206]反转链表</h3><p>简单题</p><p>使用了三种方法解决: 完全地反向构建一个新链表; 原地迭代反转链表; 原地递归反转链表.</p><p>反向复制: 从头到尾地遍历, 每次复制遍历到的节点, 并将该节点的指向为刚才复制的节点.</p><p>原地迭代: 将本节点的指向从后节点指向前节点, 注意储存后节点和本节点的地址</p><p>递归反转: 假设后半段已经复制好了.还是不太能理得清楚. <a href="https://leetcode-cn.com/problems/reverse-linked-list/solution/fan-zhuan-lian-biao-by-leetcode/" target="_blank" rel="noopener">链接</a></p><h3 id="21-合并两个有序链表"><a href="#21-合并两个有序链表" class="headerlink" title="[21] 合并两个有序链表"></a>[21] 合并两个有序链表</h3><p>简单题</p><p>两种: 迭代比较/递归合并</p><p>迭代比较: 双指针, 指向的小的那个并入结果链表(注: 不需要实际复制一遍链表, 只要使用指针即可)</p><p>递归比较: 每次小的指向合并后半部分的返回结果</p><p>注意: 两个链表为空/有一个为空的情况, 只需要两次判断即可</p><h3 id="234-回文链表"><a href="#234-回文链表" class="headerlink" title="[234] 回文链表"></a>[234] 回文链表</h3><p>简单</p><p>On遍历, 将链表的数据储存在数组中, 从前从后比较</p><p>进阶: 时间On 空间O1, 将后半部分链表翻转, 然后双指针比较(未完成)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Week 4 ✔&lt;/p&gt;
+&lt;p&gt;Week 5 ✘ ​&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="屠龙术" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B1%A0%E9%BE%99%E6%9C%AF/"/>
+    
+      <category term="算法与刷题" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B1%A0%E9%BE%99%E6%9C%AF/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%88%B7%E9%A2%98/"/>
+    
+      <category term="力扣刷题流水账" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B1%A0%E9%BE%99%E6%9C%AF/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%88%B7%E9%A2%98/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>软件工程之敏捷方法综述:XP与Scrum</title>
@@ -642,34 +674,6 @@
       <category term="CSAPP" scheme="http://yoursite.com/tags/CSAPP/"/>
     
       <category term="Lab" scheme="http://yoursite.com/tags/Lab/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>时与光W_202006-4</title>
-    <link href="http://yoursite.com/2020/06/28/%E6%97%B6%E4%B8%8E%E5%85%89W_202006-4/"/>
-    <id>http://yoursite.com/2020/06/28/%E6%97%B6%E4%B8%8E%E5%85%89W_202006-4/</id>
-    <published>2020-06-28T12:41:22.000Z</published>
-    <updated>2020-06-28T14:16:47.560Z</updated>
-    
-    <content type="html"><![CDATA[<p>2020年6月22日 ~ 28日.</p><p>开始个人小结计划</p><p>学习 CSAPP </p><p>追剧, 玩游戏</p><a id="more"></a><h2 id="时与光-个人小结计划"><a href="#时与光-个人小结计划" class="headerlink" title="时与光:个人小结计划"></a>时与光:个人小结计划</h2><p>听说每天坚持写技术博客有利于知识巩固与技能加深, 自觉没有每天坚持的能力, 想了个折中的办法: 以一周为阶段定期总结. 当然, 每月月底, 每半年, 每年也要整理记录! </p><p>主要内容希望自己能够以技术学习, 生活记录为主. 反正也不会有别人看, 就写的简略且随性一些. </p><p><strong>以下是每次小结的规范:</strong></p><ol><li>小结分为: 周记, 月记, 半年总结, 年度总结 四种, 后缀分别以<code>w,m,h,y</code>标识.</li><li>命名格式例: <ol><li>周记: <code>时与光W_202006-4</code> 末位数字代表本月第几周(周日为准)</li><li>月记: <code>时与光M_202006</code></li><li>半年记: <code>时与光H_2020上半年</code></li><li>年度记: <code>时与光Y_2020年度总结</code></li></ol></li><li>内容包括: <ol><li>技术学习成果与产出总结</li><li>记录生活, 如旅游 读书 观影 游戏</li><li>突如其来的想法</li><li>下一阶段的展望</li></ol></li></ol><h2 id="学习CSAPP"><a href="#学习CSAPP" class="headerlink" title="学习CSAPP"></a>学习CSAPP</h2><p>项目地址:</p><p><a href="https://github.com/luy-0/CS-APP-LABs" target="_blank" rel="noopener">https://github.com/luy-0/CS-APP-LABs</a></p><p>对CSAPP这本书垂涎已久, 趁着疫情的期末大把空闲时间和两位同学组队学习CSAPP以及CMU的15-213课程. 更多学习情况参看README部分.</p><p>本周着重于完成机器级别编程部分, 以及课程配套实验中的Bomb Lab, 这是一个通过 gdb 查看可执行文件的汇编代码, 并且推导出炸弹拆除的密钥. 在这几天习得了基本的汇编代码阅读能力, gdb 的基本运用能力, 对C计算机底层运算的实现有了更深的理解. </p><p>这个Lab真是让人又爱又恨, 每拆除一个炸弹的时候成就感满满, 但是对着汇编代码死活瞪不出逻辑的暴躁和无奈…</p><p>机器级别编程 是指 使用汇编代码完成函数操作. 主要学习内容包括 控制机器执行, 执行过程 数据的存储(数组 结构 联合) 以及其他进阶部分. 其中关于缓存区溢出, 栈攻击, 浮点代码等部分掌握的不好.</p><h2 id="追剧"><a href="#追剧" class="headerlink" title="追剧"></a>追剧</h2><p>这一周在追《隐蔽的角落》 . 改编自紫金陈的推理小说《坏小孩》，讲述了在沿海小城三个孩子(朱朝阳, 岳普, 严良) 在景区游玩时无意间拍摄记录了一次谋杀(张东升, 秦昊饰)，想借机敲诈来筹钱，以及随后发生的一连串的故事。大结局播完豆瓣评分依旧为9.0</p><p>主要是周围同学都在追哈哈哈, 感叹国产网剧真的很成熟了, 前几集导演对于节奏把握的很好, 中间叙事稍有平淡, 最后一部分还没看😂  配乐挺用心, 虽然我听不懂后现代, 但是还是有被情绪感染到. 在展现上制片组的细致程度令人感动, 例如张东升海夜追朝阳时对着脚步印, 例如试卷和板书上的题目真的是初中知识点 , 竟然有一点点对着美剧扣细节的感觉了. 演员也实力诠释, 秦昊的演技令人背后发凉, 小朋友的演技也很稳啊~ 朝阳那种说的少想得多的内向好学生非常真实, 普普的可爱是真的戏里戏外的可爱 ,就是太机灵懂事了, 牛逼的让人心疼(话说我怎么总觉得她最后要黑化一类的?) 严良其实没有很好地演出想象里的小痞子气, 缺点那种坏味.一部很优秀的国产剧, 拯救了我被言情耽改剧摧毁的信心~ (没错我就是指ssss和cql)</p><p>希望结局能够依旧精彩吧! </p><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202006/img/XGYW%25K%7DKW%40MFX%7BQNNHBI95W.jpg" alt=""></p><h2 id="玩游戏"><a href="#玩游戏" class="headerlink" title="玩游戏"></a>玩游戏</h2><p>嗯…最近又入了平安京的坑, MOBA真香:dog: 不过打了一周上了少属就没啥动力了… 快乐咸鱼佛系游戏, 竞技游戏嘛 心态放好就行了~</p><h2 id="下周目标"><a href="#下周目标" class="headerlink" title="下周目标"></a>下周目标</h2><p>继续CSAPP </p><p>开始刷LC</p><p>控制每日游戏时长</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2020年6月22日 ~ 28日.&lt;/p&gt;
-&lt;p&gt;开始个人小结计划&lt;/p&gt;
-&lt;p&gt;学习 CSAPP &lt;/p&gt;
-&lt;p&gt;追剧, 玩游戏&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="时与光" scheme="http://yoursite.com/categories/%E6%97%B6%E4%B8%8E%E5%85%89/"/>
-    
-    
-      <category term="小结" scheme="http://yoursite.com/tags/%E5%B0%8F%E7%BB%93/"/>
-    
-      <category term="周记" scheme="http://yoursite.com/tags/%E5%91%A8%E8%AE%B0/"/>
     
   </entry>
   
