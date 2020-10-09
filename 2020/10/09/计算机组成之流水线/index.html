@@ -38,11 +38,11 @@
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/09/T%E6%B5%81%E6%B0%B4.png">
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/09/TP2.png">
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/09/%E6%95%88%E7%8E%87.png">
-<meta property="article:published_time" content="2020-10-09T07:46:46.224Z">
-<meta property="article:modified_time" content="2020-10-09T09:34:54.260Z">
+<meta property="article:published_time" content="2020-10-09T07:46:46.000Z">
+<meta property="article:modified_time" content="2020-10-09T09:39:00.650Z">
 <meta property="article:author" content="LUY">
 <meta property="article:tag" content="学习笔记">
-<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="计算机组成">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/09/%E6%B4%97%E8%A1%A3%E5%BA%971.png">
 
@@ -232,7 +232,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-10-09 15:46:46 / 修改时间：17:34:54" itemprop="dateCreated datePublished" datetime="2020-10-09T15:46:46+08:00">2020-10-09</time>
+              <time title="创建时间：2020-10-09 15:46:46 / 修改时间：17:39:00" itemprop="dateCreated datePublished" datetime="2020-10-09T15:46:46+08:00">2020-10-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -413,7 +413,7 @@ E = \frac {紫色格子数目} {总的格子数目} = \frac {n} {n+(m-1)}</scrip
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
-              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"># 操作系统</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" rel="tag"># 计算机组成</a>
           </div>
 
         
@@ -518,7 +518,7 @@ E = \frac {紫色格子数目} {总的格子数目} = \frac {n} {n+(m-1)}</scrip
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -644,6 +644,59 @@ setInterval("createtime()",250);
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
