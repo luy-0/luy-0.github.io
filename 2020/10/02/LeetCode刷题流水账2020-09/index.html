@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="刷完了初级题库, 对各分类的简单算法有了基础的认知 整理了一些STL的常用函数(不全面)  开始由C++专向Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode刷题流水账2020-09">
+<meta property="og:url" content="http://yoursite.com/2020/10/02/LeetCode%E5%88%B7%E9%A2%98%E6%B5%81%E6%B0%B4%E8%B4%A62020-09/index.html">
+<meta property="og:site_name" content="(ﾟ∀。)">
+<meta property="og:description" content="刷完了初级题库, 对各分类的简单算法有了基础的认知 整理了一些STL的常用函数(不全面)  开始由C++专向Java">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://assets.leetcode-cn.com/solution-static/70/70_fig1.gif">
+<meta property="article:published_time" content="2020-10-02T13:21:59.000Z">
+<meta property="article:modified_time" content="2020-10-09T05:25:40.050Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://assets.leetcode-cn.com/solution-static/70/70_fig1.gif">
+
+<link rel="canonical" href="http://yoursite.com/2020/10/02/LeetCode%E5%88%B7%E9%A2%98%E6%B5%81%E6%B0%B4%E8%B4%A62020-09/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>LeetCode刷题流水账2020-09 | (ﾟ∀。)</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="(ﾟ∀。)" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">(ﾟ∀。)</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/02/LeetCode%E5%88%B7%E9%A2%98%E6%B5%81%E6%B0%B4%E8%B4%A62020-09/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="嘿, 这里是私人空间!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="(ﾟ∀。)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode刷题流水账2020-09
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-10-02 21:21:59" itemprop="dateCreated datePublished" datetime="2020-10-02T21:21:59+08:00">2020-10-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-09 13:25:40" itemprop="dateModified" datetime="2020-10-09T13:25:40+08:00">2020-10-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B1%A0%E9%BE%99%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">屠龙术</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B1%A0%E9%BE%99%E6%9C%AF/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">算法与刷题</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B1%A0%E9%BE%99%E6%9C%AF/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%88%B7%E9%A2%98/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98%E6%B5%81%E6%B0%B4%E8%B4%A6/" itemprop="url" rel="index"><span itemprop="name">力扣刷题流水账</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>12 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>刷完了初级题库, 对各分类的简单算法有了基础的认知</p>
+<p>整理了一些STL的常用函数(不全面) </p>
+<p>开始由C++专向Java</p>
+<a id="more"></a>
+<p>2020年8月22日 “再度”开始刷力扣</p>
+<p>既然决定不读研就好好刷题学工程吧</p>
+<p>每周七题以上. 如果遇到考试周等特别情况可以提前一周完成任务, 不得向后拖延.</p>
+<h2 id="2020年9月1日-week1"><a href="#2020年9月1日-week1" class="headerlink" title="2020年9月1日-week1"></a>2020年9月1日-week1</h2><p>主题:链表+字符串</p>
+<h3 id="141-环形链表"><a href="#141-环形链表" class="headerlink" title="[141] 环形链表"></a>[141] 环形链表</h3><p>简单题</p>
+<p>检测给出的链表中有没有环</p>
+<p>第一下自己没有想出来, 看了题解. </p>
+<p>方法1: 哈希表储存节点的出现次数———-只要定义的是<code>map&lt;listNode*, int&gt;</code> 就可以了.</p>
+<p>方法2: 很巧妙, 快慢节点, 快每次走2步, 慢每次走1步. 如果有环快慢指针会相遇, 没有环则快指针会走到尽头.</p>
+<p>注意: 方法2最后的判断应该是: <code>fNode != nullptr &amp;&amp; fNode-&gt;next != nullptr</code> 因为<code>fnode</code>每次走两步!</p>
+<h3 id="344-反转字符串"><a href="#344-反转字符串" class="headerlink" title="[344] 反转字符串"></a>[344] 反转字符串</h3><p>简单题</p>
+<p>双指针, 左右端交换, 向中间靠拢</p>
+<p>记得要 <code>i++, j--</code> ! 第二次忘了!</p>
+<p>小技巧: 3次异或交换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s[left] ^&#x3D; s[right]</span><br><span class="line">s[right] ^&#x3D; s[left]</span><br><span class="line">s[left] ^&#x3D; s[right]</span><br></pre></td></tr></table></figure>
+<p>即可实现两个元素交换,且不用花费额外空间,还快</p>
+<p>此外还可以使用算法库中的 <a href="https://zh.cppreference.com/w/cpp/algorithm/reverse" target="_blank" rel="noopener">reverse(begin, end)</a></p>
+<h2 id="2020年9月2日-week2"><a href="#2020年9月2日-week2" class="headerlink" title="2020年9月2日-week2"></a>2020年9月2日-week2</h2><p>主题: 字符串</p>
+<h3 id="7-整数反转"><a href="#7-整数反转" class="headerlink" title="[7] 整数反转"></a>[7] 整数反转</h3><p>简单题(大概)</p>
+<p>单看数据反转这个要求其实不难, x每次退栈个位数, re此时入栈. 问题在于涉及到溢出的判断.</p>
+<p>这里考察了一下下对于数据储存的理解是否深刻. 见<a href="https://leetcode-cn.com/problems/reverse-integer/solution/hua-jie-suan-fa-7-zheng-shu-fan-zhuan-by-guanpengc/" target="_blank" rel="noopener">题解</a></p>
+<p>此外, 在<code>limit.h</code>中储存的INT_MAX等数据</p>
+<h2 id="2020年9月3日-week2"><a href="#2020年9月3日-week2" class="headerlink" title="2020年9月3日-week2"></a>2020年9月3日-week2</h2><p>主题:字符串</p>
+<h3 id="387-字符串中的第一个唯一字符"><a href="#387-字符串中的第一个唯一字符" class="headerlink" title="[387] 字符串中的第一个唯一字符"></a>[387] 字符串中的第一个唯一字符</h3><p>简单题</p>
+<p>解法一,hash+两次遍历,很容易想到</p>
+<p>解法二,不借助hash 该字符第一次出现的位置和最后一次出现的位置一样，就证明不重复。</p>
+<p>函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="keyword">char</span> ch;</span><br><span class="line">s.find_first_of(ch);	<span class="comment">//返回索引,找不到返回-1</span></span><br><span class="line">s.find_last_of(ch);		<span class="comment">//同上</span></span><br></pre></td></tr></table></figure>
+<p>小优化: 无论字符串多长都只需要26次循环(常数级优化):</p>
+<ol>
+<li><p>若字符串长度&lt;26 同上</p>
+</li>
+<li><p>若&gt;26, 将26个字母遍历, 找到第一个出现一次的. </p>
+</li>
+<li><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">    <span class="keyword">char</span> c = s[i];</span><br><span class="line">    <span class="keyword">int</span> pre = s.find_first_of(c);</span><br><span class="line">    <span class="keyword">if</span>(pre!=<span class="number">-1</span> &amp;&amp; pre==s.find_last_of(c))</span><br><span class="line">    	<span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">-1</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="2020年9月4日-week2"><a href="#2020年9月4日-week2" class="headerlink" title="2020年9月4日-week2"></a>2020年9月4日-week2</h2><p>主题: 字符串</p>
+<h3 id="242-有效的字母异位词"><a href="#242-有效的字母异位词" class="headerlink" title="[242] 有效的字母异位词"></a>[242] 有效的字母异位词</h3><p>Hash(数组也行) 几次遍历</p>
+<p>为了检查 t 是否是 s 的重新排列，我们可以计算两个字符串中每个字母的出现次数并进行比较。因为 S 和 T 都只包含 A−Z 的字母，所以一个简单的 26 位计数器表就足够了</p>
+<p>我们需要两个计数器数表进行比较吗？实际上不是，因为我们可以用一个计数器表计算 s 字母的频率，用 t 减少计数器表中的每个字母的计数器，然后检查计数器是否回到零。</p>
+<h3 id="125-验证回文串"><a href="#125-验证回文串" class="headerlink" title="[125] 验证回文串"></a>[125] 验证回文串</h3><p>简单题 </p>
+<p>回文是很熟悉的题型了, 双指针，栈，reverse都行. 这一题着重于String的一些API调用</p>
+<p>以下这些函数定义在<code>&lt;string&gt;</code> 里</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>数值转换</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✔<a href="https://zh.cppreference.com/w/cpp/string/basic_string/stol" target="_blank" rel="noopener">stoi  stol  stoll</a>(C++11)(C++11)(C++11)</td>
+<td>转换字符串为有符号整数 (函数)</td>
+</tr>
+<tr>
+<td><a href="https://zh.cppreference.com/w/cpp/string/basic_string/stoul" target="_blank" rel="noopener">stoul  stoull</a>(C++11)(C++11)</td>
+<td>转换字符串为无符号整数 (函数)</td>
+</tr>
+<tr>
+<td><a href="https://zh.cppreference.com/w/cpp/string/basic_string/stof" target="_blank" rel="noopener">stof  stod  stold</a>(C++11)(C++11)(C++11)</td>
+<td>转换字符串为浮点值 (函数)</td>
+</tr>
+<tr>
+<td>✔<a href="https://zh.cppreference.com/w/cpp/string/basic_string/to_string" target="_blank" rel="noopener">to_string</a>(C++11)</td>
+<td>转换整数或浮点值为 <code>string</code> (函数)</td>
+</tr>
+<tr>
+<td><a href="https://zh.cppreference.com/w/cpp/string/basic_string/to_wstring" target="_blank" rel="noopener">to_wstring</a>(C++11)</td>
+<td>转换整数或浮点值为 <code>wstring</code> (函数)</td>
+</tr>
+<tr>
+<td>范围访问</td>
+<td></td>
+</tr>
+<tr>
+<td>✔<a href="https://zh.cppreference.com/w/cpp/iterator/begin" target="_blank" rel="noopener">begin  cbegin</a>(C++11)(C++14)</td>
+<td>返回指向容器或数组起始的迭代器 (函数模板)</td>
+</tr>
+<tr>
+<td>✔<a href="https://zh.cppreference.com/w/cpp/iterator/end" target="_blank" rel="noopener">end  cend</a>(C++11)(C++14)</td>
+<td>返回指向容器或数组结尾的迭代器 (函数模板)</td>
+</tr>
+<tr>
+<td><a href="https://zh.cppreference.com/w/cpp/iterator/rbegin" target="_blank" rel="noopener">rbegin  crbegin</a>(C++14)</td>
+<td>返回指向一个容器或数组的逆向迭代器 (函数模板)</td>
+</tr>
+<tr>
+<td><a href="https://zh.cppreference.com/w/cpp/iterator/rend" target="_blank" rel="noopener">rend  crend</a>(C++14)</td>
+<td>返回容器或数组的逆向尾迭代器 (函数模板)</td>
+</tr>
+<tr>
+<td>✔<a href="https://zh.cppreference.com/w/cpp/iterator/size" target="_blank" rel="noopener">size  ssize</a>(C++17)(C++20)</td>
+<td>返回容器或数组的大小 (函数模板)</td>
+</tr>
+<tr>
+<td>✔<a href="https://zh.cppreference.com/w/cpp/iterator/empty" target="_blank" rel="noopener">empty</a>(C++17)</td>
+<td>检查容器是否为空 (函数模板)</td>
+</tr>
+<tr>
+<td><a href="https://zh.cppreference.com/w/cpp/iterator/data" target="_blank" rel="noopener">data</a>(C++17)</td>
+<td>获得指向底层数组的指针 (函数模板)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>以下这些函数定义在<code>&lt;cctype.h&gt;</code> 里</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>参数返回值皆为int</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✔<a href="https://zh.cppreference.com/w/cpp/string/byte/isalnum" target="_blank" rel="noopener">isalnum</a></td>
+<td>检查字符是否为字母或数字 (函数)</td>
+</tr>
+<tr>
+<td>✔<a href="https://zh.cppreference.com/w/cpp/string/byte/isalpha" target="_blank" rel="noopener">isalpha</a></td>
+<td>检查字符是否为字母 (函数)</td>
+</tr>
+<tr>
+<td>✔<a href="https://zh.cppreference.com/w/cpp/string/byte/isdigit" target="_blank" rel="noopener">isdigit</a></td>
+<td>检查字符是否为数字 (函数)</td>
+</tr>
+<tr>
+<td>✔<a href="https://zh.cppreference.com/w/cpp/string/byte/isupper" target="_blank" rel="noopener">isupper</a></td>
+<td>检查字符是否为大写字符 (函数)</td>
+</tr>
+<tr>
+<td>✔<a href="https://zh.cppreference.com/w/cpp/string/byte/islower" target="_blank" rel="noopener">islower</a></td>
+<td>检查字符是否为小写 (函数)</td>
+</tr>
+<tr>
+<td><a href="https://zh.cppreference.com/w/cpp/string/byte/isxdigit" target="_blank" rel="noopener">isxdigit</a></td>
+<td>检查字符是为十六进制字符 (函数)</td>
+</tr>
+<tr>
+<td><a href="https://zh.cppreference.com/w/cpp/string/byte/iscntrl" target="_blank" rel="noopener">iscntrl</a></td>
+<td>检查字符是否为控制字符 (函数)</td>
+</tr>
+<tr>
+<td><a href="https://zh.cppreference.com/w/cpp/string/byte/isgraph" target="_blank" rel="noopener">isgraph</a></td>
+<td>检查字符是否为图形字符 (函数)</td>
+</tr>
+<tr>
+<td><a href="https://zh.cppreference.com/w/cpp/string/byte/isspace" target="_blank" rel="noopener">isspace</a></td>
+<td>检查字符是否为空白间隔字符 (函数)</td>
+</tr>
+<tr>
+<td><a href="https://zh.cppreference.com/w/cpp/string/byte/isblank" target="_blank" rel="noopener">isblank</a>(C++11)</td>
+<td>检查字符是否为空白字符 (函数)</td>
+</tr>
+<tr>
+<td><a href="https://zh.cppreference.com/w/cpp/string/byte/isprint" target="_blank" rel="noopener">isprint</a></td>
+<td>检查字符是否为打印字符 (函数)</td>
+</tr>
+<tr>
+<td><a href="https://zh.cppreference.com/w/cpp/string/byte/ispunct" target="_blank" rel="noopener">ispunct</a></td>
+<td>检查字符是否为标点符 (函数)</td>
+</tr>
+<tr>
+<td>✔<a href="https://zh.cppreference.com/w/cpp/string/byte/tolower" target="_blank" rel="noopener">tolower</a></td>
+<td>转换字符为小写 (函数)</td>
+</tr>
+<tr>
+<td>✔<a href="https://zh.cppreference.com/w/cpp/string/byte/toupper" target="_blank" rel="noopener">toupper</a></td>
+<td>转换字符为大写 (函数)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>此外还有一个将字母转化大小写的小技巧</p>
+<blockquote>
+<p>字母大小写转换的方法：</p>
+<ol>
+<li>统一转成大写：ch &amp; 0b11011111 简写：ch &amp; 0xDF</li>
+<li>统一转成小写：ch | 0b00100000 简写：ch | 0x20</li>
+</ol>
+<p>比较的时候注意加上小括号哦，因为位运算优先级比较低。</p>
+</blockquote>
+<p>但是必须先保证转化的本身就是字母字符  <a href="https://blog.csdn.net/weixin_44190113/article/details/106106495" target="_blank" rel="noopener">原理参考这里,很简单</a></p>
+<h2 id="2020年9月5日"><a href="#2020年9月5日" class="headerlink" title="2020年9月5日"></a>2020年9月5日</h2><p>主题: 字符串</p>
+<h3 id="38-外观数列"><a href="#38-外观数列" class="headerlink" title="[38] 外观数列"></a>[38] 外观数列</h3><p>很有意思的题目, 虽然是简单题但是dp问题还是折腾了快一个小时.</p>
+<blockquote>
+<p>给定一个正整数 <em>n</em>（1 ≤ <em>n</em> ≤ 30），输出外观数列的第 <em>n</em> 项。</p>
+<p>注意：整数序列中的每一项将表示为一个字符串。</p>
+<p>「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。前五项如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.     1</span><br><span class="line">2.     11</span><br><span class="line">3.     21</span><br><span class="line">4.     1211</span><br><span class="line">5.     111221</span><br></pre></td></tr></table></figure>
+<p>第一项是数字 1</p>
+<p>描述前一项，这个数是 <code>1</code> 即 “一个 1 ”，记作 <code>11</code>L</p>
+<p>描述前一项，这个数是 <code>11</code> 即 “两个 1 ” ，记作 <code>21</code></p>
+<p>描述前一项，这个数是 <code>21</code> 即 “一个 2 一个 1 ” ，记作 <code>1211</code></p>
+<p>描述前一项，这个数是 <code>1211</code> 即 “一个 1 一个 2 两个 1 ” ，记作 <code>111221</code></p>
+</blockquote>
+<p>先获取第<code>n-1</code>项, 然后对其进行分析.</p>
+<p>具体的分析代码就不贴了, 补充一下Vector转String的操作:</p>
+<p><a href="https://zh.cppreference.com/w/cpp/string/basic_string/assign" target="_blank" rel="noopener">str.assign()</a></p>
+<blockquote>
+<p>template&lt; class InputIt &gt;<br>basic_string&amp; assign( InputIt first, InputIt last );</p>
+<p>template&lt; class InputIt &gt;<br>constexpr basic_string&amp; assign( InputIt first, InputIt last );</p>
+</blockquote>
+<p>例如 </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt; v;</span><br><span class="line"><span class="built_in">string</span> re;</span><br><span class="line">re.assign(v.<span class="built_in">begin</span>(),v.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
+<h2 id="2020年9月13日"><a href="#2020年9月13日" class="headerlink" title="2020年9月13日"></a>2020年9月13日</h2><h3 id="104-二叉树的最大深度"><a href="#104-二叉树的最大深度" class="headerlink" title="[104]二叉树的最大深度"></a>[104]二叉树的最大深度</h3><p><strong>核心知识点: 递归:</strong></p>
+<ol>
+<li>确定递归函数的参数与返回值: 传入树节点,返回该节点为根的树的深度)</li>
+<li>确定终止: 触底(该节点空), 返回0</li>
+<li>确定单层递归的逻辑: 求左子树深度和右子树深度, 取最大+1返回</li>
+</ol>
+<h2 id="2020年9月16日"><a href="#2020年9月16日" class="headerlink" title="2020年9月16日"></a>2020年9月16日</h2><h3 id="14-最大公共前缀"><a href="#14-最大公共前缀" class="headerlink" title="[14]最大公共前缀"></a>[14]最大公共前缀</h3><p>好像没什么好讲的.. 没有做完全部解法, 回头重做</p>
+<p>TODO</p>
+<h3 id="28-实现strStr-⭐"><a href="#28-实现strStr-⭐" class="headerlink" title="[28]实现strStr()⭐"></a>[28]实现strStr()⭐</h3><p>返回第一个字串, 这题比较有挑战, 很多可以优化的细节</p>
+<p>第一版: 遍历父串每一个字符, 若从此起的后面一段串与子串相同则返回, 否则后移继续</p>
+<p>第二版: 遍历父串每一个字符, 若该字符与子串首字不同则直接继续, 否则再比较</p>
+<p>TODO: KMP</p>
+<p>另外: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string str1;</span><br><span class="line">str1.substr(1,3);		&#x2F;&#x2F;第二个参数是长度而不是结尾索引,返回的是1-4个字符的串</span><br></pre></td></tr></table></figure>
+<h3 id="98-验证二叉搜索树"><a href="#98-验证二叉搜索树" class="headerlink" title="[98]验证二叉搜索树"></a>[98]验证二叉搜索树</h3><p>递归, 有坑! </p>
+<p>详见<a href="https://leetcode-cn.com/problems/validate-binary-search-tree/solution/bao-zhun-sheng-guo-guan-fang-ti-jie-by-novice2mast/" target="_blank" rel="noopener">这里</a></p>
+<h2 id="2020年9月18日"><a href="#2020年9月18日" class="headerlink" title="2020年9月18日"></a>2020年9月18日</h2><p>主题: 树</p>
+<h3 id="101-对称二叉树"><a href="#101-对称二叉树" class="headerlink" title="[101] 对称二叉树"></a>[101] 对称二叉树</h3><p>检测一棵树是否是镜面对称的.</p>
+<p><strong>核心知识点: 树的周游(遍历),</strong> 分成两种: BFS与DFS</p>
+<p>深度遍历DFS: 使用栈, 递归实现</p>
+<p>广度遍历BFS: 使用队列. queue实现</p>
+<p>注意: STL中的queue的pop()函数只能等同于删除第一个元素, 不能返回第一个元素. </p>
+<h3 id="102-二叉树的层序遍历"><a href="#102-二叉树的层序遍历" class="headerlink" title="[102] 二叉树的层序遍历"></a>[102] 二叉树的层序遍历</h3><p>例如: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    3</span><br><span class="line">   &#x2F; \</span><br><span class="line">  9  20</span><br><span class="line">    &#x2F;  \</span><br><span class="line">   15   7</span><br><span class="line">   </span><br><span class="line">需要返回的是:</span><br><span class="line">[</span><br><span class="line">  [3],</span><br><span class="line">  [9,20],</span><br><span class="line">  [15,7]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>直接使用BFS是相当于中序遍历, 但是返回的会是<code>[3,9,20,15,7]</code>, 也就是说没有实现分层的要求. 如何能识别每层之间的界限? 引入哑节点dummy, 在识别到一个哑节点时表示本层出队列完毕, 也相当于下一层入队列完毕, (如果当前队列还有数字就)在最后插入新的哑节点. </p>
+<h2 id="2020年9月19日"><a href="#2020年9月19日" class="headerlink" title="2020年9月19日"></a>2020年9月19日</h2><h3 id="108-将有序数组转换为二叉搜索树"><a href="#108-将有序数组转换为二叉搜索树" class="headerlink" title="[108] 将有序数组转换为二叉搜索树"></a>[108] 将有序数组转换为二叉搜索树</h3><p>将一个按照升序排列的有序数组，转换为一棵高度平衡二叉搜索树。</p>
+<p>本题中，一个高度平衡二叉树是指一个二叉树<em>每个节点</em> 的左右两个子树的高度差的绝对值不超过 1。</p>
+<p>ummm, 显然是曾经学过的内容</p>
+<p>二叉搜索树的中序遍历是升序遍历.取中值作为根, 取左区间作为左子树, 右区间作为右子树.如此递归即可.</p>
+<h3 id="88-合并两个有序数组"><a href="#88-合并两个有序数组" class="headerlink" title="[88] 合并两个有序数组"></a>[88] 合并两个有序数组</h3><blockquote>
+<p>给你两个有序整数数组 <em>nums1</em> 和 <em>nums2</em>，请你将 <em>nums2</em> 合并到 <em>nums1</em> 中<em>，</em>使 <em>nums1</em> 成为一个有序数组。</p>
+</blockquote>
+<p>简单题~</p>
+<p>两个数组倒叙比较, 插入第n+m-1位.</p>
+<p>最后剩下来的如果是nums1则不用管, 如果是nums2就把前面的这一段全部复制到nums1上</p>
+<h2 id="2020年9月22日"><a href="#2020年9月22日" class="headerlink" title="2020年9月22日"></a>2020年9月22日</h2><h3 id="278-第一个错误的版本"><a href="#278-第一个错误的版本" class="headerlink" title="[278] 第一个错误的版本"></a>[278] 第一个错误的版本</h3><p>一个看上去很简单的二分查找问题, 但是对于萌新来说是有坑的</p>
+<h4 id="坑1"><a href="#坑1" class="headerlink" title="坑1"></a>坑1</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 版本1</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">firstBadVersion</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> right = n;</span><br><span class="line">        <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(left==right)</span><br><span class="line">                <span class="keyword">return</span> left;</span><br><span class="line">            <span class="keyword">int</span> mid = (left+right)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(isBadVersion(mid))</span><br><span class="line">                right = mid;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                left = mid+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>但是这个版本会有问题: 当 <code>left</code> 和 <code>right</code> 都取比较大的整数时, <code>mid</code>可能会出现溢出的问题.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 版本2</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">firstBadVersion</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> right = n;</span><br><span class="line">        <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(left==right)</span><br><span class="line">                <span class="keyword">return</span> left;</span><br><span class="line">            <span class="keyword">int</span> mid = left+(right-left)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(isBadVersion(mid))</span><br><span class="line">                right = mid;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                left = mid+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>此时,  mid = left + (right - left) / 2 在 right 很大、 left 是负数且很小的时候， right - left 也有可能超过 int 类型能表示的最大值，只不过一般情况下 left 和 right 表示的是数组索引值，left 是非负数，因此 right - left 溢出的可能性很小。</p>
+<p>再次修正可以使用无符号右移解决,详见<a href="https://leetcode-cn.com/problems/guess-number-higher-or-lower/solution/shi-fen-hao-yong-de-er-fen-cha-zhao-fa-mo-ban-pyth/" target="_blank" rel="noopener">本题解</a></p>
+<h4 id="坑2"><a href="#坑2" class="headerlink" title="坑2"></a>坑2</h4><p>第一次写的代码如下(注意第13行)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 版本3</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">firstBadVersion</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> right = n;</span><br><span class="line">        <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(left==right)</span><br><span class="line">                <span class="keyword">return</span> left;</span><br><span class="line">            <span class="keyword">int</span> mid = left+(right-left)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(isBadVersion(mid))</span><br><span class="line">                right = mid;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                left = mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">例如数组为 1,2,3,4,5 时,</span><br><span class="line">1&gt;&gt; left&#x3D;1,right&#x3D;5,mid&#x3D;3</span><br><span class="line">2&gt;&gt; left&#x3D;3,right&#x3D;5,mid&#x3D;4</span><br><span class="line">3&gt;&gt; left&#x3D;4,right&#x3D;5,mid&#x3D;4</span><br><span class="line">4&gt;&gt; left&#x3D;4,right&#x3D;5,mid&#x3D;4</span><br><span class="line">5&gt;&gt; left&#x3D;4,right&#x3D;5,mid&#x3D;4</span><br><span class="line">...会导致死循环,这是由于取mid的时候舍弃了余数</span><br></pre></td></tr></table></figure>
+<p>同样的原因,如果这么写也会导致死循环</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> mid = left+(right-left)/<span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(isBadVersion(mid))</span><br><span class="line">	right = mid;	<span class="comment">//这里应该改成mid+1</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	left = mid;</span><br></pre></td></tr></table></figure>
+<p>最终的正确版本:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">firstBadVersion</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> right = n;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(left==right)</span><br><span class="line">            <span class="keyword">return</span> left;</span><br><span class="line">        <span class="keyword">int</span> mid = left+(right-left)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(isBadVersion(mid))</span><br><span class="line">            right = mid;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            left = mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="70-爬楼梯"><a href="#70-爬楼梯" class="headerlink" title="[70] 爬楼梯"></a>[70] 爬楼梯</h3><p>第一条动态规划!</p>
+<p>假设你正在爬楼梯。需要 <em>n</em> 阶你才能到达楼顶。每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>
+<script type="math/tex; mode=display">
+f(n) = f(n-1)+f(n-2)</script><p>爬到第 xx 级台阶的方案数是爬到第 <code>x−1</code> 级台阶的方案数和爬到第 <code>x−2</code> 级台阶的方案数的和。很好理解，因为每次只能爬<code>1</code> 级或 <code>2</code>级，所以 <code>f(x)</code> 只能从 <code>f(x−1)</code> 和 <code>f(x - 2)</code> 转移过来</p>
+<p>方法1: 滚动数组</p>
+<p><img src="https://assets.leetcode-cn.com/solution-static/70/70_fig1.gif" alt=""></p>
+<p>方法2: 利用数组保存动态规划的结果</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">dp</span><span class="params">(n+<span class="number">1</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">    dp[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    dp[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    	dp[i] = dp[i<span class="number">-1</span>]+dp[i<span class="number">-2</span>];</span><br><span class="line">    <span class="keyword">return</span> dp[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>嗯, 显然这只是个入门dp</p>
+<p>btw 题解视频小姐姐的声音真好听</p>
+<h2 id="2020年9月27日"><a href="#2020年9月27日" class="headerlink" title="2020年9月27日"></a>2020年9月27日</h2><p>主题: 动态规划,其他</p>
+<h3 id="121-买卖股票的最佳时机"><a href="#121-买卖股票的最佳时机" class="headerlink" title="[121] 买卖股票的最佳时机"></a>[121] 买卖股票的最佳时机</h3><p>暴力法: TLE</p>
+<p>dp:</p>
+<p>如果我第<code>i</code>天卖出, 那么我需要在前<code>i-1</code>天中的最低点买入. 我需要记录目前的最低买入点,  并每天比较 <code>dp[i-1]</code> 和 <code>prices[i] - min</code> 的大小,取最大记录在<code>dp[i]</code>中.</p>
+<h3 id="53-最大子序和"><a href="#53-最大子序和" class="headerlink" title="[53] 最大子序和"></a>[53] 最大子序和</h3><p><a href="https://leetcode-cn.com/problems/maximum-subarray/solution/zheng-li-yi-xia-kan-de-dong-de-da-an-by-lizhiqiang/" target="_blank" rel="noopener">这篇题解</a>对动态规划的讲解非常细致, 适合入门</p>
+<p>dp的核心思路是: 由过往的子问题辅助解决当前的子问题</p>
+<p>关键注意: </p>
+<ol>
+<li>如何将当前的子问题通过之前的子问题表示(也就是递推关系是什么样的)</li>
+<li>如果第<code>i</code>个子问题仅使用到第<code>i-1</code>个子问题的答案, 那么我们不必维护整个数组, 仅仅需要存储的第<code>i-1</code>个子问题的值. 这被称为 <strong>状态压缩</strong>. </li>
+</ol>
+<ul>
+<li>步骤一、定义状态 -&gt; 定义数组元素的含义</li>
+<li>步骤二、状态转移方程 -&gt; 找出数组元素间的关系式</li>
+<li>步骤三、初始化 -&gt; 找出初始条件<br><code>dp[0] = nums[0];</code></li>
+<li>步骤四、状态压缩 -&gt; 优化数组空间<br>每次状态的更新只依赖于前一个状态，就是说 dp[i] 的更新只取决于 dp[i-1] , 我们只用一个存储空间保存上一次的状态即可。</li>
+<li>步骤五、选出结果<br>有的题目结果是<code>dp[i]</code>。<br>本题结果是<code>dp[0]...dp[i]</code> 中最大值。</li>
+</ul>
+<p>TODO: 分治法</p>
+<h3 id="198-打家劫舍"><a href="#198-打家劫舍" class="headerlink" title="[198] 打家劫舍"></a>[198] 打家劫舍</h3><p>dp, 把状态转移方程搞清楚即可.</p>
+<p><code>dp[i] = max(dp[i-1],dp[i-2]+nums[i])</code> 要么用上一个dp, 要么用本次数字＋上上一个dp</p>
+<p><a href="https://leetcode-cn.com/problems/house-robber/solution/da-jia-jie-she-by-leetcode-solution/" target="_blank" rel="noopener">题解</a>小姐姐真好听!!</p>
+<h3 id="412-Fizz-Buzz"><a href="#412-Fizz-Buzz" class="headerlink" title="[412] Fizz Buzz"></a>[412] Fizz Buzz</h3><p>用最简单的方法做出来了, 时间复杂度非常糟糕, 看了下似乎在用散列优化,还用了些数学上的小技巧</p>
+<p>例如官当题解和<a href="https://leetcode-cn.com/problems/fizz-buzz/solution/si-lu-jian-dan-xing-neng-da-dao-100-by-jamleon-3/" target="_blank" rel="noopener">这个</a></p>
+<h3 id="204-计数质数"><a href="#204-计数质数" class="headerlink" title="[204] 计数质数"></a>[204] 计数质数</h3><p>数学类题目…有很多奇怪的算法</p>
+<p>一般想到的就是: 依次比较, 直到sqrt(m)</p>
+<p>一点细节:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i*i &lt;= m; i++)&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//而不是</span></span><br><span class="line"><span class="keyword">int</span> sq = <span class="built_in">sqrt</span>(m);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= sq; i++)&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2020年9月28日"><a href="#2020年9月28日" class="headerlink" title="2020年9月28日"></a>2020年9月28日</h2><p>从今天开始改用Java写了</p>
+<h3 id="724-寻找数组的中心索引"><a href="#724-寻找数组的中心索引" class="headerlink" title="[724] 寻找数组的中心索引"></a>[724] 寻找数组的中心索引</h3><p>中心索引的定义: 数组中心索引的左侧所有元素相加的和等于右侧所有元素相加的和</p>
+<p>其实思路相通了就很简单. 首先计算全部元素和. 再遍历第二次, 每次判断 sum_left *2 + curr_value == sum_total 即可!</p>
+<h3 id="35-搜索插入位置"><a href="#35-搜索插入位置" class="headerlink" title="[35] 搜索插入位置"></a>[35] 搜索插入位置</h3><p>二分查找</p>
+<p>强推这位兄弟的<a href="https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/" target="_blank" rel="noopener">题解</a></p>
+<h3 id="2020年9月29日"><a href="#2020年9月29日" class="headerlink" title="2020年9月29日"></a>2020年9月29日</h3><h3 id="145-二叉树的后序遍历"><a href="#145-二叉树的后序遍历" class="headerlink" title="[145] 二叉树的后序遍历"></a>[145] 二叉树的后序遍历</h3><p>涉及到树的有两种做法: 一曰递归, 一曰迭代</p>
+<p>这里给出了递归的做法: 关键代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">helper(V,root-&gt;left);</span><br><span class="line">helper(V,root-&gt;right);</span><br><span class="line">V.push_back(root-&gt;val);</span><br></pre></td></tr></table></figure>
+<p>TODO: 迭代的做法! </p>
+<h3 id="56-合并区间"><a href="#56-合并区间" class="headerlink" title="[56]合并区间"></a>[56]合并区间</h3><p>直接上<a href="https://leetcode-cn.com/problems/merge-intervals/solution/he-bing-qu-jian-by-leetcode-solution/" target="_blank" rel="noopener">题解</a>吧 </p>
+<p>如果我们按照区间的左端点排序，那么在排完序的列表中，可以合并的区间一定是连续的. 这是再把可以合并的区间合并即可.</p>
+<p>问题在于: 我们的排序对象是数组(而不是数), 因此是需要在 <code>sort()</code> 函数中指定比较器 <code>Comparator&lt;int[]&gt; c</code> </p>
+<p>排序后: 如何判断区间是否可以合并的? 记录当前区间的左值右值LR, 与下一个区间比较,来决定是合并, 拓展,还是另起区间. </p>
+<h3 id="2020年9月30日"><a href="#2020年9月30日" class="headerlink" title="2020年9月30日"></a>2020年9月30日</h3><p>关键词:数组</p>
+<h3 id="48-旋转图像"><a href="#48-旋转图像" class="headerlink" title="[48] 旋转图像"></a>[48] 旋转图像</h3><p>七月份时做了一个几乎完全一致的题目( <a href="https://leetcode-cn.com/problems/rotate-array/" target="_blank" rel="noopener">旋转数组</a>) 感觉这题算是讨巧的数学变换, 但是编写代码时要细心.  </p>
+<p>先转置, 再镜像对称  这里的代码编写可能需要绕一会</p>
+<p>此外这题还有很对其他的变换方法, 加入TODO</p>
+<h3 id="面试题-01-07-旋转矩阵"><a href="#面试题-01-07-旋转矩阵" class="headerlink" title="面试题 01.07. 旋转矩阵"></a>面试题 01.07. 旋转矩阵</h3><p>同上</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/27/%E5%B1%B1%E4%B8%8E%E6%B0%B4-%E6%BC%AB%E6%AD%A5%E7%A7%A6%E5%B2%AD%E4%B9%8B%E4%BA%8C%E5%88%B7%E5%AD%90%E5%8D%88/" rel="prev" title="山与水-漫步秦岭之二刷子午">
+      <i class="fa fa-chevron-left"></i> 山与水-漫步秦岭之二刷子午
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/08/Java%E6%8B%BE%E9%81%97%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="next" title="Java拾遗之面向对象">
+      Java拾遗之面向对象 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年9月1日-week1"><span class="nav-number">1.</span> <span class="nav-text">2020年9月1日-week1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#141-环形链表"><span class="nav-number">1.1.</span> <span class="nav-text">[141] 环形链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#344-反转字符串"><span class="nav-number">1.2.</span> <span class="nav-text">[344] 反转字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年9月2日-week2"><span class="nav-number">2.</span> <span class="nav-text">2020年9月2日-week2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-整数反转"><span class="nav-number">2.1.</span> <span class="nav-text">[7] 整数反转</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年9月3日-week2"><span class="nav-number">3.</span> <span class="nav-text">2020年9月3日-week2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#387-字符串中的第一个唯一字符"><span class="nav-number">3.1.</span> <span class="nav-text">[387] 字符串中的第一个唯一字符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年9月4日-week2"><span class="nav-number">4.</span> <span class="nav-text">2020年9月4日-week2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#242-有效的字母异位词"><span class="nav-number">4.1.</span> <span class="nav-text">[242] 有效的字母异位词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#125-验证回文串"><span class="nav-number">4.2.</span> <span class="nav-text">[125] 验证回文串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年9月5日"><span class="nav-number">5.</span> <span class="nav-text">2020年9月5日</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#38-外观数列"><span class="nav-number">5.1.</span> <span class="nav-text">[38] 外观数列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年9月13日"><span class="nav-number">6.</span> <span class="nav-text">2020年9月13日</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#104-二叉树的最大深度"><span class="nav-number">6.1.</span> <span class="nav-text">[104]二叉树的最大深度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年9月16日"><span class="nav-number">7.</span> <span class="nav-text">2020年9月16日</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#14-最大公共前缀"><span class="nav-number">7.1.</span> <span class="nav-text">[14]最大公共前缀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-实现strStr-⭐"><span class="nav-number">7.2.</span> <span class="nav-text">[28]实现strStr()⭐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#98-验证二叉搜索树"><span class="nav-number">7.3.</span> <span class="nav-text">[98]验证二叉搜索树</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年9月18日"><span class="nav-number">8.</span> <span class="nav-text">2020年9月18日</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#101-对称二叉树"><span class="nav-number">8.1.</span> <span class="nav-text">[101] 对称二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#102-二叉树的层序遍历"><span class="nav-number">8.2.</span> <span class="nav-text">[102] 二叉树的层序遍历</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年9月19日"><span class="nav-number">9.</span> <span class="nav-text">2020年9月19日</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#108-将有序数组转换为二叉搜索树"><span class="nav-number">9.1.</span> <span class="nav-text">[108] 将有序数组转换为二叉搜索树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#88-合并两个有序数组"><span class="nav-number">9.2.</span> <span class="nav-text">[88] 合并两个有序数组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年9月22日"><span class="nav-number">10.</span> <span class="nav-text">2020年9月22日</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#278-第一个错误的版本"><span class="nav-number">10.1.</span> <span class="nav-text">[278] 第一个错误的版本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#坑1"><span class="nav-number">10.1.1.</span> <span class="nav-text">坑1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#坑2"><span class="nav-number">10.1.2.</span> <span class="nav-text">坑2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#70-爬楼梯"><span class="nav-number">10.2.</span> <span class="nav-text">[70] 爬楼梯</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年9月27日"><span class="nav-number">11.</span> <span class="nav-text">2020年9月27日</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#121-买卖股票的最佳时机"><span class="nav-number">11.1.</span> <span class="nav-text">[121] 买卖股票的最佳时机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-最大子序和"><span class="nav-number">11.2.</span> <span class="nav-text">[53] 最大子序和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#198-打家劫舍"><span class="nav-number">11.3.</span> <span class="nav-text">[198] 打家劫舍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#412-Fizz-Buzz"><span class="nav-number">11.4.</span> <span class="nav-text">[412] Fizz Buzz</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#204-计数质数"><span class="nav-number">11.5.</span> <span class="nav-text">[204] 计数质数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年9月28日"><span class="nav-number">12.</span> <span class="nav-text">2020年9月28日</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#724-寻找数组的中心索引"><span class="nav-number">12.1.</span> <span class="nav-text">[724] 寻找数组的中心索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#35-搜索插入位置"><span class="nav-number">12.2.</span> <span class="nav-text">[35] 搜索插入位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020年9月29日"><span class="nav-number">12.3.</span> <span class="nav-text">2020年9月29日</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#145-二叉树的后序遍历"><span class="nav-number">12.4.</span> <span class="nav-text">[145] 二叉树的后序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#56-合并区间"><span class="nav-number">12.5.</span> <span class="nav-text">[56]合并区间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020年9月30日"><span class="nav-number">12.6.</span> <span class="nav-text">2020年9月30日</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#48-旋转图像"><span class="nav-number">12.7.</span> <span class="nav-text">[48] 旋转图像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面试题-01-07-旋转矩阵"><span class="nav-number">12.8.</span> <span class="nav-text">面试题 01.07. 旋转矩阵</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">嘿, 这里是私人空间!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">144k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4:01</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>
