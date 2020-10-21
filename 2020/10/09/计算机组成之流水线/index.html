@@ -38,8 +38,11 @@
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/09/T%E6%B5%81%E6%B0%B4.png">
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/09/TP2.png">
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/09/%E6%95%88%E7%8E%87.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/11/%E7%BB%93%E6%9E%84%E7%9B%B8%E5%85%B3.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/11/%E6%B0%94%E6%B3%A1.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/11/%E7%BB%93%E6%9E%84%E7%9B%B8%E5%85%B3.png">
 <meta property="article:published_time" content="2020-10-09T07:46:46.000Z">
-<meta property="article:modified_time" content="2020-10-09T09:39:00.650Z">
+<meta property="article:modified_time" content="2020-10-11T03:02:08.283Z">
 <meta property="article:author" content="LUY">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="计算机组成">
@@ -230,10 +233,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-10-09 15:46:46 / 修改时间：17:39:00" itemprop="dateCreated datePublished" datetime="2020-10-09T15:46:46+08:00">2020-10-09</time>
+              <time title="创建时间：2020-10-09 15:46:46" itemprop="dateCreated datePublished" datetime="2020-10-09T15:46:46+08:00">2020-10-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-11 11:02:08" itemprop="dateModified" datetime="2020-10-11T11:02:08+08:00">2020-10-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -258,14 +267,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>5.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>10 分钟</span>
             </span>
 
         </div>
@@ -362,8 +371,8 @@
 <li>设流水线由m段组成，完成n个任务的吞吐率称 为 实际吞吐率，记作TP</li>
 </ul>
 <h4 id="最大吞吐率"><a href="#最大吞吐率" class="headerlink" title="最大吞吐率"></a>最大吞吐率</h4><script type="math/tex; mode=display">
-假设流水线各段的时间相同,均为\Delta t, 则\\TP_{max} = 1/\Delta t_0\\\\
-假设流水线各段的时间不同,第i段时间为\Delta t_i, 则\\TP_{max} = 1/max\{\Delta t_i\}</script><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/09/TPmax.png" alt=""></p>
+假设流水线各段的时间相同,均为\Delta t, 则\\\\TP_{max} = 1/\Delta t_0\\\\
+假设流水线各段的时间不同,第i段时间为\Delta t_i, 则\\\\TP_{max} = 1/max\{\Delta t_i\}</script><p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/09/TPmax.png" alt=""></p>
 <p>图(a) 表示各段的时间相同的流水线, 图(b)表示各段时间不等的流水线.</p>
 <ul>
 <li>由此可见, 最大吞吐率率取决于流水线中最慢一段所需的时间，该段成为流水线的瓶颈</li>
@@ -403,6 +412,123 @@ E = \frac {紫色格子数目} {总的格子数目} = \frac {n} {n+(m-1)}</scrip
 <li>需要用高速锁存器作为流水线寄存器 </li>
 <li>指令之间存在的相关，限制了流水线的性能</li>
 </ul>
+<h2 id="流水线中的相关"><a href="#流水线中的相关" class="headerlink" title="流水线中的相关"></a>流水线中的相关</h2><ul>
+<li><p>流水线中的相关是指相邻或相近的两条指令因存在 某种关联，后一条指令不能在原先指定的时钟周期 开始执行。</p>
+</li>
+<li><p>消除相关的基本方法——暂停<br>暂停流水线中某条指令及其后面所有指令的执行， 该指令之前的所有指令继续执行</p>
+<p>显然, 暂停会降低吞吐率</p>
+</li>
+</ul>
+<p>相关的类型 </p>
+<ul>
+<li>结构相关：当指令在重叠执行过程中，硬件资源 满足不了指令重叠执行的要求，发生资源冲突时 将产生“结构相关”。</li>
+<li>数据相关：因一条指令需要用到前面指令的结果， 而无法与产生结果的指令重叠执行时，就发生了 “数据相关”。</li>
+<li>控制相关：当流水线遇到分支指令和其它会改变 PC值的指令时就发生“控制相关”。</li>
+</ul>
+<h3 id="结构相关"><a href="#结构相关" class="headerlink" title="结构相关"></a>结构相关</h3><p>当指令在重叠执行过程中，硬件资源 满足不了指令重叠执行的要求，发生资源冲突时 将产生“结构相关”。例如，当一条指令正在从存储器中取出时，另一条指令恰好在将一个数据存储到存储器中，因两者都要访问存储器，故出现冲突</p>
+<h4 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h4><p>假定，4级指令流水线包括：取指、取数、运算和存数，各段时间均为△t.执行下面的<br>指令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ADD MM,R1,R2</span><br><span class="line">SUB R3,R4,R5</span><br><span class="line">AND R7.R6.R10</span><br><span class="line">XOR R8,R9,R10</span><br></pre></td></tr></table></figure>
+<p>在上图中的第四个时间点需要 <u>同时进行取指与存数操作</u>,而同一个存储区不能同时完成读操作和写操作.</p>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法:"></a>解决办法:</h4><p>结构竞争的原因是硬件不能满足重叠执行的要求. 于是我们可以: 1) 用更多硬件 2) 不重叠执行 3) 使硬件可以重叠执行</p>
+<ol>
+<li><p>增加资源副本</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/11/%E7%BB%93%E6%9E%84%E7%9B%B8%E5%85%B3.png" alt=""></p>
+<p>例如上例: 可以设计一个数据存储器和一个指令存储器，这样，流水线的取指段与数据访存段就可以通过两个独立的通路同时访问两个独立的存储器了。</p>
+</li>
+<li><p>暂停(或延迟)流水线</p>
+<p>通过延迟（或暂停）流水线的冲突段, 这被称作在流水线中插入气泡</p>
+<p>气泡在流水线中只占资源不做实际操作. 显然会降低吞吐率</p>
+<p>但是相对其他两个方法硬件成本更低</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/11/%E6%B0%94%E6%B3%A1.png" alt=""></p>
+</li>
+<li><p>改变资源以便它们并发使用</p>
+<p>除上述措施外，在相邻近的指令间尽可能不使用相同的资源。例如，在相邻的m（流水线的段数）条指令中，不相关的数据尽量使用不同的寄存器。如果发生使用寄存器冲突时，可以通过程序再设计或寄存器重命名技术来改变寄存器资源，达到可以同时对期望的寄存器访问的目的。</p>
+</li>
+</ol>
+<h3 id="数据相关"><a href="#数据相关" class="headerlink" title="数据相关"></a>数据相关</h3><p>当指令在流水线中重叠执行时，流水线有 可能改变指令读/写操作数的顺序，使之不 同于它们在非流水实现时的顺序，这将导 致数据相关。</p>
+<h4 id="数据相关的分类"><a href="#数据相关的分类" class="headerlink" title="数据相关的分类"></a>数据相关的分类</h4><p>注: 分类是按照正常顺序</p>
+<ol>
+<li><p>写后读 RAW</p>
+<p>如果先读后写, 那么读取的是错误的数据. 是最常见的数据相关.</p>
+</li>
+<li><p>写后写 WAW</p>
+<p>如果后者先写,前者后写, 可能R中保存着错误的数据.</p>
+</li>
+<li><p>读后写 WAR</p>
+<p>如果后者先写, 可能前者读出了错误数据. 但是这种相关很少发生</p>
+</li>
+<li><p>读后读 RAR</p>
+<p>不会引起数据相关</p>
+</li>
+</ol>
+<h4 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h4><ol>
+<li><p>采用直通（forwarding）技术 </p>
+<p>又名定向技术, 旁路, 短路</p>
+<p>控制逻辑将前面指令的结果从其产生的地方直接连通到 当前指令所处的位置。</p>
+</li>
+<li><p>增加专用硬件</p>
+<p>增加流水线互锁（pipeline interlock）硬件。互锁硬件先要 检测流水线中指令的数据相关性，当互锁硬件发现数据 相关时，使流水线工作停顿下来，直到相关消失为止。 </p>
+</li>
+<li><p>利用编译器 流水线调度/指令调度</p>
+<p>编译器可以对指令重新排序或插 入空操作指令，使得加载任何冲突数据的操作被延迟， 但对程序逻辑或输出不受影响</p>
+</li>
+</ol>
+<h3 id="控制相关"><a href="#控制相关" class="headerlink" title="控制相关"></a>控制相关</h3><p>当流水线遇到分支指令和其它会改变PC值的指令时 就发生“控制相关”</p>
+<ul>
+<li>无条件转移指令（如无条件跳转、调用、返回指令等）<ul>
+<li>某些CPU（如 UltraSPARC l）：紧跟在无条件转移指令之后的指令必须执行。</li>
+<li>另一些CPU：采取相对复杂的方法，如提前计算出转移目标地址</li>
+</ul>
+</li>
+<li>条件分支转移指令（为零跳转、循环控制指令等）<ul>
+<li>不仅需要延迟槽，而且一直到流水线的深处，取指单元才能知道到哪里去取下一条指令。</li>
+<li>条件分支指令对流水线性能的影响远比无条件转移指令要大。</li>
+</ul>
+</li>
+</ul>
+<p>以下是针对条件分支指令的处理方法</p>
+<h4 id="冻结流水线-freeze"><a href="#冻结流水线-freeze" class="headerlink" title="冻结流水线(freeze)"></a>冻结流水线(freeze)</h4><p>一旦在指令译码段检测到分支指令，就在转移目标地址确定之前保存或删除所有紧随分支指令之后的指令，当分支指令从执行段流出、确定出新的PC值时，流水线才继续依据新PC值填充流水线. <u>会严重地影响流水线的性能</u>。</p>
+<h4 id="预取分支目标（-prefetch-branch-target）"><a href="#预取分支目标（-prefetch-branch-target）" class="headerlink" title="预取分支目标（ prefetch branch target）"></a>预取分支目标（ prefetch branch target）</h4><p>当条件分支指令被识别时，除了紧随其后的指令外，分支目标也被预取，并保存到分支指令被执行</p>
+<p>如果分支跳转发生，已预取到的目标指令可立刻执行。</p>
+<h4 id="多流"><a href="#多流" class="headerlink" title="多流"></a>多流</h4><p>有些系统采用在条件分支的两路上同时启动取指令操作，并将指令保存到分支指令被<br>实际执行的时候。分支指令执行时，“真”的执行通路即刻可以获得。这种方法是对预取分<br>支目标的发展。</p>
+<h4 id="循环缓冲器"><a href="#循环缓冲器" class="headerlink" title="循环缓冲器"></a>循环缓冲器</h4><p>在许多处理器中，用循环缓冲器来解决分支程序引起的相关。循环缓冲器是一个容量很小、速度非常高的存储器。它保存着最近获取的n条顺序的指令，由流水线的取指段进行维护。如果分支发生，硬件首先检查分支目标是否在缓冲器中。如果在，下一条指令从缓冲器中获取。</p>
+<ol>
+<li>如果正常顺序运行, 那么就正常顺序运行</li>
+<li>如果发生了分支. 那么在判断之后选择语句执行时, 要执行的语句已经录入缓冲器中, 可相比从内存中取指令更快. 此外, 这也表明<code>if..else..</code>语句性能优于<code>if..if..</code> 语句</li>
+<li>特别是对于循环操作. 如果缓冲器够大, 那么只需要从内存中读取一次循环体的指令, 其余均从缓冲器中读出. 因此命名为循环缓冲器.</li>
+</ol>
+<p>循环缓冲器类似于指令 cache，差别是循环缓冲器仅保留顺序指令，且容量比 cache小得多，因此成本较低。</p>
+<h4 id="分支预测"><a href="#分支预测" class="headerlink" title="分支预测"></a>分支预测</h4><p>为了降低分支指令引起断流（停顿）对流水线可能带来的影响，许多CPU提供了分支<br>预测机构。预测既可以在编译阶段静态完成，也可以由硬件在执行阶段动态完成。要做到<br>百分之百的正确预测几乎是不可能的，但采用分支预测必定能带来某些好处。</p>
+<h4 id="静态分支预测"><a href="#静态分支预测" class="headerlink" title="静态分支预测"></a>静态分支预测</h4><p>静态分支预测是根据某种规则进行分支预测.</p>
+<h5 id="预测分支不会发生"><a href="#预测分支不会发生" class="headerlink" title="预测分支不会发生"></a>预测分支不会发生</h5><p>预测分支不会发生也就是预测分支失败。如果一个程序中大多数条件分支指令是用于出错检测处理，那么采用这种预测机制是有利的，因为在正确合理的设计下，出现错误的概<br>率总是很小的。在这样的预测机制下，在知道分支结果之前，流水线流动着分支指令和紧随其后的指令。若分支预测失败，则正如所预期的那样，流水线照常执行；若分支成功，则要用空操作代替已取得的指令（例如清除执行段之前的各流水线段），并到目标地址重新取指令。</p>
+<h5 id="预测分支总是成功"><a href="#预测分支总是成功" class="headerlink" title="预测分支总是成功"></a>预测分支总是成功</h5><p>如果一个程序中包含较多的循环，那么采用这种预测机制是有利的，因为n次循环仅有<br>次会出现分支转移失败。因此，该方法也称为预测分支成功法。在这样的预测机制下，<br>旦分支转移成功就可以开始从分支目标地址处取指令执行。</p>
+<h5 id="由编译器进行预测"><a href="#由编译器进行预测" class="headerlink" title="由编译器进行预测"></a>由编译器进行预测</h5><p>当编译器看到循环语句<code>for（i=0；&lt;1000000计++）{…}</code>时，它就知道循环尾部的转移<br>几乎肯定会发生。如果能有办法让编译器把这一信息告诉硬件，将会节省大量的时间。但<br>是，使用这种技术会带来体系结构的变化，某些处理器中设计了一组新的条件转移指令，这些指令中有一位可以让编译器设置. 取值单元将根据这指令行动.</p>
+<h5 id="剖面法"><a href="#剖面法" class="headerlink" title="剖面法"></a>剖面法</h5><p>剖面法是一种追踪程序执行状况加以预测的方法。它实际运行了该程序（一般是在模拟器上），以获得程序中不同分支指令发生转移的信息（比如概率），然后将这些信息送给编译器，编译器再使用特殊的条件转移指令来通知硬件该如何操作。</p>
+<p>当静态分支预测错误时, 如何取消已经执行的指令?</p>
+<ul>
+<li>总是执行，结果保存在临时寄存器中。当得知预测成功时再复制至实际寄存器</li>
+<li>将要被覆盖的寄存器的原值保存在临时寄存器中, 当得知预测失败时恢复</li>
+</ul>
+<h3 id="动态分支预测"><a href="#动态分支预测" class="headerlink" title="动态分支预测"></a>动态分支预测</h3><p>动态分支预测通过记录分支指令的近期运行的历史信息，并以此作为预测的依据，来提高分支预测的准确度。解决好动态预测的关键是如何记录历史信息和如何决定转移的走向</p>
+<h3 id="延迟分支"><a href="#延迟分支" class="headerlink" title="延迟分支"></a>延迟分支</h3><ul>
+<li><p>这种方法是利用编译器对指令代码进行重新排序，并插入有用指令或空操作指令<br>（NOP），使流水线尽可能保持充满状态。</p>
+</li>
+<li><p>其中心思想就是延迟分支的发生。</p>
+</li>
+<li><p>把分支指令延迟为长度为n的分支指令，其后紧跟有n个延迟槽，延迟槽中放有延迟分支需要执行的指令。流水线遇到分支指令时，按正常方式处理，同时执行延迟槽中的指令，分支延迟槽中的指令“掩盖”了流水线原来必须插入的停顿周期，从而减少分支开销。</p>
+</li>
+<li><p>编译器的任务就是在延迟槽中放入有用的指令，称为延迟槽调度。有三种常用的调度方法：</p>
+<ul>
+<li>从分支前调度</li>
+<li>从目标出调度</li>
+<li>从失败处调度</li>
+</ul>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202010/11/%E7%BB%93%E6%9E%84%E7%9B%B8%E5%85%B3.png" alt=""></p>
+</li>
+</ul>
+<p>该方法有两个限制: </p>
+<p>（1）放入延迟槽的指令需要满足一定的条件。<br>（2）编译器要有预测分支是否成功的能力。</p>
+<p>剩下的先咕咕咕</p>
 
     </div>
 
@@ -425,7 +551,10 @@ E = \frac {紫色格子数目} {总的格子数目} = \frac {n} {n+(m-1)}</scrip
     <a href="/2020/10/08/Java%E6%8B%BE%E9%81%97%E4%B9%8B%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%BA%93/" rel="prev" title="Java拾遗之基本类库">
       <i class="fa fa-chevron-left"></i> Java拾遗之基本类库
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/21/%E5%B1%B1%E4%B8%8E%E6%B0%B4-%E6%BC%AB%E6%AD%A5%E7%A7%A6%E5%B2%AD%E4%B9%8B%E9%9B%AA%E4%B8%AD%E5%85%89%E5%A4%B4%E5%B3%B0/" rel="next" title="山与水-漫步秦岭之雪中光头峰">
+      山与水-漫步秦岭之雪中光头峰 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -489,7 +618,7 @@ E = \frac {紫色格子数目} {总的格子数目} = \frac {n} {n+(m-1)}</scrip
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#流水线概述"><span class="nav-number">1.</span> <span class="nav-text">流水线概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义与原理"><span class="nav-number">1.1.</span> <span class="nav-text">定义与原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时空图"><span class="nav-number">1.2.</span> <span class="nav-text">时空图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流水线的分类"><span class="nav-number">1.3.</span> <span class="nav-text">流水线的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单功能流水线-多功能流水线"><span class="nav-number">1.3.1.</span> <span class="nav-text">单功能流水线 &#x2F; 多功能流水线</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态流水线-动态流水线"><span class="nav-number">1.4.</span> <span class="nav-text">静态流水线 \ 动态流水线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部件级-处理机级-处理机间级-流水线"><span class="nav-number">1.5.</span> <span class="nav-text">部件级 &#x2F; 处理机级 &#x2F; 处理机间级 流水线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性流水线-非线性流水线"><span class="nav-number">1.6.</span> <span class="nav-text">线性流水线 &#x2F; 非线性流水线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流水线的性能"><span class="nav-number">2.</span> <span class="nav-text">流水线的性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#吞吐率"><span class="nav-number">2.1.</span> <span class="nav-text">吞吐率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最大吞吐率"><span class="nav-number">2.1.1.</span> <span class="nav-text">最大吞吐率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实际吞吐率"><span class="nav-number">2.1.2.</span> <span class="nav-text">实际吞吐率</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加速比"><span class="nav-number">2.2.</span> <span class="nav-text">加速比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效率"><span class="nav-number">2.3.</span> <span class="nav-text">效率</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#流水线概述"><span class="nav-number">1.</span> <span class="nav-text">流水线概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义与原理"><span class="nav-number">1.1.</span> <span class="nav-text">定义与原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时空图"><span class="nav-number">1.2.</span> <span class="nav-text">时空图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流水线的分类"><span class="nav-number">1.3.</span> <span class="nav-text">流水线的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单功能流水线-多功能流水线"><span class="nav-number">1.3.1.</span> <span class="nav-text">单功能流水线 &#x2F; 多功能流水线</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态流水线-动态流水线"><span class="nav-number">1.4.</span> <span class="nav-text">静态流水线 \ 动态流水线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部件级-处理机级-处理机间级-流水线"><span class="nav-number">1.5.</span> <span class="nav-text">部件级 &#x2F; 处理机级 &#x2F; 处理机间级 流水线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性流水线-非线性流水线"><span class="nav-number">1.6.</span> <span class="nav-text">线性流水线 &#x2F; 非线性流水线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流水线的性能"><span class="nav-number">2.</span> <span class="nav-text">流水线的性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#吞吐率"><span class="nav-number">2.1.</span> <span class="nav-text">吞吐率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最大吞吐率"><span class="nav-number">2.1.1.</span> <span class="nav-text">最大吞吐率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实际吞吐率"><span class="nav-number">2.1.2.</span> <span class="nav-text">实际吞吐率</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加速比"><span class="nav-number">2.2.</span> <span class="nav-text">加速比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效率"><span class="nav-number">2.3.</span> <span class="nav-text">效率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流水线中的相关"><span class="nav-number">3.</span> <span class="nav-text">流水线中的相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构相关"><span class="nav-number">3.1.</span> <span class="nav-text">结构相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#举个栗子"><span class="nav-number">3.1.1.</span> <span class="nav-text">举个栗子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法"><span class="nav-number">3.1.2.</span> <span class="nav-text">解决办法:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据相关"><span class="nav-number">3.2.</span> <span class="nav-text">数据相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据相关的分类"><span class="nav-number">3.2.1.</span> <span class="nav-text">数据相关的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制相关"><span class="nav-number">3.3.</span> <span class="nav-text">控制相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冻结流水线-freeze"><span class="nav-number">3.3.1.</span> <span class="nav-text">冻结流水线(freeze)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预取分支目标（-prefetch-branch-target）"><span class="nav-number">3.3.2.</span> <span class="nav-text">预取分支目标（ prefetch branch target）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多流"><span class="nav-number">3.3.3.</span> <span class="nav-text">多流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环缓冲器"><span class="nav-number">3.3.4.</span> <span class="nav-text">循环缓冲器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分支预测"><span class="nav-number">3.3.5.</span> <span class="nav-text">分支预测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态分支预测"><span class="nav-number">3.3.6.</span> <span class="nav-text">静态分支预测</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#预测分支不会发生"><span class="nav-number">3.3.6.1.</span> <span class="nav-text">预测分支不会发生</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#预测分支总是成功"><span class="nav-number">3.3.6.2.</span> <span class="nav-text">预测分支总是成功</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#由编译器进行预测"><span class="nav-number">3.3.6.3.</span> <span class="nav-text">由编译器进行预测</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#剖面法"><span class="nav-number">3.3.6.4.</span> <span class="nav-text">剖面法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态分支预测"><span class="nav-number">3.4.</span> <span class="nav-text">动态分支预测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延迟分支"><span class="nav-number">3.5.</span> <span class="nav-text">延迟分支</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -505,7 +634,7 @@ E = \frac {紫色格子数目} {总的格子数目} = \frac {n} {n+(m-1)}</scrip
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -559,12 +688,12 @@ E = \frac {紫色格子数目} {总的格子数目} = \frac {n} {n+(m-1)}</scrip
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">150k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:04</span>
+    <span title="站点阅读时长">4:10</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
