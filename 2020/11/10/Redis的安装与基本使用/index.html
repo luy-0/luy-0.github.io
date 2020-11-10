@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本文是记录大三上学期方向必修课 《数据管理技术》的上机实验。本学期共有四次实验。  Hadoop环境搭建与配置  HBase数据库的部署与配置  Redis数据库的部署与配置 Redis中数据类型使用及命令使用   本文将主要记载后两个实验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis的安装与基本使用">
+<meta property="og:url" content="http://yoursite.com/2020/11/10/Redis%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="(ﾟ∀。)">
+<meta property="og:description" content="本文是记录大三上学期方向必修课 《数据管理技术》的上机实验。本学期共有四次实验。  Hadoop环境搭建与配置  HBase数据库的部署与配置  Redis数据库的部署与配置 Redis中数据类型使用及命令使用   本文将主要记载后两个实验">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/redis%20%E6%9C%8D%E5%8A%A1%E5%99%A8%20%E5%AE%A2%E6%88%B7%E7%AB%AF.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/%E6%9F%A5%E7%9C%8B%E5%85%A8%E9%83%A8%E9%94%AE.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/String%20%E6%B5%8B%E8%AF%95.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/%E4%B8%AD%E6%96%87.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/List%20%E6%B5%8B%E8%AF%95.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/Set%20%E6%B5%8B%E8%AF%95.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/hash%E6%B5%8B%E8%AF%95.png">
+<meta property="article:published_time" content="2020-11-10T14:05:38.000Z">
+<meta property="article:modified_time" content="2020-11-10T14:10:00.746Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Redis">
+<meta property="article:tag" content="NoSQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/redis%20%E6%9C%8D%E5%8A%A1%E5%99%A8%20%E5%AE%A2%E6%88%B7%E7%AB%AF.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/11/10/Redis%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Redis的安装与基本使用 | (ﾟ∀。)</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="(ﾟ∀。)" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">(ﾟ∀。)</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/10/Redis%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="嘿, 这里是私人空间!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="(ﾟ∀。)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Redis的安装与基本使用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-10 22:05:38 / 修改时间：22:10:00" itemprop="dateCreated datePublished" datetime="2020-11-10T22:05:38+08:00">2020-11-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%B0%8F%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">技术小记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%B0%8F%E8%AE%B0/Technology-Stack/" itemprop="url" rel="index"><span itemprop="name">Technology_Stack</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%B0%8F%E8%AE%B0/Technology-Stack/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>11 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文是记录大三上学期方向必修课 《数据管理技术》的上机实验。本学期共有四次实验。</p>
+<ol>
+<li>Hadoop环境搭建与配置 </li>
+<li>HBase数据库的部署与配置 </li>
+<li>Redis数据库的部署与配置</li>
+<li>Redis中数据类型使用及命令使用 </li>
+</ol>
+<p>本文将主要记载后两个实验</p>
+<a id="more"></a>
+<h2 id="实验三-Redis数据库的部署与配置"><a href="#实验三-Redis数据库的部署与配置" class="headerlink" title="实验三: Redis数据库的部署与配置"></a>实验三: Redis数据库的部署与配置</h2><h3 id="Redis-安装"><a href="#Redis-安装" class="headerlink" title="Redis 安装"></a>Redis 安装</h3><p>相比于<code>HBsae</code>, <code>Redis</code>的安装简直太简单啦! 基本没有什么需要配置的地方。</p>
+<p>在<code>Ubuntu</code>中，安装 <code>Redis</code>服务器只需要一行命令。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install redis-server</span><br></pre></td></tr></table></figure>
+<p>启动服务器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server</span><br></pre></td></tr></table></figure>
+<p>启动客户端</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli</span><br></pre></td></tr></table></figure>
+<p>接下来就可以在这里输入命令以操控<code>Redis</code>了</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379 ping</span><br><span class="line">PONG</span><br></pre></td></tr></table></figure>
+<p>注：主机为 127.0.0.1，端口为 6379，下略</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/redis%20%E6%9C%8D%E5%8A%A1%E5%99%A8%20%E5%AE%A2%E6%88%B7%E7%AB%AF.png" alt="redis 服务器 客户端"></p>
+<h3 id="Redis-配置"><a href="#Redis-配置" class="headerlink" title="Redis 配置"></a>Redis 配置</h3><p>我们还是来看一下<code>Redis</code>的配置。在<code>Redis</code>的根目录中有一个配置文件（<code>redis.conf</code>）。可以通过<code>Redis CONFIG</code>命令获取和设置所有<code>Redis</code>配置。</p>
+<p>语法为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONFIG GET CONFIG_SETTING_NAME</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 输入</span><br><span class="line">&gt; CONFIG GET loglevel</span><br><span class="line"># 输出 以loglevel为键的KV对</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 显示所有配置项，输入：</span><br><span class="line">&gt; CONFIG GET *</span><br><span class="line"># 输出见下</span><br></pre></td></tr></table></figure>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/%E6%9F%A5%E7%9C%8B%E5%85%A8%E9%83%A8%E9%94%AE.png" alt="查看全部键"></p>
+<p>我们接下来配置登录密码，语法为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; CONFIG SET CONFIG_SETTING_NAME NEW_CONFIG_VALUE</span><br></pre></td></tr></table></figure>
+<p>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; CONFIG SET requirepass 123456</span><br></pre></td></tr></table></figure>
+<p>再次尝试命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; ping</span><br><span class="line">(error)</span><br><span class="line">&gt; auth 123456</span><br><span class="line">OK</span><br><span class="line">&gt; ping</span><br><span class="line">PONG</span><br></pre></td></tr></table></figure>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81.png" alt="设置密码"></p>
+<p>更多配置项可参考 <a href="http://doc.redisfans.com/server/index.html" target="_blank" rel="noopener">官方文档</a></p>
+<h2 id="实验四：Redis中数据类型使用及命令使用"><a href="#实验四：Redis中数据类型使用及命令使用" class="headerlink" title="实验四：Redis中数据类型使用及命令使用"></a>实验四：Redis中数据类型使用及命令使用</h2><h3 id="教师-学生信息管理系统"><a href="#教师-学生信息管理系统" class="headerlink" title="教师-学生信息管理系统"></a>教师-学生信息管理系统</h3><p>利用<code>Redis</code>架设 教师-学生信息管理系统</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>工号</th>
+<th>姓名</th>
+<th>年龄</th>
+<th>职称</th>
+<th>收入</th>
+<th>教授课程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100001</td>
+<td>章北海</td>
+<td>42</td>
+<td>副教授</td>
+<td>12000</td>
+<td>基础伪装学，心理学实战应用</td>
+</tr>
+<tr>
+<td>100002</td>
+<td>汪淼</td>
+<td>49</td>
+<td>讲师</td>
+<td>9000</td>
+<td>材料学入门</td>
+</tr>
+<tr>
+<td>100003</td>
+<td>罗辑</td>
+<td>38</td>
+<td>讲师</td>
+<td>7500</td>
+<td>逻辑学，威慑导论</td>
+</tr>
+<tr>
+<td>100004</td>
+<td>张召忠</td>
+<td>56</td>
+<td>教授</td>
+<td>15000</td>
+<td>战略忽悠学，简明海战学</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>类型为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">teacher-&lt;id&gt;:name	String</span><br><span class="line">teacher-&lt;id&gt;:age	String</span><br><span class="line">teacher-&lt;id&gt;:title	String</span><br><span class="line">teacher-&lt;id&gt;:salary	String</span><br><span class="line">teacher-&lt;id&gt;:course	Set</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>学号</th>
+<th>姓名</th>
+<th>专业</th>
+<th>参加的社团</th>
+<th>课程成绩</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>180100996</td>
+<td>杰克马</td>
+<td>英语</td>
+<td>支教社，口语角，福报协会</td>
+<td>略</td>
+</tr>
+<tr>
+<td>180100997</td>
+<td>强东刘</td>
+<td>社会学</td>
+<td>好兄弟俱乐部</td>
+<td>略</td>
+</tr>
+<tr>
+<td>180200007</td>
+<td>红颜李</td>
+<td>信息管理</td>
+<td>无人车工作室，怡宝洗头社</td>
+<td>略</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>类型为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">student-&lt;id&gt;:name	String</span><br><span class="line">student-&lt;id&gt;:major	String</span><br><span class="line">student-&lt;id&gt;:clubs	List</span><br><span class="line">student-&lt;id&gt;:scores	Hash</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">set &#39;teacher-100001:name&#39; &#39;章北海&#39;</span><br><span class="line">set &#39;teacher-100001:age&#39; &#39;42&#39;</span><br><span class="line">set &#39;teacher-100001:title&#39; &#39;副教授&#39;</span><br><span class="line">set &#39;teacher-100001:salary&#39; &#39;12000&#39;</span><br><span class="line">sadd &#39;teacher-100001:course&#39; &#39;基础伪装学&#39; &#39;心理学实战应用&#39;</span><br><span class="line"></span><br><span class="line">set &#39;teacher-100002:name&#39; &#39;汪淼&#39;</span><br><span class="line">set &#39;teacher-100002:age&#39; &#39;49&#39;</span><br><span class="line">set &#39;teacher-100002:title&#39; &#39;讲师&#39;</span><br><span class="line">set &#39;teacher-100002:salary&#39; &#39;9000&#39;</span><br><span class="line">sadd &#39;teacher-100002:course&#39; &#39;材料学入门&#39;</span><br><span class="line"></span><br><span class="line">set &#39;teacher-100003:name&#39; &#39;罗辑&#39;</span><br><span class="line">set &#39;teacher-100003:age&#39; &#39;38&#39;</span><br><span class="line">set &#39;teacher-100003:title&#39; &#39;讲师&#39;</span><br><span class="line">set &#39;teacher-100003:salary&#39; &#39;7500&#39;</span><br><span class="line">sadd &#39;teacher-100003:course&#39; &#39;逻辑学&#39; &#39;威慑导论&#39;</span><br><span class="line"></span><br><span class="line">set &#39;teacher-100004:name&#39; &#39;张召忠&#39;</span><br><span class="line">set &#39;teacher-100004:age&#39; &#39;56&#39;</span><br><span class="line">set &#39;teacher-100004:title&#39; &#39;教授&#39;</span><br><span class="line">set &#39;teacher-100004:salary&#39; &#39;15000&#39;</span><br><span class="line">sadd &#39;teacher-100004:course&#39; &#39;战略忽悠学&#39; &#39;简明海战学&#39;</span><br><span class="line"></span><br><span class="line">set &#39;student-180100996:name&#39; &#39;杰克马&#39;</span><br><span class="line">set &#39;student-180100996:major&#39; &#39;英语&#39;</span><br><span class="line">lpush &#39;student-180100996:clubs&#39; &#39;支教社&#39; &#39;口语角&#39; &#39;福报协会&#39;</span><br><span class="line">hmset &#39;student-180100996:scores&#39; &#39;基础伪装学&#39; &#39;86&#39; &#39;心理学实战应用&#39; &#39;96&#39; &#39;威慑导论&#39; &#39;100&#39;</span><br><span class="line"></span><br><span class="line">set &#39;student-180100997:name&#39; &#39;强东刘&#39;</span><br><span class="line">set &#39;student-180100997:major&#39; &#39;社会学&#39;</span><br><span class="line">lpush &#39;student-180100997:clubs&#39; &#39;好兄弟俱乐部&#39;</span><br><span class="line">hset &#39;student-180100997:scores&#39; &#39;简明海战学&#39; &#39;99&#39; </span><br><span class="line">hset &#39;student-180100997:scores&#39; &#39;心理学实战应用&#39; &#39;86&#39; </span><br><span class="line"></span><br><span class="line">set &#39;student-180200007:name&#39; &#39;红颜李&#39;</span><br><span class="line">set &#39;student-180200007:major&#39; &#39;信息管理&#39;</span><br><span class="line">rpush &#39;student-180200007:clubs&#39; &#39;无人车工作室&#39;</span><br><span class="line">rpush &#39;student-180200007:clubs&#39; &#39;怡宝洗头社&#39;</span><br><span class="line">hset &#39;student-180200007:scores&#39; &#39;基础伪装学&#39; &#39;68&#39;</span><br><span class="line">hset &#39;student-180200007:scores&#39; &#39;心理学实战应用&#39; &#39;96&#39;</span><br><span class="line">hset &#39;student-180200007:scores&#39; &#39;威慑导论&#39; &#39;84&#39;</span><br></pre></td></tr></table></figure>
+<p>另：如何从文件中导入数据？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 命令存储在cmd.txt中</span><br><span class="line">redis-cli &lt; cmd.txt</span><br></pre></td></tr></table></figure>
+<p>接下来依次对四种数据结构的常用操作进行测试</p>
+<h3 id="Redis-数据结构及常用操作"><a href="#Redis-数据结构及常用操作" class="headerlink" title="Redis 数据结构及常用操作"></a>Redis 数据结构及常用操作</h3><p><code>Redis</code>中的数据结构主要有 String，List，Set，ZSet，Hash</p>
+<h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><p>字符串是Redis的基本类型之一，用于存储字符串、整数、浮点数。</p>
+<ul>
+<li>对整个字符串或者字符串的其中一部分执行操作；</li>
+<li>对整数和浮点数执行自增(increment)或者自减(decrement)操作</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; SET key value				# 设置指定 key 的值</span><br><span class="line">&gt; GET key 					# 获取指定 key 的值</span><br><span class="line">&gt; DEL key					# 删除此key以及其对应的value，这个命令对5种数据类型都适用</span><br><span class="line">&gt; STRLEN key				# 返回 key 所储存的字符串值的长度</span><br><span class="line"></span><br><span class="line">&gt; MSET key value [key value...]		# 同时设置一个或多个 key-value 对</span><br><span class="line">&gt; MGET key1 [key2..]		# 获取所有(一个或多个)给定 key 的值</span><br><span class="line"></span><br><span class="line">&gt; INCR key					# 将 key 中储存的数字值增一</span><br><span class="line">&gt; INCRBY key increment		# 将 key 所储存的值加上给定的增量值(increment)</span><br><span class="line">&gt; DECR key</span><br><span class="line">&gt; DECRBY key increment</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt; set &#39;teacher-100001:age&#39; &#39;24&#39;</span><br><span class="line">OK</span><br><span class="line"></span><br><span class="line">&gt; del teacher-100001:age</span><br><span class="line">(integer)1</span><br><span class="line"></span><br><span class="line">&gt; mset teacher-100001:name 章北海 teacher-100001:age 42</span><br><span class="line">OK</span><br><span class="line"></span><br><span class="line">&gt; strlen teacher-100001:name</span><br><span class="line">9</span><br><span class="line"></span><br><span class="line">&gt; INCR teacher-100001:age</span><br><span class="line">43</span><br><span class="line"></span><br><span class="line">&gt; mget teacher-100001:name teacher-100001:age</span><br><span class="line">1) &quot;\xe7\xab\xa0\xe5\x8c\x97\xe6\xb5\xb7&quot;</span><br><span class="line">2) &quot;43&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/String%20%E6%B5%8B%E8%AF%95.png" alt="String 测试"></p>
+<p>注：<code>redis</code>会将汉字编码为<code>utf-8</code>存储，使用以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;set China 中国</span><br><span class="line">OK</span><br><span class="line">&gt; save</span><br><span class="line">OK</span><br><span class="line">&gt; exit</span><br><span class="line"></span><br><span class="line">qwert@ubuntu:redis-cli --raw</span><br></pre></td></tr></table></figure>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/%E4%B8%AD%E6%96%87.png" alt="中文"></p>
+<h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><p>一个链表，链表上的每个节点都包含了一个字符串</p>
+<ul>
+<li>从链表的两端推入或者弹出元素(队列操作)；</li>
+<li>根据偏移量对链表进行修剪(trim)；</li>
+<li>读取单个或者多个元素；根据值查找或者移除元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; LPUSH key value1 [value2]	# 将一个或多个值插入到列表头部</span><br><span class="line">&gt; RPUSH key value1 [value2]	# 在列表尾部添加一个或多个值</span><br><span class="line">&gt; LLEN key					# 获取列表长度</span><br><span class="line">&gt; LRANGE key start stop		# 获取列表指定范围内的元素</span><br><span class="line">&gt; LTRIM key start stop		# 对一个列表进行修剪(trim)，指定区间[start,stop]之外的元素都将被删除,</span><br><span class="line">&gt; LSET key index value		# 通过索引设置列表元素的值</span><br><span class="line">&gt; LPOP key					# 移出并获取列表的第一个元素</span><br></pre></td></tr></table></figure>
+<p>实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; LPUSH student-180100996:clubs 支教社</span><br><span class="line">&gt; LPUSH student-180100996:clubs 口语角 福报协会</span><br><span class="line">&gt; RPUSH student-180100996:clubs 曹操发明了世界上第一艘航母</span><br><span class="line">&gt; LLEN student-180100996:clubs</span><br><span class="line">&gt; LRANGE student-180100996:clubs 0 10</span><br><span class="line">&gt; LTRIM student-180100996:clubs 0 2</span><br><span class="line">&gt; LRANGE student-180100996:clubs 0 10</span><br></pre></td></tr></table></figure>
+<p>很让人别扭的是，这里的区间居然是左闭右闭。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/List%20%E6%B5%8B%E8%AF%95.png" alt="List 测试"></p>
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><p>包含字符串的无序收集器, 不可包含重复字符串</p>
+<ul>
+<li>添加、获取、移除单个元素；</li>
+<li>检查一个元素是否存在于集合中；</li>
+<li>计算交集、并集、差集；</li>
+<li>从集合里面随机获取元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➢ Hash类型中的hset, hget, hmget, mdel, hlen, hvals等</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SADD key member1 [member2]		# 向集合添加一个或多个成员</span><br><span class="line">SCARD key						# 获取集合的成员数</span><br><span class="line">SDIFF key1 [key2]				# 返回第一个集合与其他集合之间的差集</span><br><span class="line">SINTER key1 [key2]				# 返回给定所有集合的交集</span><br><span class="line">SUNION key1 [key2]				# 返回所有给定集合的并集</span><br><span class="line">SISMEMBER key member			# 判断 member 元素是否是集合 key 的成员</span><br><span class="line">SMEMBERS key					# 返回集合中的所有成员</span><br><span class="line">SPOP key [count]				# 移除并返回集合中的一个随机元素</span><br><span class="line">SSCAN key cursor [MATCH pattern] [COUNT count]		# 迭代集合中的元素</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SADD &#39;teacher-100001:course&#39; &#39;基础伪装学&#39; &#39;心理学实战应用&#39;</span><br><span class="line">SMEMBERS teacher-100001:course</span><br><span class="line">SADD &#39;teacher-100002:course&#39; &#39;基础伪装学&#39; &#39;材料学入门&#39;</span><br><span class="line"></span><br><span class="line">SINTER teacher-100001:course teacher-100002:course</span><br><span class="line">SUNION teacher-100001:course teacher-100002:course</span><br><span class="line">SDIFF teacher-100001:course teacher-100002:course</span><br><span class="line"></span><br><span class="line">SISMEMBER teacher-100002:course 基础伪装学</span><br><span class="line">SPOP teacher-100002:course 2</span><br><span class="line">SCARD teacher-100002:course</span><br></pre></td></tr></table></figure>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/Set%20%E6%B5%8B%E8%AF%95.png" alt="Set 测试"></p>
+<h4 id="ZSet"><a href="#ZSet" class="headerlink" title="ZSet"></a>ZSet</h4><p>字符串成员(member)与浮点数分值(score)之间的<strong>有序映射</strong>，元素的排列顺序由<strong>分值的大小</strong>决定</p>
+<ul>
+<li>添加、获取、删除单个元素；</li>
+<li>根据分值范围(range)或者成员来获取元素</li>
+</ul>
+<p>略，参考<a href="https://www.runoob.com/redis/redis-sorted-sets.html" target="_blank" rel="noopener">此处</a></p>
+<h4 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h4><p>包含键值对的无序散列表</p>
+<ul>
+<li>添加、获取、移除单个键值对；</li>
+<li>获取所有键值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">HSET key field value				#将哈希表 key 中的字段 field 的值设为 value </span><br><span class="line">HMSET key field1 value1 [field2 value2 ]	# 将多个 field-value对设置到哈希表 key 中</span><br><span class="line">HGET key field						# 获取存储在哈希表中指定字段的值。</span><br><span class="line">HMGET key field1 [field2]			# 获取所有给定字段的值</span><br><span class="line">HGETALL key							# 获取在哈希表中指定 key 的所有字段和值</span><br><span class="line"></span><br><span class="line">HDEL key field1 [field2]			# 删除一个或多个哈希表字段</span><br><span class="line">HLEN key							# 获取哈希表中字段的数量</span><br><span class="line">HEXISTS key field					# 查看哈希表 key 中，指定的字段是否存在。</span><br><span class="line"></span><br><span class="line">HKEYS key							# 获取所有哈希表中的字段</span><br><span class="line">HVALS key							# 获取哈希表中所有值。</span><br><span class="line"></span><br><span class="line">HINCRBY key field increment			# 为哈希表 key 中的指定字段的整数值加上增量 increment 。</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">hset china ali 1</span><br><span class="line">hset china google 1024 hw 251</span><br><span class="line">hkeys china </span><br><span class="line">hvals china </span><br><span class="line"></span><br><span class="line">hlen china</span><br><span class="line">hdel china google</span><br><span class="line">hexists china lianxiang</span><br><span class="line"></span><br><span class="line">hincrby china ali 995</span><br><span class="line">hgetall china</span><br></pre></td></tr></table></figure>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/hash%E6%B5%8B%E8%AF%95.png" alt="hash测试"></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.redis.com.cn/features-of-redis/" target="_blank" rel="noopener">官方：Redis教程</a></p>
+<p><a href="https://www.runoob.com/redis/redis-tutorial.html" target="_blank" rel="noopener">菜鸟教程：Redis教程</a></p>
+<p><a href="https://juejin.im/post/6844903829914271752" target="_blank" rel="noopener">掘金：认识Redis与Redis的数据结构</a></p>
+<p><a href="https://juejin.im/post/6844903827712245774" target="_blank" rel="noopener">掘金：浅谈 Redis 数据结构</a>    涉及源码实现</p>
+<p><a href="https://segmentfault.com/a/1190000037786578" target="_blank" rel="noopener">思否：Redis中对Hash类型的操作命令</a></p>
+<p><a href="https://redis.io/commands" target="_blank" rel="noopener">Redis命令文档</a></p>
+<p><a href="http://doc.redisfans.com/" target="_blank" rel="noopener">Redis命令文档中文版</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/153015977" target="_blank" rel="noopener">知乎：16000 字 Redis 面试知识点总结</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+              <a href="/tags/Redis/" rel="tag"># Redis</a>
+              <a href="/tags/NoSQL/" rel="tag"># NoSQL</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/02/%C2%96LeetCode%E5%88%B7%E9%A2%98%E6%B5%81%E6%B0%B4%E8%B4%A62020-10/" rel="prev" title="LeetCode刷题流水账2020-10">
+      <i class="fa fa-chevron-left"></i> LeetCode刷题流水账2020-10
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验三-Redis数据库的部署与配置"><span class="nav-number">1.</span> <span class="nav-text">实验三: Redis数据库的部署与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-安装"><span class="nav-number">1.1.</span> <span class="nav-text">Redis 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-配置"><span class="nav-number">1.2.</span> <span class="nav-text">Redis 配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验四：Redis中数据类型使用及命令使用"><span class="nav-number">2.</span> <span class="nav-text">实验四：Redis中数据类型使用及命令使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#教师-学生信息管理系统"><span class="nav-number">2.1.</span> <span class="nav-text">教师-学生信息管理系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-数据结构及常用操作"><span class="nav-number">2.2.</span> <span class="nav-text">Redis 数据结构及常用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#String"><span class="nav-number">2.2.1.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">2.2.2.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set"><span class="nav-number">2.2.3.</span> <span class="nav-text">Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ZSet"><span class="nav-number">2.2.4.</span> <span class="nav-text">ZSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hash"><span class="nav-number">2.2.5.</span> <span class="nav-text">Hash</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">嘿, 这里是私人空间!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">171k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4:44</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>
