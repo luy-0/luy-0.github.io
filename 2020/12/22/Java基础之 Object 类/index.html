@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Object 类众所周知，Java 中的 Object 类是所有类的超类。也就是说任意类都会继承 Object 中的方法。      Modifier and Type Method Description     protected Object clone() Creates and returns a copy of this object.创建该对象的一个拷贝   boolean equa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础之Object类">
+<meta property="og:url" content="http://yoursite.com/2020/12/22/Java%E5%9F%BA%E7%A1%80%E4%B9%8B%20Object%20%E7%B1%BB/index.html">
+<meta property="og:site_name" content="(ﾟ∀。)">
+<meta property="og:description" content="Object 类众所周知，Java 中的 Object 类是所有类的超类。也就是说任意类都会继承 Object 中的方法。      Modifier and Type Method Description     protected Object clone() Creates and returns a copy of this object.创建该对象的一个拷贝   boolean equa">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202012/21/image-20201221013916776.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202012/21/image-20201221040503225.png">
+<meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202012/21/image-20201221040618638.png">
+<meta property="article:published_time" content="2020-12-22T07:45:25.000Z">
+<meta property="article:modified_time" content="2020-12-31T23:21:22.927Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="Java基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202012/21/image-20201221013916776.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/12/22/Java%E5%9F%BA%E7%A1%80%E4%B9%8B%20Object%20%E7%B1%BB/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Java基础之Object类 | (ﾟ∀。)</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="(ﾟ∀。)" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">(ﾟ∀。)</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/22/Java%E5%9F%BA%E7%A1%80%E4%B9%8B%20Object%20%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="嘿, 这里是私人空间!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="(ﾟ∀。)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java基础之Object类
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-22 15:45:25" itemprop="dateCreated datePublished" datetime="2020-12-22T15:45:25+08:00">2020-12-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-01 07:21:22" itemprop="dateModified" datetime="2021-01-01T07:21:22+08:00">2021-01-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%A9%AD%E9%BE%99%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">驭龙术</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%A9%AD%E9%BE%99%E6%9C%AF/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%A9%AD%E9%BE%99%E6%9C%AF/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>11 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Object-类"><a href="#Object-类" class="headerlink" title="Object 类"></a>Object 类</h1><p>众所周知，Java 中的 Object 类是所有类的超类。也就是说任意类都会继承 Object 中的方法。</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202012/21/image-20201221013916776.png" alt="image-20201221013916776" style="zoom:67%;" /></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Modifier and Type</th>
+<th style="text-align:left">Method</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>protected Object</code></td>
+<td style="text-align:left"><code>clone()</code></td>
+<td style="text-align:left">Creates and returns a copy of this object.<br/>创建该对象的一个拷贝</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>boolean</code></td>
+<td style="text-align:left"><code>equals(Object obj)</code></td>
+<td style="text-align:left">Indicates whether some other object is “equal to” this one.<br/>判断当前对象与传入参数是否“相等”</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>protected void</code></td>
+<td style="text-align:left"><code>finalize()</code></td>
+<td style="text-align:left"><strong>Deprecated.</strong> The finalization mechanism is inherently problematic.<br/>不建议使用。会在对象被GC回收之前调用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Class&lt;?&gt;</code></td>
+<td style="text-align:left"><code>getClass()</code></td>
+<td style="text-align:left">Returns the runtime class of this <code>Object</code>.<br/>获取对象的类</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>int</code></td>
+<td style="text-align:left"><code>hashCode()</code></td>
+<td style="text-align:left">Returns a hash code value for the object.<br/>获取对象的hash值</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void</code></td>
+<td style="text-align:left"><code>notify()</code></td>
+<td style="text-align:left">Wakes up a single thread that is waiting on this object’s monitor.<br/>任意唤醒一个在此对象监视器上等待的线程</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void</code></td>
+<td style="text-align:left"><code>notifyAll()</code></td>
+<td style="text-align:left">Wakes up all threads that are waiting on this object’s monitor.<br/>唤醒全部在此对象监视器上等待的线程</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left"><code>toString()</code></td>
+<td style="text-align:left">Returns a string representation of the object.<br/>将该对象转为字符串</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void</code></td>
+<td style="text-align:left"><code>wait()</code></td>
+<td style="text-align:left">Causes the current thread to wait until it is awakened, typically by being <em>notified</em> or <em>interrupted</em>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void</code></td>
+<td style="text-align:left"><code>wait(long timeoutMillis)</code></td>
+<td style="text-align:left">Causes the current thread to wait until it is awakened, typically by being <em>notified</em> or <em>interrupted</em>, or until a certain amount of real time has elapsed.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void</code></td>
+<td style="text-align:left"><code>wait(long timeoutMillis, int nanos)</code></td>
+<td style="text-align:left">Causes the current thread to wait until it is awakened, typically by being <em>notified</em> or <em>interrupted</em>, or until a certain amount of real time has elapsed.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>本文所有涉及到的源码来自 JDK-15</p>
+<h2 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="equals-与"><a href="#equals-与" class="headerlink" title="equals 与 =="></a>equals 与 ==</h3><p>Java 中的类型分为 基础类型 和 引用类型。</p>
+<blockquote>
+<p>注意：基本类型并不是类，也不继承 Object 类。</p>
+</blockquote>
+<p>对于引用类型，<code>==</code> 表示它们所引用的对象的地址是一样的，也就是它们必定指向同一个对象。</p>
+<ul>
+<li>从源码我们看到，equals 方法默认就是使用 <code>==</code> 进行比较。也就是说，如果没有覆盖 equals0方法。则通过 equals（）比较该类的两个对象时等价于“==”比较这两个对象。</li>
+<li>如果该方法被覆盖，那么我们认为比较的两个对象是相等的。</li>
+</ul>
+<p>注意：<code>==</code> 比较这两个对象是否是同一个对象；<code>equals</code> 比较这两个对象是否相等。在默认情况下，<code>A==B</code> &lt;=&gt; <code>A.equals(B)</code>；在覆盖过方法的情况下，<code>A==B</code> =&gt; <code>A.equals(B)</code> </p>
+<h3 id="重写-equals-方法"><a href="#重写-equals-方法" class="headerlink" title="重写 equals 方法"></a>重写 equals 方法</h3><p>重写后的 equals 方法应该满足以下五个条件：</p>
+<ol>
+<li>自反性(reflexive)：对于任何非空(null)对象，<code>x.equals(x) == true</code> 恒成立</li>
+<li>对称性(symmetric)：对于任何非空(null)对象，<code>x.equals(y) == y.equals(x)</code> 恒成立</li>
+<li>传递性(transitive)：对于任何非空(null)对象，若<code>x.equals(y) == y.equals(z)</code> ，必有<code>x.equals(z) == true</code></li>
+<li>一致性(consistent)：对于任何非空(null)对象，<code>x.equals(y)</code> 的值在多次调用中始终不变</li>
+<li>非空性(non-null)：对于任何非空(null)对象，<code>x.equals(null) == false</code> 恒成立</li>
+</ol>
+<blockquote>
+<p>为什么要强调非空(null)对象呢？因为如果 x 引用的是 null 的话。那么它根本就没有 <code>equals()</code> 方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Test test = <span class="keyword">null</span>;</span><br><span class="line">System.out.println(test==<span class="keyword">null</span>);			<span class="comment">// true,因为 == 是比较地址的</span></span><br><span class="line">System.out.println(test.equals(<span class="keyword">null</span>));	<span class="comment">// java.lang.NullPointerException</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>很显然，前面三个条件（自反对称传递）也就是集合论中定义的一个<strong>划分</strong>，即体现了这两个集合的<strong>等价关系</strong>。<del>如果上一句话看不懂建议重修离散数学。</del></p>
+<h3 id="常量池"><a href="#常量池" class="headerlink" title="常量池"></a>常量池</h3><p>Java<u>基本类型的包装类</u>的大部分都实现了常量池技术，即Byte，Short，Integer，Long，Character，Boolean；前面4种包装类默认创建了[-128，128]的相应类型的缓存数据，Character创建了数值在[O，127]范围的数据，Boolean直接返回 True Or false.如果超出对应范围仍然会去创建新的。</p>
+<p>对于浮点数的包装类 Float，Double并没有常量池。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Integer a = <span class="number">127</span>;</span><br><span class="line">Integer b = <span class="number">127</span>;</span><br><span class="line">a == b;				<span class="comment">// true,它们指向同一个对象</span></span><br><span class="line">a.equal(b);			<span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">Integer a = <span class="number">129</span>;</span><br><span class="line">Integer b = <span class="number">129</span>;</span><br><span class="line">a == b;				<span class="comment">// false,它们指向不同的对象</span></span><br><span class="line">a.equal(b);			<span class="comment">// true,它们确实相等</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Integer a = <span class="number">127</span>;</span><br><span class="line">Integer b = <span class="keyword">new</span> Integer(<span class="number">127</span>);	<span class="comment">// 这种情况下b会创建新的对象</span></span><br><span class="line">a == b;				<span class="comment">// false,它们指向不同的对象</span></span><br><span class="line">a.equal(b);			<span class="comment">// true,它们确实相等</span></span><br></pre></td></tr></table></figure>
+<h2 id="hashCode"><a href="#hashCode" class="headerlink" title="hashCode"></a>hashCode</h2><p>这个方法用于返回该对象的 Hash 值。这里不介绍 Hash 值的意义和用途。</p>
+<p>该方法会返回一个 int 整型。</p>
+<blockquote>
+<p>该方法规约如下：</p>
+<ol>
+<li>在一次程序运行中，对同一个对象多次求哈希值的返回值应当相同。但在同一个程序的多次运行中，并不要求它们的Hash值总是相同</li>
+<li>若 <code>A.equals(B)</code>, 则 <code>A.hashCode() == B.hashCode()</code></li>
+<li>若 <code>A.hashCode() == B.hashCode()</code>，<strong>未必有</strong> <code>A.equals(B)</code>，也<strong>未必有</strong> <code>A == B</code></li>
+</ol>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>native 修饰符：A native method is a Java method whose implementation is provided by non-java code. 本地方法是使用其他语言编写的 Java 方法，它取决于具体的 JVM。</li>
+<li>该方法的默认行为一般为将对象在堆上的地址转化为整型返回，但是这在实现时并不是必需的。</li>
+</ul>
+<h3 id="hashCode-与-equals"><a href="#hashCode-与-equals" class="headerlink" title="hashCode 与 equals"></a>hashCode 与 equals</h3><p>由于 hashCode 方法默认是根据对象的内存地址生成的。考虑以下关系：</p>
+<blockquote>
+<ol>
+<li>若 <code>A == B</code> 为真，则必有 <code>A.equals(B) == true</code></li>
+<li>若 <code>A.equals(B) == true</code>，则 <code>A == B</code> 未必为真</li>
+<li>若 <code>A.equals(B)</code>, 则 <code>A.hashCode() == B.hashCode()</code></li>
+<li>在默认情况下，若 <code>A == B</code> 为真，则 <code>A.hashCode() == B.hashCode()</code></li>
+</ol>
+</blockquote>
+<p>不难推理出，由于 equals 并不要求两对象的内存地址相同，因此 hashCode 方法应当随着 equals 方法的重写而重写。</p>
+<h2 id="getClass"><a href="#getClass" class="headerlink" title="getClass"></a>getClass</h2><blockquote>
+<p>返回该对象运行时的类</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> Class&lt;?&gt; getClass();</span><br></pre></td></tr></table></figure>
+<p>显然这也是一个本地方法，并且不可被重写。</p>
+<ul>
+<li>注意返回的是对象的运行时的类，联系多态，理解下面第四行代码</li>
+<li>Java 泛型是类型擦除的。因此泛型中的值不会显式。<ul>
+<li>类型擦除：指JVM并不会意识到泛型信息</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Test a = <span class="keyword">new</span> subTest();</span><br><span class="line">List&lt;String&gt; b = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;Integer&gt; c = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">System.out.println(a.getClass());		<span class="comment">// class StudyObject.subTest</span></span><br><span class="line">System.out.println(b.getClass());		<span class="comment">// class java.util.ArrayList</span></span><br><span class="line">System.out.println(c.getClass());		<span class="comment">// class java.util.ArrayList</span></span><br></pre></td></tr></table></figure>
+<h2 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString"></a>toString</h2><blockquote>
+<p>返回对象的字符串表示形式。该方法应该言简意丰、便于阅读，建议所有类重写该方法。</p>
+<p>如果未重写该方法，会以 <code>&quot;&lt;类名&gt; + &#39;@&#39; + &lt;0xHash值&gt;&quot;</code> 的形式返回。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> getClass().getName() + <span class="string">"@"</span> + Integer.toHexString(hashCode());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h2><blockquote>
+<p>复制出当前对象的一个拷贝。对”拷贝”的定义因类型而异，一般性的共识是满足以下条件</p>
+<ul>
+<li><code>A != B</code>    并不是<strong>同一个</strong>对象</li>
+<li><code>A.getClass() == B.getClass()</code>   是同一类对象</li>
+<li><code>A.equals() == B.equals()</code>       两个对象的相等的</li>
+</ul>
+<p>只有实现了 <code>Cloneable</code> 接口的类才允许调用本方法，否则会抛出 <code>CloneNotSupportedException</code> 异常。</p>
+<p>默认为浅拷贝</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">native</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException</span>;</span><br></pre></td></tr></table></figure>
+<p>显然这也是一个本地方法</p>
+<h3 id="Cloneable-接口"><a href="#Cloneable-接口" class="headerlink" title="Cloneable 接口"></a>Cloneable 接口</h3><p>只有实现了本接口的类才被允许使用 Object 中的 clone() 方法。否则会抛出 <code>CloneNotSupportedException</code> 异常。</p>
+<p>Cloneable 是一个标记接口，并不需要真的实现任何方法，仅作标记使用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Cloneable</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 这里面真的啥也没有哦</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="浅拷贝与深拷贝"><a href="#浅拷贝与深拷贝" class="headerlink" title="浅拷贝与深拷贝"></a>浅拷贝与深拷贝</h3><p>浅拷贝：对基本数据类型进行值传递，对引用数据类型进行引用传递般的拷贝。</p>
+<p>深拷贝：对基本数据类型进行值传递，对引用数据类型，创建一个新的对象，并复制为深拷贝。即递归拷贝</p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202012/21/image-20201221040503225.png" alt="image-20201221040503225" style="zoom:50%;" /></p>
+<p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202012/21/image-20201221040618638.png" alt="image-20201221040618638" style="zoom:50%;" /></p>
+<h2 id="finalize"><a href="#finalize" class="headerlink" title="finalize"></a>finalize</h2><blockquote>
+<p>该方法自 JDK9 起被废弃。</p>
+</blockquote>
+<p>当GC认为它不在需要这个对象时，会调用该函数。</p>
+<h2 id="wait-notify-notifyAll"><a href="#wait-notify-notifyAll" class="headerlink" title="wait/notify/notifyAll"></a>wait/notify/notifyAll</h2><blockquote>
+<p>均为本地(naive)方法</p>
+</blockquote>
+<p>这三个函数均涉及到并发编程，<u>下面的内容可能需要一定的并发编程和操作系统基础才能继续阅读</u>。</p>
+<p>在操作系统中我们曾经涉及到管程(Monitor)的概念，Java 通过sychronyzed关键字，和wait()、notify()、notifyAll() 方法实现了整个管程模型。(好像 Java 一般会把 Monitor 翻译成监视器)</p>
+<blockquote>
+<p>锁池:假设线程A已经拥有了某个对象(注意:不是类)的锁，而其它的线程想要调用这个对象的某个 synchronized 方法(或者 synchronized 块)，由于这些线程在进入对象的synchronized方法之前必须先获得该对象的锁的拥有权，但是该对象的锁目前正被线程A拥有，所以这些线程就进入了该对象的锁池中。</p>
+<p>等待池:假设一个线程A调用了某个对象的wait()方法，线程A就会<strong>释放该对象的锁</strong>后，进入到了该对象的等待池。</p>
+<p>如果线程调用了对象的 wait()方法，那么线程便会处于该对象的<strong>等待池</strong>中，等待池中的线程<strong>不会去竞争该对象的锁</strong>。</p>
+<p>当有线程调用了对象的 <strong>notifyAll</strong>()方法（唤醒所有 wait 线程）或 <strong>notify</strong>()方法（只随机唤醒一个 wait 线程），被唤醒的的线程便会进入该对象的锁池中，锁池中的线程会去竞争该对象锁。也就是说，调用了notify后只要一个线程会由等待池进入锁池，而notifyAll会将该对象等待池内的所有线程移动到锁池中，等待锁竞争</p>
+<p>优先级高的线程竞争到对象锁的概率大，假若某线程没有竞争到该对象锁，它<strong>还会留在锁池中</strong>，唯有线程再次调用 wait()方法，它才会重新回到等待池中。而竞争到对象锁的线程则继续往下执行，直到执行完了 synchronized 代码块，它会释放掉该对象锁，这时锁池中的线程会继续竞争该对象锁。</p>
+<p>作者：大王叫我来巡山<br>链接：<a href="https://www.zhihu.com/question/37601861/answer/145545371" target="_blank" rel="noopener">https://www.zhihu.com/question/37601861/answer/145545371</a></p>
+</blockquote>
+<h3 id="wait"><a href="#wait" class="headerlink" title="wait()"></a>wait()</h3><p>此方法导致当前线程（称为 T）将自己置于该对象的等待池(the wait set)中，然后放弃关于此对象的所有同步声明(即释放锁）。线程 T 将出于线程调度目的而被禁用，并且处于休眠状态，直到发生四件事之一：</p>
+<ol>
+<li>某个拥有 Monitor 的线程调用了该对象的 notify() 方法并且线程 T 正好被选中</li>
+<li>某个拥有 Monitor 的线程调用了该对象的 notifyAll() 方法</li>
+<li>其他线程中断(interrupt())了线程 T</li>
+<li>使用 wait(long timeout) 方法时设定的时间已过</li>
+</ol>
+<p>当发生了上述四种情况之一时，线程 T 进入从等待池中进入锁池(注意此时还不能直接开始运行)。在锁空出时竞争锁资源，如果竞争成功则从调用 wait() 方法处开始运行；如果竞争失败则继续停留在锁池中(并不会返回到等待池中)。</p>
+<p>在个别情况下可能会出现虚假唤醒的可能性，这是指由于 CPU 调度导致的、在上述事件发生时同时唤醒了多个线程的情况(更多关于虚假唤醒的请参考操作系统的 IPC 部分)。因此在代码中需要显性地使用 while 来规避，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 错误写法</span></span><br><span class="line"><span class="keyword">synchronized</span> (obj) &#123;</span><br><span class="line">	<span class="keyword">if</span> (condition does not hold)</span><br><span class="line">		obj.wait();</span><br><span class="line">		... <span class="comment">// Perform action appropriate to condition</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 正确写法</span></span><br><span class="line"><span class="keyword">synchronized</span> (obj) &#123;</span><br><span class="line">	<span class="keyword">while</span> (condition does not hold)</span><br><span class="line">		obj.wait();</span><br><span class="line">		... <span class="comment">// Perform action appropriate to condition</span></span><br><span class="line">            <span class="comment">// 当发生虚假唤醒时, while 可以帮助我们持续检查条件, 从而补救这一情况</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>wait() 方法具有两个重载：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wait(long timeout)</td>
+<td>timeout 为当前线程 T 的等待时间(ms)<br>若超出时长，T 将被唤醒<br>若时长设定为0，则不会自动唤醒</td>
+</tr>
+<tr>
+<td>wait(long timeout, int nanos)</td>
+<td>timeout 定义同上<br>nanos 定义类似，单位为纳秒(ns)<br>nanos 合法值为0~999999<br>若超出时长，T 将被唤醒</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="notify"><a href="#notify" class="headerlink" title="notify()"></a>notify()</h3><p>唤醒当前对象的<strong>某个</strong>处于等待池中的线程 T。具体是哪个线程是任意选择的。线程 T 被唤醒时将处于锁池中，等到当前线程放弃该对象的锁后才可以参与竞争进而获得锁并运行。</p>
+<p>此方法仅可以由对象的 Monitor 的拥有者调用，线程通过以下三种情况成为拥有者：</p>
+<ol>
+<li>通过执行该对象的 synchronized 实例方法</li>
+<li>通过执行该对象的 synchronized 代码块</li>
+<li>通过执行某类的 synchronized static 方法</li>
+</ol>
+<p>一次只能有一个线程拥有对象的监视器</p>
+<h3 id="notifyAll"><a href="#notifyAll" class="headerlink" title="notifyAll()"></a>notifyAll()</h3><p>这是与上述类似的方法，不同之处在于它将唤醒当前对象的处于等待池中的<strong>所有线程</strong>。线程(们)被唤醒时将处于锁池中，等到当前线程放弃该对象的锁后才可以参与竞争进而获得锁并运行。</p>
+<p>此方法仅可以由对象的 Monitor 的拥有者调用。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag"># Java基础</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/10/Java%E6%8B%BE%E9%81%97%E4%B9%8B%20Lambda%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="Java拾遗之Lambda表达式">
+      <i class="fa fa-chevron-left"></i> Java拾遗之Lambda表达式
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-类"><span class="nav-number">1.</span> <span class="nav-text">Object 类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#equals"><span class="nav-number">1.1.</span> <span class="nav-text">equals</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#equals-与"><span class="nav-number">1.1.1.</span> <span class="nav-text">equals 与 &#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重写-equals-方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">重写 equals 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量池"><span class="nav-number">1.1.3.</span> <span class="nav-text">常量池</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hashCode"><span class="nav-number">1.2.</span> <span class="nav-text">hashCode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hashCode-与-equals"><span class="nav-number">1.2.1.</span> <span class="nav-text">hashCode 与 equals</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getClass"><span class="nav-number">1.3.</span> <span class="nav-text">getClass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toString-NaN"><span class="nav-number">1.4.</span> <span class="nav-text">toString</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clone"><span class="nav-number">1.5.</span> <span class="nav-text">clone</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cloneable-接口"><span class="nav-number">1.5.1.</span> <span class="nav-text">Cloneable 接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浅拷贝与深拷贝"><span class="nav-number">1.5.2.</span> <span class="nav-text">浅拷贝与深拷贝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finalize"><span class="nav-number">1.6.</span> <span class="nav-text">finalize</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wait-notify-notifyAll"><span class="nav-number">1.7.</span> <span class="nav-text">wait&#x2F;notify&#x2F;notifyAll</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wait"><span class="nav-number">1.7.1.</span> <span class="nav-text">wait()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#notify"><span class="nav-number">1.7.2.</span> <span class="nav-text">notify()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#notifyAll"><span class="nav-number">1.7.3.</span> <span class="nav-text">notifyAll()</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">嘿, 这里是私人空间!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">189k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:15</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>
