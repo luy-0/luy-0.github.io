@@ -24,7 +24,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis的安装与基本使用">
 <meta property="og:url" content="http://yoursite.com/2020/11/10/Redis%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.html">
-<meta property="og:site_name" content="(ﾟ∀。)">
+<meta property="og:site_name" content="船坞">
 <meta property="og:description" content="本文是记录大三上学期方向必修课 《数据管理技术》的上机实验。本学期共有四次实验。  Hadoop环境搭建与配置  HBase数据库的部署与配置  Redis数据库的部署与配置 Redis中数据类型使用及命令使用   本文将主要记载后两个实验">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202011/10/redis%20%E6%9C%8D%E5%8A%A1%E5%99%A8%20%E5%AE%A2%E6%88%B7%E7%AB%AF.png">
@@ -57,7 +57,7 @@
   };
 </script>
 
-  <title>Redis的安装与基本使用 | (ﾟ∀。)</title>
+  <title>Redis的安装与基本使用 | 船坞</title>
   
 
 
@@ -88,7 +88,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="(ﾟ∀。)" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="船坞" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -109,7 +109,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">(ﾟ∀。)</h1>
+      <h1 class="site-title">船坞</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -126,29 +126,34 @@
 
 <nav class="site-nav">
   <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
+        <li class="menu-item menu-item-主页">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
 
   </li>
-        <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-关于">
 
     <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
-        <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-标签">
 
     <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
-        <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-分类">
 
     <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
-        <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-历史文章">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>历史文章</a>
+
+  </li>
+        <li class="menu-item menu-item-友情链接">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友情链接</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -211,11 +216,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="LUY">
-      <meta itemprop="description" content="嘿, 这里是私人空间!">
+      <meta itemprop="description" content="文不能测字，武不能防身。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="(ﾟ∀。)">
+      <meta itemprop="name" content="船坞">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -562,26 +567,23 @@
     <img class="site-author-image" itemprop="image" alt="LUY"
       src="/images/avatar.gif">
   <p class="site-author-name" itemprop="name">LUY</p>
-  <div class="site-description" itemprop="description">嘿, 这里是私人空间!</div>
+  <div class="site-description" itemprop="description">文不能测字，武不能防身。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
+          <a href="/archives">
           <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-          
         <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-          
         <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
@@ -628,7 +630,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5:15</span>
+    <span title="站点阅读时长">5:16</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -5756,7 +5756,17 @@ E = \frac {紫色格子数目} {总的格子数目} = \frac {n} {n+(m-1)}</scrip
   <entry>
     <title>数据库系统之范式</title>
     <url>/2020/11/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%8C%83%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="数据库范式"><a href="#数据库范式" class="headerlink" title="数据库范式"></a>数据库范式</h1><h2 id="理解范式"><a href="#理解范式" class="headerlink" title="理解范式"></a>理解范式</h2><p>范式是“符合某一种级别的关系模式的集合，表示一个关系内部各属性之间的联系的合理化程度”</p>
+    <content><![CDATA[<p>本文介绍了数据库系统设计时的范式问题：</p>
+<ol>
+<li>码与主码</li>
+<li>函数依赖</li>
+<li>第一范式</li>
+<li>第二范式</li>
+<li>第三范式</li>
+<li>BC 范式</li>
+</ol>
+<a id="more"></a>
+<h2 id="理解范式"><a href="#理解范式" class="headerlink" title="理解范式"></a>理解范式</h2><p>范式是“符合某一种级别的关系模式的集合，表示一个关系内部各属性之间的联系的合理化程度”</p>
 <p>如何理解这句话? 在设计一个数据库系统时，我们实际上时在设计不同实体之间的<strong>关系</strong>。那么设计关系时所循行的标准，称为范式。具体有哪些标准呢？我们一般将数据库范式分为1NF，2NF，3NF，BCNF，4NF，5NF。这代表着不同级别的设计标准。符合高一级别的范式，必定符合第一级别的范式。</p>
 <h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p>【前置知识部分来自掘金用户@奋斗的小皇帝，有删改，链接见文末】</p>
 <p>在学习数据库范式之前，我们必须了解一些前置知识，这些知识在后续的内容将会大量使用，如果对这些不了解，那么将会对后面的内容一头雾水。</p>
@@ -5950,7 +5960,18 @@ E = \frac {紫色格子数目} {总的格子数目} = \frac {n} {n+(m-1)}</scrip
   <entry>
     <title>设计模式之六大原则</title>
     <url>/2020/12/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/</url>
-    <content><![CDATA[<h1 id="设计模式-六大原则"><a href="#设计模式-六大原则" class="headerlink" title="设计模式 六大原则"></a>设计模式 六大原则</h1><h2 id="单一职责原则"><a href="#单一职责原则" class="headerlink" title="单一职责原则"></a>单一职责原则</h2><p><strong>单一功能原则</strong>（Single responsibility principle）规定每个类都应该有一个单一的功能，并且该功能应该由这个类完全封装起来。所有它的（这个类的）服务都应该严密的和该功能平行（功能平行，意味着没有依赖）。</p>
+    <content><![CDATA[<p>本文介绍了设计模式中的六大基本原则：</p>
+<ol>
+<li>单一职责原则</li>
+<li>接口隔离原则</li>
+<li>依赖反转原则</li>
+<li>里氏替换原则</li>
+<li>迪米特原则</li>
+<li>开闭原则</li>
+<li>合成复用原则</li>
+</ol>
+<a id="more"></a>
+<h2 id="单一职责原则"><a href="#单一职责原则" class="headerlink" title="单一职责原则"></a>单一职责原则</h2><p><strong>单一功能原则</strong>（Single responsibility principle）规定每个类都应该有一个单一的功能，并且该功能应该由这个类完全封装起来。所有它的（这个类的）服务都应该严密的和该功能平行（功能平行，意味着没有依赖）。</p>
 <p>Robert Cecil Martin 功能（职责）定义为：“改变的原因”，并且总结出一个类或者模块应该有且只有一个改变的原因。</p>
 <blockquote>
 <p>想象有一个用于编辑和打印报表的模块。这样的一个模块存在两个改变的原因。第一，报表的内容可以改变（编辑）。第二，报表的格式可以改变（打印）。这两方面会的改变因为完全不同的起因而发生：一个是本质的修改，一个是表面的修改。单一功能原则认为这两方面的问题事实上是两个分离的功能，因此他们应该分离在不同的类或者模块里。</p>
@@ -6099,7 +6120,10 @@ E = \frac {紫色格子数目} {总的格子数目} = \frac {n} {n+(m-1)}</scrip
   <entry>
     <title>Java拾遗之Lambda表达式</title>
     <url>/2020/12/10/Java%E6%8B%BE%E9%81%97%E4%B9%8B%20Lambda%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="Java-Lambda-表达式"><a href="#Java-Lambda-表达式" class="headerlink" title="Java Lambda 表达式"></a>Java Lambda 表达式</h1><p>Lambda 表达式，也可称为闭包，它是推动 Java 8 发布的最重要新特性。</p>
+    <content><![CDATA[<p>本文介绍了 Java8 的特性：Lambda 表达式。</p>
+<p>行文逻辑：接口实现类 -&gt; 静态内部类 -&gt; 局部内部类 -&gt; 匿名内部类 -&gt; Lambda 表达式 -&gt; Lambda 表达式的化简</p>
+<a id="more"></a>
+<p>Lambda 表达式，也可称为闭包，它是推动 Java 8 发布的最重要新特性。</p>
 <p>Lambda 允许把函数作为一个方法的参数（函数作为参数传递进方法中）。</p>
 <p>使用 Lambda 表达式可以使代码变的更加简洁紧凑。</p>
 <h2 id="接口的调用"><a href="#接口的调用" class="headerlink" title="接口的调用"></a>接口的调用</h2><p>根据某些乱七八糟的设计原则，系统应该高内聚松耦合。实践这个原则的一个重要手段就是上接口。</p>
@@ -6174,7 +6198,15 @@ E = \frac {紫色格子数目} {总的格子数目} = \frac {n} {n+(m-1)}</scrip
   <entry>
     <title>Java基础之Object类</title>
     <url>/2020/12/22/Java%E5%9F%BA%E7%A1%80%E4%B9%8B%20Object%20%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="Object-类"><a href="#Object-类" class="headerlink" title="Object 类"></a>Object 类</h1><p>众所周知，Java 中的 Object 类是所有类的超类。也就是说任意类都会继承 Object 中的方法。</p>
+    <content><![CDATA[<p>本文记录了关于 Object 类的方法。内容包括：</p>
+<ol>
+<li>所有方法的功能与部分实现</li>
+<li>讨论了 hashCode() 与 equal() 的关系</li>
+<li>讨论了 Cloneable 接口与深浅拷贝</li>
+<li>讨论了 Java 基于 wait() 与 notify（）的管程机制</li>
+</ol>
+<a id="more"></a>
+<p>众所周知，Java 中的 Object 类是所有类的超类。也就是说任意类都会继承 Object 中的方法。</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202012/21/image-20201221013916776.png" alt="image-20201221013916776" style="zoom:67%;" /></p>
 <div class="table-container">
 <table>

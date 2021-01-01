@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Object 类众所周知，Java 中的 Object 类是所有类的超类。也就是说任意类都会继承 Object 中的方法。      Modifier and Type Method Description     protected Object clone() Creates and returns a copy of this object.创建该对象的一个拷贝   boolean equa">
+  <meta name="description" content="本文记录了关于 Object 类的方法。内容包括：  所有方法的功能与部分实现 讨论了 hashCode() 与 equal() 的关系 讨论了 Cloneable 接口与深浅拷贝 讨论了 Java 基于 wait() 与 notify（）的管程机制">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java基础之Object类">
 <meta property="og:url" content="http://yoursite.com/2020/12/22/Java%E5%9F%BA%E7%A1%80%E4%B9%8B%20Object%20%E7%B1%BB/index.html">
-<meta property="og:site_name" content="(ﾟ∀。)">
-<meta property="og:description" content="Object 类众所周知，Java 中的 Object 类是所有类的超类。也就是说任意类都会继承 Object 中的方法。      Modifier and Type Method Description     protected Object clone() Creates and returns a copy of this object.创建该对象的一个拷贝   boolean equa">
+<meta property="og:site_name" content="船坞">
+<meta property="og:description" content="本文记录了关于 Object 类的方法。内容包括：  所有方法的功能与部分实现 讨论了 hashCode() 与 equal() 的关系 讨论了 Cloneable 接口与深浅拷贝 讨论了 Java 基于 wait() 与 notify（）的管程机制">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202012/21/image-20201221013916776.png">
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202012/21/image-20201221040503225.png">
 <meta property="og:image" content="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202012/21/image-20201221040618638.png">
 <meta property="article:published_time" content="2020-12-22T07:45:25.000Z">
-<meta property="article:modified_time" content="2020-12-31T23:21:22.927Z">
+<meta property="article:modified_time" content="2020-12-31T23:43:28.317Z">
 <meta property="article:author" content="LUY">
 <meta property="article:tag" content="Java基础">
 <meta name="twitter:card" content="summary">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>Java基础之Object类 | (ﾟ∀。)</title>
+  <title>Java基础之Object类 | 船坞</title>
   
 
 
@@ -81,7 +81,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="(ﾟ∀。)" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="船坞" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -102,7 +102,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">(ﾟ∀。)</h1>
+      <h1 class="site-title">船坞</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -119,29 +119,34 @@
 
 <nav class="site-nav">
   <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
+        <li class="menu-item menu-item-主页">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
 
   </li>
-        <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-关于">
 
     <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
-        <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-标签">
 
     <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
-        <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-分类">
 
     <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
-        <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-历史文章">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>历史文章</a>
+
+  </li>
+        <li class="menu-item menu-item-友情链接">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友情链接</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -204,11 +209,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="LUY">
-      <meta itemprop="description" content="嘿, 这里是私人空间!">
+      <meta itemprop="description" content="文不能测字，武不能防身。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="(ﾟ∀。)">
+      <meta itemprop="name" content="船坞">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -229,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-01 07:21:22" itemprop="dateModified" datetime="2021-01-01T07:21:22+08:00">2021-01-01</time>
+                <time title="修改时间：2021-01-01 07:43:28" itemprop="dateModified" datetime="2021-01-01T07:43:28+08:00">2021-01-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,7 +264,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>6.5k</span>
+              <span>6.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -278,7 +283,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Object-类"><a href="#Object-类" class="headerlink" title="Object 类"></a>Object 类</h1><p>众所周知，Java 中的 Object 类是所有类的超类。也就是说任意类都会继承 Object 中的方法。</p>
+        <p>本文记录了关于 Object 类的方法。内容包括：</p>
+<ol>
+<li>所有方法的功能与部分实现</li>
+<li>讨论了 hashCode() 与 equal() 的关系</li>
+<li>讨论了 Cloneable 接口与深浅拷贝</li>
+<li>讨论了 Java 基于 wait() 与 notify（）的管程机制</li>
+</ol>
+<a id="more"></a>
+<p>众所周知，Java 中的 Object 类是所有类的超类。也就是说任意类都会继承 Object 中的方法。</p>
 <p><img src="https://my-pic-bed-1302358960.cos.ap-nanjing.myqcloud.com/Blog/202012/21/image-20201221013916776.png" alt="image-20201221013916776" style="zoom:67%;" /></p>
 <div class="table-container">
 <table>
@@ -581,7 +594,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-类"><span class="nav-number">1.</span> <span class="nav-text">Object 类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#equals"><span class="nav-number">1.1.</span> <span class="nav-text">equals</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#equals-与"><span class="nav-number">1.1.1.</span> <span class="nav-text">equals 与 &#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重写-equals-方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">重写 equals 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量池"><span class="nav-number">1.1.3.</span> <span class="nav-text">常量池</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hashCode"><span class="nav-number">1.2.</span> <span class="nav-text">hashCode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hashCode-与-equals"><span class="nav-number">1.2.1.</span> <span class="nav-text">hashCode 与 equals</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getClass"><span class="nav-number">1.3.</span> <span class="nav-text">getClass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toString-NaN"><span class="nav-number">1.4.</span> <span class="nav-text">toString</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clone"><span class="nav-number">1.5.</span> <span class="nav-text">clone</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cloneable-接口"><span class="nav-number">1.5.1.</span> <span class="nav-text">Cloneable 接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浅拷贝与深拷贝"><span class="nav-number">1.5.2.</span> <span class="nav-text">浅拷贝与深拷贝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finalize"><span class="nav-number">1.6.</span> <span class="nav-text">finalize</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wait-notify-notifyAll"><span class="nav-number">1.7.</span> <span class="nav-text">wait&#x2F;notify&#x2F;notifyAll</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wait"><span class="nav-number">1.7.1.</span> <span class="nav-text">wait()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#notify"><span class="nav-number">1.7.2.</span> <span class="nav-text">notify()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#notifyAll"><span class="nav-number">1.7.3.</span> <span class="nav-text">notifyAll()</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#equals"><span class="nav-number">1.</span> <span class="nav-text">equals</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#equals-与"><span class="nav-number">1.1.</span> <span class="nav-text">equals 与 &#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重写-equals-方法"><span class="nav-number">1.2.</span> <span class="nav-text">重写 equals 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量池"><span class="nav-number">1.3.</span> <span class="nav-text">常量池</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hashCode"><span class="nav-number">2.</span> <span class="nav-text">hashCode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hashCode-与-equals"><span class="nav-number">2.1.</span> <span class="nav-text">hashCode 与 equals</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getClass"><span class="nav-number">3.</span> <span class="nav-text">getClass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toString-NaN"><span class="nav-number">4.</span> <span class="nav-text">toString</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clone"><span class="nav-number">5.</span> <span class="nav-text">clone</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cloneable-接口"><span class="nav-number">5.1.</span> <span class="nav-text">Cloneable 接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浅拷贝与深拷贝"><span class="nav-number">5.2.</span> <span class="nav-text">浅拷贝与深拷贝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finalize"><span class="nav-number">6.</span> <span class="nav-text">finalize</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wait-notify-notifyAll"><span class="nav-number">7.</span> <span class="nav-text">wait&#x2F;notify&#x2F;notifyAll</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wait"><span class="nav-number">7.1.</span> <span class="nav-text">wait()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#notify"><span class="nav-number">7.2.</span> <span class="nav-text">notify()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#notifyAll"><span class="nav-number">7.3.</span> <span class="nav-text">notifyAll()</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -590,26 +603,23 @@
     <img class="site-author-image" itemprop="image" alt="LUY"
       src="/images/avatar.gif">
   <p class="site-author-name" itemprop="name">LUY</p>
-  <div class="site-description" itemprop="description">嘿, 这里是私人空间!</div>
+  <div class="site-description" itemprop="description">文不能测字，武不能防身。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
+          <a href="/archives">
           <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-          
         <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-          
         <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
@@ -656,7 +666,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5:15</span>
+    <span title="站点阅读时长">5:16</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
