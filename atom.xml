@@ -192,9 +192,9 @@
     
       <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
-    
       <category term="NoSQL" scheme="http://yoursite.com/tags/NoSQL/"/>
+    
+      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
     
   </entry>
   
@@ -261,11 +261,11 @@
     
       <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="NoSQL" scheme="http://yoursite.com/tags/NoSQL/"/>
-    
       <category term="Hadoop" scheme="http://yoursite.com/tags/Hadoop/"/>
     
       <category term="HBase" scheme="http://yoursite.com/tags/HBase/"/>
+    
+      <category term="NoSQL" scheme="http://yoursite.com/tags/NoSQL/"/>
     
   </entry>
   
