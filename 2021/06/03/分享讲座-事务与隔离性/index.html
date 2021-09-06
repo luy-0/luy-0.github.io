@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这是在工作室与大家分享的关于事务与隔离性的一篇文章。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分享讲座_事务与隔离性">
+<meta property="og:url" content="http://yoursite.com/2021/06/03/%E5%88%86%E4%BA%AB%E8%AE%B2%E5%BA%A7-%E4%BA%8B%E5%8A%A1%E4%B8%8E%E9%9A%94%E7%A6%BB%E6%80%A7/index.html">
+<meta property="og:site_name" content="船坞">
+<meta property="og:description" content="这是在工作室与大家分享的关于事务与隔离性的一篇文章。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://docimg1.docs.qq.com/image/b9ou2YD54CagEHW6Vd_aGA?w=700&amp;h=293">
+<meta property="og:image" content="https://docimg7.docs.qq.com/image/-0LkhUHLNBQFdaKo93e6Xg?w=1124&amp;h=468">
+<meta property="og:image" content="https://docimg4.docs.qq.com/image/0MXhkJhRUgr9ieVQhvaeVw?w=1124&amp;h=352">
+<meta property="og:image" content="https://docimg4.docs.qq.com/image/BaWjd10ugyetbS27PlQqMg?w=1120&amp;h=524">
+<meta property="article:published_time" content="2021-06-03T09:53:08.000Z">
+<meta property="article:modified_time" content="2021-09-06T09:56:38.386Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="事务">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://docimg1.docs.qq.com/image/b9ou2YD54CagEHW6Vd_aGA?w=700&amp;h=293">
+
+<link rel="canonical" href="http://yoursite.com/2021/06/03/%E5%88%86%E4%BA%AB%E8%AE%B2%E5%BA%A7-%E4%BA%8B%E5%8A%A1%E4%B8%8E%E9%9A%94%E7%A6%BB%E6%80%A7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>分享讲座_事务与隔离性 | 船坞</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="船坞" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">船坞</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-index">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Index</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/03/%E5%88%86%E4%BA%AB%E8%AE%B2%E5%BA%A7-%E4%BA%8B%E5%8A%A1%E4%B8%8E%E9%9A%94%E7%A6%BB%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="文不能测字，武不能防身。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="船坞">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          分享讲座_事务与隔离性
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-03 17:53:08" itemprop="dateCreated datePublished" datetime="2021-06-03T17:53:08+08:00">2021-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-06 17:56:38" itemprop="dateModified" datetime="2021-09-06T17:56:38+08:00">2021-09-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">数据库系统</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>12 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这是在工作室与大家分享的关于事务与隔离性的一篇文章。</p>
+<a id="more"></a>
+<h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><ul>
+<li><p>回顾 ACID</p>
+</li>
+<li><ul>
+<li>原子性：中止与回滚；简化出错处理；不保证并发；</li>
+<li>一致性：歧义；数据某种约束；应用层职责</li>
+<li>隔离性：模拟串行化；弱隔离性</li>
+<li>持久性：不存在完美的持久880</li>
+</ul>
+</li>
+<li><p>开胃菜</p>
+</li>
+<li><ul>
+<li>脏读：邮箱问题</li>
+<li>更新丢失：递增计数器问题</li>
+</ul>
+</li>
+<li><p>几种弱隔离级别：</p>
+</li>
+<li><ul>
+<li><p>读提交</p>
+</li>
+<li><ul>
+<li>脏读与脏写</li>
+<li>实现：行级锁/两版本</li>
+<li>依旧存在的问题：读倾斜</li>
+</ul>
+</li>
+<li><p>快照隔离</p>
+</li>
+<li><ul>
+<li>一致性快照；读写不干扰；</li>
+<li>实现：MVCC</li>
+<li>更新丢失</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>可串行化它不香吗</p>
+</li>
+<li><ul>
+<li><p>幻读与写倾斜</p>
+</li>
+<li><p>隔离级别的弊病</p>
+</li>
+<li><p>三种实现技术</p>
+</li>
+<li><ul>
+<li><p>严格串行化</p>
+</li>
+<li><ul>
+<li>可行性</li>
+</ul>
+</li>
+<li><p>两阶段加锁（悲观锁）</p>
+</li>
+<li><ul>
+<li>写写互斥、读写互斥；读写锁；</li>
+<li>死锁与性能</li>
+<li>幻读：表级锁与区间锁</li>
+</ul>
+</li>
+<li><p>可串行化的快照隔离（乐观锁）</p>
+</li>
+<li><ul>
+<li>基于快照隔离</li>
+<li>提交前检查冲突</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="回顾-ACID"><a href="#回顾-ACID" class="headerlink" title="回顾 ACID"></a>回顾 ACID</h2><h3 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h3><p>什么是原子？原子就是不可继续分割的东西。</p>
+<p>在计算机的不同讨论范畴内，这个词拥有不同的内涵。例如，当我们讨论 原子操作 的时候，这表明线程  Bob  是无法看到线程 A 的操作的中间态的——要么操作之前，要么操作之后。</p>
+<p>但是在 ACID 中，原子性并不涉及到并发性。原子性表示这种可能性是可能存在的：可能有两个原子同时在执行，而它们之间也许可能看到彼此的中间状态。事实上，这是隔离性的职责。</p>
+<p>原子性提供的保证是：事务要么成功，要么失败。</p>
+<p>如果成功，那么成功；</p>
+<p>如果失败，那么中止并回滚。</p>
+<p>原子性的意义在于，当出现问题时，上层应用并不需要考虑 “恢复现场” 的行为；但是它本身并 不提供任何能够防止问题出现 的帮助。</p>
+<h3 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h3><p>一致性这个词汇的歧义更大。例如，我们在谈论 “CAP” 时，是指 对某个指定的客户端来说，读操作能返回最新的写操作。而在我们 ACID 这里，一致性是指，数据处于某种被约束好的一致状态下。</p>
+<p>关于一致性的歧义问题可以参考：<a href="https://juejin.cn/post/6844903782329876494#heading-2" target="_blank" rel="noopener">谈谈数据一致性</a></p>
+<p>举个栗子：</p>
+<p>银行账户中，Alice 账户中有￥114014，Bob 账户中有￥500。Alice 转100元给 Bob ，Alice 扣减100， Bob 加上100。在事务开始前和事务完成之后都能保证他们的帐是对上的，都是满足 “A + B = 114514” 这个约束。</p>
+<p>但是在事务过程中有可能会出现Alice 扣减了100元， Bob 没有加上100元的情况，这就是不一致，不再满足 “A + B = 114514” 这个约束。</p>
+<p>当然，如果出现这种情况下，应该是被认为事务失败、触发原子性、进行中止并回滚。这是原子性的职责了。</p>
+<p>严格来说，一致性这个职责本质上来说不应该是数据库背的锅。类似账户之和为定值这种数据之间存在的依赖关系应当是应用层负责的业务逻辑 。而事实上，ACID中的C其实最开始是为了顺口而加上的。</p>
+<h3 id="隔离性"><a href="#隔离性" class="headerlink" title="隔离性"></a>隔离性</h3><p>原子性并不考虑多个原子（也就是事务）并发执行下可能出现的问题，隔离性来考虑这些。</p>
+<p>隔离性的职责是：在多个事务并发执行的情况下，将其互相隔离，使最终结果就像这些事务串行化执行一样。</p>
+<p>我们在这里不展开讲了，毕竟后面全都是在展开这玩意。</p>
+<h3 id="持久性"><a href="#持久性" class="headerlink" title="持久性"></a>持久性</h3><p>如果事务一旦提交成功，那么无论发生什么，数据总不会消失。</p>
+<p>很显然，完美的持久性是不存在的——没准下一秒银河系超空间计划委员会跑过来说由于修建超空间快速通道的行政规划需要毁灭地球呢。我们只是能够防范普通的问题：例如数据库崩溃或者硬件故障等。</p>
+<h2 id="开胃菜"><a href="#开胃菜" class="headerlink" title="开胃菜"></a>开胃菜</h2><p>下面我们回归到隔离性，先来两个开胃菜，看看如果没有隔离性（或者隔离性较弱）的情况下会发生什么。</p>
+<p>在此之前，请先暂时忘掉你们所知道的各种并发处理措施，我们一点点开始。</p>
+<ol>
+<li><h3 id="脏读：邮箱问题"><a href="#脏读：邮箱问题" class="headerlink" title="脏读：邮箱问题"></a>脏读：邮箱问题</h3></li>
+</ol>
+<p>一个邮箱系统为了方便，在显眼处统计了“未读消息”。</p>
+<p>​                 <img src="https://docimg1.docs.qq.com/image/b9ou2YD54CagEHW6Vd_aGA?w=700&amp;h=293" alt="img">        </p>
+<p>​                 <img src="https://docimg7.docs.qq.com/image/-0LkhUHLNBQFdaKo93e6Xg?w=1124&amp;h=468" alt="img">        </p>
+<p>在这里，User 2 在 U1 的两次写入之间读取了信息。这使得 User 2 很困惑：为什么我的邮箱列表中存在未读邮件（count(emails) != 0），而未读邮件数（mailbox.unread）是0呢？</p>
+<p>脏读：读到未被提交的写入。</p>
+<p>在这里，U1 的两次写入应当是属于同一个事务，而 U2 却在事务未提交时，读取了事务的中间状态。这是隔离性不允许的。</p>
+<p>我们会在稍后看到如何解决这个问题。</p>
+<ol>
+<li><h3 id="更新丢失：递增计数器"><a href="#更新丢失：递增计数器" class="headerlink" title="更新丢失：递增计数器"></a>更新丢失：递增计数器</h3></li>
+</ol>
+<p>有一个递增计数器，它的工作是：从数据库中读取一个数据，加一，然后写入数据库。</p>
+<p>​                 <img src="https://docimg4.docs.qq.com/image/0MXhkJhRUgr9ieVQhvaeVw?w=1124&amp;h=352" alt="img">        </p>
+<p>在这里，两个递增操作进行完毕后，数据竟然是 42 -&gt; 43 ！</p>
+<p>这显然是隔离性上的问题。还记得隔离性的职责吗？将并发的结果好像是串行化一样，43肯定不是串行化得到的结果，44才是。</p>
+<p>如何解决更新丢失其实是个很困难的工作。我们会在很后面遇到它，希望我们时间够用。</p>
+<p>这是就有同学问了，既然隔离性的目的是去模拟串行化，为什么不直接进行串行化呢？</p>
+<p>这个问题很有意思，标准回答是，串行化太慢了，就像你天天上班摸鱼老板肯定要多找几个实习生来卷你。性能是非常非常非常重要的，想一想，你作为底层的数据库都这么摸的话，再经过应用的各种业务逻辑处理的放大，用户可谓是一秒一卡，十分潇洒，五步一停，不服不行。</p>
+<p>所以聪明的人们想出了各种方法来优化隔离性，并将之称为弱隔离级别。这些隔离级别可以防止部分并发问题，但不能防范全部。由于并发问题其实是个概率问题，而众所周知概率一向是玄不救非氪不改命，有些人认为一些应用中并不需要过于在意偶尔出现的并发问题，加上性能优势，它们还是被广泛使用。</p>
+<p>但是更有意思的事情是，随着我们接下来的讨论，我们会发现各种隔离级别是如此难以理解。弱隔离级别是工业界妥协的产物，于是后来又有人觉得，去tmd弱隔离，串行化真香！</p>
+<p>接下来，我们会讨论读-提交，快照隔离与可串行化。这些隔离级别逐步增强，可串行化已经能够解决所有的并发问题了。</p>
+<p>我们将会讨论下面这些并发问题：脏读、脏写；读倾斜、更新丢失；写倾斜、幻读；</p>
+<p>我们将会讨论下面这些隔离实现：行级锁、MVCC、两阶段加锁、可串行化快照隔离。</p>
+<p>希望时间够用：）</p>
+<h2 id="弱隔离级别"><a href="#弱隔离级别" class="headerlink" title="弱隔离级别"></a>弱隔离级别</h2><h3 id="读-提交（Read-Committed）"><a href="#读-提交（Read-Committed）" class="headerlink" title="读-提交（Read Committed）"></a>读-提交（Read Committed）</h3><ol>
+<li>从数据库读时，只能看到已提交的数据（没有脏读（dirty reads））</li>
+<li>写入数据库时，只会覆盖已经写入的数据（没有脏写（dirty writes））</li>
+</ol>
+<h4 id="栗子"><a href="#栗子" class="headerlink" title="栗子"></a>栗子</h4><p>设想一个事务 A 已经将一些数据写入数据库，但事务A还没有提交或中止。另一个事务B可以看到未提交的数据吗？如果可以，那么这种并发问题就称之为脏读。</p>
+<p>脏读的一个例子我们已经在前面举过了。另外一种情况是，如果 B 将读到的数据返回给应用，但是A最后出问题了，没提交成功而是回滚了。B 的数据将是无中生有出来的，所以说，不要见着风是得雨。假使这些完全无中生有的东西，B帮A上传给应用了，等于 —— B 也有责任吧？！</p>
+<p>我们举一个脏写的例子。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>事务A</th>
+<th>事务B</th>
+<th>数据库</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin transaction</td>
+<td>begin transaction</td>
+<td>x = 0</td>
+</tr>
+<tr>
+<td>write( x = 1 )</td>
+<td></td>
+<td>ok! x = 1</td>
+</tr>
+<tr>
+<td></td>
+<td>write( x = 2)</td>
+<td>ok! x = 2</td>
+</tr>
+<tr>
+<td>No, I want roll back it….</td>
+<td></td>
+<td>ok! x = 0</td>
+</tr>
+<tr>
+<td></td>
+<td>commit</td>
+<td>ok!</td>
+</tr>
+<tr>
+<td></td>
+<td>Let me read x…</td>
+<td>ok! x = 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>事务B：WTF？</p>
+<p>这个例子重点在于，rollback 操作将事务 B 的未提交的写入覆盖成 0 了。</p>
+<p>另外需要注意的是：更新丢失并不是脏写的一种，可以结合下面自己理解，下面这种情况是更新丢失，但不是脏写。准确的说法是，脏xie和更新丢失有一些交集。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>事务A</th>
+<th>事务B</th>
+<th>数据库</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin transaction</td>
+<td>begin transaction</td>
+<td>x = 42</td>
+</tr>
+<tr>
+<td>read(x)</td>
+<td></td>
+<td>ok! x = 42</td>
+</tr>
+<tr>
+<td></td>
+<td>read(x)</td>
+<td>ok! x = 42</td>
+</tr>
+<tr>
+<td>y = x + 1</td>
+<td>z = x + 1</td>
+<td></td>
+</tr>
+<tr>
+<td>write(x = y)</td>
+<td></td>
+<td>ok! x = y = 43</td>
+</tr>
+<tr>
+<td>commit</td>
+<td></td>
+<td>ok!</td>
+</tr>
+<tr>
+<td></td>
+<td>write(x = z)</td>
+<td>ok! x = z = 43</td>
+</tr>
+<tr>
+<td></td>
+<td>commit</td>
+<td>ok!</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p>最常见的情况是，数据库通过使用行锁（row-level lock） 来防止脏写：</p>
+<p>当事务想要修改特定对象（行或文档）时，它必须首先获得该对象的锁。然后必须持有该锁直到事务被提交或中止。</p>
+<p>一次只有一个事务可持有任何给定对象的锁；如果另一个事务要写入同一个对象，则必须等到第一个事务提交或中止后，才能获取该锁并继续。</p>
+<p>那么脏读呢？</p>
+<p>一种方式是使用相同的锁，并要求任何想要读取对象的事务来简单地获取该锁，然后在读取之后立即再次释放该锁。</p>
+<p>但是要求读锁的办法在实践中效果并不好。因为一个长时间运行的写入事务会迫使许多只读事务等到这个慢写入事务完成。</p>
+<p>脏读的另外一种解决方式是使用两个版本的数据。对于写入的每个对象，数据库都会记住旧的已提交值，和由当前持有写入锁的事务设置的新值。 当事务正在进行时，任何其他读取对象的事务都会拿到旧值。 只有当新值提交后，事务才会切换到读取新值。我喜欢把这个处理办法叫做 迷你的快照隔离（并非官方称呼，只是我喜欢）</p>
+<p>也许有人会考虑读锁与写锁，那是个很棒的主意，但是我们会在最最后面谈论它了。在这里，读与写操作使用的是相同的锁。</p>
+<h4 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h4><p>读-提交 依旧存在一些无法解决的并发问题。例如最开始的版本更新问题。我们下面介绍另外一种它无法处理的问题，称为 读倾斜（read skew），又名 不可重复读（nonrepeatable read）。</p>
+<p>Alice 拥有两个账户，每个账户 500 元。现在另外一个人试图从账户1中转100块到账户2上（这是一个事务）。Alice 同时在查询自己的余额（这是另一个事务）。她发现自己账户2消失了一百块！</p>
+<p>​                 <img src="https://docimg4.docs.qq.com/image/BaWjd10ugyetbS27PlQqMg?w=1120&amp;h=524" alt="img">        </p>
+<p>需要注意，这个case并不违背读-提交。A 的两次read均没有读到未提交的数据。但是就是出问题了呢？</p>
+<p>是的，Alice 只需要稍后再查一遍账户1就会发现其实没有问题，也就是说之前的读的结果是不可重复的。这里并不是个大问题。但是在另外一些情况下，这种暂时性的不一致也是不能容忍的。</p>
+<p>例如，备份。你不能为了备份就强行停掉数据库的业务能力，但是如何保证数据库在备份过程中（可能持续几小时）不被类似的情况干扰呢？</p>
+<p>也许，我们需要一种方式，能够在瞬间给整个数据库拍个照片。备份操作基于照片，而业务操作继续正常运行。</p>
+<p>是的，这种照片被称为快照。</p>
+<h3 id="快照隔离"><a href="#快照隔离" class="headerlink" title="快照隔离"></a>快照隔离</h3><p>快照隔离的口号是：读写分离。或者是读不阻塞写，写不阻塞读。</p>
+<p>MVCC 的思路和上面的拍照片的比喻还不太一样：比喻中，我们只在备份前拍照，而实际上，我们随时随地都在拍照。或者说，我们拥有时间轴上的数据库的每个时刻的切片，我们根据需要访问。（当然这个切片不会把原子切开）</p>
+<p>每个事务都从数据库的一致快照（consistent snapshot） 中读取——也就是说，事务可以看到事务开始时在数据库中提交的所有数据。即使这些数据随后被另一个事务更改，每个事务也只能看到该特定时间点的旧数据。</p>
+<p>我们直接来看吧。</p>
+<ul>
+<li><p>当一个事务开始时，它被赋予一个唯一的，永远增长的事务ID。</p>
+</li>
+<li><p>当事务向数据库写入（插入删除更新）任何内容时，它所写入的数据都会被标记上写入者的事务ID。</p>
+</li>
+<li><p>当事务读取某行：</p>
+</li>
+<li><ul>
+<li>事务开始时，数据库列出当时所有其他（尚未提交或中止）的事务清单，即使之后提交了，这些事务的写入也都会被忽略。</li>
+<li>被中止事务所执行的任何写入都将被忽略。</li>
+<li>由具有较晚事务ID（即，在当前事务开始之后开始的）的事务所做的任何写入都被忽略，而不管这些事务是否已经提交。</li>
+<li>所有其他写入，对应用都是可见的。</li>
+</ul>
+</li>
+</ul>
+<p>粗糙理解：在事务开始时拍个照，然后只看照片。</p>
+<p>拓展：有没有什么情况下是看最新值呢？有的，这被称为当前读。而上面说的过程被称为快照读。这里就不展开了。参考链接：<a href="https://www.ouyym.com/wen/20383/" target="_blank" rel="noopener">MVCC多版本并发控制</a></p>
+<h3 id="更新丢失"><a href="#更新丢失" class="headerlink" title="更新丢失"></a>更新丢失</h3><p>快照隔离隔离了读与写，规避了在并发情况下的读写冲突。但是并不能解决写-写的并发问题。解决写写的并发问题有多种可行的解决方案。</p>
+<h4 id="原子写操作"><a href="#原子写操作" class="headerlink" title="原子写操作"></a>原子写操作</h4><p>如果数据库系统提供了原子更新操作，那么可以在数据库中原子地更新数据。数据库层面保证它们是并发安全的。例如 Redis 中某些特定的数据结构的操作。</p>
+<h4 id="显式加锁"><a href="#显式加锁" class="headerlink" title="显式加锁"></a>显式加锁</h4><p>在应用层面显式加锁来解决这个问题。又被称为悲观锁。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT  FROM xxx </span><br><span class="line">    WHERE ...</span><br><span class="line">    FOR UPDATE;    &#x2F;&#x2F; 注意这个FOR UPDATE</span><br><span class="line">UPDATE xxx ...;</span><br></pre></td></tr></table></figure>
+<h4 id="自动检测更新丢失"><a href="#自动检测更新丢失" class="headerlink" title="自动检测更新丢失"></a>自动检测更新丢失</h4><p>原子操作和锁是通过强制读取-修改-写入序列按顺序发生，来防止丢失更新的方法。另一种方法是允许它们并行执行，如果事务管理器检测到丢失更新，则中止事务并强制它们重试其读取-修改-写入序列。又被称作乐观锁。</p>
+<p>这种方法的一个优点是，数据库可以结合快照隔离高效地执行此检查。但是，MySQL/InnoDB的可重复读并不会检测丢失更新。一些人认为，数据库必须能防止丢失更新才称得上是提供了快照隔离，所以在这个定义下，MySQL下不提供快照隔离。</p>
+<h4 id="原子比较和设置（CAS）等"><a href="#原子比较和设置（CAS）等" class="headerlink" title="原子比较和设置（CAS）等"></a>原子比较和设置（CAS）等</h4><p>略</p>
+<h2 id="串行化"><a href="#串行化" class="headerlink" title="串行化"></a>串行化</h2><p>上一小节的各种操作依旧不能完全解决并发问题。存在写倾斜：</p>
+<p>例如，预定会议室之前需要先检查会议室是否被预定，然后发出预定请求。当A和B分别预定会议室R时，他们同时去检查了会议室预定表，发现没有房间R在那段时间的记录，然后都预订了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BOOK_TABLE (room_id, date, start_time, end_time, username)</span><br></pre></td></tr></table></figure>
+<p>写倾斜的实质是：</p>
+<ol>
+<li>应用通过SELECT语句，匹配出一些特定条件的记录。</li>
+<li>根据匹配结果，应用层代码来确定下一步的操作（是预定还是返回已占用的错误）</li>
+<li>如果应用层继续执行，那么它将进行数据库的写入操作</li>
+</ol>
+<p>但是，第三步的数据库写入操作将会改变第一步的匹配结果，进而影响第二步的判断结果。在并发时，不同的事务之间就会影响对方。</p>
+<p>一个很自然的想法是加锁，但是：并不存在加锁的客体。注意是根据记录表种的记录来判断这个时间段的房子是否被占用，你没有办法将一个不存在的记录加锁。</p>
+<p>由加锁延伸出的解决方案是，将所有房间与时间段进行排列组合，然后对结果进行加锁。这种解决方式被称为实体化冲突。但是，为了一个应用层的小需求大幅度改变数据库的底层设计是不好的，相比之下更推荐使用串行化的处理。</p>
+<p>与写倾斜类似的一个并发问题被称为幻读。他们的是出现原因是相同的：一个事务的写入改变了另外一个事务的查询结果。</p>
+<h3 id="隔离级别的弊病"><a href="#隔离级别的弊病" class="headerlink" title="隔离级别的弊病"></a>隔离级别的弊病</h3><ul>
+<li>隔离级别难以理解，并且在不同的数据库中实现的不一致（例如，“可重复读”的含义天差地别）。</li>
+<li>光检查应用代码很难判断在特定的隔离级别运行是否安全。 特别是在大型应用程序中，您可能并不知道并发发生的所有事情。</li>
+<li>没有检测竞争条件的好工具。原则上来说，静态分析可能会有帮助，但研究中的技术还没法实际应用。并发问题的测试是很难的，因为它们通常是非确定性的 —— 只有在倒霉的时机下才会出现问题。</li>
+</ul>
+<h3 id="三种实现"><a href="#三种实现" class="headerlink" title="三种实现"></a>三种实现</h3><h4 id="严格串行化"><a href="#严格串行化" class="headerlink" title="严格串行化"></a>严格串行化</h4><p>可行性</p>
+<p>内存足够便宜了，许多场景现在都可以将完整的活跃数据集保存在内存中。当事务需要访问的所有数据都在内存中时，事务处理的执行速度要比等待数据从磁盘加载时快得多。</p>
+<p>数据库设计人员意识到OLTP事务通常很短，而且只进行少量的读写操作.相比之下，长时间运行的分析查询通常是只读的，因此它们可以在串行执行循环之外的一致快照（使用快照隔离）上运行。</p>
+<h4 id="两阶段加锁（悲观锁）"><a href="#两阶段加锁（悲观锁）" class="headerlink" title="两阶段加锁（悲观锁）"></a>两阶段加锁（悲观锁）</h4><p>之前我们看到锁通常用于防止脏写：如果两个事务同时尝试写入同一个对象，则锁可确保第二个写入必须等到第一个写入完成事务（中止或提交），然后才能继续。</p>
+<p>在那个时候，我们的读与写都是使用的同样的锁。但是——正如大家在数据库课上学的一样——我们接下来使用了两种不同的锁。别称为两阶段锁定（2PL，two-phase locking ）</p>
+<p>两阶段锁定类似，但使锁的要求更强。只要没有写入，就允许多个事务同时读取同一个对象。但对象只要有写入（修改或删除），就需要独占访问（exclusive access） 权限。</p>
+<p>写写互斥、读写互斥</p>
+<p>2PL 怎么解决前面的写倾斜问题呢？</p>
+<ul>
+<li>A在查询某一时间段的房间预定情况时，会把这个时间段的记录加上读锁。如果此时B拥有写锁，那么A将会等待；</li>
+<li>A在试图写入时，需要将自己的读锁升级为写锁。检查是否由其他事务正在使用读锁，如果有，那么A等待。</li>
+</ul>
+<p>等等，刚才的问题在于，怎么给一个不存在的记录上锁？我们引进了 谓词锁。它能够作用于某一些满足条件的查询对象。</p>
+<p>此外，索引区间锁是大多数数据库采用的，它是谓词锁的近似版本，但是提高性能。</p>
+<p>2PL 的严重问题在于，性能太慢了，而且死锁的出现相当频繁。</p>
+<h4 id="可串行化的快照隔离（乐观锁）"><a href="#可串行化的快照隔离（乐观锁）" class="headerlink" title="可串行化的快照隔离（乐观锁）"></a>可串行化的快照隔离（乐观锁）</h4><p>一方面，我们实现了性能不好（2PL）或者扩展性不好（串行执行）的可序列化隔离级别。另一方面，我们有性能良好的弱隔离级别，但容易出现各种竞争条件（丢失更新，写入偏差，幻读等）。数据库中并发控制似乎前途黯淡。</p>
+<p>但是，2008年提出了一种称为 可串行化的快照隔离 （SSI, serializable snapshot isolation） 的技术，提供了完整的可串行化保证，同时兼顾效率。</p>
+<p>两阶段锁是一种所谓的悲观并发控制机制（pessimistic） ：如果有事情可能出错（如另一个事务所持有的锁所表示的），最好等到情况安全后再做任何事情。</p>
+<p>从某种意义上说，串行执行可以称为悲观到了极致：在事务持续期间，每个事务对整个数据库（或数据库的一个分区）具有排它锁，作为对悲观的补偿，我们让每笔事务执行得非常快，所以只需要短时间持有“锁”。</p>
+<p>相比之下，序列化快照隔离是一种乐观（optimistic） 的并发控制技术。在这种情况下，乐观意味着，如果存在潜在的危险也不阻止事务，而是继续执行事务，希望一切都会好起来。当一个事务想要提交时，数据库检查是否有什么不好的事情发生（即隔离是否被违反）；如果是的话，事务将被中止，并且必须重试。只有可序列化的事务才被允许提交。</p>
+<p>顾名思义，SSI基于快照隔离——也就是说，事务中的所有读取都是来自数据库的一致性快照。在快照隔离的基础上，SSI添加了一种算法来检测写入之间的序列化冲突，并确定要中止哪些事务。</p>
+<p>回顾一下写倾斜。它的问题在于，当我们在读取数据时，无法得知这些数据是否会与随后的写事务由因果关系。SSI 需要试图检测出这种可能性。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>事务的意义在于：将数据库封装好，并且简化或者完全消除开发者对于并发的处理。</p>
+<p>我们首先回顾了一下教科书上关于事务的定义：ACID已经他们的具体内涵。然后我们对于其中的 隔离性 进行了进一步的探讨。隔离性的关键在于使得并发执行的事务们能够假装自己在串行化处理。由于串行化本身的过慢的效率，人们提出了各种弱隔离级别的方案，牺牲了部分的隔离性换取执行效率。</p>
+<p>读-提交隔离级别提供了最基础的能力，防范脏读和脏写的问题。</p>
+<p>快照隔离级别使将读、写分离，从而解决了读倾斜的问题。</p>
+<p>更新丢失是另外的一个问题，有些数据库的快照隔离能够自动处理，而另外一些需要手动解决（例如 MYSQL）</p>
+<p>解决了读-写问题后，我们却对一些面对写-写并发的情况开始无能为力，并有了写倾斜和幻读这两个问题。最终，我们表示qtmd弱隔离，串行化真香！并介绍了几种串行化的实现。</p>
+<p>下面是一些参考资料和拓展阅读资料。</p>
+<p>Thanks for coming.</p>
+<h2 id="参考资料与拓展阅读"><a href="#参考资料与拓展阅读" class="headerlink" title="参考资料与拓展阅读"></a>参考资料与拓展阅读</h2><p>DDIA，第七章</p>
+<p><a href="https://tech.meituan.com/2014/08/20/innodb-lock.html" target="_blank" rel="noopener">Innod Bob 中的事务隔离级别和锁的关系</a></p>
+<p><a href="https://juejin.cn/post/6844903782329876494" target="_blank" rel="noopener">谈谈数据一致性</a></p>
+<p><a href="http://ouyym.com/wen/20383/" target="_blank" rel="noopener">MVCC多版本并发控制</a></p>
+<p><a href="http://coding-geek.com/how-databases-work/" target="_blank" rel="noopener">How does a relational database work</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+              <a href="/tags/%E4%BA%8B%E5%8A%A1/" rel="tag"># 事务</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/27/GFS%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" rel="prev" title="GFS论文笔记">
+      <i class="fa fa-chevron-left"></i> GFS论文笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/18/%E4%BA%8C%E5%88%86%E7%AE%97%E6%B3%95%E7%BB%86%E8%8A%82%E8%AF%A6%E8%A7%A3/" rel="next" title="二分算法细节详解">
+      二分算法细节详解 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">1.</span> <span class="nav-text">Content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回顾-ACID"><span class="nav-number">2.</span> <span class="nav-text">回顾 ACID</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原子性"><span class="nav-number">2.1.</span> <span class="nav-text">原子性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一致性"><span class="nav-number">2.2.</span> <span class="nav-text">一致性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隔离性"><span class="nav-number">2.3.</span> <span class="nav-text">隔离性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#持久性"><span class="nav-number">2.4.</span> <span class="nav-text">持久性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开胃菜"><span class="nav-number">3.</span> <span class="nav-text">开胃菜</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#脏读：邮箱问题"><span class="nav-number">3.1.</span> <span class="nav-text">脏读：邮箱问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新丢失：递增计数器"><span class="nav-number">3.2.</span> <span class="nav-text">更新丢失：递增计数器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#弱隔离级别"><span class="nav-number">4.</span> <span class="nav-text">弱隔离级别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#读-提交（Read-Committed）"><span class="nav-number">4.1.</span> <span class="nav-text">读-提交（Read Committed）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栗子"><span class="nav-number">4.1.1.</span> <span class="nav-text">栗子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现"><span class="nav-number">4.1.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺陷"><span class="nav-number">4.1.3.</span> <span class="nav-text">缺陷</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快照隔离"><span class="nav-number">4.2.</span> <span class="nav-text">快照隔离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新丢失"><span class="nav-number">4.3.</span> <span class="nav-text">更新丢失</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原子写操作"><span class="nav-number">4.3.1.</span> <span class="nav-text">原子写操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显式加锁"><span class="nav-number">4.3.2.</span> <span class="nav-text">显式加锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动检测更新丢失"><span class="nav-number">4.3.3.</span> <span class="nav-text">自动检测更新丢失</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原子比较和设置（CAS）等"><span class="nav-number">4.3.4.</span> <span class="nav-text">原子比较和设置（CAS）等</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#串行化"><span class="nav-number">5.</span> <span class="nav-text">串行化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#隔离级别的弊病"><span class="nav-number">5.1.</span> <span class="nav-text">隔离级别的弊病</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三种实现"><span class="nav-number">5.2.</span> <span class="nav-text">三种实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#严格串行化"><span class="nav-number">5.2.1.</span> <span class="nav-text">严格串行化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两阶段加锁（悲观锁）"><span class="nav-number">5.2.2.</span> <span class="nav-text">两阶段加锁（悲观锁）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可串行化的快照隔离（乐观锁）"><span class="nav-number">5.2.3.</span> <span class="nav-text">可串行化的快照隔离（乐观锁）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">6.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料与拓展阅读"><span class="nav-number">7.</span> <span class="nav-text">参考资料与拓展阅读</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">文不能测字，武不能防身。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">209k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:48</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

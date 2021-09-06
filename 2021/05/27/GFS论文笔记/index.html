@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Google File System，是一个可伸缩的、用于海量分布式数据类型应用的分布式文件系统。 关键词：容错性、可伸缩性、数据存储、集群存储">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GFS论文笔记">
+<meta property="og:url" content="http://yoursite.com/2021/05/27/GFS%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="船坞">
+<meta property="og:description" content="Google File System，是一个可伸缩的、用于海量分布式数据类型应用的分布式文件系统。 关键词：容错性、可伸缩性、数据存储、集群存储">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://docimg10.docs.qq.com/image/O8jymWznOVP7uB2mqw223A?w=927&amp;h=396">
+<meta property="og:image" content="https://docimg1.docs.qq.com/image/Xe34y71yT3nNwRRWkdZ3Xg?w=565&amp;h=501">
+<meta property="article:published_time" content="2021-05-27T09:28:09.000Z">
+<meta property="article:modified_time" content="2021-09-06T09:34:53.710Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="分布式系统">
+<meta property="article:tag" content="MIT6.824">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://docimg10.docs.qq.com/image/O8jymWznOVP7uB2mqw223A?w=927&amp;h=396">
+
+<link rel="canonical" href="http://yoursite.com/2021/05/27/GFS%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>GFS论文笔记 | 船坞</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="船坞" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">船坞</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-index">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Index</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/27/GFS%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="文不能测字，武不能防身。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="船坞">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          GFS论文笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-27 17:28:09" itemprop="dateCreated datePublished" datetime="2021-05-27T17:28:09+08:00">2021-05-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-06 17:34:53" itemprop="dateModified" datetime="2021-09-06T17:34:53+08:00">2021-09-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B9%98%E9%BE%99%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">乘龙术</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B9%98%E9%BE%99%E6%9C%AF/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">分布式系统</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Google File System，是一个可伸缩的、用于海量分布式数据类型应用的分布式文件系统。</p>
+<p>关键词：容错性、可伸缩性、数据存储、集群存储</p>
+<a id="more"></a>
+<p>原文链接：<a href="https://pdos.csail.mit.edu/6.824/papers/gfs.pdf" target="_blank" rel="noopener">https://pdos.csail.mit.edu/6.824/papers/gfs.pdf</a></p>
+<p>参考链接：</p>
+<p><a href="https://www.cnblogs.com/liyulong1982/p/6001841.html" target="_blank" rel="noopener">中文机翻</a></p>
+<p><a href="https://mr-dai.github.io/gfs/#GFS-的主要需求" target="_blank" rel="noopener">GFS 总结</a></p>
+<h2 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h2><ol>
+<li><p>和其他布式文件系统类似，它设计时的目标包括：较好的性能、灵活的扩展性、高可靠性以及高可用性（performance, scalability, reliability, and availability）</p>
+</li>
+<li><p>但GFS在设计时还考虑了在大数据下的应用的负载（ application workloads），以及当前的技术环境（ technological environment）。这些考量使得GFS与其他系统有较大的区别。下面列举几点GFS设计时的考量：</p>
+</li>
+<li><ol>
+<li>假设组件失效（component failures）是机器集群的常态。考虑到，我们的机器集群的规模之大、以及单位成本之低（quantity and quality of the components）。这使得单一机器的可靠性并不是那么高（成本限制），而保证集群中的所有机器同时处于可靠状态的几率更小（规模限制）。这些失效可能各种各样：application bugs, operating system bugs, human errors, and the failures of disks, memory, connectors, networking, and power supplies. </li>
+<li>文档的尺寸往往是极大的。GB、甚至TB级别的文件是常态，而KB级别的小文件是较少的。因此在设计时，我们基于大文件重新审视了一些参数，例如IO操作与块的大小（I/O operation and block sizes ）我们支持KB级别的文件处理，但并不会专门去优化它。</li>
+<li>顺序写，而非随机写。大部分文件的变更是采用在追加新数据，而不是重写原有数据的方式。随机写的模式在实际中几乎不存在。一旦写完之后，文件只能读（甚至通常只能顺序读）。考虑到这种针对海量文件的访问模式，我们将性能优化和原子性保证的设计重点放在了数据的追加上（appending ）。此外，客户端对数据块缓存毫无吸引力。</li>
+<li>我们选择应用程序和文件系统API的协同设计，这样可以增加系统的灵活性，并进而有利于系统。例如，我们放松了对GFS一致性模型的要求，不用在应用程序中强加繁重负担，大大简化了文件系统；引入了原子性的追加操作，这样多个客户端可以对一个文件同时进行追加操作，不需要他俩之间额外的同步机制。这些后文会进一步了解。</li>
+</ol>
+</li>
+<li><p>目前（2003）最大的一个GFS集群拥有超过1000个存储节点，超过300TB的硬盘存储，被不同机器上的数百个客户端连续不断的频繁访问。</p>
+</li>
+</ol>
+<h2 id="DESIGN-OVERVIEW"><a href="#DESIGN-OVERVIEW" class="headerlink" title="DESIGN OVERVIEW"></a>DESIGN OVERVIEW</h2><h3 id="Assumptions"><a href="#Assumptions" class="headerlink" title="Assumptions"></a>Assumptions</h3><p>系统的设计基于以下假设：</p>
+<ul>
+<li>系统的组件会频繁失效，前述此略；</li>
+<li>系统主要针对大文件进行优化，前述此略；</li>
+<li>读取方式主要有两种，（大规模的）流式读与（小规模的）随机读；来自同一个客户机的连续操作通常是大规模的读取一个文件中一个连续区域。小规模的随机读取通常是在任意位移上读取几个KB数据；</li>
+<li>写入方式主要也有两种。大规模的、顺序的、对文件追加数据的写操作。数据一旦被写入后，文件很少被再次变更。系统支持在文件任意位置写入的小数据的操作，但没有针对这种操作进行优化。</li>
+<li>高可持续的网络带宽比低延迟更重要。我们很看重高速率大批量地处理数据，哪怕其响应速度相对较慢，极少有程序对单一的读写操作有严格的响应时间要求。</li>
+</ul>
+<h3 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h3><ol>
+<li>整个GFS体系中包括一个Master节点和多个 Chunkservers 节点。客户端Client再与它们交互</li>
+<li>文件会被分为等大小的块（chunks）。每个文件块都被赋予一个64bit长、不可变的标识符，称为块句柄（chunk handle）。Chunkserver 将块保存在本地硬盘上，并且根据指定的块句柄和字节范围来读写数据。每个块都会被冗余存储在不同的 Chunkserver 节点上（默认冗余3份）。</li>
+<li>Master节点用于保存文件系统的元数据（metadata），而具体的文件数据被存放在 Chunkserver 的本地磁盘上。具体内容见 2.4</li>
+<li>Chunkserver、Client 均不会缓存文件数据。客户端的理由是，文件过大且少有会被重复处理的、缓存的收益低。Chunkserver的理由是，数据本身就是以文件存储于系统上的，系统本身提供了缓存功能。但是客户端会缓存元数据，以减少与Master的通信。</li>
+</ol>
+<p>​                 <img src="https://docimg10.docs.qq.com/image/O8jymWznOVP7uB2mqw223A?w=927&amp;h=396" alt="img">        </p>
+<p>见上图。Client先向Master通信，拿到需要的文件块以及offset等相关信息；Cilent再与Chunkserver通信，获得具体的文件数据。具体</p>
+<h3 id="Single-Master"><a href="#Single-Master" class="headerlink" title="Single Master"></a>Single Master</h3><p>系统中仅有一个Master，这种 设计能够简化系统，并且不需要Master花费性能用于多Master的同步开销上。但是受限于此，单节点可能称为系统的瓶颈，这使得设计时尽量将职责从Master上转移。</p>
+<p>出于此，Client并不需要和Master节点进行文件数据的传输，而是和 Chunkserver 进行数据传输。</p>
+<p>Client 如何读取数据？</p>
+<ol>
+<li>客户端将需要读取的数据所处的文件名、偏移量转换为 chunk index（例如，需要的数据位于该文件的第几块上）</li>
+<li>Client 与 Master 通信，发送file name 与 chunk index</li>
+<li>Master查出文件的句柄（ chunk handle）与该文件所处的节点（location）并返回给Client</li>
+<li>同一个文件所处的location可能有多个，Client自行选择一个replicas（通常是最近的）；此外，Client通常会缓存Master返回的这些信息，以便后续减少对Master的频繁请求</li>
+<li>Client 向 chunkserver 发送请求，并获得返回的文件数据。</li>
+</ol>
+<p>后续Client对于相同的块的请求就可以从缓存中直接获取文件的存储节点，也就不需要向Master请求了。</p>
+<p>此外，Client往往会在第二步中请求多个额外块的信息，这些额外信息实际上不会额外占用带宽，但是可以减少后续的C-M请求。</p>
+<h3 id="Chunk-Size"><a href="#Chunk-Size" class="headerlink" title="Chunk Size"></a>Chunk Size</h3><p>块的大小是关键的设计参数之一。我们选择了64MB，这个尺寸远远大于通常文件系统的块大小。每个块副本都以普通Linux文件的形式保存在Chunkserver上。</p>
+<p>大尺寸块有几个重要的优势。</p>
+<ol>
+<li>它减少了客户端和master交互的需求，因为对同一块的读写只需要一次和mater的初始请求来获取块的位置信息。这种缩减我们的工作负载至关重要，因为应用程序大都是连续读写大文件。即使是小规模的随机读取，客户端可以轻松地为一个数TB的工作集缓存所有的块位置信息。</li>
+<li>因为采用较大块，客户端很可能对一个块执行多次操作，这样可以通过与Chunkserver在很长的时间内保持持久的TCP 连接来减少网络负载。</li>
+<li>它减少了在master上保存的元数据的大小。这就允许我们把元数据保存在内存中，这也带来了其它优势，我们将在在2.6.1节进行讨论。</li>
+</ol>
+<p>另一方面，即使配合惰性空间分配，大尺寸块也有其缺点。</p>
+<ol>
+<li>小文件包含少量的块，甚至只有一个块。如果许多客户端访问同一个小文件，存储这些块的Chunkserver就会变成热点。在实际中，由于我们的程序通常是连续的读取包含多个块的大文件，热点还不是主要问题。</li>
+<li>然而，当GFS第一次被批处理队列系统使用的时候，热点问题还是显露了：一个可执行文件作为一个单块文件写在了GFS上，之后同时在数百台机器上启动。存放这个可执行文件的几个Chunkserver被数百个并发请求造成过载。我们通过使用更大的复制因子来保存这样的可执行文件，并且让批处理队列系统错开程序的启动时间的方法解决了这个问题。一个可能的长效解决方案是，在这种的情况下允许客户端从其它客户端读取数据（p2p?）。</li>
+</ol>
+<h3 id="Metadata"><a href="#Metadata" class="headerlink" title="Metadata"></a>Metadata</h3><p>Master会存储三种类型的元数据：</p>
+<ol>
+<li>文件与块的命名空间</li>
+<li>文件名 ~ 块的映射关系</li>
+<li>每个块的副本的存放位置（location）</li>
+</ol>
+<p>这三种数据是存放在Master的内存之中，但是前两者会使用log的方式进行持久化并备份。这使得Master在崩溃后可以恢复工作。而具体的块副本的位置并不会持久化，在Master启动、Chunkserver加入集群时，Chunkserver会主动向Master提供自己所拥有的块信息。</p>
+<h4 id="In-Memory"><a href="#In-Memory" class="headerlink" title="In-Memory"></a>In-Memory</h4><p>元数据保存在内存之中，因此Master的操作速度非常之快。Master还会在后台周期性地扫描当前的集群状态，扫描结果将会被用于垃圾收集、Chunkserver的失效备份，以及负载均衡、块迁移等。4.3和4.4章节将进一步讨论这些行为。</p>
+<p>将元数据存放在内存中的潜在问题在于：内存的上限导致了块数量存在上限。但实际中问题并不严重，每个块需要的元数据并不大（通常少于64字节）而且，相比于内存存储所带来的简洁性、可靠性、高性能和灵活性而言，针对Master的内存硬件开销是值得的。</p>
+<h4 id="Chunk-Locations"><a href="#Chunk-Locations" class="headerlink" title="Chunk Locations"></a>Chunk Locations</h4><p>前面说过，Master并不会将Chunk Locations 进行持久化记录，而是在启动时轮询chunkservers 来获取这些信息。由于Master本身也需要对chunkservers 进行心跳检测，所以是可以保持Chunk Locations 始终处于最新状态。</p>
+<p>不持久化该信息是出于以下的考量：在chunkservers 加入、离开集群、更名、失效、重启时，需要与Master保持同步Chunk Locations。在节点较多的集群中，类似的事情发送地非常频繁与费时。此外，Chunk Locations 应当由chunkservers 自己说了算，自行处理各类问题并向Master负责。Master就不应该试图保留Chunk Locations 。</p>
+<h4 id="Operation-Log"><a href="#Operation-Log" class="headerlink" title="Operation Log"></a>Operation Log</h4><p>操作日志包含了元数据变更历史记录。它也作为定义同步操作顺序的逻辑时间基线，类似数据库的多版本管理。</p>
+<p>与其他的日志系统似乎没啥大区别，略。</p>
+<h3 id="Consistency-Model"><a href="#Consistency-Model" class="headerlink" title="Consistency Model"></a>Consistency Model</h3><p>GFS提供了一个宽松的一致性模型，这个模型很好地支撑我们的高度分布的应用，但是也不会由于较强的一致性限制拖慢系统。</p>
+<h4 id="Guaranteesby-GFS"><a href="#Guaranteesby-GFS" class="headerlink" title="Guaranteesby GFS"></a>Guaranteesby GFS</h4><p>妈的，看不懂</p>
+<h2 id="SYSTEM-INTERACTIONS"><a href="#SYSTEM-INTERACTIONS" class="headerlink" title="SYSTEM INTERACTIONS"></a>SYSTEM INTERACTIONS</h2><p>系统力图最小化master与所有操作的牵连。在这样的背景下描述客户机、master和Chunkserver如何交互以实现数据变更、原子记录追加以及快照功能。</p>
+<h4 id="Leases-and-Mutation-Order"><a href="#Leases-and-Mutation-Order" class="headerlink" title="Leases and Mutation Order"></a>Leases and Mutation Order</h4><p>变更是改变块内容或者块元数据的操作，包括写操作或者追加操作。由于每个块的信息时冗余存储在不同的副本上，因此每次变更将在块所有的副本上执行。</p>
+<p>租约（Lease）被用于维护副本间的一致性变更顺序。Master向其中一个副本授权一个块租约，我们把这个副本叫做主副本。再由主副本自主决定数据变更的序列顺序。</p>
+<p>租约的初始过期时间为60秒。然而主副本可以请求并且通常会得到master无限期的延长。这些延长请求和批准信息附在定期交换的心跳消息中。</p>
+<p>租约的时效性可以保证，即使master和主副本失去联系，它仍然可以安全地在旧的租约到期后和向另外一个副本授权新的租约。</p>
+<p>​                 <img src="https://docimg1.docs.qq.com/image/Xe34y71yT3nNwRRWkdZ3Xg?w=565&amp;h=501" alt="img">        </p>
+<ol>
+<li>客户机询问master哪一个Chunkserver持有该块当前的租约，以及其它副本的位置。如果没有chunkserver持有租约，master将先把租约授权给Master选择的副本。</li>
+<li>master将主副本的标识符以及其它副本（称为次级副本secondary）的位置返回给客户机。客户机为将来的变更缓存这些元数据，直到租约过期或主副本不可达。</li>
+<li>客户机将需要更改的数据推送到所有的副本中，但是此时并没有正式写入，推送的数据将会缓存在Chunkserver中。</li>
+<li>当所有的副本都确认接收到刚才推送的更改数据后，Client会向主副本发送写请求。主副本可能会同时受到多个client的并发写请求，它自行决定如何将这些更改请求序列化，并顺序执行这些操作并更新自己的状态。</li>
+<li>Primary将写请求转发到secondary中，每个secondary都将根据primary分配的序列顺序来变更数据。</li>
+<li>所有次级副本回复主副本并标明它们已经完成了操作。</li>
+<li>主副本回复客户机。</li>
+</ol>
+<p>这期间，任何副本遇到的任何错误都报告给客户机。出错的情况下，写操作可能在主副本和次级副本的任意子集上执行成功。（如果在主副本失败，就不会分配序列号和转发。）客户端请求被认定为失败，被修改的域处于不一致的状态。我们的客户机代码通过重试失败的变更来处理这样的错误。在退到从头开始重试之前，客户机会将从步骤（3）到步骤（7）做几次尝试。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/" rel="tag"># 分布式系统</a>
+              <a href="/tags/MIT6-824/" rel="tag"># MIT6.824</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/11/MapReduce-2004-Note/" rel="prev" title="MapReduce_2004_Note">
+      <i class="fa fa-chevron-left"></i> MapReduce_2004_Note
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/06/03/%E5%88%86%E4%BA%AB%E8%AE%B2%E5%BA%A7-%E4%BA%8B%E5%8A%A1%E4%B8%8E%E9%9A%94%E7%A6%BB%E6%80%A7/" rel="next" title="分享讲座_事务与隔离性">
+      分享讲座_事务与隔离性 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#INTRODUCTION"><span class="nav-number">1.</span> <span class="nav-text">INTRODUCTION</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DESIGN-OVERVIEW"><span class="nav-number">2.</span> <span class="nav-text">DESIGN OVERVIEW</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Assumptions"><span class="nav-number">2.1.</span> <span class="nav-text">Assumptions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Architecture"><span class="nav-number">2.2.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Single-Master"><span class="nav-number">2.3.</span> <span class="nav-text">Single Master</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chunk-Size"><span class="nav-number">2.4.</span> <span class="nav-text">Chunk Size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Metadata"><span class="nav-number">2.5.</span> <span class="nav-text">Metadata</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#In-Memory"><span class="nav-number">2.5.1.</span> <span class="nav-text">In-Memory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Chunk-Locations"><span class="nav-number">2.5.2.</span> <span class="nav-text">Chunk Locations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Operation-Log"><span class="nav-number">2.5.3.</span> <span class="nav-text">Operation Log</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Consistency-Model"><span class="nav-number">2.6.</span> <span class="nav-text">Consistency Model</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Guaranteesby-GFS"><span class="nav-number">2.6.1.</span> <span class="nav-text">Guaranteesby GFS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SYSTEM-INTERACTIONS"><span class="nav-number">3.</span> <span class="nav-text">SYSTEM INTERACTIONS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Leases-and-Mutation-Order"><span class="nav-number">3.0.1.</span> <span class="nav-text">Leases and Mutation Order</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">文不能测字，武不能防身。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">209k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:48</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这是2004年的分布式论文 Map Reduce的阅读笔记。 论文链接🔗 https:&#x2F;&#x2F;pdos.csail.mit.edu&#x2F;6.824&#x2F;papers&#x2F;mapreduce.pdf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MapReduce_2004_Note">
+<meta property="og:url" content="http://yoursite.com/2021/05/11/MapReduce-2004-Note/index.html">
+<meta property="og:site_name" content="船坞">
+<meta property="og:description" content="这是2004年的分布式论文 Map Reduce的阅读笔记。 论文链接🔗 https:&#x2F;&#x2F;pdos.csail.mit.edu&#x2F;6.824&#x2F;papers&#x2F;mapreduce.pdf">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://docimg7.docs.qq.com/image/hAQBWzDu5llyE4ubcrlOHQ?w=1087&amp;h=779">
+<meta property="article:published_time" content="2021-05-11T09:42:06.000Z">
+<meta property="article:modified_time" content="2021-09-06T09:49:57.240Z">
+<meta property="article:author" content="LUY">
+<meta property="article:tag" content="分布式系统">
+<meta property="article:tag" content="MIT6.824">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://docimg7.docs.qq.com/image/hAQBWzDu5llyE4ubcrlOHQ?w=1087&amp;h=779">
+
+<link rel="canonical" href="http://yoursite.com/2021/05/11/MapReduce-2004-Note/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>MapReduce_2004_Note | 船坞</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="船坞" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">船坞</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-index">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Index</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/11/MapReduce-2004-Note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LUY">
+      <meta itemprop="description" content="文不能测字，武不能防身。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="船坞">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MapReduce_2004_Note
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-11 17:42:06" itemprop="dateCreated datePublished" datetime="2021-05-11T17:42:06+08:00">2021-05-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-06 17:49:57" itemprop="dateModified" datetime="2021-09-06T17:49:57+08:00">2021-09-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B9%98%E9%BE%99%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">乘龙术</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B9%98%E9%BE%99%E6%9C%AF/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">分布式系统</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这是2004年的分布式论文 Map Reduce的阅读笔记。</p>
+<p>论文链接🔗 <a href="https://pdos.csail.mit.edu/6.824/papers/mapreduce.pdf" target="_blank" rel="noopener">https://pdos.csail.mit.edu/6.824/papers/mapreduce.pdf</a></p>
+<a id="more"></a>
+<h2 id="文章笔记"><a href="#文章笔记" class="headerlink" title="文章笔记"></a>文章笔记</h2><p>对于每个段落进行概述。</p>
+<h3 id="摘要-Abstract"><a href="#摘要-Abstract" class="headerlink" title="摘要 Abstract"></a>摘要 Abstract</h3><ol>
+<li>MapReduce是一个编程模型，专门用于处理、产生海量数据集的实现。</li>
+<li>用户使用 map 与 reduce 两个方法来达成目标，这两个方法的具体使用在第二部分介绍。</li>
+<li>这种编程模型所产生的程序便于实行并行化，并且对外不需要关心有关分布式的细节：例如分割输入数据、集群上的调度、容错处理以及机器间通信。便于无经验的开发人员使用。</li>
+<li>它可以运行在由普通机器组成的集群上，而这个集群的规模可以灵活调整。</li>
+</ol>
+<ol>
+<li><h3 id="介绍-Introduction"><a href="#介绍-Introduction" class="headerlink" title="介绍 Introduction"></a>介绍 Introduction</h3></li>
+<li><p>在过去，人们编写了大量的用于计算海量数据的程序，例如…（略）</p>
+</li>
+<li>这些程序的数据计算量是很大的，导致时间上的成本不可接受——唯一的解决方案是并行化处理。</li>
+<li>并行化处理带来了更多的问题，并将简单的计算变成了复杂的工程。这些问题例如：how to parallelize the computation, distribute the data, and handle failure</li>
+<li>因此我们设计了一种新的模型来隐藏并行化、容错、分布数据以及负载均衡等细节。</li>
+<li>我们采用了the map and reduce方案：</li>
+</ol>
+<p>We realized that most of our computations involved applying a map operation to each logical “record” in our input in order to compute a set of intermediate key/value pairs, </p>
+<p>and then applying a reduce operation to all the values that shared the same key, in order to combine the derived data appropriately. </p>
+<p>Our use of a functional model with userspecified map and reduce operations allows us to parallelize large computations easily and to use re-execution as the primary mechanism for fault tolerance.</p>
+<ol>
+<li>这个设计的主要贡献是，通过简单有用的接口来实现自动的并行化和大规模分布式计算，通过这个接口设计，可以在大量普通的PC机上实现高性能计算。</li>
+</ol>
+<h3 id="2、程序模型-Programming-Model"><a href="#2、程序模型-Programming-Model" class="headerlink" title="2、程序模型 Programming Model"></a>2、程序模型 Programming Model</h3><p>整个程序的输入（input）为：一个 k-v 键值对的集合；输出（output）为：一个 k-v 键值对的集合；计算过程中包括两个用户自定义的函数：map 和 reduce，</p>
+<p>Map：</p>
+<p>input：从input集合中取出一个 k-v 对（k1, v1）</p>
+<p>output：计算得到一堆的键值对 set(k2,v2)，我们将这一阶段的输出称为 intermediate file </p>
+<p>Reduce:</p>
+<p>input：从Map的计算结果中得到某一键和一系列的值（k2, list(v2)）</p>
+<p>output：根据需要处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 从一个 k-v 中得到set(k2,v2)</span><br><span class="line">map(String key,String value):</span><br><span class="line">    &#x2F;&#x2F;key:文档的名字</span><br><span class="line">    &#x2F;&#x2F;value:文档的内容</span><br><span class="line">    for each word w in value:</span><br><span class="line">        EmitIntermediate(w,&quot;1&quot;);</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;从之前的结果中获取一个k和对应的一系列v</span><br><span class="line">reduce(String key,Iterator values):</span><br><span class="line">    &#x2F;&#x2F;key:一个词</span><br><span class="line">    &#x2F;&#x2F;values:一个计数列表</span><br><span class="line">    int result&#x3D;0;</span><br><span class="line">    for each v in values:</span><br><span class="line">        result+&#x3D;ParseInt(v);</span><br><span class="line">     Emit(AsString(resut));</span><br></pre></td></tr></table></figure>
+<h3 id="3、实现-Implementation"><a href="#3、实现-Implementation" class="headerlink" title="3、实现 Implementation"></a>3、实现 Implementation</h3><p>MapReduce接口可以有不同的实现，但是正如我们所说，这个接口的主要贡献就是，通过简单有用的接口来实现自动的并行化和大规模分布式计算。因此我们将着重介绍每个节点是如何分配工作、如何协作的。</p>
+<h4 id="3-1、Overview"><a href="#3-1、Overview" class="headerlink" title="3.1、Overview"></a>3.1、Overview</h4><p>​                 <img src="https://docimg7.docs.qq.com/image/hAQBWzDu5llyE4ubcrlOHQ?w=1087&amp;h=779" alt="img">        </p>
+<p>Map 操作被分布至多个机器之上分别运行，将原始数据分成 M 片（splits）进行处理。Reduce操作同样如此，我们根据 intermediate value 的key作为依据来进行分割成R块来进行处理。例如hash(key) mod R ，当然这里的分割算法是用户自定的。</p>
+<p>走一下全部的流程：</p>
+<ol>
+<li>首先将所有的输入文件划分为 M 片，每个片的大小一般从 16到64MB(用户可以通过可选的参数来控制). 随后，在集群中我们将会开始大量地拷贝 mapreduce 程序。</li>
+<li>在集群中的程序拷贝中，有一个是用于分配任务的master，其他的都是由master分配任务的worker.有M 个map任务和R个reduce任务将被分配.</li>
+<li>一个执行 map 任务的 worker 会将它所负责的 split 读取，并进行 map 计算。输出的 intermediate k-v 对会暂存在内存之中。</li>
+<li>缓存在内存中的中间结果被周期性地刷写到（本地）磁盘之上，这些中间结果随后会被Reduce过程中使用。这些被写入磁盘中的中间文件的location会被传递到master中，并且被master将地址调度到reduce worker处</li>
+<li>reduce worker接收到来自master的location消息后，使用远程调用来读取磁盘中的中间数据，并对读取到的数据进行排序（如果数据量过大，可能还要外部排序）。排序的理由是：往往不同key的中间结果被分配到了同一个worker中，因此需要将相同key的内容聚合在一起。</li>
+<li>reduce worker 对于每一个中间key，启动一个reduce任务，并使用自定的reduce函数将这个key与一系列value计算出输出结果，将结果追加到输出文件之中。</li>
+<li>在所有的任务完成后，master节点唤醒用户程序，并且将最终结果返回。</li>
+</ol>
+<p>最终的输出结果存放在 R 个文件中，每一个 Reduce 任务都产生一个文件。一般而言用户不会直接使用这些输出结果——他们往往会将结果作为另外一个输入传递到其他的MapReduce调用,或者在可以处理多个分割文件的分布式应用中使用他们.</p>
+<h4 id="3-2、Master"><a href="#3-2、Master" class="headerlink" title="3.2、Master"></a>3.2、Master</h4><p>Master节点会存储每个Map/Reduce 任务的状态（idle, in-progress, or completed）以及执行该任务的worker的标识符（只有后两种状态的任务会有对应worker）。</p>
+<p>Master负责将map阶段完成的结果划分为 R 块，并且追加到reduce worker上，它扮演了一个管道的角色。</p>
+<h4 id="3-3、容错"><a href="#3-3、容错" class="headerlink" title="3.3、容错"></a>3.3、容错</h4><p>在成百上千个机器组成的集群中，发生错误才是正常现象</p>
+<h5 id="Worker-Failue"><a href="#Worker-Failue" class="headerlink" title="Worker Failue"></a>Worker Failue</h5><p>master周期性的ping每个worker. </p>
+<p>如果master在一个确定的时间段内没有收到worker返回的信息,那么它将把这个worker标记成失效.</p>
+<p>该节点上的已经完成map任务被重新设置成它初始的idle状态, 然后被安排给其他的worker.</p>
+<p>该节点上的正在运行的map或reduce任务,也被重新设置成空闲状态,并且将被重新调度.</p>
+<p>由于 Map 阶段的结果被存储在了该节点的本地磁盘上，后续的reduce节点将无法访问它们，所以完成态的map需要被重新运行；而reduce阶段的结果被存储在全局文件系统之中，所以只需要重新运行未完成的reduce任务即可。</p>
+<p>Map worker A失效会通知到所有的Reduce worker，并且它们会在读取A的文件时从新调度的map worker B中读取文件。</p>
+<h5 id="Master-Failue"><a href="#Master-Failue" class="headerlink" title="Master Failue"></a>Master Failue</h5><p>周期性地写入Master的状态，并在失效后从检查点回滚</p>
+<h5 id="Semantics-in-the-Presence-of-Failures"><a href="#Semantics-in-the-Presence-of-Failures" class="headerlink" title="Semantics in the Presence of Failures"></a>Semantics in the Presence of Failures</h5><p>任何一个阶段的操作对于文件的读写都是原子性的。</p>
+<p>Reduce 阶段会在本地磁盘中生成一个临时文件，并且在任务完成后调用 rename() 方法（这个方法是由文件系统支持的）来将临时文件重命名为最终输出文档到全局文件系统中。如果有多个Reduce worker执行了同样的任务，那么他们的输出文档将会被命名为同样的名称。</p>
+<p>Map 阶段会在 Map worker的本地磁盘中生成R个文件，因为 Map 的输入是乱序的，而中间结果的输出将会被输入到R个不同的节点之中。</p>
+<p>如果用户的Map/Reduce方法都是确定的——同样的输入得到同样的输出，那么经过整个流程后输出文件也是确定的；如果他们不是确定的话，那么不同顺序下的输出可能会不一样。</p>
+<h4 id="3-4、存储位置"><a href="#3-4、存储位置" class="headerlink" title="3.4、存储位置"></a>3.4、存储位置</h4><p>尽可能是的数据存储在本地，以便节省网络带宽。</p>
+<h4 id="3-5、任务粒度"><a href="#3-5、任务粒度" class="headerlink" title="3.5、任务粒度"></a>3.5、任务粒度</h4><p>我们细分map阶段成M个片,reduce阶段成R个片.</p>
+<p>M和R应当比worker机器的数量大许多.每个worker执行许多不同的工作来提高动态负载均衡,也可以加速从一个worker失效中的恢复</p>
+<p>但是 R 的数量经常会被用户限制，因为他们可能并不希望获得过多的输出文件。</p>
+<h4 id="3-6、-Backup-Tasks"><a href="#3-6、-Backup-Tasks" class="headerlink" title="3.6、 Backup Tasks"></a>3.6、 Backup Tasks</h4><p>可能会存在落后者的问题，某些任务在执行中由于各种各样的问题导致计算过程的极度缓慢。（例如，磁盘读写突然莫名原因降至3MB/s）这将导致系统的瓶颈被限制到了某个（不确定的）机器上。</p>
+<p>我们有一个一般的机制来减轻这个落后者的问题.当一个MapReduce操作将要完成的时候,master调度备用进程来执行那些剩下的还在执行的任务. 只要任意一些节点完成了剩下的任务，那么我们就视为完全完成了所有的任务。,通常只会占用多几个百分点的机器资源.我们发现这可以显著的减少完成大规模MapReduce操作的时间.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/" rel="tag"># 分布式系统</a>
+              <a href="/tags/MIT6-824/" rel="tag"># MIT6.824</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/22/Java%E5%9F%BA%E7%A1%80%E4%B9%8B%20Object%20%E7%B1%BB/" rel="prev" title="Java基础之Object类">
+      <i class="fa fa-chevron-left"></i> Java基础之Object类
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/27/GFS%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" rel="next" title="GFS论文笔记">
+      GFS论文笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQyOS8yNjkxNg"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章笔记"><span class="nav-number">1.</span> <span class="nav-text">文章笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#摘要-Abstract"><span class="nav-number">1.1.</span> <span class="nav-text">摘要 Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍-Introduction"><span class="nav-number">1.2.</span> <span class="nav-text">介绍 Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、程序模型-Programming-Model"><span class="nav-number">1.3.</span> <span class="nav-text">2、程序模型 Programming Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、实现-Implementation"><span class="nav-number">1.4.</span> <span class="nav-text">3、实现 Implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1、Overview"><span class="nav-number">1.4.1.</span> <span class="nav-text">3.1、Overview</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2、Master"><span class="nav-number">1.4.2.</span> <span class="nav-text">3.2、Master</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3、容错"><span class="nav-number">1.4.3.</span> <span class="nav-text">3.3、容错</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Worker-Failue"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">Worker Failue</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Master-Failue"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">Master Failue</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Semantics-in-the-Presence-of-Failures"><span class="nav-number">1.4.3.3.</span> <span class="nav-text">Semantics in the Presence of Failures</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4、存储位置"><span class="nav-number">1.4.4.</span> <span class="nav-text">3.4、存储位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5、任务粒度"><span class="nav-number">1.4.5.</span> <span class="nav-text">3.5、任务粒度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-6、-Backup-Tasks"><span class="nav-number">1.4.6.</span> <span class="nav-text">3.6、 Backup Tasks</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LUY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">LUY</p>
+  <div class="site-description" itemprop="description">文不能测字，武不能防身。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/luy-0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luy-0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LUY</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">209k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:48</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/31/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>
